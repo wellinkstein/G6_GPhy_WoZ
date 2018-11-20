@@ -18,11 +18,11 @@ public class Spot
 {
     public Item spotItem; //A spot contains between 0 and 5 items
     //public Character hereCharacter;
-    private HashMap<String, Spot> exits;
-    private ArrayList<Character> characterInSpot;
-    private ArrayList<Item> objectInSpot;
-    private boolean isVisible;
-    private boolean fighting; 
+    private HashMap<String, Spot> exits; //list of the exits
+    private ArrayList<Character> characterInSpot; //all the character in a spot
+    private ArrayList<Item> objectInSpot; //all the item in a spot
+    private boolean isVisible; //True if the spot is visible
+    private boolean fighting; //boolean if a monster and a player are in the same spot
 
     /**
      * Create a HashMap
