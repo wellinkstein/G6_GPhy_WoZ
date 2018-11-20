@@ -3,8 +3,8 @@
 /**
  * Class Spot - a spot in an adventure game.
  *
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * This class is part of the "Daedalus" application. 
+ * "Daedalus" is a very simple, text based adventure game.  
  *
  * A "Spot" represents one location in the scenery of the game.  It is 
  * connected to other spots via exits.  The exits are labelled north, 
@@ -16,8 +16,9 @@
  */
 public class Spot
 {
-    public Item spotItem; //A spot contains between 0 and 5 items
+    //public Item spotItem; 
     //public Character hereCharacter;
+    private int numberItem; //A spot contains between 0 and 5 items
     private HashMap<String, Spot> exits; //list of the exits
     private ArrayList<Character> characterInSpot; //all the character in a spot
     private ArrayList<Item> objectInSpot; //all the item in a spot
@@ -45,7 +46,7 @@ public class Spot
     public void setExit(String direction, Spot neighbor){
         exits.put(direction, neighbor);
     }
-   
+  
      /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
