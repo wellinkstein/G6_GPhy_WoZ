@@ -67,7 +67,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameMinotaur()
     {
-        goodMonster= new Monster(10,"Minotaur",1,5,0,0,"Le terrible minotaure");
+        goodMonster= new Monster(10,"Minotaur",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Minotaur",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -82,7 +82,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameMedusa()
     {
-        goodMonster= new Monster(10,"Medusa",1,5,0,0,"La hideuse meduse");
+        goodMonster= new Monster(10,"Medusa",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Medusa",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -97,7 +97,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameChimera()
     {
-        goodMonster= new Monster(10,"Chimera",1,5,0,0,"La terrifiante chimere");
+        goodMonster= new Monster(10,"Chimera",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Chimera",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -112,7 +112,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameArachne()
     {
-        goodMonster= new Monster(10,"Arachne",1,5,0,0,"La vile Arachne");
+        goodMonster= new Monster(10,"Arachne",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Arachne",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -127,7 +127,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameCyclops()
     {
-        goodMonster= new Monster(10,"Cyclops",1,5,0,0,"Le grand cyclope");
+        goodMonster= new Monster(10,"Cyclops",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Cyclops",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -142,7 +142,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameCerberus()
     {
-        goodMonster= new Monster(10,"Cerberus",1,5,0,0,"Le chien a 3 tête");
+        goodMonster= new Monster(10,"Cerberus",1,5,0,0);
         assertEquals(10,goodMonster.getHP());
         assertEquals("Cerberus",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());
@@ -157,7 +157,7 @@ public class MonsterTest
     @Test
     public void CheckBadMonsterName()
     {
-        badMonster= new Monster(10,"Blarg",1,5,0,0,"Aucune idée");
+        badMonster= new Monster(10,"Blarg",1,5,0,0);
         assertEquals(10,badMonster.getHP());
         assertEquals("Blarg",badMonster.getName());
         assertEquals(1,badMonster.getXp());

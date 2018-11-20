@@ -16,10 +16,10 @@ public class Lesser_Boss extends Monster
     /**
      * Constructeur d'objets de classe Lesser_Boss
      */
-    public Lesser_Boss(int myHP)
+    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY)
     {
         // initialisation des variables d'instance
-        super(myHP);
+        super(myHP,myName,myXp,myDamage,myPosX,myPosY);
     }
 
 }
