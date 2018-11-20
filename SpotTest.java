@@ -29,7 +29,10 @@ import org.junit.Test;
  */
 public class SpotTest
 {
-
+    
+    Spot neighbor = new Spot();
+    String direction = "Q";
+    
     /**
      * Constructeur de la classe-test RoomTest
      */
@@ -70,11 +73,23 @@ public class SpotTest
     }
     
     /**
+     * Test Spot new exit
+     */
+    @Test
+    public void setExits(String direction, Spot neighbor)
+    {
+        
+    }
+    
+    /**
      * Test badSpot creation
      */
     @Test
     public void testBadRoom()
     {
-        assertfalse(badRoom.get(spotCorrect));
+        
+        //assertfalse(badRoom.get(spotCorrect));
     }
+    
+    
 }

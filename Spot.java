@@ -31,6 +31,9 @@ public class Spot
     public Spot() 
     {
         exits = new HashMap<String, Spot>();
+        isVisible = false;
+        fighting = false;
+        spotCorrect = false;
     }
     
       /**
@@ -42,8 +45,9 @@ public class Spot
 
      * @version version 2018/11 
      */
-    public void setExit(String direction, Spot neighbor){
+    public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
+        spotCorrect = true;
     }
    
      /**
@@ -55,7 +59,7 @@ public class Spot
      * 
      * @version version 2018/11
      */
-    public Spot getExit(String direction){
+    public Spot getExits(String direction){
         return exits.get(direction);
     }
     
