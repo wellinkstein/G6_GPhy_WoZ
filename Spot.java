@@ -16,10 +16,9 @@ import java.util.*;
  */
 public class Spot
 {
-    public Item rommItem; //A spot contains between 0 and 5 items
+    public Item spotItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
     private HashMap<String, Spot> exits;
-    
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
 
