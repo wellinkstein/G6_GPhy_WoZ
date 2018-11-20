@@ -17,16 +17,15 @@
 public class Spot
 {
     public Item spotItem; //A spot contains between 0 and 5 items
-    public Character hereCharacter;
+    //public Character hereCharacter;
     private HashMap<String, Spot> exits;
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
+    private boolean isVisible;
+    private boolean fighting; 
 
     /**
-     * Create a room described "description". Initially, it has
-     * no exits. "description" is something like "a kitchen" or
-     * "an open court yard".
-     * @param description The room's description.
+     * Create a HashMap
      */
     public Spot() 
     {

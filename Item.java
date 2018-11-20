@@ -1,7 +1,11 @@
 /**
  * Decrivez votre classe Item ici.
  *
+<<<<<<< HEAD
+ * @author Delphine et Yousra
+=======
  * @author (votre nom)
+>>>>>>> acc22fb149bf9a345ee4aebab817bbe6c5f9ac96
  * @version (un numero de version ou une date)
  */
 public class Item
@@ -12,12 +16,18 @@ public class Item
     private int healthGain; //health gain of the item
     private String name; //name of the item
     private String description; //description of the item
+    private int count = 0;
+    private int itemID; // permet de differencier les differents items
 
     /**
      * Constructeur d'objets de classe Item
      */
-    public Item()
-    {
+    public Item(String itemName, String des, int id, int dam)
+    { 
+        name = itemName;
+        description = des;
+        itemID = ++count;
+        damage = dam;
     }
     
     /**
