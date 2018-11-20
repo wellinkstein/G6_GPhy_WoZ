@@ -94,7 +94,17 @@ public class Character
      */
     public void loseHp(int damage)
     {
-        HP -= damage;
+        if(damage>0)
+        {
+            if((HP-damage)<0)
+            {
+                HP=0;
+            }
+            else
+            {
+                HP-=damage;
+            }
+        }
     }
     
     /**
@@ -129,53 +139,89 @@ public class Character
         posX -= 1;
     }
     
-    /**
-     * Method that initiates combat
-     */
-    public void fight()
-    {}
-    
-    /**
-     * Method that causes a player to not initiate the combat sequence
-     */
-    public void runAway()
-    {}
     
     /**
      * Methode that gives HP based on the gainHP attribute that is found in items.
      */
     public void gainHP(int gainHP)
-    {}
+    {
+        if (gainHP>0)
+        {
+            HP+=gainHP;
+        }
+        else
+        {
+            HP=HP;
+        }
+    }
     
     /**
      * Method that gives Xp based on the gainXP attribute
      */
     public void gainXp(int gainXP)
-    {}
+    {
+        if (gainXP>0)
+        {
+            xp+=gainXP;
+        }
+        else
+        {
+            xp=xp;
+        }
+    }
     
     /**
      * setter of posX
      */
     public void setPosX(int position)
-    {}
+    {
+        posX=position;
+    }
     
     /**
      * setter of posY
      */
     public void setPosY(int position)
-    {}
+    {
+        posY=position;
+    }
     
     /**
      * Method that increases the damage attribute of the character
      * based on the damage attribute of items
      */
-     public void increaseDamage(int Damage)
-     {}
+     public void increaseDamage(int DamageIncrease)
+     {
+         if(DamageIncrease>=0)
+        {
+            Damage+=DamageIncrease;
+        }
+        else
+        {
+            Damage=Damage;
+        }
+     }
      
-     /**
-     * Method that decreases the damage attribute of the character,
-     * this may occur if a player drops an item
-     */
-     public void decreaseDamage(int Damage)
-     {}
+    /**
+    * Method that decreases the damage attribute of the character,
+    * this may occur if a player drops an item
+    */
+    public void decreaseDamage(int DamageDecrease)
+    {
+        if(DamageDecrease>=0)
+        {
+            if((Damage-DamageDecrease)<0)
+            {
+                Damage=0;
+            }
+            else
+            {
+               Damage-=DamageDecrease; 
+            }
+        }
+        else
+        {
+            Damage=Damage;
+        } 
+    }
 }
