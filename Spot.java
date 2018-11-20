@@ -32,6 +32,7 @@ public class Spot
     {
         exits = new HashMap<String, Spot>();
     }
+    
       /**
      * Method setExit: defines an exit from this spot
      * Replaces the setExits method
@@ -44,7 +45,6 @@ public class Spot
     public void setExit(String direction, Spot neighbor){
         exits.put(direction, neighbor);
     }
-
    
      /**
      * Method getExit: returns the spot that we reach in the given direction
@@ -68,8 +68,34 @@ public class Spot
     }
     
     /**
-     * 
+     * Delete Spot
+     */
+    public void deleteSpot(Spot spot)
+    {
+        
+    }
+    
+    /**
+     * Method to exit a Spot
      */
     public void exit()
-    {}
+    {
+    }
+    
+    /**
+     * setter of isVisible
+     */
+    public void setVisible()
+    {
+        isVisible=true;
+    }
+    
+    /**
+     * getter of isVisible
+     */
+    public void getVisible()
+    {
+    }
+    
+    
 }
