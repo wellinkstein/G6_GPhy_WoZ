@@ -1,4 +1,3 @@
-
 /**
  * The class Monster is a specific object of the character class
  *
@@ -7,7 +6,7 @@
  */
 public class Monster extends Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+
     private String description; 
     /**
      * Constructeur d'objets de classe Monster
