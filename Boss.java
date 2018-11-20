@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Boss extends Monster
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+
     private ArrayList<Legendary> itemToKillMe;
 
     /**
