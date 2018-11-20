@@ -49,19 +49,25 @@ public class Player extends Character
     /**
      * 
      */
-    public void takeItem()
-    {}
+    public void takeItem(Item myItem)
+    {
+        inventory.add(myItem);
+    }
     
     /**
      * 
      */
     public int getLimitItem()
-    {return limitItem;}
+    {
+        return limitItem;
+    }
     
     /**
      * 
      */
     public int getHPMax()
-    {return hpMax;}
+    {
+        return hpMax;
+    }
     
 }

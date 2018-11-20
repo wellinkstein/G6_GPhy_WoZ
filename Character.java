@@ -10,7 +10,7 @@ import java.util.*;
 public class Character
 {
     
-    private int HP;
+    protected int HP;
     //HP is an attribute which reflects health points.
     //HP cannot be below 0, if HP is 0 the character dies.
     private String Name;
@@ -23,7 +23,7 @@ public class Character
     //The X axis position of the character
     private int posY;
     //The Y axis position of the character
-    private ArrayList<Item> inventory;
+    protected ArrayList<Item> inventory;
     //A list of items that the character possesses
     
     /**
@@ -89,6 +89,13 @@ public class Character
         return Damage;
     }
     
+    /**
+     * Get for the inventory
+     */
+    public Item getInventory(int emplacement)
+    {
+        return(inventory.get(emplacement));
+    }
     /**
      * Method that reduces the HP based on the damage attribute of another character.
      */

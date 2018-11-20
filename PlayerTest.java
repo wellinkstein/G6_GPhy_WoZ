@@ -71,8 +71,8 @@ public class PlayerTest
 
     public void testBadHP()
     {
-    Player testBadPlayer = new Player(-1);
-    assertNotSame(-1, testBadPlayer.getHP());
+        Player testBadPlayer = new Player(-1);
+        assertNotSame(-1, testBadPlayer.getHP());
     }
 
     
