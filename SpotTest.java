@@ -36,14 +36,14 @@ public class SpotTest
     private Player player; 
     private Spot spot; 
     
-    /**
+     /**
      * Constructeur de la classe-test RoomTest
      */
     public SpotTest()
     {
     }
 
-    /**
+     /**
      * Met en place les engagements.
      *
      * Methode appelee avant chaque appel de methode de test.
@@ -62,7 +62,7 @@ public class SpotTest
 
     }
 
-    /**
+     /**
      * Supprime les engagements
      *
      * Methode appelee apres chaque appel de methode de test.
@@ -81,6 +81,7 @@ public class SpotTest
     {
         
     }
+    
     /**
      * Test Item can not be >5 
      */
@@ -148,6 +149,23 @@ public class SpotTest
     // Verifier si supprime bien de la liste
     //Si pas deux characters ou items à la même place
     
+    
+    /**
+     * Test that when an Item is added, the number of items in the spot is updated
+     */
+    @Test
+    public void testNumberItemAddItem()
+    {
+        
+    }
+    
+    /**
+     * Test that when an Item is removed, the number of items in the spot is updated
+     */
+    @Test
+    public void testNumberItemRemoveItem()
+    {
+    }
     
     
 }
