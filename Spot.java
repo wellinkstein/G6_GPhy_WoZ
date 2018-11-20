@@ -23,10 +23,10 @@ public class Spot
     public Spot westExit;
     public Item rommItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
+    private HashMap<String, Spot> exits;
     
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-  
 
     /**
      * Create a room described "description". Initially, it has
@@ -37,6 +37,19 @@ public class Spot
     public Spot(String description) 
     {
         this.description = description;
+        exits = new HashMap<String, Spot>();
+    }
+      /**
+     * Method setExit: defines an exit from this spot
+     * Replaces the setExits method
+     *
+     * @param direction the direction of the exit
+     * @param neighbor the spot in the given direction
+
+     * @version version 2018/11 
+     */
+    public void setExit(String direction, Spot neighbor){
+        exits.put(direction, neighbor);
     }
 
     /**
@@ -57,6 +70,18 @@ public class Spot
             southExit = south;
         if(west != null)
             westExit = west;
+    }
+     /**
+     * Method getExit: returns the spot that we reach in the given direction
+     * If there is no spot in that direction, returns null
+     *
+     * @param direction The exit's direction
+     * @return The spot in the given direction
+     * 
+     * @version version 2018/11
+     */
+    public Spot getExit(String direction){
+        return exits.get(direction);
     }
 
     /**
