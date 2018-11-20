@@ -26,7 +26,21 @@ public class Player extends Character
      * if there is one in his inventory
      */
     public void drinkPotion()
-    {}
+    {
+        if(inventory.contains("Health Potion")==true||HP<20)
+        {
+            if(HP>=15)
+            {
+                HP=20;
+                System.out.println("First if i.e HP>=15");
+            }
+            else
+            {
+               HP=HP+5; 
+               System.out.println("else statement");
+            }
+        }    
+    }
 
     /**
      * method that teleports the player to the exit if the minotaur is

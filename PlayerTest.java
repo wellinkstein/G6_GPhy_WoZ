@@ -32,9 +32,7 @@ public class PlayerTest
     }
 
     /**
-     * Supprime les engagements
-     *
-     * Methode appelee apres chaque appel de methode de test.
+     * 
      */
     @After
     public void tearDown() // throws java.lang.Exception
@@ -203,6 +201,23 @@ public class PlayerTest
         assertEquals(0,myPlayer.getCritRate());
     }
 
+    /**
+     * This method tests if maximum Hp is indeed 20
+     */
+    @Test
+    public void testMaxHp()
+    {
+        assertEquals(20,myPlayer.getHPMax());
+    }
     
+    /**
+     * This method tests if the item limit is 10
+     */
+    @Test
+    public void testItemLimit()
+    {
+        assertEquals(10,myPlayer.getLimitItem());
+    }
+
     
 }

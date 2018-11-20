@@ -199,11 +199,11 @@ public class CharacterTest
     
     
     /**
-     * Supprime les engagements
      *
      */
     @After
     public void tearDown() // throws java.lang.Exception
     {
     }
+
 }

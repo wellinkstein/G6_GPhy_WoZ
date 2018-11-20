@@ -23,9 +23,7 @@ public class MonsterTest
     }
 
     /**
-     * Met en place les engagements.
-     *
-     * Methode appelee avant chaque appel de methode de test.
+     * Sets up the constructor that will be used in the tests
      */
     @Before
     public void setUp() // throws java.lang.Exception
@@ -79,9 +77,7 @@ public class MonsterTest
     
     
     /**
-     * Supprime les engagements
-     *
-     * Methode appelee apres chaque appel de methode de test.
+     * 
      */
     @After
     public void tearDown() // throws java.lang.Exception
