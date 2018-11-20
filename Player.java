@@ -15,10 +15,10 @@ public class Player extends Character
     /**
      * Constructeur d'objets de classe Player
      */
-    public Player(int myHP)
+    public Player(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY)
     {
         // initialisation des variables d'instance
-        super(myHP);
+        super(myHP,myName,myXp,myDamage,myPosX,myPosY);
     }
     
     /**
