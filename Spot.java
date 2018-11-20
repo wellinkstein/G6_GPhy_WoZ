@@ -21,13 +21,12 @@ public class Spot
     public Spot southExit;
     public Spot eastExit;
     public Spot westExit;
-    public Item rommItem;
+    public Item rommItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
     
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-    private int posYSpot;
-    private int posXSpot;
+  
 
     /**
      * Create a room described "description". Initially, it has
@@ -75,17 +74,6 @@ public class Spot
     {
     return 0;
     }
-    /**
-     * getter for posXSpot
-     */
-    public int getposXSpot()
-    {return posXSpot;}
-    
-    /**
-     * getter for posYSpot
-     */
-    public int getposYSpot()
-    {return posYSpot;}
     
     /**
      * 
