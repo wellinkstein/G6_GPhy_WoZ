@@ -6,8 +6,8 @@ import java.util.*;
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
  *
- * A "Room" represents one location in the scenery of the game.  It is 
- * connected to other rooms via exits.  The exits are labelled north, 
+ * A "Spot" represents one location in the scenery of the game.  It is 
+ * connected to other spots via exits.  The exits are labelled north, 
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
@@ -16,7 +16,6 @@ import java.util.*;
  */
 public class Spot
 {
-    public String description;
     public Item rommItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
     private HashMap<String, Spot> exits;
@@ -30,9 +29,8 @@ public class Spot
      * "an open court yard".
      * @param description The room's description.
      */
-    public Spot(String description) 
+    public Spot() 
     {
-        this.description = description;
         exits = new HashMap<String, Spot>();
     }
       /**
@@ -60,14 +58,6 @@ public class Spot
      */
     public Spot getExit(String direction){
         return exits.get(direction);
-    }
-
-    /**
-     * @return The description of the room.
-     */
-    public String getDescription()
-    {
-        return description;
     }
     
     /**
