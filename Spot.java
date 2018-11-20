@@ -26,8 +26,6 @@ public class Spot
     
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-    private int posYSpot;
-    private int posXSpot;
 
     /**
      * Create a room described "description". Initially, it has
