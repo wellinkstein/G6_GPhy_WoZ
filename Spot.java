@@ -16,8 +16,6 @@
  */
 public class Spot
 {
-    //public Item spotItem; 
-    //public Character hereCharacter;
     private int numberItem; //A spot contains between 0 and 5 items
     private HashMap<String, Spot> exits; //list of the exits
     private ArrayList<Character> characterInSpot; //all the character in a spot

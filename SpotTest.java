@@ -78,6 +78,11 @@ public class SpotTest
     @Test
     public void testItemsup5()
     {
+        Spot spot = new Spot();
+        // rajouter 5 items
+        assertequals(5, spot.getNumberOfItemInSpot());
+        // Rajouter 1 item
+        assertequals(5, spot.getNumberOfItemInSpot());
         
     }
     
