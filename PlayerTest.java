@@ -18,7 +18,7 @@ public class PlayerTest
      */
     public PlayerTest()
     {
-        Player testPlayer = new Player(20);
+        Player testPlayer = new Player(20,"Jimmy",2,2,1,1);
     }
 
     /**
@@ -29,7 +29,7 @@ public class PlayerTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-
+        Player testPlayer = new Player(20,"Jimmy",2,2,1,1);
     }
 
     /**
@@ -49,10 +49,9 @@ public class PlayerTest
     @Test
     public void testGoodHP()
     {
-        Player testPlayer = new Player(5);
-        assertEquals(5, testPlayer.getHP());
-
+        assertEquals(20, testPlayer.getHP());
     }
+    
 
     /**
      * Test that a player can't be created with a null amount of hp
@@ -61,7 +60,7 @@ public class PlayerTest
 
     public void testNullHP()
     {
-    Player testBadPlayer = new Player(0);
+    Player testBadPlayer = new Player(20,"Jimmy",2,2,1,1);
     assertNotSame(0, testBadPlayer.getHP());
     }
 
@@ -71,7 +70,7 @@ public class PlayerTest
 
     public void testBadHP()
     {
-        Player testBadPlayer = new Player(-1);
+        Player testBadPlayer = new Player(20,"Jimmy",2,2,1,1);
         assertNotSame(-1, testBadPlayer.getHP());
     }
 

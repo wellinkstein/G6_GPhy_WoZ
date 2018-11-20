@@ -37,14 +37,10 @@ public class Player extends Character
     /**
      * 
      */
-    public void runAway()
-    {}
-    
-    /**
-     * 
-     */
-    public void dropItem()
-    {}
+    public void dropItem(int itemDrop)
+    {
+        inventory.remove(itemDrop);
+    }
     
     /**
      * 
