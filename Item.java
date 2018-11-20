@@ -1,7 +1,11 @@
 /**
  * Decrivez votre classe Item ici.
  *
+<<<<<<< HEAD
  * @author Delphine et Yousra
+=======
+ * @author (votre nom)
+>>>>>>> acc22fb149bf9a345ee4aebab817bbe6c5f9ac96
  * @version (un numero de version ou une date)
  */
 public class Item

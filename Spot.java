@@ -6,8 +6,8 @@ import java.util.*;
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
  *
- * A "Room" represents one location in the scenery of the game.  It is 
- * connected to other rooms via exits.  The exits are labelled north, 
+ * A "Spot" represents one location in the scenery of the game.  It is 
+ * connected to other spots via exits.  The exits are labelled north, 
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
  * 
@@ -16,18 +16,11 @@ import java.util.*;
  */
 public class Spot
 {
-    public String description;
-    public Spot northExit;
-    public Spot southExit;
-    public Spot eastExit;
-    public Spot westExit;
-    public Item rommItem;
+    public Item spotItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
-    
+    private HashMap<String, Spot> exits;
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-    private int posYSpot;
-    private int posXSpot;
 
     /**
      * Create a room described "description". Initially, it has
@@ -35,37 +28,35 @@ public class Spot
      * "an open court yard".
      * @param description The room's description.
      */
-    public Spot(String description) 
+    public Spot() 
     {
-        this.description = description;
+        exits = new HashMap<String, Spot>();
+    }
+      /**
+     * Method setExit: defines an exit from this spot
+     * Replaces the setExits method
+     *
+     * @param direction the direction of the exit
+     * @param neighbor the spot in the given direction
+
+     * @version version 2018/11 
+     */
+    public void setExit(String direction, Spot neighbor){
+        exits.put(direction, neighbor);
     }
 
-    /**
-     * Define the exits of this room.  Every direction either leads
-     * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
+   
+     /**
+     * Method getExit: returns the spot that we reach in the given direction
+     * If there is no spot in that direction, returns null
+     *
+     * @param direction The exit's direction
+     * @return The spot in the given direction
+     * 
+     * @version version 2018/11
      */
-    public void setExits(Spot north, Spot east, Spot south, Spot west) 
-    {
-        if(north != null)
-            northExit = north;
-        if(east != null)
-            eastExit = east;
-        if(south != null)
-            southExit = south;
-        if(west != null)
-            westExit = west;
-    }
-
-    /**
-     * @return The description of the room.
-     */
-    public String getDescription()
-    {
-        return description;
+    public Spot getExit(String direction){
+        return exits.get(direction);
     }
     
     /**
@@ -75,17 +66,6 @@ public class Spot
     {
     return 0;
     }
-    /**
-     * getter for posXSpot
-     */
-    public int getposXSpot()
-    {return posXSpot;}
-    
-    /**
-     * getter for posYSpot
-     */
-    public int getposYSpot()
-    {return posYSpot;}
     
     /**
      * 

@@ -1,12 +1,10 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test RoomTest.
+ * Classe-test SpotTest.
  *
  * @author  (votre nom)
  * @version (un numero de version ou une date)
@@ -29,20 +27,13 @@ import org.junit.Test;
  * qui realise les engagements, et suivi d'un appel e tearDown(), qui les
  * detruit.
  */
-public class RoomTest
+public class SpotTest
 {
-    // Definissez ici les variables d'instance necessaires e vos engagements;
-    // Vous pouvez egalement les saisir automatiquement du presentoir
-    // e l'aide du menu contextuel "Presentoir --> Engagements".
-    // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du presentoir (les objets sans constructeur, comme int, float, etc.).
-    protected double fValeur1;
-    protected double fValeur2;
 
     /**
      * Constructeur de la classe-test RoomTest
      */
-    public RoomTest()
+    public SpotTest()
     {
     }
 
@@ -55,8 +46,7 @@ public class RoomTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+
     }
 
     /**
