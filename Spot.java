@@ -17,10 +17,6 @@ import java.util.*;
 public class Spot
 {
     public String description;
-    public Spot northExit;
-    public Spot southExit;
-    public Spot eastExit;
-    public Spot westExit;
     public Item rommItem; //A spot contains between 0 and 5 items
     public Character hereCharacter;
     private HashMap<String, Spot> exits;
@@ -52,25 +48,7 @@ public class Spot
         exits.put(direction, neighbor);
     }
 
-    /**
-     * Define the exits of this room.  Every direction either leads
-     * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
-     */
-    public void setExits(Spot north, Spot east, Spot south, Spot west) 
-    {
-        if(north != null)
-            northExit = north;
-        if(east != null)
-            eastExit = east;
-        if(south != null)
-            southExit = south;
-        if(west != null)
-            westExit = west;
-    }
+   
      /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
