@@ -6,7 +6,7 @@
  */
 public class Legendary extends Item
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    // variables d'instance - remplacez l'exemple qui suit par le vetre
     private int x;
 
     /**
@@ -19,14 +19,14 @@ public class Legendary extends Item
     }
 
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     * Un exemple de methode - remplacez ce commentaire par le vetre
      *
-     * @param  y   le paramètre de la méthode
+     * @param  y   le parametre de la methode
      * @return     la somme de x et de y
      */
     public int sampleMethod(int y)
     {
-        // Insérez votre code ici
+        // Inserez votre code ici
         return x + y;
     }
 }

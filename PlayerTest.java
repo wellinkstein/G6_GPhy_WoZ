@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Classe-test PlayerTest.
  *
- * @author  Jérémie Guilbaud
+ * @author  Jeremie Guilbaud
  * @version 14/11/2018
  *
  * This class tested the methods of the class Player.
@@ -24,7 +24,7 @@ public class PlayerTest
     /**
      * Met en place les engagements.
      *
-     * Méthode appelée avant chaque appel de méthode de test.
+     * Methode appelee avant chaque appel de methode de test.
      */
     @Before
     public void setUp() // throws java.lang.Exception
@@ -35,12 +35,12 @@ public class PlayerTest
     /**
      * Supprime les engagements
      *
-     * Méthode appelée après chaque appel de méthode de test.
+     * Methode appelee apres chaque appel de methode de test.
      */
     @After
     public void tearDown() // throws java.lang.Exception
     {
-        //Libérez ici les ressources engagées par setUp()
+        //Liberez ici les ressources engagees par setUp()
     }
 
     /**

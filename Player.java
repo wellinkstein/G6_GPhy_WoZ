@@ -7,7 +7,7 @@
  */
 public class Player extends Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    // variables d'instance - remplacez l'exemple qui suit par le vetre
     private int limitItem; //Maximal Item number of the player 
     private int hpMax; //Maximal Heart Point of the player
     private int critRate; 

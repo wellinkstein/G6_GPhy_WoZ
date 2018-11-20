@@ -9,33 +9,33 @@ import org.junit.Test;
  * Classe-test LegendaryTest.
  *
  * @author  (votre nom)
- * @version (un numéro de version ou une date)
+ * @version (un numero de version ou une date)
  *
- * Les classes-test sont documentées ici :
+ * Les classes-test sont documentees ici :
  * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
- * et sont basées sur le document Š 2002 Robert A. Ballance intitulé
+ * et sont basees sur le document e 2002 Robert A. Ballance intitule
  * "JUnit: Unit Testing Framework".
  *
- * Les objets Test (et TestSuite) sont associés aux classes à tester
+ * Les objets Test (et TestSuite) sont associes aux classes e tester
  * par la simple relation yyyTest (e.g. qu'un Test de la classe Name.java
  * se nommera NameTest.java); les deux se retrouvent dans le m?me paquetage.
  * Les "engagements" (anglais : "fixture") forment un ensemble de conditions
- * qui sont vraies pour chaque méthode Test à exécuter.  Il peut y avoir
- * plus d'une méthode Test dans une classe Test; leur ensemble forme un
+ * qui sont vraies pour chaque methode Test e executer.  Il peut y avoir
+ * plus d'une methode Test dans une classe Test; leur ensemble forme un
  * objet TestSuite.
- * BlueJ découvrira automatiquement (par introspection) les méthodes
- * Test de votre classe Test et générera la TestSuite conséquente.
- * Chaque appel d'une méthode Test sera précédé d'un appel de setUp(),
- * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
- * détruit.
+ * BlueJ decouvrira automatiquement (par introspection) les methodes
+ * Test de votre classe Test et generera la TestSuite consequente.
+ * Chaque appel d'une methode Test sera precede d'un appel de setUp(),
+ * qui realise les engagements, et suivi d'un appel e tearDown(), qui les
+ * detruit.
  */
 public class LegendaryTest
 {
-    // Définissez ici les variables d'instance nécessaires à vos engagements;
-    // Vous pouvez également les saisir automatiquement du présentoir
-    // à l'aide du menu contextuel "Présentoir --> Engagements".
+    // Definissez ici les variables d'instance necessaires e vos engagements;
+    // Vous pouvez egalement les saisir automatiquement du presentoir
+    // e l'aide du menu contextuel "Presentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du présentoir (les objets sans constructeur, comme int, float, etc.).
+    // du presentoir (les objets sans constructeur, comme int, float, etc.).
     protected double fValeur1;
     protected double fValeur2;
 
@@ -49,7 +49,7 @@ public class LegendaryTest
     /**
      * Met en place les engagements.
      *
-     * Méthode appelée avant chaque appel de méthode de test.
+     * Methode appelee avant chaque appel de methode de test.
      */
     @Before
     public void setUp() // throws java.lang.Exception
@@ -62,11 +62,11 @@ public class LegendaryTest
     /**
      * Supprime les engagements
      *
-     * Méthode appelée après chaque appel de méthode de test.
+     * Methode appelee apres chaque appel de methode de test.
      */
     @After
     public void tearDown() // throws java.lang.Exception
     {
-        //Libérez ici les ressources engagées par setUp()
+        //Liberez ici les ressources engagees par setUp()
     }
 }
