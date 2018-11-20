@@ -6,8 +6,8 @@ import org.junit.Test;
 /**
  * Classe-test SpotTest.
  *
- * @author  (votre nom)
- * @version (un numero de version ou une date)
+ * @author  Ludivin H & Jeremie G
+ * @version 2018-11
  *
  * Les classes-test sont documentees ici :
  * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
@@ -58,5 +58,14 @@ public class SpotTest
     public void tearDown() // throws java.lang.Exception
     {
         //Liberez ici les ressources engagees par setUp()
+    }
+    
+    /**
+     * Test Spot creation
+     */
+    @Test
+    public void testGoodRoom()
+    {
+        
     }
 }
