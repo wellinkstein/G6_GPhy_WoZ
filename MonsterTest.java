@@ -49,6 +49,21 @@ public class MonsterTest
     {
 
     }
+    
+        /**
+     * This test checks if Minotaur is a valid name
+     */
+    @Test
+    public void CheckGoodMonsterNameMinotaur()
+    {
+        goodMonster= new Monster(10,"Minotaur",1,5,0,0,"Le terrible minotaure");
+        assertEquals(10,goodMonster.getHP());
+        assertEquals("Minotaur",goodMonster.getName());
+        assertEquals(1,goodMonster.getXp());
+        assertEquals(5,goodMonster.getDamage());
+        assertEquals(0,goodMonster.getPosX());
+        assertEquals(0,goodMonster.getPosY());
+    }
 
     /**
      * Supprime les engagements
@@ -60,110 +75,5 @@ public class MonsterTest
     {
         //Liberez ici les ressources engagees par setUp()
     }
-    
-    /**
-     * This test checks if Minotaur is a valid name
-     */
-    @Test
-    public void CheckGoodMonsterNameMinotaur()
-    {
-        goodMonster= new Monster(10,"Minotaur",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Minotaur",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks if Medusa is a valid monster name 
-     */
-    @Test
-    public void CheckGoodMonsterNameMedusa()
-    {
-        goodMonster= new Monster(10,"Medusa",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Medusa",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks if Chimera is a valid monster name
-     */
-    @Test
-    public void CheckGoodMonsterNameChimera()
-    {
-        goodMonster= new Monster(10,"Chimera",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Chimera",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks if Arachne is a valid monster name
-     */
-    @Test
-    public void CheckGoodMonsterNameArachne()
-    {
-        goodMonster= new Monster(10,"Arachne",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Arachne",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks if Cyclops is a valid monster name
-     */
-    @Test
-    public void CheckGoodMonsterNameCyclops()
-    {
-        goodMonster= new Monster(10,"Cyclops",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Cyclops",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks if Cerberus is a valid monster name
-     */
-    @Test
-    public void CheckGoodMonsterNameCerberus()
-    {
-        goodMonster= new Monster(10,"Cerberus",1,5,0,0);
-        assertEquals(10,goodMonster.getHP());
-        assertEquals("Cerberus",goodMonster.getName());
-        assertEquals(1,goodMonster.getXp());
-        assertEquals(5,goodMonster.getDamage());
-        assertEquals(0,goodMonster.getPosX());
-        assertEquals(0,goodMonster.getPosY());
-    }
-    
-    /**
-     * This test checks for bad monster names
-     */
-    @Test
-    public void CheckBadMonsterName()
-    {
-        badMonster= new Monster(10,"Blarg",1,5,0,0);
-        assertEquals(10,badMonster.getHP());
-        assertEquals("Blarg",badMonster.getName());
-        assertEquals(1,badMonster.getXp());
-        assertEquals(5,badMonster.getDamage());
-        assertEquals(0,badMonster.getPosX());
-        assertEquals(0,badMonster.getPosY());
-    }
-    
+        
 }
