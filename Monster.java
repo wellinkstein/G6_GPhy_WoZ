@@ -41,7 +41,16 @@ public class Monster extends Character
     /**
      * delete the monster from the list
      */
-    public void isDead()
-    {}
+    public boolean isDead()
+    {
+        if(HP==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

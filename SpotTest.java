@@ -71,6 +71,14 @@ public class SpotTest
     {
         
     }
+    /**
+     * Test Item can not be >5 
+     */
+    @Test
+    public void testItemsup5()
+    {
+        
+    }
     
     /**
      * Test Spot new exit

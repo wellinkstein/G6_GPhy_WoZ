@@ -29,6 +29,7 @@ import org.junit.Test;
  */
 public class MonsterTest
 {
+    private Monster myMonster;
     private Monster goodMonster;
     private Monster badMonster;
 
@@ -37,6 +38,7 @@ public class MonsterTest
      */
     public MonsterTest()
     {
+        
     }
 
     /**
@@ -47,11 +49,11 @@ public class MonsterTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-
+        myMonster = new Monster(10,"Medusa",1,2,5,5,"Snake Lady");
     }
     
         /**
-     * This test checks if Minotaur is a valid name
+     * This test checks if Minotaur is a valid name and that the constructor and getters work
      */
     @Test
     public void CheckGoodMonsterNameMinotaur()
@@ -64,7 +66,37 @@ public class MonsterTest
         assertEquals(0,goodMonster.getPosX());
         assertEquals(0,goodMonster.getPosY());
     }
-
+    
+    /**
+     * Method that tests the get description function
+     */
+    @Test
+    public void CheckMonsterDescription()
+    {
+        assertEquals ("Snake Lady",myMonster.getDescription());
+    }
+    
+    /**
+     * Tests if the monster is really dead (HP=0)
+     */
+    @Test
+    public void CheckMonsterDeathTrue()
+    {
+        myMonster.loseHp(15);
+        assertEquals (true,myMonster.isDead());
+    }
+    
+    /**
+     * Checks if the monster is still alive (HP > 0)
+     */
+    @Test
+    public void CheckMonsterDeathFalse()
+    {
+        myMonster.loseHp(9);
+        assertEquals (false,myMonster.isDead());
+    }
+    
+    
     /**
      * Supprime les engagements
      *
