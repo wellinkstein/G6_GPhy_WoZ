@@ -1,4 +1,4 @@
-import java.util.*;
+ import java.util.*;
 
 /**
  * Class Spot - a spot in an adventure game.
