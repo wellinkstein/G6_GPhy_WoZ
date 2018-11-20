@@ -68,4 +68,13 @@ public class SpotTest
     {
         
     }
+    
+    /**
+     * Test badSpot creation
+     */
+    @Test
+    public void testBadRoom()
+    {
+        assertfalse(badRoom.get(spotCorrect));
+    }
 }

@@ -26,12 +26,13 @@ public class Spot
     private boolean spotCorrect; //boolean if the spot is well created
 
     /**
-     * Create a HashMap
+     * Create a spot with a Haspmap to know the direction of exit
      */
     public Spot() 
     {
         exits = new HashMap<String, Spot>();
     }
+    
       /**
      * Method setExit: defines an exit from this spot
      * Replaces the setExits method
@@ -44,7 +45,6 @@ public class Spot
     public void setExit(String direction, Spot neighbor){
         exits.put(direction, neighbor);
     }
-
    
      /**
      * Method getExit: returns the spot that we reach in the given direction
@@ -68,8 +68,35 @@ public class Spot
     }
     
     /**
-     * 
+     * Delete Spot
+     */
+    public void deleteSpot(Spot spot)
+    {
+        
+    }
+    
+    /**
+     * Method to exit a Spot
      */
     public void exit()
-    {}
+    {
+    }
+    
+    /**
+     * setter of isVisible
+     */
+    public void setVisible()
+    {
+        isVisible=true;
+    }
+    
+    /**
+     * getter of isVisible
+     */
+    public boolean getVisible()
+    {
+        return(isVisible);
+    }
+    
+    
 }
