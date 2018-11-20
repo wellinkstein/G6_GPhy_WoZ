@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Lesser_Boss extends Monster
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+
     private Legendary possessedLegendary;
     private ArrayList<Common> itemsToKillMe;
     private boolean aggressive; //The aggressivity of the lesser boss
