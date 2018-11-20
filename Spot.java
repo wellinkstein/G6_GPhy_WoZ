@@ -93,8 +93,9 @@ public class Spot
     /**
      * getter of isVisible
      */
-    public void getVisible()
+    public boolean getVisible()
     {
+        return(isVisible);
     }
     
     
