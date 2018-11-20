@@ -23,6 +23,7 @@ public class Spot
     private ArrayList<Item> objectInSpot; //all the item in a spot
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
+    private boolean spotCorrect; //boolean if the spot is well created
 
     /**
      * Create a HashMap
