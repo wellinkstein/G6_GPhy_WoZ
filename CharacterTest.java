@@ -8,8 +8,8 @@ import org.junit.Test;
 /**
  * Classe-test CharacterTest.
  *
- * @author  (votre nom)
- * @version (un numero de version ou une date)
+ * @author  (Yohan and Corentin)
+ * @version (V1)
  *
  */
 public class CharacterTest

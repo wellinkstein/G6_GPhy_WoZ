@@ -1,5 +1,7 @@
 /**
  * The class Monster is a specific object of the character class
+ * It will contain Lesser Monsters and Boss Monsters
+ * The descritption attribute is specific to this class as a monster will have to be described to the player
  *
  * @author (Groupe 6)
  * @version (2018-11-14)

@@ -6,39 +6,20 @@ import org.junit.Test;
 /**
  * Classe-test MonsterTest.
  *
- * @author  (votre nom)
- * @version (un numero de version ou une date)
+ * @author  (Yohan et Corentin)
+ * @version (V1)
  *
- * Les classes-test sont documentees ici :
- * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
- * et sont basees sur le document e 2002 Robert A. Ballance intitule
- * "JUnit: Unit Testing Framework".
- *
- * Les objets Test (et TestSuite) sont associes aux classes e tester
- * par la simple relation yyyTest (e.g. qu'un Test de la classe Name.java
- * se nommera NameTest.java); les deux se retrouvent dans le m?me paquetage.
- * Les "engagements" (anglais : "fixture") forment un ensemble de conditions
- * qui sont vraies pour chaque methode Test e executer.  Il peut y avoir
- * plus d'une methode Test dans une classe Test; leur ensemble forme un
- * objet TestSuite.
- * BlueJ decouvrira automatiquement (par introspection) les methodes
- * Test de votre classe Test et generera la TestSuite consequente.
- * Chaque appel d'une methode Test sera precede d'un appel de setUp(),
- * qui realise les engagements, et suivi d'un appel e tearDown(), qui les
- * detruit.
  */
 public class MonsterTest
 {
     private Monster myMonster;
     private Monster goodMonster;
-    private Monster badMonster;
 
     /**
      * Constructeur de la classe-test MonsterTest
      */
     public MonsterTest()
     {
-        
     }
 
     /**
@@ -105,7 +86,6 @@ public class MonsterTest
     @After
     public void tearDown() // throws java.lang.Exception
     {
-        //Liberez ici les ressources engagees par setUp()
     }
         
 }

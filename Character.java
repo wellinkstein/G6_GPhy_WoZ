@@ -15,7 +15,7 @@ public class Character
     //HP cannot be below 0, if HP is 0 the character dies.
     private String Name;
     // The name of the character
-    private int xp;
+    protected int xp;
     //The XP of the character, XP can be gained, not lost
     private int Damage;
     //This attribute represents the damage that a character inflicts in a single hit
@@ -191,6 +191,22 @@ public class Character
     public void setPosY(int position)
     {
         posY=position;
+    }
+    
+    /**
+     * A method that exists to test functions related to Xp
+     */
+    protected void setHp(int setHp)
+    {
+        HP=setHp;
+    }
+    
+    /**
+     * A method that exists to test function related to Xp
+     */
+    protected void setXp(int setXp)
+    {
+        xp=setXp;
     }
     
     /**
