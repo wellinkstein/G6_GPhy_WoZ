@@ -29,12 +29,15 @@ public class Spot
     /**
      * Create a spot with a Haspmap to know the direction of exit
      */
-    public Spot() 
+    public Spot(ArrayList<Character> characterSpot, ArrayList<Item>objectSpot) 
     {
         exits = new HashMap<String, Spot>();
         isVisible = false;
         fighting = false;
         spotCorrect = false;
+        numberItem = 0;
+        characterInSpot=characterSpot;
+        objectInSpot=objectSpot;
     }
     
       /**
@@ -46,7 +49,7 @@ public class Spot
 
      * @version version 2018/11 
      */
-    public void setExits(String direction, Spot neighbor){
+     public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
         spotCorrect = true;
     }
@@ -60,14 +63,14 @@ public class Spot
      * 
      * @version version 2018/11
      */
-    public Spot getExits(String direction){
+     public Spot getExits(String direction){
         return exits.get(direction);
     }
     
     /**
      * return the number of item in the spot
      */
-    public int numberOfItemInSpot()
+    public int getNumberOfItemInSpot()
     {
     return 0;
     }
