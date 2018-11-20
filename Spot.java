@@ -65,7 +65,7 @@ public class Spot
     /**
      * return the number of item in the spot
      */
-    public int numberOfItemInSpot()
+    public int getNumberOfItemInSpot()
     {
     return 0;
     }
@@ -100,6 +100,31 @@ public class Spot
     {
         return(isVisible);
     }
+    /**
+     * Add Item at Spot
+     */
+    public void addItem(Item items){
+    }
+    /** 
+     * Add Character at Spot
+     */
+    public void addCharacter(Character Player){
+    }
+    /**
+     * Get the list of character
+     */
+    public ArrayList getListCharacter()
+    {
+        return(characterInSpot);
+    }
+    /**
+     * Get the list of items
+     */
+    public ArrayList getListItem()
+    {
+        return(objectInSpot);
+    }
+    
     
     
 }
