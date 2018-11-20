@@ -7,7 +7,7 @@
  */
 public class Monster extends Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+
     private String description; 
     /**
      * Constructeur d'objets de classe Monster

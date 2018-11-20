@@ -7,7 +7,7 @@
  */
 public class Common extends Item
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+
     private String type; //What the common item is
 
     /**

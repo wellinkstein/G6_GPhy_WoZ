@@ -1,33 +1,48 @@
 import java.util.*;
 
 /**
- * The Character class is the characteristic of the Monster and the Player
+ * This class is the base class (super class) for all of the characters of the game.
+ * These characters are the player and monsters, which are split into two sub classes.
  *
- * @author (Groupe 6)
- * @version (2018-11-14)
+ * @author (Yohan/Corentin)
+ * @version (V1)
  */
 public class Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int HP; //The heart point
+    
+    private int HP;
+    //HP is an attribute which reflects health points.
+    //HP cannot be below 0, if HP is 0 the character dies.
     private String Name;
-    private int xp; //The level of the game
-    private int Damage; 
-    private int posX; //position of the character
-    private int posY; //position of the character
-    private ArrayList<Item> inventaire;
+    // The name of the character
+    private int xp;
+    //The XP of the character, XP can be gained, not lost
+    private int Damage;
+    //This attribute represents the damage that a character inflicts in a single hit
+    private int posX;
+    //The X axis position of the character
+    private int posY;
+    //The Y axis position of the character
+    private ArrayList<Item> inventory;
+    //A list of items that the character possesses
     
     /**
      * Constructeur d'objets de classe Character
      */
-    public Character(int myHP)
+    public Character(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY)
     {
-        // initialisation des variables d'instance
+        
         HP = myHP;
+        Name = myName;
+        xp = myXp;
+        Damage = myDamage;
+        posX = myPosX;
+        posY = myPosY;
+        
     }
     
     /**
-     * getter pour les HP
+     * Method that returns the HP
      */
     public int getHP()
     {
@@ -35,7 +50,7 @@ public class Character
     }
     
     /**
-     * getter pour l'xp
+     * Method that returns the Xp
      */
     public int getXp()
     { 
@@ -43,19 +58,23 @@ public class Character
     }
     
     /**
-     * getter pour posX
+     * Method that returns posX
      */
     public int getPosX()
-    {return posX;}
+    {
+        return posX;
+    }
 
     /**
-     * getter pour posY
+     * Method that returns posY
      */
     public int getPosY()
-    {return posY;}
+    {
+        return posY;
+    }
     
     /**
-     * getter for the name
+     * Method that returns the name
      */
     public String getName()
     {
@@ -63,17 +82,15 @@ public class Character
     }
     
     /**
-     * getter pour les dommage
+     * Method that returns that damage
      */
     public int getDamage()
     {
         return Damage;
     }
     
-    
-    
     /**
-     * MEthod qui descend les HP
+     * Method that reduces the HP based on the damage attribute of another character.
      */
     public void loseHp(int damage)
     {
@@ -81,7 +98,7 @@ public class Character
     }
     
     /**
-     * Method qui fait avancer le charater vers le haut
+     * Method that moves the player forward
      */
     public void moveUp()
     {
@@ -89,7 +106,7 @@ public class Character
     }
     
     /**
-     * Method qui fait avancer le charater vers le bas
+     * Method that moves the players backwards
      */
     public void moveDown()
     {
@@ -97,7 +114,7 @@ public class Character
     }
     
     /**
-     * Method qui fait avancer le charater vers la droite
+     * Method that moves the player to the right
      */
     public void moveRight()
     {
@@ -105,7 +122,7 @@ public class Character
     }
     
     /**
-     * Method qui fait avancer le charater vers la gauche
+     * Method that moves the player to the left
      */
     public void moveLeft()
     {
@@ -113,43 +130,51 @@ public class Character
     }
     
     /**
-     * Method qui initie un combat
+     * Method that initiates combat
      */
     public void fight()
     {}
     
     /**
-     * methode qui redonne des HP
+     * Method that causes a player to not initiate the combat sequence
+     */
+    public void runAway()
+    {}
+    
+    /**
+     * Methode that gives HP based on the gainHP attribute that is found in items.
      */
     public void gainHP(int gainHP)
     {}
     
     /**
-     * methode qui donne de l'xp
+     * Method that gives Xp based on the gainXP attribute
      */
     public void gainXp(int gainXP)
     {}
     
     /**
-     * setter de posX
+     * setter of posX
      */
     public void setPosX(int position)
     {}
     
     /**
-     * setter de posY
+     * setter of posY
      */
     public void setPosY(int position)
     {}
     
     /**
-     * methode qui augmente les dommages
+     * Method that increases the damage attribute of the character
+     * based on the damage attribute of items
      */
      public void increaseDamage(int Damage)
      {}
      
      /**
-     * methode qui diminue les dommages
+     * Method that decreases the damage attribute of the character,
+     * this may occur if a player drops an item
      */
      public void decreaseDamage(int Damage)
      {}
