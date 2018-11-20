@@ -25,7 +25,7 @@ public class Spot
     private boolean fighting; //boolean if a monster and a player are in the same spot
 
     /**
-     * Create a HashMap
+     * Create a spot with a Haspmap to know the direction of exit
      */
     public Spot() 
     {
