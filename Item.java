@@ -1,23 +1,33 @@
 /**
- * Décrivez votre classe Item ici.
+ * Decrivez votre classe Item ici.
  *
+<<<<<<< HEAD
+ * @author Delphine et Yousra
+=======
  * @author (votre nom)
- * @version (un numéro de version ou une date)
+>>>>>>> acc22fb149bf9a345ee4aebab817bbe6c5f9ac96
+ * @version (un numero de version ou une date)
  */
 public class Item
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    // variables d'instance - remplacez l'exemple qui suit par le vï¿½tre
     private int damage; //damage of the item
     private int protection; //protection of the item
     private int healthGain; //health gain of the item
     private String name; //name of the item
     private String description; //description of the item
+    private int count = 0;
+    private int itemID; // permet de differencier les differents items
 
     /**
      * Constructeur d'objets de classe Item
      */
-    public Item()
-    {
+    public Item(String itemName, String des, int id, int dam)
+    { 
+        name = itemName;
+        description = des;
+        itemID = ++count;
+        damage = dam;
     }
     
     /**

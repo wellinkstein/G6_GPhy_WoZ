@@ -1,4 +1,3 @@
-
 /**
  * Decrivez votre classe Fight ici.
  *

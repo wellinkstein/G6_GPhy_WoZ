@@ -1,4 +1,3 @@
-
 /**
  * The class Monster is a specific object of the character class
  *
@@ -12,10 +11,11 @@ public class Monster extends Character
     /**
      * Constructeur d'objets de classe Monster
      */
-    public Monster(int myHP)
+    public Monster(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY, String myDes)
     {
         // initialisation des variables d'instance
-        super(myHP);
+        super(myHP,myName,myXp,myDamage,myPosX,myPosY);
+        description = myDes;
     }
     
     /**
@@ -27,8 +27,10 @@ public class Monster extends Character
     /**
      * setter for description
      */
-    public void setDescription()
-    {}
+    public void setDescription(String myDes)
+    {
+        description = myDes;
+    }
     
     /**
      * 

@@ -33,7 +33,6 @@ public class CharacterTest
     public void setUp()
     {
         myCharacter = new Character(20,"Jimmy",2,2,1,1);
-        myItem = new Item();
     }
 
     
