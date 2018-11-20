@@ -32,7 +32,7 @@ public class Fight
     /**
      * 
      */
-    public boolean mosnterAttack()
+    public boolean monsterAttack()
     {return true;}
     
     /**
