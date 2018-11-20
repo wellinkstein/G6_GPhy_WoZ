@@ -26,7 +26,7 @@ public class Spot
     private boolean spotCorrect; //boolean if the spot is well created
 
     /**
-     * Create a HashMap
+     * Create a spot with a Haspmap to know the direction of exit
      */
     public Spot() 
     {
