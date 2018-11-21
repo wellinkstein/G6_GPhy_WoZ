@@ -123,7 +123,7 @@ public class SpotTest
     }
     
     /**
-     * Test which verify if character is added at the list.
+     * Test which verify if the character is added at the list.
      */
     public void verifyCharacterList(){
         spot.addCharacterSpot(player);
@@ -138,7 +138,7 @@ public class SpotTest
     }
     
     /**
-     * Test which verify if item is added at the list.
+     * Test which verify if an item is added at the list of the spot.
      */
     public void verifyItemList(){
         spot.addItemSpot(it1);
@@ -152,7 +152,7 @@ public class SpotTest
         
     }
     
-    // Verifier si supprime bien de la liste
+    // Verifier si supprime bienitem  de la liste
     // Vérifier si pas plus de 2 charactères dans la classe
     //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
     
@@ -163,6 +163,7 @@ public class SpotTest
     public void testSpotNotCorrect(){
         
     }
+    
     /**
      * Test which verify if there is only one monster in a spot
      */
@@ -182,22 +183,42 @@ public class SpotTest
     }
     
     /**
-     * Test that when an Item is added to the spot, the number of items in the spot is updated
-     */
-    @Test
-    public void testNumberItemAddItem()
-    {
-        spot.addItemSpot(it1);
-        assertEquals(1,spot.getNumberOfItemInSpot());
-    }
-    
-    /**
-     * Test that when an Item is removed, the right number of items is in the spot 
+     * Test that when an Item is removed, it is removed from the array list of the spot
      */
     @Test
     public void testNumberItemRemoveItem()
     {
-        
+        spot.addItemSpot(it1);
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if (spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertTrue(test);
     }
-
+    
+    // Vérifier si un lesser monster ne peut pas aller dans la salle du boss
+    // Vérifier 2 caractères
+    // Vérifier pas 3 caratères
+    // Vérifier removeCharactere quand list vide ne change pas la liste
+    
+    /**
+     * Test than when an item is removed from the array list and that there is no
+     * item in that list, the list remains empty
+     */
+    @Test
+    public void test()
+    {
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if(spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertEquals(0,spot.getListItem().size());
+        assertTrue(test);
+    }
 }
