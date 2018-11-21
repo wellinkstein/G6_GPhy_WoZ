@@ -34,20 +34,20 @@ public class Item
     /**
      * setter for the damage
      */
-    public void setDamage()
-    {}
+    public void setDamage (int Dam)
+    {damage = Dam;}
     
     /**
-     * setter for the protection
+     * setter for the protectio
      */
-    public void setProtection()
-    {}
+    public void setProtection(int Prot )
+    {protection = Prot;}
     
     /**
      * setter for the name
      */
-    public void setName()
-    {}
+    public void setName(String myName)
+    {name = myName;}
     
     /**
      * A method to get the damage of the item
