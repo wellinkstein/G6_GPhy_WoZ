@@ -28,7 +28,7 @@ public class PlayerTest
     @Before
     public void setUp()
     {
-        myPlayer = new Player(20,"Jimmy",2,2,1,1);
+        myPlayer = new Player(20,"Jimmy",2,2);
     }
 
     /**
@@ -56,7 +56,7 @@ public class PlayerTest
 
     public void testNullHP()
     {
-        Player testBadPlayer = new Player(20,"Jimmy",2,2,1,1);
+        Player testBadPlayer = new Player(20,"Jimmy",2,2);
         assertNotSame(0, testBadPlayer.getHP());
     }
 
@@ -66,7 +66,7 @@ public class PlayerTest
 
     public void testBadHP()
     {
-        Player testBadPlayer = new Player(20,"Jimmy",2,2,1,1);
+        Player testBadPlayer = new Player(-1,"Jimmy",2,2);
         assertNotSame(-1, testBadPlayer.getHP());
     }
 
@@ -80,19 +80,8 @@ public class PlayerTest
     {
         Item potion = new Item("Health Potion","A potion that heals 5 HP",0,0,5);
         myPlayer.takeItem(potion);
+        assertEquals(1,myPlayer.inventory.size());
         assertEquals(potion, myPlayer.getItems(0));
-    }
-
-    /**
-     * Test that a player can take a correct item
-     */
-
-    @Test
-    public void testTakeWrongItem()
-    {
-        //Item potion = new Item (1,2,-3);
-        //myPlayer.takeItem(potion);
-        //assertEquals(null, myPlayer.getItem(0));
     }
 
     /**
@@ -102,13 +91,36 @@ public class PlayerTest
     @Test
     public void testDrinkPotion()
     {
-        //Item potion = new Item(0,0,5);
-        //myPlayer.takeItem(potion);
-        //myPlayer.drinkPotion();
-        //assertEquals(25, myPlayer.getHP());
-        //assertEquals(null, myPlayer.getItem(0));
+        myPlayer = new Player(15,"Jimmy",2,2);
+        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        Item potion2 = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion2);
+        myPlayer.drinkPotion();
+        assertEquals(20, myPlayer.getHP());
+        assertEquals(1, myPlayer.inventory.size());
 
     }
+    
+    /**
+     * Test that a player keeps other items when drinking a health potion
+     * He only "loses" the health potion used.
+     */
+
+    @Test
+    public void testDrinkPotionWithSword()
+    {
+        myPlayer = new Player(15,"Jimmy",2,2);
+        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        Item sword = new Item("Iron Sword","A medium length blade",3,0,0);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(sword);
+        myPlayer.drinkPotion();
+        assertEquals(20, myPlayer.getHP());
+        assertEquals(1, myPlayer.inventory.size());
+
+    }
+    
     
     /**
      * Test that a player cannot drink a potion if he
@@ -118,8 +130,9 @@ public class PlayerTest
     @Test
     public void testDrinkNoPotion()
     {
+        myPlayer = new Player(15,"Jimmy",2,2);
         myPlayer.drinkPotion();
-        assertEquals(20, myPlayer.getHP());     
+        assertEquals(15, myPlayer.getHP());     
     }
 
     /**
@@ -130,6 +143,8 @@ public class PlayerTest
     @Test
     public void testDrinkPotionOverHp()
     {
+        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        myPlayer.takeItem(potion);
         myPlayer.setHp(19);
         myPlayer.drinkPotion();
         assertEquals(20, myPlayer.getHP()); 
@@ -142,11 +157,11 @@ public class PlayerTest
     @Test
     public void testDropItem()
     {
-        //Item potion = new Item (0,0,5);
-        //myPlayer.takeItem(potion);
-        //assertEquals(potion, myPlayer.getItem(0));
-        //myPlayer.dropItem(0);
-        //assertEquals(null, myPlayer.getItem(0));
+        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        myPlayer.takeItem(potion);
+        assertEquals(potion, myPlayer.getItems(0));
+        myPlayer.dropItem(potion);
+        assertEquals(0, myPlayer.inventory.size());
     }
     
     /**
@@ -157,7 +172,12 @@ public class PlayerTest
     @Test
     public void testDropFalseItem()
     {
-        
+       Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+       Item potion2 = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+       myPlayer.takeItem(potion);
+       assertEquals(potion, myPlayer.getItems(0));
+       myPlayer.dropItem(potion2); 
+       assertEquals(1,myPlayer.inventory.size());
     }
     
     /**
@@ -168,7 +188,19 @@ public class PlayerTest
     @Test
     public void testGetOverMaxItem()
     {
-        
+        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion);
+        assertEquals(10,myPlayer.inventory.size());
     }
     
     @Test
