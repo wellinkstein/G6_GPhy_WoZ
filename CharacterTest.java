@@ -49,27 +49,6 @@ public class CharacterTest
     }
     
     /**
-     * test for the gainHP method
-     */
-    @Test
-    public void testGainHP()
-    {
-        myCharacter.gainHP(5);
-        assertEquals(25,myCharacter.getHP());
-    }
-    
-    /**
-     * test for negative gain of HP
-     * This should not be possible
-     */
-    @Test
-    public void testGainNegativeHP()
-    {
-        myCharacter.gainHP(-10);
-        assertEquals(20,myCharacter.getHP());
-    }
-    
-    /**
      * test for decrease HP
      */
     @Test
@@ -82,12 +61,23 @@ public class CharacterTest
     
     /**
      * test for loseHP with negative parameters
-     * The loseHP method should always be a negative value
+     * The loseHP method should always be a positive value above zero
      */
     @Test
     public void testLoseNegativeHP()
     {
         myCharacter.loseHp(-10);
+        assertEquals(20,myCharacter.getHP());
+    }
+    
+    /**
+     * test for loseHP with 0 value
+     * The loseHP method should always be a positive value above zero
+     */
+    @Test
+    public void testLoseZeroHP()
+    {
+        myCharacter.loseHp(0);
         assertEquals(20,myCharacter.getHP());
     }
     
@@ -102,13 +92,23 @@ public class CharacterTest
     }
     
     /**
-     * test for adding an item to the inventory
      * XP cannot be lost
      */
     @Test
     public void testGainNegativeXP()
     {
         myCharacter.gainXp(-10);
+        assertEquals(2,myCharacter.getXp());
+    }
+    
+    /**
+     * test for adding an item to the inventory
+     * XP cannot be lost
+     */
+    @Test
+    public void testGainZeroXP()
+    {
+        myCharacter.gainXp(0);
         assertEquals(2,myCharacter.getXp());
     }
     
@@ -134,6 +134,17 @@ public class CharacterTest
     }
     
     /**
+     * test for increaseDamage with zero value
+     * This should not be possible
+     */
+    @Test
+    public void testIncreaseZeroDamage()
+    {
+        myCharacter.increaseDamage(0);
+        assertEquals(2,myCharacter.getDamage());
+    }
+    
+    /**
      * test for decreaseDamage
      * damage cannot be below 0
      */
@@ -145,13 +156,24 @@ public class CharacterTest
     }
     
     /**
-     * test for decreaseDamage with positive parameters
+     * test for decreaseDamage with negative parameters
      * This should not work
      */
     @Test
     public void testDecreaseNegativeDamage()
     {
         myCharacter.decreaseDamage(-10);
+        assertEquals(2,myCharacter.getDamage());
+    }
+    
+    /**
+     * test for decreaseDamage with zero value
+     * This should not work
+     */
+    @Test
+    public void testDecreaseZeroDamage()
+    {
+        myCharacter.decreaseDamage(0);
         assertEquals(2,myCharacter.getDamage());
     }
 
