@@ -19,18 +19,21 @@
 public class Game 
 {
     private Spot currentSpot; // position of player
-    private boolean finished; // false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out
-       
-    /**
+    private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
+    int line = 8; //number of lines in the matrix;
+    int column = 9; //number of columns in the matrix;
+    ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
+    /** 
      * Create the game and initialise its internal map.
      */
     public Game() 
     {
         createLabyrinth();
+        finished = false;
     }
 
     /**
-     * Create all the spots and link their exits together.
+     * Create all the spots and link their exits together. Defines the start, exit and current spot.
      */
     private void createLabyrinth()
     {
@@ -43,7 +46,6 @@ public class Game
         // Spot spot18, spot28, spot38, spot48, spot58, spot68, spot78, spot88, spot98;
         // Spot spot17, spot27, spot37, spot47, spot57, spot67, spot77, spot87, spot97;
         
-        int numberOfSpots = 72;
     
         Spot spot11, spot21, spot31, spot41, spot51, spot61, spot71, spot81, spot91;
         Spot spot12, spot22, spot32, spot42, spot52, spot62, spot72, spot82, spot92;
@@ -57,7 +59,12 @@ public class Game
         ArrayList<Character> listC = new ArrayList();
         ArrayList<Item> listI = new ArrayList();
         
-      
+        
+         for (int i = 0; i < line*column; i++) { 
+              listSpot.add(new Spot(null,null));
+          }
+          
+         
         // create the rooms
         spot11 = new Spot(listC,listI);
         spot21 = new Spot(listC,listI);
@@ -145,6 +152,7 @@ public class Game
         spot51.setExits("D",spot61);
         spot61.setExits("Q",spot51);
         spot61.setExits("S",spot62);
+        spot71.setExits("Z",null);
         spot71.setExits("S",spot72);
         spot71.setExits("D",spot81);
         spot81.setExits("Q",spot71);
@@ -263,32 +271,51 @@ public class Game
         spot88.setExits("Q",spot78);
         spot88.setExits("Z",spot87);
         spot98.setExits("Z",spot97);
+        // à remplacer par des defineExits
         
-        // ArrayList<Spot> listSpot = new ArrayList();
-        
-         // for (int i = 0; i < numberOfSpots; i++) { 
-             // listSpot.add(new Spot(listC,listI));
-            // }
-        //initialize start spot and exit spot
+        //initialize start spot and exit spot 
+        // à remplacer par exitAndStart
         spot11.setStartSpot();
         spot71.setExitSpot();
 
-        currentSpot = spot11;  // start game 
+         currentSpot = spot11;// start game
     }
-
+    
+    /**
+     *  Defines the exits of a spot
+     */
+    public void defineExits(String direction, Spot spot)
+    {
+    }
+    
+     /**
+     *  Defines the only exit and the only start of the labyrinth (two separate spots)
+     */
+    public void exitAndStart()
+    {
+    }
+    
+      /**
+     *  Defines the only exit and the only start of the labyrinth (two separate spots)
+     */
+    public void fillListSpot()
+    {
+        
+         
+    }
     
     /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
     {            
-       
+        
         
         printWelcome();
 
         
                 
-        boolean finished = false;
+        
         while (! finished) {
             
         }
@@ -333,7 +360,16 @@ public class Game
     { 
         currentSpot = currentS;         
     }
-    /**
+    
+     /**
+     *  Get the list of spots of the labyrinth 
+     */
+    public ArrayList getListSpot() 
+    { 
+        return listSpot;         
+    }
+    
+     /**
      * Print out the opening message for the player.
      */
     private void printWelcome()
