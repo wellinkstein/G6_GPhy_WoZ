@@ -19,11 +19,7 @@ public class Item
 
     /**
      * Constructeur of an Item
-     * @name: the name of the item
-     * @itemID: the id of the item
-     * @description: the description of the item
-     * @damage: the damage of the item
-     * @healthGain: the health gain of the item
+     * 
      */
     public Item(String itemName, String des, int dam, int prot, int HG)
     { 
