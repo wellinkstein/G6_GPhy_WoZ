@@ -61,7 +61,6 @@ public class SpotTest
         it6 = new Item("name6", "description", 1, 3,1,1);
         player= new Player(20, "player", 0, 2, 5, 5) ; 
         Spot spot = new Spot(characterInSpot, objectInSpot);
-
     }
 
     /**
