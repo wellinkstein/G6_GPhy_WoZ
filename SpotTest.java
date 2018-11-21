@@ -35,8 +35,8 @@ public class SpotTest
     Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
-    private Player player;
-    private Lesser_Boss monster1; 
+    private Player player, player1;
+    private Lesser_Boss monster1, monster; 
     private Lesser_Boss monster2; 
     private Spot spot; 
       
@@ -152,10 +152,6 @@ public class SpotTest
         
     }
     
-    // Verifier si supprime bienitem  de la liste
-    // Vérifier si pas plus de 2 charactères dans la classe
-    //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
-    
     /**
      * Test that when a Spot is not correct, the boolean is not correct. 
      */
@@ -179,6 +175,7 @@ public class SpotTest
             }
         }
         assertFalse(test);
+        assertEquals(2, spot.getListCharacter().size()); 
         
     }
     
@@ -200,9 +197,29 @@ public class SpotTest
     }
     
     // Vérifier si un lesser monster ne peut pas aller dans la salle du boss
-    // Vérifier 2 caractères
-    // Vérifier pas 3 caratères
+    // Vérifier 2 caractères --> fait
+    // Vérifier pas 3 caratères --> fait
     // Vérifier removeCharactere quand list vide ne change pas la liste
+    // Verifier si supprime bien item  de la liste
+    // Vérifier si pas plus de 2 charactères dans la classe --> fait
+    //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
+    /**
+     * Test which verifiy if there is only 2 characters and not 2 players 
+     */
+    public void TestNot2Players(){
+     spot.addCharacterSpot(player); 
+     spot.addCharacterSpot(player1); 
+     spot.addCharacterSpot(monster); 
+     boolean test= true; 
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if (spot.getListCharacter().get(i) == player1){
+                test=false;
+            }
+        }
+        assertFalse(test);
+        assertEquals(2, spot.getListCharacter().size()); 
+        
+    }
     
     /**
      * Test than when an item is removed from the array list and that there is no
