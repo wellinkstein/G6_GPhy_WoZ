@@ -25,7 +25,7 @@ public class Item
      * @damage: the damage of the item
      * @healthGain: the health gain of the item
      */
-    public Item(String itemName, String des, int id, int dam, int prot, int HG)
+    public Item(String itemName, String des, int dam, int prot, int HG)
     { 
         name = itemName;
         description = des;
