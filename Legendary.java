@@ -18,10 +18,7 @@ public class Legendary extends Item
     {
         // initialisation des variables d'instance
         super (itemName, des, dam, HG,prot );
-<<<<<<< HEAD
-        
-=======
->>>>>>> 0b0a9b248f895ea0819a249d2e4f09449359cecc
+
     }
 
     /**
