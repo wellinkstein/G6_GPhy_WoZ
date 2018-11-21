@@ -89,31 +89,11 @@ public class Player extends Character
     {
         if(xp<2)
         {
-            critRate=0;
-        }
-        else if (xp==2)
-        {
-            critRate=5;
-        }
-        else if (xp==3)
-        {
-            critRate=10;
-        }
-        else if (xp==4)
-        {
-            critRate=15;
-        }
-        else if (xp==5)
-        {
-            critRate=20;
-        }
-        else if (xp==6)
-        {
-            critRate=25;
+            critRate=xp*5;
         }
         else
         {
-            System.out.println("something went wrong");
+            critRate=0;
         }
     }
     
