@@ -141,7 +141,7 @@ public class ItemTest
     public void testGoodItemArtemisBow()
     {
         goodItem = new Item("Artemis's bow","Legendary bow", 2 , 2, 0);
-        assertEquals("Artemis's's bow",goodItem.getName());
+        assertEquals("Artemis's bow",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
         assertEquals (0,goodItem.getHealthGain());
