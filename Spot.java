@@ -85,10 +85,13 @@ public class Spot
      public Spot getExits(String direction){
         return exits.get(direction);
      }
-     
+
+    /**
+     * getter to know if the spot is an exit
+     */
      public boolean getExitSpot()
      {
-         return(this.exitSpot);
+        return(this.exitSpot);
      }
     
     /**
