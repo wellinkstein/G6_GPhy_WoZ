@@ -35,7 +35,9 @@ public class SpotTest
     Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
-    private Player player; 
+    private Player player, player1;
+    private Lesser_Boss monster1, monster; 
+    private Lesser_Boss monster2; 
     private Spot spot; 
       
      /**
@@ -53,7 +55,7 @@ public class SpotTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        it1 = new Item("name1", "description", 1, 3, 1); 
+        it1 = new Item("name1", "description", 1, 3,1); 
         it2 = new Item("name2", "description", 1, 3,1);
         it3 = new Item("name3", "description", 1, 3,1);
         it4 = new Item("name4", "description", 1, 3,1);
@@ -81,6 +83,7 @@ public class SpotTest
     public void testGoodRoom()
     {
         
+        
     }
     
     /**
@@ -104,7 +107,7 @@ public class SpotTest
      * Test Spot new exit
      */
     @Test
-    public void setExits(String direction, Spot neighbor)
+    public void testSetExits(String direction, Spot neighbor)
     {
         
     }
@@ -115,12 +118,11 @@ public class SpotTest
     @Test
     public void testBadRoom()
     {
-        
-        //assertfalse(badRoom.get(spotCorrect));
+        assertFalse(spot.getCorrect());
     }
     
     /**
-     * Test which verify if character is added at the list.
+     * Test which verify if the character is added at the list.
      */
     public void verifyCharacterList(){
         spot.addCharacterSpot(player);
@@ -135,12 +137,12 @@ public class SpotTest
     }
     
     /**
-     * Test which verify if item is added at the list.
+     * Test which verify if an item is added at the list of the spot.
      */
     public void verifyItemList(){
         spot.addItemSpot(it1);
         boolean test= false; 
-        for (int i =0; i<spot.getListItem().size(); i++){
+        for (int i=0; i<spot.getListItem().size(); i++){
             if (spot.getListItem().get(i) == it1){
                 test=true;
             }
@@ -149,26 +151,114 @@ public class SpotTest
         
     }
     
-    // Verifier si supprime bien de la liste
-    //Si pas deux characters ou items à la même place
-    
-    
     /**
-     * Test that when an Item is added to the spot, the number of items in the spot is updated
+     * Test that when a Spot is not correct, the boolean is not correct. 
      */
     @Test
-    public void testNumberItemAddItem()
-    {
+    public void testSpotNotCorrect(){
         
     }
     
     /**
-     * Test that when an Item is removed, the number of items in the spot is updated
+     * Test which verify if there is only one monster in a spot
+     */
+    @Test
+    public void testOneMonsterSpot(){
+        spot.addCharacterSpot(player); 
+        spot.addCharacterSpot(monster1); 
+        spot.addCharacterSpot(monster2); 
+        boolean test= true; 
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if (spot.getListCharacter().get(i) == monster2){
+                test=false;
+            }
+        }
+        assertFalse(test);
+        assertEquals(2, spot.getListCharacter().size()); 
+        
+    }
+    
+    /**
+     * Test that when an Item is removed, it is removed from the array list of the spot
      */
     @Test
     public void testNumberItemRemoveItem()
     {
+        spot.addItemSpot(it1);
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if (spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertTrue(test);
     }
     
+    // Vérifier si un lesser monster ne peut pas aller dans la salle du boss
+    // Vérifier 2 caractères --> fait
+    // Vérifier pas 3 caratères --> fait
+    // Vérifier removeCharactere quand list vide ne change pas la liste
+    // Verifier si supprime bien item  de la liste --> fait
+    // Vérifier si pas plus de 2 charactères dans la classe --> fait
+    // Verifier si un spot pas correct et bien pas correcte (avec le boolean)
     
+    /**
+     * Test which verifiy if there is only 2 characters and not 2 players 
+     */
+    public void TestNot2Players(){
+     spot.addCharacterSpot(player); 
+     spot.addCharacterSpot(player1); 
+     spot.addCharacterSpot(monster); 
+     boolean test= true; 
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if (spot.getListCharacter().get(i) == player1){
+                test=false;
+            }
+        }
+        assertFalse(test);
+        assertEquals(2, spot.getListCharacter().size()); 
+        
+    }
+    
+    /**
+     * Test than when an item is removed from the array list and that there is no
+     * item in that list, the list remains empty
+     */
+    @Test
+    public void testRemoveNoItem()
+    {
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if(spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertEquals(0,spot.getListItem().size());
+        assertTrue(test);
+    }
+    
+    /**
+     * Test that a spot may be set to be a start spot
+     */
+    @Test
+    public void testSartSpot()
+    {
+        spot.setStartSpot();
+        assertTrue(spot.getStartSpot());
+    }
+    
+    @Test
+    public void testExitSpot()
+    {
+        spot.setExitSpot();
+        assertTrue(spot.getExitSpot());
+    }
+    
+    @Test
+    public void testRemoveNoCharacter()
+    {
+    }
+
 }

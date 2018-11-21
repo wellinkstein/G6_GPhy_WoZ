@@ -1,3 +1,4 @@
+ import java.util.*;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -17,8 +18,8 @@
 
 public class Game 
 {
-    private Spot currentRoom;
-    private boolean finished;
+    private Spot currentSpot; // position of player
+    private boolean finished; // false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out
         
     /**
      * Create the game and initialise its internal map.
@@ -29,7 +30,7 @@ public class Game
     }
 
     /**
-     * Create all the rooms and link their exits together.
+     * Create all the spots and link their exits together.
      */
     private void createLabyrinth()
     {
@@ -42,80 +43,83 @@ public class Game
         Spot spot18, spot28, spot38, spot48, spot58, spot68, spot78, spot88, spot98;
         Spot spot17, spot27, spot37, spot47, spot57, spot67, spot77, spot87, spot97;
         
+        ArrayList<Character> listC = new ArrayList();
+        ArrayList<Item> listI = new ArrayList();
+        
       
         // create the rooms
-        start11 = new Spot();
-        spot21 = new Spot();
-        spot31 = new Spot();
-        spot41 = new Spot();
-        spot51 = new Spot();
-        spot61 = new Spot();
-        exit71 = new Spot();
-        spot81 = new Spot();
-        spot91 = new Spot();
-        spot12 = new Spot();
-        spot22 = new Spot();
-        spot32 = new Spot();
-        spot42 = new Spot();
-        spot52 = new Spot();
-        spot62 = new Spot();
-        spot72 = new Spot(); 
-        spot82 = new Spot();
-        spot92 = new Spot();
-        spot13 = new Spot();
-        spot23 = new Spot();
-        spot33 = new Spot();
-        spot43 = new Spot();
-        spot53 = new Spot();
-        spot63 = new Spot();
-        spot73 = new Spot();
-        spot83 = new Spot();
-        spot93 = new Spot();
-        spot14 = new Spot(); 
-        spot24 = new Spot();
-        spot34 = new Spot();
-        spot44 = new Spot();
-        spot54 = new Spot();
-        spot64 = new Spot();
-        spot74 = new Spot();
-        spot84 = new Spot();
-        spot94 = new Spot();
-        spot15 = new Spot();
-        spot25 = new Spot();
-        spot35 = new Spot();
-        spot45 = new Spot();
-        spot55 = new Spot();
-        spot65 = new Spot();
-        spot75 = new Spot();
-        spot85 = new Spot();
-        spot95 = new Spot();
-        spot16 = new Spot();
-        spot26 = new Spot();
-        spot36 = new Spot();
-        spot46 = new Spot();
-        spot56 = new Spot();
-        spot66 = new Spot(); 
-        spot76 = new Spot();
-        spot86 = new Spot();
-        spot96 = new Spot();
-        spot18 = new Spot();
-        spot28 = new Spot();
-        spot38 = new Spot();
-        spot48 = new Spot();
-        spot58 = new Spot();
-        spot68 = new Spot();
-        spot78 = new Spot();
-        spot88 = new Spot();
-        spot98 = new Spot();
-        spot17 = new Spot();
-        spot27 = new Spot();
-        spot37 = new Spot();
-        spot47 = new Spot();
-        spot57 = new Spot();
-        spot67 = new Spot();
-        spot77 = new Spot();
-        spot87 = new Spot();
-        spot97 = new Spot();
+        start11 = new Spot(listC,listI);
+        spot21 = new Spot(listC,listI);
+        spot31 = new Spot(listC,listI);
+        spot41 = new Spot(listC,listI);
+        spot51 = new Spot(listC,listI);
+        spot61 = new Spot(listC,listI);
+        exit71 = new Spot(listC,listI);
+        spot81 = new Spot(listC,listI);
+        spot91 = new Spot(listC,listI);
+        spot12 = new Spot(listC,listI);
+        spot22 = new Spot(listC,listI);
+        spot32 = new Spot(listC,listI);
+        spot42 = new Spot(listC,listI);
+        spot52 = new Spot(listC,listI);
+        spot62 = new Spot(listC,listI);
+        spot72 = new Spot(listC,listI); 
+        spot82 = new Spot(listC,listI);
+        spot92 = new Spot(listC,listI);
+        spot13 = new Spot(listC,listI);
+        spot23 = new Spot(listC,listI);
+        spot33 = new Spot(listC,listI);
+        spot43 = new Spot(listC,listI);
+        spot53 = new Spot(listC,listI);
+        spot63 = new Spot(listC,listI);
+        spot73 = new Spot(listC,listI);
+        spot83 = new Spot(listC,listI);
+        spot93 = new Spot(listC,listI);
+        spot14 = new Spot(listC,listI); 
+        spot24 = new Spot(listC,listI);
+        spot34 = new Spot(listC,listI);
+        spot44 = new Spot(listC,listI);
+        spot54 = new Spot(listC,listI);
+        spot64 = new Spot(listC,listI);
+        spot74 = new Spot(listC,listI);
+        spot84 = new Spot(listC,listI);
+        spot94 = new Spot(listC,listI);
+        spot15 = new Spot(listC,listI);
+        spot25 = new Spot(listC,listI);
+        spot35 = new Spot(listC,listI);
+        spot45 = new Spot(listC,listI);
+        spot55 = new Spot(listC,listI);
+        spot65 = new Spot(listC,listI);
+        spot75 = new Spot(listC,listI);
+        spot85 = new Spot(listC,listI);
+        spot95 = new Spot(listC,listI);
+        spot16 = new Spot(listC,listI);
+        spot26 = new Spot(listC,listI);
+        spot36 = new Spot(listC,listI);
+        spot46 = new Spot(listC,listI);
+        spot56 = new Spot(listC,listI);
+        spot66 = new Spot(listC,listI); 
+        spot76 = new Spot(listC,listI);
+        spot86 = new Spot(listC,listI);
+        spot96 = new Spot(listC,listI);
+        spot18 = new Spot(listC,listI);
+        spot28 = new Spot(listC,listI);
+        spot38 = new Spot(listC,listI);
+        spot48 = new Spot(listC,listI);
+        spot58 = new Spot(listC,listI);
+        spot68 = new Spot(listC,listI);
+        spot78 = new Spot(listC,listI);
+        spot88 = new Spot(listC,listI);
+        spot98 = new Spot(listC,listI);
+        spot17 = new Spot(listC,listI);
+        spot27 = new Spot(listC,listI);
+        spot37 = new Spot(listC,listI);
+        spot47 = new Spot(listC,listI);
+        spot57 = new Spot(listC,listI);
+        spot67 = new Spot(listC,listI);
+        spot77 = new Spot(listC,listI);
+        spot87 = new Spot(listC,listI);
+        spot97 = new Spot(listC,listI);
         
         
         // initialise room exits
@@ -250,7 +254,7 @@ public class Game
         spot98.setExits("Z",spot97);
        
 
-        currentRoom = start11;  // start game 
+        currentSpot = start11;  // start game 
     }
 
     /**
@@ -260,8 +264,7 @@ public class Game
     {            
         printWelcome();
 
-        // Enter the main command loop.  Here we repeatedly read commands and
-        // execute them until the game is over.
+        
                 
         boolean finished = false;
         while (! finished) {
@@ -275,132 +278,27 @@ public class Game
      */
     private void printWelcome()
     {
-        System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type 'help' if you need help.");
-        System.out.println();
-        System.out.println("You are " + currentSpot.getDescription());
-        System.out.print("Exits: ");
-        if(currentRoom.northExit != null)
-            System.out.print("Z");
-        if(currentRoom.eastExit != null)
-            System.out.print("D");
-        if(currentRoom.southExit != null)
-            System.out.print("S");
-        if(currentRoom.westExit != null)
-            System.out.print("Q");
-        System.out.println();
+        // System.out.println();
+        // System.out.println("Welcome to the World of Zuul!");
+        // System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        // System.out.println("Type 'help' if you need help.");
+        // System.out.println();
+        // System.out.println("You are " + currentSpot.getDescription());
+        // System.out.print("Exits: ");
+        // if(currentRoom.northExit != null)
+            // System.out.print("Z");
+        // if(currentRoom.eastExit != null)
+            // System.out.print("D");
+        // if(currentRoom.southExit != null)
+            // System.out.print("S");
+        // if(currentRoom.westExit != null)
+            // System.out.print("Q");
+        // System.out.println();
     }
 
-    /**
-     * Given a command, process (that is: execute) the command.
-     * @param command The command to be processed.
-     * @return true If the command ends the game, false otherwise.
-     */
-    private boolean processCommand(Command command) 
-    {
-        boolean wantToQuit = false;
-
-        if(command.isUnknown()) {
-            System.out.println("I don't know what you mean...");
-            return false;
-        }
-
-        String commandWord = command.getCommandWord();
-        if (commandWord.equals("help"))
-            printHelp();
-        else if (commandWord.equals("go"))
-            goRoom(command);
-        else if (commandWord.equals("quit"))
-            wantToQuit = quit(command);
-
-        return wantToQuit;
-    }
-
-    // implementations of user commands:
-
-    /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
-     * command words.
-     */
-    private void printHelp() 
-    {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
-        System.out.println("Your command words are:");
-        System.out.println("   go quit help");
-    }
-
-    /** 
-     * Try to go to one direction. If there is an exit, enter
-     * the new room, otherwise print an error message.
-     */
-    private void goRoom(Command command) 
-    {
-        if(!command.hasSecondWord()) {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Spot nextRoom = null;
-        if(direction.equals("north")) {
-            nextRoom = currentRoom.northExit;
-        }
-        if(direction.equals("east")) {
-            nextRoom = currentRoom.eastExit;
-        }
-        if(direction.equals("south")) {
-            nextRoom = currentRoom.southExit;
-        }
-        if(direction.equals("west")) {
-            nextRoom = currentRoom.westExit;
-        }
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
-        }
-        else {
-            currentRoom = nextRoom;
-            System.out.println("You are " + currentRoom.getDescription());
-            System.out.print("Exits: ");
-            if(currentRoom.northExit != null)
-                System.out.print("north ");
-            if(currentRoom.eastExit != null)
-                System.out.print("east ");
-            if(currentRoom.southExit != null)
-                System.out.print("south ");
-            if(currentRoom.westExit != null)
-                System.out.print("west ");
-            System.out.println();
-        }
-    }
-
-    /** 
-     * "Quit" was entered. Check the rest of the command to see
-     * whether we really quit the game.
-     * @return true, if this command quits the game, false otherwise.
-     */
-    private boolean quit(Command command) 
-    {
-        if(command.hasSecondWord()) {
-            System.out.println("Quit what?");
-            return false;
-        }
-        else {
-            return true;  // signal that we want to quit
-        }
-    }
     
-    /**
-     * method linked to the end of the game
-     */
-    public void exit()
-    {}
+
+ 
+
+    
 }

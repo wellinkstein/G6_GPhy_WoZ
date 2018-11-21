@@ -75,7 +75,7 @@ public class ItemTest
     @Test
     public void testGoodItem()
     {
-        goodItem = new Item("Iron Sword","Une épée de base", 2, 2, 0);
+        goodItem = new Item("Iron Sword","Common sword", 2, 2, 0);
         assertEquals("Iron Sword",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -88,7 +88,7 @@ public class ItemTest
     @Test
     public void testBadItemNegativeDamage()
     {
-        badItem = new Item("Iron Sword", -2 , 2, 0);
+        badItem = new Item("Iron Sword","Common sword", -2 , 2, 0);
         assertEquals("Iron Sword",badItem.getName());
         assertEquals(-2,badItem.getDamage());
         assertEquals (2,badItem.getProtection());
@@ -101,7 +101,7 @@ public class ItemTest
     @Test
     public void testBadItemNegativeProtection()
     {
-        badItem = new Item("Iron Sword", 2 , -2, 0);
+        badItem = new Item("Iron Sword","Common sword", 2 , -2, 0);
         assertEquals("Iron Sword",badItem.getName());
         assertEquals(2,badItem.getDamage());
         assertEquals (-2,badItem.getProtection());
@@ -114,7 +114,7 @@ public class ItemTest
     @Test
     public void testGoodItemGoldenThread()
     {
-        goodItem = new Item("Ariadne's golden thread", 2 , 2, 0);
+        goodItem = new Item("Ariadne's golden thread","Ariadne's golden thread", 2 , 2, 0);
         assertEquals("Ariadne's golden thread",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -127,7 +127,7 @@ public class ItemTest
     @Test
     public void testGoodItemAresSword()
     {
-        goodItem = new Item("Ares's sword", 2 , 2, 0);
+        goodItem = new Item("Ares's sword","Legendary sword", 2 , 2, 0);
         assertEquals("Ares's sword",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -140,8 +140,8 @@ public class ItemTest
     @Test
     public void testGoodItemArtemisBow()
     {
-        goodItem = new Item("Artemis's bow", 2 , 2, 0);
-        assertEquals("Artemis's's bow",goodItem.getName());
+        goodItem = new Item("Artemis's bow","Legendary bow", 2 , 2, 0);
+        assertEquals("Artemis's bow",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
         assertEquals (0,goodItem.getHealthGain());
@@ -153,7 +153,7 @@ public class ItemTest
     @Test
     public void testGoodItemAegisShield()
     {
-        goodItem = new Item("Aegis shield", 2 , 2, 0);
+        goodItem = new Item("Aegis shield","Legendary shield", 2 , 2, 0);
         assertEquals("Aegis shield",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -166,7 +166,7 @@ public class ItemTest
     @Test
     public void testGoodItemHermesSandals()
     {
-        goodItem = new Item("Hermes's sandals", 2 , 2, 0);
+        goodItem = new Item("Hermes's sandals","Legendary sandals", 2 , 2, 0);
         assertEquals("Hermes's sandals",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -179,7 +179,7 @@ public class ItemTest
     @Test
     public void testGoodItemIronSword()
     {
-        goodItem = new Item("Iron sword", 2 , 2, 0);
+        goodItem = new Item("Iron sword","Common sword", 2 , 2, 0);
         assertEquals("Iron sword",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -192,7 +192,7 @@ public class ItemTest
     @Test
     public void testGoodItemIronDagger()
     {
-        goodItem = new Item("Iron dagger", 2 , 2, 0);
+        goodItem = new Item("Iron dagger","Common dagger", 2 , 2, 0);
         assertEquals("Iron dagger",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -205,7 +205,7 @@ public class ItemTest
     @Test
     public void testGoodItemStandardBow()
     {
-        goodItem = new Item("Standard bow", 2 , 2, 0);
+        goodItem = new Item("Standard bow","Common bow", 2 , 2, 0);
         assertEquals("Standard bow",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
@@ -218,7 +218,7 @@ public class ItemTest
     @Test
     public void testGoodItemHealthPotion()
     {
-        goodItem = new Item("Health potion", 0 , 0, 5);
+        goodItem = new Item("Health potion","Common health potion", 0 , 0, 5);
         assertEquals("Health potion",goodItem.getName());
         assertEquals(0,goodItem.getDamage());
         assertEquals (0,goodItem.getProtection());
@@ -232,23 +232,12 @@ public class ItemTest
     @Test
     public void testGoodItemIronArmor()
     {
-        goodItem = new Item("Iron Armor", 2 , 2, 0);
+        goodItem = new Item("Iron Armor","Common armor", 2 , 2, 0);
         assertEquals("Iron Armor",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
         assertEquals (0,goodItem.getHealthGain());
     }
     
-    /**
-     * Test that checks item name Iron Armor
-     */
-    @Test
-    public void testBadItemName()
-    {
-        goodItem = new Item("Blarg", 2 , 2, 0);
-        assertEquals("Blarg",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
-    }
+  
 }

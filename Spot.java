@@ -23,7 +23,9 @@ public class Spot
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
-
+    private boolean exitSpot;
+    private boolean startSpot;
+    
     /**
      * Create a spot with a Haspmap to know the direction of exit
      */
@@ -33,12 +35,14 @@ public class Spot
         isVisible = false;
         fighting = false;
         spotCorrect = false;
+        exitSpot = false;
+        startSpot = false;
         numberItem = 0;
         characterInSpot=characterSpot;
         objectInSpot=objectSpot;
     }
     
-     /**
+    /**
      * Method setExit: defines an exit from this spot
      * Replaces the setExits method
      *
@@ -50,6 +54,11 @@ public class Spot
      public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
         spotCorrect = true;
+    }
+    
+    public boolean getCorrect()
+    {
+        return(this.spotCorrect);
     }
   
     /**
@@ -66,11 +75,43 @@ public class Spot
     }
     
     /**
+     * getter to know if the spot is an exit
+     */
+    public boolean getExitSpot()
+    {
+        return(this.exitSpot);
+    }
+    
+    /**
+     * setter to set if a spot is an exit
+     */
+    public void setExitSpot()
+    {
+        this.exitSpot=true;
+    }
+    
+    /**
+     * getter to get if the spot is a start
+     */
+    public boolean getStartSpot()
+    {
+        return(this.startSpot);
+    }
+    
+    /**
+     * setter to set if a spot is a start
+     */
+    public void setStartSpot()
+    {
+        this.startSpot=true;
+    }
+    
+    /**
      * return the number of item in the spot
      */
     public int getNumberOfItemInSpot()
     {
-    return 0;
+        return (objectInSpot.size());
     }
     
     /**
@@ -130,6 +171,20 @@ public class Spot
     public ArrayList getListItem()
     {
         return(objectInSpot);
+    }
+    
+    /**
+     * Remove item from a spot
+     */
+    public void removeItemSpot(Item item)
+    {
+    }
+    
+    /**
+     * Remove charactere from a spot
+     */
+    public void removeCharacterSpot()
+    {
     }
 
 }
