@@ -35,7 +35,9 @@ public class SpotTest
     Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
-    private Player player; 
+    private Player player;
+    private Lesser_Boss monster1; 
+    private Lesser_Boss monster2; 
     private Spot spot; 
       
      /**
@@ -153,6 +155,33 @@ public class SpotTest
     // Verifier si supprime bienitem  de la liste
     // Vérifier si pas plus de 2 charactères dans la classe
     // Vérifier si pas plus d'un monstre sur un spot
+    //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
+    
+    /**
+     * Test that when a Spot is not correct, the boolean is not correct. 
+     */
+    @Test
+    public void testSpotNotCorrect(){
+        
+    }
+    
+    /**
+     * Test which verify if there is only one monster in a spot
+     */
+    @Test
+    public void testOneMonsterSpot(){
+        spot.addCharacterSpot(player); 
+        spot.addCharacterSpot(monster1); 
+        spot.addCharacterSpot(monster2); 
+        boolean test= true; 
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if (spot.getListCharacter().get(i) == monster2){
+                test=false;
+            }
+        }
+        assertFalse(test);
+        
+    }
     
     /**
      * Test that when an Item is removed, it is removed from the array list of the spot
