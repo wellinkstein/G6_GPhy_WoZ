@@ -38,7 +38,7 @@ public class Spot
         objectInSpot=objectSpot;
     }
     
-      /**
+     /**
      * Method setExit: defines an exit from this spot
      * Replaces the setExits method
      *
@@ -52,7 +52,7 @@ public class Spot
         spotCorrect = true;
     }
   
-     /**
+    /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
      *
@@ -103,16 +103,19 @@ public class Spot
     {
         return(isVisible);
     }
+    
     /**
      * Add Item at Spot
      */
     public void addItem(Item items){
     }
+    
     /** 
      * Add Character at Spot
      */
     public void addCharacter(Character Player){
     }
+    
     /**
      * Get the list of character
      */
@@ -120,6 +123,7 @@ public class Spot
     {
         return(characterInSpot);
     }
+    
     /**
      * Get the list of items
      */
@@ -127,7 +131,5 @@ public class Spot
     {
         return(objectInSpot);
     }
-    
-    
-    
+
 }
