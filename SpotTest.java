@@ -45,7 +45,7 @@ public class SpotTest
     {
     }
 
-     /**
+    /**
      * Met en place les engagements.
      *
      * Methode appelee avant chaque appel de methode de test.
@@ -64,7 +64,7 @@ public class SpotTest
 
     }
 
-     /**
+    /**
      * Supprime les engagements
      *
      * Methode appelee apres chaque appel de methode de test.
@@ -119,6 +119,7 @@ public class SpotTest
         
         //assertfalse(badRoom.get(spotCorrect));
     }
+    
     /**
      * Test which verify if character is added at the list.
      */
@@ -133,7 +134,8 @@ public class SpotTest
         assertEquals(true, test);
         
     }
-     /**
+    
+    /**
      * Test which verify if item is added at the list.
      */
     public void verifyItemList(){
@@ -153,7 +155,7 @@ public class SpotTest
     
     
     /**
-     * Test that when an Item is added, the number of items in the spot is updated
+     * Test that when an Item is added to the spot, the number of items in the spot is updated
      */
     @Test
     public void testNumberItemAddItem()
