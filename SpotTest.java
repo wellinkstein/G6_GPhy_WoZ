@@ -154,7 +154,6 @@ public class SpotTest
     
     // Verifier si supprime bien de la liste
     // Vérifier si pas plus de 2 charactères dans la classe
-    // Vérifier si pas plus d'un monstre sur un spot
     //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
     
     /**
