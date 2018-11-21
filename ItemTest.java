@@ -75,7 +75,7 @@ public class ItemTest
     @Test
     public void testGoodItem()
     {
-        goodItem = new Item("Iron Sword", 2, 2, 0);
+        goodItem = new Item("Iron Sword","Une épée de base", 2, 2, 0);
         assertEquals("Iron Sword",goodItem.getName());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
