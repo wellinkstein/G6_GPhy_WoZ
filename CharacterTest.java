@@ -27,12 +27,12 @@ public class CharacterTest
     /**
      * Sets up the constructor
      * Sets up the item
-     * Constructor layout (Hp, name, xp, damage, posX, posY
+     * Constructor layout (Hp, name, xp, damage)
      */
     @Before
     public void setUp()
     {
-        myCharacter = new Character(20,"Jimmy",2,2,1,1);
+        myCharacter = new Character(20,"Jimmy",2,2);
     }
 
     
@@ -46,8 +46,6 @@ public class CharacterTest
         assertEquals(2,myCharacter.getXp());
         assertEquals("Jimmy",myCharacter.getName());
         assertEquals(2,myCharacter.getDamage());
-        assertEquals(1,myCharacter.getPosX());
-        assertEquals(1,myCharacter.getPosY());
     }
     
     /**
@@ -156,48 +154,7 @@ public class CharacterTest
         myCharacter.decreaseDamage(-10);
         assertEquals(2,myCharacter.getDamage());
     }
-    
-    /**
-     * test for moveUp
-     */
-    @Test
-    public void testMoveUp()
-    {
-        myCharacter.moveUp();
-        assertEquals(2,myCharacter.getPosY());
-    }
-    
-    /**
-     * test for moveUp
-     */
-    @Test
-    public void testMoveDown()
-    {
-        myCharacter.moveDown();
-        assertEquals(0,myCharacter.getPosY());
-    }
-    
-    /**
-     * test for moveUp
-     */
-    @Test
-    public void testMoveRight()
-    {
-        myCharacter.moveRight();
-        assertEquals(2,myCharacter.getPosX());
-    }
-    
-    /**
-     * test for moveUp
-     */
-    @Test
-    public void testMoveLeft()
-    {
-        myCharacter.moveLeft();
-        assertEquals(0,myCharacter.getPosX());
-    }
-    
-    
+
     /**
      *
      */

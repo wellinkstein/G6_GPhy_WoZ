@@ -19,26 +19,19 @@ public class Character
     //The XP of the character, XP can be gained, not lost
     private int Damage;
     //This attribute represents the damage that a character inflicts in a single hit
-    private int posX;
-    //The X axis position of the character
-    private int posY;
-    //The Y axis position of the character
     protected ArrayList<Item> inventory = new ArrayList<Item>();
     //A list of items that the character possesses
     
     /**
      * Constructeur d'objets de classe Character
      */
-    public Character(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY)
+    public Character(int myHP, String myName, int myXp, int myDamage)
     {
         
         HP = myHP;
         Name = myName;
         xp = myXp;
         Damage = myDamage;
-        posX = myPosX;
-        posY = myPosY;
-        
     }
     
     /**
@@ -55,22 +48,6 @@ public class Character
     public int getXp()
     { 
         return xp;
-    }
-    
-    /**
-     * Method that returns posX
-     */
-    public int getPosX()
-    {
-        return posX;
-    }
-
-    /**
-     * Method that returns posY
-     */
-    public int getPosY()
-    {
-        return posY;
     }
     
     /**
@@ -113,40 +90,7 @@ public class Character
             }
         }
     }
-    
-    /**
-     * Method that moves the player forward
-     */
-    public void moveUp()
-    {
-        posY += 1;
-    }
-    
-    /**
-     * Method that moves the players backwards
-     */
-    public void moveDown()
-    {
-        posY -= 1;
-    }
-    
-    /**
-     * Method that moves the player to the right
-     */
-    public void moveRight()
-    {
-        posX += 1;
-    }
-    
-    /**
-     * Method that moves the player to the left
-     */
-    public void moveLeft()
-    {
-        posX -= 1;
-    }
-    
-    
+
     /**
      * Methode that gives HP based on the gainHP attribute that is found in items.
      */
@@ -175,22 +119,6 @@ public class Character
         {
             xp=xp;
         }
-    }
-    
-    /**
-     * setter of posX
-     */
-    public void setPosX(int position)
-    {
-        posX=position;
-    }
-    
-    /**
-     * setter of posY
-     */
-    public void setPosY(int position)
-    {
-        posY=position;
     }
     
     /**
