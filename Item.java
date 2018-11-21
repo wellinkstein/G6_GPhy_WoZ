@@ -12,7 +12,7 @@ public class Item
     private int damage; //damage of the item
     private int protection; //protection of the item
     private int healthGain; //health gain of the item
-    private String name; //name of the item
+    protected String name; //name of the item
     private String description; //description of the item
     private int count = 0;
     private int itemID; // Unique ID of the item.

@@ -23,7 +23,7 @@ public class Character
     //The X axis position of the character
     private int posY;
     //The Y axis position of the character
-    protected ArrayList<Item> inventory;
+    protected ArrayList<Item> inventory = new ArrayList<Item>();
     //A list of items that the character possesses
     
     /**
