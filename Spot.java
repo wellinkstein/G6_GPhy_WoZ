@@ -70,7 +70,7 @@ public class Spot
      */
     public int getNumberOfItemInSpot()
     {
-    return 0;
+    return (objectInSpot.size());
     }
     
     /**

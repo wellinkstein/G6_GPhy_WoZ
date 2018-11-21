@@ -53,7 +53,7 @@ public class SpotTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        it1 = new Item("name1", "description", 1, 3, 1); 
+        it1 = new Item("name1", "description", 1, 3,1); 
         it2 = new Item("name2", "description", 1, 3,1);
         it3 = new Item("name3", "description", 1, 3,1);
         it4 = new Item("name4", "description", 1, 3,1);
@@ -80,6 +80,7 @@ public class SpotTest
     @Test
     public void testGoodRoom()
     {
+        
         
     }
     
@@ -150,7 +151,8 @@ public class SpotTest
     }
     
     // Verifier si supprime bien de la liste
-    //Si pas deux characters ou items à la même place
+    // Vérifier si pas plus de 2 charactères dans la classe
+    // Vérifier si pas plus d'un monstre sur un spot
     
     
     /**
@@ -169,6 +171,5 @@ public class SpotTest
     public void testNumberItemRemoveItem()
     {
     }
-    
-    
+
 }
