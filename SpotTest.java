@@ -3,6 +3,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Classe-test SpotTest.
@@ -113,17 +117,9 @@ public class SpotTest
     @Test
     public void testSetExits(String direction, Spot neighbor)
     {
+        spot.setExits(direction, neighbor);
+        //Set set = spot.exits.entrySet();
         
-    }
-   
-    /**
-     * Test badSpot creation. A spot is created without exits and a spot without exits
-     * is incorrect
-     */
-    @Test
-    public void testBadRoom()
-    {
-        assertFalse(spot.getCorrect());
     }
     
     /**

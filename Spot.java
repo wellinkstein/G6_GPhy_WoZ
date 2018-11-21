@@ -1,4 +1,8 @@
  import java.util.*;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Iterator;
+ import java.util.Set;
 
 /**
  * Class Spot - a spot in an adventure game.
@@ -17,7 +21,7 @@
 public class Spot
 {
     private int numberMaxItem; //A spot contains between at most 5 items
-    private HashMap<String, Spot> exits; //list of the exits
+    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits
     private ArrayList<Character> characterInSpot; //all the character in a spot
     private ArrayList<Item> objectInSpot; //all the item in a spot
     private boolean isVisible; //True if the spot is visible
