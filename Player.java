@@ -127,6 +127,7 @@ public class Player extends Character
     /**
      * A method that modifies the crit rate based on XP
      * The player start at level 1 and each level give 5% of crit chance
+     * it can exceed 50%.
      */
     public void adjustCritRate()
     {
@@ -137,6 +138,10 @@ public class Player extends Character
         else
         {
             critRate=(xp-1)*5;
+            if(critRate>50)
+            {
+                critRate = 50;
+            }
         }
     }
     
