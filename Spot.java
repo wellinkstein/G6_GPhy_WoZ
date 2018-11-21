@@ -55,6 +55,11 @@ public class Spot
         exits.put(direction, neighbor);
         spotCorrect = true;
     }
+    
+    public boolean getCorrect()
+    {
+        return(this.spotCorrect);
+    }
   
     /**
      * Method getExit: returns the spot that we reach in the given direction

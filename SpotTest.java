@@ -107,7 +107,7 @@ public class SpotTest
      * Test Spot new exit
      */
     @Test
-    public void setExits(String direction, Spot neighbor)
+    public void testSetExits(String direction, Spot neighbor)
     {
         
     }
@@ -118,8 +118,7 @@ public class SpotTest
     @Test
     public void testBadRoom()
     {
-        
-        //assertfalse(badRoom.get(spotCorrect));
+        assertFalse(spot.getCorrect());
     }
     
     /**
@@ -200,9 +199,10 @@ public class SpotTest
     // Vérifier 2 caractères --> fait
     // Vérifier pas 3 caratères --> fait
     // Vérifier removeCharactere quand list vide ne change pas la liste
-    // Verifier si supprime bien item  de la liste
+    // Verifier si supprime bien item  de la liste --> fait
     // Vérifier si pas plus de 2 charactères dans la classe --> fait
-    //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
+    // Verifier si un spot pas correct et bien pas correcte (avec le boolean)
+    
     /**
      * Test which verifiy if there is only 2 characters and not 2 players 
      */
@@ -255,5 +255,9 @@ public class SpotTest
         spot.setExitSpot();
         assertTrue(spot.getExitSpot());
     }
+    
+    @Test
+    public void testRemoveNoCharacter();
+    
     
 }
