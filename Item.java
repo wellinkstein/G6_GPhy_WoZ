@@ -3,8 +3,8 @@
  * An Item represents an object that can be picked up and used by the player.
 
  * @author Delphine et Yousra
->>>>>>> acc22fb149bf9a345ee4aebab817bbe6c5f9ac96
- * @version (un numero de version ou une date)
+
+ * @version 2018
  */
 public class Item
 {
@@ -19,11 +19,7 @@ public class Item
 
     /**
      * Constructeur of an Item
-     * @name: the name of the item
-     * @itemID: the id of the item
-     * @description: the description of the item
-     * @damage: the damage of the item
-     * @healthGain: the health gain of the item
+     * 
      */
     public Item(String itemName, String des, int dam, int prot, int HG)
     { 
