@@ -141,7 +141,7 @@ public class SpotTest
     public void verifyItemList(){
         spot.addItemSpot(it1);
         boolean test= false; 
-        for (int i =0; i<spot.getListItem().size(); i++){
+        for (int i=0; i<spot.getListItem().size(); i++){
             if (spot.getListItem().get(i) == it1){
                 test=true;
             }
@@ -161,15 +161,17 @@ public class SpotTest
     @Test
     public void testNumberItemAddItem()
     {
-        
+        spot.addItemSpot(it1);
+        assertEquals(1,spot.getNumberOfItemInSpot());
     }
     
     /**
-     * Test that when an Item is removed, the number of items in the spot is updated
+     * Test that when an Item is removed, the right number of items is in the spot 
      */
     @Test
     public void testNumberItemRemoveItem()
     {
+        
     }
 
 }

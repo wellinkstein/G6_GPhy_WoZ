@@ -70,7 +70,7 @@ public class Spot
      */
     public int getNumberOfItemInSpot()
     {
-    return (objectInSpot.size());
+        return (objectInSpot.size());
     }
     
     /**
@@ -130,6 +130,20 @@ public class Spot
     public ArrayList getListItem()
     {
         return(objectInSpot);
+    }
+    
+    /**
+     * Remove item from a spot
+     */
+    public void removeItemSpot()
+    {
+    }
+    
+    /**
+     * Remove charactere from a spot
+     */
+    public void removeCharacterSpot()
+    {
     }
 
 }
