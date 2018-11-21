@@ -210,7 +210,7 @@ public class SpotTest
      * item in that list, the list remains empty
      */
     @Test
-    public void test()
+    public void testRemoveNoItem()
     {
         spot.removeItemSpot(it1);
         boolean test = true;
@@ -222,4 +222,22 @@ public class SpotTest
         assertEquals(0,spot.getListItem().size());
         assertTrue(test);
     }
+    
+    /**
+     * Test that a spot may be set to be a start spot
+     */
+    @Test
+    public void testSartSpot()
+    {
+        spot.setStartSpot();
+        assertTrue(spot.getStartSpot());
+    }
+    
+    @Test
+    public void testExitSpot()
+    {
+        spot.setExitSpot();
+        assertTrue(spot.getExitSpot());
+    }
+    
 }

@@ -72,33 +72,33 @@ public class Spot
     /**
      * getter to know if the spot is an exit
      */
-    public boolean getExitSpot(Spot spot)
+    public boolean getExitSpot()
     {
-        return(exitSpot);
+        return(this.exitSpot);
     }
     
     /**
      * setter to set if a spot is an exit
      */
-    public void setExitSpot(Spot spot)
+    public void setExitSpot()
     {
-        spot.exitSpot=true;
+        this.exitSpot=true;
     }
     
     /**
      * getter to get if the spot is a start
      */
-    public boolean getStartSpot(Spot spot)
+    public boolean getStartSpot()
     {
-        return(startSpot);
+        return(this.startSpot);
     }
     
     /**
      * setter to set if a spot is a start
      */
-    public void setStartSpot(Spot spot)
+    public void setStartSpot()
     {
-        spot.startSpot=true;
+        this.startSpot=true;
     }
     
     /**
