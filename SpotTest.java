@@ -80,26 +80,32 @@ public class SpotTest
      * Test Spot creation
      */
     @Test
-    public void testGoodRoom()
+    public void testCreationRoom()
     {
+        assertNull(spot.getListCharacter());
+        assertNull(spot.getListItem());
+        assertFalse(spot.getVisible());
+        assertFalse(spot.getCorrect());
+        assertFalse(spot.getExitSpot());
+        
         
         
     }
     
     /**
-     * Test Item can not be >5 
+     * Test Item can not be > numberMaxItem
      */
     @Test
-    public void testItemsup5()
+    public void testItemsSupMaxItem()
     {
         spot.addItemSpot(it1); 
         spot.addItemSpot(it2);
         spot.addItemSpot(it3);
         spot.addItemSpot(it4);
         spot.addItemSpot(it5);// rajouter 5 items
-        assertEquals(5, spot.getNumberOfItemInSpot());
+        assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
         spot.addItemSpot(it6);// Rajouter 1 item
-        assertEquals(5, spot.getNumberOfItemInSpot());
+        assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
         
     }
     
@@ -111,9 +117,11 @@ public class SpotTest
     {
         
     }
+   
     
-    /**
-     * Test badSpot creation
+     /**
+     * Test badSpot creation. A spot is created without exits and a spot without exits
+     * is incorrect
      */
     @Test
     public void testBadRoom()
@@ -121,7 +129,7 @@ public class SpotTest
         assertFalse(spot.getCorrect());
     }
     
-    /**
+     /**
      * Test which verify if the character is added at the list.
      */
     public void verifyCharacterList(){
@@ -133,7 +141,6 @@ public class SpotTest
             }
         }
         assertEquals(true, test);
-        
     }
     
     /**
@@ -148,15 +155,6 @@ public class SpotTest
             }
         }
         assertEquals(true, test);
-        
-    }
-    
-    /**
-     * Test that when a Spot is not correct, the boolean is not correct. 
-     */
-    @Test
-    public void testSpotNotCorrect(){
-        
     }
     
     /**
@@ -259,6 +257,14 @@ public class SpotTest
     @Test
     public void testRemoveNoCharacter()
     {
+        spot.removeCharacterSpot(player);
+        boolean test = true;
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if(spot.getListCharacter().get(i) == player){
+                test=false;
+            }
+        }
+        assertTrue(test);
     }
 
 }
