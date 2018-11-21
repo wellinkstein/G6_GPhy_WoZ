@@ -82,18 +82,7 @@ public class Spot
      public Spot getExits(String direction){
         return exits.get(direction);
     }
-<<<<<<< HEAD
-=======
-    
-    /**
-     * Method : returns the exits of 
-     */
-    public Spot getExits()
-    {
-       return this.exits.getKey() + this.exits.getValue(); 
-    }
->>>>>>> e1acea3e38f1d881f8de2b86d6b235569e995a46
-    
+
     /**
      * getter to know if the spot is an exit
      */
