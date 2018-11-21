@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -36,8 +34,7 @@ public class LegendaryTest
     // e l'aide du menu contextuel "Presentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du presentoir (les objets sans constructeur, comme int, float, etc.).
-    protected double fValeur1;
-    protected double fValeur2;
+    private Legendary goodLegendary;
 
     /**
      * Constructeur de la classe-test LegendaryTest
@@ -55,8 +52,19 @@ public class LegendaryTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+        goodLegendary = new Legendary("Aries's Sword","Legendary sword", 2, 2, 0);
+    }
+     /**
+     * Test that checks if the getters work properly
+     */
+    @Test
+    public void testGoodLegendary()
+    {
+        assertEquals("Aries's Sword",goodLegendary.getName());
+        assertEquals("Legendary sword",goodLegendary.getDescription());
+        assertEquals(2,goodLegendary.getDamage());
+        assertEquals (2,goodLegendary.getProtection());
+        assertEquals (0,goodLegendary.getHealthGain());
     }
 
     /**

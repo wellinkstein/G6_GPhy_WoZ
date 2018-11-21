@@ -13,8 +13,8 @@ public class Item
     private int protection; //protection of the item
     private int healthGain; //health gain of the item
     protected String name; //name of the item
-    private String description; //description of the item
-    private static int count = 0;
+    private String description; //description of an item
+    private static int count = 0;//the auto incrementation of id item
     private int itemID; // Unique ID of the item.
 
     /**
@@ -33,15 +33,35 @@ public class Item
     
     /**
      * setter for the damage
+     * // the damage can be equar to 0 but not be negative
      */
     public void setDamage (int Dam)
-    {damage = Dam;}
+    {
+        if (Dam<0)
+        {
+            damage = damage;
+        }
+        else 
+        {
+            damage = Dam;
+        }
+        
+         
+    }
     
     /**
      * setter for the protectio
      */
     public void setProtection(int Prot )
-    {protection = Prot;}
+     {if (Prot<0)
+        {
+            protection = protection;
+        }
+        else 
+        {
+            protection = Prot;
+        }
+    }
     
     /**
      * setter for the name
@@ -85,4 +105,3 @@ public class Item
     public int getItemID()
      {return itemID; }
     }
-        

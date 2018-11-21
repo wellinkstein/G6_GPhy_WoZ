@@ -20,9 +20,11 @@ public class Game
 {
     private Spot currentSpot; // position of player
     private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
-    int line = 8; //number of lines in the matrix;
-    int column = 9; //number of columns in the matrix;
-    ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
+    private int line = 8; //number of lines in the matrix;
+    private int column = 9; //number of columns in the matrix;
+    private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
+    private HashMap<String,Integer> monsters = new HashMap<String, Integer>();
+    
     /** 
      * Create the game and initialise its internal map.
      */
@@ -60,9 +62,9 @@ public class Game
         ArrayList<Item> listI = new ArrayList();
         
         
-         for (int i = 0; i < line*column; i++) { 
-              listSpot.add(new Spot(null,null));
-          }
+         // for (int i = 0; i < line*column; i++) { 
+              // listSpot.add(new Spot(null,null));
+          // }
           
          
         // create the rooms
@@ -281,29 +283,28 @@ public class Game
          currentSpot = spot11;// start game
     }
     
-    /**
-     *  Defines the exits of a spot
+       /**
+     * Print out the opening message for the player.
      */
-    public void defineExits(String direction, Spot spot)
+    private void printWelcome()
     {
+        // System.out.println();
+        // System.out.println("Welcome to the World of Zuul!");
+        // System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        // System.out.println("Type 'help' if you need help.");
+        // System.out.println();
+        // System.out.println("You are " + currentSpot.getDescription());
+        // System.out.print("Exits: ");
+        // if(currentRoom.northExit != null)
+            // System.out.print("Z");
+        // if(currentRoom.eastExit != null)
+            // System.out.print("D");
+        // if(currentRoom.southExit != null)
+            // System.out.print("S");
+        // if(currentRoom.westExit != null)
+            // System.out.print("Q");
+        // System.out.println();
     }
-    
-     /**
-     *  Defines the only exit and the only start of the labyrinth (two separate spots)
-     */
-    public void exitAndStart()
-    {
-    }
-    
-      /**
-     *  Defines the only exit and the only start of the labyrinth (two separate spots)
-     */
-    public void fillListSpot()
-    {
-        
-         
-    }
-    
     /**
      *  Main play routine.  Loops until end of play.
      */
@@ -321,6 +322,30 @@ public class Game
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
+        
+    /**
+     *  Defines the exits of a spot. There is at least 1 exit/spot and maximum 4 exits/spot.
+     */
+    public void defineExits(String direction, Spot spot)
+    {
+    }
+    
+     /**
+     *  Defines the only exit and the only start of the labyrinth (two separate spots)
+     */
+    public void exitAndStart()
+    {
+    }
+    
+      /**
+     *  Fills the spot with the adequate characters and items
+     */
+    public void fillListSpot()
+    {
+        
+         
+    }
+  
     
     /**
      *  Get the value of finished
@@ -369,28 +394,22 @@ public class Game
         return listSpot;         
     }
     
-     /**
-     * Print out the opening message for the player.
-     */
-    private void printWelcome()
+    public boolean inExit()
     {
-        // System.out.println();
-        // System.out.println("Welcome to the World of Zuul!");
-        // System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        // System.out.println("Type 'help' if you need help.");
-        // System.out.println();
-        // System.out.println("You are " + currentSpot.getDescription());
-        // System.out.print("Exits: ");
-        // if(currentRoom.northExit != null)
-            // System.out.print("Z");
-        // if(currentRoom.eastExit != null)
-            // System.out.print("D");
-        // if(currentRoom.southExit != null)
-            // System.out.print("S");
-        // if(currentRoom.westExit != null)
-            // System.out.print("Q");
-        // System.out.println();
+      return true;
     }
+    /**
+     * If the player is in the spot exit AND he has killed the Minotaur, the game ends and the player wins OR ELSE the game ends and the player loses
+     *  si player dans spot exit, et player timetogo==True alors message fin du jeu, sinon message warning
+     */
+    public String endGame() 
+    { 
+        String result = "";
+        
+      
+        return result;        
+    }
+    
 
     
 

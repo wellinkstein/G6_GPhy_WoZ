@@ -1,4 +1,3 @@
-
 /**
  * The common class is a specific item to fight the lesser boss
  *
