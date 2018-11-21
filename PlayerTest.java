@@ -250,6 +250,29 @@ public class PlayerTest
     {
         assertEquals(10,myPlayer.getLimitItem());
     }
-
     
+    /**
+     * This test checks if the boolean ariadnesThread is changed to true
+     * if the player had the item
+     */
+    @Test
+    public void testAriadnesThread()
+    {
+        Item GoldenThread = new Item ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
+        myPlayer.takeItem(GoldenThread);
+        assertEquals(true,myPlayer.getThread());
+    }
+
+    /**
+     * This test checks if the boolean ariadnesThread is false when picking
+     * up items that are not ariadne's thread
+     */
+    @Test
+    public void testAriadnesThreadBad()
+    {
+        Item GoldenThread = new Item ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
+        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        myPlayer.takeItem(potion);
+        assertEquals(false,myPlayer.getThread());
+    }
 }

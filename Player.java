@@ -10,6 +10,8 @@ public class Player extends Character
     private int limitItem=10; //Maximal Item number of the player 
     private int hpMax=20; //Maximal Heart Point of the player
     private int critRate=0; //Defines the chances of the player rolling a crit
+    private boolean timeToGo = false;//Boolean stating if the player can exit the labyrinth
+    private boolean ariadnesThread = false; //Boolean that checks if the player has Ariadne's thread
     
     /**
      * Constructor of the player class
@@ -18,6 +20,15 @@ public class Player extends Character
     public Player(int myHP, String myName, int myXp, int myDamage)
     {
         super(myHP,myName,myXp,myDamage);
+    }
+    
+    /**
+     * Getter for the attribute ariadnesThread
+     * 
+     */
+    public boolean getThread()
+    {
+        return ariadnesThread;
     }
     
     /**
@@ -79,7 +90,11 @@ public class Player extends Character
         {
             inventory.add(myItem);
         }
-    }
+        if(myItem.getName()=="Ariadne's golden thread")
+        {
+            ariadnesThread = true;
+        }
+        }   
     
     /**
      * A method that returns the item limit
@@ -127,6 +142,7 @@ public class Player extends Character
     {
         return critRate;
     }
+
 }
     
 

@@ -6,12 +6,12 @@ import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.Set; 
 
 /**
  * Classe-test SpotTest.
  *
- * @author  Ludivin H & Jeremie G
+ * @author  Ludivine H & Jeremie G
  * @version 2018-11
  *
  * Les classes-test sont documentees ici :
@@ -36,13 +36,12 @@ public class SpotTest
 {
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-    Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
     private Player player, player1;
     private Lesser_Boss monster1, monster; 
     private Lesser_Boss monster2; 
-    private Spot spot; 
+    private Spot spot, neighbor ; 
       
      /**
      * Constructeur de la classe-test RoomTest
@@ -67,6 +66,7 @@ public class SpotTest
         it6 = new Item("name6", "description", 1, 3,1);
         player= new Player(20, "player", 1, 2); 
         Spot spot = new Spot(characterInSpot, objectInSpot);
+        Spot neighbor = new Spot(characterInSpot, objectInSpot);
     }
 
     /**
@@ -79,13 +79,20 @@ public class SpotTest
     {
         //Liberez ici les ressources engagees par setUp()
     }
-    
-    /**
-     * Test Spot creation
+
+    /** 
+     * Test verify if spot is corrected
      */
     @Test
-    public void testCreationRoom()
+    public void testSpotCorrect()
     {
+    }
+
+    public void testCreationRoom()
+
+    {
+         spot.setExits("Q", neighbor);
+         assertTrue(spot.getCorrect());
         assertNull(spot.getListCharacter());
         assertNull(spot.getListItem());
         assertFalse(spot.getVisible());
@@ -119,6 +126,13 @@ public class SpotTest
     {
         spot.setExits(direction, neighbor);
         //Set set = spot.exits.entrySet();
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test);
         
     }
     

@@ -3,7 +3,6 @@
  import java.util.Map;
  import java.util.Iterator;
  import java.util.Set;
-
 /**
  * Class Spot - a spot in an adventure game.
  *
@@ -81,6 +80,12 @@ public class Spot
      */
      public Spot getExits(String direction){
         return exits.get(direction);
+    }
+    /**
+     * Method : returns the exits of 
+     */
+    public Spot getExits(){
+       return this.exits.getKey() + this.exits.getValue(); 
     }
     
     /**
