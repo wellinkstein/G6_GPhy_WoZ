@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 
 /**
  * Classe-test SpotTest.
@@ -29,13 +30,14 @@ import org.junit.Test;
  */
 public class SpotTest
 {
-    
-    Spot neighbor = new Spot();
+    private ArrayList<Character> characterInSpot;
+    private ArrayList<Item> objectInSpot;
+    Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
     private Player player; 
     private Spot spot; 
-    
+      
      /**
      * Constructeur de la classe-test RoomTest
      */
@@ -51,14 +53,14 @@ public class SpotTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        it1 = new Item("name1", "description", 1, 3); 
-        it2 = new Item("name2", "description", 1, 3);
-        it3 = new Item("name3", "description", 1, 3);
-        it4 = new Item("name4", "description", 1, 3);
-        it5 = new Item("name5", "description", 1, 3);
-        it6 = new Item("name6", "description", 1, 3);
+        it1 = new Item("name1", "description", 1, 3, 1,1); 
+        it2 = new Item("name2", "description", 1, 3,1,1 );
+        it3 = new Item("name3", "description", 1, 3,1,1);
+        it4 = new Item("name4", "description", 1, 3,1,1);
+        it5 = new Item("name5", "description", 1, 3,1,1);
+        it6 = new Item("name6", "description", 1, 3,1,1);
         player= new Player(20, "player", 0, 2, 5, 5) ; 
-        Spot spot = new Spot();
+        Spot spot = new Spot(characterInSpot, objectInSpot);
 
     }
 
@@ -88,13 +90,13 @@ public class SpotTest
     @Test
     public void testItemsup5()
     {
-        spot.addItem(it1); 
-        spot.addItem(it2);
-        spot.addItem(it3);
-        spot.addItem(it4);
-        spot.addItem(it5);// rajouter 5 items
+        spot.addItemSpot(it1); 
+        spot.addItemSpot(it2);
+        spot.addItemSpot(it3);
+        spot.addItemSpot(it4);
+        spot.addItemSpot(it5);// rajouter 5 items
         assertEquals(5, spot.getNumberOfItemInSpot());
-        spot.addItem(it6);// Rajouter 1 item
+        spot.addItemSpot(it6);// Rajouter 1 item
         assertEquals(5, spot.getNumberOfItemInSpot());
         
     }
@@ -121,7 +123,7 @@ public class SpotTest
      * Test which verify if character is added at the list.
      */
     public void verifyCharacterList(){
-        spot.addCharacter(player);
+        spot.addCharacterSpot(player);
         boolean test= false; 
         for (int i =0; i<spot.getListCharacter().size(); i++){
             if (spot.getListCharacter().get(i) == player){
@@ -135,7 +137,7 @@ public class SpotTest
      * Test which verify if item is added at the list.
      */
     public void verifyItemList(){
-        spot.addItem(it1);
+        spot.addItemSpot(it1);
         boolean test= false; 
         for (int i =0; i<spot.getListItem().size(); i++){
             if (spot.getListItem().get(i) == it1){

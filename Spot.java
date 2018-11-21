@@ -106,12 +106,12 @@ public class Spot
     /**
      * Add Item at Spot
      */
-    public void addItem(Item items){
+    public void addItemSpot(Item items){
     }
     /** 
      * Add Character at Spot
      */
-    public void addCharacter(Character Player){
+    public void addCharacterSpot(Character Player){
     }
     /**
      * Get the list of character
