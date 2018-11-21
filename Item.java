@@ -14,7 +14,7 @@ public class Item
     private int healthGain; //health gain of the item
     private String name; //name of the item
     private String description; //description of the item
-    private int count = 0;
+    private static int count = 0;
     private int itemID; // Unique ID of the item.
 
     /**
