@@ -1,4 +1,3 @@
-
 /**
  * The common class is a specific item to fight the lesser boss
  *
@@ -8,10 +7,10 @@
 public class Common extends Item
 {
 
-    private String type; //What the common item is
+    private String type;
 
     /**
-     * Constructeur d'objets de classe Common
+     * Constructor of a common item
      */
     public Common (String itemName, String des, int dam, int HG, int prot )
     {

@@ -20,10 +20,13 @@
  */
 public class Spot
 {
-    private int numberMaxItem; //A spot contains between at most 5 items
-    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits
-    private ArrayList<Character> characterInSpot; //all the character in a spot
-    private ArrayList<Item> objectInSpot; //all the item in a spot
+    private int numberMaxItem; //A spot contains at most 5 items
+    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits. 
+    // There cannot be more than 4 exits for one spot.
+    private ArrayList<Character> characterInSpot; //all the character in a spot. There cannot
+    // more than 2 characters in a spot and not more than 1 monster.
+    private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than
+    //number max item.
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
@@ -51,7 +54,7 @@ public class Spot
     
     /**
      * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
-     * a 5th one is not created.
+     * a 5th one is not created and the 4 previously created stay the same.
      */
      public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
@@ -83,7 +86,23 @@ public class Spot
         return exits.get(direction);
      }
      
-     /**
+    /**
+      * Remove an exit 
+      */
+     public void removeExit(String direction)
+     {
+         exits.remove(direction);
+     }
+     
+    /**
+      * Get the number of exits in the hashmap
+      */
+     public int getNumberExits()
+     {
+         return(this.exits.size());
+     }
+     
+    /**
       * getter for the hashmap
       */
      public HashMap<String, Spot> getAllExit()
@@ -211,8 +230,7 @@ public class Spot
     {
     }
     
-     /**
-     * Method getExitString *** to be commented
+    /**
      * This method return all the key from the hashmap 
      * of the room
      */
@@ -225,5 +243,27 @@ public class Spot
         return returnString;
     }
    
-
+    /**
+     * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
+     * False if there is no character or only one.
+     * @return 
+     */
+    public boolean getFighting()
+    {
+        return(this.fighting);
+    }
+    
+    /**
+     * setFighting, become true when a player and a monster are in the same spot.
+     * It is reset to false once a character dies.
+     */
+     public void setFighting()
+    {
+        if (getListCharacter().size()==2){
+            fighting = true; 
+        }
+        else{
+            fighting = false;
+        }
+    }
 }
