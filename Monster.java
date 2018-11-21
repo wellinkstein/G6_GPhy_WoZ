@@ -8,7 +8,7 @@
  */
 public class Monster extends Character
 {
-
+    private boolean isDead = false;
     private String description; 
     /**
      * Constructeur d'objets de classe Monster
@@ -47,10 +47,12 @@ public class Monster extends Character
     {
         if(HP==0)
         {
+            isDead=true;
             return true;
         }
         else
         {
+            isDead=false;
             return false;
         }
     }
