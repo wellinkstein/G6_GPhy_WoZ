@@ -85,6 +85,7 @@ public class SpotTest
      */
     @Test
     public void testSpotCorrect()
+<<<<<<< HEAD
     {   spot.setExits("Q", neighbor);
         assertTrue(spot.getCorrect());    
     }
@@ -92,6 +93,16 @@ public class SpotTest
     public void testCreationRoom()
 
     {  
+=======
+    {
+    }
+
+    public void testCreationRoom()
+
+    {
+         spot.setExits("Q", neighbor);
+         assertTrue(spot.getCorrect());
+>>>>>>> e1acea3e38f1d881f8de2b86d6b235569e995a46
         assertNull(spot.getListCharacter());
         assertNull(spot.getListItem());
         assertFalse(spot.getVisible());
@@ -134,6 +145,26 @@ public class SpotTest
         assertTrue(test);
         
     }
+<<<<<<< HEAD
+=======
+    
+    /**
+     * Test Spot new exit
+     */
+    @Test
+    public void testSetExits()
+    {
+        spot.setExits("Q", neighbor);
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test);
+        
+    }
+>>>>>>> e1acea3e38f1d881f8de2b86d6b235569e995a46
     
     /**
      * Test which verify if the character is added at the list.
