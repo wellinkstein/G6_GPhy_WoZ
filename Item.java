@@ -33,7 +33,7 @@ public class Item
     
     /**
      * setter for the damage
-     * // the damage can be equar to 0 but not be negative
+     * the damage can be equal to 0 but not be negative
      */
     public void setDamage (int Dam)
     {
@@ -45,12 +45,13 @@ public class Item
         {
             damage = Dam;
         }
-        
+       
          
     }
     
     /**
-     * setter for the protectio
+     * setter for the protection
+     * the protection can be equal to 0 but not be negative
      */
     public void setProtection(int Prot )
      {if (Prot<0)

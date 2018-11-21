@@ -12,16 +12,12 @@ import org.junit.Test;
  */
 public class CommonTest
 {
-    // D�finissez ici les variables d'instance n�cessaires � vos engagements;
-    // Vous pouvez �galement les saisir automatiquement du pr�sentoir
-    // � l'aide du menu contextuel "Pr�sentoir --> Engagements".
-    // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du pr�sentoir (les objets sans constructeur, comme int, float, etc.).
+    
     private Common goodCommon;
     
 
     /**
-     * Constructeur de la classe-test CommonTest
+     * Constructor of the class test CommonTest 
      */
     public CommonTest()
     {
@@ -39,7 +35,7 @@ public class CommonTest
 
     }
         /**
-     * Test that checks if the getters work properly
+     * Test that checks if the constructor work properly
      */
     @Test
     public void testGoodCommon()
@@ -56,7 +52,7 @@ public class CommonTest
      *
      */
     @After
-    public void tearDown() // throws java.lang.Exception
+    public void tearDown() 
     {
         //Lib�rez ici les ressources engag�es par setUp()
     }
