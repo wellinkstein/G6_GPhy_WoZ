@@ -200,7 +200,7 @@ public class SpotTest
     // Vérifier 2 caractères --> fait
     // Vérifier pas 3 caratères --> fait
     // Vérifier removeCharactere quand list vide ne change pas la liste
-    // Verifier si supprime bien item  de la liste
+    // Verifier si supprime bien item  de la liste --> fait
     // Vérifier si pas plus de 2 charactères dans la classe --> fait
     //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
     /**
