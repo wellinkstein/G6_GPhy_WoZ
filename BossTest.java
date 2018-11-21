@@ -69,4 +69,18 @@ public class BossTest
     {
         //Lib�rez ici les ressources engag�es par setUp()
     }
+    
+    /**
+     * Test de la creation d'un boss
+     */
+    @Test
+    public void testBossCreation()
+    {
+        Boss myBoss = new Boss(50,"Minotaure",0,20,"Le grand minotaure");
+        assertEquals(50,myBoss.getHP());
+        assertEquals("Minotaure",myBoss.getName());
+        assertEquals(0,myBoss.getXp());
+        assertEquals(20,myBoss.getDamage());
+        
+    }
 }
