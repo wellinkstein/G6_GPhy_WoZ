@@ -257,7 +257,8 @@ public class SpotTest
     }
     
     @Test
-    public void testRemoveNoCharacter();
-    
-    
+    public void testRemoveNoCharacter()
+    {
+    }
+
 }
