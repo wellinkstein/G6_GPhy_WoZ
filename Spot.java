@@ -23,7 +23,9 @@ public class Spot
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
-
+    private boolean exitSpot;
+    private boolean startSpot;
+    
     /**
      * Create a spot with a Haspmap to know the direction of exit
      */
@@ -33,12 +35,14 @@ public class Spot
         isVisible = false;
         fighting = false;
         spotCorrect = false;
+        exitSpot = false;
+        startSpot = false;
         numberItem = 0;
         characterInSpot=characterSpot;
         objectInSpot=objectSpot;
     }
     
-     /**
+    /**
      * Method setExit: defines an exit from this spot
      * Replaces the setExits method
      *
@@ -63,6 +67,38 @@ public class Spot
      */
      public Spot getExits(String direction){
         return exits.get(direction);
+    }
+    
+    /**
+     * getter to know if the spot is an exit
+     */
+    public boolean getExitSpot(Spot spot)
+    {
+        return(exitSpot);
+    }
+    
+    /**
+     * setter to set if a spot is an exit
+     */
+    public void setExitSpot(Spot spot)
+    {
+        spot.exitSpot=true;
+    }
+    
+    /**
+     * getter to get if the spot is a start
+     */
+    public boolean getStartSpot(Spot spot)
+    {
+        return(startSpot);
+    }
+    
+    /**
+     * setter to set if a spot is a start
+     */
+    public void setStartSpot(Spot spot)
+    {
+        spot.startSpot=true;
     }
     
     /**
@@ -135,7 +171,7 @@ public class Spot
     /**
      * Remove item from a spot
      */
-    public void removeItemSpot()
+    public void removeItemSpot(Item item)
     {
     }
     
