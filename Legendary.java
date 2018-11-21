@@ -1,4 +1,3 @@
-
 /**
  * The Legendary class is a specific item obtained after fight a monster
  * @author (Groupe 6)
@@ -11,7 +10,6 @@ public class Legendary extends Item
     /**
      * Constructeur d'objets de classe Legendary
      */
-    // liée a un monstre, mettre variabele monstre dans parametre ??
     public Legendary(String itemName, String des, int dam, int HG, int prot )
     {
         // initialisation des variables d'instance
