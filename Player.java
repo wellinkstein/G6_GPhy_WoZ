@@ -33,7 +33,9 @@ public class Player extends Character
     
     /**
      * This method will allow the player to consume a health potion
-     * if there is one in his inventory
+     * if there is one in his inventory. The potion is remove after use.
+     * A Potion gives 5HP. If the player misses less than 
+     * 5HP the potion gets him to full health.
      */
     public void drinkPotion()
     {
@@ -83,6 +85,8 @@ public class Player extends Character
     
     /**
      * Allows the player to pick up an item
+     * if the item is the Ariadne's golden thread the boolean
+     * link is set to true.
      */
     public void takeItem(Item myItem)
     {
@@ -105,7 +109,7 @@ public class Player extends Character
     }
     
     /**
-     * A method that gets the items in the inventory
+     * A method that gets the items in the inventory at the position given
      */
     public Item getItems(int numItem)
     {
@@ -122,6 +126,7 @@ public class Player extends Character
     
     /**
      * A method that modifies the crit rate based on XP
+     * The player start at level 1 and each level give 5% of crit chance
      */
     public void adjustCritRate()
     {
