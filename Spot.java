@@ -65,6 +65,9 @@ public class Spot
         return(this.spotCorrect);
     }
     
+    /**
+     * getter for the max number of items that may be available in a room
+     */
     public int getNumberMaxItem()
     {
         return(this.numberMaxItem);
@@ -81,15 +84,7 @@ public class Spot
      */
      public Spot getExits(String direction){
         return exits.get(direction);
-    }
-    
-    /**
-     * Method : returns the exits of 
-     */
-    public Spot getExits()
-    {
-       return this.exits.getKey() + this.exits.getValue(); 
-    }
+     }
     
     /**
      * getter to know if the spot is an exit
@@ -170,7 +165,8 @@ public class Spot
     }
     
     /** 
-     * Add Character at Spot
+     * Add Character at the spot. If there is already two characters, it does nothing
+     * as they can't be three caracters in a spot. 
      */
     public void addCharacterSpot(Character character)
     {
@@ -178,7 +174,7 @@ public class Spot
     }
     
     /**
-     * Get the list of character
+     * Get the list of characters in the spot
      */
     public ArrayList getListCharacter()
     {
@@ -186,7 +182,7 @@ public class Spot
     }
     
     /**
-     * Get the list of items
+     * Get the list of items in the spot
      */
     public ArrayList getListItem()
     {
@@ -194,14 +190,16 @@ public class Spot
     }
     
     /**
-     * Remove item from a spot
+     * Remove item from a spot. If there is no character in that spot,
+     * the method does nothing
      */
     public void removeItemSpot(Item item)
     {
     }
     
     /**
-     * Remove charactere from a spot
+     * Remove character from a spot. If there is no character in that spot,
+     * the method does nothing.
      */
     public void removeCharacterSpot(Character character)
     {
