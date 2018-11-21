@@ -1,7 +1,9 @@
-import java.util.*;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+ import java.util.*;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Iterator;
+ import java.util.Set;
+
 /**
  * Class Spot - a spot in an adventure game.
  *
@@ -19,7 +21,7 @@ import java.util.Map;
 public class Spot
 {
     private int numberMaxItem; //A spot contains between at most 5 items
-    private HashMap<String, Spot> exits; //list of the exits
+    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits
     private ArrayList<Character> characterInSpot; //all the character in a spot
     private ArrayList<Item> objectInSpot; //all the item in a spot
     private boolean isVisible; //True if the spot is visible
@@ -79,12 +81,6 @@ public class Spot
      */
      public Spot getExits(String direction){
         return exits.get(direction);
-    }
-    /**
-     * Method : returns the exits of 
-     */
-    public Spot getExits(){
-       return exits.get() + this.exits.getValue(); 
     }
     
     /**
@@ -201,6 +197,19 @@ public class Spot
      */
     public void removeCharacterSpot(Character character)
     {
+    }
+     /**
+     * Method getExitString *** to be commented
+     * This method return all the key from the hashmap 
+     * of the room
+     */
+    public String getExitString(){
+        String returnString = "Exits:";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys) {
+            returnString += " " + exit;
+        }
+        return returnString;
     }
    
 

@@ -85,24 +85,19 @@ public class SpotTest
      */
     @Test
     public void testSpotCorrect()
-    {
-        
+    {   spot.setExits("Q", neighbor);
+        assertTrue(spot.getCorrect());    
     }
 
     public void testCreationRoom()
 
-    {
-
-         spot.setExits("Q", neighbor);
-         assertTrue(spot.getCorrect());
-
+    {  
         assertNull(spot.getListCharacter());
         assertNull(spot.getListItem());
         assertFalse(spot.getVisible());
         assertFalse(spot.getCorrect());
         assertFalse(spot.getExitSpot());
         assertFalse(spot.getStartSpot());
-
     }
     
     /**
@@ -129,6 +124,7 @@ public class SpotTest
     public void testSetExits(String direction, Spot neighbor)
     {
         spot.setExits(direction, neighbor);
+        //Set set = spot.exits.entrySet();
         boolean test=false; 
         for (Map.Entry mapentry: spot.entrySet()){
             if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
@@ -137,32 +133,6 @@ public class SpotTest
         }
         assertTrue(test);
         
-    }
-    /**
-     * Test Spot new exit
-     */
-    @Test
-    public void testSetExits(String direction, Spot neighbor)
-    {
-        spot.setExits("Q", neighbor);
-        boolean test=false; 
-        for (Map.Entry mapentry: spot.entrySet()){
-            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
-                test= true; 
-            }
-        }
-        assertTrue(test);
-        
-    }
-   
-    /**
-     * Test badSpot creation. A spot is created without exits and a spot without exits
-     * is incorrect
-     */
-    @Test
-    public void testBadRoom()
-    {
-        assertFalse(spot.getCorrect());
     }
     
     /**
