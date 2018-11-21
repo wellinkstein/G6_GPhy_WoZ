@@ -85,14 +85,11 @@ public class Spot
      public Spot getExits(String direction){
         return exits.get(direction);
      }
-    
-    /**
-     * getter to know if the spot is an exit
-     */
-    public boolean getExitSpot()
-    {
-        return(this.exitSpot);
-    }
+     
+     public boolean getExitSpot()
+     {
+         return(this.exitSpot);
+     }
     
     /**
      * setter to set if a spot is an exit
@@ -203,6 +200,20 @@ public class Spot
      */
     public void removeCharacterSpot(Character character)
     {
+    }
+    
+     /**
+     * Method getExitString *** to be commented
+     * This method return all the key from the hashmap 
+     * of the room
+     */
+     public String getExitString(){
+        String returnString = "Exits:";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys) {
+            returnString += " " + exit;
+        }
+        return returnString;
     }
    
 

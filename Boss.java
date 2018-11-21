@@ -20,6 +20,4 @@ public class Boss extends Monster
         // initialisation des variables d'instance
         super(myHP,myName,myXp,myDamage,myDes);
     }
-
-    
 }

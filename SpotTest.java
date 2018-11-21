@@ -85,19 +85,19 @@ public class SpotTest
      */
     @Test
     public void testSpotCorrect()
-    {
+
+    {   spot.setExits("Q", neighbor);
+        assertTrue(spot.getCorrect());    
     }
 
     public void testCreationRoom()
 
     {
-         spot.setExits("Q", neighbor);
-         assertTrue(spot.getCorrect());
         assertNull(spot.getListCharacter());
         assertNull(spot.getListItem());
         assertFalse(spot.getVisible());
         assertFalse(spot.getCorrect());
-        assertFalse(spot.getExitSpot());
+        assertFalse(spot.getExitSpot());   
         assertFalse(spot.getStartSpot());
     }
     
@@ -126,23 +126,6 @@ public class SpotTest
     {
         spot.setExits(direction, neighbor);
         //Set set = spot.exits.entrySet();
-        boolean test=false; 
-        for (Map.Entry mapentry: spot.entrySet()){
-            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
-                test= true; 
-            }
-        }
-        assertTrue(test);
-        
-    }
-    
-    /**
-     * Test Spot new exit
-     */
-    @Test
-    public void testSetExits()
-    {
-        spot.setExits("Q", neighbor);
         boolean test=false; 
         for (Map.Entry mapentry: spot.entrySet()){
             if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
