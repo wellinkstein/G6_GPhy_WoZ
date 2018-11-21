@@ -84,7 +84,7 @@ public class Spot
      * Method : returns the exits of 
      */
     public Spot getExits(){
-       return this.exits.getKey() + this.exits.getValue(); 
+       return exits.get() + this.exits.getValue(); 
     }
     
     /**

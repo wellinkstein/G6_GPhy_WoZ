@@ -84,23 +84,25 @@ public class SpotTest
      * Test verify if spot is corrected
      */
     @Test
-<<<<<<< HEAD
     public void testSpotCorrect()
-=======
-    public void testCreationRoom()
->>>>>>> 7a98d2647539e0004b5700c23406c1d0aa18732f
     {
-<<<<<<< HEAD
+        
+    }
+
+    public void testCreationRoom()
+
+    {
+
          spot.setExits("Q", neighbor);
          assertTrue(spot.getCorrect());
-=======
+
         assertNull(spot.getListCharacter());
         assertNull(spot.getListItem());
         assertFalse(spot.getVisible());
         assertFalse(spot.getCorrect());
         assertFalse(spot.getExitSpot());
         assertFalse(spot.getStartSpot());
->>>>>>> 7a98d2647539e0004b5700c23406c1d0aa18732f
+
     }
     
     /**
