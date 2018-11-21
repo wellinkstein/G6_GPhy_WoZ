@@ -61,7 +61,7 @@ public class SpotTest
         it4 = new Item("name4", "description", 1, 3,1);
         it5 = new Item("name5", "description", 1, 3,1);
         it6 = new Item("name6", "description", 1, 3,1);
-        player= new Player(20, "player", 0, 2, 5, 5) ; 
+        player= new Player(20, "player", 1, 2); 
         Spot spot = new Spot(characterInSpot, objectInSpot);
     }
 
@@ -87,9 +87,7 @@ public class SpotTest
         assertFalse(spot.getVisible());
         assertFalse(spot.getCorrect());
         assertFalse(spot.getExitSpot());
-        
-        
-        
+        assertFalse(spot.getStartSpot());
     }
     
     /**
@@ -118,8 +116,7 @@ public class SpotTest
         
     }
    
-    
-     /**
+    /**
      * Test badSpot creation. A spot is created without exits and a spot without exits
      * is incorrect
      */
@@ -129,7 +126,7 @@ public class SpotTest
         assertFalse(spot.getCorrect());
     }
     
-     /**
+    /**
      * Test which verify if the character is added at the list.
      */
     public void verifyCharacterList(){
@@ -252,6 +249,13 @@ public class SpotTest
     {
         spot.setExitSpot();
         assertTrue(spot.getExitSpot());
+    }
+    
+    @Test
+    public void testIsVisible()
+    {
+        spot.setVisible();
+        assertTrue(spot.getVisible());
     }
     
     @Test
