@@ -85,6 +85,14 @@ public class Spot
      public Spot getExits(String direction){
         return exits.get(direction);
      }
+     
+     /**
+      * getter for the hashmap
+      */
+     public HashMap<String, Spot> getAllExit()
+     {
+        return exits;
+     }
 
     /**
      * getter to know if the spot is an exit

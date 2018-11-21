@@ -122,12 +122,12 @@ public class SpotTest
      * Test Spot new exit
      */
     @Test
-    public void testSetExits(String direction, Spot neighbor)
+    public void testSetExits()
     {
-        spot.setExits(direction, neighbor);
+        spot.setExits("Q", neighbor);
         //Set set = spot.exits.entrySet();
         boolean test=false; 
-        for (Map.Entry mapentry: spot.entrySet()){
+        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
             if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
                 test= true; 
             }
