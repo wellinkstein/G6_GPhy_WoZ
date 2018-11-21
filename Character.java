@@ -75,6 +75,8 @@ public class Character
     }
     /**
      * Method that reduces the HP based on the damage attribute of another character.
+     * The value damage will always be a positive interger
+     * If the value of damage (HP inflicted) is superior to current HP, HP is set to 0
      */
     public void loseHp(int damage)
     {
@@ -90,24 +92,10 @@ public class Character
             }
         }
     }
-
-    /**
-     * Methode that gives HP based on the gainHP attribute that is found in items.
-     */
-    public void gainHP(int gainHP)
-    {
-        if (gainHP>0)
-        {
-            HP+=gainHP;
-        }
-        else
-        {
-            HP=HP;
-        }
-    }
     
     /**
      * Method that gives Xp based on the gainXP attribute
+     * Xp can only be gained if the xp that is supposed to be gained is above 0
      */
     public void gainXp(int gainXP)
     {
@@ -140,6 +128,7 @@ public class Character
     /**
      * Method that increases the damage attribute of the character
      * based on the damage attribute of items
+     * To increase damage, the increase amount must be a positive value
      */
      public void increaseDamage(int DamageIncrease)
      {
@@ -156,6 +145,7 @@ public class Character
     /**
     * Method that decreases the damage attribute of the character,
     * this may occur if a player drops an item
+    * To decrease damage, the decrease amount must be a positive value
     */
     public void decreaseDamage(int DamageDecrease)
     {
