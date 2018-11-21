@@ -27,11 +27,14 @@ public class Spot
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
-    private boolean exitSpot;
-    private boolean startSpot;
+    private boolean exitSpot; // boolean if the spot is an exit of the game
+    private boolean startSpot; // boolean if the spot is the start of the game
     
     /**
-     * Create a spot with a Haspmap to know the direction of exit
+     * Create a spot with a Haspmap to know the direction of exit.
+     * The hashmap is empty and the boolean are all set to false.
+     * The numberMaxItem is an attribute used to avoid hardcoding a value in several 
+     * conditions.
      */
     public Spot(ArrayList<Character> characterSpot, ArrayList<Item>objectSpot) 
     {
@@ -47,19 +50,18 @@ public class Spot
     }
     
     /**
-     * Method setExit: defines an exit from this spot
-     * Replaces the setExits method
-     *
-     * @param direction the direction of the exit
-     * @param neighbor the spot in the given direction
-
-     * @version version 2018/11 
+     * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
+     * a 5th one is not created.
      */
      public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
         spotCorrect = true;
     }
     
+    /**
+     * Get the boolean for the attribute getCorrect. "True" if the spot is correct (meaning
+     * that it has between 1 et 4 exits)
+     */
     public boolean getCorrect()
     {
         return(this.spotCorrect);
@@ -68,19 +70,14 @@ public class Spot
     /**
      * getter for the max number of items that may be available in a room
      */
-    public int getNumberMaxItem()
-    {
+     public int getNumberMaxItem()
+     {
         return(this.numberMaxItem);
-    }
+     }
   
     /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
-     *
-     * @param direction The exit's direction
-     * @return The spot in the given direction
-     * 
-     * @version version 2018/11
      */
      public Spot getExits(String direction){
         return exits.get(direction);
@@ -127,7 +124,7 @@ public class Spot
     }
     
     /**
-     * return the number of item in the spot
+     * return the number of items in the spot
      */
     public int getNumberOfItemInSpot()
     {
@@ -166,7 +163,8 @@ public class Spot
     }
     
     /**
-     * Add Item at Spot
+     * Add Item at Spot. If there are already the max number of items on the spot,
+     * the item does not get in the room.
      */
     public void addItemSpot(Item items)
     {
@@ -174,7 +172,7 @@ public class Spot
     
     /** 
      * Add Character at the spot. If there is already two characters, it does nothing
-     * as they can't be three caracters in a spot. 
+     * as there cannot be three caracters in a spot. 
      */
     public void addCharacterSpot(Character character)
     {

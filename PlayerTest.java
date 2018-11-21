@@ -224,6 +224,17 @@ public class PlayerTest
     }
     
     /**
+     * This method tests that the crit rate cant be over 50%
+     */
+    @Test
+    public void testCritRateAt100XP()
+    {
+        myPlayer = new Player(15,"Jimmy",100,2);
+        myPlayer.adjustCritRate();
+        assertEquals(50,myPlayer.getCritRate());
+    }
+    
+    /**
      * This method tests that CritRate is 0 when below 1xp
      */
     @Test
