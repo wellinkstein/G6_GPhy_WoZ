@@ -17,7 +17,7 @@ public class Legendary extends Item
     public Legendary(String itemName, String des, int id, int dam, int HG, int prot )
     {
         // initialisation des variables d'instance
-        super (itemName, des, id, dam, HG,prot );
+        super (itemName, des, dam, HG,prot );
         // variable monstre
     }
 
