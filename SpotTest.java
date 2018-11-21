@@ -3,11 +3,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set; 
 
 /**
  * Classe-test SpotTest.
  *
- * @author  Ludivin H & Jeremie G
+ * @author  Ludivine H & Jeremie G
  * @version 2018-11
  *
  * Les classes-test sont documentees ici :
@@ -32,13 +36,12 @@ public class SpotTest
 {
     private ArrayList<Character> characterInSpot;
     private ArrayList<Item> objectInSpot;
-    Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
     private Player player, player1;
     private Lesser_Boss monster1, monster; 
     private Lesser_Boss monster2; 
-    private Spot spot; 
+    private Spot spot, neighbor ; 
       
      /**
      * Constructeur de la classe-test RoomTest
@@ -63,6 +66,7 @@ public class SpotTest
         it6 = new Item("name6", "description", 1, 3,1);
         player= new Player(20, "player", 0, 2, 5, 5) ; 
         Spot spot = new Spot(characterInSpot, objectInSpot);
+        Spot neighbor = new Spot(characterInSpot, objectInSpot);
     }
 
     /**
@@ -75,15 +79,15 @@ public class SpotTest
     {
         //Liberez ici les ressources engagees par setUp()
     }
-    
-    /**
-     * Test Spot creation
+
+    /** 
+     * Test verify if spot is corrected
      */
     @Test
-    public void testGoodRoom()
+    public void testSpotCorrect()
     {
-        
-        
+         spot.setExits("Q", neighbor);
+         assertTrue(spot.getCorrect());
     }
     
     /**
@@ -109,6 +113,30 @@ public class SpotTest
     @Test
     public void testSetExits(String direction, Spot neighbor)
     {
+        spot.setExits(direction, neighbor);
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test);
+        
+    }
+    /**
+     * Test Spot new exit
+     */
+    @Test
+    public void testSetExits(String direction, Spot neighbor)
+    {
+        spot.setExits("Q", neighbor);
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test);
         
     }
     
