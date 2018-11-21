@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set; 
 
 /**
@@ -126,6 +126,23 @@ public class SpotTest
     {
         spot.setExits(direction, neighbor);
         //Set set = spot.exits.entrySet();
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test);
+        
+    }
+    
+    /**
+     * Test Spot new exit
+     */
+    @Test
+    public void testSetExits()
+    {
+        spot.setExits("Q", neighbor);
         boolean test=false; 
         for (Map.Entry mapentry: spot.entrySet()){
             if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
