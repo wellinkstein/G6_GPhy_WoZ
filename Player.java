@@ -75,6 +75,14 @@ public class Player extends Character
     }
     
     /**
+     * A method that gets the items in the inventory
+     */
+    public Item getItems(int numItem)
+    {
+        return inventory.get(numItem);
+    }
+    
+    /**
      * A method that returns the max Hp
      */
     public int getHPMax()

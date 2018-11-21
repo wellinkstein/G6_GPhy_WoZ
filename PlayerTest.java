@@ -78,9 +78,9 @@ public class PlayerTest
     @Test
     public void testTakeItem()
     {
-        //Item potion = new Item(0,0,5);
-        //myPlayer.takeItem(potion);
-        //assertEquals(potion, myPlayer.getItem(0));
+        Item potion = new Item("Health Potion","A potion that heals 5 HP",0,0,5);
+        myPlayer.takeItem(potion);
+        assertEquals(potion, myPlayer.getItems(0));
     }
 
     /**

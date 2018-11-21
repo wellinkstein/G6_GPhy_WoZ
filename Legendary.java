@@ -14,11 +14,10 @@ public class Legendary extends Item
      * Constructeur d'objets de classe Legendary
      */
     // liée a un monstre, mettre variabele monstre dans parametre 
-    public Legendary(String itemName, String des, int id, int dam, int HG, int prot )
+    public Legendary(String itemName, String des, int dam, int HG, int prot )
     {
         // initialisation des variables d'instance
         super (itemName, des, dam, HG,prot );
-        // variable monstre
     }
 
     /**
