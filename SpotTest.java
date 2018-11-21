@@ -35,7 +35,9 @@ public class SpotTest
     Spot neighbor = new Spot(characterInSpot, objectInSpot);
     String direction = "Q";
     private Item it1, it2, it3, it4, it5, it6;
-    private Player player; 
+    private Player player;
+    private Lesser_Boss monster1; 
+    private Lesser_Boss monster2; 
     private Spot spot; 
       
      /**
@@ -121,7 +123,7 @@ public class SpotTest
     }
     
     /**
-     * Test which verify if character is added at the list.
+     * Test which verify if the character is added at the list.
      */
     public void verifyCharacterList(){
         spot.addCharacterSpot(player);
@@ -136,7 +138,7 @@ public class SpotTest
     }
     
     /**
-     * Test which verify if item is added at the list.
+     * Test which verify if an item is added at the list of the spot.
      */
     public void verifyItemList(){
         spot.addItemSpot(it1);
@@ -150,28 +152,74 @@ public class SpotTest
         
     }
     
-    // Verifier si supprime bien de la liste
+    // Verifier si supprime bienitem  de la liste
     // Vérifier si pas plus de 2 charactères dans la classe
     // Vérifier si pas plus d'un monstre sur un spot
-    
+    //Verifier si un spot pas correct et bien pas correcte (avec le boolean)
     
     /**
-     * Test that when an Item is added to the spot, the number of items in the spot is updated
+     * Test that when a Spot is not correct, the boolean is not correct. 
      */
     @Test
-    public void testNumberItemAddItem()
-    {
-        spot.addItemSpot(it1);
-        assertEquals(1,spot.getNumberOfItemInSpot());
+    public void testSpotNotCorrect(){
+        
     }
     
     /**
-     * Test that when an Item is removed, the right number of items is in the spot 
+     * Test which verify if there is only one monster in a spot
+     */
+    @Test
+    public void testOneMonsterSpot(){
+        spot.addCharacterSpot(player); 
+        spot.addCharacterSpot(monster1); 
+        spot.addCharacterSpot(monster2); 
+        boolean test= true; 
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if (spot.getListCharacter().get(i) == monster2){
+                test=false;
+            }
+        }
+        assertFalse(test);
+        
+    }
+    
+    /**
+     * Test that when an Item is removed, it is removed from the array list of the spot
      */
     @Test
     public void testNumberItemRemoveItem()
     {
-        
+        spot.addItemSpot(it1);
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if (spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertTrue(test);
     }
-
+    
+    // Vérifier si un lesser monster ne peut pas aller dans la salle du boss
+    // Vérifier 2 caractères
+    // Vérifier pas 3 caratères
+    // Vérifier removeCharactere quand list vide ne change pas la liste
+    
+    /**
+     * Test than when an item is removed from the array list and that there is no
+     * item in that list, the list remains empty
+     */
+    @Test
+    public void test()
+    {
+        spot.removeItemSpot(it1);
+        boolean test = true;
+        for (int i=0; i<spot.getListItem().size(); i++){
+            if(spot.getListItem().get(i) == it1){
+                test=false;
+            }
+        }
+        assertEquals(0,spot.getListItem().size());
+        assertTrue(test);
+    }
 }
