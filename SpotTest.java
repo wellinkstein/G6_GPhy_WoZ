@@ -53,12 +53,12 @@ public class SpotTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        it1 = new Item("name1", "description", 1, 3, 1,1); 
-        it2 = new Item("name2", "description", 1, 3,1,1 );
-        it3 = new Item("name3", "description", 1, 3,1,1);
-        it4 = new Item("name4", "description", 1, 3,1,1);
-        it5 = new Item("name5", "description", 1, 3,1,1);
-        it6 = new Item("name6", "description", 1, 3,1,1);
+        it1 = new Item("name1", "description", 1, 3, 1); 
+        it2 = new Item("name2", "description", 1, 3,1);
+        it3 = new Item("name3", "description", 1, 3,1);
+        it4 = new Item("name4", "description", 1, 3,1);
+        it5 = new Item("name5", "description", 1, 3,1);
+        it6 = new Item("name6", "description", 1, 3,1);
         player= new Player(20, "player", 0, 2, 5, 5) ; 
         Spot spot = new Spot(characterInSpot, objectInSpot);
     }
