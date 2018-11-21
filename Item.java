@@ -1,10 +1,8 @@
 /**
- * Decrivez votre classe Item ici.
- *
-<<<<<<< HEAD
+ *  This class creates the different items.
+ * An Item represents an object that can be picked up and used by the player.
+
  * @author Delphine et Yousra
-=======
- * @author (votre nom)
 >>>>>>> acc22fb149bf9a345ee4aebab817bbe6c5f9ac96
  * @version (un numero de version ou une date)
  */
@@ -17,17 +15,24 @@ public class Item
     private String name; //name of the item
     private String description; //description of the item
     private int count = 0;
-    private int itemID; // permet de differencier les differents items
+    private int itemID; // Unique ID of the item.
 
     /**
-     * Constructeur d'objets de classe Item
+     * Constructeur of an Item
+     * @name: the name of the item
+     * @itemID: the id of the item
+     * @description: the description of the item
+     * @damage: the damage of the item
+     * @healthGain: the health gain of the item
      */
-    public Item(String itemName, String des, int id, int dam)
+    public Item(String itemName, String des, int id, int dam, int prot, int HG)
     { 
         name = itemName;
         description = des;
         itemID = ++count;
         damage = dam;
+        protection = prot;
+        healthGain = HG;
     }
     
     /**
@@ -49,34 +54,39 @@ public class Item
     {}
     
     /**
-     * getter for the damage
+     * A method to get the damage of the item
      */
     public int getDamage()
     {return damage;}
     
     /**
-     * getter for the protection
+     * A method to get the protection of the item
      */
     public int getProtection()
     {return protection;}
     
     /**
-     * getter for the name
+     *  A method which return the name of the item
      */
     public String getName()
     {return name;}
     
     /**
-     * getter for the description
+     * A method which return the descritpion of the item
      */
     public String getDescription()
     {return description;}
     
     /**
-     * getter for the health gain
+     * A method to get the health gain of the item
      */
     public int getHealthGain()
     {return healthGain;}
     
-
-}
+    /**
+     * A method which return the name of the item
+     */
+    public int getItemID()
+     {return itemID; }
+    }
+     

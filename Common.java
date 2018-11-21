@@ -13,8 +13,10 @@ public class Common extends Item
     /**
      * Constructeur d'objets de classe Common
      */
-    public Common()
+    public Common (String itemName, String des, int id, int dam )
     {
+        super (itemName, des, id, dam);
+    
     }
 
 }

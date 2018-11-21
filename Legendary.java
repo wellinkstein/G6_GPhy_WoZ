@@ -8,14 +8,17 @@ public class Legendary extends Item
 {
     // variables d'instance - remplacez l'exemple qui suit par le vetre
     private int x;
+    
 
     /**
      * Constructeur d'objets de classe Legendary
      */
-    public Legendary()
+    // liée a un monstre, mettre variabele monstre dans parametre 
+    public Legendary(String itemName, String des, int id, int dam )
     {
         // initialisation des variables d'instance
-        x = 0;
+        super (itemName, des, id, dam);
+        // variable monstre
     }
 
     /**
@@ -24,6 +27,7 @@ public class Legendary extends Item
      * @param  y   le parametre de la methode
      * @return     la somme de x et de y
      */
+    
     public int sampleMethod(int y)
     {
         // Inserez votre code ici
