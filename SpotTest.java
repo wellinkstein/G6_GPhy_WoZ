@@ -64,7 +64,7 @@ public class SpotTest
         it4 = new Item("name4", "description", 1, 3,1);
         it5 = new Item("name5", "description", 1, 3,1);
         it6 = new Item("name6", "description", 1, 3,1);
-        player= new Player(20, "player", 0, 2, 5, 5) ; 
+        player= new Player(20, "player", 1, 2); 
         Spot spot = new Spot(characterInSpot, objectInSpot);
         Spot neighbor = new Spot(characterInSpot, objectInSpot);
     }
@@ -84,26 +84,39 @@ public class SpotTest
      * Test verify if spot is corrected
      */
     @Test
+<<<<<<< HEAD
     public void testSpotCorrect()
+=======
+    public void testCreationRoom()
+>>>>>>> 7a98d2647539e0004b5700c23406c1d0aa18732f
     {
+<<<<<<< HEAD
          spot.setExits("Q", neighbor);
          assertTrue(spot.getCorrect());
+=======
+        assertNull(spot.getListCharacter());
+        assertNull(spot.getListItem());
+        assertFalse(spot.getVisible());
+        assertFalse(spot.getCorrect());
+        assertFalse(spot.getExitSpot());
+        assertFalse(spot.getStartSpot());
+>>>>>>> 7a98d2647539e0004b5700c23406c1d0aa18732f
     }
     
     /**
-     * Test Item can not be >5 
+     * Test Item can not be > numberMaxItem
      */
     @Test
-    public void testItemsup5()
+    public void testItemsSupMaxItem()
     {
         spot.addItemSpot(it1); 
         spot.addItemSpot(it2);
         spot.addItemSpot(it3);
         spot.addItemSpot(it4);
         spot.addItemSpot(it5);// rajouter 5 items
-        assertEquals(5, spot.getNumberOfItemInSpot());
+        assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
         spot.addItemSpot(it6);// Rajouter 1 item
-        assertEquals(5, spot.getNumberOfItemInSpot());
+        assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
         
     }
     
@@ -139,9 +152,10 @@ public class SpotTest
         assertTrue(test);
         
     }
-    
+   
     /**
-     * Test badSpot creation
+     * Test badSpot creation. A spot is created without exits and a spot without exits
+     * is incorrect
      */
     @Test
     public void testBadRoom()
@@ -161,7 +175,6 @@ public class SpotTest
             }
         }
         assertEquals(true, test);
-        
     }
     
     /**
@@ -176,15 +189,6 @@ public class SpotTest
             }
         }
         assertEquals(true, test);
-        
-    }
-    
-    /**
-     * Test that when a Spot is not correct, the boolean is not correct. 
-     */
-    @Test
-    public void testSpotNotCorrect(){
-        
     }
     
     /**
@@ -285,8 +289,23 @@ public class SpotTest
     }
     
     @Test
+    public void testIsVisible()
+    {
+        spot.setVisible();
+        assertTrue(spot.getVisible());
+    }
+    
+    @Test
     public void testRemoveNoCharacter()
     {
+        spot.removeCharacterSpot(player);
+        boolean test = true;
+        for (int i=0; i<spot.getListCharacter().size(); i++){
+            if(spot.getListCharacter().get(i) == player){
+                test=false;
+            }
+        }
+        assertTrue(test);
     }
 
 }

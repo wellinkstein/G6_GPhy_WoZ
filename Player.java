@@ -15,10 +15,9 @@ public class Player extends Character
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
      */
-    public Player(int myHP, String myName, int myXp, int myDamage, int myPosX, int myPosY)
+    public Player(int myHP, String myName, int myXp, int myDamage)
     {
-        // initialisation des variables d'instance
-        super(myHP,myName,myXp,myDamage,myPosX,myPosY);
+        super(myHP,myName,myXp,myDamage);
     }
     
     /**
@@ -27,17 +26,30 @@ public class Player extends Character
      */
     public void drinkPotion()
     {
-        if(inventory.contains("Health Potion")==true||HP<20)
-        {
-            if(HP>=15)
+        boolean isPotion = false;
+        for(int i=0; i<inventory.size();i++)
             {
-                HP=20;
-                System.out.println("First if i.e HP>=15");
+                if(inventory.get(i).getName()=="Health Potion")
+                {
+                    isPotion = true;
+                }
+            }
+        if(isPotion ==true && HP<20)
+        {
+            if(HP>(hpMax-5))
+            {
+                HP=hpMax;
             }
             else
             {
                HP=HP+5; 
-               System.out.println("else statement");
+            }
+            for(int i=0; i<inventory.size();i++)
+            {
+                if(inventory.get(i).getName()=="Health Potion")
+                {
+                    inventory.remove(i);
+                }
             }
         }    
     }
@@ -53,7 +65,7 @@ public class Player extends Character
     /**
      * Allows the player to drop an item
      */
-    public void dropItem(int itemDrop)
+    public void dropItem(Item itemDrop)
     {
         inventory.remove(itemDrop);
     }
@@ -63,7 +75,10 @@ public class Player extends Character
      */
     public void takeItem(Item myItem)
     {
-        inventory.add(myItem);
+        if(inventory.size()<limitItem)
+        {
+            inventory.add(myItem);
+        }
     }
     
     /**
@@ -97,11 +112,11 @@ public class Player extends Character
     {
         if(xp<2)
         {
-            critRate=xp*5;
+            critRate=0;
         }
         else
         {
-            critRate=0;
+            critRate=(xp-1)*5;
         }
     }
     

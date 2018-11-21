@@ -20,7 +20,7 @@ public class Game
 {
     private Spot currentSpot; // position of player
     private boolean finished; // false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out
-        
+       
     /**
      * Create the game and initialise its internal map.
      */
@@ -34,7 +34,18 @@ public class Game
      */
     private void createLabyrinth()
     {
-        Spot start11, spot21, spot31, spot41, spot51, spot61, exit71, spot81, spot91;
+        // Spot spot11, spot21, spot31, spot41, spot51, spot61, spot71, spot81, spot91;
+        // Spot spot12, spot22, spot32, spot42, spot52, spot62, spot72, spot82, spot92;
+        // Spot spot13, spot23, spot33, spot43, spot53, spot63, spot73, spot83, spot93;
+        // Spot spot14, spot24, spot34, spot44, spot54, spot64, spot74, spot84, spot94;
+        // Spot spot15, spot25, spot35, spot45, spot55, spot65, spot75, spot85, spot95;
+        // Spot spot16, spot26, spot36, spot46, spot56, spot66, spot76, spot86, spot96;
+        // Spot spot18, spot28, spot38, spot48, spot58, spot68, spot78, spot88, spot98;
+        // Spot spot17, spot27, spot37, spot47, spot57, spot67, spot77, spot87, spot97;
+        
+        int numberOfSpots = 72;
+    
+        Spot spot11, spot21, spot31, spot41, spot51, spot61, spot71, spot81, spot91;
         Spot spot12, spot22, spot32, spot42, spot52, spot62, spot72, spot82, spot92;
         Spot spot13, spot23, spot33, spot43, spot53, spot63, spot73, spot83, spot93;
         Spot spot14, spot24, spot34, spot44, spot54, spot64, spot74, spot84, spot94;
@@ -48,13 +59,13 @@ public class Game
         
       
         // create the rooms
-        start11 = new Spot(listC,listI);
+        spot11 = new Spot(listC,listI);
         spot21 = new Spot(listC,listI);
         spot31 = new Spot(listC,listI);
         spot41 = new Spot(listC,listI);
         spot51 = new Spot(listC,listI);
         spot61 = new Spot(listC,listI);
-        exit71 = new Spot(listC,listI);
+        spot71 = new Spot(listC,listI);
         spot81 = new Spot(listC,listI);
         spot91 = new Spot(listC,listI);
         spot12 = new Spot(listC,listI);
@@ -123,8 +134,8 @@ public class Game
         
         
         // initialise room exits
-        start11.setExits("D",spot21);
-        spot21.setExits("Q",start11);
+        spot11.setExits("D",spot21);
+        spot21.setExits("Q",spot11);
         spot21.setExits("S",spot22);
         spot31.setExits("S",spot32);
         spot31.setExits("D",spot41);
@@ -134,9 +145,9 @@ public class Game
         spot51.setExits("D",spot61);
         spot61.setExits("Q",spot51);
         spot61.setExits("S",spot62);
-        exit71.setExits("S",spot72);
-        exit71.setExits("D",spot81);
-        spot81.setExits("Q",exit71);
+        spot71.setExits("S",spot72);
+        spot71.setExits("D",spot81);
+        spot81.setExits("Q",spot71);
         spot81.setExits("D",spot91);
         spot91.setExits("Q",spot81);
         spot12.setExits("S",spot13);
@@ -151,7 +162,7 @@ public class Game
         spot62.setExits("Z",spot61);
         spot62.setExits("Q",spot52);
         spot62.setExits("D",spot72);
-        spot72.setExits("Z",exit71);
+        spot72.setExits("Z",spot71);
         spot72.setExits("Q",spot62);
         spot72.setExits("S",spot73);
         spot82.setExits("D",spot92);
@@ -252,16 +263,27 @@ public class Game
         spot88.setExits("Q",spot78);
         spot88.setExits("Z",spot87);
         spot98.setExits("Z",spot97);
-       
+        
+        // ArrayList<Spot> listSpot = new ArrayList();
+        
+         // for (int i = 0; i < numberOfSpots; i++) { 
+             // listSpot.add(new Spot(listC,listI));
+            // }
+        //initialize start spot and exit spot
+        spot11.setStartSpot();
+        spot71.setExitSpot();
 
-        currentSpot = start11;  // start game 
+        currentSpot = spot11;  // start game 
     }
 
+    
     /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
     {            
+       
+        
         printWelcome();
 
         
@@ -272,7 +294,45 @@ public class Game
         }
         System.out.println("Thank you for playing.  Good bye.");
     }
-
+    
+    /**
+     *  Get the value of finished
+     */
+    public boolean getFinished() 
+    { 
+        return finished;
+    }
+    
+    /**
+     *  Set the value of finished to true
+     */
+    public void setFinishedTrue() 
+    { 
+        finished= true;
+    }
+    
+    /**
+     *  Set the value of finished to false
+     */
+    public void setFinishedFalse() 
+    { 
+        finished= false;
+    }
+    /**
+     *  Get the room where the player is 
+     */
+    public Spot getCurrentSpot() 
+    { 
+        return currentSpot;         
+    }
+    
+    /**
+     *  Set the room where the player is 
+     */
+    public void setCurrentSpot(Spot currentS) 
+    { 
+        currentSpot = currentS;         
+    }
     /**
      * Print out the opening message for the player.
      */

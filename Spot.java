@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Spot
 {
-    private int numberItem; //A spot contains between 0 and 5 items
+    private int numberMaxItem; //A spot contains between at most 5 items
     private HashMap<String, Spot> exits; //list of the exits
     private ArrayList<Character> characterInSpot; //all the character in a spot
     private ArrayList<Item> objectInSpot; //all the item in a spot
@@ -39,7 +39,7 @@ public class Spot
         spotCorrect = false;
         exitSpot = false;
         startSpot = false;
-        numberItem = 0;
+        numberMaxItem = 5;
         characterInSpot=characterSpot;
         objectInSpot=objectSpot;
     }
@@ -61,6 +61,11 @@ public class Spot
     public boolean getCorrect()
     {
         return(this.spotCorrect);
+    }
+    
+    public int getNumberMaxItem()
+    {
+        return(this.numberMaxItem);
     }
   
     /**
@@ -156,13 +161,16 @@ public class Spot
     /**
      * Add Item at Spot
      */
-    public void addItemSpot(Item items){
+    public void addItemSpot(Item items)
+    {
     }
     
     /** 
      * Add Character at Spot
      */
-    public void addCharacterSpot(Character Player){
+    public void addCharacterSpot(Character character)
+    {
+        
     }
     
     /**
@@ -191,8 +199,9 @@ public class Spot
     /**
      * Remove charactere from a spot
      */
-    public void removeCharacterSpot()
+    public void removeCharacterSpot(Character character)
     {
     }
+   
 
 }
