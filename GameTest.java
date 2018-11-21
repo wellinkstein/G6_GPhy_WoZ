@@ -47,6 +47,30 @@ public class GameTest
     @Test
     public void testFillListSpot()
     {
+        HashMap<String, Integer> monster = new HashMap<String, Integer>();
+        monster.placeMonsters();
+        fillListSpot(monster);
+        
+        assertEquals();
+    }
+    
+    /**
+     * test monster exists only one time in labyrinth
+     */
+    @Test
+    public void testOneMonster()
+    {
+        HashMap<String, Integer> monster = new HashMap<String, Integer>();
+        fillListSpot(monster);
+        ArrayList<Spot> listS = myGame.getListSpot();
+        for(int i=0; i<listS.size(); i++){
+            if(listS.get(i).getListCharacter()){
+             exist = true;
+             break;
+            }
+        }
+        
+        
         assertEquals();
     }
     
