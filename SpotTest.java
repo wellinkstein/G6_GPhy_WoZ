@@ -356,38 +356,38 @@ public class SpotTest
         assertTrue(test);
     }
 
-    /**
-     * Test to verify it is possible to set the boolean fighting to true if there are 2
-     * characters
-     */
-    @Test
-    public void testFightingTrue()
-    {
-     spot.addCharacterSpot(player); 
-     spot.addCharacterSpot(monster1); 
-     assertTrue(spot.getFighting());
-    }
+    // /**
+     // * Test to verify it is possible to set the boolean fighting to true if there are 2
+     // * characters
+     // */
+    // @Test
+    // public void testFightingTrue()
+    // {
+     // spot.addCharacterSpot(player); 
+     // spot.addCharacterSpot(monster1); 
+     // assertTrue(spot.getFighting());
+    // }
     
     /**
-     * Test to verify it is possible to set the boolean fighting to false if there is 1
-     * monster
-     */
-    @Test
-    public void testFightingFalse1Monster()
-    {
-     spot.addCharacterSpot(monster); 
-     assertFalse(spot.getFighting());
-    }
+    // * Test to verify it is possible to set the boolean fighting to false if there is 1
+    // * monster
+    // */
+    // @Test
+    // public void testFightingFalse1Monster()
+    // {
+     // spot.addCharacterSpot(monster); 
+     // assertFalse(spot.getFighting());
+    // }
     
-    /**
-     * Test to verify it is possible to set the boolean fighting to false if there is 1
-     * player
-     */
-    @Test
-    public void testFightingFalse1Player()
-    {
-     spot.addCharacterSpot(player); 
-     assertFalse(spot.getFighting());
-    }
+    // /**
+     // * Test to verify it is possible to set the boolean fighting to false if there is 1
+     // * player
+     // */
+    // @Test
+    // public void testFightingFalse1Player()
+    // {
+     // spot.addCharacterSpot(player); 
+     // assertFalse(spot.getFighting());
+    // }
     
 }

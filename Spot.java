@@ -28,7 +28,7 @@ public class Spot
     private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than
     //number max item.
     private boolean isVisible; //True if the spot is visible
-    private boolean fighting; //boolean if a monster and a player are in the same spot
+    //private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
     private boolean exitSpot; // boolean if the spot is an exit of the game
     private boolean startSpot; // boolean if the spot is the start of the game
@@ -45,7 +45,7 @@ public class Spot
     {
         exits = new HashMap<String, Spot>();
         isVisible = false;
-        fighting = false;
+        //fighting = false;
         spotCorrect = false;
         exitSpot = false;
         startSpot = false;
@@ -214,7 +214,7 @@ public class Spot
     {   
         if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()<=1){   
             characterInSpot.add(character); 
-            setFighting();
+            //setFighting();
         }
     }
     
@@ -298,27 +298,27 @@ public class Spot
         return returnString;
     }
    
-    /**
-     * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
-     * False if there is no character or only one.
-     * @return boolean
-     */
-    public boolean getFighting()
-    {
-        return(this.fighting);
-    }
+    // /**
+     // * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
+     // * False if there is no character or only one.
+     // * @return boolean
+     // */
+    // public boolean getFighting()
+    // {
+        // return(this.fighting);
+    // }
     
-    /**
-     * setFighting, become true when a player and a monster are in the same spot.
-     * It is reset to false once a character dies.
-     */
-     public void setFighting()
-    {
-        if (this.getListCharacter().size()==2){
-            this.fighting = true; 
-        }
-        else{
-            this.fighting = false;
-        }
-    }
+    // /**
+     // * setFighting, become true when a player and a monster are in the same spot.
+     // * It is reset to false once a character dies.
+     // */
+     // public void setFighting()
+    // {
+        // if (this.getListCharacter().size()==2){
+            // this.fighting = true; 
+        // }
+        // else{
+            // this.fighting = false;
+        // }
+    // }
 }
