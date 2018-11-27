@@ -196,8 +196,10 @@ public class Spot
      */
     public void addItemSpot(Item items)
     {
-        
-        
+        if(getNumberOfItemInSpot()<numberMaxItem)
+        {
+            objectInSpot.add(items);
+        }
     }
     
     /** 
@@ -218,9 +220,7 @@ public class Spot
     {
         return(characterInSpot);
     }
-    
-    
-    
+
     /**
      * Get the list of items in the spot
      * @return objectInSpot
@@ -237,6 +237,7 @@ public class Spot
      */
     public void removeItemSpot(Item item)
     {
+        objectInSpot.remove(item);
     }
     
     /**
@@ -246,6 +247,7 @@ public class Spot
      */
     public void removeCharacterSpot(Character character)
     {
+        characterInSpot.remove(character);
     }
     
     /**
