@@ -31,12 +31,14 @@ public class Game
     public Game() 
     {
         createLabyrinth();
-        setFinishedFalse();
-        placeMonster();//boucle*7
-        placeItem(); //boucle*8
-        defineExits();
-        currentSpot=listSpot[2];
+        //placeMonster(new Monster(12))  
+        
+        //boucle*7
+        // placeItem(); //boucle*8
+        //defineExits(); // définir les sorties pour chaque spot
+        currentSpot=listSpot.get(2);
         exitAndStart();//initialize start spot and exit spot 
+        setFinishedFalse();
     }
 
     /**
@@ -268,7 +270,7 @@ public class Game
     /**
      * Places the Monsters in the adequate Spot. Each monster has only one spot. 
      */
-    public void placeMonster(String name, int spotIndex)
+    public void placeMonster(Monster monster, int spotIndex)
     {
          
     }
@@ -325,19 +327,42 @@ public class Game
     { 
         return listSpot;         
     }
-    
    
     /**
+     * Gets the adjacent spot at a specific direction 
      * 
-     * If the player is in the spot exit AND he has killed the Minotaur, the game ends and the player wins OR ELSE the game ends and the player loses
-     *  si player dans spot exit, et player timetogo==True alors message fin du jeu, sinon message warning
      */
-    public String endGame() 
+    public Spot chooseDirection() 
     { 
-        String result = "";
-       
-        return result;        
+        return listSpot.get(2);//spot adjacent
     }
+    /**
+     * Changes the current spot to the spot according to the direction given
+     * 
+     */
+    public void move() 
+    { 
+               
+    }
+    /**
+     * gets the choice of the player to fight the monster or to run away.
+     * 
+     */
+    public boolean runAwayOrFight() 
+    { 
+         return true;       
+    }
+    
+    /**
+     * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
+     * 
+     */
+    public void endGame() 
+    { 
+                
+    }
+    
+    
     
 
     
