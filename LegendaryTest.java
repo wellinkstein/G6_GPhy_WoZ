@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class LegendaryTest
 {
-    
+    // instances variables
     private Legendary goodLegendary;
 
     /**

@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Classe-test CommonTest.
  *
- * @author Delphine Yousra
+ * @author Delphine - Yousra
  * @version 21 Novembre 2018
  *
  */
@@ -24,7 +24,7 @@ public class CommonTest
     }
 
     /**
-     * Set up the constructor
+     *Set up the constructor
      *Constructor layout (itemName, des, dam, prot, HG)
      * 
      */
@@ -35,7 +35,7 @@ public class CommonTest
 
     }
         /**
-     * Test that checks if the constructor work properly
+     *Test that checks if the constructor work properly
      */
     @Test
     public void testGoodCommon()
