@@ -42,12 +42,50 @@ public class GameTest
     }
     
     /**
-     * test value of finished at the beginning of game
+     * test if monsters are in labyrinth
      */
     @Test
     public void testFillListSpot()
     {
-        assertEquals();
+        boolean monsterExist = false;
+        ArrayList<Spot> listS = myGame.getListSpot();
+        HashMap<String, Integer> monster = new HashMap<String, Integer>();
+        monster.placeMonsters();
+        listS.fillListSpot(monster);
+        ArrayList<Character> listC = new ArrayList();
+        for(int i=0; i<listS.size(); i++){
+            listC.addAll(listS.get(i).getListCharacter());
+        }
+        if(listC.contains(monster.keySet())){
+            monsterExist=true;
+        }
+        assertEquals(true, monsterExist);
+    }
+    
+    /**
+     * test monster exists only one time in labyrinth
+     * Add one monster with fillListSpot() and Verify if monster is
+     * added one time
+     */
+    @Test
+    public void testOneMonster()
+    {
+        boolean monster2=false;
+        HashMap<String, Integer> monster = new HashMap<String, Integer>();
+        monster.placeMonsters();
+        ArrayList<Spot> listS = myGame.getListSpot();
+        ArrayList<Character> listC = new ArrayList();
+        listS.fillListSpot(monster);
+        for(int i=0; i<listS.size(); i++){
+            listC.addAll(listS.get(i).getListCharacter());
+        }
+        monster.keySet().forEach(elt -> {
+            if(listC.indexOf(elt)!=listC.lastIndexOf(elt)){
+                monster2=true;
+            }
+        });
+        
+        assertEquals(false, monster2);
     }
     
     /**

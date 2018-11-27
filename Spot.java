@@ -20,10 +20,13 @@
  */
 public class Spot
 {
-    private int numberMaxItem; //A spot contains between at most 5 items
-    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits
-    private ArrayList<Character> characterInSpot; //all the character in a spot
-    private ArrayList<Item> objectInSpot; //all the item in a spot
+    private int numberMaxItem; //A spot contains at most 5 items
+    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits. 
+    // There cannot be more than 4 exits for one spot.
+    private ArrayList<Character> characterInSpot; //all the character in a spot. There cannot
+    // more than 2 characters in a spot and not more than 1 monster.
+    private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than
+    //number max item.
     private boolean isVisible; //True if the spot is visible
     private boolean fighting; //boolean if a monster and a player are in the same spot
     private boolean spotCorrect; //boolean if the spot is well created
@@ -35,6 +38,8 @@ public class Spot
      * The hashmap is empty and the boolean are all set to false.
      * The numberMaxItem is an attribute used to avoid hardcoding a value in several 
      * conditions.
+     * @param characterSpot : all the character in the spot
+     * @param objectSpot : all the objects (Items) in the spot
      */
     public Spot(ArrayList<Character> characterSpot, ArrayList<Item>objectSpot) 
     {
@@ -51,7 +56,9 @@ public class Spot
     
     /**
      * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
-     * a 5th one is not created.
+     * a 5th one is not created and the 4 previously created stay the same.
+     * @param direction : the direction of the exit
+     * @param neighbor : the neighbor spot
      */
      public void setExits(String direction, Spot neighbor){
         exits.put(direction, neighbor);
@@ -61,6 +68,8 @@ public class Spot
     /**
      * Get the boolean for the attribute getCorrect. "True" if the spot is correct (meaning
      * that it has between 1 et 4 exits)
+     * @return : spot True if the spot is corrected, False if the spot 
+     * not corrected
      */
     public boolean getCorrect()
     {
@@ -68,7 +77,8 @@ public class Spot
     }
     
     /**
-     * getter for the max number of items that may be available in a room
+     * getter for the max number of items that may be available in a spot
+     * @return int numberMaxItem : The number max of Item in a spot
      */
      public int getNumberMaxItem()
      {
@@ -78,13 +88,34 @@ public class Spot
     /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
+     * @param direction : The direction of the exit of spot
+     * @return Spot : The spot which have an exit at the direction given
      */
      public Spot getExits(String direction){
         return exits.get(direction);
      }
      
-     /**
+    /**
+      * Remove an exit 
+      * @param direction The direction of the exit of spot
+      */
+     public void removeExit(String direction)
+     {
+         exits.remove(direction);
+     }
+     
+    /**
+      * Get the number of exits in the hashmap
+      * @return int : the number of the exits in a spot
+      */
+     public int getNumberExits()
+     {
+         return(this.exits.size());
+     }
+     
+    /**
       * getter for the hashmap
+      * @return the exits of the haspmap
       */
      public HashMap<String, Spot> getAllExit()
      {
@@ -93,6 +124,7 @@ public class Spot
 
     /**
      * getter to know if the spot is an exit
+     * @return a boolean : if the spot is an exit
      */
      public boolean getExitSpot()
      {
@@ -109,6 +141,7 @@ public class Spot
     
     /**
      * getter to get if the spot is a start
+     * @return boolean: True if the spot is a start
      */
     public boolean getStartSpot()
     {
@@ -125,20 +158,13 @@ public class Spot
     
     /**
      * return the number of items in the spot
+     * @return int number of item in a spot
      */
     public int getNumberOfItemInSpot()
     {
         return (objectInSpot.size());
     }
-    
-    /**
-     * Delete Spot
-     */
-    public void deleteSpot(Spot spot)
-    {
-        
-    }
-    
+     
     /**
      * Method to exit a Spot
      */
@@ -156,6 +182,7 @@ public class Spot
     
     /**
      * getter of isVisible
+     * @return boolean : True if the spot is visible
      */
     public boolean getVisible()
     {
@@ -165,14 +192,18 @@ public class Spot
     /**
      * Add Item at Spot. If there are already the max number of items on the spot,
      * the item does not get in the room.
+     * @param Items The Item that we want to add in a spot
      */
     public void addItemSpot(Item items)
     {
+        
+        
     }
     
     /** 
      * Add Character at the spot. If there is already two characters, it does nothing
      * as there cannot be three caracters in a spot. 
+     * @param character The character that we want to add in a spot
      */
     public void addCharacterSpot(Character character)
     {
@@ -181,6 +212,7 @@ public class Spot
     
     /**
      * Get the list of characters in the spot
+     * @return arraylist characterInSpot
      */
     public ArrayList getListCharacter()
     {
@@ -189,6 +221,7 @@ public class Spot
     
     /**
      * Get the list of items in the spot
+     * @return objectInSpot
      */
     public ArrayList getListItem()
     {
@@ -198,6 +231,7 @@ public class Spot
     /**
      * Remove item from a spot. If there is no character in that spot,
      * the method does nothing
+     * @param item The Item that we want to remove
      */
     public void removeItemSpot(Item item)
     {
@@ -206,15 +240,16 @@ public class Spot
     /**
      * Remove character from a spot. If there is no character in that spot,
      * the method does nothing.
+     * @param character The character that we want to remove
      */
     public void removeCharacterSpot(Character character)
     {
     }
     
-     /**
-     * Method getExitString *** to be commented
+    /**
      * This method return all the key from the hashmap 
      * of the room
+     * @return returnString all the key from the hashmap
      */
      public String getExitString(){
         String returnString = "Exits:";
@@ -225,5 +260,27 @@ public class Spot
         return returnString;
     }
    
-
+    /**
+     * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
+     * False if there is no character or only one.
+     * @return boolean
+     */
+    public boolean getFighting()
+    {
+        return(this.fighting);
+    }
+    
+    /**
+     * setFighting, become true when a player and a monster are in the same spot.
+     * It is reset to false once a character dies.
+     */
+     public void setFighting()
+    {
+        if (getListCharacter().size()==2){
+            fighting = true; 
+        }
+        else{
+            fighting = false;
+        }
+    }
 }
