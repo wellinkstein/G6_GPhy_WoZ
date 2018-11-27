@@ -53,8 +53,8 @@ public class ItemTest
     @Test
     public void testSetNegativeDamage()
     {
-        goodItem.setDamage(-10);
-        assertEquals(2,goodItem.getDamage());
+        goodItem.setDamage(-10);//Damage with a negative value
+        assertEquals(2,goodItem.getDamage());//The parameter "2" must remain defined as damage attribute
     }
     /**
      * test for good damage
@@ -62,8 +62,8 @@ public class ItemTest
     @Test
     public void testSetPositiveDamage()
     {
-        goodItem.setDamage(10);
-        assertEquals(10,goodItem.getDamage());
+        goodItem.setDamage(10);//Damage with a positive value
+        assertEquals(10,goodItem.getDamage());//The parameter "10" must be set as the damage attribute
     }
     /**
      * test for bad protection
@@ -100,7 +100,7 @@ public class ItemTest
     @After
     public void tearDown() 
     {
-        //Liberez ici les ressources engagees par setUp()
+        
     }
     
 }

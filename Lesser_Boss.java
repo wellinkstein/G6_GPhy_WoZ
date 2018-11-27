@@ -18,8 +18,32 @@ public class Lesser_Boss extends Monster
      */
     public Lesser_Boss(int myHP, String myName, int myXp, int myDamage, String myDes)
     {
-        // initialisation des variables d'instance
         super(myHP,myName,myXp,myDamage,myDes);
+        aggressive=false;
+    }
+    
+    /**
+     * A method that returns the boolean of aggressive
+     */
+    public boolean getAggressive()
+    {
+        return aggressive;
+    }
+    
+    /**
+     * A method that sets aggressive to true
+     */
+    public void setAggressiveTrue()
+    {
+        aggressive=true;
+    }
+    
+    /**
+     * A method that sets aggressive to false
+     */
+    public void setAggressiveFalse()
+    {
+        aggressive=false;
     }
 
 }
