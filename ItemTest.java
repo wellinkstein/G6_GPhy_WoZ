@@ -9,65 +9,31 @@ import org.junit.Test;
  * @author  (votre nom)
  * @version (un numero de version ou une date)
  *
- * Les classes-test sont documentees ici :
- * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
- * et sont basees sur le document e 2002 Robert A. Ballance intitule
- * "JUnit: Unit Testing Framework".
- *
- * Les objets Test (et TestSuite) sont associes aux classes e tester
- * par la simple relation yyyTest (e.g. qu'un Test de la classe Name.java
- * se nommera NameTest.java); les deux se retrouvent dans le m?me paquetage.
- * Les "engagements" (anglais : "fixture") forment un ensemble de conditions
- * qui sont vraies pour chaque methode Test e executer.  Il peut y avoir
- * plus d'une methode Test dans une classe Test; leur ensemble forme un
- * objet TestSuite.
- * BlueJ decouvrira automatiquement (par introspection) les methodes
- * Test de votre classe Test et generera la TestSuite consequente.
- * Chaque appel d'une methode Test sera precede d'un appel de setUp(),
- * qui realise les engagements, et suivi d'un appel e tearDown(), qui les
- * detruit.
  */
 public class ItemTest
 {
-    // Definissez ici les variables d'instance necessaires e vos engagements;
-    // Vous pouvez egalement les saisir automatiquement du presentoir
-    // e l'aide du menu contextuel "Presentoir --> Engagements".
-    // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du presentoir (les objets sans constructeur, comme int, float, etc.).
     private Item goodItem;
-    private Item badItem;
     private Item goodDamage;
-    private Item badDamage;
     private Item goodProtection;
-    private Item badProtection;
+    private Item myItem;
 
     /**
-     * Constructeur de la classe-test ItemTest
+     * Constructor of the Item class test.
      */
     public ItemTest()
     {
     }
 
     /**
-     * Met en place les engagements.
-     *
-     * Methode appelee avant chaque appel de methode de test.
+     * Set up the constructor
+     *Constructor layout (itemName, des, dam, prot, HG)
+     * 
      */
     @Before
-    public void setUp() // throws java.lang.Exception
-    {
+    public void setUp() 
+    { 
+        goodItem = new Item("Iron Sword","Common sword", 2, 2, 0);
 
-    }
-
-    /**
-     * Supprime les engagements
-     *
-     * Methode appelee apres chaque appel de methode de test.
-     */
-    @After
-    public void tearDown() // throws java.lang.Exception
-    {
-        //Liberez ici les ressources engagees par setUp()
     }
         /**
      * Test that checks if the getters work properly
@@ -75,169 +41,64 @@ public class ItemTest
     @Test
     public void testGoodItem()
     {
-        goodItem = new Item("Iron Sword","Common sword", 2, 2, 0);
         assertEquals("Iron Sword",goodItem.getName());
+        assertEquals("Common sword",goodItem.getDescription());
         assertEquals(2,goodItem.getDamage());
         assertEquals (2,goodItem.getProtection());
         assertEquals (0,goodItem.getHealthGain());
     }
-    
     /**
-     * Test that checks if items can have a negative damage
+     * test for bad damage
      */
     @Test
-    public void testBadItemNegativeDamage()
+    public void testSetNegativeDamage()
     {
-        badItem = new Item("Iron Sword","Common sword", -2 , 2, 0);
-        assertEquals("Iron Sword",badItem.getName());
-        assertEquals(-2,badItem.getDamage());
-        assertEquals (2,badItem.getProtection());
-        assertEquals (0,badItem.getHealthGain());
-    }
-    
-    /**
-     * Test that checks if item can have a negative protection
-     */
-    @Test
-    public void testBadItemNegativeProtection()
-    {
-        badItem = new Item("Iron Sword","Common sword", 2 , -2, 0);
-        assertEquals("Iron Sword",badItem.getName());
-        assertEquals(2,badItem.getDamage());
-        assertEquals (-2,badItem.getProtection());
-        assertEquals (0,badItem.getHealthGain());
-    }
-    
-    /**
-     * Test that checks item name Adriane's golden thread
-     */
-    @Test
-    public void testGoodItemGoldenThread()
-    {
-        goodItem = new Item("Ariadne's golden thread","Ariadne's golden thread", 2 , 2, 0);
-        assertEquals("Ariadne's golden thread",goodItem.getName());
+        goodItem.setDamage(-10);
         assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
     }
-    
     /**
-     * Test that checks item name Ares's sword
+     * test for good damage
      */
     @Test
-    public void testGoodItemAresSword()
+    public void testSetPositiveDamage()
     {
-        goodItem = new Item("Ares's sword","Legendary sword", 2 , 2, 0);
-        assertEquals("Ares's sword",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
+        goodItem.setDamage(10);
+        assertEquals(10,goodItem.getDamage());
     }
-    
     /**
-     * Test that checks item name Artemise's bow
+     * test for bad protection
      */
     @Test
-    public void testGoodItemArtemisBow()
+    public void testSetNegativeProtection()
     {
-        goodItem = new Item("Artemis's bow","Legendary bow", 2 , 2, 0);
-        assertEquals("Artemis's bow",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
+        goodItem.setProtection(-10);
+        assertEquals(2,goodItem.getProtection());
     }
-    
     /**
-     * Test that checks item name The Aegis Shield
+     * test for good protection
      */
     @Test
-    public void testGoodItemAegisShield()
+    public void testSetPositiveProtection()
     {
-        goodItem = new Item("Aegis shield","Legendary shield", 2 , 2, 0);
-        assertEquals("Aegis shield",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
+        goodItem.setProtection(10);
+        assertEquals(10,goodItem.getProtection());
     }
-    
     /**
-     * Test that checks item name Hermes's Sandals
+     * test for good name
      */
     @Test
-    public void testGoodItemHermesSandals()
+    public void testSetName()
     {
-        goodItem = new Item("Hermes's sandals","Legendary sandals", 2 , 2, 0);
-        assertEquals("Hermes's sandals",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
+        goodItem.setName("YousraDelphine");
+        assertEquals("YousraDelphine",goodItem.getName());
     }
-    
-     /**
-     * Test that checks item name Iron sword
-     */
-    @Test
-    public void testGoodItemIronSword()
-    {
-        goodItem = new Item("Iron sword","Common sword", 2 , 2, 0);
-        assertEquals("Iron sword",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
-    }
-    
     /**
-     * Test that checks item name Iron dagger
+     *
      */
-    @Test
-    public void testGoodItemIronDagger()
+    @After
+    public void tearDown() 
     {
-        goodItem = new Item("Iron dagger","Common dagger", 2 , 2, 0);
-        assertEquals("Iron dagger",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
+        //Liberez ici les ressources engagees par setUp()
     }
     
-    /**
-     * Test that checks item name Standard bow
-     */
-    @Test
-    public void testGoodItemStandardBow()
-    {
-        goodItem = new Item("Standard bow","Common bow", 2 , 2, 0);
-        assertEquals("Standard bow",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
-    }
-    
-    /**
-     * Test that checks item name Health Potion
-     */
-    @Test
-    public void testGoodItemHealthPotion()
-    {
-        goodItem = new Item("Health potion","Common health potion", 0 , 0, 5);
-        assertEquals("Health potion",goodItem.getName());
-        assertEquals(0,goodItem.getDamage());
-        assertEquals (0,goodItem.getProtection());
-        assertEquals (5,goodItem.getHealthGain());
-    }
-    
-    
-    /**
-     * Test that checks item name Iron Armor
-     */
-    @Test
-    public void testGoodItemIronArmor()
-    {
-        goodItem = new Item("Iron Armor","Common armor", 2 , 2, 0);
-        assertEquals("Iron Armor",goodItem.getName());
-        assertEquals(2,goodItem.getDamage());
-        assertEquals (2,goodItem.getProtection());
-        assertEquals (0,goodItem.getHealthGain());
-    }
-    
-  
 }
