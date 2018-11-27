@@ -106,6 +106,22 @@ public class Player extends Character
     }   
     
     /**
+     * A method that set TimeToGo to true
+     */
+    public void setTrueTimeToGo()
+    {
+        timeToGo = true;
+    }
+    
+    /**
+     * A method that set TimeToGo to false
+     */
+    public void setFalseTimeToGo()
+    {
+        timeToGo = false;
+    }
+    
+    /**
      * A method that returns the item limit
      */
     public int getLimitItem()
