@@ -208,10 +208,25 @@ public class Spot
      * @param character The character that we want to add in a spot
      */
     public void addCharacterSpot(Character character)
-    {
-        
+    {   
+        if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()<=1){   
+            characterInSpot.add(character); 
+        }
     }
     
+    /**
+     * True if the character is in the spot
+     * @param character : To verify if the character is in the spot
+     */
+    public Boolean ifCharacterInSpot(Character character){
+        for (Character characters : this.characterInSpot){
+            if (characters.getName()==character.getName()){
+                return (true); 
+            }
+        }
+        return(false); 
+    }
+
     /**
      * Get the list of characters in the spot
      * @return arraylist characterInSpot
@@ -219,6 +234,21 @@ public class Spot
     public ArrayList getListCharacter()
     {
         return(characterInSpot);
+    }
+    
+    /**
+     * Getter to return the number of Monster in a spot
+     * @return number of the Monster in a spot
+     */
+    public int numberOfMonsterInSpot(){
+        int number=0; 
+        for (Character character : this.characterInSpot){
+            if(character.getName()== "Chimera" || character.getName()== "Cerberus" ||character.getName()== "Medusa" 
+            || character.getName()== "Cyclops" || character.getName()== "Arachne"|| character.getName()=="Minotaur"){
+                number++; 
+            }  
+        }
+        return (number); 
     }
 
     /**

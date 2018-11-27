@@ -13,9 +13,9 @@ public class Monster extends Character
     /**
      * The constructor for the monster class
      */
-    public Monster(int myHP, String myName, int myXp, int myDamage, String myDes)
+    public Monster(int myHP, String myName, int myXp, int myDamage,int myProtection,String myDes)
     {
-        super(myHP,myName,myXp,myDamage);
+        super(myHP,myName,myXp,myDamage,myProtection);
         description = myDes;
     }
     

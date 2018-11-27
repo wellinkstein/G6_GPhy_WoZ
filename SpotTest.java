@@ -24,7 +24,7 @@ public class SpotTest
     private Item it1, it2, it3, it4, it5, it6;
     private Player player, player1;
     private Lesser_Boss monster1, monster; 
-    private Lesser_Boss monster2; 
+    private Boss monster2; 
     private Spot spot, neighbor, anotherSpot;
       
     /**
@@ -50,7 +50,9 @@ public class SpotTest
         it6 = new Item("name6", "description", 1, 3,1);
         objectInSpot= new ArrayList <Item> ();
         characterInSpot= new ArrayList <Character> ();
-        player= new Player(20, "player", 1, 2); 
+        player= new Player(20, "player", 1, 2,2);
+        monster1= new Lesser_Boss(30,"Chimera", 0, 2,2, "io");  
+        monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
         spot = new Spot(characterInSpot, objectInSpot);
         neighbor = new Spot(characterInSpot, objectInSpot);
         anotherSpot = new Spot(characterInSpot, objectInSpot);
@@ -214,18 +216,16 @@ public class SpotTest
      * The new one should not be part of the spot and the previous one stays in the spot.
      */
     @Test
-    public void testOneMonsterSpot(){
-        spot.addCharacterSpot(player); 
+    public void testOneMonsterSpot(){ 
         spot.addCharacterSpot(monster1); 
         spot.addCharacterSpot(monster2); 
-        boolean test= true; 
+        boolean test= false; 
         for (int i=0; i<spot.getListCharacter().size(); i++){
-            if (spot.getListCharacter().get(i) == monster2){
-                test=false;
+            if (spot.getListCharacter().get(i) == monster1 && spot.numberOfMonsterInSpot()==1){
+                test=true;
             }
         }
-        assertFalse(test);
-        assertEquals(2, spot.getListCharacter().size()); 
+        assertTrue(test); 
     }
     
     /**
@@ -245,26 +245,26 @@ public class SpotTest
         assertTrue(test);
     }
     
-    /**
-     * Test which verifiy if there is only 2 characters and not 2 players on a spot at
-     * the same time. The new player isn't added to the spot and the previous one will
-     * stay there.
-     */
-    @Test
-    public void TestNot2Players(){
-     spot.addCharacterSpot(player); 
-     spot.addCharacterSpot(player1); 
-     spot.addCharacterSpot(monster); 
-     boolean test= true; 
-        for (int i=0; i<spot.getListCharacter().size(); i++){
-            if (spot.getListCharacter().get(i) == player1){
-                test=false;
-            }
-        }
-        assertFalse(test);
-        assertEquals(2, spot.getListCharacter().size()); 
+    // /**
+     // * Test which verifiy if there is only 2 characters and not 2 players on a spot at
+     // * the same time. The new player isn't added to the spot and the previous one will
+     // * stay there.
+     // */
+    // @Test
+    // public void TestNot2Players(){
+     // spot.addCharacterSpot(player); 
+     // spot.addCharacterSpot(player1); 
+     // spot.addCharacterSpot(monster); 
+     // boolean test= true; 
+        // for (int i=0; i<spot.getListCharacter().size(); i++){
+            // if (spot.getListCharacter().get(i) == player1){
+                // test=false;
+            // }
+        // }
+        // assertFalse(test);
+        // assertEquals(2, spot.getListCharacter().size()); 
         
-    }
+    // }
     
     /**
      * Test that a spot may be set to be a start spot

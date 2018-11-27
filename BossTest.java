@@ -44,11 +44,12 @@ public class BossTest
     @Test
     public void testBossCreation()
     {
-        Boss myBoss = new Boss(50,"Minotaure",0,20,"Le grand minotaure");
+        Boss myBoss = new Boss(50,"Minotaure",0,20,0,"Le grand minotaure");
         assertEquals(50,myBoss.getHP());
         assertEquals("Minotaure",myBoss.getName());
         assertEquals(0,myBoss.getXp());
         assertEquals(20,myBoss.getDamage());
+        assertEquals(0,myBoss.getProtection());
         
     }
 }
