@@ -132,6 +132,7 @@ public class SpotTest
      * Test adding a new exit to the same direction as the previous one. It shoud not add
      * the new entry and keep the previous one.
      */
+    @Test
     public void verifyNotSameDirectionHashmap()
     {
         spot.setExits("D", neighbor);
@@ -156,6 +157,7 @@ public class SpotTest
     /**
      * Test which verify if the character is added at the list when added to the spot.
      */
+    @Test
     public void verifyAddCharacter()
     {
         spot.addCharacterSpot(player);
@@ -171,6 +173,7 @@ public class SpotTest
     /**
      * Test which verify if an item is added at the list of the spot.
      */
+    @Test
     public void verifyItemList(){
         spot.addItemSpot(it1);
         boolean test= false; 
@@ -242,6 +245,7 @@ public class SpotTest
      * the same time. The new player isn't added to the spot and the previous one will
      * stay there.
      */
+    @Test
     public void TestNot2Players(){
      spot.addCharacterSpot(player); 
      spot.addCharacterSpot(player1); 

@@ -196,6 +196,8 @@ public class Spot
      */
     public void addItemSpot(Item items)
     {
+        
+        
     }
     
     /** 
