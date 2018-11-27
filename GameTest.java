@@ -56,7 +56,7 @@ public class GameTest
         for(int i=0; i<listS.size(); i++){
             listC.addAll(listS.get(i).getListCharacter());
         }
-        if(listC.contains(monster.keySet()){
+        if(listC.contains(monster.keySet())){
             monsterExist=true;
         }
         assertEquals(true, monsterExist);

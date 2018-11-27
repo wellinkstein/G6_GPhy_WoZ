@@ -164,15 +164,7 @@ public class Spot
     {
         return (objectInSpot.size());
     }
-    
-    /**
-     * Delete Spot
-     */
-    public void deleteSpot(Spot spot)
-    {
-        
-    }
-    
+     
     /**
      * Method to exit a Spot
      */
