@@ -8,17 +8,16 @@
  */
 public class Item
 {
-    // instances variables
-    private int damage; //damage of the item
-    private int protection; //protection of the item
-    private int healthGain; //health gain of the item
+    private int damage; //dictates the damage attributed to an item
+    private int protection; //dictates the protection attributed to an item
+    private int healthGain; //determines the health an item will give to the player when the item is used
     protected String name; //name of the item
     private String description; //description of an item
     private static int count = 0;//the auto incrementation of id item
-    private int itemID; // Unique ID of the item.
+    private int itemID; // Unique ID of the item, each item will have it's id incremented by 1.
 
     /**
-     * Constructeur for objects of class Item
+     * Constructor for objects of class Item
      * 
      */
     public Item(String itemName, String des, int dam, int prot, int HG)
@@ -33,7 +32,7 @@ public class Item
     
     /**
      * setter for the damage
-     * the damage can be equal to 0 but not be negative
+     * the damage can be equal to 0 but cannot be negative
      */
     public void setDamage (int Dam)
     {
@@ -51,7 +50,7 @@ public class Item
     
     /**
      * setter for the protection
-     * the protection can be equal to 0 but not be negative
+     * the protection can be equal to 0 but cannot be negative
      */
     public void setProtection(int Prot )
      {if (Prot<0) //If the value of the protection is less than 0
@@ -72,41 +71,36 @@ public class Item
     
     /**
      * A method to get the damage of the item
-     * @return damage, the value of object damage
      */
     public int getDamage()
     {return damage;}
     
     /**
      * A method to get the protection of the item
-     *  @return protection, the value of object protection
      */
     public int getProtection()
     {return protection;}
     
     /**
      *  A method which return the name of the item
-     *  @return name, the name of the object
      */
     public String getName()
     {return name;}
     
     /**
      * A method which return the descritpion of the item
-     * @return description,the description of the object
      */
     public String getDescription()
     {return description;}
     
     /**
      * A method to get the health gain of the item
-     *  @return healthGain, the value of object power
      */
     public int getHealthGain()
     {return healthGain;}
     
     /**
-     * A method which return the name of the item
+     * A method which returns the name of the item
      */
     public int getItemID()
      {return itemID; }

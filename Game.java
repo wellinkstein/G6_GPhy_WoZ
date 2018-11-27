@@ -311,12 +311,8 @@ public class Game
     public void play() 
     {            
         
-        
         printWelcome();
 
-        
-                
-        
         while (! finished) {
             
         }
@@ -337,8 +333,23 @@ public class Game
     {
     }
     
+     /**
+     * Get the Monsters and his Spot.
+     */
+    public HashMap<String,Integer> getMonsters()
+    {
+        return monsters;
+         
+    }
+    /**
+     * Places the Monsters in the adequate Spot. Each monster has only one spot. coucou
+     */
+    public void placeMonsters()
+    {
+         
+    }
       /**
-     *  Fills the spot with the adequate characters and items
+     *  Fills the spots with the adequate monsters and items. Each monster has only one spot.
      */
     public void fillListSpot()
     {
@@ -394,19 +405,16 @@ public class Game
         return listSpot;         
     }
     
-    public boolean inExit()
-    {
-      return true;
-    }
+   
     /**
+     * 
      * If the player is in the spot exit AND he has killed the Minotaur, the game ends and the player wins OR ELSE the game ends and the player loses
      *  si player dans spot exit, et player timetogo==True alors message fin du jeu, sinon message warning
      */
     public String endGame() 
     { 
         String result = "";
-        
-      
+       
         return result;        
     }
     

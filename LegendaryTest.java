@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test LegendaryTest.
+ * A test class to test the functions of legendary items
  *
  * @author  (Yousra & Delphine)
  * @version (2018)
@@ -12,18 +12,18 @@ import org.junit.Test;
  */
 public class LegendaryTest
 {
-    // instances variables
+    //The necessary attribute/variable to test the functions of this class
     private Legendary goodLegendary;
 
     /**
-     * Constructeur de la classe-test LegendaryTest
+     * Constructor of the legendary test class
      */
     public LegendaryTest()
     {
     }
 
     /**
-     * Method used for each method test
+     * Constructor used for each method test
      */
     @Before
     public void setUp() 
@@ -31,7 +31,7 @@ public class LegendaryTest
         goodLegendary = new Legendary("Aries's Sword","Legendary sword", 2, 2, 0);
     }
      /**
-     * Test that checks if the constructor work properly
+     * Test that checks if the constructor works properly
      */
     @Test
     public void testGoodLegendary()
@@ -44,7 +44,7 @@ public class LegendaryTest
     }
 
     /**
-    
+     * Removes the set up
      */
     @After
     public void tearDown()

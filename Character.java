@@ -34,6 +34,7 @@ public class Character
         Name = myName;
         xp = myXp;
         Damage = myDamage;
+        Protection = 0;
     }
     
     /**
@@ -83,6 +84,7 @@ public class Character
     {
         return(inventory.get(emplacement));
     }
+    
     /**
      * Method that reduces the HP based on the damage attribute of another character.
      * The value damage will always be a positive interger
@@ -196,7 +198,7 @@ public class Character
     /**
     * Method that decreases the Protection attribute of the character,
     * this may occur if a player drops an item
-    * To decrease damage, the decrease amount must be a positive value
+    * To decrease protection, the decrease amount must be a positive value
     */
     public void decreaseProtection(int ProtectionDecrease)
     {

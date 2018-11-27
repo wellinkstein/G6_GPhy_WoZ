@@ -4,10 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test ItemTest.
+ * A test class to test the various functions of the item class
  *
- * @author  (votre nom)
- * @version (un numero de version ou une date)
+ * @author  (Group 6)
+ * @version (2018-11-27)
  *
  */
 public class ItemTest
@@ -25,7 +25,7 @@ public class ItemTest
     }
 
     /**
-     * Set up the constructor
+     * Sets up the constructor
      *Constructor layout (itemName, des, dam, prot, HG)
      * 
      */
@@ -48,25 +48,28 @@ public class ItemTest
         assertEquals (0,goodItem.getHealthGain());
     }
     /**
-     * test for bad damage
+     * test if the set damage accepts a negative value
+     * this should not be possible
      */
     @Test
     public void testSetNegativeDamage()
     {
-        goodItem.setDamage(-10);
-        assertEquals(2,goodItem.getDamage());
+        goodItem.setDamage(-10);//Damage with a negative value
+        assertEquals(2,goodItem.getDamage());//The parameter "2" must remain defined as damage attribute
     }
     /**
-     * test for good damage
+     * test if the set damage method accepts a positive value
+     * This should be possible
      */
     @Test
     public void testSetPositiveDamage()
     {
-        goodItem.setDamage(10);
-        assertEquals(10,goodItem.getDamage());
+        goodItem.setDamage(10);//Damage with a positive value
+        assertEquals(10,goodItem.getDamage());//The parameter "10" must be set as the damage attribute
     }
     /**
-     * test for bad protection
+     * tests if the set protection method accepts a negative value
+     * This should not be possible
      */
     @Test
     public void testSetNegativeProtection()
@@ -75,7 +78,8 @@ public class ItemTest
         assertEquals(2,goodItem.getProtection());//The parameter "2" must remain defined as protection attribute
     }
     /**
-     * test for good protection
+     * tests if the set protection method accepts a positive value
+     * this should be possible
      */
     @Test
     public void testSetPositiveProtection()
@@ -95,12 +99,12 @@ public class ItemTest
         assertEquals("YousraDelphine",goodItem.getName()); // The parameter "YousraDelphine" must be set as the name attribute
     }
     /**
-     *
+     *removes the set up
      */
     @After
     public void tearDown() 
     {
-        //Liberez ici les ressources engagees par setUp()
+        
     }
     
 }

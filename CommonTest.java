@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class CommonTest
 {
-    
+    //The variables/attributes necessary to test the functions
     private Common goodCommon;
     
 
@@ -35,7 +35,7 @@ public class CommonTest
 
     }
         /**
-     *Test that checks if the constructor work properly
+     *Test that checks if the constructor works properly
      */
     @Test
     public void testGoodCommon()
@@ -48,12 +48,10 @@ public class CommonTest
     }
 
     /**
-     * 
-     *
+     * Removes the set up
      */
     @After
     public void tearDown() 
     {
-        //Lib�rez ici les ressources engag�es par setUp()
     }
 }
