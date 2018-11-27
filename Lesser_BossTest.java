@@ -50,5 +50,31 @@ public class Lesser_BossTest
         assertEquals("Meduse",myBoss.getName());
         assertEquals(0,myBoss.getXp());
         assertEquals(20,myBoss.getDamage());
+        assertEquals(false,myBoss.getAggressive());
     }
+    
+    /**
+     * this method tests the setAggressiveTrue function
+     * It should set the aggressive attribute to true
+     */
+    @Test
+    public void testSetAggressiveTrue()
+    {
+        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,"La hideuse meduse");
+        myBoss.setAggressiveTrue();
+        assertEquals(true,myBoss.getAggressive());
+    }
+    
+    /**
+     * this method tests the setAggressiveFalse function
+     * It should set the aggressive attribute to false
+     */
+    @Test
+    public void testSetAggressiveFalse()
+    {
+        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,"La hideuse meduse");
+        myBoss.setAggressiveFalse();
+        assertEquals(false,myBoss.getAggressive());
+    }
+    
 }
