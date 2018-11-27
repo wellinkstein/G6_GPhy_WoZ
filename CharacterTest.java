@@ -179,6 +179,43 @@ public class CharacterTest
         myCharacter.decreaseDamage(0);
         assertEquals(2,myCharacter.getDamage());
     }
+    
+    /**
+     * test for decrease protection, increase protection
+     * Protection cannot drop below 0
+     */
+    @Test
+    public void testProtection()
+    {
+        myCharacter.increaseProtection(4);
+        assertEquals(4,myCharacter.getProtection());
+        myCharacter.decreaseProtection(2);
+        assertEquals(2,myCharacter.getProtection());
+        myCharacter.decreaseProtection(4);
+        assertEquals(0,myCharacter.getProtection());
+    }
+    
+    /**
+     * test for increase protection
+     * Value must be an integer above zero
+     */
+    @Test
+    public void testGainNegativeProtection()
+    {
+        myCharacter.increaseProtection(-4);
+        assertEquals(0,myCharacter.getProtection());
+    }
+    
+    /**
+     * test for decrease protection
+     * Integer must be a value above 0
+     */
+    @Test
+    public void testDecreaseNegativeProtection()
+    {
+        myCharacter.decreaseProtection(-4);
+        assertEquals(0,myCharacter.getProtection());
+    }
 
     /**
      *This function removes the set up of the test class

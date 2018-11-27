@@ -163,6 +163,8 @@ public class PlayerTest
         assertEquals(0, myPlayer.inventory.size());
     }
     
+
+    
     /**
      * Tests that an item that is not in the inventory of the player
      * cannot be dropped
@@ -177,6 +179,40 @@ public class PlayerTest
        assertEquals(potion, myPlayer.getItems(0));
        myPlayer.dropItem(potion2); 
        assertEquals(1,myPlayer.inventory.size());
+    }
+    
+      /**
+     * Tests that a players damage stats are modified according to an 
+     * items attribute.
+     */
+
+    @Test
+    public void testItemSword()
+    {
+        Item sword = new Item ("Iron Sword","An iron sword",2,0,0);
+        myPlayer.takeItem(sword);
+        assertEquals(sword, myPlayer.getItems(0));
+        assertEquals(4, myPlayer.getDamage());
+        myPlayer.dropItem(sword);
+        assertEquals(0, myPlayer.inventory.size());
+        assertEquals(2,myPlayer.getDamage());
+    }
+    
+        /**
+     * Tests that a players protection stats are modified according to an 
+     * items attribute.
+     */
+
+    @Test
+    public void testItemShield()
+    {
+        Item shield = new Item ("Wooden shield","A wooden shield",0,2,0);
+        myPlayer.takeItem(shield);
+        assertEquals(shield, myPlayer.getItems(0));
+        assertEquals(2, myPlayer.getProtection());
+        myPlayer.dropItem(shield);
+        assertEquals(0, myPlayer.inventory.size());
+        assertEquals(0,myPlayer.getProtection());
     }
     
     /**
