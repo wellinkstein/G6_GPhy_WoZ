@@ -209,7 +209,7 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()==1){   
+        if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()<=1){   
             characterInSpot.add(character); 
         }
     }
@@ -219,8 +219,8 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean ifCharacterInSpot(Character character){
-        for (Character characters : characterInSpot){
-            if (characters==character){
+        for (Character characters : this.characterInSpot){
+            if (characters.getName()==character.getName()){
                 return (true); 
             }
         }
@@ -235,10 +235,10 @@ public class Spot
     {
         return(characterInSpot);
     }
-<<<<<<< HEAD
     
     /**
-     * 
+     * Getter to return the number of Monster in a spot
+     * @return number of the Monster in a spot
      */
     public int numberOfMonsterInSpot(){
         int number=0; 
@@ -250,11 +250,7 @@ public class Spot
         }
         return (number); 
     }
-    
-    
-=======
 
->>>>>>> 0c8d01d40347f09a2680b0ee663cbef1e836f560
     /**
      * Get the list of items in the spot
      * @return objectInSpot
