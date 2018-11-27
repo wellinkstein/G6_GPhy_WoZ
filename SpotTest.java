@@ -48,10 +48,12 @@ public class SpotTest
         it4 = new Item("name4", "description", 1, 3,1);
         it5 = new Item("name5", "description", 1, 3,1);
         it6 = new Item("name6", "description", 1, 3,1);
+        objectInSpot= new ArrayList <Item> ();
+        characterInSpot= new ArrayList <Character> ();
         player= new Player(20, "player", 1, 2); 
-        Spot spot = new Spot(characterInSpot, objectInSpot);
-        Spot neighbor = new Spot(characterInSpot, objectInSpot);
-        Spot anotherSpot = new Spot(characterInSpot, objectInSpot);
+        spot = new Spot(characterInSpot, objectInSpot);
+        neighbor = new Spot(characterInSpot, objectInSpot);
+        anotherSpot = new Spot(characterInSpot, objectInSpot);
     }
 
     /**
@@ -63,23 +65,24 @@ public class SpotTest
     public void tearDown() // throws java.lang.Exception
     {
         //Liberez ici les ressources engagees par setUp()
-    }
-    
+    }   
+   
     /**
      * Check that the attributes values are set to the right one.
      */
     @Test
     public void testCreationSpot()
     {
+        assertEquals(0, objectInSpot.size());
         assertEquals(0, spot.getNumberOfItemInSpot());
-        // assertEquals(0, spot.getListCharacter());
-        // assertNull(spot.getListItem());
-        // assertFalse(spot.getVisible());
-        // assertFalse(spot.getCorrect());
-        // assertFalse(spot.getExitSpot());   
-        // assertFalse(spot.getStartSpot());
-        // assertEquals(5, spot.getNumberMaxItem());
-        // assertEquals(0,spot.getNumberExits());
+        assertEquals(0, spot.getListCharacter().size()); // getListCharacter returns an array
+        assertEquals(0, spot.getListItem().size());
+        assertFalse(spot.getVisible());
+        assertFalse(spot.getCorrect());
+        assertFalse(spot.getExitSpot());   
+        assertFalse(spot.getStartSpot());
+        assertEquals(5, spot.getNumberMaxItem());
+        assertEquals(0,spot.getNumberExits());
     }
     
     /** 

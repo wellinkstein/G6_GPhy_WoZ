@@ -50,8 +50,8 @@ public class Spot
         exitSpot = false;
         startSpot = false;
         numberMaxItem = 5;
-        characterInSpot=characterSpot;
-        objectInSpot=objectSpot;
+        characterInSpot= characterSpot;
+        objectInSpot= objectSpot;
     }
     
     /**
@@ -218,6 +218,8 @@ public class Spot
     {
         return(characterInSpot);
     }
+    
+    
     
     /**
      * Get the list of items in the spot
