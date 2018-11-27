@@ -6,19 +6,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test CharacterTest.
+ * This class exists to test various functions of the Character class
  *
- * @author  (Yohan and Corentin)
+ * @author  (Group6)
  * @version (V1)
  *
  */
 public class CharacterTest
 {
+    //These are the attributes necessary to perform the required tests of this class
     protected Character myCharacter;
     protected Item  myItem;
 
     /**
-     * Constructeur de la classe-test CharacterTest
+     * The constructor for the character test class
      */
     public CharacterTest()
     {
@@ -26,7 +27,6 @@ public class CharacterTest
 
     /**
      * Sets up the constructor
-     * Sets up the item
      * Constructor layout (Hp, name, xp, damage)
      */
     @Before
@@ -37,7 +37,7 @@ public class CharacterTest
 
     
     /**
-     * test for all attributes
+     * tests the getters of all the attributes
      */
     @Test
     public void testGettersCharOK()
@@ -49,7 +49,7 @@ public class CharacterTest
     }
     
     /**
-     * test for decrease HP
+     * Tests if the decrease hp functions as intended with a positive integer
      */
     @Test
     public void testLoseHP()
@@ -82,7 +82,8 @@ public class CharacterTest
     }
     
     /**
-     * test for gaining XP
+     * tests the gain xp method, xp is gained when a monster is slain
+     * this method should only function with an integer above 0
      */
     @Test
     public void testGainXP()
@@ -92,7 +93,8 @@ public class CharacterTest
     }
     
     /**
-     * XP cannot be lost
+     * Tests if XP can be lost using a negative value
+     * XP cannot be lost within this game
      */
     @Test
     public void testGainNegativeXP()
@@ -102,8 +104,8 @@ public class CharacterTest
     }
     
     /**
-     * test for adding an item to the inventory
-     * XP cannot be lost
+     * Tests if a player can gain 0 xp
+     * This should not be possible, no action should occur
      */
     @Test
     public void testGainZeroXP()
@@ -146,6 +148,7 @@ public class CharacterTest
     
     /**
      * test for decreaseDamage
+     * The decrease value must be an integer above zero
      * damage cannot be below 0
      */
     @Test
@@ -156,7 +159,7 @@ public class CharacterTest
     }
     
     /**
-     * test for decreaseDamage with negative parameters
+     * tests for decreaseDamage with negative parameters
      * This should not work
      */
     @Test
@@ -167,7 +170,7 @@ public class CharacterTest
     }
     
     /**
-     * test for decreaseDamage with zero value
+     * tests for decreaseDamage with zero value
      * This should not work
      */
     @Test
@@ -178,7 +181,7 @@ public class CharacterTest
     }
 
     /**
-     *
+     *This function removes the set up of the test class
      */
     @After
     public void tearDown() // throws java.lang.Exception

@@ -4,8 +4,8 @@ import java.util.*;
  * This class is the base class (super class) for all of the characters of the game.
  * These characters are the player and monsters, which are split into two sub classes.
  *
- * @author (Yohan/Corentin)
- * @version (V1)
+ * @author (Group 6)
+ * @version (2018-11-27)
  */
 public class Character
 {
@@ -19,11 +19,13 @@ public class Character
     //The XP of the character, XP can be gained, not lost
     private int Damage;
     //This attribute represents the damage that a character inflicts in a single hit
+    private int Protection;
+    //This attribute represent the damage reduction of the character
     protected ArrayList<Item> inventory = new ArrayList<Item>();
     //A list of items that the character possesses
     
     /**
-     * Constructeur d'objets de classe Character
+     * The constructor for the character class
      */
     public Character(int myHP, String myName, int myXp, int myDamage)
     {
@@ -64,6 +66,14 @@ public class Character
     public int getDamage()
     {
         return Damage;
+    }
+    
+    /**
+     * Method that returns the protection
+     */
+    public int getProtection()
+    {
+        return Protection;
     }
     
     /**
@@ -110,7 +120,7 @@ public class Character
     }
     
     /**
-     * A method that exists to test functions related to Xp
+     * A method that exists to test functions related to Hp
      */
     protected void setHp(int setHp)
     {
@@ -118,7 +128,7 @@ public class Character
     }
     
     /**
-     * A method that exists to test function related to Xp
+     * A method that exists to test functions related to Xp
      */
     protected void setXp(int setXp)
     {
@@ -139,6 +149,23 @@ public class Character
         else
         {
             Damage=Damage;
+        }
+     }
+     
+     /**
+     * Method that increases the Protection attribute of the character
+     * based on the damage attribute of items
+     * To increase Protection, the increase amount must be a positive value
+     */
+     public void increaseProtection(int ProtectionIncrease)
+     {
+         if(ProtectionIncrease>=0)
+        {
+            Protection+=ProtectionIncrease;
+        }
+        else
+        {
+            Protection=Protection;
         }
      }
      
@@ -163,6 +190,30 @@ public class Character
         else
         {
             Damage=Damage;
+        } 
+    }
+    
+    /**
+    * Method that decreases the Protection attribute of the character,
+    * this may occur if a player drops an item
+    * To decrease damage, the decrease amount must be a positive value
+    */
+    public void decreaseProtection(int ProtectionDecrease)
+    {
+        if(ProtectionDecrease>=0)
+        {
+            if((Protection-ProtectionDecrease)<0)
+            {
+                Protection=0;
+            }
+            else
+            {
+               Protection-=ProtectionDecrease; 
+            }
+        }
+        else
+        {
+            Protection=Protection;
         } 
     }
 }

@@ -6,8 +6,8 @@ import org.junit.Test;
 /**
  * Classe-test PlayerTest.
  *
- * @author  Jeremie Guilbaud
- * @version 14/11/2018
+ * @author  Group 6
+ * @version 2018-11-27
  *
  * This class tested the methods of the class Player.
  */
@@ -16,7 +16,7 @@ public class PlayerTest
 {
     protected Player myPlayer;
     /**
-     * Constructeur de la classe-test PlayerTest
+     * Constructor of the player class
      */
     public PlayerTest()
     {
@@ -32,7 +32,7 @@ public class PlayerTest
     }
 
     /**
-     * 
+     * Removes the set up at theend of the tests
      */
     @After
     public void tearDown() // throws java.lang.Exception
@@ -40,7 +40,7 @@ public class PlayerTest
     }
 
     /**
-     * Test that a player created receives the right amount of health
+     * Tests that a player created receives the right amount of health
      */
     @Test
     public void testGoodHP()
@@ -50,10 +50,8 @@ public class PlayerTest
     
 
     /**
-     * Test that a player can't be created with a null amount of hp
+     * Tests that a player can't be created with zero hp
      */
-
-
     public void testNullHP()
     {
         Player testBadPlayer = new Player(20,"Jimmy",2,2);
@@ -61,7 +59,7 @@ public class PlayerTest
     }
 
      /**
-     * Test that a player can't be created with a negative amount of hp
+     * Tests that a player can't be created with a negative amount of hp
      */
 
     public void testBadHP()
@@ -72,7 +70,7 @@ public class PlayerTest
 
     
     /**
-     * Test that a player can take a correct item
+     * Tests that a player can take a valid item
      */
 
     @Test
@@ -85,7 +83,7 @@ public class PlayerTest
     }
 
     /**
-     * Test that a player can drink a potion and receives the right amount of hp
+     * Tests that a player can drink a potion and receives the correct amount of hp
      */
 
     @Test
@@ -103,7 +101,7 @@ public class PlayerTest
     }
     
     /**
-     * Test that a player keeps other items when drinking a health potion
+     * Tests that a player keeps other items when drinking a health potion
      * He only "loses" the health potion used.
      */
 
@@ -123,8 +121,8 @@ public class PlayerTest
     
     
     /**
-     * Test that a player cannot drink a potion if he
-     * hasn't anay potion in the inventory
+     * Tests that a player cannot drink a potion if he
+     * does not have a potion in his inventory
      */
 
     @Test
@@ -136,7 +134,7 @@ public class PlayerTest
     }
 
     /**
-     * Test that the player cannot have his hp over his maxHP after
+     * Tests that the player cannot have his hp over his maxHP after
      * taking a potion
      */
 
@@ -151,7 +149,8 @@ public class PlayerTest
     }
 
     /**
-     * Test that the player can drop an item that he has in his inventory
+     * Tests that the player can drop an item that he has in his inventory
+     * He should be able to drop the item
      */
 
     @Test
@@ -165,7 +164,7 @@ public class PlayerTest
     }
     
     /**
-     * Test that an item that is not in the inventory of the player
+     * Tests that an item that is not in the inventory of the player
      * cannot be dropped
      */
     
@@ -181,8 +180,8 @@ public class PlayerTest
     }
     
     /**
-     * Test that an item cannot be added to the inventory
-     * if the player carries the maximum amount of items
+     * Tests that an item cannot be added to the inventory
+     * if the player already carries the maximum amount of items
      */
 
     @Test
@@ -203,18 +202,10 @@ public class PlayerTest
         assertEquals(10,myPlayer.inventory.size());
     }
     
-    @Test
-    public void testTeleportSansFil() {
-        //myPlayer.getTimeToGo() = true;
-        //myPlayer.getAriadneThread() = false;
-        //myPlayer.teleportation();
-        //assertEquals(game.sortieX,myPlayer.posX);
-        //assertEquals(game.sortieY,myPlayer.posY);
-  
-    }
-    
     /**
      * This method tests that the crit rate is 5 when xp is 2
+     * As crit rate follow the following equation
+     * critRate=(xp-1)*5
      */
     @Test
     public void testCritRateAt2XP()
@@ -224,7 +215,7 @@ public class PlayerTest
     }
     
     /**
-     * This method tests that the crit rate cant be over 50%
+     * This method tests that the crit rate cannot be over 50%
      */
     @Test
     public void testCritRateAt100XP()
@@ -236,6 +227,8 @@ public class PlayerTest
     
     /**
      * This method tests that CritRate is 0 when below 1xp
+     * As crit rate follow the following equation
+     * critRate=(xp-1)*5
      */
     @Test
     public void testCritRateAt1XP()
@@ -255,6 +248,7 @@ public class PlayerTest
     
     /**
      * This method tests if the item limit is 10
+     * The item limit should always be 10
      */
     @Test
     public void testItemLimit()
@@ -264,7 +258,7 @@ public class PlayerTest
     
     /**
      * This test checks if the boolean ariadnesThread is changed to true
-     * if the player had the item
+     * if the player has the item
      */
     @Test
     public void testAriadnesThread()
