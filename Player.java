@@ -106,6 +106,14 @@ public class Player extends Character
     }   
     
     /**
+     * getter for TimeToGo
+     */
+    public boolean getTimeToGo()
+    {
+        return timeToGo;
+    }
+    
+    /**
      * A method that set TimeToGo to true
      */
     public void setTrueTimeToGo()
