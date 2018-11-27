@@ -72,7 +72,7 @@ public class ItemTest
     public void testSetNegativeProtection()
     {
         goodItem.setProtection(-10);//Protection with a negative value
-        assertEquals(2,goodItem.getProtection());//
+        assertEquals(2,goodItem.getProtection());//The parameter "2" must remain defined as protection attribute
     }
     /**
      * test for good protection
@@ -81,7 +81,7 @@ public class ItemTest
     public void testSetPositiveProtection()
     {
         goodItem.setProtection(10);//Protection with a positive value
-        assertEquals(10,goodItem.getProtection());//The parameter "2" must remain defined as protection attribute
+        assertEquals(10,goodItem.getProtection());//The parameter "10" must be set as the protection attribute
     }
     
     /**
