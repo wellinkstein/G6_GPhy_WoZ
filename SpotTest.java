@@ -10,27 +10,11 @@ import java.util.Set;
 
 /**
  * Classe-test SpotTest.
+ * Tests the different methods defined in the class Spot
  *
  * @author  Ludivine H & Jeremie G
  * @version 2018-11
  *
- * Les classes-test sont documentees ici :
- * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
- * et sont basees sur le document e 2002 Robert A. Ballance intitule
- * "JUnit: Unit Testing Framework".
- *
- * Les objets Test (et TestSuite) sont associes aux classes e tester
- * par la simple relation yyyTest (e.g. qu'un Test de la classe Name.java
- * se nommera NameTest.java); les deux se retrouvent dans le m?me paquetage.
- * Les "engagements" (anglais : "fixture") forment un ensemble de conditions
- * qui sont vraies pour chaque methode Test e executer.  Il peut y avoir
- * plus d'une methode Test dans une classe Test; leur ensemble forme un
- * objet TestSuite.
- * BlueJ decouvrira automatiquement (par introspection) les methodes
- * Test de votre classe Test et generera la TestSuite consequente.
- * Chaque appel d'une methode Test sera precede d'un appel de setUp(),
- * qui realise les engagements, et suivi d'un appel e tearDown(), qui les
- * detruit.
  */
 public class SpotTest
 {
