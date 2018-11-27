@@ -40,6 +40,14 @@ public class Lesser_Boss extends Monster
     }
     
     /**
+     * a method that set the possessedlegendary
+     */
+    public void setPossessedLegendary(Legendary myItem)
+    {
+        possessedLegendary = myItem;
+    }
+    
+    /**
      * A method that sets aggressive to true
      */
     public void setAggressiveTrue()
