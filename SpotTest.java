@@ -68,15 +68,18 @@ public class SpotTest
     /**
      * Check that the attributes values are set to the right one.
      */
+    @Test
     public void testCreationSpot()
     {
-        assertNull(spot.getListCharacter());
-        assertNull(spot.getListItem());
-        assertFalse(spot.getVisible());
-        assertFalse(spot.getCorrect());
-        assertFalse(spot.getExitSpot());   
-        assertFalse(spot.getStartSpot());
-        assertEquals(0,spot.getNumberExits());
+        assertEquals(0, spot.getNumberOfItemInSpot());
+        // assertEquals(0, spot.getListCharacter());
+        // assertNull(spot.getListItem());
+        // assertFalse(spot.getVisible());
+        // assertFalse(spot.getCorrect());
+        // assertFalse(spot.getExitSpot());   
+        // assertFalse(spot.getStartSpot());
+        // assertEquals(5, spot.getNumberMaxItem());
+        // assertEquals(0,spot.getNumberExits());
     }
     
     /** 
@@ -217,7 +220,6 @@ public class SpotTest
         }
         assertFalse(test);
         assertEquals(2, spot.getListCharacter().size()); 
-        
     }
     
     /**
