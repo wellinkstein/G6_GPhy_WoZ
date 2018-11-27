@@ -71,8 +71,8 @@ public class ItemTest
     @Test
     public void testSetNegativeProtection()
     {
-        goodItem.setProtection(-10);
-        assertEquals(2,goodItem.getProtection());
+        goodItem.setProtection(-10);//Protection with a negative value
+        assertEquals(2,goodItem.getProtection());//
     }
     /**
      * test for good protection
@@ -80,17 +80,19 @@ public class ItemTest
     @Test
     public void testSetPositiveProtection()
     {
-        goodItem.setProtection(10);
-        assertEquals(10,goodItem.getProtection());
+        goodItem.setProtection(10);//Protection with a positive value
+        assertEquals(10,goodItem.getProtection());//The parameter "2" must remain defined as protection attribute
     }
+    
     /**
      * test for good name
+     *  Checks if the name given as parameter in the constructor is correctly set to the attribute
      */
     @Test
     public void testSetName()
     {
         goodItem.setName("YousraDelphine");
-        assertEquals("YousraDelphine",goodItem.getName());
+        assertEquals("YousraDelphine",goodItem.getName()); // The parameter "YousraDelphine" must be set as the name attribute
     }
     /**
      *
