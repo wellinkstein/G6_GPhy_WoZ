@@ -8,11 +8,10 @@ public class Legendary extends Item
 {
 
     /**
-     * Constructor of legendary
+     * Constructor of legendary items
      */
     public Legendary(String itemName, String des, int dam, int HG, int prot )
     {
-        // initialisation des variables d'instance
         super (itemName, des, dam, HG,prot );
        
 
