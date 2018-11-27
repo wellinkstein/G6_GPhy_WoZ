@@ -28,7 +28,7 @@ public class PlayerTest
     @Before
     public void setUp()
     {
-        myPlayer = new Player(20,"Jimmy",2,2);
+        myPlayer = new Player(20,"Jimmy",2,2,0);
     }
 
     /**
@@ -54,7 +54,7 @@ public class PlayerTest
      */
     public void testNullHP()
     {
-        Player testBadPlayer = new Player(20,"Jimmy",2,2);
+        Player testBadPlayer = new Player(20,"Jimmy",2,2,0);
         assertNotSame(0, testBadPlayer.getHP());
     }
 
@@ -64,7 +64,7 @@ public class PlayerTest
 
     public void testBadHP()
     {
-        Player testBadPlayer = new Player(-1,"Jimmy",2,2);
+        Player testBadPlayer = new Player(-1,"Jimmy",2,2,0);
         assertNotSame(-1, testBadPlayer.getHP());
     }
 
@@ -89,7 +89,7 @@ public class PlayerTest
     @Test
     public void testDrinkPotion()
     {
-        myPlayer = new Player(15,"Jimmy",2,2);
+        myPlayer = new Player(15,"Jimmy",2,2,0);
         Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
         Item potion2 = new Item("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
@@ -108,7 +108,7 @@ public class PlayerTest
     @Test
     public void testDrinkPotionWithSword()
     {
-        myPlayer = new Player(15,"Jimmy",2,2);
+        myPlayer = new Player(15,"Jimmy",2,2,0);
         Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
         Item sword = new Item("Iron Sword","A medium length blade",3,0,0);
         myPlayer.takeItem(potion);
@@ -128,7 +128,7 @@ public class PlayerTest
     @Test
     public void testDrinkNoPotion()
     {
-        myPlayer = new Player(15,"Jimmy",2,2);
+        myPlayer = new Player(15,"Jimmy",2,2,0);
         myPlayer.drinkPotion();
         assertEquals(15, myPlayer.getHP());     
     }
@@ -256,7 +256,7 @@ public class PlayerTest
     @Test
     public void testCritRateAt100XP()
     {
-        myPlayer = new Player(15,"Jimmy",100,2);
+        myPlayer = new Player(15,"Jimmy",100,2,0);
         myPlayer.adjustCritRate();
         assertEquals(50,myPlayer.getCritRate());
     }

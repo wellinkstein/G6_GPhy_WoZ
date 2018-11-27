@@ -45,7 +45,7 @@ public class Lesser_BossTest
     @Test
     public void testConstructeurLesserBoss()
     {
-        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,"La hideuse meduse");
+        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,0,"La hideuse meduse");
         assertEquals(50,myBoss.getHP());
         assertEquals("Meduse",myBoss.getName());
         assertEquals(0,myBoss.getXp());
@@ -60,7 +60,7 @@ public class Lesser_BossTest
     @Test
     public void testSetAggressiveTrue()
     {
-        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,"La hideuse meduse");
+        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,0,"La hideuse meduse");
         myBoss.setAggressiveTrue();
         assertEquals(true,myBoss.getAggressive());
     }
@@ -72,7 +72,7 @@ public class Lesser_BossTest
     @Test
     public void testSetAggressiveFalse()
     {
-        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,"La hideuse meduse");
+        Lesser_Boss myBoss = new Lesser_Boss(50,"Meduse",0,20,0,"La hideuse meduse");
         myBoss.setAggressiveFalse();
         assertEquals(false,myBoss.getAggressive());
     }

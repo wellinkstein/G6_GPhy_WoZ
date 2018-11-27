@@ -16,9 +16,9 @@ public class Lesser_Boss extends Monster
     /**
      * A constructor for the lesser boss class
      */
-    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage, String myDes)
+    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes)
     {
-        super(myHP,myName,myXp,myDamage,myDes);
+        super(myHP,myName,myXp,myDamage,myProtection,myDes);
         aggressive=false;
     }
     

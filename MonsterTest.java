@@ -29,7 +29,7 @@ public class MonsterTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        myMonster = new Monster(10,"Medusa",1,2,"Snake Lady");
+        myMonster = new Monster(10,"Medusa",1,2,0,"Snake Lady");
     }
     
     /**
@@ -38,7 +38,7 @@ public class MonsterTest
     @Test
     public void CheckGoodMonsterNameMinotaur()
     {
-        goodMonster= new Monster(10,"Minotaur",1,5,"Le terrible minotaure");
+        goodMonster= new Monster(10,"Minotaur",1,5,0,"Le terrible minotaure");
         assertEquals(10,goodMonster.getHP());
         assertEquals("Minotaur",goodMonster.getName());
         assertEquals(1,goodMonster.getXp());

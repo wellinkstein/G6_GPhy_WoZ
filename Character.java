@@ -27,14 +27,14 @@ public class Character
     /**
      * The constructor for the character class
      */
-    public Character(int myHP, String myName, int myXp, int myDamage)
+    public Character(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
         
         HP = myHP;
         Name = myName;
         xp = myXp;
         Damage = myDamage;
-        Protection = 0;
+        Protection = myProtection;
     }
     
     /**

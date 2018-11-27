@@ -32,7 +32,7 @@ public class CharacterTest
     @Before
     public void setUp()
     {
-        myCharacter = new Character(20,"Jimmy",2,2);
+        myCharacter = new Character(20,"Jimmy",2,2,0);
     }
 
     
@@ -46,6 +46,7 @@ public class CharacterTest
         assertEquals(2,myCharacter.getXp());
         assertEquals("Jimmy",myCharacter.getName());
         assertEquals(2,myCharacter.getDamage());
+        assertEquals(0,myCharacter.getProtection());
     }
     
     /**

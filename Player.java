@@ -17,9 +17,9 @@ public class Player extends Character
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
      */
-    public Player(int myHP, String myName, int myXp, int myDamage)
+    public Player(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
-        super(myHP,myName,myXp,myDamage);
+        super(myHP,myName,myXp,myDamage,myProtection);
     }
     
     /**

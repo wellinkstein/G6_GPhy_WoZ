@@ -15,9 +15,9 @@ public class Boss extends Monster
     /**
      * Constructor for the Boss class
      */
-    public Boss(int myHP, String myName, int myXp, int myDamage, String myDes)
+    public Boss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes)
     {
         // initialisation des variables d'instance
-        super(myHP,myName,myXp,myDamage,myDes);
+        super(myHP,myName,myXp,myDamage,myProtection,myDes);
     }
 }
