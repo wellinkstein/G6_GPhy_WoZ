@@ -16,10 +16,11 @@ public class Lesser_Boss extends Monster
     /**
      * A constructor for the lesser boss class
      */
-    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage, String myDes)
+    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage, String myDes, Legendary myLegendary)
     {
         super(myHP,myName,myXp,myDamage,myDes);
         aggressive=false;
+        possessedLegendary = myLegendary;
     }
     
     /**
@@ -28,6 +29,14 @@ public class Lesser_Boss extends Monster
     public boolean getAggressive()
     {
         return aggressive;
+    }
+    
+    /**
+     * A method that returns the legendary item possessed
+     */
+    public Legendary getPossessedLegendary()
+    {
+        return possessedLegendary;
     }
     
     /**
