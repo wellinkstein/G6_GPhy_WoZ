@@ -37,13 +37,13 @@ public class Item
      */
     public void setDamage (int Dam)
     {
-        if (Dam<0)
+        if (Dam<0) //If the value of the damage is less than 0
         {
-            damage = damage;
+            damage = damage; //The value of the damage does not change
         }
         else 
         {
-            damage = Dam;
+            damage = Dam; //The value of the damage takes on a new value
         }
        
          
@@ -54,13 +54,13 @@ public class Item
      * the protection can be equal to 0 but not be negative
      */
     public void setProtection(int Prot )
-     {if (Prot<0)
+     {if (Prot<0) //If the value of the protection is less than 0
         {
-            protection = protection;
+            protection = protection; //The value of the protection does not change
         }
         else 
         {
-            protection = Prot;
+            protection = Prot; // The value of the protection takes a new value
         }
     }
     

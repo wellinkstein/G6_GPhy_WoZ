@@ -2,7 +2,7 @@
 /**
  * The Player class is the player of the game
  * This class extends the character class and has attributes specific to the player
- * @author (groupe 6)
+ * @author (group 6)
  * @version (2018-11-14)
  */
 public class Player extends Character
@@ -33,8 +33,8 @@ public class Player extends Character
     
     /**
      * This method will allow the player to consume a health potion
-     * if there is one in his inventory. The potion is remove after use.
-     * A Potion gives 5HP. If the player misses less than 
+     * if there is one in his inventory. The potion is removed after use.
+     * A Potion gives 5HP. If the player has less than 
      * 5HP the potion gets him to full health.
      */
     public void drinkPotion()
@@ -77,16 +77,19 @@ public class Player extends Character
     
     /**
      * Allows the player to drop an item
+     * A player may drop an item at any time except while in a fight
      */
     public void dropItem(Item itemDrop)
     {
+        decreaseDamage(itemDrop.getDamage());
+        decreaseProtection(itemDrop.getProtection());
         inventory.remove(itemDrop);
     }
     
     /**
      * Allows the player to pick up an item
      * if the item is the Ariadne's golden thread the boolean
-     * link is set to true.
+     * associated to the thread is set to true.
      */
     public void takeItem(Item myItem)
     {
@@ -98,7 +101,9 @@ public class Player extends Character
         {
             ariadnesThread = true;
         }
-        }   
+        increaseDamage(myItem.getDamage());
+        increaseProtection(myItem.getProtection());
+    }   
     
     /**
      * A method that returns the item limit
@@ -109,7 +114,7 @@ public class Player extends Character
     }
     
     /**
-     * A method that gets the items in the inventory at the position given
+     * A method that gets the items in the inventory at the given index
      */
     public Item getItems(int numItem)
     {
@@ -126,7 +131,7 @@ public class Player extends Character
     
     /**
      * A method that modifies the crit rate based on XP
-     * The player start at level 1 and each level give 5% of crit chance
+     * The player starts at level 1 and each level give 5% of crit chance
      * it can exceed 50%.
      */
     public void adjustCritRate()
