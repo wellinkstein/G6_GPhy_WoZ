@@ -342,7 +342,7 @@ public class Game
          
     }
     /**
-     * Places the Monsters in the adequate Spot. Each monster has only one spot.
+     * Places the Monsters in the adequate Spot. Each monster has only one spot. coucou
      */
     public void placeMonsters()
     {
