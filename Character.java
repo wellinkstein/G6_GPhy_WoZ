@@ -4,8 +4,8 @@ import java.util.*;
  * This class is the base class (super class) for all of the characters of the game.
  * These characters are the player and monsters, which are split into two sub classes.
  *
- * @author (Yohan/Corentin)
- * @version (V1)
+ * @author (Group 6)
+ * @version (2018-11-27)
  */
 public class Character
 {
@@ -23,7 +23,7 @@ public class Character
     //A list of items that the character possesses
     
     /**
-     * Constructeur d'objets de classe Character
+     * The constructor for the character class
      */
     public Character(int myHP, String myName, int myXp, int myDamage)
     {
@@ -110,7 +110,7 @@ public class Character
     }
     
     /**
-     * A method that exists to test functions related to Xp
+     * A method that exists to test functions related to Hp
      */
     protected void setHp(int setHp)
     {
@@ -118,7 +118,7 @@ public class Character
     }
     
     /**
-     * A method that exists to test function related to Xp
+     * A method that exists to test functions related to Xp
      */
     protected void setXp(int setXp)
     {

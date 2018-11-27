@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * Classe-test CharacterTest.
  *
- * @author  (Yohan and Corentin)
+ * @author  (Group6)
  * @version (V1)
  *
  */

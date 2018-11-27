@@ -4,19 +4,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test MonsterTest.
+ * A test class to test the various functions of the monster class
  *
- * @author  (Yohan et Corentin)
- * @version (V1)
+ * @author  (Group 6)
+ * @version (2018-11-27)
  *
  */
 public class MonsterTest
 {
+    //The attributes/variables necessary to run the tests
     private Monster myMonster;
     private Monster goodMonster;
 
     /**
-     * Constructeur de la classe-test MonsterTest
+     * Constructor for the monster test class
      */
     public MonsterTest()
     {
@@ -31,7 +32,7 @@ public class MonsterTest
         myMonster = new Monster(10,"Medusa",1,2,"Snake Lady");
     }
     
-        /**
+    /**
      * This test checks if Minotaur is a valid name and that the constructor and getters work
      */
     @Test
@@ -75,7 +76,7 @@ public class MonsterTest
     
     
     /**
-     * 
+     * Removes the set up of the test function
      */
     @After
     public void tearDown() // throws java.lang.Exception
