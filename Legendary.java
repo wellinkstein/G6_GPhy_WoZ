@@ -1,5 +1,6 @@
 /**
- * The Legendary class is a specific item obtained after fight a monster
+ * The Legendary class is a specific item obtained by killing the monsters.
+
  * @author (Yousra & Delphine)
  * @version (2018-11-14)
  */

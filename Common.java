@@ -7,6 +7,7 @@
 public class Common extends Item
 {
 
+    // instances variables
     private String type;
 
     /**

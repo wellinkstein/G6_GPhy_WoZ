@@ -8,7 +8,7 @@
  */
 public class Item
 {
-    
+    // instances variables
     private int damage; //damage of the item
     private int protection; //protection of the item
     private int healthGain; //health gain of the item
@@ -18,7 +18,7 @@ public class Item
     private int itemID; // Unique ID of the item.
 
     /**
-     * Constructeur of an Item
+     * Constructeur for objects of class Item
      * 
      */
     public Item(String itemName, String des, int dam, int prot, int HG)
@@ -72,30 +72,35 @@ public class Item
     
     /**
      * A method to get the damage of the item
+     * @return damage, the value of object damage
      */
     public int getDamage()
     {return damage;}
     
     /**
      * A method to get the protection of the item
+     *  @return protection, the value of object protection
      */
     public int getProtection()
     {return protection;}
     
     /**
      *  A method which return the name of the item
+     *  @return name, the name of the object
      */
     public String getName()
     {return name;}
     
     /**
      * A method which return the descritpion of the item
+     * @return description,the description of the object
      */
     public String getDescription()
     {return description;}
     
     /**
      * A method to get the health gain of the item
+     *  @return healthGain, the value of object power
      */
     public int getHealthGain()
     {return healthGain;}
