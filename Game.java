@@ -35,7 +35,7 @@ public class Game
         placeMonster();//boucle*7
         placeItem(); //boucle*8
         defineExits();
-        currentSpot=listSpot
+        currentSpot=listSpot[2];
         exitAndStart();//initialize start spot and exit spot 
     }
 
