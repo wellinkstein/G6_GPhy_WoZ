@@ -210,7 +210,7 @@ public class Game
        /**
      * Print out the opening message for the player.
      */
-    private void printWelcome()
+    private String printWelcome()
     {
         // System.out.println();
         // System.out.println("Welcome to the World of Zuul!");
@@ -352,6 +352,23 @@ public class Game
     { 
          return true;       
     }
+    /**
+     * If the player loses the fight
+     * 
+     */
+    public boolean loseGame() 
+    { 
+         return true;         
+    }
+    /**
+     * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
+     * 
+     */
+    public void fight() 
+    { 
+                
+    }
+    
     
     /**
      * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
