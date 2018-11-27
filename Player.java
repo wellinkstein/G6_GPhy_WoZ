@@ -81,6 +81,8 @@ public class Player extends Character
      */
     public void dropItem(Item itemDrop)
     {
+        decreaseDamage(itemDrop.getDamage());
+        decreaseProtection(itemDrop.getProtection());
         inventory.remove(itemDrop);
     }
     
@@ -99,7 +101,9 @@ public class Player extends Character
         {
             ariadnesThread = true;
         }
-        }   
+        increaseDamage(myItem.getDamage());
+        increaseProtection(myItem.getProtection());
+    }   
     
     /**
      * A method that returns the item limit
