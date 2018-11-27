@@ -174,13 +174,6 @@ public class Spot
     {
         return (objectInSpot.size());
     }
-     
-    /**
-     * Method to exit a Spot
-     */
-    public void exit()
-    {
-    }
     
     /**
      * setter of isVisible
