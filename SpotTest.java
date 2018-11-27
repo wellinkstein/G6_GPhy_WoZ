@@ -25,7 +25,7 @@ public class SpotTest
     private Player player, player1;
     private Lesser_Boss monster1, monster; 
     private Boss monster2; 
-    private Spot spot, neighbor, anotherSpot;
+    private Spot spot, neighbor, anotherSpot, neighbor1, neighbor2, neighbor3;
       
     /**
      * Constructeur de la classe-test SpotTest
@@ -55,6 +55,9 @@ public class SpotTest
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
         spot = new Spot(characterInSpot, objectInSpot);
         neighbor = new Spot(characterInSpot, objectInSpot);
+        neighbor1 = new Spot(characterInSpot, objectInSpot);
+        neighbor2 = new Spot(characterInSpot, objectInSpot);
+        neighbor3 = new Spot(characterInSpot, objectInSpot);
         anotherSpot = new Spot(characterInSpot, objectInSpot);
     }
 
@@ -121,11 +124,11 @@ public class SpotTest
     public void testAdd5Exits()
     {
         spot.setExits("Q", neighbor);
-        spot.setExits("Z", neighbor);
-        spot.setExits("S", neighbor);
-        spot.setExits("D", neighbor);
+        spot.setExits("Z", neighbor1);
+        spot.setExits("S", neighbor2);
+        spot.setExits("D", neighbor3);
         assertEquals(4, spot.getNumberExits());
-        spot.setExits("E", anotherSpot);
+        spot.setExits("D", anotherSpot);
         boolean test=true; 
         for (Map.Entry mapentry: spot.getAllExit().entrySet()){
             if (mapentry.getKey()=="D" && mapentry.getValue()==anotherSpot){
@@ -135,7 +138,44 @@ public class SpotTest
         assertFalse(test); 
         assertEquals(4, spot.getNumberExits());
     }
-    
+    /**
+     * Test if 2 spot can be added to the Hashmap with the same direction, if two spots are created with the same direction 
+     * only the first one is kept
+     */
+    @Test
+    public void testSameDirection()
+    {
+        spot.setExits("Q", neighbor);
+        spot.setExits("Q", neighbor1);
+        boolean test=true; 
+        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor1){
+                test= false; 
+            }
+        }
+        assertTrue(test); 
+        assertEquals(1, spot.getNumberExits());
+        
+    }
+        /**
+     * Test if the same spot can be added to the Hashmap with different directions, if the same spot is created with
+     * different directions only the first one is kept
+     */
+    @Test
+    public void testSameSpot()
+    {
+        spot.setExits("Q", neighbor);
+        spot.setExits("Z", neighbor);
+        boolean test=true; 
+        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
+            if (mapentry.getKey()=="Z" && mapentry.getValue()==neighbor){
+                test= false; 
+            }
+        }
+        assertTrue(test); 
+        assertEquals(1, spot.getNumberExits());
+        
+    }
     /**
      * Test adding a new exit to the same direction as the previous one. It shoud not add
      * the new entry and keep the previous one.
@@ -322,8 +362,8 @@ public class SpotTest
     @Test
     public void testFightingTrue()
     {
-     spot.addCharacterSpot(player1); 
-     spot.addCharacterSpot(monster); 
+     spot.addCharacterSpot(player); 
+     spot.addCharacterSpot(monster1); 
      assertTrue(spot.getFighting());
     }
     

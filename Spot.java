@@ -61,8 +61,18 @@ public class Spot
      * @param neighbor : the neighbor spot
      */
      public void setExits(String direction, Spot neighbor){
+         boolean exist=false; 
+         if (this.getNumberExits()<4){
+             for (Map.Entry mapentry: this.getAllExit().entrySet()){
+            if (mapentry.getKey()==direction || mapentry.getValue()==neighbor){
+                exist=true; 
+            }
+        }
+    }
+        if (exist ==false){
         exits.put(direction, neighbor);
         spotCorrect = true;
+    }
     }
     
     /**
@@ -211,6 +221,7 @@ public class Spot
     {   
         if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()<=1){   
             characterInSpot.add(character); 
+            setFighting();
         }
     }
     
@@ -310,11 +321,11 @@ public class Spot
      */
      public void setFighting()
     {
-        if (getListCharacter().size()==2){
-            fighting = true; 
+        if (this.getListCharacter().size()==2){
+            this.fighting = true; 
         }
         else{
-            fighting = false;
+            this.fighting = false;
         }
     }
 }
