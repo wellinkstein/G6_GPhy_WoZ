@@ -90,7 +90,7 @@ public class SpotTest
     }
     
     /**
-     * Test add new exit a spot
+     * Test add new exit to a spot
      */
     @Test
     public void testSetExits()
@@ -258,24 +258,6 @@ public class SpotTest
     }
     
     /**
-     * Test than when an item is removed from the spot and that there is no
-     * item in it, the list of items of the spot remains empty
-     */
-    @Test
-    public void testRemoveNoItem()
-    {
-        spot.removeItemSpot(it1);
-        boolean test = true;
-        for (int i=0; i<spot.getListItem().size(); i++){
-            if(spot.getListItem().get(i) == it1){
-                test=false;
-            }
-        }
-        assertEquals(0,spot.getListItem().size());
-        assertTrue(test);
-    }
-    
-    /**
      * Test that a spot may be set to be a start spot
      */
     @Test
@@ -313,24 +295,6 @@ public class SpotTest
     public void testRemoveCharacter()
     {
         spot.addCharacterSpot(player);
-        spot.removeCharacterSpot(player);
-        boolean test = true;
-        for (int i=0; i<spot.getListCharacter().size(); i++){
-            if(spot.getListCharacter().get(i) == player){
-                test=false;
-            }
-        }
-        assertEquals(0,spot.getListCharacter().size());
-        assertTrue(test);
-    }
-    
-    /**
-     * Test that it is not possible to remove a character in a spot if there are no
-     * characters in it.
-     */
-    @Test
-    public void testRemoveNoCharacter()
-    {
         spot.removeCharacterSpot(player);
         boolean test = true;
         for (int i=0; i<spot.getListCharacter().size(); i++){
