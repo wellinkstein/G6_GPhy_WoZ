@@ -34,6 +34,7 @@ public class Game
         createLabyrinth();
         
         Player Theseus = new Player(20,"Theseus",1,1,0);
+        placePlayer(Theseus, 1);
         
         Common IronSword= new Common ("Iron Sword","",3,0,0);
         Common IronDagger= new Common ("Iron Dagger","",1,0,0);
@@ -49,11 +50,11 @@ public class Game
         Legendary AegisShield= new Legendary("Aegis shield","",0,5,0);
         Legendary HermesSandals= new Legendary("Hermes's sandals","",0,0,0);
         
-        Lesser_Boss Chimera= new Lesser_Boss(30,"Chimera",5,2,2,"",HermesSandals);
-        Lesser_Boss Cerberus= new Lesser_Boss(40,"Cerberus",5,6,2,"",AresSword);
-        Lesser_Boss Medusa= new Lesser_Boss(20,"Medusa",5,4,1,"",ArtemisBow);
-        Lesser_Boss Cyclops= new Lesser_Boss(30,"Cyclops",5,5,5,"",AegisShield);
-        Lesser_Boss Arachne= new Lesser_Boss(40,"Arachne",5,4,4,"",GoldenThread);
+        LesserBoss Chimera= new LesserBoss(30,"Chimera",5,2,2,"",HermesSandals);
+        LesserBoss Cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",AresSword);
+        LesserBoss Medusa= new LesserBoss(20,"Medusa",5,4,1,"",ArtemisBow);
+        LesserBoss Cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",AegisShield);
+        LesserBoss Arachne= new LesserBoss(40,"Arachne",5,4,4,"",GoldenThread);
         
         Boss Minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
         
@@ -63,10 +64,50 @@ public class Game
         placeMonster(Cyclops,7);
         placeMonster(Chimera,8);
         placeMonster(Arachne,10);
-        //placePlayer(new Player)
         
         
-        //placeItem(IronSword,); 
+        ArrayList<Integer> listIronSword = new ArrayList();
+        listIronSword.add(10);
+        listIronSword.add(11);
+        listIronSword.add(12);
+        placeItem(IronSword,listIronSword); 
+        
+        ArrayList<Integer> listIronDagger = new ArrayList();
+        listIronDagger.add(13);
+        listIronDagger.add(14);
+        listIronDagger.add(15);
+        placeItem(IronDagger,listIronDagger); 
+        
+        ArrayList<Integer> listStandardBow = new ArrayList();
+        listStandardBow.add(16);
+        listStandardBow.add(17);
+        listStandardBow.add(18);
+        placeItem(StandardBow,listStandardBow);
+        
+        ArrayList<Integer> listIronArmor = new ArrayList();
+        listIronArmor.add(19);
+        listIronArmor.add(20);
+        listIronArmor.add(21);
+        placeItem(IronArmor,listIronArmor);
+        
+        ArrayList<Integer> listIronShield = new ArrayList();
+        listIronShield.add(19);
+        listIronShield.add(20);
+        listIronShield.add(21);
+        placeItem(IronShield,listIronShield);
+        
+        ArrayList<Integer> listWoodenShield = new ArrayList();
+        listWoodenShield.add(19);
+        listWoodenShield.add(20);
+        listWoodenShield.add(21);
+        placeItem(WoodenShield,listWoodenShield);
+        
+        ArrayList<Integer> listHealthPotion = new ArrayList();
+        listHealthPotion.add(19);
+        listHealthPotion.add(20);
+        listHealthPotion.add(21);
+        placeItem(HealthPotion,listHealthPotion);
+        
        
         //defineExits(); // définir les sorties pour chaque spot
         currentSpot=listSpot.get(2);
@@ -300,6 +341,15 @@ public class Game
         return monsters;
          
     }
+    
+    /**
+     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
+     */
+    public void placePlayer(Player player, int spotIndex)
+    {
+         
+    }
+    
     /**
      * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
      */
@@ -307,17 +357,11 @@ public class Game
     {
          
     }
-    /**
-     * Places the Boss in the adequate Spot. The Boss is in a specific spot
-       */
-    public void placeBoss(Boss boss, int spotIndex)
-    {
-         
-    }
+    
     /**
      * Places one type of commmon item in a definite number of spots. 
      */
-    public void placeItem(String name, ArrayList<Integer> spotIndexList)
+    public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
          
     }
