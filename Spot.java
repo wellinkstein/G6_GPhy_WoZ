@@ -61,19 +61,24 @@ public class Spot
      * @param direction : the direction of the exit
      * @param neighbor : the neighbor spot
      */
-     public void setExits(String direction, Spot neighbor){
-         boolean exist=false; 
-         if (this.getNumberExits()<4){
-             for (Map.Entry mapentry: this.getAllExit().entrySet()){
-            if (mapentry.getKey()==direction || mapentry.getValue()==neighbor){
-                exist=true; 
-            }
+     public void setExits(String direction, Spot neighbor)
+     {
+        boolean exist=false; 
+        if (this.getNumberExits()<4)
+        {
+            for (Map.Entry mapentry: this.getAllExit().entrySet())
+            {
+                if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
+                {
+                    exist=true; 
+                }
+             }
         }
-    }
-        if (exist ==false){
-        exits.put(direction, neighbor);
-        spotCorrect = true;
-    }
+         if (exist ==false)
+        {
+            exits.put(direction, neighbor);
+            spotCorrect = true;
+        }
     }
     
     /**
@@ -103,6 +108,123 @@ public class Spot
     public void setImageSpot(String imageSpot)
     {
         this.imageSpot = imageSpot;
+    }
+    
+     /**
+     * Set the image of the spot depending of the number of exits
+     * and there direction
+     * Z : 1
+     * D : 2
+     * S : 3
+     * Q : 4
+     */
+    public void setImageSpotExistDirections()
+    {
+        String valueExits = ""; //gives the list of exits and their direction
+        Set<String> keys = exits.keySet();
+        for(String exit : keys) 
+        {
+            switch(exit){
+                case "Z": valueExits += "Z";
+                break;
+                
+                case "D": valueExits += "D";
+                break;
+                
+                case "S": valueExits += "S";
+                break;
+                
+                default: valueExits += "Q";
+                break;
+            }
+
+        }
+        
+        switch(valueExits)
+        {
+            case "Z": setImageSpot("1.png");
+            break;
+            
+            case "D": setImageSpot("2.png");
+            break;
+            
+            case "S": setImageSpot("3.png");
+            break;
+            
+            case "Q": setImageSpot("4.png");
+            break;
+            
+            case "ZD":
+            case "DZ": 
+            setImageSpot("12.png");
+            break;
+            
+            case "ZS":
+            case "SZ":
+            setImageSpot("13.png");
+            break;
+            
+            case "ZQ":
+            case "QZ":
+            setImageSpot("14.png");
+            break;
+            
+            case "DS":
+            case "SD":
+            setImageSpot("23.png");
+            break;
+            
+            case "DQ":
+            case "QD":
+            setImageSpot("24.png");
+            break;
+            
+            case "SQ":
+            case "QS":
+            setImageSpot("34.png");
+            break;
+            
+            case "ZDS":
+            case "ZSD":
+            case "DZS":
+            case "DSZ":
+            case "SDZ":
+            case "SZD":
+            setImageSpot("123.png");
+            break;
+            
+            case "ZDQ":
+            case "ZQD":
+            case "DQZ":
+            case "DZQ":
+            case "QZD":
+            case "QDZ":
+            setImageSpot("124.png");
+            break;
+            
+            case "ZSQ":
+            case "ZQS":
+            case "SQZ":
+            case "SZQ":
+            case "QZS":
+            case "QSZ":
+            setImageSpot("134.png");
+            break;
+            
+            case "DSQ":
+            case "DQS":
+            case "SQD":
+            case "SDQ":
+            case "QSD":
+            case "QDS":
+            setImageSpot("234.png");
+            break;
+            
+            default:
+            setImageSpot("1234.png");
+            break;
+        
+        }
     }
     
     /**
