@@ -53,6 +53,7 @@ public class Spot
         numberMaxItem = 5;
         characterInSpot= characterSpot;
         objectInSpot= objectSpot;
+        setImageSpotExistDirections(); //set the picture of the spot
     }
     
     /**
@@ -79,6 +80,7 @@ public class Spot
             exits.put(direction, neighbor);
             spotCorrect = true;
         }
+        setImageSpotExistDirections(); //set the picture of the spot
     }
     
     /**
@@ -142,6 +144,9 @@ public class Spot
         
         switch(valueExits)
         {
+            case "": setImageSpot("0.png");
+            break;
+            
             case "Z": setImageSpot("1.png");
             break;
             
@@ -253,6 +258,7 @@ public class Spot
      public void removeExit(String direction)
      {
          exits.remove(direction);
+         setImageSpotExistDirections(); //change the picture of the room
      }
      
     /**
