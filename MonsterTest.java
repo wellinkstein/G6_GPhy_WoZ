@@ -74,7 +74,6 @@ public class MonsterTest
         assertEquals (false,myMonster.isDead());
     }
     
-    
     /**
      * Removes the set up of the test function
      */
@@ -82,5 +81,4 @@ public class MonsterTest
     public void tearDown() // throws java.lang.Exception
     {
     }
-        
 }

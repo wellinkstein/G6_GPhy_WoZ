@@ -21,12 +21,16 @@ public class Monster extends Character
     
     /**
      * getter for the description
+     * @return String descripption: returns the description of the monster
      */
     public String getDescription()
-    {return description;}
+    {
+        return description;
+    }
     
     /**
      * setter for description
+     * @parm String myDes: set the value for the description of the monster
      */
     public void setDescription(String myDes)
     {
@@ -46,6 +50,7 @@ public class Monster extends Character
     /**
      * deletes the monster from the list
      * This will be used to remove dead monsters from the game
+     * @return boolean isDead: returns the boolean true or false if the monster is dead or not
      */
     public boolean isDead()
     {
