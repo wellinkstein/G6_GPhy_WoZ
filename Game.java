@@ -109,10 +109,7 @@ public class Game
         placeItem(HealthPotion,listHealthPotion);
         
       
-        
-        
-        currentSpot=listSpot.get(2);
-        exitAndStart();//initialize start spot and exit spot 
+        exitAndStart();//initialize start spot (also current spot) and exit spot 
         setFinishedFalse();
     }
 
@@ -299,14 +296,7 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
         
-    /**
-     *  Defines the exits of a spot. 
-     */
-    public void defineExits(ArrayList<String> listDirection, ArrayList<Spot> listSpot) 
-    {
-        //for len de listDreiction
-            //this.setExits(listDirection[i],listSpot[i]
-    }
+    
     
      /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
