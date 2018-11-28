@@ -160,7 +160,7 @@ public abstract class Character
      */
      public void increaseProtection(int ProtectionIncrease)
      {
-         if(ProtectionIncrease>=0)
+        if(ProtectionIncrease>=0)
         {
             Protection+=ProtectionIncrease;
         }
