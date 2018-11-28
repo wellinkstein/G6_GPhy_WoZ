@@ -532,6 +532,15 @@ public class Game
     }
     
     /**
+     * Kills monster
+     * 
+     */
+    public void monsterDead()
+    {
+    }
+    
+    
+    /**
      * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
      * 
      */
