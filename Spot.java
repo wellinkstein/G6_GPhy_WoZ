@@ -32,6 +32,7 @@ public class Spot
     private boolean spotCorrect; //boolean if the spot is well created
     private boolean exitSpot; // boolean if the spot is an exit of the game
     private boolean startSpot; // boolean if the spot is the start of the game
+    private String imageSpot; // name of the image representing a spot
     
     /**
      * Create a spot with a Haspmap to know the direction of exit.
@@ -84,6 +85,24 @@ public class Spot
     public boolean getCorrect()
     {
         return(this.spotCorrect);
+    }
+    
+    /**
+     * Get the image value for the spot
+     * @return string imageSpot: returns the name of the image of the spot
+     */
+    public String getImageSpot()
+    {
+        return(this.imageSpot);
+    }
+    
+    /**
+     * Set the image value for the spot
+     * @param imageString: the name of the image for the spot
+     */
+    public void setImageSpot(String imageSpot)
+    {
+        this.imageSpot = imageSpot;
     }
     
     /**
