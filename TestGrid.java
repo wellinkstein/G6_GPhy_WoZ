@@ -18,6 +18,20 @@ public class TestGrid
     public static void main ()
     {
         JFrame myFrame = new JFrame("GridLayout");
+        
+        JPanel myPanel = new JPanel();
+        myPanel.setLayout(new GridLayout(2,2));
+        
+        JButton myButton1 = new JButton("North");
+        JButton myButton2 = new JButton("East");
+        JButton myButton3 = new JButton("South");
+        JButton myButton4 = new JButton("West");
+        
+        myPanel.add(myButton1);
+        myPanel.add(myButton2);
+        myPanel.add(myButton3);
+        myPanel.add(myButton4);
+        
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         ArrayList<Character> listTestC = new ArrayList<Character>();
@@ -60,9 +74,9 @@ public class TestGrid
         myTestSpotSE.setImageSpot("14.png");
         myTestSpotSW.setImageSpot("12.png");
         
-        myFrame.setLayout(new GridLayout(3,3));
+        myFrame.setLayout(new GridLayout(4,3));
         
-        for(int i=1; i<=9; i++)
+        for(int i=1; i<=12; i++)
         {
             if(i == 1)
             {
@@ -100,9 +114,13 @@ public class TestGrid
             {
                 myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("South").getExits("East").getImageSpot())));
             }
+            else if(i == 11)
+            {
+                myFrame.add(myPanel);
+            }
             else
             {
-                myFrame.add(new JLabel( new ImageIcon( "noir.png")));
+                myFrame.add(new JLabel( new ImageIcon( "0.png")));
             }
             
         }
