@@ -42,53 +42,6 @@ public class GameTest
     }
     
     /**
-     * test if monsters are in labyrinth
-     */
-    @Test
-    public void testFillListSpot()
-    {
-        boolean monsterExist = false;
-        ArrayList<Spot> listS = myGame.getListSpot();
-        HashMap<String, Integer> monster = new HashMap<String, Integer>();
-        monster.placeMonsters();
-        listS.fillListSpot(monster);
-        ArrayList<Character> listC = new ArrayList();
-        for(int i=0; i<listS.size(); i++){
-            listC.addAll(listS.get(i).getListCharacter());
-        }
-        if(listC.contains(monster.keySet())){
-            monsterExist=true;
-        }
-        assertEquals(true, monsterExist);
-    }
-    
-    /**
-     * test monster exists only one time in labyrinth
-     * Add one monster with fillListSpot() and Verify if monster is
-     * added one time
-     */
-    @Test
-    public void testOneMonster()
-    {
-        boolean monster2=false;
-        HashMap<String, Integer> monster = new HashMap<String, Integer>();
-        monster.placeMonsters();
-        ArrayList<Spot> listS = myGame.getListSpot();
-        ArrayList<Character> listC = new ArrayList();
-        listS.fillListSpot(monster);
-        for(int i=0; i<listS.size(); i++){
-            listC.addAll(listS.get(i).getListCharacter());
-        }
-        monster.keySet().forEach(elt -> {
-            if(listC.indexOf(elt)!=listC.lastIndexOf(elt)){
-                monster2=true;
-            }
-        });
-        
-        assertEquals(false, monster2);
-    }
-    
-    /**
      * test if the exit exists
      */
     @Test
@@ -152,31 +105,6 @@ public class GameTest
             }
         }
         assertEquals(1, exist);
-    }
-    
-    /**
-     * test if each spot has less than 1 exit
-     */
-    @Test
-    public void testNoExit()
-    {
-        ArrayList<Spot> listS = myGame.getListSpot();
-        for(int i=0; i<listS.size(); i++){   
-            assertEquals(false,listS.get(i).getAllExit().isEmpty());   
-        }
-    }
-    
-    /**
-     * test if each spot has more than 4 exits
-     */
-    @Test
-    public void testTooManyExits()
-    {
-        int exist = 0;
-        ArrayList<Spot> listS = myGame.getListSpot();
-        for(int i=0; i<listS.size(); i++){   
-            assertEquals(false,listS.get(i).getAllExit().size()>4);   
-        }
     }
     
     /**
