@@ -101,7 +101,17 @@ public class SpotTest
         assertTrue(spot.getCorrect());    
     }
     
-    /**
+     /**
+     * Test to verify that it is possible to set a string for the attribute imageSpot
+     */
+    @Test
+    public void testSetSpotImage()
+    {
+        spot.setImageSpot("name_image");
+        assertEquals("name_image", spot.getImageSpot());
+    }
+    
+     /**
      * Test add new exit to a spot
      */
     @Test
