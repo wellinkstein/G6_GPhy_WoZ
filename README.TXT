@@ -1,12 +1,7 @@
-------------------------------------------------------------------------
-Ceci est le fichier LISEZMOI (README) du projet.  Décrivez-y votre projet.
-Dites au lecteur (qui ne sait rien du projet) ce qu'il a besoin de savoir.
-Au minimum, remplissez cette description :
-------------------------------------------------------------------------
+Name of the project: World of Zuul
 
-TITRE DU PROJET :
-BUT POURSUIVI :
-VERSION ou DATE :
-COMMENT INVOQUER CE PROJET :
-AUTEURS :
-INSTRUCTIONS Ŕ L'USAGER :
+This project's goal is to create a game called World of Zuul.
+In this game, a player will go through a labyrinth, kill enemies and 
+kill the boss to achieve his quest.
+
+Authors: Yohann, Hatim, Ludivine, Natasha, Delphine, Yousra, Correntin, Jérémie
