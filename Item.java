@@ -18,7 +18,11 @@ public class Item
 
     /**
      * Constructor for objects of class Item
-     * 
+     * @param itemName: the name of the object
+     * @param des: the description of the object
+     * @param dam: the value of damage of the item
+     * @param prot: the value of protection of the item
+     * @param HG: the value of health gained by the player when using the item (potion)
      */
     public Item(String itemName, String des, int dam, int prot, int HG)
     { 
@@ -33,75 +37,96 @@ public class Item
     /**
      * setter for the damage
      * the damage can be equal to 0 but cannot be negative
+     * @param dam: value of the damage of the item
      */
-    public void setDamage (int Dam)
+    public void setDamage (int dam)
     {
-        if (Dam<0) //If the value of the damage is less than 0
+        if (dam<0) //If the value of the damage is less than 0
         {
             damage = damage; //The value of the damage does not change
         }
         else 
         {
-            damage = Dam; //The value of the damage takes on a new value
+            damage = dam; //The value of the damage takes on a new value
         }
-       
-         
-    }
+     }
     
     /**
      * setter for the protection
      * the protection can be equal to 0 but cannot be negative
+     * @param prot: the value of protection of the item
      */
-    public void setProtection(int Prot )
-     {if (Prot<0) //If the value of the protection is less than 0
+    public void setProtection(int prot )
+     {if (prot<0) //If the value of the protection is less than 0
         {
             protection = protection; //The value of the protection does not change
         }
         else 
         {
-            protection = Prot; // The value of the protection takes a new value
+            protection = prot; // The value of the protection takes a new value
         }
     }
     
     /**
      * setter for the name
+     * @param myName: the name of the item
      */
     public void setName(String myName)
-    {name = myName;}
+    {
+        name = myName;
+    }
     
     /**
      * A method to get the damage of the item
+     * @return int damage: returns the value of damage of the item
      */
     public int getDamage()
-    {return damage;}
+    {
+        return damage;
+    }
     
     /**
      * A method to get the protection of the item
+     * @return int protection: returns the value of protection of the item
      */
     public int getProtection()
-    {return protection;}
+    {
+        return protection;
+    }
     
     /**
      *  A method which return the name of the item
+     *  @return String name: returns the name of the item
      */
     public String getName()
-    {return name;}
+    {
+        return name;
+    }
     
     /**
      * A method which return the descritpion of the item
+     * @return String description: returns the description of the item
      */
     public String getDescription()
-    {return description;}
+    {
+        return description;
+    }
     
     /**
      * A method to get the health gain of the item
+     * @return item healtGain: returns the value of health given to the player (potion)
      */
     public int getHealthGain()
-    {return healthGain;}
+    {
+        return healthGain;
+    }
     
     /**
-     * A method which returns the name of the item
+     * A method which returns the ID of the item
+     * @return int itemID: returns the item of the item
      */
     public int getItemID()
-     {return itemID; }
+    {
+         return itemID; 
     }
+}
