@@ -409,6 +409,18 @@ public class SpotTest
         assertEquals(0,spot.getListCharacter().size());
         assertTrue(test);
     }
+    
+    /**
+     * Test that when there is a monster in a spot, the method
+     * getMonster gives the monster
+     */
+    @Test
+    public void testGetMonster()
+    {
+        spot.addCharacterSpot(monster1); 
+        assertEquals(monster1,spot.getMonster());
+    }
+    
 
     // /**
      // * Test to verify it is possible to set the boolean fighting to true if there are 2
