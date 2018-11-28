@@ -461,7 +461,6 @@ public class Game
      */
     public Character whoBegins() 
     { 
-       
         return Theseus;   
     }
     

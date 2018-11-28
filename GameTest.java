@@ -1,4 +1,3 @@
-
 import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.After;
@@ -15,10 +14,10 @@ public class GameTest
 {
     protected Game myGame;
     private Player player; 
-    private Lesser_Boss monster; 
+    private LesserBoss monster; 
     private Character fighter; 
     private Spot spot; 
-    private Legendary legendary; 
+    private Legendary legendary, HermesSandals; 
     private Common common; 
     private ArrayList<Item> itemInSpot;
     private ArrayList<Character> characterInSpot; 
@@ -43,7 +42,8 @@ public class GameTest
         spot= new Spot(characterInSpot, itemInSpot); 
         player= new Player(20,"Jimmy",2,2,0);
         legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
-        monster= new Lesser_Boss(30,"Chimera", 0, 2,2, "io", legendary); 
+        HermesSandals= new Legendary("Hermes's sandals","",0,0,0);; 
+        monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
     
@@ -120,6 +120,35 @@ public class GameTest
             }
         }
         assertEquals(1, exist);
+    }
+    
+    /**
+     * Test if the people who begins is well the fighter if the player has the Hermes's sandals.
+     */
+    @Test
+    public void testWhoBegins(){
+        player.takeItem(HermesSandals); 
+        myGame.getCurrentSpot().addCharacterSpot(monster); 
+        myGame.getCurrentSpot().addCharacterSpot(player); 
+        boolean test=false; 
+        if(myGame.whoBegins()==player){
+            test=true; 
+        }; 
+        assertTrue(test); 
+        
+    }
+    /**
+     * Test the method fight(), if the monster lost, 
+     * the items must be free and add at the spot
+     */
+    @Test
+    public void testMonsterDead()
+    {
+        myGame.getCurrentSpot().addCharacterSpot(player); 
+        myGame.getCurrentSpot().addCharacterSpot(monster);
+        myGame.getCurrentSpot().monsterDead(); 
+        
+        
     }
     
     /**
