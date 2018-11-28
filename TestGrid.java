@@ -23,7 +23,7 @@ public class TestGrid
         ArrayList<Character> listTestC = new ArrayList<Character>();
         ArrayList<Item> listTestI = new ArrayList<Item>();
         
-        Spot myTestSpot = new Spot(listTestC,listTestI);
+        Spot CurrentSpot = new Spot(listTestC,listTestI);
         Spot myTestSpotN = new Spot(listTestC,listTestI);
         Spot myTestSpotS = new Spot(listTestC,listTestI);
         Spot myTestSpotE = new Spot(listTestC,listTestI);
@@ -33,10 +33,10 @@ public class TestGrid
         Spot myTestSpotSE = new Spot(listTestC,listTestI);
         Spot myTestSpotSW = new Spot(listTestC,listTestI);
         
-        myTestSpot.setExits("North",myTestSpotN);
-        myTestSpot.setExits("South",myTestSpotS);
-        myTestSpot.setExits("East",myTestSpotE);
-        myTestSpot.setExits("West",myTestSpotW);
+        CurrentSpot.setExits("North",myTestSpotN);
+        CurrentSpot.setExits("South",myTestSpotS);
+        CurrentSpot.setExits("East",myTestSpotE);
+        CurrentSpot.setExits("West",myTestSpotW);
         
         myTestSpotN.setExits("East",myTestSpotNE);
         myTestSpotE.setExits("North",myTestSpotNE);
@@ -50,15 +50,15 @@ public class TestGrid
         myTestSpotS.setExits("West",myTestSpotSW);
         myTestSpotW.setExits("South",myTestSpotSW);
         
-        myTestSpot.setImageSpot("1234.png");
+        CurrentSpot.setImageSpot("1234.png");
         myTestSpotN.setImageSpot("234.png");
         myTestSpotS.setImageSpot("124.png");
         myTestSpotE.setImageSpot("134.png");
         myTestSpotW.setImageSpot("123.png");
-        myTestSpotNE.setImageSpot("1234.png");
-        myTestSpotNW.setImageSpot("1234.png");
-        myTestSpotSE.setImageSpot("1234.png");
-        myTestSpotSW.setImageSpot("1234.png");
+        myTestSpotNE.setImageSpot("34.png");
+        myTestSpotNW.setImageSpot("23.png");
+        myTestSpotSE.setImageSpot("14.png");
+        myTestSpotSW.setImageSpot("12.png");
         
         myFrame.setLayout(new GridLayout(3,3));
         
@@ -66,39 +66,39 @@ public class TestGrid
         {
             if(i == 1)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getExits("West").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("North").getExits("West").getImageSpot())));
             }
             else if(i == 2)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("North").getImageSpot())));
             }
             else if(i == 3)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getExits("East").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("North").getExits("East").getImageSpot())));
             }
             else if(i == 4)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("West").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("West").getImageSpot())));
             }
             else if(i == 5)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getImageSpot())));
             }
             else if(i == 6)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("East").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("East").getImageSpot())));
             }
             else if(i == 7)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getExits("West").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("South").getExits("West").getImageSpot())));
             }
             else if(i == 8)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("South").getImageSpot())));
             }
             else if(i == 9)
             {
-                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getExits("East").getImageSpot())));
+                myFrame.add(new JLabel( new ImageIcon(CurrentSpot.getExits("South").getExits("East").getImageSpot())));
             }
             else
             {
