@@ -16,6 +16,11 @@ public class Player extends Character
     /**
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
+     * @param int myHP: value of the HP of the player
+     * @param String myName: name of the player
+     * @param int myXp: xp of the player
+     * @param int myDamage: value of damage of the player
+     * @param int myProtection: value of the protection of the player
      */
     public Player(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
@@ -24,7 +29,8 @@ public class Player extends Character
     
     /**
      * Getter for the attribute ariadnesThread
-     * 
+     * @return boolean ariadnesThread: returns true if the player has the item.
+     * Returns false otherwise
      */
     public boolean getThread()
     {
@@ -78,6 +84,7 @@ public class Player extends Character
     /**
      * Allows the player to drop an item
      * A player may drop an item at any time except while in a fight
+     * @param Item itemDrop: the item that the player wants to drop
      */
     public void dropItem(Item itemDrop)
     {
@@ -90,6 +97,7 @@ public class Player extends Character
      * Allows the player to pick up an item
      * if the item is the Ariadne's golden thread the boolean
      * associated to the thread is set to true.
+     * @param Item myItem: the item that the player wants tot take
      */
     public void takeItem(Item myItem)
     {
@@ -107,6 +115,7 @@ public class Player extends Character
     
     /**
      * getter for TimeToGo
+     * @return boolean timeToGo: return true if the player can exit the labyrinth
      */
     public boolean getTimeToGo()
     {
@@ -131,6 +140,7 @@ public class Player extends Character
     
     /**
      * A method that returns the item limit
+     * @return int limitItem: returns the item limit for the player
      */
     public int getLimitItem()
     {
@@ -139,6 +149,8 @@ public class Player extends Character
     
     /**
      * A method that gets the items in the inventory at the given index
+     * @return Item inventory.get(numItem): returns the item
+     * @param int numItem: the number index of the item in the inventory
      */
     public Item getItems(int numItem)
     {
@@ -147,6 +159,7 @@ public class Player extends Character
     
     /**
      * A method that returns the max Hp
+     * @return int hpMax: returns the max Hp of the player
      */
     public int getHPMax()
     {
@@ -176,6 +189,7 @@ public class Player extends Character
     
     /**
      * A method that returns the crit rate
+     * @return int critRate: returns the critical rate of the player
      */
     public int getCritRate()
     {

@@ -15,5 +15,4 @@ public class Common extends Item
         super (itemName, des, dam, HG, prot);
     
     }
-
 }

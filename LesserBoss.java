@@ -9,12 +9,18 @@ import java.util.*;
 public class LesserBoss extends Monster
 {
 
-    private Legendary possessedLegendary; //This attributes dicates with legendary item is associated to a lesser monster
+    private Legendary possessedLegendary; //This attributes indicates which legendary item is associated to a lesser monster
     private ArrayList<Common> itemsToKillMe;//Lists a suggestion of items to be able to kill the monster
     private boolean aggressive; //The aggressivity of the lesser boss
     
     /**
      * A constructor for the lesser boss class
+     * @param int myHP: hp value of the lesser boss
+     * @param String myName: name of the lesser boss
+     * @param int myDamage: value of the damage of the lesser boss
+     * @param int myProtection: value of the protection of the lesser boss
+     * @param String myDes: description of the lesser boss
+     * @param Legendary myLegendary: the legendary item the boss carries
      */
     public LesserBoss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes, Legendary myLegendary)
     {

@@ -24,7 +24,7 @@ public class SpotTest
     private Legendary it1, it2, it3;
     private Common it4, it5, it6;
     private Player player, player1;
-    private Lesser_Boss monster1, monster; 
+    private LesserBoss monster1, monster; 
     private Boss monster2; 
     private Spot spot, neighbor, anotherSpot, neighbor1, neighbor2, neighbor3;
       
@@ -52,7 +52,7 @@ public class SpotTest
         objectInSpot= new ArrayList <Item> ();
         characterInSpot= new ArrayList <Character> ();
         player= new Player(20, "player", 1, 2,2);
-        monster1= new Lesser_Boss(30,"Chimera", 0, 2,2, "io", it1);  
+        monster1= new LesserBoss(30,"Chimera", 0, 2,2, "io", it1);  
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
         spot = new Spot(characterInSpot, objectInSpot);
         neighbor = new Spot(characterInSpot, objectInSpot);
@@ -137,6 +137,34 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
+        assertEquals("4.png", spot.getImageSpot());
+    }
+    
+    /**
+     * Test remove exit to a spot
+     */
+    @Test
+    public void testRemoveExits()
+    {
+        spot.setExits("Q", neighbor);
+        boolean test=false; 
+        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertTrue(test); 
+        assertEquals("4.png", spot.getImageSpot());
+        spot.removeExits("Q", neighbor);
+        test=false;
+        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
+            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
+                test= true; 
+            }
+        }
+        assertFalse(test);
+        assertEquals("0.png", spot.getImageSpot());
+        assertFalse(spot.getCorrect());
     }
     
     /**

@@ -14,7 +14,7 @@ public class CommonTest
 {
     //The variables/attributes necessary to test the functions
     private Common goodCommon;
-    
+    private Item goodItem;
 
     /**
      * Constructor of the class test CommonTest 
@@ -46,7 +46,71 @@ public class CommonTest
         assertEquals (2,goodCommon.getProtection());
         assertEquals (0,goodCommon.getHealthGain());
     }
-
+    
+    /**
+     * Test if it is possible to set a negative value for healGain
+     */
+    @Test
+    public void testSetNegativeHPGain()
+    {
+        goodCommon.setHealthGain(-10);
+        assertEquals(0, goodCommon.getHealthGain()); // the value of healthGain should remain at 0
+    }
+    
+    
+     /**
+     * test if the set damage accepts a negative value
+     * this should not be possible
+     */
+    @Test
+    public void testSetNegativeDamage()
+    {
+        goodCommon.setDamage(-10);//Damage with a negative value
+        assertEquals(2,goodCommon.getDamage());//The parameter "2" must remain defined as damage attribute
+    }
+    
+    /**
+     * test if the set damage method accepts a positive value
+     * This should be possible
+     */
+    @Test
+    public void testSetPositiveDamage()
+    {
+        goodCommon.setDamage(10);//Damage with a positive value
+        assertEquals(10,goodCommon.getDamage());//The parameter "10" must be set as the damage attribute
+    }
+    /**
+     * tests if the set protection method accepts a negative value
+     * This should not be possible
+     */
+    @Test
+    public void testSetNegativeProtection()
+    {
+        goodCommon.setProtection(-10);//Protection with a negative value
+        assertEquals(2,goodCommon.getProtection());//The parameter "2" must remain defined as protection attribute
+    }
+    
+    /**
+     * tests if the set protection method accepts a positive value
+     * this should be possible
+     */
+    @Test
+    public void testSetPositiveProtection()
+    {
+        goodCommon.setProtection(10);//Protection with a positive value
+        assertEquals(10,goodCommon.getProtection());//The parameter "10" must be set as the protection attribute
+    }
+    /**
+     * test for good name
+     *  Checks if the name given as parameter in the constructor is correctly set to the attribute
+     */
+    @Test
+    public void testSetName()
+    {
+        goodCommon.setName("Iron Sword");
+        assertEquals("Iron Sword",goodCommon.getName()); // The parameter "YousraDelphine" must be set as the name attribute
+    }
+    
     /**
      * Removes the set up
      */

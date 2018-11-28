@@ -6,7 +6,7 @@
  * @author (Group 6)
  * @version (2018-11-14)
  */
-public class Monster extends Character
+public abstract class Monster extends Character
 {
     private boolean isDead = false;//A boolean used to indicate to the game is a monsters hp has reached zero
     private String description; //A description of the monster
