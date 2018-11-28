@@ -161,7 +161,6 @@ public class Spot
                 default: valueExits += "Q";
                 break;
             }
-
         }
         
         switch(valueExits)
