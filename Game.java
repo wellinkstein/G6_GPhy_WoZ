@@ -1,4 +1,4 @@
- import java.util.*;
+import java.util.*;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -22,8 +22,7 @@ public class Game
     private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
     private int line = 8; //number of lines in the matrix;
     private int column = 9; //number of columns in the matrix;
-    private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
-    private HashMap<String,Integer> monsters = new HashMap<String, Integer>();
+    private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;
     private Player Theseus;
     /** 
@@ -34,7 +33,7 @@ public class Game
         createLabyrinth();
         
         Player Theseus = new Player(20,"Theseus",1,1,0);
-        placePlayer(Theseus, 1);
+        
         
         Common IronSword= new Common ("Iron Sword","",3,0,0);
         Common IronDagger= new Common ("Iron Dagger","",1,0,0);
@@ -58,12 +57,14 @@ public class Game
         
         Boss Minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
         
-        placeMonster(Minotaur,9);  
-        placeMonster(Cerberus,5);
-        placeMonster(Medusa,6);
-        placeMonster(Cyclops,7);
-        placeMonster(Chimera,8);
-        placeMonster(Arachne,10);
+        
+        listSpot.get(9).addCharacterSpot(Minotaur);
+        listSpot.get(5).addCharacterSpot(Cerberus);
+        listSpot.get(6).addCharacterSpot(Medusa);
+        listSpot.get(7).addCharacterSpot(Cyclops);
+        listSpot.get(8).addCharacterSpot(Chimera);
+        listSpot.get(10).addCharacterSpot(Arachne);
+
         
         
         ArrayList<Integer> listIronSword = new ArrayList();
@@ -110,6 +111,7 @@ public class Game
         
       
         exitAndStart();//initialize start spot (also current spot) and exit spot 
+        currentSpot.addCharacterSpot(Theseus);
         setFinishedFalse();
     }
 
@@ -303,39 +305,31 @@ public class Game
      */
     public void exitAndStart()
     {
+        listSpot.get(0).setStartSpot();
+        setCurrentSpot(listSpot.get(0));
+        listSpot.get(6).setExitSpot();
     }
     
-     /**
-     * Get the Monsters and his Spot.
-     */
-    public HashMap<String,Integer> getMonsters()
-    {
-        return monsters;
-         
-    }
+ 
     
     /**
-     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
+     *  Get the Player
      */
-    public void placePlayer(Player player, int spotIndex)
-    {
-         
+    public Player getPlayer() 
+    { 
+        return Theseus;
     }
+
     
-    /**
-     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
-     */
-    public void placeMonster(Monster monster, int spotIndex)
-    {
-         
-    }
     
     /**
      * Places one type of commmon item in a definite number of spots. 
      */
     public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
-         
+         for (int i = 0; i < spotIndexList.size(); i++) { 
+              listSpot.get(spotIndexList.get(i)).addItemSpot(item);
+          }
     }
      
     /**
@@ -389,9 +383,9 @@ public class Game
      * Gets the adjacent spot at a specific direction 
      * 
      */
-    public Spot chooseDirection() 
+    public Spot chooseDirection(String direction) 
     { 
-        return listSpot.get(2);//spot adjacent
+        return currentSpot.getExits(direction);
     }
     /**
      * Changes the current spot to the spot according to the direction given
@@ -433,6 +427,7 @@ public class Game
      */
     public Character whoBegins() 
     { 
+       
         return Theseus;   
     }
     
@@ -545,12 +540,6 @@ public class Game
                 
     }
     
-    
-    
-
-    
-
- 
 
     
 }

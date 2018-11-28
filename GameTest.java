@@ -13,7 +13,7 @@ import org.junit.Test;
 public class GameTest
 {
     protected Game myGame;
-    private Player player; 
+    private Player player, theseus; 
     private LesserBoss monster; 
     private Character fighter; 
     private Spot spot; 
@@ -41,11 +41,9 @@ public class GameTest
         characterInSpot= new ArrayList <Character> ();
         spot= new Spot(characterInSpot, itemInSpot); 
         player= new Player(20,"Jimmy",2,2,0);
+        theseus= new Player(20, "Theseus", 2,2,0); 
         legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
-<<<<<<< HEAD
-        HermesSandals= new Legendary("Hermes's sandals","",0,0,0);; 
-=======
->>>>>>> e4a49a42fdf4379ea2da6bfa57a004ae364fbbeb
+        HermesSandals= new Legendary("Hermes's sandals","",0,0,0); 
         monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
@@ -149,11 +147,78 @@ public class GameTest
     {
         myGame.getCurrentSpot().addCharacterSpot(player); 
         myGame.getCurrentSpot().addCharacterSpot(monster);
-        myGame.getCurrentSpot().monsterDead(); 
-        
+        myGame.getCurrentSpot().monsterDead();
+        assertNull(myGame.getCurrentSpot().getMonster());
+        assertEquals(true, myGame.getCurrentSpot().getListItem().contains(legendary)); 
         
     }
     
+    /**
+     * Verify if there is one player in the maze. Only the first player is kept.
+     */
+    @Test
+    public void testMoveOnePlayerInGame(){
+        myGame.getCurrentSpot().addCharacterSpot(theseus);
+        myGame.move(spot); 
+        boolean test=true; 
+        for (int i =0; i<myGame.getListSpot().size(); i++){
+            if (myGame.getCurrentSpot().getPlayer().get(i) != null){
+                test=false; 
+            }
+        }
+        assertFalse(test);
+        }
+       
+    /**
+     * Verify if the player is on the spot start
+     */
+    @Test
+    public void testPlayerInStartSpot()
+    {   
+        boolean test=false;  
+        for (int i =0; i<myGame.getListSpot().size(); i++){
+            if (myGame.getCurrentSpot().getStartSpot() == true && myGame.getCurrentSpot().getListCharacter().get(i) == theseus){
+                test=true;  
+            }
+        }
+        assertTrue(test);
+
+    }
+    
+    /**
+     * Check if all the spots are corrected.
+     */
+    @Test
+    public void testSpotsCorrect(){
+        boolean test=true;  
+        for (int i =0; i<myGame.getListSpot().size(); i++){
+            if (myGame.getCurrentSpot().getCorrect()== false ){
+                test=false;  
+            }
+        }
+        assertFalse(test);
+    }
+    
+    /**
+     * Check if the player move in the good spot
+     */
+    @Test
+    public void testPlayerMoveSpot(){
+        myGame.getCurrentSpot().addCharacterSpot(theseus); 
+        myGame.move(spot); 
+        boolean test=true; 
+        for (int i =0; i<myGame.getListSpot().size(); i++){
+            if (myGame.getCurrentSpot().getPlayer().get(i) != null){
+                test=false; 
+            }
+        }
+        assertFalse(test);
+        }
+        
+        
+        
+    }
+        
     /**
      * Tears down the test fixture.
      *
