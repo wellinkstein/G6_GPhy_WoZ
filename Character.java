@@ -29,7 +29,6 @@ public class Character
      */
     public Character(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
-        
         HP = myHP;
         Name = myName;
         xp = myXp;

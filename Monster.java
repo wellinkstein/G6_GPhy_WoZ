@@ -10,8 +10,13 @@ public class Monster extends Character
 {
     private boolean isDead = false;//A boolean used to indicate to the game is a monsters hp has reached zero
     private String description; //A description of the monster
-    /**
+     /**
      * The constructor for the monster class
+     * @param int myHP: the value of health of the monster
+     * @param String myName: the name of the monster
+     * @param int myXP: the xp of the monster
+     * @param int myProtection: the value of protection of the monster
+     * @param String myDes: the description of the monster
      */
     public Monster(int myHP, String myName, int myXp, int myDamage,int myProtection,String myDes)
     {
@@ -21,7 +26,7 @@ public class Monster extends Character
     
     /**
      * getter for the description
-     * @return String descripption: returns the description of the monster
+     * @return String description: returns the description of the monster
      */
     public String getDescription()
     {
@@ -30,7 +35,7 @@ public class Monster extends Character
     
     /**
      * setter for description
-     * @parm String myDes: set the value for the description of the monster
+     * @param String myDes: set the value for the description of the monster
      */
     public void setDescription(String myDes)
     {
