@@ -76,6 +76,26 @@ public class Item
         name = myName;
     }
     
+     /**
+     * A mothod to set the description of the item
+     * @param String description: the description of the item
+     */
+    public void setDescription(String description)
+    {
+        this.description=description;
+    }
+    
+    /**
+     * A method to set the value of healh given by the item (potion)
+     * This value cannot be set under 0
+     * @param int healthGain: integer of the value of health gain
+     */
+    
+    public void setHealthGain(int healthGain)
+    {
+        this.healthGain = healthGain;
+    }
+    
     /**
      * A method to get the damage of the item
      * @return int damage: returns the value of damage of the item

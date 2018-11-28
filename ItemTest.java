@@ -35,7 +35,8 @@ public class ItemTest
         goodItem = new Item("Iron Sword","Common sword", 2, 2, 0);
 
     }
-        /**
+    
+     /**
      * Test that checks if the getters work properly
      */
     @Test
@@ -47,6 +48,7 @@ public class ItemTest
         assertEquals (2,goodItem.getProtection());
         assertEquals (0,goodItem.getHealthGain());
     }
+    
     /**
      * test if the set damage accepts a negative value
      * this should not be possible
@@ -57,6 +59,7 @@ public class ItemTest
         goodItem.setDamage(-10);//Damage with a negative value
         assertEquals(2,goodItem.getDamage());//The parameter "2" must remain defined as damage attribute
     }
+    
     /**
      * test if the set damage method accepts a positive value
      * This should be possible
@@ -67,6 +70,7 @@ public class ItemTest
         goodItem.setDamage(10);//Damage with a positive value
         assertEquals(10,goodItem.getDamage());//The parameter "10" must be set as the damage attribute
     }
+    
     /**
      * tests if the set protection method accepts a negative value
      * This should not be possible
@@ -77,6 +81,7 @@ public class ItemTest
         goodItem.setProtection(-10);//Protection with a negative value
         assertEquals(2,goodItem.getProtection());//The parameter "2" must remain defined as protection attribute
     }
+    
     /**
      * tests if the set protection method accepts a positive value
      * this should be possible
@@ -98,6 +103,7 @@ public class ItemTest
         goodItem.setName("YousraDelphine");
         assertEquals("YousraDelphine",goodItem.getName()); // The parameter "YousraDelphine" must be set as the name attribute
     }
+    
     /**
      *removes the set up
      */
@@ -106,5 +112,4 @@ public class ItemTest
     {
         
     }
-    
 }
