@@ -42,7 +42,10 @@ public class GameTest
         spot= new Spot(characterInSpot, itemInSpot); 
         player= new Player(20,"Jimmy",2,2,0);
         legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
+<<<<<<< HEAD
         HermesSandals= new Legendary("Hermes's sandals","",0,0,0);; 
+=======
+>>>>>>> e4a49a42fdf4379ea2da6bfa57a004ae364fbbeb
         monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
