@@ -83,6 +83,28 @@ public class Spot
         setImageSpotExistDirections(); //set the picture of the spot
     }
     
+     /** Method removeExit. Remove an exit from this spot.
+      * If the spot is not found, nothing is done
+     * @param String direction: the direction of the exit to remove
+     * @param Spot neighbor: the neighbor spot to remove
+     */
+    public void removeExits(String direction, Spot neighbor)
+    {
+        for (Map.Entry mapentry: this.getAllExit().entrySet())
+        {
+            if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
+            {
+                exits.remove(direction, neighbor); 
+            }
+            if(this.getNumberExits()==0)
+            {
+                spotCorrect = false;
+            }
+        }
+         setImageSpotExistDirections(); //set the picture of the spot
+    }
+
+    
     /**
      * Get the boolean for the attribute getCorrect. "True" if the spot is correct (meaning
      * that it has between 1 et 4 exits)
