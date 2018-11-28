@@ -52,7 +52,7 @@ public class Item
      * the protection can be equal to 0 but cannot be negative
      * @param prot: the value of protection of the item
      */
-    public void setProtection(int prot )
+    public void setProtection(int prot)
     {
         if (prot>=0) //If the value of the protection is over or equal to 0
         {

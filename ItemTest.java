@@ -52,7 +52,12 @@ public class ItemTest
     /**
      * Test if it is possible to set a negative value for healGain
      */
-    
+    @Test
+    public void testSetNegativeHPGain()
+    {
+        goodItem.setHealthGain(-10);
+        assertEquals(0, goodItem.getHealthGain()); // the value of healthGain should remain at 0
+    }
     
     /**
      * test if the set damage accepts a negative value
