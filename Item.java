@@ -6,7 +6,7 @@
 
  * @version 2018
  */
-public class Item
+public abstract class Item
 {
     private int damage; //dictates the damage attributed to an item
     private int protection; //dictates the protection attributed to an item
