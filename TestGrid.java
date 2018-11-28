@@ -32,10 +32,9 @@ public class TestGrid extends JFrame
     Spot myTestSpotSW = new Spot(listTestC,listTestI);
     
     private JButton myButton1, myButton2, myButton3, myButton4;
+    private JFrame myFrame;
     public void main ()
     {
-        JFrame myFrame = new JFrame("GridLayout");
-        
         CurrentSpot.setExits("North",myTestSpotN);
         CurrentSpot.setExits("South",myTestSpotS);
         CurrentSpot.setExits("East",myTestSpotE);
@@ -63,29 +62,26 @@ public class TestGrid extends JFrame
         myTestSpotSE.setImageSpot("14.png");
         myTestSpotSW.setImageSpot("12.png");
         
-        JPanel myPanel = new JPanel();
-        myPanel.setLayout(new GridLayout(2,2));
+        myFrame = new JFrame("Mon Scrolling");
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setLayout(new GridLayout(4,3));
         
         JButton myButton1 = new JButton("North");
         JButton myButton2 = new JButton("East");
         JButton myButton3 = new JButton("South");
         JButton myButton4 = new JButton("West");
         
-        myPanel.add(myButton1);
-        myPanel.add(myButton2);
-        myPanel.add(myButton3);
-        myPanel.add(myButton4);
-        
         myButton1.addActionListener(this);
         myButton2.addActionListener(this);
         myButton3.addActionListener(this);
         myButton4.addActionListener(this);
         
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
-        
-        myFrame.setLayout(new GridLayout(4,3));
+        JPanel myPanel = new JPanel();
+        myPanel.setLayout(new GridLayout(2,2));
+        myPanel.add(myButton1);
+        myPanel.add(myButton2);
+        myPanel.add(myButton3);
+        myPanel.add(myButton4);
         
         for(int i=1; i<=12; i++)
         {
@@ -127,40 +123,42 @@ public class TestGrid extends JFrame
             }
             else if(i == 11)
             {
-                myFrame.add(myPanel);
+                myFrame.add(myButton1);
             }
             else
             {
                 myFrame.add(new JLabel( new ImageIcon( "0.png")));
             }
-            
         }
 
         myFrame.pack();
         myFrame.setVisible(true);
     }
     
+    
+    
     public void actionPerformed (ActionEvent e)
     {
         if(e.getSource()==myButton1)
         {
             CurrentSpot = CurrentSpot.getExits("North");
-            System.out.println("going North");
+            myFrame.revalidate();
         }
         else if(e.getSource()==myButton2)
         {
             CurrentSpot = CurrentSpot.getExits("East");
-            System.out.println("going East");
+            myFrame.revalidate();
         }
         else if(e.getSource()==myButton3)
         {
             CurrentSpot = CurrentSpot.getExits("South");
-            System.out.println("going South");
+            myFrame.revalidate();
         }
         else if(e.getSource()==myButton4)
         {
             CurrentSpot = CurrentSpot.getExits("West");
-            System.out.println("going West");
+            myFrame.revalidate();
         }
+
     }
 }
