@@ -453,6 +453,24 @@ public class Spot
     }
     
     /**
+     * Return monster in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return Character monster: returns the monster in the spot
+     */
+    public Character getMonster()
+    {
+        for (Character monster : this.characterInSpot){
+            if(monster.getName()== "Chimera" || monster.getName()== "Cerberus" 
+            ||monster.getName()== "Medusa" 
+            || monster.getName()== "Cyclops" || monster.getName()== "Arachne"
+            || monster.getName()=="Minotaur"){
+            return(monster);
+            }  
+        }
+        return(null);
+    }
+    
+    /**
      * This method return all the key from the hashmap 
      * of the room
      * @return returnString all the key from the hashmap
