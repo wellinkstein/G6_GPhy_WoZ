@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
  import java.util.*;
@@ -13,39 +14,27 @@ import javax.swing.*;
  * @author PG 
  * @version 2013-02-04
  */
-public class TestGrid
+public class TestGrid extends JFrame
+        implements ActionListener
 {
-    public static void main ()
+    
+    ArrayList<Character> listTestC = new ArrayList<Character>();
+    ArrayList<Item> listTestI = new ArrayList<Item>();
+        
+    Spot CurrentSpot = new Spot(listTestC,listTestI);
+    Spot myTestSpotN = new Spot(listTestC,listTestI);
+    Spot myTestSpotS = new Spot(listTestC,listTestI);
+    Spot myTestSpotE = new Spot(listTestC,listTestI);
+    Spot myTestSpotW = new Spot(listTestC,listTestI);
+    Spot myTestSpotNE = new Spot(listTestC,listTestI);
+    Spot myTestSpotNW = new Spot(listTestC,listTestI);
+    Spot myTestSpotSE = new Spot(listTestC,listTestI);
+    Spot myTestSpotSW = new Spot(listTestC,listTestI);
+    
+    private JButton myButton1, myButton2, myButton3, myButton4;
+    public void main ()
     {
         JFrame myFrame = new JFrame("GridLayout");
-        
-        JPanel myPanel = new JPanel();
-        myPanel.setLayout(new GridLayout(2,2));
-        
-        JButton myButton1 = new JButton("North");
-        JButton myButton2 = new JButton("East");
-        JButton myButton3 = new JButton("South");
-        JButton myButton4 = new JButton("West");
-        
-        myPanel.add(myButton1);
-        myPanel.add(myButton2);
-        myPanel.add(myButton3);
-        myPanel.add(myButton4);
-        
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        ArrayList<Character> listTestC = new ArrayList<Character>();
-        ArrayList<Item> listTestI = new ArrayList<Item>();
-        
-        Spot CurrentSpot = new Spot(listTestC,listTestI);
-        Spot myTestSpotN = new Spot(listTestC,listTestI);
-        Spot myTestSpotS = new Spot(listTestC,listTestI);
-        Spot myTestSpotE = new Spot(listTestC,listTestI);
-        Spot myTestSpotW = new Spot(listTestC,listTestI);
-        Spot myTestSpotNE = new Spot(listTestC,listTestI);
-        Spot myTestSpotNW = new Spot(listTestC,listTestI);
-        Spot myTestSpotSE = new Spot(listTestC,listTestI);
-        Spot myTestSpotSW = new Spot(listTestC,listTestI);
         
         CurrentSpot.setExits("North",myTestSpotN);
         CurrentSpot.setExits("South",myTestSpotS);
@@ -73,6 +62,28 @@ public class TestGrid
         myTestSpotNW.setImageSpot("23.png");
         myTestSpotSE.setImageSpot("14.png");
         myTestSpotSW.setImageSpot("12.png");
+        
+        JPanel myPanel = new JPanel();
+        myPanel.setLayout(new GridLayout(2,2));
+        
+        JButton myButton1 = new JButton("North");
+        JButton myButton2 = new JButton("East");
+        JButton myButton3 = new JButton("South");
+        JButton myButton4 = new JButton("West");
+        
+        myPanel.add(myButton1);
+        myPanel.add(myButton2);
+        myPanel.add(myButton3);
+        myPanel.add(myButton4);
+        
+        myButton1.addActionListener(this);
+        myButton2.addActionListener(this);
+        myButton3.addActionListener(this);
+        myButton4.addActionListener(this);
+        
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
         
         myFrame.setLayout(new GridLayout(4,3));
         
@@ -127,5 +138,29 @@ public class TestGrid
 
         myFrame.pack();
         myFrame.setVisible(true);
+    }
+    
+    public void actionPerformed (ActionEvent e)
+    {
+        if(e.getSource()==myButton1)
+        {
+            CurrentSpot = CurrentSpot.getExits("North");
+            System.out.println("going North");
+        }
+        else if(e.getSource()==myButton2)
+        {
+            CurrentSpot = CurrentSpot.getExits("East");
+            System.out.println("going East");
+        }
+        else if(e.getSource()==myButton3)
+        {
+            CurrentSpot = CurrentSpot.getExits("South");
+            System.out.println("going South");
+        }
+        else if(e.getSource()==myButton4)
+        {
+            CurrentSpot = CurrentSpot.getExits("West");
+            System.out.println("going West");
+        }
     }
 }
