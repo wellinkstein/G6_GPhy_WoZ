@@ -39,35 +39,28 @@ public class Item
      * the damage can be equal to 0 but cannot be negative
      * @param dam: value of the damage of the item
      */
-    public void setDamage (int dam)
+     public void setDamage (int dam)
     {
-        if (dam<0) //If the value of the damage is less than 0
+        if (dam>=0) //If the value of the damage is over or equal to 0
         {
-            damage = damage; //The value of the damage does not change
-        }
-        else 
-        {
-            damage = dam; //The value of the damage takes on a new value
+            damage = dam; //The value of the damage does  change
         }
      }
     
-    /**
+     /**
      * setter for the protection
      * the protection can be equal to 0 but cannot be negative
      * @param prot: the value of protection of the item
      */
     public void setProtection(int prot )
-     {if (prot<0) //If the value of the protection is less than 0
+    {
+        if (prot>=0) //If the value of the protection is over or equal to 0
         {
-            protection = protection; //The value of the protection does not change
-        }
-        else 
-        {
-            protection = prot; // The value of the protection takes a new value
+            protection = prot;  //The value of the protection does change
         }
     }
     
-    /**
+     /**
      * setter for the name
      * @param myName: the name of the item
      */
@@ -93,7 +86,10 @@ public class Item
     
     public void setHealthGain(int healthGain)
     {
-        this.healthGain = healthGain;
+        if(healthGain>=0)
+        {
+            this.healthGain = healthGain;
+        }
     }
     
     /**

@@ -50,6 +50,11 @@ public class ItemTest
     }
     
     /**
+     * Test if it is possible to set a negative value for healGain
+     */
+    
+    
+    /**
      * test if the set damage accepts a negative value
      * this should not be possible
      */
