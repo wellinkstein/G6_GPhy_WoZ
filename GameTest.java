@@ -14,6 +14,15 @@ import org.junit.Test;
 public class GameTest
 {
     protected Game myGame;
+    private Player player; 
+    private Lesser_Boss monster; 
+    private Character fighter; 
+    private Spot spot; 
+    private Legendary legendary; 
+    private Common common; 
+    private ArrayList<Item> itemInSpot;
+    private ArrayList<Character> characterInSpot; 
+
     /**
      * Default constructor for test class GameTest
      */
@@ -28,7 +37,13 @@ public class GameTest
      */
     @Before
     public void setUp()
-    {
+    {   
+        itemInSpot= new ArrayList <Item> ();
+        characterInSpot= new ArrayList <Character> ();
+        spot= new Spot(characterInSpot, itemInSpot); 
+        player= new Player(20,"Jimmy",2,2,0);
+        legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
+        monster= new Lesser_Boss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
     
