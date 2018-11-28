@@ -164,6 +164,7 @@ public class SpotTest
         }
         assertFalse(test);
         assertEquals("0.png", spot.getImageSpot());
+        assertFalse(spot.getCorrect());
     }
     
     /**
