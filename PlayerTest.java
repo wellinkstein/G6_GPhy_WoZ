@@ -70,13 +70,13 @@ public class PlayerTest
 
     
     /**
-     * Tests that a player can take a valid item
+     * Tests that a player can take a valid Common
      */
 
     @Test
-    public void testTakeItem()
+    public void testtakeItem()
     {
-        Item potion = new Item("Health Potion","A potion that heals 5 HP",0,0,5);
+        Common potion = new Common("Health Potion","A potion that heals 5 HP",0,0,5);
         myPlayer.takeItem(potion);
         assertEquals(1,myPlayer.inventory.size());
         assertEquals(potion, myPlayer.getItems(0));
@@ -90,8 +90,8 @@ public class PlayerTest
     public void testDrinkPotion()
     {
         myPlayer = new Player(15,"Jimmy",2,2,0);
-        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
-        Item potion2 = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        Common potion2 = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(potion2);
         myPlayer.drinkPotion();
@@ -101,7 +101,7 @@ public class PlayerTest
     }
     
     /**
-     * Tests that a player keeps other items when drinking a health potion
+     * Tests that a player keeps other Commons when drinking a health potion
      * He only "loses" the health potion used.
      */
 
@@ -109,8 +109,8 @@ public class PlayerTest
     public void testDrinkPotionWithSword()
     {
         myPlayer = new Player(15,"Jimmy",2,2,0);
-        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
-        Item sword = new Item("Iron Sword","A medium length blade",3,0,0);
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        Common sword = new Common("Iron Sword","A medium length blade",3,0,0);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(sword);
         myPlayer.drinkPotion();
@@ -141,7 +141,7 @@ public class PlayerTest
     @Test
     public void testDrinkPotionOverHp()
     {
-        Item potion = new Item("Health Potion","Heals for 5 hp",0,0,5);
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.setHp(19);
         myPlayer.drinkPotion();
@@ -149,14 +149,14 @@ public class PlayerTest
     }
 
     /**
-     * Tests that the player can drop an item that he has in his inventory
-     * He should be able to drop the item
+     * Tests that the player can drop a Common Item that he has in his inventory
+     * He should be able to drop the Common Item
      */
 
     @Test
-    public void testDropItem()
+    public void testDropCommon()
     {
-        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        Common potion = new Common ("Health Potion","A potion that heals five HP",0,0,5);
         myPlayer.takeItem(potion);
         assertEquals(potion, myPlayer.getItems(0));
         myPlayer.dropItem(potion);
@@ -166,15 +166,15 @@ public class PlayerTest
 
     
     /**
-     * Tests that an item that is not in the inventory of the player
+     * Tests that an Item that is not in the inventory of the player
      * cannot be dropped
      */
     
     @Test
-    public void testDropFalseItem()
+    public void testDropFalseCommon()
     {
-       Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
-       Item potion2 = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+       Common potion = new Common ("Health Potion","A potion that heals five HP",0,0,5);
+       Common potion2 = new Common ("Health Potion","A potion that heals five HP",0,0,5);
        myPlayer.takeItem(potion);
        assertEquals(potion, myPlayer.getItems(0));
        myPlayer.dropItem(potion2); 
@@ -183,13 +183,13 @@ public class PlayerTest
     
       /**
      * Tests that a players damage stats are modified according to an 
-     * items attribute.
+     * Item attribute.
      */
 
     @Test
-    public void testItemSword()
+    public void testCommonSword()
     {
-        Item sword = new Item ("Iron Sword","An iron sword",2,0,0);
+        Common sword = new Common ("Iron Sword","An iron sword",2,0,0);
         myPlayer.takeItem(sword);
         assertEquals(sword, myPlayer.getItems(0));
         assertEquals(4, myPlayer.getDamage());
@@ -200,13 +200,13 @@ public class PlayerTest
     
         /**
      * Tests that a players protection stats are modified according to an 
-     * items attribute.
+     * Commons attribute.
      */
 
     @Test
-    public void testItemShield()
+    public void testCommonShield()
     {
-        Item shield = new Item ("Wooden shield","A wooden shield",0,2,0);
+        Common shield = new Common ("Wooden shield","A wooden shield",0,2,0);
         myPlayer.takeItem(shield);
         assertEquals(shield, myPlayer.getItems(0));
         assertEquals(2, myPlayer.getProtection());
@@ -216,14 +216,14 @@ public class PlayerTest
     }
     
     /**
-     * Tests that an item cannot be added to the inventory
-     * if the player already carries the maximum amount of items
+     * Tests that an Common cannot be added to the inventory
+     * if the player already carries the maximum amount of Commons
      */
 
     @Test
-    public void testGetOverMaxItem()
+    public void testGetOverMaxCommon()
     {
-        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        Common potion = new Common ("Health Potion","A potion that heals five HP",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(potion);
@@ -283,37 +283,219 @@ public class PlayerTest
     }
     
     /**
-     * This method tests if the item limit is 10
-     * The item limit should always be 10
+     * This method tests if the Common limit is 10
+     * The Common limit should always be 10
      */
     @Test
-    public void testItemLimit()
+    public void testCommonLimit()
     {
         assertEquals(10,myPlayer.getLimitItem());
     }
     
     /**
      * This test checks if the boolean ariadnesThread is changed to true
-     * if the player has the item
+     * if the player has the Common
      */
     @Test
     public void testAriadnesThread()
     {
-        Item GoldenThread = new Item ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
+        Common GoldenThread = new Common ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
         myPlayer.takeItem(GoldenThread);
         assertEquals(true,myPlayer.getThread());
     }
 
     /**
      * This test checks if the boolean ariadnesThread is false when picking
-     * up items that are not ariadne's thread
+     * up Commons that are not ariadne's thread
      */
     @Test
     public void testAriadnesThreadBad()
     {
-        Item GoldenThread = new Item ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
-        Item potion = new Item ("Health Potion","A potion that heals five HP",0,0,5);
+        Common GoldenThread = new Common ("Ariadne's golden thread","A mysterious piece of string",0,0,0);
+        Common potion = new Common ("Health Potion","A potion that heals five HP",0,0,5);
         myPlayer.takeItem(potion);
         assertEquals(false,myPlayer.getThread());
+    }
+    
+        /**
+     * tests the getters of all the attributes
+     */
+    @Test
+    public void testGettersCharOK()
+    {
+        assertEquals(20,myPlayer.getHP());
+        assertEquals(2,myPlayer.getXp());
+        assertEquals("Jimmy",myPlayer.getName());
+        assertEquals(2,myPlayer.getDamage());
+        assertEquals(0,myPlayer.getProtection());
+    }
+    
+    /**
+     * Tests if the decrease hp functions as intended with a positive integer
+     */
+    @Test
+    public void testLoseHP()
+    {
+        assertEquals(20,myPlayer.getHP());
+        myPlayer.loseHp(10);
+        assertEquals(10,myPlayer.getHP());
+    }
+    
+    /**
+     * test for loseHP with negative parameters
+     * The loseHP method should always be a positive value above zero
+     */
+    @Test
+    public void testLoseNegativeHP()
+    {
+        myPlayer.loseHp(-10);
+        assertEquals(20,myPlayer.getHP());
+    }
+    
+    /**
+     * test for loseHP with 0 value
+     * The loseHP method should always be a positive value above zero
+     */
+    @Test
+    public void testLoseZeroHP()
+    {
+        myPlayer.loseHp(0);
+        assertEquals(20,myPlayer.getHP());
+    }
+    
+    /**
+     * tests the gain xp method, xp is gained when a monster is slain
+     * this method should only function with an integer above 0
+     */
+    @Test
+    public void testGainXP()
+    {
+        myPlayer.gainXp(2);
+        assertEquals(4,myPlayer.getXp());
+    }
+    
+    /**
+     * Tests if XP can be lost using a negative value
+     * XP cannot be lost within this game
+     */
+    @Test
+    public void testGainNegativeXP()
+    {
+        myPlayer.gainXp(-10);
+        assertEquals(2,myPlayer.getXp());
+    }
+    
+    /**
+     * Tests if a player can gain 0 xp
+     * This should not be possible, no action should occur
+     */
+    @Test
+    public void testGainZeroXP()
+    {
+        myPlayer.gainXp(0);
+        assertEquals(2,myPlayer.getXp());
+    }
+    
+    /**
+     * test for increaseDamage
+     */
+    @Test
+    public void testIncreaseDamage()
+    {
+        myPlayer.increaseDamage(10);
+        assertEquals(12,myPlayer.getDamage());
+    }
+    
+    /**
+     * test for increaseDamage with negative value
+     * This should not be possible
+     */
+    @Test
+    public void testIncreaseNegativeDamage()
+    {
+        myPlayer.increaseDamage(-10);
+        assertEquals(2,myPlayer.getDamage());
+    }
+    
+    /**
+     * test for increaseDamage with zero value
+     * This should not be possible
+     */
+    @Test
+    public void testIncreaseZeroDamage()
+    {
+        myPlayer.increaseDamage(0);
+        assertEquals(2,myPlayer.getDamage());
+    }
+    
+    /**
+     * test for decreaseDamage
+     * The decrease value must be an integer above zero
+     * damage cannot be below 0
+     */
+    @Test
+    public void testDecreaseDamage()
+    {
+        myPlayer.decreaseDamage(10);
+        assertEquals(0,myPlayer.getDamage());
+    }
+    
+    /**
+     * tests for decreaseDamage with negative parameters
+     * This should not work
+     */
+    @Test
+    public void testDecreaseNegativeDamage()
+    {
+        myPlayer.decreaseDamage(-10);
+        assertEquals(2,myPlayer.getDamage());
+    }
+    
+    /**
+     * tests for decreaseDamage with zero value
+     * This should not work
+     */
+    @Test
+    public void testDecreaseZeroDamage()
+    {
+        myPlayer.decreaseDamage(0);
+        assertEquals(2,myPlayer.getDamage());
+    }
+    
+    /**
+     * test for decrease protection, increase protection
+     * Protection cannot drop below 0
+     */
+    @Test
+    public void testProtection()
+    {
+        myPlayer.increaseProtection(4);
+        assertEquals(4,myPlayer.getProtection());
+        myPlayer.decreaseProtection(2);
+        assertEquals(2,myPlayer.getProtection());
+        myPlayer.decreaseProtection(4);
+        assertEquals(0,myPlayer.getProtection());
+    }
+    
+    /**
+     * test for increase protection
+     * Value must be an integer above zero
+     */
+    @Test
+    public void testGainNegativeProtection()
+    {
+        myPlayer.increaseProtection(-4);
+        assertEquals(0,myPlayer.getProtection());
+    }
+    
+    /**
+     * test for decrease protection
+     * Integer must be a value above 0
+     */
+    @Test
+    public void testDecreaseNegativeProtection()
+    {
+        myPlayer.decreaseProtection(-4);
+        assertEquals(0,myPlayer.getProtection());
     }
 }

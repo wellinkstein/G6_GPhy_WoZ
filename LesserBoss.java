@@ -6,7 +6,7 @@ import java.util.*;
  * @author (group 6)
  * @version (2018-11-14)
  */
-public class Lesser_Boss extends Monster
+public class LesserBoss extends Monster
 {
 
     private Legendary possessedLegendary; //This attributes dicates with legendary item is associated to a lesser monster
@@ -16,7 +16,7 @@ public class Lesser_Boss extends Monster
     /**
      * A constructor for the lesser boss class
      */
-    public Lesser_Boss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes, Legendary myLegendary)
+    public LesserBoss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes, Legendary myLegendary)
     {
         super(myHP,myName,myXp,myDamage,myProtection,myDes);
         aggressive=false;
