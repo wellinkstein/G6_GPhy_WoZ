@@ -1,6 +1,12 @@
 import java.awt.*;
 import javax.swing.*;
 
+ import java.util.*;
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Iterator;
+ import java.util.Set;
+
 /**
  * This class is an example of GridLayout Manager
  * 
@@ -14,17 +20,89 @@ public class TestGrid
         JFrame myFrame = new JFrame("GridLayout");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        myFrame.setLayout(new GridLayout(8,9));
+        ArrayList<Character> listTestC = new ArrayList<Character>();
+        ArrayList<Item> listTestI = new ArrayList<Item>();
         
-        for(int i=1; i<=72; i++)
+        Spot myTestSpot = new Spot(listTestC,listTestI);
+        Spot myTestSpotN = new Spot(listTestC,listTestI);
+        Spot myTestSpotS = new Spot(listTestC,listTestI);
+        Spot myTestSpotE = new Spot(listTestC,listTestI);
+        Spot myTestSpotW = new Spot(listTestC,listTestI);
+        Spot myTestSpotNE = new Spot(listTestC,listTestI);
+        Spot myTestSpotNW = new Spot(listTestC,listTestI);
+        Spot myTestSpotSE = new Spot(listTestC,listTestI);
+        Spot myTestSpotSW = new Spot(listTestC,listTestI);
+        
+        myTestSpot.setExits("North",myTestSpotN);
+        myTestSpot.setExits("South",myTestSpotS);
+        myTestSpot.setExits("East",myTestSpotE);
+        myTestSpot.setExits("West",myTestSpotW);
+        
+        myTestSpotN.setExits("East",myTestSpotNE);
+        myTestSpotE.setExits("North",myTestSpotNE);
+        
+        myTestSpotS.setExits("East",myTestSpotSE);
+        myTestSpotE.setExits("South",myTestSpotSE);
+        
+        myTestSpotN.setExits("West",myTestSpotNW);
+        myTestSpotW.setExits("North",myTestSpotNW);
+        
+        myTestSpotS.setExits("West",myTestSpotSW);
+        myTestSpotW.setExits("South",myTestSpotSW);
+        
+        myTestSpot.setImageSpot("1234.png");
+        myTestSpotN.setImageSpot("234.png");
+        myTestSpotS.setImageSpot("124.png");
+        myTestSpotE.setImageSpot("134.png");
+        myTestSpotW.setImageSpot("123.png");
+        myTestSpotNE.setImageSpot("1234.png");
+        myTestSpotNW.setImageSpot("1234.png");
+        myTestSpotSE.setImageSpot("1234.png");
+        myTestSpotSW.setImageSpot("1234.png");
+        
+        myFrame.setLayout(new GridLayout(3,3));
+        
+        for(int i=1; i<=9; i++)
         {
-            if((i % 2) == 1)
+            if(i == 1)
             {
-                myFrame.add(new JLabel( new ImageIcon( "13.png")));
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getExits("West").getImageSpot())));
+            }
+            else if(i == 2)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getImageSpot())));
+            }
+            else if(i == 3)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("North").getExits("East").getImageSpot())));
+            }
+            else if(i == 4)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("West").getImageSpot())));
+            }
+            else if(i == 5)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getImageSpot())));
+            }
+            else if(i == 6)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("East").getImageSpot())));
+            }
+            else if(i == 7)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getExits("West").getImageSpot())));
+            }
+            else if(i == 8)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getImageSpot())));
+            }
+            else if(i == 9)
+            {
+                myFrame.add(new JLabel( new ImageIcon(myTestSpot.getExits("South").getExits("East").getImageSpot())));
             }
             else
             {
-                myFrame.add(new JLabel( new ImageIcon( "24.png")));
+                myFrame.add(new JLabel( new ImageIcon( "noir.png")));
             }
             
         }
