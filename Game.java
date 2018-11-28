@@ -32,38 +32,38 @@ public class Game
     {
         createLabyrinth();
         
-        Player Theseus = new Player(20,"Theseus",1,1,0);
+        Player theseus = new Player(20,"Theseus",1,1,0);
         
         
-        Common IronSword= new Common ("Iron Sword","",3,0,0);
-        Common IronDagger= new Common ("Iron Dagger","",1,0,0);
-        Common StandardBow= new Common ("Standard Bow","",2,0,0);
-        Common IronArmor= new Common ("Iron Armor","",0,0,3);
-        Common IronShield= new Common ("Iron Shield","",1,0,0);
-        Common WoodenShield= new Common ("Wooden Shield","",2,0,0);
-        Common HealthPotion= new Common ("Health Potion","",0,5,0);
+        Common ironSword= new Common ("Iron Sword","",3,0,0);
+        Common ironDagger= new Common ("Iron Dagger","",1,0,0);
+        Common standardBow= new Common ("Standard Bow","",2,0,0);
+        Common ironArmor= new Common ("Iron Armor","",0,0,3);
+        Common ironShield= new Common ("Iron Shield","",1,0,0);
+        Common woodenShield= new Common ("Wooden Shield","",2,0,0);
+        Common healthPotion= new Common ("Health Potion","",0,5,0);
         
-        Legendary GoldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
-        Legendary AresSword= new Legendary("Ares's sword","",6,0,0);
-        Legendary ArtemisBow= new Legendary("Artemis's bow","",4,0,0);
-        Legendary AegisShield= new Legendary("Aegis shield","",0,5,0);
-        Legendary HermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        Legendary goldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
+        Legendary aresSword= new Legendary("Ares's sword","",6,0,0);
+        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
+        Legendary aegisShield= new Legendary("Aegis shield","",0,5,0);
+        Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
         
-        LesserBoss Chimera= new LesserBoss(30,"Chimera",5,2,2,"",HermesSandals);
-        LesserBoss Cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",AresSword);
-        LesserBoss Medusa= new LesserBoss(20,"Medusa",5,4,1,"",ArtemisBow);
-        LesserBoss Cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",AegisShield);
-        LesserBoss Arachne= new LesserBoss(40,"Arachne",5,4,4,"",GoldenThread);
+        LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"",hermesSandals);
+        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",aresSword);
+        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
+        LesserBoss cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",aegisShield);
+        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"",goldenThread);
         
-        Boss Minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
+        Boss minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
         
         
-        listSpot.get(9).addCharacterSpot(Minotaur);
-        listSpot.get(5).addCharacterSpot(Cerberus);
-        listSpot.get(6).addCharacterSpot(Medusa);
-        listSpot.get(7).addCharacterSpot(Cyclops);
-        listSpot.get(8).addCharacterSpot(Chimera);
-        listSpot.get(10).addCharacterSpot(Arachne);
+        listSpot.get(9).addCharacterSpot(minotaur);
+        listSpot.get(5).addCharacterSpot(cerberus);
+        listSpot.get(6).addCharacterSpot(medusa);
+        listSpot.get(7).addCharacterSpot(cyclops);
+        listSpot.get(8).addCharacterSpot(chimera);
+        listSpot.get(10).addCharacterSpot(arachne);
 
         
         
@@ -71,43 +71,43 @@ public class Game
         listIronSword.add(10);
         listIronSword.add(11);
         listIronSword.add(12);
-        placeItem(IronSword,listIronSword); 
+        placeItem(ironSword,listIronSword); 
         
         ArrayList<Integer> listIronDagger = new ArrayList();
         listIronDagger.add(13);
         listIronDagger.add(14);
         listIronDagger.add(15);
-        placeItem(IronDagger,listIronDagger); 
+        placeItem(ironDagger,listIronDagger); 
         
         ArrayList<Integer> listStandardBow = new ArrayList();
         listStandardBow.add(16);
         listStandardBow.add(17);
         listStandardBow.add(18);
-        placeItem(StandardBow,listStandardBow);
+        placeItem(standardBow,listStandardBow);
         
         ArrayList<Integer> listIronArmor = new ArrayList();
         listIronArmor.add(19);
         listIronArmor.add(20);
         listIronArmor.add(21);
-        placeItem(IronArmor,listIronArmor);
+        placeItem(ironArmor,listIronArmor);
         
         ArrayList<Integer> listIronShield = new ArrayList();
         listIronShield.add(19);
         listIronShield.add(20);
         listIronShield.add(21);
-        placeItem(IronShield,listIronShield);
+        placeItem(ironShield,listIronShield);
         
         ArrayList<Integer> listWoodenShield = new ArrayList();
         listWoodenShield.add(19);
         listWoodenShield.add(20);
         listWoodenShield.add(21);
-        placeItem(WoodenShield,listWoodenShield);
+        placeItem(woodenShield,listWoodenShield);
         
         ArrayList<Integer> listHealthPotion = new ArrayList();
         listHealthPotion.add(19);
         listHealthPotion.add(20);
         listHealthPotion.add(21);
-        placeItem(HealthPotion,listHealthPotion);
+        placeItem(healthPotion,listHealthPotion);
         
       
         exitAndStart();//initialize start spot (also current spot) and exit spot 
@@ -537,8 +537,21 @@ public class Game
      */
     public void monsterDead()
     {
+          // parcourir la liste pour récupérer la valeur monstre
+    // addItem(monstre.getLegendary())
+    // removecharactermonstre()
+
     }
     
+    /**
+     * Kills monster
+     * 
+     */
+    public void playerDropItem(Item itemDop)
+    {
+        //player.dropItem(itemDrop);
+        //currentSpot.addItem(itemDrop);
+    }
     
     /**
      * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
