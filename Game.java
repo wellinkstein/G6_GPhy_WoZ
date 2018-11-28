@@ -24,17 +24,50 @@ public class Game
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
     private HashMap<String,Integer> monsters = new HashMap<String, Integer>();
-    
+    private Character fighter;
+    private Player Theseus;
     /** 
      * Create the game and initialise its internal map.
      */
     public Game() 
     {
         createLabyrinth();
-        //placeMonster(new Monster(12))  
         
-        //boucle*7
-        // placeItem(); //boucle*8
+        Player Theseus = new Player(20,"Theseus",1,1,0);
+        
+        Common IronSword= new Common ("Iron Sword","",3,0,0);
+        Common IronDagger= new Common ("Iron Dagger","",1,0,0);
+        Common StandardBow= new Common ("Standard Bow","",2,0,0);
+        Common IronArmor= new Common ("Iron Armor","",0,0,3);
+        Common IronShield= new Common ("Iron Shield","",1,0,0);
+        Common WoodenShield= new Common ("Wooden Shield","",2,0,0);
+        Common HealthPotion= new Common ("Health Potion","",0,5,0);
+        
+        Legendary GoldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
+        Legendary AresSword= new Legendary("Ares's sword","",6,0,0);
+        Legendary ArtemisBow= new Legendary("Artemis's bow","",4,0,0);
+        Legendary AegisShield= new Legendary("Aegis shield","",0,5,0);
+        Legendary HermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        
+        Lesser_Boss Chimera= new Lesser_Boss(30,"Chimera",5,2,2,"",HermesSandals);
+        Lesser_Boss Cerberus= new Lesser_Boss(40,"Cerberus",5,6,2,"",AresSword);
+        Lesser_Boss Medusa= new Lesser_Boss(20,"Medusa",5,4,1,"",ArtemisBow);
+        Lesser_Boss Cyclops= new Lesser_Boss(30,"Cyclops",5,5,5,"",AegisShield);
+        Lesser_Boss Arachne= new Lesser_Boss(40,"Arachne",5,4,4,"",GoldenThread);
+        
+        Boss Minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
+        
+        placeMonster(Minotaur,9);  
+        placeMonster(Cerberus,5);
+        placeMonster(Medusa,6);
+        placeMonster(Cyclops,7);
+        placeMonster(Chimera,8);
+        placeMonster(Arachne,10);
+        //placePlayer(new Player)
+        
+        
+        //placeItem(IronSword,); 
+       
         //defineExits(); // définir les sorties pour chaque spot
         currentSpot=listSpot.get(2);
         exitAndStart();//initialize start spot and exit spot 
@@ -244,7 +277,7 @@ public class Game
     }
         
     /**
-     *  Defines the exits of a spot. There is at least 1 exit/spot and maximum 4 exits/spot.
+     *  Defines the exits of a spot. 
      */
     public void defineExits(ArrayList<String> listDirection, ArrayList<Spot> listSpot) 
     {
@@ -268,20 +301,28 @@ public class Game
          
     }
     /**
-     * Places the Monsters in the adequate Spot. Each monster has only one spot. 
+     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
      */
     public void placeMonster(Monster monster, int spotIndex)
     {
          
     }
     /**
-     * Places one type of commmon item in a definite number of spots. 
-     */
-    public void placeItem(String name, ArrayList<Integer> spotIndex)
+     * Places the Boss in the adequate Spot. The Boss is in a specific spot
+       */
+    public void placeBoss(Boss boss, int spotIndex)
     {
          
     }
-         /**
+    /**
+     * Places one type of commmon item in a definite number of spots. 
+     */
+    public void placeItem(String name, ArrayList<Integer> spotIndexList)
+    {
+         
+    }
+     
+    /**
      *  Get the value of finished
      */
     public boolean getFinished() 
@@ -340,7 +381,7 @@ public class Game
      * Changes the current spot to the spot according to the direction given
      * 
      */
-    public void move() 
+    public void move(Spot spot) 
     { 
                
     }
@@ -360,15 +401,107 @@ public class Game
     { 
          return true;         
     }
+    
     /**
-     * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
+     * The fight starts. it ends when one the characters dies
      * 
      */
     public void fight() 
     { 
+          
+    }
+    
+    /**
+     * Randomly chooses the first fighter to start
+     * 
+     */
+    public Character whoBegins() 
+    { 
+       
+        return Theseus;   
+    }
+    
+    /**
+     * The fighter inflicts damage to the other character in the spot
+     * 
+     */
+    public void inflictDamage() 
+    { 
+          
+    }
+    
+  
+     /**
+     * 
+     * 
+     */
+    public void criticialHit() 
+    { 
+          
+    }
+    
+    /**
+     * Changes the fighter to a designed character
+     * 
+     */
+    public void setFighter( Character character) 
+    { 
+          
+    }
+    
+    /**
+     * Gets the currently designed fighter 
+     * 
+     */
+    public void getFighter( Character character) 
+    { 
+          
+    }
+    /**
+     *  All mosters become aggressive and start chasing you.
+     * 
+     */
+    public void setAggressiveAll() 
+    { 
                 
     }
     
+    
+    /**
+     * gets if every monster is aggressive
+     * 
+     */
+    public boolean getAggressiveAll() 
+    { 
+        return false;        
+    }
+    
+    /**
+     * returns the game over message
+     * 
+     */
+    public String gameOver() 
+    { 
+      return "Game over";          
+    }
+
+    /**
+     *  returns the winning message
+     * 
+     */
+    public String youWon() 
+    { 
+      return "You won!";          
+    }
+    
+    /**
+     * 
+     * Returns the message saying that it's not time to exit the labyrinth yet
+     */
+    public String NotTimeToGo() 
+    { 
+      return "You didn't kill the Minotaur";          
+    }
     
     /**
      * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
