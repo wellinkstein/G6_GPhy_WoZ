@@ -139,6 +139,7 @@ public class SpotTest
         assertFalse(test); 
         assertEquals(4, spot.getNumberExits());
     }
+    
     /**
      * Test if 2 spot can be added to the Hashmap with the same direction, if two spots are created with the same direction 
      * only the first one is kept
@@ -158,7 +159,8 @@ public class SpotTest
         assertEquals(1, spot.getNumberExits());
         
     }
-        /**
+    
+    /**
      * Test if the same spot can be added to the Hashmap with different directions, if the same spot is created with
      * different directions only the first one is kept
      */
@@ -177,6 +179,7 @@ public class SpotTest
         assertEquals(1, spot.getNumberExits());
         
     }
+    
     /**
      * Test adding a new exit to the same direction as the previous one. It shoud not add
      * the new entry and keep the previous one.
@@ -327,7 +330,7 @@ public class SpotTest
         assertTrue(spot.getExitSpot());
     }
     
-    /**
+     /**
      * Test that a spot may be set to be a visible
      */
     @Test
