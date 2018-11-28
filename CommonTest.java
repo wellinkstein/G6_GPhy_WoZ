@@ -47,19 +47,6 @@ public class CommonTest
         assertEquals (0,goodCommon.getHealthGain());
     }
     
- /**
-     * Test that checks if the getters work properly
-     */
-    //@Test
-   // public void testGoodItem()
-    {
-        //assertEquals("Iron Sword",goodItem.getName());
-        //assertEquals("Common sword",goodItem.getDescription());
-        //assertEquals(2,goodItem.getDamage());
-        //assertEquals (2,goodItem.getProtection());
-        //assertEquals (0,goodItem.getHealthGain());
-    }
-    
     /**
      * Test if it is possible to set a negative value for healGain
      */
@@ -120,8 +107,8 @@ public class CommonTest
     @Test
     public void testSetName()
     {
-        goodCommon.setName("YousraDelphine");
-        assertEquals("YousraDelphine",goodCommon.getName()); // The parameter "YousraDelphine" must be set as the name attribute
+        goodCommon.setName("Iron Sword");
+        assertEquals("Iron Sword",goodCommon.getName()); // The parameter "YousraDelphine" must be set as the name attribute
     }
     
     /**

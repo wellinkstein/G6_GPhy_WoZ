@@ -7,7 +7,7 @@ import java.util.*;
  * @author (Group 6)
  * @version (2018-11-27)
  */
-public class Character
+public abstract class Character
 {
     
     protected int HP;

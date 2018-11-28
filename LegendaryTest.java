@@ -29,7 +29,7 @@ public class LegendaryTest
     @Before
     public void setUp() 
     {
-        goodLegendary = new Legendary("Aries's Sword","Legendary sword", 2, 2, 0);
+        goodLegendary = new Legendary("Ares's Sword","Legendary sword", 2, 2, 0);
     }
      /**
      * Test that checks if the constructor works properly
@@ -37,24 +37,11 @@ public class LegendaryTest
     @Test
     public void testGoodLegendary()
     {
-        assertEquals("Aries's Sword",goodLegendary.getName());
+        assertEquals("Ares's Sword",goodLegendary.getName());
         assertEquals("Legendary sword",goodLegendary.getDescription());
         assertEquals(2,goodLegendary.getDamage());
         assertEquals (2,goodLegendary.getProtection());
         assertEquals (0,goodLegendary.getHealthGain());
-    }
-    
-     /**
-     * Test that checks if the getters work properly
-     */
-    //@Test
-    //public void testGoodItem()
-    {
-        //assertEquals("Iron Sword",goodItem.getName());
-        //assertEquals("Common sword",goodItem.getDescription());
-        //assertEquals(2,goodItem.getDamage());
-        //assertEquals (2,goodItem.getProtection());
-        //assertEquals (0,goodItem.getHealthGain());
     }
     
     /**
@@ -86,9 +73,10 @@ public class LegendaryTest
     @Test
     public void testSetPositiveDamage()
     {
-        goodLegendary.setDamage(10);//Damage with a positive value
+        goodLegendary.setDamage(10);
         assertEquals(10,goodLegendary.getDamage());//The parameter "10" must be set as the damage attribute
     }
+    
     /**
      * tests if the set protection method accepts a negative value
      * This should not be possible
@@ -117,8 +105,7 @@ public class LegendaryTest
     @Test
     public void testSetName()
     {
-        goodLegendary.setName("YousraDelphine");
-        assertEquals("YousraDelphine",goodLegendary.getName()); // The parameter "YousraDelphine" must be set as the name attribute
+        assertEquals("Ares's Sword",goodLegendary.getName()); // The parameter "YousraDelphine" must be set as the name attribute
     }
 
     /**
