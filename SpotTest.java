@@ -24,7 +24,7 @@ public class SpotTest
     private Legendary it1, it2, it3;
     private Common it4, it5, it6;
     private Player player, player1;
-    private LesserBoss monster1, monster; 
+    private LesserBoss monster1, monster, monster3; 
     private Boss monster2; 
     private Spot spot, neighbor, anotherSpot, neighbor1, neighbor2, neighbor3;
       
@@ -420,6 +420,45 @@ public class SpotTest
         spot.addCharacterSpot(monster1); 
         assertEquals(monster1,spot.getMonster());
     }
+    
+    /**
+     * That that when there is only a player in a spot,
+     * the method getMonster returns nothing
+     */
+    @Test
+    public void testGetNoMonster()
+    {
+        spot.addCharacterSpot(player);
+        assertNotEquals(player, spot.getMonster());
+        assertNull(spot.getMonster());
+    }
+    
+    /**
+     * Test that when there is a player in a spot, the method
+     * getPlayer gives the player
+     */
+    @Test
+    public void testGetPlayer()
+    {
+        spot.addCharacterSpot(player); 
+        assertEquals(player,spot.getPlayer());
+        assertNotNull(spot.getPlayer());
+    }
+    
+    /**
+     * Test that when there is no player in the room,
+     * the method returns nothing
+     */
+    @Test
+    public void testGetNoPlayer()
+    {
+        assertNull(spot.getPlayer());
+        spot.addCharacterSpot(monster1); 
+        assertNotEquals(player,spot.getPlayer());
+        assertNull(spot.getPlayer());
+        assertNotEquals(monster1,spot.getPlayer());
+    }
+    
     
 
     // /**

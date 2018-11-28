@@ -471,6 +471,26 @@ public class Spot
     }
     
     /**
+     * Return player in the spot. If there is no player in that spot,
+     * the method returns nothing.
+     * @return Character chracter: returns the player in the spot
+     */
+    public Character getPlayer()
+    {
+        for (Character character : this.characterInSpot){
+            if(character.getName()!= "Chimera" 
+            && character.getName()!= "Cerberus" 
+            &&character.getName()!= "Medusa" 
+            && character.getName()!= "Cyclops" 
+            && character.getName()!= "Arachne"
+            && character.getName()!="Minotaur"){
+            return(character);
+            }  
+        }
+        return(null);
+    }
+    
+    /**
      * This method return all the key from the hashmap 
      * of the room
      * @return returnString all the key from the hashmap

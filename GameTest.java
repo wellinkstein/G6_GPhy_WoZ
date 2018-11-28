@@ -228,6 +228,4 @@ public class GameTest
     public void tearDown()
     {
     }
-    
-    
 }
