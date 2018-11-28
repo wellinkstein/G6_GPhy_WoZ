@@ -31,6 +31,8 @@ public class LesserBoss extends Monster
     
     /**
      * A method that returns the boolean of aggressive
+     * @return boolean aggressive: return a boolean true if the lesser boss is 
+     * agressive
      */
     public boolean getAggressive()
     {
@@ -39,6 +41,8 @@ public class LesserBoss extends Monster
     
     /**
      * A method that returns the legendary item possessed
+     * @return Legendary possessedLegendary: return the legendary item
+     * that the lesser boss carries
      */
     public Legendary getPossessedLegendary()
     {
@@ -47,6 +51,7 @@ public class LesserBoss extends Monster
     
     /**
      * a method that set the possessedlegendary
+     * @param Legendary myItem: sets the legendary item that the lesser boss carries
      */
     public void setPossessedLegendary(Legendary myItem)
     {
