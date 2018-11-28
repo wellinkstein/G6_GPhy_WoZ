@@ -105,10 +105,21 @@ public class SpotTest
      * Test to verify that it is possible to set a string for the attribute imageSpot
      */
     @Test
-    public void testSetSpotImage()
+    public void testSetImageSpot()
     {
         spot.setImageSpot("name_image");
         assertEquals("name_image", spot.getImageSpot());
+    }
+    
+    /**
+     * Test to verify the right picture will be given to the spot
+     */
+    @Test
+    public void testSetImageSpotExistDirections()
+    {
+        spot.setExits("Q", neighbor);
+        spot.setExits("Z", neighbor1);
+        assertEquals("14.png", spot.getImageSpot());
     }
     
      /**
@@ -148,6 +159,7 @@ public class SpotTest
         }
         assertFalse(test); 
         assertEquals(4, spot.getNumberExits());
+        assertEquals("1234.png", spot.getImageSpot());
     }
     
     /**
@@ -167,7 +179,7 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
-        
+        assertEquals("4.png", spot.getImageSpot());
     }
     
     /**
@@ -187,7 +199,7 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
-        
+        assertEquals("4.png", spot.getImageSpot());
     }
     
     /**
@@ -214,6 +226,7 @@ public class SpotTest
             }
         }
         assertTrue(test);
+        assertEquals("2.png", spot.getImageSpot());
     }
     
     /**
