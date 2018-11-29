@@ -391,8 +391,9 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean ifCharacterInSpot(Character character){
-        for (Character characters : this.characterInSpot){
-            if (characters.getName()==character.getName()){
+        for (int i =0; i<this.getListCharacter().size(); i++){
+        //for (Character characters : this.characterInSpot){
+            if (this.getListCharacter().get(i)==character){
                 return (true); 
             }
         }
@@ -403,7 +404,7 @@ public class Spot
      * Get the list of characters in the spot
      * @return arraylist characterInSpot
      */
-    public ArrayList getListCharacter()
+    public ArrayList<Character> getListCharacter()
     {
         return(characterInSpot);
     }
@@ -427,7 +428,7 @@ public class Spot
      * Get the list of items in the spot
      * @return objectInSpot
      */
-    public ArrayList getListItem()
+    public ArrayList<Item> getListItem()
     {
         return(objectInSpot);
     }

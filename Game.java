@@ -374,7 +374,7 @@ public class Game
      /**
      *  Get the list of spots of the labyrinth 
      */
-    public ArrayList getListSpot() 
+    public ArrayList<Spot> getListSpot() 
     { 
         return listSpot;         
     }

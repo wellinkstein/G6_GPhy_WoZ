@@ -459,7 +459,6 @@ public class SpotTest
         assertNotEquals(monster1,spot.getPlayer());
     }
     
-    
 
     // /**
      // * Test to verify it is possible to set the boolean fighting to true if there are 2

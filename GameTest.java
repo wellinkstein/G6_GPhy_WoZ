@@ -7,8 +7,8 @@ import org.junit.Test;
 /**
  * The test class GameTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Groupe 7)
+ * @version (28-11-2018)
  */
 public class GameTest
 {
@@ -82,7 +82,7 @@ public class GameTest
     {
         int exist = 0;
         ArrayList<Spot> listS = myGame.getListSpot();
-        for(int i=0; i<listS.size(); i++){
+        for(int i=0; i<myGame.getListSpot().size(); i++){
             if(listS.get(i).getExitSpot()){
              exist++;
             }
@@ -147,7 +147,7 @@ public class GameTest
     {
         myGame.getCurrentSpot().addCharacterSpot(player); 
         myGame.getCurrentSpot().addCharacterSpot(monster);
-        myGame.getCurrentSpot().monsterDead();
+        myGame.monsterDead();
         assertNull(myGame.getCurrentSpot().getMonster());
         assertEquals(true, myGame.getCurrentSpot().getListItem().contains(legendary)); 
         
@@ -162,7 +162,7 @@ public class GameTest
         myGame.move(spot); 
         boolean test=true; 
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getCurrentSpot().getPlayer().get(i) != null){
+            if (myGame.getCurrentSpot().getPlayer() != null){
                 test=false; 
             }
         }
@@ -191,8 +191,10 @@ public class GameTest
     @Test
     public void testSpotsCorrect(){
         boolean test=true;  
+        Spot room; 
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getCurrentSpot().getCorrect()== false ){
+                myGame.getListSpot().get(i)= room; 
+                if (room.getCorrect()==false){
                 test=false;  
             }
         }
@@ -208,7 +210,7 @@ public class GameTest
         myGame.move(spot); 
         boolean test=true; 
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getCurrentSpot().getPlayer().get(i) != null){
+            if (myGame.getCurrentSpot().getPlayer() != null){
                 test=false; 
             }
         }
@@ -219,13 +221,3 @@ public class GameTest
         
     }
         
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown()
-    {
-    }
-}
