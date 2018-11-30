@@ -161,7 +161,7 @@ public class GameTest
     public void testMoveOnePlayerInGame(){
         //myGame.getCurrentSpot().addCharacterSpot(theseus);
         myGame.move(myGame.getListSpot().get(1)); 
-        boolean test=false; 
+        //boolean test=false; 
        // for (int i =0; i<myGame.getListSpot().size(); i++){
             //if (myGame.getListSpot().get(i).getPlayer() != null){
                // test=false; 
@@ -169,7 +169,7 @@ public class GameTest
             // if(myGame.getListSpot().get(0).getPlayer()== null && myGame.getListSpot().get(1).getPlayer() != null)
                 // {test=true; }
         
-       assertNull(myGame.getListSpot().get(0).getPlayer()); 
+       assertEquals(null, myGame.getListSpot().get(0).getPlayer()); 
        assertEquals(theseus, myGame.getListSpot().get(1).getPlayer());
         }
        
@@ -181,7 +181,8 @@ public class GameTest
     {   
         boolean test=false;  
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getListSpot().get(i).getStartSpot() == true && myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
+            if (myGame.getListSpot().get(i).getStartSpot() == true && myGame.getCurrentSpot().getListCharacter().contains(theseus)==true){
+            //myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
                 test=true;  
             }
         }
