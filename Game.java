@@ -112,7 +112,7 @@ public class Game
         
       
         exitAndStart();//initialize start spot (also current spot) and exit spot 
-        currentSpot.addCharacterSpot(Theseus);
+        currentSpot.addCharacterSpot(theseus);
         setFinishedFalse();
     }
 
@@ -395,13 +395,28 @@ public class Game
      */
     public void move(Spot spot) 
     { 
-        if (getAggressiveAll()) {
-            for (int i = 0; i < listSpot.size(); i++) {
-                if (listSpot.get(i).getMonster()!=null) {
-                    listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
-                }   
-             }
-        }
+        
+        for (int i = 0; i < listSpot.size(); i++) {
+            if (listSpot.get(i).getMonster()!=null ) { //|| listSpot.get(i).getMonster().getAggressive()
+                Random rand = new Random();
+                int dirIndex = rand.nextInt(3); 
+                listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
+                switch(dirIndex){
+                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
+                    break;
+
+                    case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
+                    break;
+
+                    case 2: listSpot.get(i).getExits("S").addCharacterSpot(listSpot.get(i).getMonster());
+                    break;
+
+                    default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
+                    break;
+                }
+            }   
+         }
+        
         
         setCurrentSpot(spot);        
     }
