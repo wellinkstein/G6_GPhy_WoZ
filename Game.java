@@ -396,13 +396,15 @@ public class Game
     public void move(Spot spot) 
     { 
         
-        for (int i = 0; i < listSpot.size(); i++) {
+        for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
             if (listSpot.get(i).getMonster()!=null ) { //|| listSpot.get(i).getMonster().getAggressive()
                 Random rand = new Random();
                 int dirIndex = rand.nextInt(3); 
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
                 switch(dirIndex){
-                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
+                    case 0: 
+                    listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
+                    
                     break;
 
                     case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
@@ -414,7 +416,9 @@ public class Game
                     default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
                     break;
                 }
-            }   
+            }
+            
+            getIfCharacterInSpot(Character character)
          }
         
         
@@ -438,7 +442,7 @@ public class Game
     }
     
     /**
-     * The fight starts. it ends when one the characters dies
+     * The fight starts. it ends when one of the characters dies
      * 
      */
     public void fight() 
