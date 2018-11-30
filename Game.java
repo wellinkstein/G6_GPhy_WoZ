@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Random;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -389,12 +390,20 @@ public class Game
         return currentSpot.getExits(direction);
     }
     /**
-     * Changes the current spot to the spot according to the direction given
-     * 
+     * Changes the current spot to the spot according to the direction given. 
+     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot a fight starts without giving the player a choice.
      */
     public void move(Spot spot) 
     { 
-               
+        if (getAggressiveAll()) {
+            for (int i = 0; i < listSpot.size(); i++) {
+                if (listSpot.get(i).getMonster()!=null) {
+                    listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
+                }   
+             }
+        }
+        
+        setCurrentSpot(spot);        
     }
     /**
      * gets the choice of the player to fight the monster or to run away.
