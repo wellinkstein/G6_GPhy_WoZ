@@ -122,7 +122,8 @@ public class Game
     {
         // Create spots
          for (int i = 0; i < line*column; i++) { 
-              listSpot.add(new Spot(null,null));
+              //listSpot.add(new Spot(null,null));
+              listSpot.add(new Spot());
           }
         
         

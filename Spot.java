@@ -1,8 +1,8 @@
- import java.util.*;
- import java.util.HashMap;
- import java.util.Map;
- import java.util.Iterator;
- import java.util.Set;
+import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Class Spot - a spot in an adventure game.
@@ -33,7 +33,7 @@ public class Spot
     private boolean exitSpot; // boolean if the spot is an exit of the game
     private boolean startSpot; // boolean if the spot is the start of the game
     private String imageSpot; // name of the image representing a spot
-    
+
     /**
      * Create a spot with a Haspmap to know the direction of exit.
      * The hashmap is empty and the boolean are all set to false.
@@ -42,7 +42,8 @@ public class Spot
      * @param characterSpot : all the character in the spot
      * @param objectSpot : all the objects (Items) in the spot
      */
-    public Spot(ArrayList<Character> characterSpot, ArrayList<Item>objectSpot) 
+    public Spot() 
+    //ArrayList<Character> characterSpot, ArrayList<Item>objectSpot
     {
         exits = new HashMap<String, Spot>();
         isVisible = false;
@@ -51,19 +52,19 @@ public class Spot
         exitSpot = false;
         startSpot = false;
         numberMaxItem = 5;
-        characterInSpot= characterSpot;
-        objectInSpot= objectSpot;
+        characterInSpot= new ArrayList<Character>(); //characterSpot;
+        objectInSpot= new ArrayList<Item>(); //objectSpot;
         setImageSpotExistDirections(); //set the picture of the spot
     }
-    
+
     /**
      * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
      * a 5th one is not created and the 4 previously created stay the same.
      * @param direction : the direction of the exit
      * @param neighbor : the neighbor spot
      */
-     public void setExits(String direction, Spot neighbor)
-     {
+    public void setExits(String direction, Spot neighbor)
+    {
         boolean exist=false; 
         if (this.getNumberExits()<4)
         {
@@ -73,18 +74,18 @@ public class Spot
                 {
                     exist=true; 
                 }
-             }
+            }
         }
-         if (exist ==false)
+        if (exist ==false)
         {
             exits.put(direction, neighbor);
             spotCorrect = true;
         }
         setImageSpotExistDirections(); //set the picture of the spot
     }
-    
-     /** Method removeExit. Remove an exit from this spot.
-      * If the spot is not found, nothing is done
+
+    /** Method removeExit. Remove an exit from this spot.
+     * If the spot is not found, nothing is done
      * @param String direction: the direction of the exit to remove
      * @param Spot neighbor: the neighbor spot to remove
      */
@@ -101,10 +102,9 @@ public class Spot
                 spotCorrect = false;
             }
         }
-         setImageSpotExistDirections(); //set the picture of the spot
+        setImageSpotExistDirections(); //set the picture of the spot
     }
 
-    
     /**
      * Get the boolean for the attribute getCorrect. "True" if the spot is correct (meaning
      * that it has between 1 et 4 exits)
@@ -115,7 +115,7 @@ public class Spot
     {
         return(this.spotCorrect);
     }
-    
+
     /**
      * Get the image value for the spot
      * @return string imageSpot: returns the name of the image of the spot
@@ -124,7 +124,7 @@ public class Spot
     {
         return(this.imageSpot);
     }
-    
+
     /**
      * Set the image value for the spot
      * @param imageString: the name of the image for the spot
@@ -133,8 +133,8 @@ public class Spot
     {
         this.imageSpot = imageSpot;
     }
-    
-     /**
+
+    /**
      * Set the image of the spot depending of the number of exits
      * and there direction
      * Z : 1
@@ -151,65 +151,65 @@ public class Spot
             switch(exit){
                 case "Z": valueExits += "Z";
                 break;
-                
+
                 case "D": valueExits += "D";
                 break;
-                
+
                 case "S": valueExits += "S";
                 break;
-                
+
                 default: valueExits += "Q";
                 break;
             }
         }
-        
+
         switch(valueExits)
         {
             case "": setImageSpot("0.png");
             break;
-            
+
             case "Z": setImageSpot("1.png");
             break;
-            
+
             case "D": setImageSpot("2.png");
             break;
-            
+
             case "S": setImageSpot("3.png");
             break;
-            
+
             case "Q": setImageSpot("4.png");
             break;
-            
+
             case "ZD":
             case "DZ": 
             setImageSpot("12.png");
             break;
-            
+
             case "ZS":
             case "SZ":
             setImageSpot("13.png");
             break;
-            
+
             case "ZQ":
             case "QZ":
             setImageSpot("14.png");
             break;
-            
+
             case "DS":
             case "SD":
             setImageSpot("23.png");
             break;
-            
+
             case "DQ":
             case "QD":
             setImageSpot("24.png");
             break;
-            
+
             case "SQ":
             case "QS":
             setImageSpot("34.png");
             break;
-            
+
             case "ZDS":
             case "ZSD":
             case "DZS":
@@ -218,7 +218,7 @@ public class Spot
             case "SZD":
             setImageSpot("123.png");
             break;
-            
+
             case "ZDQ":
             case "ZQD":
             case "DQZ":
@@ -227,7 +227,7 @@ public class Spot
             case "QDZ":
             setImageSpot("124.png");
             break;
-            
+
             case "ZSQ":
             case "ZQS":
             case "SQZ":
@@ -236,7 +236,7 @@ public class Spot
             case "QSZ":
             setImageSpot("134.png");
             break;
-            
+
             case "DSQ":
             case "DQS":
             case "SQD":
@@ -245,70 +245,70 @@ public class Spot
             case "QDS":
             setImageSpot("234.png");
             break;
-            
+
             default:
             setImageSpot("1234.png");
             break;
-        
+
         }
     }
-    
+
     /**
      * getter for the max number of items that may be available in a spot
      * @return int numberMaxItem : The number max of Item in a spot
      */
-     public int getNumberMaxItem()
-     {
+    public int getNumberMaxItem()
+    {
         return(this.numberMaxItem);
-     }
-  
+    }
+
     /**
      * Method getExit: returns the spot that we reach in the given direction
      * If there is no spot in that direction, returns null
      * @param direction : The direction of the exit of spot
      * @return Spot : The spot which have an exit at the direction given
      */
-     public Spot getExits(String direction){
+    public Spot getExits(String direction){
         return exits.get(direction);
-     }
-     
+    }
+
     /**
-      * Remove an exit 
-      * @param direction The direction of the exit of spot
-      */
-     public void removeExit(String direction)
-     {
-         exits.remove(direction);
-         setImageSpotExistDirections(); //change the picture of the room
-     }
-     
+     * Remove an exit 
+     * @param direction The direction of the exit of spot
+     */
+    public void removeExit(String direction)
+    {
+        exits.remove(direction);
+        setImageSpotExistDirections(); //change the picture of the room
+    }
+
     /**
-      * Get the number of exits in the hashmap
-      * @return int : the number of the exits in a spot
-      */
-     public int getNumberExits()
-     {
-         return(this.exits.size());
-     }
-     
+     * Get the number of exits in the hashmap
+     * @return int : the number of the exits in a spot
+     */
+    public int getNumberExits()
+    {
+        return(this.exits.size());
+    }
+
     /**
-      * getter for the hashmap
-      * @return the exits of the haspmap
-      */
-     public HashMap<String, Spot> getAllExit()
-     {
+     * getter for the hashmap
+     * @return the exits of the haspmap
+     */
+    public HashMap<String, Spot> getAllExit()
+    {
         return exits;
-     }
+    }
 
     /**
      * getter to know if the spot is an exit
      * @return a boolean : if the spot is an exit
      */
-     public boolean getExitSpot()
-     {
+    public boolean getExitSpot()
+    {
         return(this.exitSpot);
-     }
-    
+    }
+
     /**
      * setter to set if a spot is an exit
      */
@@ -316,7 +316,7 @@ public class Spot
     {
         this.exitSpot=true;
     }
-    
+
     /**
      * getter to get if the spot is a start
      * @return boolean: True if the spot is a start
@@ -325,7 +325,7 @@ public class Spot
     {
         return(this.startSpot);
     }
-    
+
     /**
      * setter to set if a spot is a start
      */
@@ -333,7 +333,7 @@ public class Spot
     {
         this.startSpot=true;
     }
-    
+
     /**
      * return the number of items in the spot
      * @return int number of item in a spot
@@ -342,7 +342,7 @@ public class Spot
     {
         return (objectInSpot.size());
     }
-    
+
     /**
      * setter of isVisible
      */
@@ -350,7 +350,7 @@ public class Spot
     {
         isVisible=true;
     }
-    
+
     /**
      * getter of isVisible
      * @return boolean : True if the spot is visible
@@ -359,7 +359,7 @@ public class Spot
     {
         return(isVisible);
     }
-    
+
     /**
      * Add Item at Spot. If there are already the max number of items on the spot,
      * the item does not get in the room.
@@ -372,7 +372,7 @@ public class Spot
             objectInSpot.add(items);
         }
     }
-    
+
     /** 
      * Add Character at the spot. If there is already two characters, it does nothing
      * as there cannot be three caracters in a spot. 
@@ -380,24 +380,28 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        if (ifCharacterInSpot(character)==false && numberOfMonsterInSpot()<=1){   
-            characterInSpot.add(character); 
-            //setFighting();
-        }
+        //if (getIfCharacterInSpot(character)==false && numberOfMonsterInSpot()<=6){   
+        this.characterInSpot.add(character); 
+        //setFighting();
+        // }
     }
-    
+
     /**
      * True if the character is in the spot
      * @param character : To verify if the character is in the spot
      */
-    public Boolean ifCharacterInSpot(Character character){
-        for (int i =0; i<this.getListCharacter().size(); i++){
-        //for (Character characters : this.characterInSpot){
-            if (this.getListCharacter().get(i)==character){
-                return (true); 
-            }
+    public Boolean getIfCharacterInSpot(Character character){
+        //for (int i =0; i<this.getListCharacter().size(); i++){
+        if(this.getListCharacter().contains(character)) {
+            //if (this.getListCharacter().get(i)==character){
+
+            return (true); }
+        else {
+            return(false); 
+
         }
-        return(false); 
+
+        //return(false); 
     }
 
     /**
@@ -408,7 +412,7 @@ public class Spot
     {
         return(characterInSpot);
     }
-    
+
     /**
      * Getter to return the number of Monster in a spot
      * @return number of the Monster in a spot
@@ -432,7 +436,7 @@ public class Spot
     {
         return(objectInSpot);
     }
-    
+
     /**
      * Remove item from a spot. If there is no character in that spot,
      * the method does nothing
@@ -442,7 +446,7 @@ public class Spot
     {
         objectInSpot.remove(item);
     }
-    
+
     /**
      * Remove character from a spot. If there is no character in that spot,
      * the method does nothing.
@@ -452,7 +456,7 @@ public class Spot
     {
         characterInSpot.remove(character);
     }
-    
+
     /**
      * Return monster in the spot. If there is no monster in that spot,
      * the method returns nothing.
@@ -460,17 +464,19 @@ public class Spot
      */
     public Character getMonster()
     {
-        for (Character monster : this.characterInSpot){
-            if(monster.getName()== "Chimera" || monster.getName()== "Cerberus" 
-            ||monster.getName()== "Medusa" 
-            || monster.getName()== "Cyclops" || monster.getName()== "Arachne"
-            || monster.getName()=="Minotaur"){
-            return(monster);
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Chimera" || this.getListCharacter().get(i).getName()== "Cerberus" 
+            ||this.getListCharacter().get(i).getName()== "Medusa" 
+            || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"
+            || this.getListCharacter().get(i).getName()=="Minotaur"){
+                return(this.getListCharacter().get(i));
             }  
         }
         return(null);
+
     }
-    
+
     /**
      * Return player in the spot. If there is no player in that spot,
      * the method returns nothing.
@@ -485,18 +491,18 @@ public class Spot
             && character.getName()!= "Cyclops" 
             && character.getName()!= "Arachne"
             && character.getName()!="Minotaur"){
-            return(character);
+                return(character);
             }  
         }
         return(null);
     }
-    
+
     /**
      * This method return all the key from the hashmap 
      * of the room
      * @return returnString all the key from the hashmap
      */
-     public String getExitString(){
+    public String getExitString(){
         String returnString = "Exits:";
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
@@ -504,28 +510,28 @@ public class Spot
         }
         return returnString;
     }
-   
+
     // /**
-     // * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
-     // * False if there is no character or only one.
-     // * @return boolean
-     // */
+    // * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
+    // * False if there is no character or only one.
+    // * @return boolean
+    // */
     // public boolean getFighting()
     // {
-        // return(this.fighting);
+    // return(this.fighting);
     // }
-    
+
     // /**
-     // * setFighting, become true when a player and a monster are in the same spot.
-     // * It is reset to false once a character dies.
-     // */
-     // public void setFighting()
+    // * setFighting, become true when a player and a monster are in the same spot.
+    // * It is reset to false once a character dies.
+    // */
+    // public void setFighting()
     // {
-        // if (this.getListCharacter().size()==2){
-            // this.fighting = true; 
-        // }
-        // else{
-            // this.fighting = false;
-        // }
+    // if (this.getListCharacter().size()==2){
+    // this.fighting = true; 
+    // }
+    // else{
+    // this.fighting = false;
+    // }
     // }
 }

@@ -39,7 +39,7 @@ public class GameTest
     {   
         itemInSpot= new ArrayList <Item> ();
         characterInSpot= new ArrayList <Character> ();
-        spot= new Spot(characterInSpot, itemInSpot); 
+        //spot= new Spot(characterInSpot, itemInSpot); 
         player= new Player(20,"Jimmy",2,2,0);
         theseus= new Player(20, "Theseus", 2,2,0); 
         legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
@@ -145,11 +145,12 @@ public class GameTest
     @Test
     public void testMonsterDead()
     {
-        myGame.getCurrentSpot().addCharacterSpot(player); 
-        myGame.getCurrentSpot().addCharacterSpot(monster);
+        //myGame.getCurrentSpot().addCharacterSpot(player); 
+        myGame.move(myGame.getListSpot().get(6)); 
+       // myGame.getCurrentSpot().addCharacterSpot(monster);
         myGame.monsterDead();
-        assertNull(myGame.getCurrentSpot().getMonster());
-        assertEquals(true, myGame.getCurrentSpot().getListItem().contains(legendary)); 
+        assertEquals(null, myGame.getListSpot().get(6).getMonster());
+        assertEquals(true, myGame.getListSpot().get(6).getListItem().contains(legendary)); 
         
     }
     
@@ -177,7 +178,7 @@ public class GameTest
     {   
         boolean test=false;  
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getCurrentSpot().getStartSpot() == true && myGame.getCurrentSpot().getListCharacter().get(i) == theseus){
+            if (myGame.getListSpot().get(i).getStartSpot() == true && myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
                 test=true;  
             }
         }
@@ -192,9 +193,9 @@ public class GameTest
     public void testSpotsCorrect(){
         boolean test=true;  
         Spot room; 
-        for (int i =0; i<myGame.getListSpot().size(); i++){
-                myGame.getListSpot().get(i)= room; 
-                if (room.getCorrect()==false){
+        ArrayList<Spot> listS = myGame.getListSpot();
+        for (int i =0; i<listS.size(); i++){
+                if (listS.get(i).getCorrect()==false){
                 test=false;  
             }
         }

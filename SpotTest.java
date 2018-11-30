@@ -54,12 +54,12 @@ public class SpotTest
         player= new Player(20, "player", 1, 2,2);
         monster1= new LesserBoss(30,"Chimera", 0, 2,2, "io", it1);  
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
-        spot = new Spot(characterInSpot, objectInSpot);
-        neighbor = new Spot(characterInSpot, objectInSpot);
-        neighbor1 = new Spot(characterInSpot, objectInSpot);
-        neighbor2 = new Spot(characterInSpot, objectInSpot);
-        neighbor3 = new Spot(characterInSpot, objectInSpot);
-        anotherSpot = new Spot(characterInSpot, objectInSpot);
+        spot = new Spot();
+        neighbor = new Spot();
+        neighbor1 = new Spot();
+        neighbor2 = new Spot();
+        neighbor3 = new Spot();
+        anotherSpot = new Spot();
     }
 
     /**
