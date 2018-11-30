@@ -484,17 +484,15 @@ public class Spot
      */
     public Character getPlayer()
     {
-        for (Character character : this.characterInSpot){
-            if(character.getName()!= "Chimera" 
-            && character.getName()!= "Cerberus" 
-            &&character.getName()!= "Medusa" 
-            && character.getName()!= "Cyclops" 
-            && character.getName()!= "Arachne"
-            && character.getName()!="Minotaur"){
-                return(character);
+        for (int i =0; i< this.getListCharacter().size(); i++){
+            if(this.getListCharacter().get(i).getName()!= "Chimera" && this.getListCharacter().get(i).getName()!= "Cerberus" 
+            && this.getListCharacter().get(i).getName()!= "Medusa" && this.getListCharacter().get(i).getName()!= "Cyclops" 
+            && this.getListCharacter().get(i).getName()!= "Arachne" && this.getListCharacter().get(i).getName()!="Minotaur"){
+                return(this.getListCharacter().get(i));
             }  
         }
         return(null);
+        
     }
 
     /**
