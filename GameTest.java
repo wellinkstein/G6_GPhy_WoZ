@@ -181,8 +181,8 @@ public class GameTest
     {   
         boolean test=false;  
         for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getListSpot().get(i).getStartSpot() == true && myGame.getCurrentSpot().getListCharacter().contains(theseus)==true){
-            //myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
+            if (myGame.getListSpot().get(i).getStartSpot() == true && 
+            myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
                 test=true;  
             }
         }
@@ -221,8 +221,61 @@ public class GameTest
         //}
         assertTrue(test);
         }
+    /**
+     * Check if the Item is in the good place.
+     * Check if the Item ironSword is well in the spot 14.
+     */   
+    @Test
+    public void testPlaceItem(){
+        boolean test=false;
+        for (int i=0; i<myGame.getListSpot().get(14).getListItem().size(); i++){
+            if (myGame.getListSpot().get(14).getListItem().get(i) == ironSword){
+                test=true; 
+            }
+        }
         
-        
+        assertTrue(test); 
         
     }
+    /**
+     * Check if a Exit exists in the game
+     */
+    @Test
+    public void testExit(){
+        boolean test=false; 
+        if (myGame.getListSpot().get(0).getExitSpot()==true){
+            test=true; 
+        }
+        assertTrue(test);
+    }
+    /**
+     * Check if a Start exists in the game
+     */
+    @Test
+    public void testStart(){
+        boolean test=false; 
+        if (myGame.getListSpot().get(6).getStartSpot()==true){
+            test=true; 
+        }
+        assertTrue(test);
+    }
+    
+    /**
+     * Test if the fighter is the player, le fighter return the monster
+     * 
+     */
+    @Test
+    public void testsetFighter(){
         
+        }
+    /**
+     * Test if the dammage is added to the player
+     */
+    @Test
+    public void testInflictDamage(){
+        
+        }
+        
+        
+    
+}
