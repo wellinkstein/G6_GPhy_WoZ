@@ -271,7 +271,7 @@ public class Game
      */
     private String printWelcome()
     {
-        return "welcome";
+        return "Hello Theseus! \n Your mission is to explore the labyrinth, find the Minotaur, kill it";
     }
     
     /**
@@ -491,9 +491,21 @@ public class Game
      * 
      * 
      */
-    public void criticalHit() 
+    public int criticalHit() 
     { 
-          
+        Random rand = new Random();
+        int crit = rand.nextInt(100); 
+        if (theseus.getCritRate()<=crit){
+        int dam = (fighter.getDamage())/2;
+        for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+          {
+            if (currentSpot.getListCharacter().get(i) != fighter){
+               currentSpot.getListCharacter().get(i).loseHp(dam);  
+            }
+          }
+         return dam;
+        }
+        else return 0;
     }
     
     /**
@@ -526,7 +538,7 @@ public class Game
     public void setAggressiveAll() 
     { 
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe 
-        listSpot.get(i).getLesserBoss().setAggressiveTrue();
+            listSpot.get(i).getLesserBoss().setAggressiveTrue();
         }
     }
     
@@ -570,7 +582,13 @@ public class Game
      */
     public String youWon() 
     { 
-      return "You won!";          
+      String endScreen = "Theseus, you have successfully killed the Minotaur and left the labyrinth!";  
+      int nbMonsters = 0;
+      for (int i = 0; i < listSpot.size(); i++){
+          nbMonsters+= listSpot.get(i).numberOfMonsterInSpot();
+      }
+      endScreen+= " \n Score: You killed "+nbMonsters+" of 6 monsters";
+      return endScreen;
     }
     
     /**
