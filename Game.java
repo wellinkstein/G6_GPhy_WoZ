@@ -25,7 +25,7 @@ public class Game
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;
-    private Player Theseus;
+    private Player theseus;
     /** 
      * Create the game and initialise its internal map.
      */
@@ -112,7 +112,9 @@ public class Game
         
       
         exitAndStart();//initialize start spot (also current spot) and exit spot 
-        currentSpot.addCharacterSpot(theseus);
+        addToCurrentSpot(theseus);
+        
+        
         setFinishedFalse();
     }
 
@@ -319,10 +321,20 @@ public class Game
      */
     public Player getPlayer() 
     { 
-        return Theseus;
+        return theseus;
     }
 
-    
+    /**
+     *  add player to current spot
+     */
+    public void addToCurrentSpot(Player player) 
+    { 
+        for (int i = 0; i < listSpot.size(); i++) { 
+           if (listSpot.get(i) == currentSpot){
+            listSpot.get(i).addCharacterSpot(theseus); //player is placed at current spot, which is the start position  
+            }
+        }
+    }
     
     /**
      * Places one type of commmon item in a definite number of spots. 
@@ -395,16 +407,16 @@ public class Game
      */
     public void move(Spot spot) 
     { 
+        setCurrentSpot(spot);
+        addToCurrentSpot(theseus); //move the player to the defined spot
         
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
-            if (listSpot.get(i).getMonster()!=null ) { //|| listSpot.get(i).getMonster().getAggressive()
+           if (listSpot.get(i).getMonster()!=null) { //|| listSpot.get(i).getMonster().getAggressive()
                 Random rand = new Random();
                 int dirIndex = rand.nextInt(3); 
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
                 switch(dirIndex){
-                    case 0: 
-                    listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
-                    
+                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
                     break;
 
                     case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
@@ -416,13 +428,15 @@ public class Game
                     default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
                     break;
                 }
-            }
-            
-            getIfCharacterInSpot(Character character)
+           }
+ 
          }
         
+        if (spot.getMonster()!=null){
+        fight();
+        }
+            
         
-        setCurrentSpot(spot);        
     }
     /**
      * gets the choice of the player to fight the monster or to run away.
@@ -457,7 +471,7 @@ public class Game
     public Character whoBegins() 
     { 
        
-        return Theseus;   
+        return theseus;   
     }
     
     /**
