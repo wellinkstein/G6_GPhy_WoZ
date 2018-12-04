@@ -160,7 +160,7 @@ public class Scrolling extends JFrame
                 bigPanel.add(new JLabel( new ImageIcon( "0.png")));
             }
         }
-        System.out.println("Initialisation");
+        
         myFrame.add(bigPanel);
         
         myFrame.pack();
@@ -170,28 +170,24 @@ public class Scrolling extends JFrame
     
     public void updateUI()
     {
-        System.out.println("Update en cours");
+        
         
         if(CurrentSpot.getExits("North") != null)
         {
             Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("North").getImageSpot()));
-            System.out.println("Update North True");
         }
         else
         {
             Jlabel2.setIcon(new ImageIcon( "0.png"));
-            System.out.println("Update North False");
         }
         
         if(CurrentSpot.getExits("West") != null)
         {
             Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("West").getImageSpot()));
-            System.out.println("Update West True");
         }
         else
         {
             Jlabel4.setIcon(new ImageIcon( "0.png"));
-            System.out.println("Update West False");
         }
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()));
@@ -199,50 +195,41 @@ public class Scrolling extends JFrame
         if(CurrentSpot.getExits("East") != null)
         {
             Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("East").getImageSpot()));
-            System.out.println("Update East True");
         }
         else
         {
             Jlabel6.setIcon(new ImageIcon( "0.png"));
-            System.out.println("Update East False");
         }
         
         if(CurrentSpot.getExits("South") != null)
         {
             Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("South").getImageSpot()));
-            System.out.println("Update South True");
         }
         else
         {
             Jlabel8.setIcon(new ImageIcon( "0.png"));
-            System.out.println("Update South False");
         }
-        System.out.println("Update terminée");
     }
     
     public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == myButton1)
         {
-            System.out.println("Button 1 pressed");
             CurrentSpot = CurrentSpot.getExits("North");
             updateUI();
         }
         else if(e.getSource() == myButton2)
         {
-            System.out.println("Button 2 pressed");
             CurrentSpot = CurrentSpot.getExits("East");
             updateUI();
         }
         else if(e.getSource() == myButton3)
         {
-            System.out.println("Button 3 pressed");
             CurrentSpot = CurrentSpot.getExits("South");
             updateUI();
         }
         else if(e.getSource() == myButton4)
         {
-            System.out.println("Button 4 pressed");
             CurrentSpot = CurrentSpot.getExits("West");
             updateUI();
         }
