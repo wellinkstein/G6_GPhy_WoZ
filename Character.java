@@ -217,4 +217,5 @@ public abstract class Character
             Protection=Protection;
         } 
     }
+    
 }
