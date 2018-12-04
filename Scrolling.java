@@ -2,17 +2,17 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
- import java.util.*;
- import java.util.HashMap;
- import java.util.Map;
- import java.util.Iterator;
- import java.util.Set;
+import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * This class is an example of GridLayout Manager
  * 
- * @author PG 
- * @version 2013-02-04
+ * @author Corentin Journay 
+ * @version 04/12/2018
  */
 public class Scrolling extends JFrame
         implements ActionListener

@@ -148,6 +148,14 @@ public class Player extends Character
     }
     
     /**
+     * a method that return the number of item possess
+     */
+    public int getNumberItemPossess()
+    {
+        return inventory.size();
+    }
+    
+    /**
      * A method that gets the items in the inventory at the given index
      * @return Item inventory.get(numItem): returns the item
      * @param int numItem: the number index of the item in the inventory
