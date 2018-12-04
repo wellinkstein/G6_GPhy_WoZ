@@ -24,7 +24,7 @@ public class SpotTest
     private Legendary it1, it2, it3;
     private Common it4, it5, it6;
     private Player player, player1;
-    private LesserBoss monster1, monster, monster3; 
+    private LesserBoss monster1; 
     private Boss monster2; 
     private Spot spot, neighbor, anotherSpot, neighbor1, neighbor2, neighbor3;
       
@@ -122,7 +122,7 @@ public class SpotTest
         assertEquals("14.png", spot.getImageSpot());
     }
     
-     /**
+    /**
      * Test add new exit to a spot
      */
     @Test
@@ -303,7 +303,6 @@ public class SpotTest
         assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
         spot.addItemSpot(it6);
         assertEquals(spot.getNumberMaxItem(), spot.getNumberOfItemInSpot());
-        
     }
     
     /**
