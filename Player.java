@@ -12,7 +12,7 @@ public class Player extends Character
     private int critRate=0; //Defines the chances of the player rolling a crit
     private boolean timeToGo = false;//Boolean stating if the player can exit the labyrinth
     private boolean ariadnesThread = false; //Boolean that checks if the player has Ariadne's thread
-    
+    private boolean hermesSandals = false; //Boolean that checks if the player has hermes's sandals
     /**
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
@@ -35,6 +35,16 @@ public class Player extends Character
     public boolean getThread()
     {
         return ariadnesThread;
+    }
+    
+    /**
+     * Getter for the attribute hermesSandals
+     * @return boolean hermesSandals: returns true if the player has the item.
+     * Returns false otherwise
+     */
+    public boolean getHermesSandals()
+    {
+        return hermesSandals;
     }
     
     /**
@@ -108,6 +118,10 @@ public class Player extends Character
         if(myItem.getName()=="Ariadne's golden thread")
         {
             ariadnesThread = true;
+        }
+        if(myItem.getName()=="Hermes's Sandals")
+        {
+            hermesSandals = true;
         }
         increaseDamage(myItem.getDamage());
         increaseProtection(myItem.getProtection());

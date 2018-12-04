@@ -299,6 +299,21 @@ public class Spot
     {
         return exits;
     }
+    
+    /**
+     * getter for the spot reachable from the current spot
+     */
+    public ArrayList<String> getSpotExitable()
+    {
+        ArrayList<String> spotExitable;
+        spotExitable = new ArrayList<String>();
+        
+        Set<String> keys = exits.keySet();
+        for(String exit : keys) {
+            spotExitable.add(exit);
+        }
+        return spotExitable;
+    }
 
     /**
      * getter to know if the spot is an exit
