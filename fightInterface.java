@@ -1,33 +1,49 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
- * Décrivez votre classe fightInterface ici.
+ * Class Fight interface
  *
  * @author Jérémie Guilbaud
  * @version 1.0
  */
-public class fightInterface
+public class fightInterface extends JFrame
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
+    
+    private JButton buttonStartFight;
+    private JPanel panelMain, panelBot;
+    private JLabel dialog, fight;
 
     /**
-     * Constructeur d'objets de classe fightInterface
+     * Constructor of objects class fightInterface
      */
     public fightInterface()
     {
-        // initialisation des variables d'instance
-        x = 0;
-    }
+        JFrame myFrame;
+        myFrame = new JFrame("Fight Interface");
+        
+        buttonStartFight = new JButton("Start Fight");
+        
+        dialog = new JLabel("Test");
+        fight = new JLabel("Fight");
+        
+        panelBot = new JPanel();
+        panelBot.setLayout(new BorderLayout(2,0));
+        panelBot.add(dialog, BorderLayout.WEST);
+        panelBot.add(buttonStartFight, BorderLayout.EAST);
+        
+        panelMain = new JPanel();
+       // panelMain.setLayout(new FlowLayout());
+        panelMain.add(fight);
+        
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
+
+        myFrame.add(panelMain);
+        myFrame.add(panelBot);
+        
+        myFrame.pack();
+        myFrame.setVisible(true);
     }
 }
