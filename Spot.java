@@ -302,12 +302,12 @@ public class Spot
     
     /**
      * getter for the spot reachable from the current spot
+     * @return ArrayList<String> spotExitable: return a list of the 
      */
     public ArrayList<String> getSpotExitable()
     {
         ArrayList<String> spotExitable;
         spotExitable = new ArrayList<String>();
-        
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
             spotExitable.add(exit);

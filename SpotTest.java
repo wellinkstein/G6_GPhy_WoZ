@@ -168,6 +168,21 @@ public class SpotTest
     }
     
     /**
+     * Test getSpotExitable
+     */
+    @Test
+    public void testGetSpotExitable()
+    {
+        spot.setExits("Q", neighbor);
+        spot.setExits("A", neighbor1);
+        ArrayList<String> test;
+        test = new ArrayList<String>();
+        test.add("Q");
+        test.add("A");
+        assertEquals(test,spot.getSpotExitable());
+    }
+    
+    /**
      * Test adding new exit to a spot, if there are already 4 exits
      */
     @Test
