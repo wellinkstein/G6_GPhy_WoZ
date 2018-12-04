@@ -10,7 +10,7 @@ import java.util.*;
 public abstract class Character
 {
     
-    protected int hP;
+    protected int HP;
     //HP is an attribute which reflects health points.
     //HP cannot be below 0, if HP is 0 the character dies.
     private String name;
@@ -34,7 +34,7 @@ public abstract class Character
      */
     public Character(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
-        hP = myHP;
+        HP = myHP;
         name = myName;
         xp = myXp;
         damage = myDamage;
@@ -47,7 +47,7 @@ public abstract class Character
      */
     public int getHP()
     {
-        return hP;
+        return HP;
     }
     
     /**
@@ -106,13 +106,13 @@ public abstract class Character
     {
         if(damage>0)
         {
-            if((hP-damage)<0)
+            if((HP-damage)<0)
             {
-                hP=0;
+                HP=0;
             }
             else
             {
-                hP-=damage;
+                HP-=damage;
             }
         }
     }
@@ -136,7 +136,7 @@ public abstract class Character
      */
     protected void setHp(int setHp)
     {
-        hP=setHp;
+        HP=setHp;
     }
     
     /**
