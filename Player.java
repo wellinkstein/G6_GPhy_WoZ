@@ -104,6 +104,18 @@ public class Player extends Character
     }
     
     /**
+     * Allows the player to drop an item using the index of the item
+     * A player may drop an item at any time except while in a fight
+     * @param Item itemDrop: the item that the player wants to drop
+     */
+    public void dropItemNb(int itemDrop)
+    {
+        decreaseDamage(getItems(itemDrop).getDamage());
+        decreaseProtection(getItems(itemDrop).getProtection());
+        inventory.remove(itemDrop);
+    }
+    
+    /**
      * Allows the player to pick up an item
      * if the item is the Ariadne's golden thread the boolean
      * associated to the thread is set to true.

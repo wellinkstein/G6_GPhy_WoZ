@@ -32,7 +32,6 @@ public class Inventory extends JFrame
         monJoueur.takeItem(myObj);
         myObj = new Common("iron shield","a round iron shield",0,0,2);
         monJoueur.takeItem(myObj);
-        System.out.println(monJoueur.getNumberItemPossess());
         
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
         {
@@ -63,10 +62,14 @@ public class Inventory extends JFrame
             {
                 System.out.println("Bouton "+i);
                 if((i%2)==0)
-                {}
+                {
+                    System.out.println("Description of the item"+(i%2));
+                }
                 else
                 {
-                    //monJoueur.dropItem((i-1)%2);
+                    System.out.println("Dropping");
+                    monJoueur.dropItemNb((i-1)%2);
+                    myFrame.revalidate();
                 }
             }
         }
