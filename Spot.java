@@ -465,7 +465,7 @@ public class Spot
      * the method returns nothing.
      * @return Character monster: returns the monster in the spot
      */
-    public Character getMonster()
+    public Monster getMonster()
     {
         for (int i =0; i<this.getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
@@ -473,13 +473,48 @@ public class Spot
             ||this.getListCharacter().get(i).getName()== "Medusa" 
             || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"
             || this.getListCharacter().get(i).getName()=="Minotaur"){
-                return(this.getListCharacter().get(i));
+                return((Monster)this.getListCharacter().get(i));
             }  
         }
         return(null);
 
     }
+        
+    /**
+     * Return lesser boss in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return LesserBoss monster: returns the lesser boss in the spot
+     */
+    public LesserBoss getLesserBoss()
+    {
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Chimera" || this.getListCharacter().get(i).getName()== "Cerberus" 
+            ||this.getListCharacter().get(i).getName()== "Medusa" 
+            || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"){
+                return((LesserBoss)this.getListCharacter().get(i));
+            }  
+        }
+        return(null);
 
+    }
+      /**
+     * Return boss in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return Boss monster: returns the boss in the spot
+     */
+    public Boss getBoss()
+    {
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Minotaur"){
+                return((Boss)this.getListCharacter().get(i));
+            }  
+        }
+        return(null);
+
+    }
+    
     /**
      * Return player in the spot. If there is no player in that spot,
      * the method returns nothing.

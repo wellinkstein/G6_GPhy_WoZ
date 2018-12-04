@@ -148,7 +148,7 @@ public class GameTest
         //myGame.getCurrentSpot().addCharacterSpot(player); 
         myGame.move(myGame.getListSpot().get(6)); 
        // myGame.getCurrentSpot().addCharacterSpot(monster);
-        myGame.monsterDead(myGame.getListSpot().get(6));
+        //myGame.monsterDead(myGame.getListSpot().get(6));
         assertEquals(null, myGame.getListSpot().get(6).getMonster());
         assertEquals(true, myGame.getListSpot().get(6).getListItem().contains(legendary)); 
         
@@ -229,7 +229,7 @@ public class GameTest
     public void testPlaceItem(){
         boolean test=false;
         for (int i=0; i<myGame.getListSpot().get(14).getListItem().size(); i++){
-            if (myGame.getListSpot().get(14).getListItem().get(i) == ironSword){
+            if (myGame.getListSpot().get(14).getListItem().get(i).getName() == "Iron Sword"){
                 test=true; 
             }
         }
