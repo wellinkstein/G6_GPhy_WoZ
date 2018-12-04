@@ -380,9 +380,15 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        if (numberOfMonsterInSpot()<=1){   
-        this.characterInSpot.add(character); 
+        if(getIfCharacterInSpot(character)==false)
+        {
+            this.characterInSpot.add(character);
         }
+        else if(
+            numberOfMonsterInSpot()<=1){
+        this.characterInSpot.add(character); 
+        
+    }
     }
 
     /**
@@ -390,17 +396,15 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean getIfCharacterInSpot(Character character){
-        //for (int i =0; i<this.getListCharacter().size(); i++){
-        if(this.getListCharacter().contains(character)) {
-            //if (this.getListCharacter().get(i)==character){
-
-            return (true); }
-        else {
+        if(this.getListCharacter().contains(character)) 
+        {
+            return (true); 
+        }
+        else 
+        {
             return(false); 
-
         }
 
-        //return(false); 
     }
 
     /**
