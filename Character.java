@@ -10,42 +10,49 @@ import java.util.*;
 public abstract class Character
 {
     
-    protected int HP;
+    protected int hP;
     //HP is an attribute which reflects health points.
     //HP cannot be below 0, if HP is 0 the character dies.
-    private String Name;
+    private String name;
     // The name of the character
     protected int xp;
     //The XP of the character, XP can be gained, not lost
-    private int Damage;
+    private int damage;
     //This attribute represents the damage that a character inflicts in a single hit
-    private int Protection;
+    private int protection;
     //This attribute represent the damage reduction of the character
     protected ArrayList<Item> inventory = new ArrayList<Item>();
     //A list of items that the character possesses
     
     /**
      * The constructor for the character class
+     * @param myHP: HP of character
+     * @param String myName: name of character
+     * @param int myXp: XP of character
+     * @param int myDamage: damage of character
+     * @param int myProtction: protection value of character
      */
     public Character(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
-        HP = myHP;
-        Name = myName;
+        hP = myHP;
+        name = myName;
         xp = myXp;
-        Damage = myDamage;
-        Protection = myProtection;
+        damage = myDamage;
+        protection = myProtection;
     }
     
     /**
      * Method that returns the HP
+     * @return int HP: return HP value
      */
     public int getHP()
     {
-        return HP;
+        return hP;
     }
     
     /**
      * Method that returns the Xp
+     * @return int xp: return the XP
      */
     public int getXp()
     { 
@@ -54,30 +61,35 @@ public abstract class Character
     
     /**
      * Method that returns the name
+     * @return String Name: return name character
      */
     public String getName()
     {
-        return Name;
+        return name;
     }
     
     /**
      * Method that returns that damage
+     * @return int Damage: return damage of character
      */
     public int getDamage()
     {
-        return Damage;
+        return damage;
     }
     
     /**
      * Method that returns the protection
+     * @return int Protection: return protection of character
      */
     public int getProtection()
     {
-        return Protection;
+        return protection;
     }
     
     /**
      * Get for the inventory
+     * @param int emplacement: item index in Inventory
+     * @return Item: return the item found
      */
     public Item getInventory(int emplacement)
     {
@@ -88,18 +100,19 @@ public abstract class Character
      * Method that reduces the HP based on the damage attribute of another character.
      * The value damage will always be a positive interger
      * If the value of damage (HP inflicted) is superior to current HP, HP is set to 0
+     * @param int damage: damage value inflicted
      */
     public void loseHp(int damage)
     {
         if(damage>0)
         {
-            if((HP-damage)<0)
+            if((hP-damage)<0)
             {
-                HP=0;
+                hP=0;
             }
             else
             {
-                HP-=damage;
+                hP-=damage;
             }
         }
     }
@@ -107,6 +120,7 @@ public abstract class Character
     /**
      * Method that gives Xp based on the gainXP attribute
      * Xp can only be gained if the xp that is supposed to be gained is above 0
+     * @param int gainXP: XPgained
      */
     public void gainXp(int gainXP)
     {
@@ -114,22 +128,20 @@ public abstract class Character
         {
             xp+=gainXP;
         }
-        else
-        {
-            xp=xp;
-        }
     }
     
     /**
      * A method that exists to test functions related to Hp
+     * @param int setHP: HP value set to the character
      */
     protected void setHp(int setHp)
     {
-        HP=setHp;
+        hP=setHp;
     }
     
     /**
      * A method that exists to test functions related to Xp
+     * @param int setXp: set value of XP to character
      */
     protected void setXp(int setXp)
     {
@@ -140,16 +152,13 @@ public abstract class Character
      * Method that increases the damage attribute of the character
      * based on the damage attribute of items
      * To increase damage, the increase amount must be a positive value
+     * @param int DamageIncrease: increase value of damage
      */
-     public void increaseDamage(int DamageIncrease)
+     public void increaseDamage(int damageIncrease)
      {
-         if(DamageIncrease>=0)
+         if(damageIncrease>=0)
         {
-            Damage+=DamageIncrease;
-        }
-        else
-        {
-            Damage=Damage;
+            damage+=damageIncrease;
         }
      }
      
@@ -157,16 +166,13 @@ public abstract class Character
      * Method that increases the Protection attribute of the character
      * based on the damage attribute of items
      * To increase Protection, the increase amount must be a positive value
+     * @param int ProtectionIncrease: increase protection by the value
      */
-     public void increaseProtection(int ProtectionIncrease)
+     public void increaseProtection(int protectionIncrease)
      {
-        if(ProtectionIncrease>=0)
+        if(protectionIncrease>=0)
         {
-            Protection+=ProtectionIncrease;
-        }
-        else
-        {
-            Protection=Protection;
+            protection+=protectionIncrease;
         }
      }
      
@@ -174,47 +180,41 @@ public abstract class Character
     * Method that decreases the damage attribute of the character,
     * this may occur if a player drops an item
     * To decrease damage, the decrease amount must be a positive value
+    * @param int DamageDecrease: decrease damage by the value
     */
-    public void decreaseDamage(int DamageDecrease)
+    public void decreaseDamage(int damageDecrease)
     {
-        if(DamageDecrease>=0)
+        if(damageDecrease>=0)
         {
-            if((Damage-DamageDecrease)<0)
+            if((damage-damageDecrease)<0)
             {
-                Damage=0;
+                damage=0;
             }
             else
             {
-               Damage-=DamageDecrease; 
+               damage-=damageDecrease; 
             }
         }
-        else
-        {
-            Damage=Damage;
-        } 
     }
     
     /**
     * Method that decreases the Protection attribute of the character,
     * this may occur if a player drops an item
     * To decrease protection, the decrease amount must be a positive value
+    * @param int ProtectionDecrease: decreases Protection by value
     */
-    public void decreaseProtection(int ProtectionDecrease)
+    public void decreaseProtection(int protectionDecrease)
     {
-        if(ProtectionDecrease>=0)
+        if(protectionDecrease>=0)
         {
-            if((Protection-ProtectionDecrease)<0)
+            if((protection-protectionDecrease)<0)
             {
-                Protection=0;
+                protection=0;
             }
             else
             {
-               Protection-=ProtectionDecrease; 
+               protection-=protectionDecrease; 
             }
         }
-        else
-        {
-            Protection=Protection;
-        } 
     }
 }
