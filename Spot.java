@@ -380,10 +380,10 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        //if (getIfCharacterInSpot(character)==false && numberOfMonsterInSpot()<=6){   
-        this.characterInSpot.add(character); 
-        //setFighting();
-        // }
+        if(getIfCharacterInSpot(character)==false || numberOfMonsterInSpot()==0)
+        {
+            this.characterInSpot.add(character);
+        }
     }
 
     /**
@@ -391,17 +391,14 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean getIfCharacterInSpot(Character character){
-        //for (int i =0; i<this.getListCharacter().size(); i++){
-        if(this.getListCharacter().contains(character)) {
-            //if (this.getListCharacter().get(i)==character){
-
-            return (true); }
-        else {
-            return(false); 
-
+        if(this.getListCharacter().contains(character)) 
+        {
+            return (true); 
         }
-
-        //return(false); 
+        else 
+        {
+            return(false); 
+        }
     }
 
     /**
@@ -462,7 +459,7 @@ public class Spot
      * the method returns nothing.
      * @return Character monster: returns the monster in the spot
      */
-    public Character getMonster()
+    public Monster getMonster()
     {
         for (int i =0; i<this.getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
@@ -470,19 +467,54 @@ public class Spot
             ||this.getListCharacter().get(i).getName()== "Medusa" 
             || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"
             || this.getListCharacter().get(i).getName()=="Minotaur"){
-                return(this.getListCharacter().get(i));
+                return((Monster)this.getListCharacter().get(i));
             }  
         }
         return(null);
 
     }
+        
+    /**
+     * Return lesser boss in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return LesserBoss monster: returns the lesser boss in the spot
+     */
+    public LesserBoss getLesserBoss()
+    {
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Chimera" || this.getListCharacter().get(i).getName()== "Cerberus" 
+            ||this.getListCharacter().get(i).getName()== "Medusa" 
+            || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"){
+                return((LesserBoss)this.getListCharacter().get(i));
+            }  
+        }
+        return(null);
 
+    }
+      /**
+     * Return boss in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return Boss monster: returns the boss in the spot
+     */
+    public Boss getBoss()
+    {
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Minotaur"){
+                return((Boss)this.getListCharacter().get(i));
+            }  
+        }
+        return(null);
+
+    }
+    
     /**
      * Return player in the spot. If there is no player in that spot,
-     * the method returns nothing.
-     * @return Character chracter: returns the player in the spot
+     * the method returns null.
+     * @return Player character: returns the player in the spot
      */
-    public Character getPlayer()
+    public Player getPlayer()
     {
         for (int i =0; i<this.getListCharacter().size(); i++){
             // if(this.getListCharacter().get(i).getName()!= "Chimera" && this.getListCharacter().get(i).getName()!= "Cerberus" 
@@ -491,7 +523,7 @@ public class Spot
                 // return(this.getListCharacter().get(i));
             // }  
             if( this.getListCharacter().get(i).getName()=="Theseus"){
-                return (this.getListCharacter().get(i));
+                return ((Player)this.getListCharacter().get(i));
             }
         }
         return(null);        
@@ -510,28 +542,4 @@ public class Spot
         }
         return returnString;
     }
-
-    // /**
-    // * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
-    // * False if there is no character or only one.
-    // * @return boolean
-    // */
-    // public boolean getFighting()
-    // {
-    // return(this.fighting);
-    // }
-
-    // /**
-    // * setFighting, become true when a player and a monster are in the same spot.
-    // * It is reset to false once a character dies.
-    // */
-    // public void setFighting()
-    // {
-    // if (this.getListCharacter().size()==2){
-    // this.fighting = true; 
-    // }
-    // else{
-    // this.fighting = false;
-    // }
-    // }
 }
