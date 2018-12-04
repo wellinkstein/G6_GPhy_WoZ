@@ -340,27 +340,6 @@ public class SpotTest
         assertTrue(test);
     }
     
-    // /**
-     // * Test which verifiy if there is only 2 characters and not 2 players on a spot at
-     // * the same time. The new player isn't added to the spot and the previous one will
-     // * stay there.
-     // */
-    // @Test
-    // public void TestNot2Players(){
-     // spot.addCharacterSpot(player); 
-     // spot.addCharacterSpot(player1); 
-     // spot.addCharacterSpot(monster); 
-     // boolean test= true; 
-        // for (int i=0; i<spot.getListCharacter().size(); i++){
-            // if (spot.getListCharacter().get(i) == player1){
-                // test=false;
-            // }
-        // }
-        // assertFalse(test);
-        // assertEquals(2, spot.getListCharacter().size()); 
-        
-    // }
-    
     /**
      * Test that a spot may be set to be a start spot
      */
