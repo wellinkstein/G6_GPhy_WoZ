@@ -477,9 +477,9 @@ public class Spot
     }
         
     /**
-     * Return monster in the spot. If there is no monster in that spot,
+     * Return lesser boss in the spot. If there is no monster in that spot,
      * the method returns nothing.
-     * @return Character monster: returns the monster in the spot
+     * @return LesserBoss monster: returns the lesser boss in the spot
      */
     public LesserBoss getLesserBoss()
     {
@@ -489,6 +489,22 @@ public class Spot
             ||this.getListCharacter().get(i).getName()== "Medusa" 
             || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"){
                 return((LesserBoss)this.getListCharacter().get(i));
+            }  
+        }
+        return(null);
+
+    }
+      /**
+     * Return boss in the spot. If there is no monster in that spot,
+     * the method returns nothing.
+     * @return Boss monster: returns the boss in the spot
+     */
+    public Boss getBoss()
+    {
+        for (int i =0; i<this.getListCharacter().size(); i++){
+            //for (Character monster : this.characterInSpot){
+            if(this.getListCharacter().get(i).getName()== "Minotaur"){
+                return((Boss)this.getListCharacter().get(i));
             }  
         }
         return(null);
