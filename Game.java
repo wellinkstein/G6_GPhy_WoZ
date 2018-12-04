@@ -1,4 +1,5 @@
- import java.util.*;
+import java.util.*;
+import java.util.Random;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -22,10 +23,9 @@ public class Game
     private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
     private int line = 8; //number of lines in the matrix;
     private int column = 9; //number of columns in the matrix;
-    private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth
-    private HashMap<String,Integer> monsters = new HashMap<String, Integer>();
+    private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;
-    private Player Theseus;
+    private Player theseus;
     /** 
      * Create the game and initialise its internal map.
      */
@@ -33,85 +33,88 @@ public class Game
     {
         createLabyrinth();
         
-        Player Theseus = new Player(20,"Theseus",1,1,0);
-        placePlayer(Theseus, 1);
+        Player theseus = new Player(20,"Theseus",1,1,0);
         
-        Common IronSword= new Common ("Iron Sword","",3,0,0);
-        Common IronDagger= new Common ("Iron Dagger","",1,0,0);
-        Common StandardBow= new Common ("Standard Bow","",2,0,0);
-        Common IronArmor= new Common ("Iron Armor","",0,0,3);
-        Common IronShield= new Common ("Iron Shield","",1,0,0);
-        Common WoodenShield= new Common ("Wooden Shield","",2,0,0);
-        Common HealthPotion= new Common ("Health Potion","",0,5,0);
         
-        Legendary GoldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
-        Legendary AresSword= new Legendary("Ares's sword","",6,0,0);
-        Legendary ArtemisBow= new Legendary("Artemis's bow","",4,0,0);
-        Legendary AegisShield= new Legendary("Aegis shield","",0,5,0);
-        Legendary HermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        Common ironSword= new Common ("Iron Sword","",3,0,0);
+        Common ironDagger= new Common ("Iron Dagger","",1,0,0);
+        Common standardBow= new Common ("Standard Bow","",2,0,0);
+        Common ironArmor= new Common ("Iron Armor","",0,0,3);
+        Common ironShield= new Common ("Iron Shield","",1,0,0);
+        Common woodenShield= new Common ("Wooden Shield","",2,0,0);
+        Common healthPotion= new Common ("Health Potion","",0,5,0);
         
-        LesserBoss Chimera= new LesserBoss(30,"Chimera",5,2,2,"",HermesSandals);
-        LesserBoss Cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",AresSword);
-        LesserBoss Medusa= new LesserBoss(20,"Medusa",5,4,1,"",ArtemisBow);
-        LesserBoss Cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",AegisShield);
-        LesserBoss Arachne= new LesserBoss(40,"Arachne",5,4,4,"",GoldenThread);
+        Legendary goldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
+        Legendary aresSword= new Legendary("Ares's sword","",6,0,0);
+        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
+        Legendary aegisShield= new Legendary("Aegis shield","",0,5,0);
+        Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
         
-        Boss Minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
+        LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"",hermesSandals);
+        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",aresSword);
+        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
+        LesserBoss cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",aegisShield);
+        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"",goldenThread);
         
-        placeMonster(Minotaur,9);  
-        placeMonster(Cerberus,5);
-        placeMonster(Medusa,6);
-        placeMonster(Cyclops,7);
-        placeMonster(Chimera,8);
-        placeMonster(Arachne,10);
+        Boss minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
+        
+        
+        listSpot.get(9).addCharacterSpot(minotaur);
+        listSpot.get(5).addCharacterSpot(cerberus);
+        listSpot.get(6).addCharacterSpot(medusa);
+        listSpot.get(7).addCharacterSpot(cyclops);
+        listSpot.get(8).addCharacterSpot(chimera);
+        listSpot.get(10).addCharacterSpot(arachne);
+
         
         
         ArrayList<Integer> listIronSword = new ArrayList();
         listIronSword.add(10);
         listIronSword.add(11);
         listIronSword.add(12);
-        placeItem(IronSword,listIronSword); 
+        placeItem(ironSword,listIronSword); 
         
         ArrayList<Integer> listIronDagger = new ArrayList();
         listIronDagger.add(13);
         listIronDagger.add(14);
         listIronDagger.add(15);
-        placeItem(IronDagger,listIronDagger); 
+        placeItem(ironDagger,listIronDagger); 
         
         ArrayList<Integer> listStandardBow = new ArrayList();
         listStandardBow.add(16);
         listStandardBow.add(17);
         listStandardBow.add(18);
-        placeItem(StandardBow,listStandardBow);
+        placeItem(standardBow,listStandardBow);
         
         ArrayList<Integer> listIronArmor = new ArrayList();
         listIronArmor.add(19);
         listIronArmor.add(20);
         listIronArmor.add(21);
-        placeItem(IronArmor,listIronArmor);
+        placeItem(ironArmor,listIronArmor);
         
         ArrayList<Integer> listIronShield = new ArrayList();
         listIronShield.add(19);
         listIronShield.add(20);
         listIronShield.add(21);
-        placeItem(IronShield,listIronShield);
+        placeItem(ironShield,listIronShield);
         
         ArrayList<Integer> listWoodenShield = new ArrayList();
         listWoodenShield.add(19);
         listWoodenShield.add(20);
         listWoodenShield.add(21);
-        placeItem(WoodenShield,listWoodenShield);
+        placeItem(woodenShield,listWoodenShield);
         
         ArrayList<Integer> listHealthPotion = new ArrayList();
         listHealthPotion.add(19);
         listHealthPotion.add(20);
         listHealthPotion.add(21);
-        placeItem(HealthPotion,listHealthPotion);
+        placeItem(healthPotion,listHealthPotion);
         
-       
-        //defineExits(); // définir les sorties pour chaque spot
-        currentSpot=listSpot.get(2);
-        exitAndStart();//initialize start spot and exit spot 
+      
+        exitAndStart();//initialize start spot (also current spot) and exit spot 
+        addToCurrentSpot(theseus);
+        
+        
         setFinishedFalse();
     }
 
@@ -120,195 +123,161 @@ public class Game
      */
     private void createLabyrinth()
     {
-        // Spot spot11, spot21, spot31, spot41, spot51, spot61, spot71, spot81, spot91;
-        // Spot spot12, spot22, spot32, spot42, spot52, spot62, spot72, spot82, spot92;
-        // Spot spot13, spot23, spot33, spot43, spot53, spot63, spot73, spot83, spot93;
-        // Spot spot14, spot24, spot34, spot44, spot54, spot64, spot74, spot84, spot94;
-        // Spot spot15, spot25, spot35, spot45, spot55, spot65, spot75, spot85, spot95;
-        // Spot spot16, spot26, spot36, spot46, spot56, spot66, spot76, spot86, spot96;
-        // Spot spot18, spot28, spot38, spot48, spot58, spot68, spot78, spot88, spot98;
-        // Spot spot17, spot27, spot37, spot47, spot57, spot67, spot77, spot87, spot97;
-        
-    
+        // Create spots
+         for (int i = 0; i < line*column; i++) { 
+              //listSpot.add(new Spot(null,null));
+              listSpot.add(new Spot());
+          }
         
         
+        // initialise spot exits
+        listSpot.get(0).setExits("D",listSpot.get(1));
+        listSpot.get(1).setExits("Q",listSpot.get(0));
+        listSpot.get(1).setExits("S",listSpot.get(10));
+        listSpot.get(2).setExits("S",listSpot.get(11));
+        listSpot.get(2).setExits("D",listSpot.get(3));
+        listSpot.get(3).setExits("Q",listSpot.get(2));
+        listSpot.get(3).setExits("S",listSpot.get(12));
+        listSpot.get(4).setExits("S",listSpot.get(13));
+        listSpot.get(4).setExits("D",listSpot.get(5));
+        listSpot.get(5).setExits("Q",listSpot.get(4));
+        listSpot.get(5).setExits("S",listSpot.get(14));
+        listSpot.get(6).setExits("Z",null);
+        listSpot.get(6).setExits("S",listSpot.get(15));
+        listSpot.get(6).setExits("D",listSpot.get(7));
+        listSpot.get(7).setExits("Q",listSpot.get(6));
+        listSpot.get(7).setExits("D",listSpot.get(8));
+        listSpot.get(8).setExits("Q",listSpot.get(7));
+        listSpot.get(9).setExits("S",listSpot.get(18));
+        listSpot.get(10).setExits("Z",listSpot.get(1));
+        listSpot.get(10).setExits("S",listSpot.get(19));
+        listSpot.get(11).setExits("Z",listSpot.get(2));
+        listSpot.get(12).setExits("Z",listSpot.get(3));
+        listSpot.get(12).setExits("S",listSpot.get(21));
+        listSpot.get(13).setExits("Z",listSpot.get(4));
+        listSpot.get(13).setExits("D",listSpot.get(14));
+        listSpot.get(13).setExits("S",listSpot.get(22));
+        listSpot.get(14).setExits("Z",listSpot.get(5));
+        listSpot.get(14).setExits("Q",listSpot.get(13));
+        listSpot.get(14).setExits("D",listSpot.get(15));
+        listSpot.get(15).setExits("Z",listSpot.get(6));
+        listSpot.get(15).setExits("Q",listSpot.get(14));
+        listSpot.get(15).setExits("S",listSpot.get(24));
+        listSpot.get(16).setExits("D",listSpot.get(17));
+        listSpot.get(16).setExits("S",listSpot.get(25));
+        listSpot.get(17).setExits("Q",listSpot.get(16));
+        listSpot.get(18).setExits("Z",listSpot.get(9));
+        listSpot.get(18).setExits("D",listSpot.get(11));
+        listSpot.get(11).setExits("Q",listSpot.get(18));
+        listSpot.get(11).setExits("Z",listSpot.get(10));
+        listSpot.get(11).setExits("D",listSpot.get(20));
+        listSpot.get(20).setExits("Q",listSpot.get(11));
+        listSpot.get(20).setExits("D",listSpot.get(21));
+        listSpot.get(21).setExits("Q",listSpot.get(20));
+        listSpot.get(21).setExits("Z",listSpot.get(12));
+        listSpot.get(21).setExits("S",listSpot.get(30));
+        listSpot.get(22).setExits("Z",listSpot.get(13));
+        listSpot.get(22).setExits("D",listSpot.get(23));
+        listSpot.get(23).setExits("Q",listSpot.get(22));
+        listSpot.get(23).setExits("S",listSpot.get(32));
+        listSpot.get(24).setExits("Z",listSpot.get(15));
+        listSpot.get(24).setExits("D",listSpot.get(25));
+        listSpot.get(25).setExits("Q",listSpot.get(24));
+        listSpot.get(25).setExits("Z",listSpot.get(16));
+        listSpot.get(25).setExits("D",listSpot.get(26));
+        listSpot.get(26).setExits("Q",listSpot.get(25));
+        listSpot.get(26).setExits("S",listSpot.get(35));
+        listSpot.get(27).setExits("S",listSpot.get(36));
+        listSpot.get(27).setExits("D",listSpot.get(28));
+        listSpot.get(28).setExits("Q",listSpot.get(27));
+        listSpot.get(29).setExits("D",listSpot.get(30));
+        listSpot.get(29).setExits("S",listSpot.get(38));
+        listSpot.get(30).setExits("Z",listSpot.get(21));
+        listSpot.get(30).setExits("Q",listSpot.get(29));
+        listSpot.get(31).setExits("D",listSpot.get(32));
+        listSpot.get(32).setExits("Q",listSpot.get(31));
+        listSpot.get(32).setExits("Z",listSpot.get(23));
+        listSpot.get(32).setExits("D",listSpot.get(33));
+        listSpot.get(32).setExits("S",listSpot.get(41));
+        listSpot.get(33).setExits("Q",listSpot.get(32));
+        listSpot.get(33).setExits("D",listSpot.get(34));
+        listSpot.get(34).setExits("Q",listSpot.get(33));
+        listSpot.get(34).setExits("D",listSpot.get(35));
+        listSpot.get(35).setExits("Q",listSpot.get(34));
+        listSpot.get(35).setExits("Z",listSpot.get(26));
+        listSpot.get(36).setExits("Z",listSpot.get(27));
+        listSpot.get(36).setExits("D",listSpot.get(37));
+        listSpot.get(37).setExits("Q",listSpot.get(36));
+        listSpot.get(37).setExits("S",listSpot.get(46));
+        listSpot.get(38).setExits("Z",listSpot.get(29));
+        listSpot.get(38).setExits("D",listSpot.get(39));
+        listSpot.get(39).setExits("Q",listSpot.get(38));
+        listSpot.get(39).setExits("D",listSpot.get(40));
+        listSpot.get(40).setExits("Q",listSpot.get(39));
+        listSpot.get(40).setExits("S",listSpot.get(49));
+        listSpot.get(41).setExits("Z",listSpot.get(32));
+        listSpot.get(41).setExits("D",listSpot.get(42));
+        listSpot.get(41).setExits("S",listSpot.get(50));
+        listSpot.get(42).setExits("Q",listSpot.get(41));
+        listSpot.get(42).setExits("D",listSpot.get(43));
+        listSpot.get(43).setExits("Q",listSpot.get(42));
+        listSpot.get(43).setExits("D",listSpot.get(44));
+        listSpot.get(44).setExits("Q",listSpot.get(43));
+        listSpot.get(44).setExits("S",listSpot.get(53));
+        listSpot.get(54).setExits("Z",listSpot.get(45));
+        listSpot.get(54).setExits("D",listSpot.get(55));
+        listSpot.get(54).setExits("S",listSpot.get(63));
+        listSpot.get(55).setExits("Z",listSpot.get(46));
+        listSpot.get(55).setExits("Q",listSpot.get(54));
+        listSpot.get(55).setExits("S",listSpot.get(64));
+        listSpot.get(56).setExits("Z",listSpot.get(47));
+        listSpot.get(56).setExits("S",listSpot.get(65));
+        listSpot.get(57).setExits("D",listSpot.get(58));
+        listSpot.get(57).setExits("S",listSpot.get(66));
+        listSpot.get(58).setExits("Q",listSpot.get(57));
+        listSpot.get(58).setExits("Z",listSpot.get(49));
+        listSpot.get(58).setExits("D",listSpot.get(59));
+        listSpot.get(59).setExits("Q",listSpot.get(58));
+        listSpot.get(59).setExits("S",listSpot.get(68));
+        listSpot.get(60).setExits("Z",listSpot.get(51));
+        listSpot.get(60).setExits("D",listSpot.get(61));
+        listSpot.get(61).setExits("Q",listSpot.get(60));
+        listSpot.get(61).setExits("D",listSpot.get(62));
+        listSpot.get(61).setExits("S",listSpot.get(70));
+        listSpot.get(62).setExits("Q",listSpot.get(61));
+        listSpot.get(62).setExits("S",listSpot.get(71));
+        listSpot.get(63).setExits("Z",listSpot.get(54));
+        listSpot.get(64).setExits("Z",listSpot.get(55));
+        listSpot.get(64).setExits("D",listSpot.get(65));
+        listSpot.get(65).setExits("Q",listSpot.get(64));
+        listSpot.get(65).setExits("Z",listSpot.get(56));
+        listSpot.get(66).setExits("Z",listSpot.get(57));
+        listSpot.get(67).setExits("D",listSpot.get(68));
+        listSpot.get(68).setExits("Q",listSpot.get(67));
+        listSpot.get(68).setExits("Z",listSpot.get(59));
+        listSpot.get(68).setExits("D",listSpot.get(69));
+        listSpot.get(69).setExits("Q",listSpot.get(68));
+        listSpot.get(69).setExits("D",listSpot.get(70));
+        listSpot.get(70).setExits("Q",listSpot.get(69));
+        listSpot.get(70).setExits("Z",listSpot.get(61));
+        listSpot.get(71).setExits("Z",listSpot.get(62));
         
-        
-         // for (int i = 0; i < line*column; i++) { 
-              // listSpot.add(new Spot(null,null));
-          // }
-          
-         
-        // create the rooms
-        
-        
-        // initialise room exits
-        // spot11.setExits("D",spot21);
-        // spot21.setExits("Q",spot11);
-        // spot21.setExits("S",spot22);
-        // spot31.setExits("S",spot32);
-        // spot31.setExits("D",spot41);
-        // spot41.setExits("Q",spot31);
-        // spot41.setExits("S",spot42);
-        // spot51.setExits("S",spot52);
-        // spot51.setExits("D",spot61);
-        // spot61.setExits("Q",spot51);
-        // spot61.setExits("S",spot62);
-        // spot71.setExits("Z",null);
-        // spot71.setExits("S",spot72);
-        // spot71.setExits("D",spot81);
-        // spot81.setExits("Q",spot71);
-        // spot81.setExits("D",spot91);
-        // spot91.setExits("Q",spot81);
-        // spot12.setExits("S",spot13);
-        // spot22.setExits("Z",spot21);
-        // spot22.setExits("S",spot23);
-        // spot32.setExits("Z",spot31);
-        // spot42.setExits("Z",spot41);
-        // spot42.setExits("S",spot43);
-        // spot52.setExits("Z",spot51);
-        // spot52.setExits("D",spot62);
-        // spot52.setExits("S",spot53);
-        // spot62.setExits("Z",spot61);
-        // spot62.setExits("Q",spot52);
-        // spot62.setExits("D",spot72);
-        // spot72.setExits("Z",spot71);
-        // spot72.setExits("Q",spot62);
-        // spot72.setExits("S",spot73);
-        // spot82.setExits("D",spot92);
-        // spot82.setExits("S",spot83);
-        // spot92.setExits("Q",spot82);
-        // spot13.setExits("Z",spot12);
-        // spot13.setExits("D",spot23);
-        // spot23.setExits("Q",spot13);
-        // spot23.setExits("Z",spot22);
-        // spot23.setExits("D",spot33);
-        // spot33.setExits("Q",spot23);
-        // spot33.setExits("D",spot43);
-        // spot43.setExits("Q",spot33);
-        // spot43.setExits("Z",spot42);
-        // spot43.setExits("S",spot44);
-        // spot53.setExits("Z",spot52);
-        // spot53.setExits("D",spot63);
-        // spot63.setExits("Q",spot53);
-        // spot63.setExits("S",spot64);
-        // spot73.setExits("Z",spot72);
-        // spot73.setExits("D",spot83);
-        // spot83.setExits("Q",spot73);
-        // spot83.setExits("Z",spot82);
-        // spot83.setExits("D",spot93);
-        // spot93.setExits("Q",spot83);
-        // spot93.setExits("S",spot94);
-        // spot14.setExits("S",spot15);
-        // spot14.setExits("D",spot24);
-        // spot24.setExits("Q",spot14);
-        // spot34.setExits("D",spot44);
-        // spot34.setExits("S",spot35);
-        // spot44.setExits("Z",spot43);
-        // spot44.setExits("Q",spot34);
-        // spot54.setExits("D",spot64);
-        // spot64.setExits("Q",spot54);
-        // spot64.setExits("Z",spot63);
-        // spot64.setExits("D",spot74);
-        // spot64.setExits("S",spot65);
-        // spot74.setExits("Q",spot64);
-        // spot74.setExits("D",spot84);
-        // spot84.setExits("Q",spot74);
-        // spot84.setExits("D",spot94);
-        // spot94.setExits("Q",spot84);
-        // spot94.setExits("Z",spot93);
-        // spot15.setExits("Z",spot14);
-        // spot15.setExits("D",spot25);
-        // spot25.setExits("Q",spot15);
-        // spot25.setExits("S",spot26);
-        // spot35.setExits("Z",spot34);
-        // spot35.setExits("D",spot45);
-        // spot45.setExits("Q",spot35);
-        // spot45.setExits("D",spot55);
-        // spot55.setExits("Q",spot45);
-        // spot55.setExits("S",spot56);
-        // spot65.setExits("Z",spot64);
-        // spot65.setExits("D",spot75);
-        // spot65.setExits("S",spot66);
-        // spot75.setExits("Q",spot65);
-        // spot75.setExits("D",spot85);
-        // spot85.setExits("Q",spot75);
-        // spot85.setExits("D",spot95);
-        // spot95.setExits("Q",spot85);
-        // spot95.setExits("S",spot96);
-        // spot17.setExits("Z",spot16);
-        // spot17.setExits("D",spot27);
-        // spot17.setExits("S",spot18);
-        // spot27.setExits("Z",spot26);
-        // spot27.setExits("Q",spot17);
-        // spot27.setExits("S",spot28);
-        // spot37.setExits("Z",spot36);
-        // spot37.setExits("S",spot38);
-        // spot47.setExits("D",spot57);
-        // spot47.setExits("S",spot48);
-        // spot57.setExits("Q",spot47);
-        // spot57.setExits("Z",spot56);
-        // spot57.setExits("D",spot67);
-        // spot67.setExits("Q",spot57);
-        // spot67.setExits("S",spot68);
-        // spot77.setExits("Z",spot76);
-        // spot77.setExits("D",spot87);
-        // spot87.setExits("Q",spot77);
-        // spot87.setExits("D",spot97);
-        // spot87.setExits("S",spot88);
-        // spot97.setExits("Q",spot87);
-        // spot97.setExits("S",spot98);
-        // spot18.setExits("Z",spot17);
-        // spot28.setExits("Z",spot27);
-        // spot28.setExits("D",spot38);
-        // spot38.setExits("Q",spot28);
-        // spot38.setExits("Z",spot37);
-        // spot48.setExits("Z",spot47);
-        // spot58.setExits("D",spot68);
-        // spot68.setExits("Q",spot58);
-        // spot68.setExits("Z",spot67);
-        // spot68.setExits("D",spot78);
-        // spot78.setExits("Q",spot68);
-        // spot78.setExits("D",spot88);
-        // spot88.setExits("Q",spot78);
-        // spot88.setExits("Z",spot87);
-        // spot98.setExits("Z",spot97);
-        // à remplacer par deux listes utilisées dans defineExits
-        
-        
-        
-
          
     }
     
-       /**
+    /**
      * Print out the opening message for the player.
      */
     private String printWelcome()
     {
-        // System.out.println();
-        // System.out.println("Welcome to the World of Zuul!");
-        // System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        // System.out.println("Type 'help' if you need help.");
-        // System.out.println();
-        // System.out.println("You are " + currentSpot.getDescription());
-        // System.out.print("Exits: ");
-        // if(currentRoom.northExit != null)
-            // System.out.print("Z");
-        // if(currentRoom.eastExit != null)
-            // System.out.print("D");
-        // if(currentRoom.southExit != null)
-            // System.out.print("S");
-        // if(currentRoom.westExit != null)
-            // System.out.print("Q");
-        // System.out.println();
+        return "welcome";
     }
+    
     /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
     {            
-        
         printWelcome();
 
         while (! finished) {
@@ -317,45 +286,46 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
         
-    /**
-     *  Defines the exits of a spot. 
-     */
-    public void defineExits(ArrayList<String> listDirection, ArrayList<Spot> listSpot) 
-    {
-        //for len de listDreiction
-            //this.setExits(listDirection[i],listSpot[i]
-    }
-    
      /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
      */
     public void exitAndStart()
     {
-    }
-    
-     /**
-     * Get the Monsters and his Spot.
-     */
-    public HashMap<String,Integer> getMonsters()
-    {
-        return monsters;
-         
+        listSpot.get(0).setStartSpot();
+        setCurrentSpot(listSpot.get(0));
+        listSpot.get(6).setExitSpot();
     }
     
     /**
-     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
+     *  Get the Player
      */
-    public void placePlayer(Player player, int spotIndex)
-    {
-         
+    public Player getPlayer() 
+    { 
+        return theseus;
+    }
+
+    /**
+     *  add player to current spot
+     */
+    public void addToCurrentSpot(Player player) 
+    { 
+        for (int i = 0; i < listSpot.size(); i++) { 
+           if (listSpot.get(i) == currentSpot){
+            listSpot.get(i).addCharacterSpot(theseus); //player is placed at current spot, which is the start position  
+            }
+        }
     }
     
     /**
-     * Places a lesser Monster in the adequate Spot. Each monster has only one spot. 
+     *  add item to current spot
      */
-    public void placeMonster(Monster monster, int spotIndex)
-    {
-         
+    public void addItemToCurrentSpot(Item item) 
+    { 
+        for (int i = 0; i < listSpot.size(); i++) { 
+           if (listSpot.get(i) == currentSpot){
+            listSpot.get(i).addItemSpot(item);  
+            }
+        }
     }
     
     /**
@@ -363,7 +333,9 @@ public class Game
      */
     public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
-         
+         for (int i = 0; i < spotIndexList.size(); i++) { 
+              listSpot.get(spotIndexList.get(i)).addItemSpot(item);
+          }
     }
      
     /**
@@ -389,6 +361,7 @@ public class Game
     { 
         finished= false;
     }
+    
     /**
      *  Get the room where the player is 
      */
@@ -405,10 +378,10 @@ public class Game
         currentSpot = currentS;         
     }
     
-     /**
+    /**
      *  Get the list of spots of the labyrinth 
      */
-    public ArrayList getListSpot() 
+    public ArrayList<Spot> getListSpot() 
     { 
         return listSpot;         
     }
@@ -417,17 +390,39 @@ public class Game
      * Gets the adjacent spot at a specific direction 
      * 
      */
-    public Spot chooseDirection() 
+    public Spot chooseDirection(String direction) 
     { 
-        return listSpot.get(2);//spot adjacent
+        return currentSpot.getExits(direction);
     }
     /**
-     * Changes the current spot to the spot according to the direction given
-     * 
+     * Changes the current spot to the spot according to the direction given. 
+     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot a fight starts without giving the player a choice.
      */
     public void move(Spot spot) 
     { 
-               
+        setCurrentSpot(spot);
+        addToCurrentSpot(theseus); //move the player to the defined spot
+        
+        for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
+           if (listSpot.get(i).getMonster()!=null) { //|| listSpot.get(i).getMonster().getAggressive()
+                Random rand = new Random();
+                int dirIndex = rand.nextInt(3); 
+                listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
+                switch(dirIndex){
+                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
+                    
+                    case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
+                   
+                    case 2: listSpot.get(i).getExits("S").addCharacterSpot(listSpot.get(i).getMonster());
+                    
+                    default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
+                }
+           }
+        }
+        
+        if (spot.getMonster()!=null){
+           fight();
+        }   
     }
     /**
      * gets the choice of the player to fight the monster or to run away.
@@ -447,7 +442,7 @@ public class Game
     }
     
     /**
-     * The fight starts. it ends when one the characters dies
+     * The fight starts. it ends when one of the characters dies
      * 
      */
     public void fight() 
@@ -462,7 +457,7 @@ public class Game
     public Character whoBegins() 
     { 
        
-        return Theseus;   
+        return theseus;   
     }
     
     /**
@@ -502,7 +497,7 @@ public class Game
           
     }
     /**
-     *  All mosters become aggressive and start chasing you.
+     *  All monsters become aggressive and start chasing you.
      * 
      */
     public void setAggressiveAll() 
@@ -518,6 +513,24 @@ public class Game
     public boolean getAggressiveAll() 
     { 
         return false;        
+    }
+    
+    /**
+     * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
+     * 
+     */
+    public void setWin(boolean win) 
+    { 
+                
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public boolean getWin() 
+    { 
+       return true;         
     }
     
     /**
@@ -548,6 +561,32 @@ public class Game
     }
     
     /**
+     * Kills monster
+     * 
+     */
+    public void monsterDead(LesserBoss lesser)
+    {
+       for (int i = 0; i < listSpot.size(); i++) { // parcourir la liste pour récupérer la valeur monstre
+           if (listSpot.get(i).getMonster()!=null) {
+           listSpot.get(i).addItemSpot(lesser.getPossessedLegendary()); //the monster drops the item in the spot
+           listSpot.get(i).removeCharacterSpot(lesser); //the monster dies and disappears from the spot
+           break;
+           }
+       }
+    }
+    
+    /**
+     * player drops item
+     * 
+     */
+    public void playerDropItem(Item itemDrop)
+    {
+        theseus.dropItem(itemDrop);
+        addItemToCurrentSpot(itemDrop);
+        
+    }
+    
+    /**
      * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
      * 
      */
@@ -556,12 +595,6 @@ public class Game
                 
     }
     
-    
-    
-
-    
-
- 
 
     
 }

@@ -24,7 +24,7 @@ public class SpotTest
     private Legendary it1, it2, it3;
     private Common it4, it5, it6;
     private Player player, player1;
-    private LesserBoss monster1, monster; 
+    private LesserBoss monster1, monster, monster3; 
     private Boss monster2; 
     private Spot spot, neighbor, anotherSpot, neighbor1, neighbor2, neighbor3;
       
@@ -54,12 +54,12 @@ public class SpotTest
         player= new Player(20, "player", 1, 2,2);
         monster1= new LesserBoss(30,"Chimera", 0, 2,2, "io", it1);  
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
-        spot = new Spot(characterInSpot, objectInSpot);
-        neighbor = new Spot(characterInSpot, objectInSpot);
-        neighbor1 = new Spot(characterInSpot, objectInSpot);
-        neighbor2 = new Spot(characterInSpot, objectInSpot);
-        neighbor3 = new Spot(characterInSpot, objectInSpot);
-        anotherSpot = new Spot(characterInSpot, objectInSpot);
+        spot = new Spot();
+        neighbor = new Spot();
+        neighbor1 = new Spot();
+        neighbor2 = new Spot();
+        neighbor3 = new Spot();
+        anotherSpot = new Spot();
     }
 
     /**
@@ -409,6 +409,56 @@ public class SpotTest
         assertEquals(0,spot.getListCharacter().size());
         assertTrue(test);
     }
+    
+    /**
+     * Test that when there is a monster in a spot, the method
+     * getMonster gives the monster
+     */
+    @Test
+    public void testGetMonster()
+    {
+        spot.addCharacterSpot(monster1); 
+        assertEquals(monster1,spot.getMonster());
+    }
+    
+    /**
+     * That that when there is only a player in a spot,
+     * the method getMonster returns nothing
+     */
+    @Test
+    public void testGetNoMonster()
+    {
+        spot.addCharacterSpot(player);
+        assertNotEquals(player, spot.getMonster());
+        assertNull(spot.getMonster());
+    }
+    
+    /**
+     * Test that when there is a player in a spot, the method
+     * getPlayer gives the player
+     */
+    @Test
+    public void testGetPlayer()
+    {
+        spot.addCharacterSpot(player); 
+        assertEquals(player,spot.getPlayer());
+        assertNotNull(spot.getPlayer());
+    }
+    
+    /**
+     * Test that when there is no player in the room,
+     * the method returns nothing
+     */
+    @Test
+    public void testGetNoPlayer()
+    {
+        assertNull(spot.getPlayer());
+        spot.addCharacterSpot(monster1); 
+        assertNotEquals(player,spot.getPlayer());
+        assertNull(spot.getPlayer());
+        assertNotEquals(monster1,spot.getPlayer());
+    }
+    
 
     // /**
      // * Test to verify it is possible to set the boolean fighting to true if there are 2
