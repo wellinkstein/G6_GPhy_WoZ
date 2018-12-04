@@ -265,35 +265,19 @@ public class Game
          
     }
     
-       /**
+    /**
      * Print out the opening message for the player.
      */
     private String printWelcome()
     {
-        // System.out.println();
-        // System.out.println("Welcome to the World of Zuul!");
-        // System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        // System.out.println("Type 'help' if you need help.");
-        // System.out.println();
-        // System.out.println("You are " + currentSpot.getDescription());
-        // System.out.print("Exits: ");
-        // if(currentRoom.northExit != null)
-            // System.out.print("Z");
-        // if(currentRoom.eastExit != null)
-            // System.out.print("D");
-        // if(currentRoom.southExit != null)
-            // System.out.print("S");
-        // if(currentRoom.westExit != null)
-            // System.out.print("Q");
-        // System.out.println();
         return "welcome";
     }
+    
     /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
     {            
-        
         printWelcome();
 
         while (! finished) {
@@ -302,8 +286,6 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
         
-    
-    
      /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
      */
@@ -313,8 +295,6 @@ public class Game
         setCurrentSpot(listSpot.get(0));
         listSpot.get(6).setExitSpot();
     }
-    
- 
     
     /**
      *  Get the Player
@@ -332,6 +312,18 @@ public class Game
         for (int i = 0; i < listSpot.size(); i++) { 
            if (listSpot.get(i) == currentSpot){
             listSpot.get(i).addCharacterSpot(theseus); //player is placed at current spot, which is the start position  
+            }
+        }
+    }
+    
+    /**
+     *  add item to current spot
+     */
+    public void addItemToCurrentSpot(Item item) 
+    { 
+        for (int i = 0; i < listSpot.size(); i++) { 
+           if (listSpot.get(i) == currentSpot){
+            listSpot.get(i).addItemSpot(item);  
             }
         }
     }
@@ -369,6 +361,7 @@ public class Game
     { 
         finished= false;
     }
+    
     /**
      *  Get the room where the player is 
      */
@@ -385,7 +378,7 @@ public class Game
         currentSpot = currentS;         
     }
     
-     /**
+    /**
      *  Get the list of spots of the labyrinth 
      */
     public ArrayList<Spot> getListSpot() 
@@ -417,26 +410,19 @@ public class Game
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
                 switch(dirIndex){
                     case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
-                    break;
-
+                    
                     case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
-                    break;
-
+                   
                     case 2: listSpot.get(i).getExits("S").addCharacterSpot(listSpot.get(i).getMonster());
-                    break;
-
+                    
                     default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
-                    break;
                 }
            }
- 
-         }
+        }
         
         if (spot.getMonster()!=null){
-        fight();
-        }
-            
-        
+           fight();
+        }   
     }
     /**
      * gets the choice of the player to fight the monster or to run away.
@@ -578,22 +564,26 @@ public class Game
      * Kills monster
      * 
      */
-    public void monsterDead()
+    public void monsterDead(LesserBoss lesser)
     {
-          // parcourir la liste pour récupérer la valeur monstre
-    // addItem(monstre.getLegendary())
-    // removecharactermonstre()
-
+       for (int i = 0; i < listSpot.size(); i++) { // parcourir la liste pour récupérer la valeur monstre
+           if (listSpot.get(i).getMonster()!=null) {
+           listSpot.get(i).addItemSpot(lesser.getPossessedLegendary()); //the monster drops the item in the spot
+           listSpot.get(i).removeCharacterSpot(lesser); //the monster dies and disappears from the spot
+           break;
+           }
+       }
     }
     
     /**
-     * Kills monster
+     * player drops item
      * 
      */
-    public void playerDropItem(Item itemDop)
+    public void playerDropItem(Item itemDrop)
     {
-        //player.dropItem(itemDrop);
-        //currentSpot.addItem(itemDrop);
+        theseus.dropItem(itemDrop);
+        addItemToCurrentSpot(itemDrop);
+        
     }
     
     /**
