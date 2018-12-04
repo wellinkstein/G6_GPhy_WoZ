@@ -148,7 +148,7 @@ public class GameTest
         //myGame.getCurrentSpot().addCharacterSpot(player); 
         myGame.move(myGame.getListSpot().get(6)); 
        // myGame.getCurrentSpot().addCharacterSpot(monster);
-        myGame.monsterDead();
+        myGame.monsterDead(myGame.getListSpot().get(6));
         assertEquals(null, myGame.getListSpot().get(6).getMonster());
         assertEquals(true, myGame.getListSpot().get(6).getListItem().contains(legendary)); 
         
