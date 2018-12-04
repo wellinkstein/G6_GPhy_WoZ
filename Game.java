@@ -26,6 +26,7 @@ public class Game
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;
     private Player theseus;
+    private boolean win;
     /** 
      * Create the game and initialise its internal map.
      */
@@ -274,7 +275,7 @@ public class Game
     }
     
     /**
-     *  Main play routine.  Loops until end of play.
+     *  Main play routine.  Loops until end of play. linked to the interface
      */
     public void play() 
     {            
@@ -309,11 +310,7 @@ public class Game
      */
     public void addToCurrentSpot(Player player) 
     { 
-        for (int i = 0; i < listSpot.size(); i++) { 
-           if (listSpot.get(i) == currentSpot){
-            listSpot.get(i).addCharacterSpot(theseus); //player is placed at current spot, which is the start position  
-            }
-        }
+        currentSpot.addCharacterSpot(theseus); //player is placed at current spot, which is the start position
     }
     
     /**
@@ -321,11 +318,7 @@ public class Game
      */
     public void addItemToCurrentSpot(Item item) 
     { 
-        for (int i = 0; i < listSpot.size(); i++) { 
-           if (listSpot.get(i) == currentSpot){
-            listSpot.get(i).addItemSpot(item);  
-            }
-        }
+        currentSpot.addItemSpot(item);
     }
     
     /**
@@ -404,19 +397,13 @@ public class Game
         addToCurrentSpot(theseus); //move the player to the defined spot
         
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
-           if (listSpot.get(i).getMonster()!=null) { //|| listSpot.get(i).getMonster().getAggressive()
+           if (listSpot.get(i).getLesserBoss()!=null && listSpot.get(i).getLesserBoss().getAggressive()) { //
                 Random rand = new Random();
-                int dirIndex = rand.nextInt(3); 
+                ArrayList<String> listExits = listSpot.get(i).getSpotExitable();
+                int dirIndex = rand.nextInt(listExits.size()-1); 
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
-                switch(dirIndex){
-                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
-                    
-                    case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
-                   
-                    case 2: listSpot.get(i).getExits("S").addCharacterSpot(listSpot.get(i).getMonster());
-                    
-                    default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
-                }
+                listSpot.get(i).getExits(listExits.get(dirIndex)).addCharacterSpot(listSpot.get(i).getMonster());
+                
            }
         }
         
@@ -424,6 +411,7 @@ public class Game
            fight();
         }   
     }
+    
     /**
      * gets the choice of the player to fight the monster or to run away.
      * 
@@ -447,6 +435,18 @@ public class Game
      */
     public void fight() 
     { 
+          whoBegins();
+          while (fighter.HP!=0){
+              inflictDamage();
+              if (fighter==theseus){
+                  criticalHit();
+              }
+              setFighter(fighter);
+          }
+          if (fighter==theseus) { 
+              setWinTrue();
+          }
+          else setWinFalse(); 
           
     }
     
@@ -456,8 +456,20 @@ public class Game
      */
     public Character whoBegins() 
     { 
-       
-        return theseus;   
+        if (theseus.getHermesSandals()){
+            fighter=theseus;
+        }
+        else
+        {
+            Random rand = new Random();
+            int beginner = rand.nextInt(1); 
+            
+            switch(beginner){
+             case 0: fighter = currentSpot.getMonster();
+             default: fighter = theseus;  
+            }
+        }
+        return fighter;   
     }
     
     /**
@@ -466,15 +478,20 @@ public class Game
      */
     public void inflictDamage() 
     { 
-          
+          for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+          {
+            if (currentSpot.getListCharacter().get(i) != fighter){
+                currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage()); 
+            }
+          }
     }
     
   
-     /**
+    /**
      * 
      * 
      */
-    public void criticialHit() 
+    public void criticalHit() 
     { 
           
     }
@@ -483,47 +500,52 @@ public class Game
      * Changes the fighter to a designed character
      * 
      */
-    public void setFighter( Character character) 
+    public void setFighter( Character fighter) 
     { 
-          
+        if (fighter==theseus){
+            fighter=currentSpot.getMonster();
+        }
+        else{
+            fighter=theseus;
+        }
     }
     
     /**
      * Gets the currently designed fighter 
      * 
      */
-    public void getFighter( Character character) 
+    public Character getFighter() 
     { 
-          
+          return fighter;
     }
+    
     /**
      *  All monsters become aggressive and start chasing you.
      * 
      */
     public void setAggressiveAll() 
     { 
-                
-    }
-    
-    
-    /**
-     * gets if every monster is aggressive
-     * 
-     */
-    public boolean getAggressiveAll() 
-    { 
-        return false;        
+        for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe 
+        listSpot.get(i).getLesserBoss().setAggressiveTrue();
+        }
     }
     
     /**
      * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
      * 
      */
-    public void setWin(boolean win) 
+    public void setWinTrue() 
     { 
-                
+        win=true;        
     }
-    
+    /**
+     * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
+     * 
+     */
+    public void setWinFalse()  
+    { 
+        win=false;         
+    }
     /**
      * 
      * 
@@ -561,18 +583,32 @@ public class Game
     }
     
     /**
-     * Kills monster
+     * Kills lesserBoss
      * 
      */
-    public void monsterDead(LesserBoss lesser)
+    public void monsterDead()
     {
-       for (int i = 0; i < listSpot.size(); i++) { // parcourir la liste pour récupérer la valeur monstre
-           if (listSpot.get(i).getMonster()!=null) {
-           listSpot.get(i).addItemSpot(lesser.getPossessedLegendary()); //the monster drops the item in the spot
-           listSpot.get(i).removeCharacterSpot(lesser); //the monster dies and disappears from the spot
-           break;
+           currentSpot.addItemSpot(currentSpot.getLesserBoss().getPossessedLegendary()); //the monster drops the item in the spot
+           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+    }
+    
+    /**
+     * Kills lesserBoss
+     * 
+     */
+    public void bossDead()
+    {
+           //the monster drops the item in the spot
+           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+           theseus.setTrueTimeToGo();
+           if (theseus.getThread()){
+             youWon();
+             setFinishedTrue();
            }
-       }
+           else{
+             setAggressiveAll(); 
+           }
+            
     }
     
     /**
@@ -583,7 +619,6 @@ public class Game
     {
         theseus.dropItem(itemDrop);
         addItemToCurrentSpot(itemDrop);
-        
     }
     
     /**
