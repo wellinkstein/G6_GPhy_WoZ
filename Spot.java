@@ -380,10 +380,9 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        //if (getIfCharacterInSpot(character)==false && numberOfMonsterInSpot()<=6){   
+        if (numberOfMonsterInSpot()<=1){   
         this.characterInSpot.add(character); 
-        //setFighting();
-        // }
+        }
     }
 
     /**
@@ -529,28 +528,4 @@ public class Spot
         }
         return returnString;
     }
-
-    // /**
-    // * getFighting, true when two characters (1 player and 1 monster) are in the same spot.
-    // * False if there is no character or only one.
-    // * @return boolean
-    // */
-    // public boolean getFighting()
-    // {
-    // return(this.fighting);
-    // }
-
-    // /**
-    // * setFighting, become true when a player and a monster are in the same spot.
-    // * It is reset to false once a character dies.
-    // */
-    // public void setFighting()
-    // {
-    // if (this.getListCharacter().size()==2){
-    // this.fighting = true; 
-    // }
-    // else{
-    // this.fighting = false;
-    // }
-    // }
 }

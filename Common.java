@@ -9,6 +9,11 @@ public class Common extends Item
 
     /**
      * Constructor of a common item
+     * @param String itemName: name of the item
+     * @param String des: description of the item
+     * @param int dam: value of item's damage
+     * @param int HG: health gain by item
+     * @param int prot: protection value of item
      */
     public Common (String itemName, String des, int dam, int HG, int prot )
     {
