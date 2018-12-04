@@ -10,16 +10,16 @@ import java.util.*;
 public abstract class Character
 {
     
-    protected int HP;
+    protected int hP;
     //HP is an attribute which reflects health points.
     //HP cannot be below 0, if HP is 0 the character dies.
-    private String Name;
+    private String name;
     // The name of the character
     protected int xp;
     //The XP of the character, XP can be gained, not lost
-    private int Damage;
+    private int damage;
     //This attribute represents the damage that a character inflicts in a single hit
-    private int Protection;
+    private int protection;
     //This attribute represent the damage reduction of the character
     protected ArrayList<Item> inventory = new ArrayList<Item>();
     //A list of items that the character possesses
@@ -34,11 +34,11 @@ public abstract class Character
      */
     public Character(int myHP, String myName, int myXp, int myDamage, int myProtection)
     {
-        HP = myHP;
-        Name = myName;
+        hP = myHP;
+        name = myName;
         xp = myXp;
-        Damage = myDamage;
-        Protection = myProtection;
+        damage = myDamage;
+        protection = myProtection;
     }
     
     /**
@@ -47,7 +47,7 @@ public abstract class Character
      */
     public int getHP()
     {
-        return HP;
+        return hP;
     }
     
     /**
@@ -65,7 +65,7 @@ public abstract class Character
      */
     public String getName()
     {
-        return Name;
+        return name;
     }
     
     /**
@@ -74,7 +74,7 @@ public abstract class Character
      */
     public int getDamage()
     {
-        return Damage;
+        return damage;
     }
     
     /**
@@ -83,7 +83,7 @@ public abstract class Character
      */
     public int getProtection()
     {
-        return Protection;
+        return protection;
     }
     
     /**
@@ -106,13 +106,13 @@ public abstract class Character
     {
         if(damage>0)
         {
-            if((HP-damage)<0)
+            if((hP-damage)<0)
             {
-                HP=0;
+                hP=0;
             }
             else
             {
-                HP-=damage;
+                hP-=damage;
             }
         }
     }
@@ -136,7 +136,7 @@ public abstract class Character
      */
     protected void setHp(int setHp)
     {
-        HP=setHp;
+        hP=setHp;
     }
     
     /**
@@ -154,11 +154,11 @@ public abstract class Character
      * To increase damage, the increase amount must be a positive value
      * @param int DamageIncrease: increase value of damage
      */
-     public void increaseDamage(int DamageIncrease)
+     public void increaseDamage(int damageIncrease)
      {
-         if(DamageIncrease>=0)
+         if(damageIncrease>=0)
         {
-            Damage+=DamageIncrease;
+            damage+=damageIncrease;
         }
      }
      
@@ -168,11 +168,11 @@ public abstract class Character
      * To increase Protection, the increase amount must be a positive value
      * @param int ProtectionIncrease: increase protection by the value
      */
-     public void increaseProtection(int ProtectionIncrease)
+     public void increaseProtection(int protectionIncrease)
      {
-        if(ProtectionIncrease>=0)
+        if(protectionIncrease>=0)
         {
-            Protection+=ProtectionIncrease;
+            protection+=protectionIncrease;
         }
      }
      
@@ -182,17 +182,17 @@ public abstract class Character
     * To decrease damage, the decrease amount must be a positive value
     * @param int DamageDecrease: decrease damage by the value
     */
-    public void decreaseDamage(int DamageDecrease)
+    public void decreaseDamage(int damageDecrease)
     {
-        if(DamageDecrease>=0)
+        if(damageDecrease>=0)
         {
-            if((Damage-DamageDecrease)<0)
+            if((damage-damageDecrease)<0)
             {
-                Damage=0;
+                damage=0;
             }
             else
             {
-               Damage-=DamageDecrease; 
+               damage-=damageDecrease; 
             }
         }
     }
@@ -203,17 +203,17 @@ public abstract class Character
     * To decrease protection, the decrease amount must be a positive value
     * @param int ProtectionDecrease: decreases Protection by value
     */
-    public void decreaseProtection(int ProtectionDecrease)
+    public void decreaseProtection(int protectionDecrease)
     {
-        if(ProtectionDecrease>=0)
+        if(protectionDecrease>=0)
         {
-            if((Protection-ProtectionDecrease)<0)
+            if((protection-protectionDecrease)<0)
             {
-                Protection=0;
+                protection=0;
             }
             else
             {
-               Protection-=ProtectionDecrease; 
+               protection-=protectionDecrease; 
             }
         }
     }
