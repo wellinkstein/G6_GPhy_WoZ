@@ -380,15 +380,10 @@ public class Spot
      */
     public void addCharacterSpot(Character character)
     {   
-        if(getIfCharacterInSpot(character)==false)
+        if(getIfCharacterInSpot(character)==false || numberOfMonsterInSpot()==0)
         {
             this.characterInSpot.add(character);
         }
-        else if(
-            numberOfMonsterInSpot()<=1){
-        this.characterInSpot.add(character); 
-        
-    }
     }
 
     /**
@@ -404,7 +399,6 @@ public class Spot
         {
             return(false); 
         }
-
     }
 
     /**
@@ -517,10 +511,10 @@ public class Spot
     
     /**
      * Return player in the spot. If there is no player in that spot,
-     * the method returns nothing.
-     * @return Character chracter: returns the player in the spot
+     * the method returns null.
+     * @return Player character: returns the player in the spot
      */
-    public Character getPlayer()
+    public Player getPlayer()
     {
         for (int i =0; i<this.getListCharacter().size(); i++){
             // if(this.getListCharacter().get(i).getName()!= "Chimera" && this.getListCharacter().get(i).getName()!= "Cerberus" 
@@ -529,7 +523,7 @@ public class Spot
                 // return(this.getListCharacter().get(i));
             // }  
             if( this.getListCharacter().get(i).getName()=="Theseus"){
-                return (this.getListCharacter().get(i));
+                return ((Player)this.getListCharacter().get(i));
             }
         }
         return(null);        
