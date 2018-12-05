@@ -33,20 +33,24 @@ public class Scrolling extends JPanel
     private JButton myButton3 = new JButton("South");
     private JButton myButton4 = new JButton("West");
     private JFrame myFrame;
-    private JPanel bigPanel,wholePanel;
+    private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9;
     
     public Scrolling()
     {
         main();
+        
     }
     
     public void main ()
     {
+        CurrentSpot = new Spot();
         CurrentSpot.setExits("North",myTestSpotN);
         CurrentSpot.setExits("South",myTestSpotS);
         CurrentSpot.setExits("East",myTestSpotE);
         CurrentSpot.setExits("West",myTestSpotW);
+        
+        //System.out.println("Initialise -- "+CurrentSpot);
         
         myTestSpotN.setExits("East",myTestSpotNE);
         myTestSpotN.setExits("West",myTestSpotNW);
@@ -88,8 +92,7 @@ public class Scrolling extends JPanel
         myTestSpotSE.setImageSpot("14.png");
         myTestSpotSW.setImageSpot("12.png");
         
-        //myFrame = new JFrame("Mon Scrolling");
-        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
         
@@ -167,12 +170,8 @@ public class Scrolling extends JPanel
         setVisible(true);
     }
     
-    public JPanel getPanel()
-    {
-        return wholePanel;
-    }
     
-    public void updateUI()
+    public void updateUI(Spot CurrentSpot)
     {
         if(CurrentSpot.getExits("North") != null)
         {
@@ -218,22 +217,22 @@ public class Scrolling extends JPanel
         if(e.getSource() == myButton1)
         {
             CurrentSpot = CurrentSpot.getExits("North");
-            updateUI();
+            updateUI(CurrentSpot);
         }
         else if(e.getSource() == myButton2)
         {
             CurrentSpot = CurrentSpot.getExits("East");
-            updateUI();
+            updateUI(CurrentSpot);
         }
         else if(e.getSource() == myButton3)
         {
             CurrentSpot = CurrentSpot.getExits("South");
-            updateUI();
+            updateUI(CurrentSpot);
         }
         else if(e.getSource() == myButton4)
         {
             CurrentSpot = CurrentSpot.getExits("West");
-            updateUI();
+            updateUI(CurrentSpot);
         }
         else
         {
