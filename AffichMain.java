@@ -17,6 +17,7 @@ import java.util.Set;
 public class AffichMain extends JFrame
 {
     private JFrame myFrame;
+    private Game myGame; 
     private JPanel panelVarious, panelDescriptionItem, panelListItem;
     public void main()
     {
@@ -25,8 +26,7 @@ public class AffichMain extends JFrame
         myFrame.add(new Scrolling());
         panelVarious= new JPanel();
         panelListItem = new SpotItem();
-        
-        
+        myGame = new Game();  
         
         myFrame.pack();
         myFrame.setVisible(true);
