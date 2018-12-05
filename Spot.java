@@ -66,7 +66,7 @@ public class Spot
     public void setExits(String direction, Spot neighbor)
     {
         boolean exist=false; 
-        if (this.getNumberExits()<4)
+        if (getNumberExits()<4)
         {
             for (Map.Entry mapentry: this.getAllExit().entrySet())
             {
@@ -91,13 +91,13 @@ public class Spot
      */
     public void removeExits(String direction, Spot neighbor)
     {
-        for (Map.Entry mapentry: this.getAllExit().entrySet())
+        for (Map.Entry mapentry: getAllExit().entrySet())
         {
             if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
             {
                 exits.remove(direction, neighbor); 
             }
-            if(this.getNumberExits()==0)
+            if(getNumberExits()==0)
             {
                 spotCorrect = false;
             }
@@ -113,7 +113,7 @@ public class Spot
      */
     public boolean getCorrect()
     {
-        return(this.spotCorrect);
+        return(spotCorrect);
     }
 
     /**
@@ -122,7 +122,7 @@ public class Spot
      */
     public String getImageSpot()
     {
-        return(this.imageSpot);
+        return(imageSpot);
     }
 
     /**
@@ -131,7 +131,7 @@ public class Spot
      */
     public void setImageSpot(String imageSpot)
     {
-        this.imageSpot = imageSpot;
+        imageSpot = imageSpot;
     }
 
     /**
@@ -259,7 +259,7 @@ public class Spot
      */
     public int getNumberMaxItem()
     {
-        return(this.numberMaxItem);
+        return(numberMaxItem);
     }
 
     /**
@@ -288,7 +288,7 @@ public class Spot
      */
     public int getNumberExits()
     {
-        return(this.exits.size());
+        return(exits.size());
     }
 
     /**
@@ -321,7 +321,7 @@ public class Spot
      */
     public boolean getExitSpot()
     {
-        return(this.exitSpot);
+        return(exitSpot);
     }
 
     /**
@@ -329,7 +329,7 @@ public class Spot
      */
     public void setExitSpot()
     {
-        this.exitSpot=true;
+        exitSpot=true;
     }
 
     /**
@@ -338,7 +338,7 @@ public class Spot
      */
     public boolean getStartSpot()
     {
-        return(this.startSpot);
+        return(startSpot);
     }
 
     /**
@@ -346,7 +346,7 @@ public class Spot
      */
     public void setStartSpot()
     {
-        this.startSpot=true;
+        startSpot=true;
     }
 
     /**
@@ -397,7 +397,7 @@ public class Spot
     {   
         if(getIfCharacterInSpot(character)==false || numberOfMonsterInSpot()==0)
         {
-            this.characterInSpot.add(character);
+            characterInSpot.add(character);
         }
     }
 
@@ -406,7 +406,7 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean getIfCharacterInSpot(Character character){
-        if(this.getListCharacter().contains(character)) 
+        if(getListCharacter().contains(character)) 
         {
             return (true); 
         }
@@ -431,7 +431,7 @@ public class Spot
      */
     public int numberOfMonsterInSpot(){
         int number=0; 
-        for (Character character : this.characterInSpot){
+        for (Character character : characterInSpot){
             if(character.getName()== "Chimera" || character.getName()== "Cerberus" ||character.getName()== "Medusa" 
             || character.getName()== "Cyclops" || character.getName()== "Arachne"|| character.getName()=="Minotaur"){
                 number++; 
@@ -476,13 +476,13 @@ public class Spot
      */
     public Monster getMonster()
     {
-        for (int i =0; i<this.getListCharacter().size(); i++){
+        for (int i =0; i<getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
-            if(this.getListCharacter().get(i).getName()== "Chimera" || this.getListCharacter().get(i).getName()== "Cerberus" 
-            ||this.getListCharacter().get(i).getName()== "Medusa" 
-            || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"
-            || this.getListCharacter().get(i).getName()=="Minotaur"){
-                return((Monster)this.getListCharacter().get(i));
+            if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
+            ||getListCharacter().get(i).getName()== "Medusa" 
+            || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"
+            || getListCharacter().get(i).getName()=="Minotaur"){
+                return((Monster)getListCharacter().get(i));
             }  
         }
         return(null);
@@ -496,12 +496,12 @@ public class Spot
      */
     public LesserBoss getLesserBoss()
     {
-        for (int i =0; i<this.getListCharacter().size(); i++){
+        for (int i =0; i<getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
-            if(this.getListCharacter().get(i).getName()== "Chimera" || this.getListCharacter().get(i).getName()== "Cerberus" 
-            ||this.getListCharacter().get(i).getName()== "Medusa" 
-            || this.getListCharacter().get(i).getName()== "Cyclops" || this.getListCharacter().get(i).getName()== "Arachne"){
-                return((LesserBoss)this.getListCharacter().get(i));
+            if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
+            ||getListCharacter().get(i).getName()== "Medusa" 
+            || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"){
+                return((LesserBoss)getListCharacter().get(i));
             }  
         }
         return(null);
@@ -514,10 +514,10 @@ public class Spot
      */
     public Boss getBoss()
     {
-        for (int i =0; i<this.getListCharacter().size(); i++){
+        for (int i =0; i<getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
-            if(this.getListCharacter().get(i).getName()== "Minotaur"){
-                return((Boss)this.getListCharacter().get(i));
+            if(getListCharacter().get(i).getName()== "Minotaur"){
+                return((Boss)getListCharacter().get(i));
             }  
         }
         return(null);
@@ -531,14 +531,14 @@ public class Spot
      */
     public Player getPlayer()
     {
-        for (int i =0; i<this.getListCharacter().size(); i++){
+        for (int i =0; i<getListCharacter().size(); i++){
             // if(this.getListCharacter().get(i).getName()!= "Chimera" && this.getListCharacter().get(i).getName()!= "Cerberus" 
             // && this.getListCharacter().get(i).getName()!= "Medusa" && this.getListCharacter().get(i).getName()!= "Cyclops" 
             // && this.getListCharacter().get(i).getName()!= "Arachne" && this.getListCharacter().get(i).getName()!="Minotaur"){
                 // return(this.getListCharacter().get(i));
             // }  
-            if( this.getListCharacter().get(i).getName()=="Theseus"){
-                return ((Player)this.getListCharacter().get(i));
+            if(getListCharacter().get(i).getName()=="Theseus"){
+                return ((Player)getListCharacter().get(i));
             }
         }
         return(null);        

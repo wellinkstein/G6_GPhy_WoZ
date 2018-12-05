@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,7 +13,7 @@ public class DialogScreenInterface extends JFrame
 {
     
     private JButton buttonClose;
-    private JPanel myPanel;
+    private JPanel myPanel1, myPanel2, myPanel;
     private JLabel dialog;
 
     /**
@@ -24,18 +25,24 @@ public class DialogScreenInterface extends JFrame
         myFrame = new JFrame("Dialog Screen");
         
         buttonClose = new JButton("Close");
-        buttonClose.setSize(80,20);
         
         dialog = new JLabel("Test");
         
         myPanel = new JPanel();
         
-        myPanel.setLayout(new BorderLayout(0,1));
+        myPanel.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
         
-        myPanel.add(dialog, BorderLayout.NORTH);
-        myPanel.add(buttonClose, BorderLayout.SOUTH);
+        c.fill = GridBagConstraints.VERTICAL;
+        c.anchor = GridBagConstraints.CENTER;
+        //c.weighty = 0.95;
+        myPanel.add(dialog, c);
         
-        
+        c.fill = GridBagConstraints.VERTICAL;
+        //c.weighty = 0.05;
+        c.anchor = GridBagConstraints.CENTER;
+        myPanel.add(buttonClose, c);
+
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.add(myPanel);
         myFrame.pack();
