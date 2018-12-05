@@ -270,7 +270,7 @@ public class Game
      * Print out the opening message for the player.
      * @return String: return a message for the player
      */
-    private String printWelcome()
+    public String printWelcome()
     {
         return "Hello Theseus! \n Your mission is to explore the labyrinth, find the Minotaur, kill it";
     }
@@ -294,7 +294,7 @@ public class Game
     public void exitAndStart()
     {
         listSpot.get(0).setStartSpot();
-        setCurrentSpot(listSpot.get(0));
+        setCurrentSpot(this.listSpot.get(0));
         listSpot.get(6).setExitSpot();
     }
     
