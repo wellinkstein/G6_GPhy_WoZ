@@ -19,11 +19,15 @@ public class AffichMain extends JFrame
     private JFrame myFrame;
     private Game myGame; 
     private JPanel panelVarious, panelDescriptionItem, panelListItem;
+    private Spot newSpot;
     public void main()
     {
+        newSpot = new Spot();
+        newSpot.setImageSpot("1234.png");
+        
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.add(new Scrolling());
+        myFrame.add(new Scrolling(newSpot));
         panelVarious= new JPanel();
         panelListItem = new SpotItem();
         myGame = new Game();  
@@ -32,4 +36,7 @@ public class AffichMain extends JFrame
         myFrame.setVisible(true);
     }
     
+    public Game getGame(){
+        return myGame;
+    }
 }

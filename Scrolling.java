@@ -36,62 +36,15 @@ public class Scrolling extends JPanel
     private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9;
     
-    public Scrolling()
+    public Scrolling(Spot myNewSpot)
     {
-        main();
+        main(myNewSpot);
         
     }
     
-    public void main ()
+    public void main (Spot myNewSpot)
     {
-        CurrentSpot = new Spot();
-        CurrentSpot.setExits("North",myTestSpotN);
-        CurrentSpot.setExits("South",myTestSpotS);
-        CurrentSpot.setExits("East",myTestSpotE);
-        CurrentSpot.setExits("West",myTestSpotW);
-        
-        //System.out.println("Initialise -- "+CurrentSpot);
-        
-        myTestSpotN.setExits("East",myTestSpotNE);
-        myTestSpotN.setExits("West",myTestSpotNW);
-        myTestSpotN.setExits("South",CurrentSpot);
-        
-        myTestSpotE.setExits("North",myTestSpotNE);
-        myTestSpotE.setExits("West",CurrentSpot);
-        myTestSpotE.setExits("South",myTestSpotSE);
-        
-        
-        myTestSpotW.setExits("North",myTestSpotNW);
-        myTestSpotW.setExits("South",myTestSpotSW);
-        myTestSpotW.setExits("East",CurrentSpot);
-        
-        myTestSpotS.setExits("West",myTestSpotSW);
-        myTestSpotS.setExits("North",CurrentSpot);
-        myTestSpotS.setExits("East",myTestSpotSE);
-        
-        myTestSpotSE.setExits("North",myTestSpotE);
-        myTestSpotSE.setExits("West",myTestSpotN);
-        
-        myTestSpotSW.setExits("North",myTestSpotW);
-        myTestSpotSW.setExits("East",myTestSpotS);
-        
-        myTestSpotNE.setExits("South",myTestSpotE);
-        myTestSpotNE.setExits("West",myTestSpotN);
-        
-        myTestSpotNW.setExits("South",myTestSpotW);
-        myTestSpotNW.setExits("East",myTestSpotN);
-        
-        
-        CurrentSpot.setImageSpot("1234.png");
-        myTestSpotN.setImageSpot("234.png");
-        myTestSpotS.setImageSpot("124.png");
-        myTestSpotE.setImageSpot("134.png");
-        myTestSpotW.setImageSpot("123.png");
-        myTestSpotNE.setImageSpot("34.png");
-        myTestSpotNW.setImageSpot("23.png");
-        myTestSpotSE.setImageSpot("14.png");
-        myTestSpotSW.setImageSpot("12.png");
-        
+        CurrentSpot = myNewSpot;
         
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
@@ -101,15 +54,18 @@ public class Scrolling extends JPanel
         myButton3.addActionListener(this);
         myButton4.addActionListener(this);
         
+        
         Jlabel1 = new JLabel (new ImageIcon("0.png"));
-        Jlabel2 = new JLabel (new ImageIcon(CurrentSpot.getExits("North").getImageSpot()));
+        Jlabel2 = new JLabel (new ImageIcon("0.png"));
         Jlabel3 = new JLabel (new ImageIcon("0.png"));
-        Jlabel4 = new JLabel (new ImageIcon(CurrentSpot.getExits("West").getImageSpot()));
-        Jlabel5 = new JLabel (new ImageIcon(CurrentSpot.getImageSpot()));
-        Jlabel6 = new JLabel (new ImageIcon(CurrentSpot.getExits("East").getImageSpot()));
+        Jlabel4 = new JLabel (new ImageIcon("0.png"));
+        Jlabel5 = new JLabel (new ImageIcon("0.png"));
+        Jlabel6 = new JLabel (new ImageIcon("0.png"));
         Jlabel7 = new JLabel (new ImageIcon("0.png"));
-        Jlabel8 = new JLabel (new ImageIcon(CurrentSpot.getExits("South").getImageSpot()));
+        Jlabel8 = new JLabel (new ImageIcon("0.png"));
         Jlabel9 = new JLabel (new ImageIcon("0.png"));
+        
+        updateUI(CurrentSpot);
         
         JPanel myPanel = new JPanel();
         myPanel.setLayout(new GridLayout(2,2));
