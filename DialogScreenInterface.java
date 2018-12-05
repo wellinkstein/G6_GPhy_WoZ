@@ -33,12 +33,12 @@ public class DialogScreenInterface extends JFrame
         myPanel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.VERTICAL;
         c.anchor = GridBagConstraints.CENTER;
         //c.weighty = 0.95;
         myPanel.add(dialog, c);
         
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.VERTICAL;
         //c.weighty = 0.05;
         c.anchor = GridBagConstraints.CENTER;
         myPanel.add(buttonClose, c);

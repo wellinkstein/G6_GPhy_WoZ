@@ -476,7 +476,7 @@ public class Spot
      */
     public Monster getMonster()
     {
-        for (int i =0; i<this.getListCharacter().size(); i++){
+        for (int i =0; i<getListCharacter().size(); i++){
             //for (Character monster : this.characterInSpot){
             if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
             ||getListCharacter().get(i).getName()== "Medusa" 
