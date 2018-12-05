@@ -35,7 +35,7 @@ public class ItemDescription extends JPanel implements ActionListener
         myPanel.setLayout(new GridLayout(1,2));
         if (item !=null){
             if (item.getName()=="Iron Sword"){
-                Icon icon= new ImageIcon("IronSword.jpg"); 
+                Icon icon= new ImageIcon("Iron sword.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
@@ -45,12 +45,12 @@ public class ItemDescription extends JPanel implements ActionListener
                  myPanel.add(label);
             }
             else if (item.getName()=="Standard Bow"){
-                Icon icon= new ImageIcon("StandardBow.png"); 
+                Icon icon= new ImageIcon("Standard bow.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
             else if (item.getName()=="Iron Armor"){
-                Icon icon= new ImageIcon("IronArmor.png"); 
+                Icon icon= new ImageIcon("Iron armor.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
@@ -65,12 +65,12 @@ public class ItemDescription extends JPanel implements ActionListener
                  myPanel.add(label);
             }
             else if (item.getName()=="Health Potion"){
-                Icon icon= new ImageIcon("HealthPotion.png"); 
+                Icon icon= new ImageIcon("health potion.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
             else if (item.getName()=="Ariadne's golden thread"){
-                Icon icon= new ImageIcon("AriadneGoldenThread.png"); 
+                Icon icon= new ImageIcon("Ariane's tread.jpg"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
