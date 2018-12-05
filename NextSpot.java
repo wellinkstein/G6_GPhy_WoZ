@@ -1,15 +1,25 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.geom.*;
+import java.util.*;
+import java.awt.Dimension;
 /**
  * Write a description of class NextSpot here.
  *
  * @author (Yohan Lefol)
  * @version (2018-12-04)
  */
-public class NextSpot extends JPanel
+public class NextSpot extends JPanel implements ActionListener
 {
     private Game myGame;
     private Spot mySpot;
+    private JButton myButton,myButton2;
+    private JPanel myPanel,myPanel2;
+    private JFrame myFrame;
+    private JLabel myLabel,myLabel2;
     /**
      * Constructor for objects of class NextSpot
      */
@@ -26,10 +36,14 @@ public class NextSpot extends JPanel
         
         myPanel = new JPanel();
         myPanel2 = new JPanel();
+
         bigPanel = new JPanel();
+
         
         myButton = new JButton ("Fight");
+        myButton.setFont(new Font("Arial", Font.PLAIN, 40));
         myButton2 = new JButton ("Flee");
+        myButton2.setFont(new Font("Arial", Font.PLAIN, 40));
         
         bigPanel.setLayout(new GridLayout(0,1));
         
@@ -37,22 +51,25 @@ public class NextSpot extends JPanel
         
         myFrame = new JFrame("MONSTER");
         
+        myButton.addActionListener(this);
+        myButton2.addActionListener(this);
+        
         myGame = new Game();
-        mySpot = new Spot();
+        //mySpot = new Spot();
         // myGame.setCurrentSpot(myGame.getListSpot().get(20));
-        // System.out.println(myGame.getCurrentSpot());
-        // myGame.getCurrentSpot().getMonster();
-        System.out.println(myGame.getCurrentSpot());
-        System.out.println(myGame.getListSpot().get(0).getMonster());
-        System.out.println("Before NEWWWWW if");
-            if (myGame.getCurrentSpot().getMonster() != null) //Medusa
+        // System.out.println(myGame.getListSpot().get(6));
+        // myGame.getListSpot().get(6).getMonster();
+        //System.out.println(myGame.getListSpot().get(6));
+        //System.out.println(myGame.getListSpot().get(0).getMonster());
+        //System.out.println("Before NEWWWWW if");
+            if (myGame.getListSpot().get(6).getMonster() != null) //Medusa
             {
-                if(myGame.getCurrentSpot().getMonster().getName() == "Medusa")
+                if(myGame.getListSpot().get(6).getMonster().getName() == "Medusa")
                 {
                     Icon icon = new ImageIcon("Medusa.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel ("Medusa");
-                    myLabel2 = new JLabel("Snake Lady");
+                    myLabel = new JLabel ("Medusa",JLabel.CENTER);
+                    myLabel2 = new JLabel("Snake Lady",JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -60,7 +77,9 @@ public class NextSpot extends JPanel
                     myPanel2.add (myButton);
                     myPanel2.add (myButton2);
                     bigPanel.add(myPanel);
+                    bigPanel.add(myLabel2);
                     bigPanel.add(myPanel2);
+                    
                     myFrame = new JFrame();
                     myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     myFrame.add(bigPanel);
@@ -69,10 +88,10 @@ public class NextSpot extends JPanel
                     myFrame.setVisible(true);
                     
                 }
-                System.out.println("During If");
+                //System.out.println("During If");
             }
-        System.out.println("After if");
-            // if (myGame.getCurrentSpot() == myGame.getListSpot().get(10)) // Chimera
+        //System.out.println("After if");
+            // if (myGame.getListSpot().get(6) == myGame.getListSpot().get(10)) // Chimera
             // {
                 // Icon icon = new ImageIcon("Chimera.jpg");
                 // JLabel label = new JLabel(icon);
@@ -82,7 +101,7 @@ public class NextSpot extends JPanel
                 // myPanel.add(myLabel);
                 // bigPanel.add(myLabel2);
             // }   
-            // if (myGame.getCurrentSpot() == myGame.getListSpot().get(5)) // Cerberus
+            // if (myGame.getListSpot().get(6) == myGame.getListSpot().get(5)) // Cerberus
             // {
                 // Icon icon = new ImageIcon("Cerberus.jpg");
                 // JLabel label = new JLabel(icon);
@@ -92,7 +111,7 @@ public class NextSpot extends JPanel
                 // myPanel.add(myLabel);
                 // bigPanel.add(myLabel2);
             // }   
-            // if (myGame.getCurrentSpot() == myGame.getListSpot().get(40)) // Arachne
+            // if (myGame.getListSpot().get(6) == myGame.getListSpot().get(40)) // Arachne
             // {
                 // Icon icon = new ImageIcon("Arachne.jpg");
                 // JLabel label = new JLabel(icon);
@@ -102,7 +121,7 @@ public class NextSpot extends JPanel
                 // myPanel.add(myLabel);
                 // bigPanel.add(myLabel2);
             // }   
-            // if (myGame.getCurrentSpot() == myGame.getListSpot().get(60)) // Cyclops
+            // if (myGame.getListSpot().get(6) == myGame.getListSpot().get(60)) // Cyclops
             // {
                 // Icon icon = new ImageIcon("Cyclops.jpg");
                 // JLabel label = new JLabel(icon);
@@ -112,7 +131,7 @@ public class NextSpot extends JPanel
                 // myPanel.add(myLabel);
                 // bigPanel.add(myLabel2);
             // }   
-            // if (myGame.getCurrentSpot() == myGame.getListSpot().get(2)) // Minotaur
+            // if (myGame.getListSpot().get(6) == myGame.getListSpot().get(2)) // Minotaur
             // {
                 // Icon icon = new ImageIcon("Minotaur.jpg");
                 // JLabel label = new JLabel(icon);
@@ -143,26 +162,6 @@ public class NextSpot extends JPanel
                 // myFrame.setVisible(true);
         
         
-        // myFrame.setTitle("Monster Description");
-        
-        // Icon icon = new ImageIcon("Medusa.jpg");
-        // JLabel label = new JLabel(icon);
-        // myLabel = new JLabel ("Medusa");
-        // myLabel2 = new JLabel("Snake Lady");
-        // myPanel.add(label);
-        // myPanel.add(myLabel);
-        // bigPanel.add(myPanel);
-        // bigPanel.add(myLabel2);
-        // myPanel2.setLayout(new GridLayout(1,2));
-        // myPanel2.add (myButton);
-        // myPanel2.add (myButton2);
-        // bigPanel.add(myPanel2);
-        // myFrame = new JFrame();
-        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.add(bigPanel);
-        // myFrame.setSize(150, 150);
-        // myFrame.pack();
-        // myFrame.setVisible(true);
     }
 
     /**
@@ -171,9 +170,16 @@ public class NextSpot extends JPanel
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void sampleMethod(int y)
+    public void actionPerformed (ActionEvent e)
     {
-        // put your code here
+        if(e.getSource()==myButton)
+        {
+            //Sends to fight screen
+        }
+        else
+        {
+            
+        }
         
     }
 }
