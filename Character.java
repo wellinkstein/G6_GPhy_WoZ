@@ -69,6 +69,15 @@ public abstract class Character
     }
     
     /**
+     * A setter for the name
+     * 
+     */
+    public void setName(String tempName)
+    {
+        name = tempName;
+    }
+    
+    /**
      * Method that returns that damage
      * @return int Damage: return damage of character
      */
