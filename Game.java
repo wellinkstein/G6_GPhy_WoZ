@@ -421,20 +421,9 @@ public class Game
            }
         }
         
-        if (spot.getMonster()!=null){
-           fight();
-        }   
+         
     }
-    
-    /**
-     * gets the choice of the player to fight the monster or to run away.
-     * @return boolean true: the player runs away or fight
-     * 
-     */
-    public boolean runAwayOrFight() 
-    { 
-         return true;       
-    }
+  
     /**
      * If the player loses the fight
      * @return boolean true: the player loses the fight
