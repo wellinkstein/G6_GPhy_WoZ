@@ -8,7 +8,7 @@ import java.awt.event.*;
  * @author Jérémie Guilbaud
  * @version 1.0
  */
-public class fightInterface extends JFrame
+public class fightInterface extends JFrame implements ActionListener
 {
     
     private JButton buttonStartFight;
@@ -24,6 +24,7 @@ public class fightInterface extends JFrame
         myFrame = new JFrame("Fight Interface");
         
         buttonStartFight = new JButton("Start Fight");
+        buttonStartFight.addActionListener(this);
         
         dialog = new JLabel("Test");
         fight = new JLabel("Fight");
@@ -39,16 +40,10 @@ public class fightInterface extends JFrame
         panelBot.add(dialog, c);
         
         c.fill = GridBagConstraints.HORIZONTAL;
-        //c.ipady = 0; 
-        //c.weighty = 1.0;
-        //c.anchor = GridBagConstraints.PAGE_END;
-        //c.insets = new Insets(10,0,0,0);
-        c.gridx = 1; 
-        //c.gridwidth = 2;
+        c.gridx = 1;
         c.gridy = 0; 
         c.weightx = 0.05;
         panelBot.add(buttonStartFight, c);
-        
         
         panelMain = new JPanel();
 
@@ -64,5 +59,14 @@ public class fightInterface extends JFrame
         
         myFrame.pack();
         myFrame.setVisible(true);
+    }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+    }
+    
+    public void displayFight()
+    {
+        //dialog.setText("");
     }
 }

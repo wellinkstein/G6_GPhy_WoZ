@@ -122,7 +122,7 @@ public class Spot
      */
     public String getImageSpot()
     {
-        return(imageSpot);
+        return(this.imageSpot);
     }
 
     /**
@@ -131,7 +131,7 @@ public class Spot
      */
     public void setImageSpot(String imageSpot)
     {
-        imageSpot = imageSpot;
+        imageSpot = this.imageSpot;
     }
 
     /**

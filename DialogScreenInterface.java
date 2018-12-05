@@ -9,12 +9,13 @@ import java.awt.event.*;
  * @author Jérémie Guilbaud
  * @version 1.0
  */
-public class DialogScreenInterface extends JFrame
+public class DialogScreenInterface extends JFrame implements ActionListener
 {
     
     private JButton buttonClose;
-    private JPanel myPanel1, myPanel2, myPanel;
+    private JPanel myPanel;
     private JLabel dialog;
+    private JFrame myFrame;
 
     /**
      * Constructeur of DialogScreenInterface
@@ -25,6 +26,7 @@ public class DialogScreenInterface extends JFrame
         myFrame = new JFrame("Dialog Screen");
         
         buttonClose = new JButton("Close");
+        buttonClose.addActionListener(this);
         
         dialog = new JLabel("Test");
         
@@ -46,4 +48,14 @@ public class DialogScreenInterface extends JFrame
         myFrame.pack();
         myFrame.setVisible(true);
     }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+    }
+    
+    // public void displayDescription(String Game.printWelcome())
+    // {
+        
+        // dialog.setText(Game.printWelcome());
+    // }
 }
