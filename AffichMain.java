@@ -17,12 +17,16 @@ import java.util.Set;
 public class AffichMain extends JFrame
 {
     private JFrame myFrame;
-    
+    private JPanel panelVarious, panelDescriptionItem, panelListItem;
     public void main()
     {
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.add(new Scrolling());
+        panelVarious= new JPanel();
+        panelListItem = new SpotItem();
+        
+        
         
         myFrame.pack();
         myFrame.setVisible(true);

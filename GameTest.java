@@ -260,21 +260,21 @@ public class GameTest
         assertTrue(test);
     }
     
-    /**
-     * Test if the fighter is the player, le fighter return the monster
-     * 
-     */
-    @Test
-    public void testsetFighter(){
+    // /**
+     // * Test if the fighter is the player, le fighter return the monster
+     // * 
+     // */
+    // @Test
+    // public void testsetFighter(){
         
-        }
-    /**
-     * Test if the dammage is added to the player
-     */
-    @Test
-    public void testInflictDamage(){
+        // }
+    // /**
+     // * Test if the dammage is added to the player
+     // */
+    // @Test
+    // public void testInflictDamage(){
         
-        }
+        // }
         
         
     
