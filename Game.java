@@ -268,6 +268,7 @@ public class Game
     
     /**
      * Print out the opening message for the player.
+     * @return String: return a message for the player
      */
     private String printWelcome()
     {
@@ -287,7 +288,7 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
         
-     /**
+    /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
      */
     public void exitAndStart()
@@ -299,6 +300,7 @@ public class Game
     
     /**
      *  Get the Player
+     *  @return Player thesus: returns the player
      */
     public Player getPlayer() 
     { 
@@ -307,6 +309,7 @@ public class Game
 
     /**
      *  add player to current spot
+     *  @param Player player: add the player to the spot
      */
     public void addToCurrentSpot(Player player) 
     { 
@@ -315,6 +318,7 @@ public class Game
     
     /**
      *  add item to current spot
+     *  @param Item item: add item to the current spot
      */
     public void addItemToCurrentSpot(Item item) 
     { 
@@ -323,6 +327,8 @@ public class Game
     
     /**
      * Places one type of commmon item in a definite number of spots. 
+     * @param Item item: item to add
+     * @param ArrayList<Integer> spotIndexList: list of spots
      */
     public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
@@ -333,6 +339,7 @@ public class Game
      
     /**
      *  Get the value of finished
+     *  @return boolean finishde: return a boolean true if finished
      */
     public boolean getFinished() 
     { 
@@ -357,6 +364,7 @@ public class Game
     
     /**
      *  Get the room where the player is 
+     *  @return Spot currentSpot: return the current spot
      */
     public Spot getCurrentSpot() 
     { 
@@ -365,6 +373,7 @@ public class Game
     
     /**
      *  Set the room where the player is 
+     *  @param Spot currentS: returns the current spot
      */
     public void setCurrentSpot(Spot currentS) 
     { 
@@ -373,6 +382,7 @@ public class Game
     
     /**
      *  Get the list of spots of the labyrinth 
+     *  @return ArrayList<Spot> listSpot: return a list of spots
      */
     public ArrayList<Spot> getListSpot() 
     { 
@@ -381,15 +391,19 @@ public class Game
    
     /**
      * Gets the adjacent spot at a specific direction 
-     * 
+     * @return Spot direction: get the direction of adjacent spot
+     * @param String direction
      */
     public Spot chooseDirection(String direction) 
     { 
         return currentSpot.getExits(direction);
     }
+    
     /**
      * Changes the current spot to the spot according to the direction given. 
-     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot a fight starts without giving the player a choice.
+     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot 
+     * a fight starts without giving the player a choice.
+     * @param Spot spot: spot where Thesus goes
      */
     public void move(Spot spot) 
     { 
@@ -414,6 +428,7 @@ public class Game
     
     /**
      * gets the choice of the player to fight the monster or to run away.
+     * @return boolean true: the player runs away or fight
      * 
      */
     public boolean runAwayOrFight() 
@@ -422,6 +437,7 @@ public class Game
     }
     /**
      * If the player loses the fight
+     * @return boolean true: the player loses the fight
      * 
      */
     public boolean loseGame() 
@@ -452,6 +468,7 @@ public class Game
     
     /**
      * Randomly chooses the first fighter to start
+     * @return Character fighter: returns the character that starts the fight
      * 
      */
     public Character whoBegins() 
@@ -489,7 +506,7 @@ public class Game
   
     /**
      * 
-     * 
+     * @return int dam: return the damage with or without critical strike
      */
     public int criticalHit() 
     { 
@@ -510,7 +527,7 @@ public class Game
     
     /**
      * Changes the fighter to a designed character
-     * 
+     * @param Character fighter: the character is set to be the fighter
      */
     public void setFighter( Character fighter) 
     { 
@@ -524,6 +541,7 @@ public class Game
     
     /**
      * Gets the currently designed fighter 
+     * @return Character fighter: returns the current fighter
      * 
      */
     public Character getFighter() 
@@ -569,7 +587,7 @@ public class Game
     
     /**
      * returns the game over message
-     * 
+     * @return String "Game over": returns this string when game over
      */
     public String gameOver() 
     { 
@@ -578,7 +596,7 @@ public class Game
 
     /**
      *  returns the winning message
-     * 
+     * @return String
      */
     public String youWon() 
     { 
@@ -594,6 +612,7 @@ public class Game
     /**
      * 
      * Returns the message saying that it's not time to exit the labyrinth yet
+     * @return String
      */
     public String NotTimeToGo() 
     { 
