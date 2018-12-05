@@ -39,11 +39,16 @@ public class NextSpot extends JPanel
         
         myGame = new Game();
         mySpot = new Spot();
-        
-        myGame.getCurrentSpot().getMonster().setName("Medusa");
+        // myGame.setCurrentSpot(myGame.getListSpot().get(20));
+        // System.out.println(myGame.getCurrentSpot());
+        // myGame.getCurrentSpot().getMonster();
+        System.out.println(mySpot.getMonster());
+        System.out.println(myGame.getCurrentSpot());
+        System.out.println(myGame.getListSpot().get(0).getMonster());
+        System.out.println("Before if");
             if (myGame.getCurrentSpot().getMonster() != null) //Medusa
             {
-                if(myGame.getCurrentSpot().getMonster().getName()=="Medusa")
+                if(myGame.getCurrentSpot().getMonster().getName() == "Medusa")
                 {
                     Icon icon = new ImageIcon("Medusa.jpg");
                     JLabel label = new JLabel(icon);
@@ -63,8 +68,11 @@ public class NextSpot extends JPanel
                     myFrame.setSize(150, 150);
                     myFrame.pack();
                     myFrame.setVisible(true);
+                    
                 }
+                System.out.println("During If");
             }
+        System.out.println("After if");
             // if (myGame.getCurrentSpot() == myGame.getListSpot().get(10)) // Chimera
             // {
                 // Icon icon = new ImageIcon("Chimera.jpg");
