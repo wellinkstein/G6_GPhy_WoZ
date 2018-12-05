@@ -170,8 +170,6 @@ public class Scrolling extends JFrame
     
     public void updateUI()
     {
-        
-        
         if(CurrentSpot.getExits("North") != null)
         {
             Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("North").getImageSpot()));
