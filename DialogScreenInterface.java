@@ -37,6 +37,7 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         
         c.anchor = GridBagConstraints.CENTER;
         c.weighty = 0.95;
+        c.weightx = 1;
         myPanel.add(dialog, c);
         
         c.weighty = 0.05;

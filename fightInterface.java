@@ -75,6 +75,12 @@ public class fightInterface extends JFrame implements ActionListener
             c.gridx = 1;
             c.gridy=0;
             panelMain.add(monsterImg,c);
+            
+            buttonStartFight.setEnabled(true);
+        }
+        else
+        {
+            buttonStartFight.setEnabled(false);
         }
 
         panelBig = new JPanel(new GridLayout(2,0));
@@ -87,12 +93,15 @@ public class fightInterface extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        myGame.fight();
+        if(myGame.getCurrentSpot().getMonster()!=null)
+        {
+            myGame.fight();
+        }
     }
 
     public void displayFight()
     {
-        //dialog.setText("");
+        dialog.setText("");
     }
 
     //public void fighters
