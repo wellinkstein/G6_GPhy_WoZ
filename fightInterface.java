@@ -26,7 +26,7 @@ public class fightInterface extends JFrame implements ActionListener
     {
         myFrame = new JFrame("Fight Interface");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         myGame = new Game();
         mySpot = new Spot();
 
@@ -50,34 +50,39 @@ public class fightInterface extends JFrame implements ActionListener
         c.gridy = 0; 
         c.weightx = 0.05;
         panelBot.add(buttonStartFight, c);
-        
+
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
-        
-        iconPlayer = new ImageIcon("player.jpg"); 
+
+        iconPlayer = new ImageIcon("theseus.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
-        
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.weightx = 0.5;
-            c.gridx = 0;
-            c.gridy=0;
-            panelMain.add(playerImg,c);
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy=0;
+        panelMain.add(playerImg,c);
 
         if (myGame.getCurrentSpot().getMonster() != null)
         {
-
             iconMonster = new ImageIcon("darth_vader.jpg");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            
+
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
             c.gridx = 1;
             c.gridy=0;
             panelMain.add(monsterImg,c);
+            
+            buttonStartFight.setEnabled(true);
         }
-        
+        else
+        {
+            buttonStartFight.setEnabled(false);
+        }
+
         panelBig = new JPanel(new GridLayout(2,0));
         panelBig.add(panelMain);
         panelBig.add(panelBot);
@@ -88,12 +93,15 @@ public class fightInterface extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        myGame.fight();
+        if(myGame.getCurrentSpot().getMonster()!=null)
+        {
+            myGame.fight();
+        }
     }
 
     public void displayFight()
     {
-        //dialog.setText("");
+        dialog.setText("");
     }
 
     //public void fighters

@@ -105,6 +105,8 @@ public class ItemDescription extends JPanel implements ActionListener
         myPanel2.add(myButton);
         bigPanel.add(myPanel); 
         bigPanel.add(myPanel2); 
+        
+        add(bigPanel); 
         // myFrame = new JFrame();
         // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // myFrame.add(bigPanel);
@@ -122,7 +124,9 @@ public class ItemDescription extends JPanel implements ActionListener
     // myFrame.pack();
     // myFrame.setVisible(true);
  
-    
+    /**
+     * 
+     */
      public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == myButton)
@@ -131,5 +135,8 @@ public class ItemDescription extends JPanel implements ActionListener
                 // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
     }
+
+    
+    
 }
 
