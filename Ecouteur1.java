@@ -9,27 +9,26 @@ import javax.swing.*;
  */
 public class Ecouteur1 implements ActionListener
 {
-    private SpotItem spotItem;
     private AffichMain affichMain;
     private Item itemClicked;
-    private JPanel panelDescription;
+    private ItemDescription iDescription;
     
-    public Ecouteur1(SpotItem sI){
-       spotItem=sI; 
-       //affichMain =aM;
+    public Ecouteur1(){
+       affichMain =new AffichMain();
     }
     
      public void actionPerformed (ActionEvent e)
     {
-        for(int i = 0; i <= (spotItem.getContent().size()-1); i++)
+        System.out.println(affichMain.getSpotItem());
+        for(int i = 0; i <= (affichMain.getSpotItem().getContent().size()-1); i++)
         {
-            
-            if(e.getSource() == spotItem.getContent().get(i))
+            System.out.println(affichMain.getSpotItem().getContent().get(i));
+            if(e.getSource() == affichMain.getSpotItem().getContent().get(i))
             {
                 System.out.println("Bouton "+i);
                 if((i%2)==0)
                 {   
-                    panelDescription = new ItemDescription(e.getSource());
+                    
                     System.out.println("Description of the item"+(i%2));
                 }
                 else

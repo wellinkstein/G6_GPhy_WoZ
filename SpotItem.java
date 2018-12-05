@@ -16,18 +16,17 @@ public class SpotItem extends JPanel
 {
    private JLabel myLabel; 
    private JPanel myPanel, myPanel1, myBigPanel; 
-   private Spot spot;
    private ArrayList<JButton> content = new ArrayList<JButton>();
    private Item click; 
-   private ItemDescription itemDescription; 
+   private ItemDescription iD;
+   //private AffichMain aM;
    
    /**
     * 
     */
-   public void main(Spot spots)
+   public SpotItem(Spot spot)
    {
-
-       spot= spots;
+       
 
         for(int i = 0; i <= (spot.getListItem().size()-1); i++)
         {   
@@ -51,7 +50,7 @@ public class SpotItem extends JPanel
       
        for(int i = 0; i <= (content.size()-1); i++)
         {
-            Ecouteur1 e = new Ecouteur1(this);
+            Ecouteur1 e = new Ecouteur1();
             content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }
@@ -60,7 +59,9 @@ public class SpotItem extends JPanel
        myBigPanel.add(myPanel1); 
        myBigPanel.add(myPanel); 
         
-       myBigPanel.setVisible(false); 
+       
+       myBigPanel.setVisible(true); 
+       add(myBigPanel);
        //myFrame.add(myBigPanel); 
        //myFrame.pack();
        //myFrame.setVisible(true);
