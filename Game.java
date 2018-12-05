@@ -294,7 +294,7 @@ public class Game
     public void exitAndStart()
     {
         listSpot.get(0).setStartSpot();
-        setCurrentSpot(this.listSpot.get(0));
+        setCurrentSpot(listSpot.get(0));
         listSpot.get(6).setExitSpot();
     }
     
