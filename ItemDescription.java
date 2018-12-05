@@ -105,6 +105,8 @@ public class ItemDescription extends JPanel implements ActionListener
         myPanel2.add(myButton);
         bigPanel.add(myPanel); 
         bigPanel.add(myPanel2); 
+        
+        add(bigPanel); 
         // myFrame = new JFrame();
         // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // myFrame.add(bigPanel);
