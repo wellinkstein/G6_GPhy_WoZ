@@ -26,8 +26,8 @@ public class fightInterface extends JFrame implements ActionListener
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
         
-        dialog = new JLabel("Test");
-        fight = new JLabel("Fight");
+        dialog = new JLabel("Wow much damage very suspense");
+        fight = new JLabel("LE COMBAT EPIC DU BIEN CONTRE LE MAL OOWOOWOWOWOOWOWWO");
         
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
@@ -45,8 +45,28 @@ public class fightInterface extends JFrame implements ActionListener
         c.weightx = 0.05;
         panelBot.add(buttonStartFight, c);
         
+        ImageIcon iconPlayer = new ImageIcon("player.jpg"); 
+        JLabel playerImg = new JLabel();
+        playerImg.setIcon(iconPlayer);
+        
+        ImageIcon iconMonster = new ImageIcon("darth_vader.jpg");
+        JLabel monsterImg = new JLabel();
+        monsterImg.setIcon(iconMonster);
+        
         panelMain = new JPanel();
-        panelMain.add(fight);
+        panelMain.setLayout(new GridBagLayout());
+        
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy=0;
+        panelMain.add(playerImg,c);
+        
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy=0;
+        panelMain.add(monsterImg,c);
         
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -68,4 +88,6 @@ public class fightInterface extends JFrame implements ActionListener
     {
         //dialog.setText("");
     }
+    
+    //public void fighters
 }
