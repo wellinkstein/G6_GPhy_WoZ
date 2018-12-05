@@ -16,15 +16,16 @@ import java.util.Set;
  */
 public class AffichMain extends JFrame
 {
-    Scrolling myScroll;
     private JFrame myFrame;
     
     public void main()
     {
-        myScroll = new Scrolling();
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.add(myScroll);
+        myFrame.add(new Scrolling());
+        
+        myFrame.pack();
+        myFrame.setVisible(true);
     }
     
 }

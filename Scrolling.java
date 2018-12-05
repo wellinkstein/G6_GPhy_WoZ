@@ -14,7 +14,7 @@ import java.util.Set;
  * @author Corentin Journay 
  * @version 04/12/2018
  */
-public class Scrolling extends JFrame
+public class Scrolling extends JPanel
         implements ActionListener
 {
         
@@ -33,8 +33,13 @@ public class Scrolling extends JFrame
     private JButton myButton3 = new JButton("South");
     private JButton myButton4 = new JButton("West");
     private JFrame myFrame;
-    private JPanel bigPanel;
+    private JPanel bigPanel,wholePanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9;
+    
+    public Scrolling()
+    {
+        main();
+    }
     
     public void main ()
     {
@@ -73,7 +78,6 @@ public class Scrolling extends JFrame
         myTestSpotNW.setExits("East",myTestSpotN);
         
         
-        
         CurrentSpot.setImageSpot("1234.png");
         myTestSpotN.setImageSpot("234.png");
         myTestSpotS.setImageSpot("124.png");
@@ -84,12 +88,10 @@ public class Scrolling extends JFrame
         myTestSpotSE.setImageSpot("14.png");
         myTestSpotSW.setImageSpot("12.png");
         
-        myFrame = new JFrame("Mon Scrolling");
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //myFrame = new JFrame("Mon Scrolling");
+        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
-        
-
         
         myButton1.addActionListener(this);
         myButton2.addActionListener(this);
@@ -161,12 +163,14 @@ public class Scrolling extends JFrame
             }
         }
         
-        myFrame.add(bigPanel);
-        
-        myFrame.pack();
-        myFrame.setVisible(true);
+        add(bigPanel);
+        setVisible(true);
     }
     
+    public JPanel getPanel()
+    {
+        return wholePanel;
+    }
     
     public void updateUI()
     {
