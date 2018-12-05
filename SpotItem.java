@@ -12,13 +12,14 @@ import java.util.Set;
  * @author (Ludivine Harault)
  * @version (2018-12-04)
  */
-public class SpotItem extends JPanel 
+public class SpotItem extends JPanel
 {
    private JLabel myLabel; 
    private JPanel myPanel, myPanel1, myBigPanel; 
    private Spot spot;
    private ArrayList<JButton> content = new ArrayList<JButton>();
    private Item click; 
+   private ItemDescription itemDescription; 
    
    /**
     * 
@@ -74,5 +75,6 @@ public class SpotItem extends JPanel
     return content;
     }
     
+   
   
 }
