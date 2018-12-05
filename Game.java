@@ -111,7 +111,7 @@ public class Game
         listHealthPotion.add(21);
         placeItem(healthPotion,listHealthPotion);
         
-      
+        Spot currentSpot = new Spot();
         exitAndStart();//initialize start spot (also current spot) and exit spot 
         addToCurrentSpot(theseus);
         
