@@ -32,4 +32,7 @@ public class AffichMain extends JFrame
         myFrame.setVisible(true);
     }
     
+    public Game getGame(){
+        return myGame;
+    }
 }
