@@ -83,12 +83,4 @@ implements ActionListener
     }
 
    
-    /**
-     * Getter for the panel Inventory
-     * @return Inventory
-     *
-     */
-    public JPanel getInventory(){
-        return myBigPanel; 
-    }
 }

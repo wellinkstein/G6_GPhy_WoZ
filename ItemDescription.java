@@ -135,13 +135,7 @@ public class ItemDescription extends JPanel implements ActionListener
                 // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
     }
-    /**
-     * Getter for the panel ItemDescription
-     * @return ItemDescription
-     */
-    public JPanel getItemDescription(){
-        return bigPanel; 
-    }
+
     
     
 }
