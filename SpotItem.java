@@ -12,7 +12,7 @@ import java.util.Set;
  * @author (Ludivine Harault)
  * @version (2018-12-04)
  */
-public class SpotItem extends JPanel implements ActionListener
+public class SpotItem extends JPanel 
 {
    private JLabel myLabel; 
    private JPanel myPanel, myPanel1, myBigPanel; 
@@ -50,7 +50,8 @@ public class SpotItem extends JPanel implements ActionListener
       
        for(int i = 0; i <= (content.size()-1); i++)
         {
-            content.get(i).addActionListener(this);
+            Ecouteur1 e = new Ecouteur1(this);
+            content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }
        
@@ -68,28 +69,10 @@ public class SpotItem extends JPanel implements ActionListener
    {
        return click;
        }
-    
-   public void actionPerformed (ActionEvent e)
-    {
-        for(int i = 0; i <= (content.size()-1); i++)
-        {
-            
-            if(e.getSource() == content.get(i))
-            {
-                System.out.println("Bouton "+i);
-                if((i%2)==0)
-                {   
-                    click=spot.getListItem().get(i);
-                    System.out.println("Description of the item"+(i%2));
-                }
-                else
-                {
-                    System.out.println("Taking");  
-                    System.out.println(spot.getPlayer().getNumberItemPossess());
-                    spot.getPlayer().takeItem(spot.getListItem().get((i-1)));     
-                    System.out.println(spot.getPlayer().getNumberItemPossess());
-                }
-            }
-        }
+       
+   public ArrayList<JButton> getContent(){
+    return content;
     }
+    
+  
 }
