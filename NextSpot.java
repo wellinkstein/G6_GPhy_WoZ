@@ -42,10 +42,9 @@ public class NextSpot extends JPanel
         // myGame.setCurrentSpot(myGame.getListSpot().get(20));
         // System.out.println(myGame.getCurrentSpot());
         // myGame.getCurrentSpot().getMonster();
-        System.out.println(mySpot.getMonster());
         System.out.println(myGame.getCurrentSpot());
         System.out.println(myGame.getListSpot().get(0).getMonster());
-        System.out.println("Before if");
+        System.out.println("Before NEWWWWW if");
             if (myGame.getCurrentSpot().getMonster() != null) //Medusa
             {
                 if(myGame.getCurrentSpot().getMonster().getName() == "Medusa")
