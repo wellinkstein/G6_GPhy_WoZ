@@ -26,10 +26,17 @@ public class fightInterface extends JFrame implements ActionListener
     {
         myFrame = new JFrame("Fight Interface");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        
+        // BEGIN POUR TEST
         myGame = new Game();
         mySpot = new Spot();
-
+        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
+        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
+        
+        mySpot.addCharacterSpot(medusa);
+        myGame.setCurrentSpot(mySpot);
+        // END POUR TEST
+        
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
 
@@ -66,6 +73,8 @@ public class fightInterface extends JFrame implements ActionListener
 
         if (myGame.getCurrentSpot().getMonster() != null)
         {
+            if(myGame.getCurrentSpot().getMonster().getName() == "Medusa")
+            {
             iconMonster = new ImageIcon("darth_vader.jpg");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
@@ -77,6 +86,7 @@ public class fightInterface extends JFrame implements ActionListener
             panelMain.add(monsterImg,c);
             
             buttonStartFight.setEnabled(true);
+        }
         }
         else
         {
