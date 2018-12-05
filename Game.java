@@ -26,6 +26,7 @@ public class Game
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;
     private Player theseus;
+    private boolean win;
     /** 
      * Create the game and initialise its internal map.
      */
@@ -267,14 +268,15 @@ public class Game
     
     /**
      * Print out the opening message for the player.
+     * @return String: return a message for the player
      */
     private String printWelcome()
     {
-        return "welcome";
+        return "Hello Theseus! \n Your mission is to explore the labyrinth, find the Minotaur, kill it";
     }
     
     /**
-     *  Main play routine.  Loops until end of play.
+     *  Main play routine.  Loops until end of play. linked to the interface
      */
     public void play() 
     {            
@@ -286,7 +288,7 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
         
-     /**
+    /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
      */
     public void exitAndStart()
@@ -298,6 +300,7 @@ public class Game
     
     /**
      *  Get the Player
+     *  @return Player thesus: returns the player
      */
     public Player getPlayer() 
     { 
@@ -306,30 +309,26 @@ public class Game
 
     /**
      *  add player to current spot
+     *  @param Player player: add the player to the spot
      */
     public void addToCurrentSpot(Player player) 
     { 
-        for (int i = 0; i < listSpot.size(); i++) { 
-           if (listSpot.get(i) == currentSpot){
-            listSpot.get(i).addCharacterSpot(theseus); //player is placed at current spot, which is the start position  
-            }
-        }
+        currentSpot.addCharacterSpot(theseus); //player is placed at current spot, which is the start position
     }
     
     /**
      *  add item to current spot
+     *  @param Item item: add item to the current spot
      */
     public void addItemToCurrentSpot(Item item) 
     { 
-        for (int i = 0; i < listSpot.size(); i++) { 
-           if (listSpot.get(i) == currentSpot){
-            listSpot.get(i).addItemSpot(item);  
-            }
-        }
+        currentSpot.addItemSpot(item);
     }
     
     /**
      * Places one type of commmon item in a definite number of spots. 
+     * @param Item item: item to add
+     * @param ArrayList<Integer> spotIndexList: list of spots
      */
     public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
@@ -340,6 +339,7 @@ public class Game
      
     /**
      *  Get the value of finished
+     *  @return boolean finishde: return a boolean true if finished
      */
     public boolean getFinished() 
     { 
@@ -364,6 +364,7 @@ public class Game
     
     /**
      *  Get the room where the player is 
+     *  @return Spot currentSpot: return the current spot
      */
     public Spot getCurrentSpot() 
     { 
@@ -372,6 +373,7 @@ public class Game
     
     /**
      *  Set the room where the player is 
+     *  @param Spot currentS: returns the current spot
      */
     public void setCurrentSpot(Spot currentS) 
     { 
@@ -380,6 +382,7 @@ public class Game
     
     /**
      *  Get the list of spots of the labyrinth 
+     *  @return ArrayList<Spot> listSpot: return a list of spots
      */
     public ArrayList<Spot> getListSpot() 
     { 
@@ -388,15 +391,19 @@ public class Game
    
     /**
      * Gets the adjacent spot at a specific direction 
-     * 
+     * @return Spot direction: get the direction of adjacent spot
+     * @param String direction
      */
     public Spot chooseDirection(String direction) 
     { 
         return currentSpot.getExits(direction);
     }
+    
     /**
      * Changes the current spot to the spot according to the direction given. 
-     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot a fight starts without giving the player a choice.
+     * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot 
+     * a fight starts without giving the player a choice.
+     * @param Spot spot: spot where Thesus goes
      */
     public void move(Spot spot) 
     { 
@@ -404,19 +411,13 @@ public class Game
         addToCurrentSpot(theseus); //move the player to the defined spot
         
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
-           if (listSpot.get(i).getMonster()!=null) { //|| listSpot.get(i).getMonster().getAggressive()
+           if (listSpot.get(i).getLesserBoss()!=null && listSpot.get(i).getLesserBoss().getAggressive()) { //
                 Random rand = new Random();
-                int dirIndex = rand.nextInt(3); 
+                ArrayList<String> listExits = listSpot.get(i).getSpotExitable();
+                int dirIndex = rand.nextInt(listExits.size()-1); 
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
-                switch(dirIndex){
-                    case 0: listSpot.get(i).getExits("Z").addCharacterSpot(listSpot.get(i).getMonster());
-                    
-                    case 1: listSpot.get(i).getExits("Q").addCharacterSpot(listSpot.get(i).getMonster());
-                   
-                    case 2: listSpot.get(i).getExits("S").addCharacterSpot(listSpot.get(i).getMonster());
-                    
-                    default: listSpot.get(i).getExits("D").addCharacterSpot(listSpot.get(i).getMonster());
-                }
+                listSpot.get(i).getExits(listExits.get(dirIndex)).addCharacterSpot(listSpot.get(i).getMonster());
+                
            }
         }
         
@@ -424,8 +425,10 @@ public class Game
            fight();
         }   
     }
+    
     /**
      * gets the choice of the player to fight the monster or to run away.
+     * @return boolean true: the player runs away or fight
      * 
      */
     public boolean runAwayOrFight() 
@@ -434,6 +437,7 @@ public class Game
     }
     /**
      * If the player loses the fight
+     * @return boolean true: the player loses the fight
      * 
      */
     public boolean loseGame() 
@@ -447,17 +451,42 @@ public class Game
      */
     public void fight() 
     { 
+          whoBegins();
+          while (fighter.HP!=0){
+              inflictDamage();
+              if (fighter==theseus){
+                  criticalHit();
+              }
+              setFighter(fighter);
+          }
+          if (fighter==theseus) { 
+              setWinTrue();
+          }
+          else setWinFalse(); 
           
     }
     
     /**
      * Randomly chooses the first fighter to start
+     * @return Character fighter: returns the character that starts the fight
      * 
      */
     public Character whoBegins() 
     { 
-       
-        return theseus;   
+        if (theseus.getHermesSandals()){
+            fighter=theseus;
+        }
+        else
+        {
+            Random rand = new Random();
+            int beginner = rand.nextInt(1); 
+            
+            switch(beginner){
+             case 0: fighter = currentSpot.getMonster();
+             default: fighter = theseus;  
+            }
+        }
+        return fighter;   
     }
     
     /**
@@ -466,64 +495,87 @@ public class Game
      */
     public void inflictDamage() 
     { 
-          
+          for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+          {
+            if (currentSpot.getListCharacter().get(i) != fighter){
+                currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage()); 
+            }
+          }
     }
     
   
-     /**
+    /**
      * 
-     * 
+     * @return int dam: return the damage with or without critical strike
      */
-    public void criticialHit() 
+    public int criticalHit() 
     { 
-          
+        Random rand = new Random();
+        int crit = rand.nextInt(100); 
+        if (theseus.getCritRate()<=crit){
+        int dam = (fighter.getDamage())/2;
+        for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+          {
+            if (currentSpot.getListCharacter().get(i) != fighter){
+               currentSpot.getListCharacter().get(i).loseHp(dam);  
+            }
+          }
+         return dam;
+        }
+        else return 0;
     }
     
     /**
      * Changes the fighter to a designed character
-     * 
+     * @param Character fighter: the character is set to be the fighter
      */
-    public void setFighter( Character character) 
+    public void setFighter( Character fighter) 
     { 
-          
+        if (fighter==theseus){
+            fighter=currentSpot.getMonster();
+        }
+        else{
+            fighter=theseus;
+        }
     }
     
     /**
      * Gets the currently designed fighter 
+     * @return Character fighter: returns the current fighter
      * 
      */
-    public void getFighter( Character character) 
+    public Character getFighter() 
     { 
-          
+          return fighter;
     }
+    
     /**
      *  All monsters become aggressive and start chasing you.
      * 
      */
     public void setAggressiveAll() 
     { 
-                
-    }
-    
-    
-    /**
-     * gets if every monster is aggressive
-     * 
-     */
-    public boolean getAggressiveAll() 
-    { 
-        return false;        
+        for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe 
+            listSpot.get(i).getLesserBoss().setAggressiveTrue();
+        }
     }
     
     /**
      * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
      * 
      */
-    public void setWin(boolean win) 
+    public void setWinTrue() 
     { 
-                
+        win=true;        
     }
-    
+    /**
+     * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
+     * 
+     */
+    public void setWinFalse()  
+    { 
+        win=false;         
+    }
     /**
      * 
      * 
@@ -535,7 +587,7 @@ public class Game
     
     /**
      * returns the game over message
-     * 
+     * @return String "Game over": returns this string when game over
      */
     public String gameOver() 
     { 
@@ -544,16 +596,23 @@ public class Game
 
     /**
      *  returns the winning message
-     * 
+     * @return String
      */
     public String youWon() 
     { 
-      return "You won!";          
+      String endScreen = "Theseus, you have successfully killed the Minotaur and left the labyrinth!";  
+      int nbMonsters = 0;
+      for (int i = 0; i < listSpot.size(); i++){
+          nbMonsters+= listSpot.get(i).numberOfMonsterInSpot();
+      }
+      endScreen+= " \n Score: You killed "+nbMonsters+" of 6 monsters";
+      return endScreen;
     }
     
     /**
      * 
      * Returns the message saying that it's not time to exit the labyrinth yet
+     * @return String
      */
     public String NotTimeToGo() 
     { 
@@ -561,18 +620,32 @@ public class Game
     }
     
     /**
-     * Kills monster
+     * Kills lesserBoss
      * 
      */
-    public void monsterDead(LesserBoss lesser)
+    public void monsterDead()
     {
-       for (int i = 0; i < listSpot.size(); i++) { // parcourir la liste pour récupérer la valeur monstre
-           if (listSpot.get(i).getMonster()!=null) {
-           listSpot.get(i).addItemSpot(lesser.getPossessedLegendary()); //the monster drops the item in the spot
-           listSpot.get(i).removeCharacterSpot(lesser); //the monster dies and disappears from the spot
-           break;
+           currentSpot.addItemSpot(currentSpot.getLesserBoss().getPossessedLegendary()); //the monster drops the item in the spot
+           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+    }
+    
+    /**
+     * Kills lesserBoss
+     * 
+     */
+    public void bossDead()
+    {
+           //the monster drops the item in the spot
+           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+           theseus.setTrueTimeToGo();
+           if (theseus.getThread()){
+             youWon();
+             setFinishedTrue();
            }
-       }
+           else{
+             setAggressiveAll(); 
+           }
+            
     }
     
     /**
@@ -583,7 +656,6 @@ public class Game
     {
         theseus.dropItem(itemDrop);
         addItemToCurrentSpot(itemDrop);
-        
     }
     
     /**
