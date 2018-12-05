@@ -51,7 +51,7 @@ public class SpotTest
         it6 = new Common("Standard bow", "description", 1, 3,1);
         objectInSpot= new ArrayList <Item> ();
         characterInSpot= new ArrayList <Character> ();
-        player= new Player(20, "player", 1, 2,2);
+        player= new Player(20, "Theseus", 1, 2,2);
         monster1= new LesserBoss(30,"Chimera", 0, 2,2, "io", it1);  
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
         spot = new Spot();

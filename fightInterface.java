@@ -46,7 +46,6 @@ public class fightInterface extends JFrame implements ActionListener
         panelBot.add(buttonStartFight, c);
         
         panelMain = new JPanel();
-
         panelMain.add(fight);
         
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

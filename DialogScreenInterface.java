@@ -53,9 +53,8 @@ public class DialogScreenInterface extends JFrame implements ActionListener
     {
     }
     
-    // public void displayDescription(String Game.printWelcome())
-    // {
-        
-        // dialog.setText(Game.printWelcome());
-    // }
+    public void displayDescription(String description)
+    {
+        dialog.setText(description);
+    }
 }

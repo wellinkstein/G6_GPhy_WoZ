@@ -66,7 +66,7 @@ public class Spot
     public void setExits(String direction, Spot neighbor)
     {
         boolean exist=false; 
-        if (getNumberExits()<4)
+        if (this.getNumberExits()<4)
         {
             for (Map.Entry mapentry: this.getAllExit().entrySet())
             {
@@ -91,13 +91,13 @@ public class Spot
      */
     public void removeExits(String direction, Spot neighbor)
     {
-        for (Map.Entry mapentry: getAllExit().entrySet())
+        for (Map.Entry mapentry: this.getAllExit().entrySet())
         {
             if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
             {
                 exits.remove(direction, neighbor); 
             }
-            if(getNumberExits()==0)
+            if(this.getNumberExits()==0)
             {
                 spotCorrect = false;
             }
@@ -113,7 +113,7 @@ public class Spot
      */
     public boolean getCorrect()
     {
-        return(spotCorrect);
+        return(this.spotCorrect);
     }
 
     /**
@@ -131,7 +131,7 @@ public class Spot
      */
     public void setImageSpot(String imageSpot)
     {
-        imageSpot = this.imageSpot;
+        this.imageSpot = imageSpot;
     }
 
     /**
@@ -259,7 +259,7 @@ public class Spot
      */
     public int getNumberMaxItem()
     {
-        return(numberMaxItem);
+        return(this.numberMaxItem);
     }
 
     /**
@@ -288,7 +288,7 @@ public class Spot
      */
     public int getNumberExits()
     {
-        return(exits.size());
+        return(this.exits.size());
     }
 
     /**
@@ -321,7 +321,7 @@ public class Spot
      */
     public boolean getExitSpot()
     {
-        return(exitSpot);
+        return(this.exitSpot);
     }
 
     /**
@@ -329,7 +329,7 @@ public class Spot
      */
     public void setExitSpot()
     {
-        exitSpot=true;
+        this.exitSpot=true;
     }
 
     /**
@@ -338,7 +338,7 @@ public class Spot
      */
     public boolean getStartSpot()
     {
-        return(startSpot);
+        return(this.startSpot);
     }
 
     /**
@@ -346,7 +346,7 @@ public class Spot
      */
     public void setStartSpot()
     {
-        startSpot=true;
+        this.startSpot=true;
     }
 
     /**
@@ -397,7 +397,7 @@ public class Spot
     {   
         if(getIfCharacterInSpot(character)==false || numberOfMonsterInSpot()==0)
         {
-            characterInSpot.add(character);
+            this.characterInSpot.add(character);
         }
     }
 
@@ -406,7 +406,7 @@ public class Spot
      * @param character : To verify if the character is in the spot
      */
     public Boolean getIfCharacterInSpot(Character character){
-        if(getListCharacter().contains(character)) 
+        if(this.getListCharacter().contains(character)) 
         {
             return (true); 
         }
@@ -431,7 +431,7 @@ public class Spot
      */
     public int numberOfMonsterInSpot(){
         int number=0; 
-        for (Character character : characterInSpot){
+        for (Character character : this.characterInSpot){
             if(character.getName()== "Chimera" || character.getName()== "Cerberus" ||character.getName()== "Medusa" 
             || character.getName()== "Cyclops" || character.getName()== "Arachne"|| character.getName()=="Minotaur"){
                 number++; 
@@ -537,7 +537,7 @@ public class Spot
             // && this.getListCharacter().get(i).getName()!= "Arachne" && this.getListCharacter().get(i).getName()!="Minotaur"){
                 // return(this.getListCharacter().get(i));
             // }  
-            if(getListCharacter().get(i).getName()=="Theseus"){
+            if( getListCharacter().get(i).getName()=="Theseus"){
                 return ((Player)getListCharacter().get(i));
             }
         }
