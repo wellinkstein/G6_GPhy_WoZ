@@ -13,21 +13,21 @@ public class fightInterface extends JFrame implements ActionListener
     
     private JButton buttonStartFight;
     private JPanel panelMain, panelBot, panelBig;
-    private JLabel dialog, fight;
+    private JLabel dialog, playerImg, monsterImg;
+    private JFrame myFrame;
+    private ImageIcon iconPlayer, iconMonster;
 
     /**
      * Constructor of objects class fightInterface
      */
     public fightInterface()
     {
-        JFrame myFrame;
         myFrame = new JFrame("Fight Interface");
         
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
         
         dialog = new JLabel("Wow much damage very suspense");
-        fight = new JLabel("LE COMBAT EPIC DU BIEN CONTRE LE MAL OOWOOWOWOWOOWOWWO");
         
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
@@ -45,12 +45,12 @@ public class fightInterface extends JFrame implements ActionListener
         c.weightx = 0.05;
         panelBot.add(buttonStartFight, c);
         
-        ImageIcon iconPlayer = new ImageIcon("player.jpg"); 
-        JLabel playerImg = new JLabel();
+        iconPlayer = new ImageIcon("player.jpg"); 
+        playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
         
-        ImageIcon iconMonster = new ImageIcon("darth_vader.jpg");
-        JLabel monsterImg = new JLabel();
+        iconMonster = new ImageIcon("darth_vader.jpg");
+        monsterImg = new JLabel();
         monsterImg.setIcon(iconMonster);
         
         panelMain = new JPanel();
@@ -82,6 +82,7 @@ public class fightInterface extends JFrame implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
+       // Game.fight();
     }
     
     public void displayFight()
