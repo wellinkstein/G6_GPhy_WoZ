@@ -299,7 +299,7 @@ public class Spot
     {
         return exits;
     }
-    
+
     /**
      * getter for the spot reachable from the current spot
      * @return ArrayList<String> spotExitable: return a list of the 
@@ -477,18 +477,19 @@ public class Spot
     public Monster getMonster()
     {
         for (int i =0; i<getListCharacter().size(); i++){
-            //for (Character monster : this.characterInSpot){
-            if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
-            ||getListCharacter().get(i).getName()== "Medusa" 
-            || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"
-            || getListCharacter().get(i).getName()=="Minotaur"){
-                return((Monster)getListCharacter().get(i));
+            if(getListCharacter().get(i)!=null){
+                if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
+                ||getListCharacter().get(i).getName()== "Medusa" 
+                || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"
+                || getListCharacter().get(i).getName()=="Minotaur"){
+                    return((Monster)getListCharacter().get(i));
+                }
             }  
         }
         return(null);
 
     }
-        
+
     /**
      * Return lesser boss in the spot. If there is no monster in that spot,
      * the method returns nothing.
@@ -497,17 +498,19 @@ public class Spot
     public LesserBoss getLesserBoss()
     {
         for (int i =0; i<getListCharacter().size(); i++){
-            //for (Character monster : this.characterInSpot){
-            if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
-            ||getListCharacter().get(i).getName()== "Medusa" 
-            || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"){
-                return((LesserBoss)getListCharacter().get(i));
+            if(getListCharacter().get(i)!=null){
+                if(getListCharacter().get(i).getName()== "Chimera" || getListCharacter().get(i).getName()== "Cerberus" 
+                ||getListCharacter().get(i).getName()== "Medusa" 
+                || getListCharacter().get(i).getName()== "Cyclops" || getListCharacter().get(i).getName()== "Arachne"){
+                    return((LesserBoss)getListCharacter().get(i));
+                }
             }  
         }
         return(null);
 
     }
-      /**
+
+    /**
      * Return boss in the spot. If there is no monster in that spot,
      * the method returns nothing.
      * @return Boss monster: returns the boss in the spot
@@ -515,15 +518,16 @@ public class Spot
     public Boss getBoss()
     {
         for (int i =0; i<getListCharacter().size(); i++){
-            //for (Character monster : this.characterInSpot){
-            if(getListCharacter().get(i).getName()== "Minotaur"){
-                return((Boss)getListCharacter().get(i));
+            if(getListCharacter().get(i)!=null){
+                if(getListCharacter().get(i).getName()== "Minotaur"){
+                    return((Boss)getListCharacter().get(i));
+                }
             }  
         }
         return(null);
 
     }
-    
+
     /**
      * Return player in the spot. If there is no player in that spot,
      * the method returns null.
@@ -532,13 +536,10 @@ public class Spot
     public Player getPlayer()
     {
         for (int i =0; i<getListCharacter().size(); i++){
-            // if(this.getListCharacter().get(i).getName()!= "Chimera" && this.getListCharacter().get(i).getName()!= "Cerberus" 
-            // && this.getListCharacter().get(i).getName()!= "Medusa" && this.getListCharacter().get(i).getName()!= "Cyclops" 
-            // && this.getListCharacter().get(i).getName()!= "Arachne" && this.getListCharacter().get(i).getName()!="Minotaur"){
-                // return(this.getListCharacter().get(i));
-            // }  
-            if( getListCharacter().get(i).getName()=="Theseus"){
-                return ((Player)getListCharacter().get(i));
+            if(getListCharacter().get(i)!=null){
+                if( getListCharacter().get(i).getName()=="Theseus"){
+                    return ((Player)getListCharacter().get(i));
+                }
             }
         }
         return(null);        
