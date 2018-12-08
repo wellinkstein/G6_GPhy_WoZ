@@ -80,7 +80,7 @@ public class NextSpot extends JPanel implements ActionListener
             {
                 if(myGame.getListSpot().get(6).getMonster().getName() == "Medusa")
                 {
-                    Icon icon = new ImageIcon("Medusa.jpg");
+                    Icon icon = new ImageIcon("MedusaHead.png");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
@@ -102,7 +102,7 @@ public class NextSpot extends JPanel implements ActionListener
             
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Chimera") // Chimera
                 {
-                    Icon icon = new ImageIcon("Chimera.jpg");
+                    Icon icon = new ImageIcon("ChimeraHead.jpg");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
@@ -122,7 +122,7 @@ public class NextSpot extends JPanel implements ActionListener
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Cerberus") // Cerberus
                 {
-                    Icon icon = new ImageIcon("Cerberus.jpg");
+                    Icon icon = new ImageIcon("CerberusHead.jpg");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
@@ -142,7 +142,7 @@ public class NextSpot extends JPanel implements ActionListener
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Arachne") // Arachne
                 {
-                    Icon icon = new ImageIcon("Arachne.jpg");
+                    Icon icon = new ImageIcon("ArachneHead.jpg");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
@@ -162,7 +162,7 @@ public class NextSpot extends JPanel implements ActionListener
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Cyclops") // Cyclops
                 {
-                    Icon icon = new ImageIcon("Cyclops.jpg");
+                    Icon icon = new ImageIcon("CyclopsHead.jpg");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
@@ -182,7 +182,7 @@ public class NextSpot extends JPanel implements ActionListener
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Minotaur") // Minotaur
                 {
-                    Icon icon = new ImageIcon("Minotaur.jpg");
+                    Icon icon = new ImageIcon("MinotaurHead.jpg");
                     JLabel label = new JLabel(icon);
                     myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
                     myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
