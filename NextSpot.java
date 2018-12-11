@@ -20,12 +20,12 @@ public class NextSpot extends JPanel implements ActionListener
     private JButton myFightButton,myFleeButton;
     private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel;
     private JFrame myFrame,myFrame2;
-    private JLabel myLabel,myLabel2;
+    private JLabel myLabel,myLabel2,myLabel3;
     /**
      * Constructor for objects of class NextSpot.
      */
-    //public NextSpot(Spot myGame.getListSpot().get(6))
-    public NextSpot()
+    public NextSpot(Spot gameSpot)
+    // public NextSpot()
     {
         myPanel = new JPanel();
         myFightPanel = new JPanel();
@@ -62,20 +62,20 @@ public class NextSpot extends JPanel implements ActionListener
         
         myPanel.setLayout(new GridLayout(1,2));
        
-        myFrame = new JFrame("MONSTER");
+        // myFrame = new JFrame("MONSTER");
         
         myFightButton.addActionListener(this);
         myFleeButton.addActionListener(this);
-        myGame = new Game();
+        // myGame = new Game();
         
-            if (myGame.getListSpot().get(6).getMonster() != null) //Medusa
+            if (gameSpot.getMonster() != null) //Medusa
             {
-                if(myGame.getListSpot().get(6).getMonster().getName() == "Medusa")
+                if(gameSpot.getMonster().getName() == "Medusa")
                 {
                     Icon icon = new ImageIcon("MedusaHead.png");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -94,12 +94,12 @@ public class NextSpot extends JPanel implements ActionListener
                     
                 }
             
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Chimera") // Chimera
+                else if(gameSpot.getMonster().getName() == "Chimera") // Chimera
                 {
                     Icon icon = new ImageIcon("ChimeraHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -116,12 +116,12 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Cerberus") // Cerberus
+                else if(gameSpot.getMonster().getName() == "Cerberus") // Cerberus
                 {
                     Icon icon = new ImageIcon("CerberusHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -138,12 +138,12 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Arachne") // Arachne
+                else if(gameSpot.getMonster().getName() == "Arachne") // Arachne
                 {
                     Icon icon = new ImageIcon("ArachneHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -160,12 +160,12 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Cyclops") // Cyclops
+                else if(gameSpot.getMonster().getName() == "Cyclops") // Cyclops
                 {
                     Icon icon = new ImageIcon("CyclopsHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -182,12 +182,12 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Minotaur") // Minotaur
+                else if(gameSpot.getMonster().getName() == "Minotaur") // Minotaur
                 {
                     Icon icon = new ImageIcon("MinotaurHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
@@ -218,12 +218,12 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myLabel2);
                      
                 }
-            // bigPanel.setVisible(true);
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+            bigPanel.setVisible(true);
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 
             // } 
                 // Icon icon = new ImageIcon("Medusa.jpg");
@@ -258,24 +258,19 @@ public class NextSpot extends JPanel implements ActionListener
     {
         if(e.getSource()==myFleeButton) //cancels the choice of direction and doesn't engage a fight
         {
-            myFrame.setVisible(false);
             
-            myFrame2 = new JFrame();
-            JLabel label = new JLabel("No monster");
-                    myLabel = new JLabel ("No monster");
-                    myLabel2 = new JLabel("No monster");
-                    myPanel.add(label);
-                    myPanel.add(myLabel);
-                    bigPanel.add(myLabel2);
-                    bigPanel.add(myPanel);
-                    bigPanel.add(myLabel2);
-            myFrame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame2.add(bigPanel);
-                    myFrame2.setSize(150, 150);
-                    myFrame2.pack();
-                    myFrame2.setVisible(true);
+            bigPanel.removeAll();
+            myLabel3 = new JLabel("No monster");
+            bigPanel.add(myLabel3);
+            
+            // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                     
-                   
+            bigPanel.revalidate();
+            bigPanel.repaint();       
         }
         
     }
