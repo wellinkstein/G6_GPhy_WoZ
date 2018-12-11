@@ -20,7 +20,7 @@ public class ItemDescription extends JPanel implements ActionListener
     /**
      * Constructor for objects of class ItemDescription
      */
-    public ItemDescription(Item item, Spot spot)
+    public ItemDescription(Item item)
     {
         // Spot spot= new Spot(); 
         // Common item= new Common("Iron Sword","khzie",3,0,0); 
