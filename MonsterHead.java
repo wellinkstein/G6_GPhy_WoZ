@@ -23,18 +23,16 @@ public class MonsterHead extends JPanel
     /**
      * Constructor for objects of class MonsterHead
      */
-    public MonsterHead(Spot mySpot)
+    public MonsterHead(Monster monster)
     {
         JPanel myMainPanel, myStatsPanel;
-        JFrame myFrame;
-        myGame = new Game();
         
-        if (mySpot.getMonster().getName()=="Medusa")
+        if (monster.getName()=="Medusa")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MedusaHead.png");
             JLabel label = new JLabel(icon);
         
@@ -55,12 +53,12 @@ public class MonsterHead extends JPanel
             myMainPanel.setVisible(true);
             add(myMainPanel);
         }
-        else if (mySpot.getMonster().getName()=="Chimera")
+        else if (monster.getName()=="Chimera")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ChimeraHead.png");
             JLabel label = new JLabel(icon);
         
@@ -81,12 +79,12 @@ public class MonsterHead extends JPanel
             myMainPanel.setVisible(true);
             add(myMainPanel);
         }
-        else if (mySpot.getMonster().getName()=="Cerberus")
+        else if (monster.getName()=="Cerberus")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("CerberusHead.png");
             JLabel label = new JLabel(icon);
         
@@ -107,12 +105,12 @@ public class MonsterHead extends JPanel
             myMainPanel.setVisible(true);
             add(myMainPanel);
         }
-        else if (mySpot.getMonster().getName()=="Arachne")
+        else if (monster.getName()=="Arachne")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ArachneHead.png");
             JLabel label = new JLabel(icon);
         
@@ -133,12 +131,12 @@ public class MonsterHead extends JPanel
             myMainPanel.setVisible(true);
             add(myMainPanel);
         }
-        else if (mySpot.getMonster().getName()=="Cyclops")
+        else if (monster.getName()=="Cyclops")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("CyclopsHead.png");
             JLabel label = new JLabel(icon);
         
@@ -159,12 +157,12 @@ public class MonsterHead extends JPanel
             myMainPanel.setVisible(true);
             add(myMainPanel);
         }
-        else if (mySpot.getMonster().getName()=="Minotaur")
+        else if (monster.getName()=="Minotaur")
         {
-            myHealth = new JLabel("HP: "+String.valueOf(mySpot.getMonster().getHP()),JLabel.CENTER);
-            myXP = new JLabel("XP: "+String.valueOf(mySpot.getMonster().getXp()),JLabel.CENTER);
-            myAttack = new JLabel("Attack: "+String.valueOf(mySpot.getMonster().getDamage()),JLabel.CENTER);
-            myProtection = new JLabel("Protection: "+String.valueOf(mySpot.getMonster().getProtection()),JLabel.CENTER);
+            myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
+            myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
+            myAttack = new JLabel("Attack: "+String.valueOf(monster.getDamage()),JLabel.CENTER);
+            myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MinotaurHead.png");
             JLabel label = new JLabel(icon);
         

@@ -49,19 +49,21 @@ public class AffichMain2 extends JFrame
         panelInventory.setSize(5,5);
         panelInventory.setBackground(Color.GREEN);
         panelNextSpot=new JPanel();
-        panelNextSpot= new NextSpot();
+        panelNextSpot= new NextSpot(myGame.getListSpot().get(6));
         panelDiag = new JPanel();
         panelBouton= new JPanel();
         panelLab=new JPanel();
         panelPlayer = new JPanel();
+        panelPlayer = new PlayerHead();
         panelMonster= new JPanel();
+        panelMonster = new MonsterHead();
         
         panelGauche.setLayout(new GridLayout(2,1));
         panelDroite.setLayout(new GridLayout(4,1));
         
         panelDroiteH.setLayout(new GridLayout(2,1));
         panelDroiteC.setLayout(new GridLayout(1,3));
-        panelDroiteB.setLayout(new GridLayout(2,1));
+        panelDroiteB.setLayout(new GridLayout(1,2));
         
         //ajout
         panelDroiteH.add(panelPlayer);
