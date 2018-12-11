@@ -1,14 +1,24 @@
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.geom.*;
+import java.util.*;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
 /**
  * Write a description of class MonsterHead here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MonsterHead
+public class MonsterHead extends JPanel
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private Game myGame;
+    private JPanel myMainPanel, myStatsPanel;
+    private JLabel myHealth, myXP, myAttack, myProtection;
+    private JFrame myFrame;
 
     /**
      * Constructor for objects of class MonsterHead
@@ -16,18 +26,7 @@ public class MonsterHead
     public MonsterHead()
     {
         // initialise instance variables
-        x = 0;
+        
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }

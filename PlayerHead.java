@@ -52,11 +52,15 @@ public class PlayerHead extends JPanel
         
         myMainPanel.add(myStatsPanel);
         
-        myFrame = new JFrame();
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.add(myMainPanel);
-        myFrame.setSize(50,150);
-        myFrame.pack();
-        myFrame.setVisible(true);
+        myMainPanel.setSize(50,150);
+        myMainPanel.setVisible(true);
+        add(myMainPanel);
+        
+        // myFrame = new JFrame();
+        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // myFrame.add(myMainPanel);
+        // myFrame.setSize(50,150);
+        // myFrame.pack();
+        // myFrame.setVisible(true);
     }
 }
