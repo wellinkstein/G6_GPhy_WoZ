@@ -8,7 +8,7 @@ import java.awt.event.*;
  * @author Jérémie Guilbaud
  * @version 1.0
  */
-public class FightInterface extends JFrame implements ActionListener
+public class FightInterface extends JPanel //implements ActionListener
 {
 
     private JPanel panelMain, panelBot, panelBig;
@@ -23,8 +23,8 @@ public class FightInterface extends JFrame implements ActionListener
      */
     public FightInterface()
     {
-        myFrame = new JFrame("Fight Interface");
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //myFrame = new JFrame("Fight Interface");
+        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // BEGIN POUR TEST
         myGame = new Game();
@@ -138,9 +138,11 @@ public class FightInterface extends JFrame implements ActionListener
         panelBig = new JPanel(new GridLayout(2,0));
         panelBig.add(panelMain);
         panelBig.add(panelBot);
-        myFrame.add(panelBig);
-        myFrame.pack();
-        myFrame.setVisible(true);
+        panelBig.setVisible(true);
+        add(panelBig);
+        //myFrame.add(panelBig);
+        //myFrame.pack();
+        //myFrame.setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e)
