@@ -20,13 +20,23 @@ public class AffichMain extends JFrame
     private Game myGame; 
     private JPanel panelVarious, panelDescriptionItem, bigPanel, panelHaut, panelBas;
     private SpotItem panelListItem;
+    private ItemDescription myDescription;
     private Spot newSpot;
+    
+    public AffichMain()
+    {
+        main();
+    }
+    
     public void main()
     {
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
+        
         //creation du frame
+        myDescription = new ItemDescription(new Common("Wooden Shield", "item test",0,0,0));
+        //myDescription.setVisible(false);
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panelVarious= new JPanel();
@@ -36,22 +46,18 @@ public class AffichMain extends JFrame
         panelListItem = new SpotItem(myGame.getListSpot().get(19));
         //System.out.println(panelListItem);
         panelVarious= panelListItem;
-        
         //Grille du frame et des panels
         myFrame.setLayout(new GridLayout(1,2));
         bigPanel.setLayout(new GridLayout(3,1));
         panelHaut.setLayout(new GridLayout(1,2));
         
         //ajout
-        bigPanel.add(panelHaut);
-        bigPanel.add(panelVarious);
+        bigPanel.add(myDescription);
+        bigPanel.add(panelListItem);
         bigPanel.add(panelBas);
         myFrame.add(new Scrolling(newSpot));
         myFrame.add(bigPanel);
-        
-       
-        
-        
+
         myFrame.pack();
         myFrame.setVisible(true);
     }

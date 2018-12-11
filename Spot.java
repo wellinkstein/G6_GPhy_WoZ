@@ -448,6 +448,16 @@ public class Spot
     {
         return(objectInSpot);
     }
+    
+    /**
+     * Get the item at this index
+     * @return an item
+     */
+    public Item getOneItem(int i)
+    {
+        return(objectInSpot.get(i));
+    }
+
 
     /**
      * Remove item from a spot. If there is no character in that spot,
