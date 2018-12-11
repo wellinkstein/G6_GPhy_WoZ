@@ -247,13 +247,9 @@ public class NextSpot extends JPanel implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-        if(e.getSource()==myFightButton)
+        if(e.getSource()==myFleeButton)
         {
-            //Sends to fight screen
-        }
-        else
-        {
-            
+            NextSpot()//cancels the choice of direction and doesn't engage a fight
         }
         
     }
