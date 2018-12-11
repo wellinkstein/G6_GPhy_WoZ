@@ -13,7 +13,6 @@ public class FightInterface extends JPanel //implements ActionListener
 
     private JPanel panelMain, panelBot, panelBig;
     private JLabel dialog, playerImg, monsterImg;
-    // private JFrame myFrame;
     private ImageIcon iconPlayer, iconMonster;
     private Game myGame;
     private Spot mySpot;
@@ -23,22 +22,20 @@ public class FightInterface extends JPanel //implements ActionListener
      */
     public FightInterface()
     {
-        //myFrame = new JFrame("Fight Interface");
-        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        dialog = new JLabel("<html><b>Journal de combat</b><br><br></html>");
+        dialog = new JLabel("<html><b>Journal de combat</b><br>--------------------------<br><br><br>");
 
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
-        
+
         panelBot.add(dialog);
 
         GridBagConstraints c = new GridBagConstraints();
-        
+
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
 
-        iconPlayer = new ImageIcon("theseus.png"); 
+        iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
 
@@ -61,6 +58,7 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("Medusa! Her sight might be more dangerous than the snakes on her head.<br><br>");
             }
 
             else if(myGame.getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
@@ -74,6 +72,7 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
             {
@@ -86,6 +85,7 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
             {
@@ -98,6 +98,7 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
             {
@@ -110,6 +111,8 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
+
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
             {
@@ -122,6 +125,8 @@ public class FightInterface extends JPanel //implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
+                updateNameMonster("The Minotaur! May the Gods be with you.<br><br>");
+
             }
         }
 
@@ -130,18 +135,118 @@ public class FightInterface extends JPanel //implements ActionListener
         panelBig.add(panelBot);
         panelBig.setVisible(true);
         add(panelBig);
-        //myFrame.add(panelBig);
-        //myFrame.pack();
-        //myFrame.setVisible(true);
     }
 
-    public void updateJLabel(String texte)
+    public void updateNameMonster(String texte)
     {
-        dialog.setText(dialog.getText() + "<html>" + texte + "<br></html");
+        dialog.setText(dialog.getText() + "You are fighting " + texte);
     }
     
-    public void updateJPanel()
-    {  
+    public void updatePanel()
+    {
+
+        GridBagConstraints c = new GridBagConstraints();
+
+        iconPlayer = new ImageIcon("TheseusFinal.png"); 
+        playerImg = new JLabel();
+        playerImg.setIcon(iconPlayer);
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy=0;
+        panelMain.add(playerImg,c);
+
+        if (myGame.getCurrentSpot().getMonster() != null)
+        {
+            if(myGame.getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
+            {
+                iconMonster = new ImageIcon("MedusaFinal.png");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("Medusa! Her sight might be more dangerous than the snakes on her head.<br><br>");
+            }
+
+            else if(myGame.getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+            {
+                iconMonster = new ImageIcon("chimera.jpg");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
+            }
+            else if(myGame.getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+            {
+                iconMonster = new ImageIcon("CerberusFinal.png");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
+            }
+            else if(myGame.getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+            {
+                iconMonster = new ImageIcon("ArachneFinal.png");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
+            }
+            else if(myGame.getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
+            {
+                iconMonster = new ImageIcon("CyclopsFinal.png");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
+
+            }
+            else if(myGame.getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
+            {
+                iconMonster = new ImageIcon("MinotaurFinal.png");
+                monsterImg = new JLabel();
+                monsterImg.setIcon(iconMonster);
+
+                c.fill = GridBagConstraints.HORIZONTAL;
+                c.weightx = 0.5;
+                c.gridx = 1;
+                c.gridy=0;
+                panelMain.add(monsterImg,c);
+                updateNameMonster("The Minotaur! May the Gods be with you.<br><br>");
+
+            }
+        }
+        panelBig.add(panelMain);
+        panelBig.add(panelBot);
+        panelBig.setVisible(false);
+        panelBig.setVisible(true);
+        add(panelBig);
         
     }
+
 }
