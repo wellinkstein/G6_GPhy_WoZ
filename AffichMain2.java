@@ -62,9 +62,9 @@ public class AffichMain2 extends JFrame
         panelDroiteH.add(panelPlayer);
         panelDroiteH.add(panelMonster);
         
-        panelDroiteC.add(panelDroiteH);
-        panelDroiteC.add(panelDroiteH);
-        panelDroiteC.add(panelDroiteH);
+        panelDroiteC.add(panelSpotItem);
+        panelDroiteC.add(panelDesc);
+        panelDroiteC.add(panelCombat);
         
         panelDroiteB.add(panelNextSpot);
         panelDroiteB.add(panelDiag);
@@ -77,6 +77,7 @@ public class AffichMain2 extends JFrame
         panelDroite.add(panelDroiteC);
         panelDroite.add(panelDroiteB);
 
+      
         myFrame.add(panelGauche);
         myFrame.add(panelDroite);
         

@@ -29,7 +29,7 @@ public class NextSpot extends JPanel implements ActionListener
         JPanel myPanel;
         JPanel myFightPanel,myFleePanel, bigPanel, bigButtonPanel;
         JButton myFightButton,myFleeButton;
-        JFrame myFrame;
+        //JFrame myFrame;
         JLabel myLabel,myLabel2;
 
         
@@ -70,7 +70,7 @@ public class NextSpot extends JPanel implements ActionListener
         
         myPanel.setLayout(new GridLayout(1,2));
        
-        myFrame = new JFrame("MONSTER");
+        //myFrame = new JFrame("MONSTER");
         
         myFightButton.addActionListener(this);
         myFleeButton.addActionListener(this);
@@ -90,13 +90,14 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    //myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                     
                 }
             

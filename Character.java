@@ -126,6 +126,18 @@ public abstract class Character
         }
     }
     
+    /** Method that returns the value of HP lost without changing the attributes.
+     * Used in the FightInterface to create combat text 
+     */
+    public int valLoseHp(int damage)
+    {
+        if(damage>0)
+        {
+            return (damage-protection);
+        }
+        return 0;
+    }
+    
     /**
      * Method that gives Xp based on the gainXP attribute
      * Xp can only be gained if the xp that is supposed to be gained is above 0
