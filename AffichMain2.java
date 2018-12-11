@@ -45,6 +45,7 @@ public class AffichMain2 extends JFrame
         panelDesc= new JPanel();
         panelInventory= new JPanel();
         panelNextSpot=new JPanel();
+        panelNextSpot= new NextSpot();
         panelDiag = new JPanel();
         panelBouton= new JPanel();
         panelLab=new JPanel();

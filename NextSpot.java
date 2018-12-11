@@ -90,6 +90,7 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
                     bigPanel.setSize(150,150);
                     
                     //myFrame = new JFrame();
@@ -113,13 +114,15 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    // myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Cerberus") // Cerberus
                 {
@@ -133,13 +136,15 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    // myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Arachne") // Arachne
                 {
@@ -153,13 +158,15 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    // myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Cyclops") // Cyclops
                 {
@@ -173,13 +180,15 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    // myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 }   
                 else if(myGame.getListSpot().get(6).getMonster().getName() == "Minotaur") // Minotaur
                 {
@@ -193,15 +202,18 @@ public class NextSpot extends JPanel implements ActionListener
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
+                    bigPanel.setVisible(true);
+                    bigPanel.setSize(150,150);
                     
-                    myFrame = new JFrame();
-                    myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    myFrame.add(bigPanel);
-                    myFrame.setSize(150, 150);
-                    myFrame.pack();
-                    myFrame.setVisible(true);
+                    // myFrame = new JFrame();
+                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
                 }
             }
+            add(bigPanel);
                 
             // } 
                 // Icon icon = new ImageIcon("Medusa.jpg");
