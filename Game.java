@@ -34,7 +34,7 @@ public class Game
     {
         createLabyrinth();
         
-        Player theseus = new Player(20,"Theseus",1,1,0);
+        theseus = new Player(20,"Theseus",1,1,0);
         
         
         Common ironSword= new Common ("Iron Sword","",3,0,0);
@@ -111,7 +111,7 @@ public class Game
         listHealthPotion.add(21);
         placeItem(healthPotion,listHealthPotion);
         
-        Spot currentSpot = new Spot();
+        currentSpot = new Spot();
         exitAndStart();//initialize start spot (also current spot) and exit spot 
         addToCurrentSpot(theseus);
         
