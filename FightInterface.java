@@ -33,7 +33,7 @@ public class FightInterface extends JFrame implements ActionListener
         Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
         LesserBoss medusa= new LesserBoss(20,"Arachne",5,4,1,"",artemisBow);
 
-        //mySpot.addCharacterSpot(medusa);
+        mySpot.addCharacterSpot(medusa);
         myGame.setCurrentSpot(mySpot);
         // END POUR TEST
 
