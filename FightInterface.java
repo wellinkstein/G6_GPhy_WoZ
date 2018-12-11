@@ -138,6 +138,17 @@ public class FightInterface extends JPanel //implements ActionListener
     }
     
     /**
+     * A method the print a text in the dialog box when the monster is dead
+     */
+    public void printDeadMonster(boolean ded)
+    {
+        if(ded==true)
+        {
+            dialog.setText(dialog.getText() + "The monster is dead!<br><br>");
+        }
+    }
+    
+    /**
      * A method to enter the name of the monster that Theseus is fighting
      * with a description.
      * @param String texte: text to be added to the combat logbook
