@@ -23,17 +23,15 @@ public class PlayerHead extends JPanel
     /**
      * Constructor for objects of class PlayerHead
      */
-    public PlayerHead()
+    public PlayerHead(Player player)
     {
         JPanel myMainPanel, myStatsPanel;
-        JFrame myFrame;
-        myGame = new Game();
         
         
-        myHealth = new JLabel("HP: "+String.valueOf(myGame.getPlayer().getHP()),JLabel.CENTER);
-        myXP = new JLabel("XP: "+String.valueOf(myGame.getPlayer().getXp()),JLabel.CENTER);
-        myAttack = new JLabel("Attack: "+String.valueOf(myGame.getPlayer().getDamage()),JLabel.CENTER);
-        myProtection = new JLabel("Protection: "+String.valueOf(myGame.getPlayer().getProtection()),JLabel.CENTER);
+        myHealth = new JLabel("HP: "+String.valueOf(player.getHP()),JLabel.CENTER);
+        myXP = new JLabel("XP: "+String.valueOf(player.getXp()),JLabel.CENTER);
+        myAttack = new JLabel("Attack: "+String.valueOf(player.getDamage()),JLabel.CENTER);
+        myProtection = new JLabel("Protection: "+String.valueOf(player.getProtection()),JLabel.CENTER);
         Icon icon = new ImageIcon("Theseus head.png");
         JLabel label = new JLabel(icon);
         

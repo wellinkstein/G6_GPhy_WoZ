@@ -34,7 +34,7 @@ public class NextSpot extends JPanel implements ActionListener
 
         
         
-        
+       
         myPanel = new JPanel();
         myFightPanel = new JPanel();
         myFleePanel = new JPanel();
