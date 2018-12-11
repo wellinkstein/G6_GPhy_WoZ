@@ -30,6 +30,7 @@ public class ItemDescription extends JPanel implements ActionListener
         bigPanel = new JPanel();
         //JFrame myFrame;
         myButton = new JButton ("Close");
+        myButton.addActionListener(this);
 
         bigPanel.setLayout(new GridLayout(0,1));
         myPanel.setLayout(new GridLayout(1,2));
@@ -106,7 +107,8 @@ public class ItemDescription extends JPanel implements ActionListener
         bigPanel.add(myPanel); 
         bigPanel.add(myPanel2); 
         
-        add(bigPanel); 
+        add(bigPanel);
+        setVisible(true);
         // myFrame = new JFrame();
         // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // myFrame.add(bigPanel);
@@ -131,7 +133,8 @@ public class ItemDescription extends JPanel implements ActionListener
     {
         if(e.getSource() == myButton)
             {
-                bigPanel.setVisible(false); 
+                System.out.println("Effacage");
+                this.setVisible(false); 
                 // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
     }

@@ -27,6 +27,12 @@ public class MonsterHead extends JPanel
     {
         JPanel myMainPanel, myStatsPanel;
         
+        myMainPanel=new JPanel();
+        myMainPanel.setLayout(new GridLayout(1,1));
+        
+        myStatsPanel= new JPanel();
+        myStatsPanel.setLayout(new GridLayout(4,1));
+        
         if (monster.getName()=="Medusa")
         {
             myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
@@ -35,13 +41,6 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MedusaHead.png");
             JLabel label = new JLabel(icon);
-        
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
@@ -49,9 +48,6 @@ public class MonsterHead extends JPanel
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
             
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
         }
         else if (monster.getName()=="Chimera")
         {
@@ -61,23 +57,12 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ChimeraHead.png");
             JLabel label = new JLabel(icon);
-        
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
-            
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
         }
         else if (monster.getName()=="Cerberus")
         {
@@ -87,23 +72,12 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("CerberusHead.png");
             JLabel label = new JLabel(icon);
-        
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
-            
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
         }
         else if (monster.getName()=="Arachne")
         {
@@ -113,23 +87,12 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ArachneHead.png");
             JLabel label = new JLabel(icon);
-        
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
-            
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
         }
         else if (monster.getName()=="Cyclops")
         {
@@ -140,22 +103,12 @@ public class MonsterHead extends JPanel
             Icon icon = new ImageIcon("CyclopsHead.png");
             JLabel label = new JLabel(icon);
         
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
-            
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
         }
         else if (monster.getName()=="Minotaur")
         {
@@ -165,13 +118,7 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MinotaurHead.png");
             JLabel label = new JLabel(icon);
-        
-            myMainPanel=new JPanel();
-            myMainPanel.setLayout(new GridLayout(1,1));
-        
-            myStatsPanel= new JPanel();
-            myStatsPanel.setLayout(new GridLayout(4,1));
-        
+            
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
@@ -179,11 +126,12 @@ public class MonsterHead extends JPanel
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
             
-            myMainPanel.setSize(50,150);
-            myMainPanel.setVisible(true);
-            add(myMainPanel);
+            
         }
         
+        myMainPanel.setPreferredSize(new Dimension(150,100));
+        myMainPanel.setVisible(true);
+        add(myMainPanel);
     }
 
 }

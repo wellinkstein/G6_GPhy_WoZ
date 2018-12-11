@@ -36,6 +36,8 @@ public class PlayerHead extends JPanel
         JLabel label = new JLabel(icon);
         
         myMainPanel=new JPanel();
+        myMainPanel.setOpaque(true);
+        myMainPanel.setBackground(Color.BLUE);
         myMainPanel.setLayout(new GridLayout(1,1));
         
         myStatsPanel= new JPanel();
@@ -50,7 +52,7 @@ public class PlayerHead extends JPanel
         
         myMainPanel.add(myStatsPanel);
         
-        myMainPanel.setSize(50,150);
+        myMainPanel.setPreferredSize(new Dimension(150,100));
         myMainPanel.setVisible(true);
         add(myMainPanel);
         
