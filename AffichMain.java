@@ -36,14 +36,14 @@ public class AffichMain extends JFrame
         
         //creation du frame
         myDescription = new ItemDescription(new Common("Wooden Shield", "item test",0,0,0));
-        //myDescription.setVisible(false);
+        myDescription.setVisible(false);
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panelVarious= new JPanel();
         panelBas= new JPanel();
         panelHaut= new JPanel();
         bigPanel = new JPanel();
-        panelListItem = new SpotItem(myGame.getListSpot().get(19));
+        panelListItem = new SpotItem(myGame.getListSpot().get(19),this);
         //System.out.println(panelListItem);
         panelVarious= panelListItem;
         //Grille du frame et des panels
@@ -60,6 +60,18 @@ public class AffichMain extends JFrame
 
         myFrame.pack();
         myFrame.setVisible(true);
+    }
+    
+    public void setDes(ItemDescription myDes)
+    {
+        bigPanel.removeAll();
+        bigPanel.setLayout(new GridLayout(3,1));
+        bigPanel.add(myDes);
+        bigPanel.add(panelListItem);
+        bigPanel.add(panelBas);
+        bigPanel.revalidate();
+        bigPanel.repaint();
+        System.out.println("New Description");
     }
     
     public Game getGame(){
