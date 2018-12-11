@@ -8,7 +8,7 @@ import java.util.*;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 /**
- * Write a description of class NextSpot here.
+ * NextSpot displays the monster present in the spot defined by the chosen direction
  *
  * @author (Yohan Lefol)
  * @version (2018-12-04)
@@ -22,9 +22,9 @@ public class NextSpot extends JPanel implements ActionListener
     private JFrame myFrame;
     private JLabel myLabel,myLabel2;
     /**
-     * Constructor for objects of class NextSpot
+     * Constructor for objects of class NextSpot.
      */
-    public NextSpot()
+    public NextSpot(Spot gameSpot)
     {
         JPanel myPanel;
         JPanel myFightPanel,myFleePanel, bigPanel, bigButtonPanel;
@@ -34,7 +34,7 @@ public class NextSpot extends JPanel implements ActionListener
 
         
         
-        
+       
         myPanel = new JPanel();
         myFightPanel = new JPanel();
         myFleePanel = new JPanel();
@@ -75,23 +75,23 @@ public class NextSpot extends JPanel implements ActionListener
         myFightButton.addActionListener(this);
         myFleeButton.addActionListener(this);
         
-        myGame = new Game();
-            if (myGame.getListSpot().get(6).getMonster() != null) //Medusa
+        
+            if (gameSpot.getMonster() != null) //Medusa
             {
-                if(myGame.getListSpot().get(6).getMonster().getName() == "Medusa")
+                if(gameSpot.getMonster().getName() == "Medusa")
                 {
                     Icon icon = new ImageIcon("MedusaHead.png");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     //myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,20 +102,20 @@ public class NextSpot extends JPanel implements ActionListener
                     
                 }
             
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Chimera") // Chimera
+                else if(gameSpot.getMonster().getName() == "Chimera") // Chimera
                 {
                     Icon icon = new ImageIcon("ChimeraHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     // myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -124,20 +124,20 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Cerberus") // Cerberus
+                else if(gameSpot.getMonster().getName() == "Cerberus") // Cerberus
                 {
                     Icon icon = new ImageIcon("CerberusHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     // myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -146,20 +146,20 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Arachne") // Arachne
+                else if(gameSpot.getMonster().getName() == "Arachne") // Arachne
                 {
                     Icon icon = new ImageIcon("ArachneHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     // myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -168,20 +168,20 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Cyclops") // Cyclops
+                else if(gameSpot.getMonster().getName() == "Cyclops") // Cyclops
                 {
                     Icon icon = new ImageIcon("CyclopsHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     // myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -190,20 +190,20 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.pack();
                     // myFrame.setVisible(true);
                 }   
-                else if(myGame.getListSpot().get(6).getMonster().getName() == "Minotaur") // Minotaur
+                else if(gameSpot.getMonster().getName() == "Minotaur") // Minotaur
                 {
                     Icon icon = new ImageIcon("MinotaurHead.jpg");
                     JLabel label = new JLabel(icon);
-                    myLabel = new JLabel (myGame.getListSpot().get(6).getMonster().getName(),JLabel.CENTER);
-                    myLabel2 = new JLabel(myGame.getListSpot().get(6).getMonster().getDescription(),JLabel.CENTER);
+                    myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+                    myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                     myPanel.add(label);
                     myPanel.add(myLabel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(myPanel);
                     bigPanel.add(myLabel2);
                     bigPanel.add(bigButtonPanel);
-                    bigPanel.setVisible(true);
-                    bigPanel.setSize(150,150);
+                    
+                    
                     
                     // myFrame = new JFrame();
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -213,6 +213,7 @@ public class NextSpot extends JPanel implements ActionListener
                     // myFrame.setVisible(true);
                 }
             }
+            bigPanel.setVisible(true);
             add(bigPanel);
                 
             // } 
