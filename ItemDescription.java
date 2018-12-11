@@ -133,7 +133,7 @@ public class ItemDescription extends JPanel implements ActionListener
     {
         if(e.getSource() == myButton)
             {
-                System.out.println("Effacage");
+                //System.out.println("Effacage");
                 this.setVisible(false); 
                 // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
