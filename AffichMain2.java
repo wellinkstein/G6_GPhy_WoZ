@@ -30,6 +30,7 @@ public class AffichMain2 extends JFrame
         //creation du frame
         myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setSize( 1024, 768 );
         panelGauche= new JPanel();
         panelDroite= new JPanel();
         bigPanel = new JPanel();
@@ -39,6 +40,12 @@ public class AffichMain2 extends JFrame
         panelDroiteH=new JPanel();
         panelDroiteC=new JPanel();
         panelDroiteB=new JPanel();
+        
+        JPanel p = new JPanel();
+        Dimension panelSize = p.getPreferredSize();
+        panelDroiteH.setPreferredSize(new Dimension((int)(panelSize.getWidth() * 2.5),
+                (int)(panelSize.getHeight()/2)));
+        
         
         panelSpotItem =new JPanel();
         panelSpotItem =new SpotItem(myGame.getListSpot().get(19));
@@ -53,15 +60,18 @@ public class AffichMain2 extends JFrame
         panelDiag = new JPanel();
         panelBouton= new JPanel();
         panelLab=new JPanel();
+        
         panelPlayer = new JPanel();
-        panelPlayer = new PlayerHead();
+        panelPlayer = new PlayerHead(myGame.getPlayer());
+        panelPlayer.setBackground(Color.BLUE);
+        
         panelMonster= new JPanel();
-        panelMonster = new MonsterHead();
+        panelMonster = new MonsterHead(myGame.getListSpot().get(6).getMonster());
         
         panelGauche.setLayout(new GridLayout(2,1));
         panelDroite.setLayout(new GridLayout(4,1));
         
-        panelDroiteH.setLayout(new GridLayout(2,1));
+        panelDroiteH.setLayout(new GridLayout(1,2));
         panelDroiteC.setLayout(new GridLayout(1,3));
         panelDroiteB.setLayout(new GridLayout(1,2));
         
