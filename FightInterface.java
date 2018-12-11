@@ -36,7 +36,7 @@ public class FightInterface extends JPanel //implements ActionListener
         myGame.setCurrentSpot(mySpot);
         // END POUR TEST
 
-        dialog = new JLabel("<html><b>Wow deux lignes</b><br>de combat intense</html>");
+        dialog = new JLabel("<html><b>Journal de combat</b><br><br></html>");
 
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
@@ -145,21 +145,8 @@ public class FightInterface extends JPanel //implements ActionListener
         //myFrame.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e)
+    public void updateJLabel(String texte)
     {
-        if(myGame.getCurrentSpot().getMonster()!=null)
-        {
-            myGame.fight();
-        }
-    }
-
-    public void displayFight()
-    {
-        dialog.setText(dialog.getText() + "text u want to append");
-        //if(Game.criticalHit() != 0)
-       // {
-        dialog.setText ("wow des dégats");
+        dialog.setText(dialog.getText() + "<html>" + texte + "<br></html");
     }
 }
-
-    //public void fighters
