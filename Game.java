@@ -436,23 +436,36 @@ public class Game
     
     /**
      * The fight starts. it ends when one of the characters dies
+     * @return List<Integer> listDamage: the list of all the damage
+     * that were inflicted during the fight.
+     * If the list begins by "-1", it means that Theseus began the fight.
      * 
      */
-    public void fight() 
+    public List<Integer> fight() 
     { 
+          int damFighter;
+          List<Integer> listDamage = new ArrayList<>();
           whoBegins();
+          if(fighter==theseus)
+          {
+              listDamage.add(-1);
+          }
+          
           while (fighter.HP!=0){
-              inflictDamage();
+              damFighter=inflictDamage();
               if (fighter==theseus){
-                  criticalHit();
+                  damFighter=inflictDamage()+criticalHit();
               }
+              listDamage.add(damFighter);
               setFighter(fighter);
           }
+          
           if (fighter==theseus) { 
               setWinTrue();
           }
-          else setWinFalse(); 
+          else setWinFalse();
           
+          return (listDamage);
     }
     
     /**
@@ -480,21 +493,26 @@ public class Game
     
     /**
      * The fighter inflicts damage to the other character in the spot
-     * 
+     * @return the value of the damage inflicted
      */
-    public void inflictDamage() 
+    public int inflictDamage() 
     { 
+          int dam=0;
           for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
           {
             if (currentSpot.getListCharacter().get(i) != fighter){
-                currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage()); 
+                currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage());
+                dam = currentSpot.getListCharacter().get(i).valLoseHp(fighter.getDamage());
             }
           }
+          return dam;
     }
   
     /**
      * 
-     * @return int dam: return the damage with or without critical strike
+     * @return int dam: return the damage of the critical strike 
+     * 0 if no critical strike
+     * and 50 % total damage if critical strike
      */
     public int criticalHit() 
     { 
@@ -517,7 +535,7 @@ public class Game
      * Changes the fighter to a designed character
      * @param Character fighter: the character is set to be the fighter
      */
-    public void setFighter( Character fighter) 
+    public void setFighter(Character fighter) 
     { 
         if (fighter==theseus){
             fighter=currentSpot.getMonster();

@@ -159,6 +159,11 @@ public class FightInterface extends JPanel //implements ActionListener
     }
     
     /**
+     * A method to write in the dialog box the fight
+     * use thread.wait to add delay
+     */
+    
+    /**
      * A method to update the panel. If there is a monster in the currentSpot, the 
      * picture of the monster and his description will be added to the panel.
      */
