@@ -28,7 +28,7 @@ public class PlayerHead extends JPanel
         JPanel myMainPanel, myStatsPanel;
         JFrame myFrame;
         myGame = new Game();
-        System.out.println(myGame.getPlayer());
+        
         
         myHealth = new JLabel("HP: "+String.valueOf(myGame.getPlayer().getHP()),JLabel.CENTER);
         myXP = new JLabel("XP: "+String.valueOf(myGame.getPlayer().getXp()),JLabel.CENTER);
