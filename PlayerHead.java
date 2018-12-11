@@ -28,12 +28,12 @@ public class PlayerHead extends JPanel
         JPanel myMainPanel, myStatsPanel;
         JFrame myFrame;
         myGame = new Game();
-        System.out.println(myGame.getPlayer());
         
-        myHealth = new JLabel("HP: "+String.valueOf(myGame.getPlayer()));
-        myXP = new JLabel("XP: "+String.valueOf(myGame.getPlayer().getXp()));
-        myAttack = new JLabel("Attack: "+String.valueOf(myGame.getPlayer().getDamage()));
-        myProtection = new JLabel("Protection: "+String.valueOf(myGame.getPlayer().getProtection()));
+        
+        myHealth = new JLabel("HP: "+String.valueOf(myGame.getPlayer().getHP()),JLabel.CENTER);
+        myXP = new JLabel("XP: "+String.valueOf(myGame.getPlayer().getXp()),JLabel.CENTER);
+        myAttack = new JLabel("Attack: "+String.valueOf(myGame.getPlayer().getDamage()),JLabel.CENTER);
+        myProtection = new JLabel("Protection: "+String.valueOf(myGame.getPlayer().getProtection()),JLabel.CENTER);
         Icon icon = new ImageIcon("Theseus head.png");
         JLabel label = new JLabel(icon);
         
@@ -52,11 +52,15 @@ public class PlayerHead extends JPanel
         
         myMainPanel.add(myStatsPanel);
         
-        myFrame = new JFrame();
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.add(myMainPanel);
-        myFrame.setSize(50,150);
-        myFrame.pack();
-        myFrame.setVisible(true);
+        myMainPanel.setSize(50,150);
+        myMainPanel.setVisible(true);
+        add(myMainPanel);
+        
+        // myFrame = new JFrame();
+        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // myFrame.add(myMainPanel);
+        // myFrame.setSize(50,150);
+        // myFrame.pack();
+        // myFrame.setVisible(true);
     }
 }
