@@ -23,7 +23,7 @@ public class FightInterface extends JPanel //implements ActionListener
     public FightInterface()
     {
 
-        dialog = new JLabel("<html><b>Journal de combat</b><br>--------------------------<br><br><br>");
+        dialog = new JLabel("<html><b>Combat logbook</b><br>--------------------------<br><br><br>");
 
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
@@ -136,12 +136,21 @@ public class FightInterface extends JPanel //implements ActionListener
         panelBig.setVisible(true);
         add(panelBig);
     }
-
+    
+    /**
+     * A method to enter the name of the monster that Theseus is fighting
+     * with a description.
+     * @param String texte: text to be added to the combat logbook
+     */
     public void updateNameMonster(String texte)
     {
         dialog.setText(dialog.getText() + "You are fighting " + texte);
     }
     
+    /**
+     * A method to update the panel. If there is a monster in the currentSpot, the 
+     * picture of the monster and his description will be added to the panel.
+     */
     public void updatePanel()
     {
 
@@ -248,5 +257,4 @@ public class FightInterface extends JPanel //implements ActionListener
         add(panelBig);
         
     }
-
 }
