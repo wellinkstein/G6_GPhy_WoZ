@@ -13,7 +13,7 @@ public class FightInterface extends JPanel //implements ActionListener
 
     private JPanel panelMain, panelBot, panelBig;
     private JLabel dialog, playerImg, monsterImg;
-    private JFrame myFrame;
+    // private JFrame myFrame;
     private ImageIcon iconPlayer, iconMonster;
     private Game myGame;
     private Spot mySpot;
@@ -25,16 +25,6 @@ public class FightInterface extends JPanel //implements ActionListener
     {
         //myFrame = new JFrame("Fight Interface");
         //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // BEGIN POUR TEST
-        myGame = new Game();
-        mySpot = new Spot();
-        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
-        LesserBoss medusa= new LesserBoss(20,"Arachne",5,4,1,"",artemisBow);
-
-        mySpot.addCharacterSpot(medusa);
-        myGame.setCurrentSpot(mySpot);
-        // END POUR TEST
 
         dialog = new JLabel("<html><b>Journal de combat</b><br><br></html>");
 
@@ -148,5 +138,10 @@ public class FightInterface extends JPanel //implements ActionListener
     public void updateJLabel(String texte)
     {
         dialog.setText(dialog.getText() + "<html>" + texte + "<br></html");
+    }
+    
+    public void updateJPanel()
+    {  
+        
     }
 }
