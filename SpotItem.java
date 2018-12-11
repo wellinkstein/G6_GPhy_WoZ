@@ -20,15 +20,16 @@ public class SpotItem extends JPanel
    private Item click; 
    private ItemDescription iD;
    private Spot mySpot;
+   private AffichMain myMain;
    //private AffichMain aM;
    
    /**
     * 
     */
-   public SpotItem(Spot spot)
+   public SpotItem(Spot spot, AffichMain cont)
    {
        mySpot = spot;
-
+       myMain = cont;
         for(int i = 0; i <= (spot.getListItem().size()-1); i++)
         {   
             content.add(new JButton(spot.getListItem().get(i).getName()));
@@ -51,7 +52,7 @@ public class SpotItem extends JPanel
       
        for(int i = 0; i <= (content.size()-1); i++)
         {
-            Ecouteur1 e = new Ecouteur1(this);
+            Ecouteur1 e = new Ecouteur1(this, myMain);
             content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }
@@ -93,7 +94,7 @@ public class SpotItem extends JPanel
       
        for(int i = 0; i <= (content.size()-1); i++)
         {
-            Ecouteur1 e = new Ecouteur1(this);
+            Ecouteur1 e = new Ecouteur1(this, myMain);
             content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }

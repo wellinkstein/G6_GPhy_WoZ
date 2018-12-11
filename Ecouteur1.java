@@ -14,14 +14,17 @@ public class Ecouteur1 implements ActionListener
     private Item itemClicked;
     private ItemDescription iDescription;
     
-    public Ecouteur1(SpotItem newSpotItem){
-       //affichMain = new AffichMain();
+    public Ecouteur1(SpotItem newSpotItem, AffichMain myMain){
+       affichMain = myMain;
        mySpotItem = newSpotItem;
     }
     
      public void actionPerformed (ActionEvent e)
     {
-        System.out.println(e.getSource());
+        Container mycont = mySpotItem.getParent();
+        //System.out.println(mySpotItem);
+        //System.out.println(mycont.getName());
+        
         
         //System.out.println(affichMain.getSpotItem());
         for(int i = 0; i <= ( mySpotItem.getContent().size()-1); i++)
@@ -36,12 +39,14 @@ public class Ecouteur1 implements ActionListener
                     //mySpotItem.showDescriptionItem(mySpotItem.getSpot().getOneItem((i/2)));
                     System.out.println("Description of the item"+(i%2));
                     ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
+                    affichMain.setDes(myDes);
                 }
                 else
                 {
                     //System.out.println("Taking");  
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
-                    //affichMain.getGame().getCurrentSpot().getPlayer().takeItem(affichMain.getGame().getCurrentSpot().getListItem().get((i-1)));     
+                    affichMain.getGame().getCurrentSpot().getPlayer().takeItem(mySpotItem.getSpot().getOneItem((i/2))); 
+                    affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem((i/2)));
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
                 }
             }
