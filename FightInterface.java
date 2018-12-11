@@ -11,7 +11,6 @@ import java.awt.event.*;
 public class FightInterface extends JFrame implements ActionListener
 {
 
-    private JButton buttonStartFight;
     private JPanel panelMain, panelBot, panelBig;
     private JLabel dialog, playerImg, monsterImg;
     private JFrame myFrame;
@@ -37,27 +36,15 @@ public class FightInterface extends JFrame implements ActionListener
         myGame.setCurrentSpot(mySpot);
         // END POUR TEST
 
-        buttonStartFight = new JButton("Start Fight");
-        buttonStartFight.addActionListener(this);
-
         dialog = new JLabel("Wow much damage very suspense");
 
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
+        
+        panelBot.add(dialog);
+
         GridBagConstraints c = new GridBagConstraints();
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.95;
-        c.gridx = 0;
-        c.gridy=0;
-        panelBot.add(dialog, c);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
-        c.gridy = 0; 
-        c.weightx = 0.05;
-        panelBot.add(buttonStartFight, c);
-
+        
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
 
@@ -84,8 +71,6 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
 
             else if(myGame.getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
@@ -99,8 +84,6 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
             {
@@ -113,8 +96,6 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
             {
@@ -127,8 +108,6 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
             {
@@ -141,8 +120,6 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
             else if(myGame.getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
             {
@@ -155,13 +132,7 @@ public class FightInterface extends JFrame implements ActionListener
                 c.gridx = 1;
                 c.gridy=0;
                 panelMain.add(monsterImg,c);
-
-                buttonStartFight.setEnabled(true);
             }
-        }
-        else
-        {
-            buttonStartFight.setEnabled(false);
         }
 
         panelBig = new JPanel(new GridLayout(2,0));
@@ -182,8 +153,11 @@ public class FightInterface extends JFrame implements ActionListener
 
     public void displayFight()
     {
-        dialog.setText("");
+        dialog.setText("gwgdrgdrgw");
+        //if(Game.criticalHit() != 0)
+       // {
+        dialog.setText ("wow des dégats");
     }
+}
 
     //public void fighters
-}
