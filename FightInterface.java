@@ -36,7 +36,7 @@ public class FightInterface extends JPanel //implements ActionListener
         myGame.setCurrentSpot(mySpot);
         // END POUR TEST
 
-        dialog = new JLabel("Wow much damage very suspense");
+        dialog = new JLabel("<html><b>Wow deux lignes</b><br>de combat intense</html>");
 
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
@@ -155,7 +155,7 @@ public class FightInterface extends JPanel //implements ActionListener
 
     public void displayFight()
     {
-        dialog.setText("gwgdrgdrgw");
+        dialog.setText(dialog.getText() + "text u want to append");
         //if(Game.criticalHit() != 0)
        // {
         dialog.setText ("wow des dégats");
