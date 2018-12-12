@@ -32,7 +32,7 @@ public class PlayerHead extends JPanel
         myXP = new JLabel("XP: "+String.valueOf(player.getXp()),JLabel.CENTER);
         myAttack = new JLabel("Attack: "+String.valueOf(player.getDamage()),JLabel.CENTER);
         myProtection = new JLabel("Protection: "+String.valueOf(player.getProtection()),JLabel.CENTER);
-        Icon icon = new ImageIcon("Theseus head.png");
+        Icon icon = new ImageIcon("TheseusHead.png");
         JLabel label = new JLabel(icon);
         label.setPreferredSize(new Dimension(150,50));
         myMainPanel=new JPanel();
