@@ -25,7 +25,7 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         JFrame myFrame;
         myFrame = new JFrame("Dialog Screen");
         
-        buttonClose = new JButton("Close");
+        buttonClose = new JButton("Start Game");
         buttonClose.addActionListener(this);
         
         dialog = new JLabel(dialogText);
