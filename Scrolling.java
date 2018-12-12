@@ -38,14 +38,13 @@ public class Scrolling extends JPanel
     
     public Scrolling(Spot myNewSpot, AffichMainYohan newMain)
     {
-        main(myNewSpot);
         myMain = newMain;
+        main(myNewSpot);
     }
     
     public void main (Spot myNewSpot)
     {
         CurrentSpot = myNewSpot;
-        
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
         
@@ -62,28 +61,21 @@ public class Scrolling extends JPanel
         
         updateUI(CurrentSpot);
         
-        EcouteurScrolling e = new EcouteurScrolling(this,myMain);
         
+        EcouteurScrolling e = new EcouteurScrolling(this,myMain);
+        myButton1.addActionListener(e);
+        myButton2.addActionListener(e);
+        myButton3.addActionListener(e);
+        myButton4.addActionListener(e);
         
         if(CurrentSpot.getExits("N") == null)
         {myButton1.setEnabled(false);}
-        else
-        {myButton1.addActionListener(e);}
-        
         if(CurrentSpot.getExits("D") == null)
         {myButton2.setEnabled(false);}
-        else
-        {myButton2.addActionListener(e);}
-        
         if(CurrentSpot.getExits("S") == null)
         {myButton3.setEnabled(false);}
-        else
-        {myButton3.addActionListener(e);}
-        
         if(CurrentSpot.getExits("Q") == null)
         {myButton4.setEnabled(false);}
-        else
-        {myButton4.addActionListener(e);}
         
         JPanel myPanel = new JPanel();
         myPanel.setLayout(new GridLayout(2,2));

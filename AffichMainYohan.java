@@ -40,6 +40,8 @@ public class AffichMainYohan extends JFrame
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
         
+        myGame.move(myGame.getListSpot().get(19));
+        
         //Grille du frame et des panels
         
         JFrame myFrame = new JFrame("Daedalus");
@@ -60,7 +62,8 @@ public class AffichMainYohan extends JFrame
         //c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridheight=3;
+        c.gridheight=5;
+        c.gridwidth=1;
         c.fill= GridBagConstraints.BOTH;
         pane.add(panelLab, c);
         
@@ -101,7 +104,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 1;
         pane.add(panelInventory, c);
         
-        panelSpotItem=new SpotItem(myGame.getListSpot().get(19),this);
+        panelSpotItem=new SpotItem(myGame.getCurrentSpot(),this);
         //new JPanel();
         // panelSpotItem.setBackground(Color.CYAN);
         //
@@ -114,7 +117,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelSpotItem, c);
         
-        panelDesc= new ItemDescription(new Common("Wooden Shield", "item test",0,0,0));
+        panelDesc= new JPanel();
         //new JPanel();
         //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
@@ -138,19 +141,8 @@ public class AffichMainYohan extends JFrame
         c.gridx =3;
         c.gridy = 2;
         pane.add(panelCombat, c);
-        
-        panelBouton = new JPanel();
-        panelBouton.setBackground(Color.GRAY);
-        c.weightx = 0.5;
-        c.weighty = 0.4;
-        c.fill = GridBagConstraints.BOTH;
-        c.gridwidth=1;
-        c.gridheight=1;
-        c.gridx =0;
-        c.gridy =3;
-        pane.add(panelBouton, c);
-        
-        myGame.move(myGame.getListSpot().get(9)); 
+
+         
         panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this, "S");
         //new JPanel();
         // panelNextSpot.setBackground(Color.MAGENTA);

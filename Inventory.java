@@ -79,6 +79,9 @@ public class Inventory extends JPanel
         myBigPanel.add(myPanel); 
 
         add(myBigPanel); 
+        
+        myBigPanel.revalidate();
+        myBigPanel.repaint();
         //myBigPanel.setVisible(false); 
 
     }
