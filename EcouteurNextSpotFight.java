@@ -10,18 +10,19 @@ import javax.swing.*;
 public class EcouteurNextSpotFight implements ActionListener
 {
     private AffichMainYohan affichMain1;
-    private Game myGame;
+    private NextSpot myNextSpot;
+    
 
     /**
      * Constructor for objects of class EcouteurNextSpotFight
      */
-    public EcouteurNextSpotFight()
+    public EcouteurNextSpotFight(NextSpot newNextSpot, AffichMainYohan myMain)
     {
-        
+        affichMain1 = myMain;
+        myNextSpot = newNextSpot;
     }
 
     /**
-     * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
