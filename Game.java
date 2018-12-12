@@ -454,17 +454,15 @@ public class Game
           while (fighter.HP!=0){
               damFighter=inflictDamage();
               if (fighter==theseus){
-                  damFighter=inflictDamage()+criticalHit();
+                  damFighter=damFighter+criticalHit();
               }
-              listDamage.add(damFighter);
               setFighter(fighter);
           }
           
           if (fighter==theseus) { 
               setWinTrue();
           }
-          else setWinFalse();
-          
+          else setWinFalse(); 
           return (listDamage);
     }
     
@@ -493,7 +491,7 @@ public class Game
     
     /**
      * The fighter inflicts damage to the other character in the spot
-     * @return the value of the damage inflicted
+     * 
      */
     public int inflictDamage() 
     { 
@@ -510,9 +508,7 @@ public class Game
   
     /**
      * 
-     * @return int dam: return the damage of the critical strike 
-     * 0 if no critical strike
-     * and 50 % total damage if critical strike
+     * @return int dam: return the damage with or without critical strike
      */
     public int criticalHit() 
     { 
