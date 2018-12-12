@@ -46,7 +46,7 @@ public class EcouteurInventory implements ActionListener
                     System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
                     affichMain.getGame().getCurrentSpot().getPlayer().takeItem(myInventory.getPlayer().getItems((i/2))); 
                     affichMain.getGame().getListSpot().get(19).removeItemSpot(myInventory.getPlayer().getItems((i/2)));
-                    affichMain.getSpotItem().showListItem(affichMain.getGame().getListSpot().get(19),affichMain); 
+                    affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain.getGame().getCurrentSpot()); 
                     //affichMain.setList(); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain);
