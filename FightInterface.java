@@ -213,7 +213,7 @@ public class FightInterface extends JPanel implements ActionListener
     public void fight() 
     { 
         int damFighter;
-        whoBegins(myGame);
+        myGame.whoBegins();
         if(myGame.getFighter()==myGame.getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
@@ -224,40 +224,16 @@ public class FightInterface extends JPanel implements ActionListener
 
         while (myGame.getFighter().HP!=0){
             damFighter=inflictDamage();
-            if (fighter==theseus){
+            if (myGame.getFighter()==myGame.getPlayer()){
                 damFighter=damFighter+criticalHit();
             }
-            setFighter(fighter);
+            myGame.setFighter(myGame.getFighter());
         }
 
-        if (fighter==theseus) { 
-            setWinTrue();
+        if (myGame.getFighter()==myGame.getPlayer()) { 
+            myGame.setWinTrue();
         }
-        else setWinFalse(); 
-    }
-
-
-    /**
-     * Randomly chooses the first fighter to start
-     * @return Character fighter: returns the character that starts the fight
-     * 
-     */
-    public Character whoBegins (Game myGame) 
-    { 
-        if (theseus.getHermesSandals()){
-            fighter=theseus;
-        }
-        else
-        {
-            Random rand = new Random();
-            int beginner = rand.nextInt(1); 
-
-            switch(beginner){
-                case 0: fighter = currentSpot.getMonster();
-                default: fighter = theseus;  
-            }
-        }
-        return fighter;   
+        else myGame.setWinFalse(); 
     }
 
     /**
@@ -269,9 +245,9 @@ public class FightInterface extends JPanel implements ActionListener
         int dam=0;
         for (int i = 0; i < myGame.getCurrentSpot().getListCharacter().size(); i++)
         {
-            if (myGame.getCurrentSpot().getListCharacter().get(i) != fighter){
-                currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage());
-                dam = currentSpot.getListCharacter().get(i).valLoseHp(fighter.getDamage());
+            if (myGame.getCurrentSpot().getListCharacter().get(i) != myGame.getFighter()){
+                myGame.getCurrentSpot().getListCharacter().get(i).loseHp(myGame.getFighter().getDamage());
+                dam = myGame.getCurrentSpot().getListCharacter().get(i).valLoseHp(myGame.getFighter().getDamage());
             }
         }
         return dam;
