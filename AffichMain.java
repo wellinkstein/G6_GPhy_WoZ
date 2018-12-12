@@ -74,7 +74,22 @@ public class AffichMain extends JFrame
         System.out.println("New Description");
     }
     
-    public Game getGame(){
+    public void setList()
+    {
+        bigPanel.removeAll();
+        //panelListItem=mySpot; 
+        bigPanel.add(myDescription);
+       // getSpotItem().showListItem(myGame.getCurrentSpot(), this); 
+        bigPanel.add(panelListItem);
+        bigPanel.add(panelBas);
+        bigPanel.revalidate();
+        bigPanel.repaint();
+        System.out.println("New List");
+
+    }
+        
+    public Game getGame()
+    {
         return myGame;
     }
     
