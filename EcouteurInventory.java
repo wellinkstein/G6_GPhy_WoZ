@@ -7,7 +7,7 @@ import javax.swing.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class EcouteurInventory
+public class EcouteurInventory implements ActionListener
 {
     private AffichMainYohan affichMain;
     private Inventory myInventory;
@@ -33,10 +33,10 @@ public class EcouteurInventory
                 //System.out.println("Bouton "+i);
                 if((i%2)==0)
                 {   
-                    System.out.println(myInventory.getPlayer().getOneItem((i/2)));
+                    System.out.println(myInventory.getPlayer().getItems((i/2)));
                     //myInventory.showDescriptionItem(myInventory.getSpot().getOneItem((i/2)));
                     System.out.println("Description of the item"+(i%2));
-                    ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getOneItem((i/2)));
+                    ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getItems((i/2)));
                     affichMain.setDes(myDes);
                 }
                 else
@@ -44,8 +44,8 @@ public class EcouteurInventory
                     System.out.println("Je prend un truc");
                     //System.out.println(myInventory.getSpot().getOneItem((i/2)));  
                     System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
-                    affichMain.getGame().getCurrentSpot().getPlayer().takeItem(myInventory.getSpot().getOneItem((i/2))); 
-                    affichMain.getGame().getListSpot().get(19).removeItemSpot(myInventory.getSpot().getOneItem((i/2)));
+                    affichMain.getGame().getCurrentSpot().getPlayer().takeItem(myInventory.getPlayer().getItems((i/2))); 
+                    affichMain.getGame().getListSpot().get(19).removeItemSpot(myInventory.getPlayer().getItems((i/2)));
                     affichMain.getSpotItem().showListItem(affichMain.getGame().getListSpot().get(19),affichMain); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain.getGame().getCurrentSpot()); 
                     //affichMain.setList(); 
