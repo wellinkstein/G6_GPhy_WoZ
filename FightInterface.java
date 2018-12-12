@@ -1,3 +1,4 @@
+import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -162,6 +163,10 @@ public class FightInterface extends JPanel //implements ActionListener
      * A method to write in the dialog box the fight
      * use thread.wait to add delay
      */
+    public void writeFightDialog(ArrayList<Integer> listDamageFight)
+    {
+        
+    }
     
     /**
      * A method to update the panel. If there is a monster in the currentSpot, the 
