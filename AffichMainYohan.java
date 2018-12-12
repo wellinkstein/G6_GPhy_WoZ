@@ -19,11 +19,11 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelMonster;
+    private JPanel panelCombat, panelDiag, panelBouton, panelMonster;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
-    private ItemDescription panelItemDescription; 
+    private ItemDescription panelDesc; 
     private PlayerHead panelPlayer;
     private Scrolling panelLab;
     private Spot newSpot;
@@ -118,7 +118,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelSpotItem, c);
         
-        panelDesc= new JPanel();
+        panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
         //new JPanel();
         //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
@@ -179,7 +179,6 @@ public class AffichMainYohan extends JFrame
         panelDesc.add(myDes);
         pane.revalidate();
         pane.repaint();
-        System.out.println("New Description");
     }
     
     public void setDialog(DialogScreenInterface myDialog)
@@ -214,10 +213,7 @@ public class AffichMainYohan extends JFrame
         return panelSpotItem;
     }
     
-    public ItemDescription getItemDescription()
-    {
-        return panelItemDescription; 
-    }
+    
     public Inventory getInventory()
     {
         return panelInventory;

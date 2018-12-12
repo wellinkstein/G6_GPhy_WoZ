@@ -30,18 +30,30 @@ public class ItemDescription extends JPanel implements ActionListener
      */
     public void showItemDes(Item item)
     {
-         removeAll();
+        removeAll();
         myPanel = new JPanel();
         myPanel2 = new JPanel();
         bigPanel = new JPanel();
 
         myButton = new JButton ("Close");
+        myButton.setBackground(Color.gray); 
+        myButton.setForeground(Color.white); 
         myButton.addActionListener(this);
 
-        bigPanel.setLayout(new GridLayout(0,1));
+        bigPanel.setLayout(new GridLayout(1,2));
         myPanel.setLayout(new GridLayout(1,2));
         if (item !=null){
-            if (item.getName()=="Iron Sword"){
+            if (item.getName()=="null")
+            {
+                Icon icon= new ImageIcon("ItemNull.png"); 
+                JLabel label= new JLabel(icon); 
+                 
+                JLabel label2= new JLabel(icon); 
+                myPanel.add(label);
+                myPanel2.add(label2);
+            }
+            else{
+                if (item.getName()=="Iron Sword"){
                 Icon icon= new ImageIcon("IronSword.png"); 
                 JLabel label= new JLabel(icon);
                 label.setPreferredSize(new Dimension(50,50));
@@ -102,27 +114,25 @@ public class ItemDescription extends JPanel implements ActionListener
                 JLabel label= new JLabel(icon); 
                 myPanel.add(label); 
             }
-            else {
-                Icon icon= new ImageIcon("ItemNull.png"); 
-                JLabel label= new JLabel(icon); 
-                myPanel.add(label); 
-            }
-
             myLabel= new JLabel(item.getName());
             myLabel1= new JLabel(item.getDescription()); 
-        }
-        else{
-            Icon icon= new ImageIcon("ItemNull.png"); 
-                JLabel label= new JLabel(icon); 
-                myPanel.add(label); 
-            }
-       
-        bigPanel.setLayout(new GridLayout(1,2));
-        myPanel2.setLayout(new GridLayout(3,0));
-        myPanel2.add(myLabel,BorderLayout.CENTER); 
-        myPanel2.add(myLabel1,BorderLayout.CENTER); 
-        myPanel2.add(myButton,BorderLayout.CENTER);
+            myPanel2.setLayout(new GridLayout(3,0));
+            myPanel2.add(myLabel,BorderLayout.CENTER); 
+            myPanel2.add(myLabel1,BorderLayout.CENTER); 
+            myPanel2.add(myButton,BorderLayout.CENTER);
  
+            }
+            
+
+            
+        }
+        // else{
+                // Icon icon= new ImageIcon("ItemNull.png"); 
+                // JLabel label= new JLabel(icon); 
+                // myPanel.add(label); 
+            // }
+       
+        
         bigPanel.add(myPanel);
         bigPanel.add(myPanel2);
         add(bigPanel);
@@ -140,7 +150,7 @@ public class ItemDescription extends JPanel implements ActionListener
         if(e.getSource() == myButton)
             {
                 //this.setVisible(false);
-                showItemDes(itemDes); 
+                showItemDes(new Common("null", "", 0, 0, 0)); 
             }
     }
 
