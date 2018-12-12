@@ -77,11 +77,12 @@ public class Inventory extends JPanel
         myBigPanel.setLayout(new GridLayout(2,1)); 
         myBigPanel.add(myPanel1); 
         myBigPanel.add(myPanel); 
-
+        myBigPanel.setVisible(true); 
         add(myBigPanel); 
         
-        myBigPanel.revalidate();
-        myBigPanel.repaint();
+        revalidate();
+        repaint();
+        setVisible(true);
         //myBigPanel.setVisible(false); 
 
     }
