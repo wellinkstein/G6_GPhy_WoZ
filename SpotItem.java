@@ -20,20 +20,20 @@ public class SpotItem extends JPanel
     private Item click; 
     private ItemDescription iD;
     private Spot mySpot;
-    private AffichMain myMain;
+    private AffichMainYohan myMain;
     //private AffichMain aM;
 
     /**
      * 
      */
-    public SpotItem(Spot spot, AffichMain cont)
+    public SpotItem(Spot spot, AffichMainYohan cont)
     {
         mySpot = spot;
         myMain = cont;
         showListItem(mySpot,myMain);
     }
 
-    public void showListItem(Spot spot, AffichMain myMain)
+    public void showListItem(Spot spot, AffichMainYohan myMain)
     {
         removeAll();
         
@@ -89,7 +89,7 @@ public class SpotItem extends JPanel
         return mySpot;
     }
 
-    public void updateSpotItem(AffichMain myMain)
+    public void updateSpotItem(AffichMainYohan myMain)
     {
         myBigPanel.removeAll();
         //content.clear(); 
