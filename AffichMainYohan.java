@@ -15,7 +15,7 @@ import java.util.Set;
  * @author Corentin Journay 
  * @version 04/12/2018
  */
-public class AffichMainYohan extends JFrame
+public class AffichMainYohan extends JFrame implements ActionListener
 {
 
     private Game myGame; 
@@ -27,6 +27,9 @@ public class AffichMainYohan extends JFrame
     private PlayerHead panelPlayer;
     private Scrolling panelLab;
     private Spot newSpot;
+    private JMenuBar menuBar; 
+    private JMenu menu; 
+    private JMenuItem item; 
     private Container pane;
     
     public AffichMainYohan()
@@ -167,8 +170,18 @@ public class AffichMainYohan extends JFrame
         c.gridx =3;
         c.gridy = 3;
         pane.add(panelDiag, c);
-
         
+        //Création de la barre de menu
+        this.menuBar = new JMenuBar();
+        //Installation dans la fenêtre
+        myFrame.setJMenuBar(menuBar);
+        //Construction du premier menu
+        menu = new JMenu("Menu");
+
+        this.menuBar.add(menu);
+        this.item = new JMenuItem("Quit");
+        menu.add(item);
+        item.addActionListener(this);
         // myFrame.pack();
         myFrame.setVisible(true);
     }
@@ -223,7 +236,18 @@ public class AffichMainYohan extends JFrame
     {
         return panelNextSpot; 
     }
-        
+    
+    /**
+     * The actionPerformed for the menubar 
+     * @param ActionEvent the event when the user click on the "quit"
+     */
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource()==item)
+        {
+            System.exit(0);
+        }
+    }
     // public static void main(String[] args) {
         // //Schedule a job for the event-dispatching thread:
         // //creating and showing this application's GUI.
