@@ -169,9 +169,9 @@ public class Game
         listSpot.get(17).setExits("Q",listSpot.get(16));
         listSpot.get(18).setExits("Z",listSpot.get(9));
         listSpot.get(18).setExits("D",listSpot.get(11));
-        listSpot.get(11).setExits("Q",listSpot.get(18));
-        listSpot.get(11).setExits("Z",listSpot.get(10));
-        listSpot.get(11).setExits("D",listSpot.get(20));
+        listSpot.get(19).setExits("Q",listSpot.get(18));
+        listSpot.get(19).setExits("Z",listSpot.get(10));
+        listSpot.get(19).setExits("D",listSpot.get(20));
         listSpot.get(20).setExits("Q",listSpot.get(11));
         listSpot.get(20).setExits("D",listSpot.get(21));
         listSpot.get(21).setExits("Q",listSpot.get(20));

@@ -222,9 +222,9 @@ public class FightInterface extends JPanel implements ActionListener
         }
 
         while (affichMain.getGame().getFighter().HP!=0){
-            damFighter=inflictDamage();
+            damFighter=affichMain.getGame().inflictDamage();
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
-                damFighter=damFighter+criticalHit();
+                damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {
@@ -235,21 +235,21 @@ public class FightInterface extends JPanel implements ActionListener
                 updateCombatLogbook("The monster inflicts" + damFighter + "damages to Theseus.");
             }
 
-            affichMain.getGame().setFighter(affichMain.getGame().getFighter());
-            try
-            {
-                Thread.sleep(1000);
-            }
-            catch(InterruptedException ex)
-            {
-                Thread.currentThread().interrupt();
-            }
+            affichMain.getGame().setFighter(affichMain.getGame().getFighter()); // the fighter changes
+            //try
+            //{
+            //    Thread.sleep(1000);
+            //}
+            //catch(InterruptedException ex)
+            //{
+            //    Thread.currentThread().interrupt();
+            //}
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
-            affichMain.getGame().setWinTrue();
+            affichMain.getGame().setWinFalse();
         }
-        else affichMain.getGame().setWinFalse(); 
+        else affichMain.getGame().setWinTrue(); 
     }
 
     /**
