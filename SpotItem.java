@@ -30,45 +30,12 @@ public class SpotItem extends JPanel
     {
         mySpot = spot;
         myMain = cont;
-        for(int i = 0; i <= (spot.getListItem().size()-1); i++)
-        {   
-            content.add(new JButton(spot.getListItem().get(i).getName()));
-            content.add(new JButton("Take"));
-        }
-
-        JPanel myPanel;
-        JLabel myLabel; 
-        // myFrame = new JFrame("Inventory");
-        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.setLayout(new GridLayout(0,1));
-        myPanel = new JPanel();
-        myPanel1= new JPanel(); 
-        myBigPanel=new JPanel(); 
-        myLabel = new JLabel ("These are the items available",JLabel.CENTER);
-        myPanel.setLayout(new GridLayout(spot.getListItem().size(),1));
-        myPanel1.setLayout(new GridLayout(1,1));
-        myPanel1.add(myLabel); 
-
-        for(int i = 0; i <= (content.size()-1); i++)
-        {
-            Ecouteur1 e = new Ecouteur1(this, myMain);
-            content.get(i).addActionListener(e);
-            myPanel.add(content.get(i));
-        }
-
-        myBigPanel.setLayout(new GridLayout(2,1)); 
-        myBigPanel.add(myPanel1); 
-        myBigPanel.add(myPanel); 
-
-        myBigPanel.setVisible(true); 
-        add(myBigPanel);
-        //myFrame.add(myBigPanel); 
-        //myFrame.pack();
-        //myFrame.setVisible(true);
+        showListItem(mySpot,myMain);
     }
 
     public void showListItem(Spot spot, AffichMain myMain)
     {
+        removeAll();
         
         JPanel myPanel;
         JLabel myLabel; 
@@ -78,6 +45,11 @@ public class SpotItem extends JPanel
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel();
+        
+        myBigPanel.removeAll();
+        myPanel.removeAll();
+        myPanel1.removeAll();
+        content.clear();
 
         //panelListItem=mySpot; 
 
@@ -107,6 +79,8 @@ public class SpotItem extends JPanel
        
         myBigPanel.setVisible(true); 
         add(myBigPanel);
+        revalidate();
+        repaint();
         setVisible(true);
 
     }

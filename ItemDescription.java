@@ -36,8 +36,9 @@ public class ItemDescription extends JPanel implements ActionListener
         myPanel.setLayout(new GridLayout(1,2));
         if (item !=null){
             if (item.getName()=="Iron Sword"){
-                Icon icon= new ImageIcon("Iron sword.png"); 
-                JLabel label= new JLabel(icon); 
+                Icon icon= new ImageIcon("IronSword.png"); 
+                JLabel label= new JLabel(icon);
+                label.setPreferredSize(new Dimension(50,50));
                  myPanel.add(label);
             }
             else if (item.getName()=="Iron Dagger"){
@@ -46,12 +47,12 @@ public class ItemDescription extends JPanel implements ActionListener
                  myPanel.add(label);
             }
             else if (item.getName()=="Standard Bow"){
-                Icon icon= new ImageIcon("Standard bow.png"); 
+                Icon icon= new ImageIcon("StandardBow.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
             else if (item.getName()=="Iron Armor"){
-                Icon icon= new ImageIcon("Iron armor.png"); 
+                Icon icon= new ImageIcon("IronArmor.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
@@ -66,12 +67,12 @@ public class ItemDescription extends JPanel implements ActionListener
                  myPanel.add(label);
             }
             else if (item.getName()=="Health Potion"){
-                Icon icon= new ImageIcon("health potion.png"); 
+                Icon icon= new ImageIcon("HealthPotion.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
             else if (item.getName()=="Ariadne's golden thread"){
-                Icon icon= new ImageIcon("Ariane's tread.jpg"); 
+                Icon icon= new ImageIcon("GoldenThread.png"); 
                 JLabel label= new JLabel(icon); 
                  myPanel.add(label);
             }
@@ -88,25 +89,28 @@ public class ItemDescription extends JPanel implements ActionListener
             else if (item.getName()=="Aegis shield"){
                 Icon icon= new ImageIcon("AegisShield.png"); 
                 JLabel label= new JLabel(icon); 
-                 myPanel.add(label);
+                myPanel.add(label);
             }
             else if (item.getName()=="Hermes's sandals"){
                 Icon icon= new ImageIcon("HermesSandals.png"); 
                 JLabel label= new JLabel(icon); 
-                 myPanel.add(label);
+                myPanel.add(label);
             }
 
             myLabel= new JLabel(item.getName());
             myLabel1= new JLabel(item.getDescription()); 
         }
         //myFrame = new JFrame("DESCRITPION");
-        myPanel2.setLayout(new GridLayout(2,1)); 
-        myPanel.add(myLabel); 
-        myPanel2.add(myLabel1); 
-        myPanel2.add(myButton);
-        bigPanel.add(myPanel); 
-        bigPanel.add(myPanel2); 
         
+        //myLabel 1 = Description myLabel = Nom Label = image myButton = Button
+        bigPanel.setLayout(new GridLayout(1,2));
+        myPanel2.setLayout(new GridLayout(3,0));
+        myPanel2.add(myLabel,BorderLayout.CENTER); 
+        myPanel2.add(myLabel1,BorderLayout.CENTER); 
+        myPanel2.add(myButton,BorderLayout.CENTER);
+ 
+        bigPanel.add(myPanel);
+        bigPanel.add(myPanel2);
         add(bigPanel);
         setVisible(true);
         // myFrame = new JFrame();
@@ -116,15 +120,7 @@ public class ItemDescription extends JPanel implements ActionListener
         // myFrame.pack();
         // myFrame.setVisible(true);
     }
-            
 
-
-    // myFrame = new JFrame();
-    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    // myFrame.add(bigPanel);
-    // myFrame.setSize(150, 150);
-    // myFrame.pack();
-    // myFrame.setVisible(true);
  
     /**
      * 
