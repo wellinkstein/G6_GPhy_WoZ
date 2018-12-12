@@ -41,17 +41,17 @@ public class EcouteurInventory implements ActionListener
                 }
                 else
                 {
-                    System.out.println("Je prend un truc");
+                    System.out.println("Je lache un truc");
                     //System.out.println(myInventory.getSpot().getOneItem((i/2)));  
-                    System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
-                    affichMain.getGame().getCurrentSpot().getPlayer().takeItem(myInventory.getPlayer().getItems((i/2))); 
-                    affichMain.getGame().getListSpot().get(19).removeItemSpot(myInventory.getPlayer().getItems((i/2)));
+                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems((i/2)));
+                    affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems((i/2)));
                     affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain.getGame().getCurrentSpot()); 
                     //affichMain.setList(); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain);
                     //affichMain.setList(myInventory); 
-                    System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
+                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
                 }
             }
