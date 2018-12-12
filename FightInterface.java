@@ -188,6 +188,8 @@ public class FightInterface extends JPanel implements ActionListener
     public void updateCombatLogbook(String texte)
     {
         dialog.setText(dialog.getText() + texte + "<br>");
+        panelBig.revalidate();
+        panelBig.repaint();  
     }
 
     /**
@@ -205,10 +207,6 @@ public class FightInterface extends JPanel implements ActionListener
 
     /**
      * The fight starts. it ends when one of the characters dies
-     * @return List<Integer> listDamage: the list of all the damage
-     * that were inflicted during the fight.
-     * If the list begins by "-1", it means that Theseus began the fight.
-     * 
      */
     public void fight(Game myGame) 
     { 
@@ -235,8 +233,16 @@ public class FightInterface extends JPanel implements ActionListener
             {
                 updateCombatLogbook("The monster inflicts" + damFighter + "damages to Theseus.");
             }
-            
+
             myGame.setFighter(myGame.getFighter());
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch(InterruptedException ex)
+            {
+                Thread.currentThread().interrupt();
+            }
         }
 
         if (myGame.getFighter()==myGame.getPlayer()) { 
@@ -283,24 +289,6 @@ public class FightInterface extends JPanel implements ActionListener
         else return 0;
     }
 
-    /**
-     * A method to write in the dialog box the fight
-     * use thread.wait to add delay
-     *
-     * public void fight()
-     *{
-     *
-     *    try
-     *    {
-     *        Thread.sleep(1000);
-     *    }
-     *    catch(InterruptedException ex)
-     *    {
-     *        Thread.currentThread().interrupt();
-     *    }
-     *
-     *}
-     */
     /**
      * A method to update the panel. If there is a monster in the currentSpot, the 
      * picture of the monster and his description will be added to the panel.

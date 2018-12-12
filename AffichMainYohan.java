@@ -3,7 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Container;
-
 import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,8 +19,9 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelDesc, panelInventory, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
+    private JPanel panelDesc, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
     private SpotItem panelSpotItem;
+    private Inventory panelInventory;
     private Spot newSpot;
     private Container pane;
     
@@ -36,13 +36,15 @@ public class AffichMainYohan extends JFrame
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        
+        myGame.getPlayer().takeItem(new Common ("Iron Sword","",3,0,0));
         
         //Grille du frame et des panels
         
         JFrame myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(1000,700);
+        // myFrame.setSize(1366,768);
+        myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        myFrame.setUndecorated(true);
  
         pane= myFrame.getContentPane();
         pane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -172,7 +174,7 @@ public class AffichMainYohan extends JFrame
         pane.add(panelDiag, c);
 
         
-        myFrame.pack();
+        // myFrame.pack();
         myFrame.setVisible(true);
     }
     
@@ -192,6 +194,11 @@ public class AffichMainYohan extends JFrame
     public SpotItem getSpotItem()
     {
         return panelSpotItem;
+    }
+    
+    public Inventory getInventory()
+    {
+        return panelInventory;
     }
     // public static void main(String[] args) {
         // //Schedule a job for the event-dispatching thread:

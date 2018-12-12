@@ -7,14 +7,14 @@ import javax.swing.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Ecouteur1 implements ActionListener
+public class EcouteurSpotItem implements ActionListener
 {
     private AffichMainYohan affichMain;
     private SpotItem mySpotItem;
     private Item itemClicked;
     private ItemDescription iDescription;
     
-    public Ecouteur1(SpotItem newSpotItem, AffichMainYohan myMain){
+    public EcouteurSpotItem(SpotItem newSpotItem, AffichMainYohan myMain){
        affichMain = myMain;
        mySpotItem = newSpotItem;
     }

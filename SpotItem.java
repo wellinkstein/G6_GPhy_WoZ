@@ -67,7 +67,7 @@ public class SpotItem extends JPanel
 
         for(int i = 0; i <= (content.size()-1); i++)
         {
-            Ecouteur1 e = new Ecouteur1(this, myMain);
+            EcouteurSpotItem e = new EcouteurSpotItem(this, myMain);
             content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }
