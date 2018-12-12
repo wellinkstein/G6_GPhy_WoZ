@@ -34,6 +34,7 @@ public class FightInterfaceTest
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
+    private AffichMainYohan ibt;
     private Game myGame;
     private Spot mySpot;
 
@@ -69,7 +70,7 @@ public class FightInterfaceTest
     @Test
     public void testFight()
     {
-        myGame = new Game();
+        ibt = new AffichMainYohan();
         mySpot = new Spot();
         Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
         Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
@@ -78,10 +79,10 @@ public class FightInterfaceTest
         
         theseus.takeItem(hermesSandals);
         mySpot.addCharacterSpot(medusa);
-        myGame.setCurrentSpot(mySpot);
-        myGame.addToCurrentSpot(theseus);
+        ibt.getGame().setCurrentSpot(mySpot);
+        ibt.getGame().addToCurrentSpot(theseus);
         
-        myGame.fight();
-        assertFalse(myGame.getWin());
+        ibt.getGame().fight();
+        assertFalse(ibt.getGame().getWin());
     }
 }
