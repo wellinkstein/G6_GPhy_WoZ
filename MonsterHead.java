@@ -129,7 +129,7 @@ public class MonsterHead extends JPanel
             
         }
         
-        myMainPanel.setPreferredSize(new Dimension(150,100));
+        //myMainPanel.setPreferredSize(new Dimension(150,100));
         myMainPanel.setVisible(true);
         add(myMainPanel);
     }

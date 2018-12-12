@@ -56,9 +56,9 @@ public class AffichMainYohan extends JFrame
         c.fill= GridBagConstraints.BOTH;
         pane.add(panelLab, c);
         
-        panelPlayer = new JPanel();
-        panelPlayer.setBackground(Color.GREEN);
-        //new PlayerHead(myGame.getPlayer());
+        panelPlayer = new PlayerHead(myGame.getPlayer());
+        //panelPlayer.setBackground(Color.GREEN);
+        //
         c.weightx = 0.25;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
@@ -70,8 +70,8 @@ public class AffichMainYohan extends JFrame
         
         
         panelMonster = new JPanel();
-        panelMonster.setBackground(Color.RED);
         //new MonsterHead(myGame.getListSpot().get(6).getMonster());
+        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
