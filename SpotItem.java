@@ -96,16 +96,6 @@ public class SpotItem extends JPanel
         return mySpot;
     }
 
-    // public void updateSpotItem(AffichMainYohan myMain)
-    // {
-        // myBigPanel.removeAll();
-
-        // myBigPanel.setLayout(new GridLayout(2,1));
-        // showListItem(myMain.getGame().getCurrentSpot(), myMain);
-        // myBigPanel.revalidate();
-        // myBigPanel.repaint();
-
-    // }
     /**
      * The getter for the list of the button 
      * @return content the list of the button

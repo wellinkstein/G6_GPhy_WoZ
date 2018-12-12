@@ -60,7 +60,14 @@ public class Inventory extends JPanel
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
 
-        for(int i = 0; i <= (content.size()-1); i++)
+        for(int i = 0; i <= (content.size()-1); i+=2)
+        {
+            EcouteurInventory e = new EcouteurInventory(this, myMain);
+            content.get(i).addActionListener(e);
+            myPanel.add(content.get(i));
+        }
+        
+        for(int i = 1; i <= (content.size()-1); i+=2)
         {
             EcouteurInventory e = new EcouteurInventory(this, myMain);
             content.get(i).addActionListener(e);

@@ -12,7 +12,7 @@ import java.awt.event.*;
 public class DialogScreenInterface extends JFrame implements ActionListener
 {
     
-    private JButton buttonClose;
+    private JButton buttonStart;
     private JPanel myPanel;
     private JLabel dialog;
     private JFrame myFrame;
@@ -25,8 +25,8 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         JFrame myFrame;
         myFrame = new JFrame("Dialog Screen");
         
-        buttonClose = new JButton("Start Game");
-        buttonClose.addActionListener(this);
+        buttonStart = new JButton("Start Game");
+        buttonStart.addActionListener(this);
         
         dialog = new JLabel(dialogText);
         
@@ -40,7 +40,7 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         
         c.weighty = 0.05;
         c.anchor = GridBagConstraints.PAGE_END;
-        myPanel.add(buttonClose, c);
+        myPanel.add(buttonStart, c);
 
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.add(myPanel);
@@ -50,7 +50,14 @@ public class DialogScreenInterface extends JFrame implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        myFrame.dispose();
+        
+    }
+    
+    /**
+     * 
+     */
+    public JButton getButtonStart(){
+        return buttonStart; 
     }
     
 }

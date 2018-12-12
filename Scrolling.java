@@ -15,7 +15,6 @@ import java.util.Set;
  * @version 04/12/2018
  */
 public class Scrolling extends JPanel
-        implements ActionListener
 {
         
     Spot CurrentSpot = new Spot();
@@ -28,6 +27,7 @@ public class Scrolling extends JPanel
     Spot myTestSpotSE = new Spot();
     Spot myTestSpotSW = new Spot();
     
+    private AffichMainYohan myMain;
     private JButton myButton1= new JButton("North");
     private JButton myButton2 = new JButton("East");
     private JButton myButton3 = new JButton("South");
@@ -36,10 +36,10 @@ public class Scrolling extends JPanel
     private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9;
     
-    public Scrolling(Spot myNewSpot)
+    public Scrolling(Spot myNewSpot, AffichMainYohan newMain)
     {
         main(myNewSpot);
-        
+        myMain = newMain;
     }
     
     public void main (Spot myNewSpot)
@@ -48,11 +48,6 @@ public class Scrolling extends JPanel
         
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
-        
-        myButton1.addActionListener(this);
-        myButton2.addActionListener(this);
-        myButton3.addActionListener(this);
-        myButton4.addActionListener(this);
         
         
         Jlabel1 = new JLabel (new ImageIcon("0.png"));
@@ -66,6 +61,29 @@ public class Scrolling extends JPanel
         Jlabel9 = new JLabel (new ImageIcon("0.png"));
         
         updateUI(CurrentSpot);
+        
+        EcouteurScrolling e = new EcouteurScrolling(this,myMain);
+        
+        
+        if(CurrentSpot.getExits("N") == null)
+        {myButton1.setEnabled(false);}
+        else
+        {myButton1.addActionListener(e);}
+        
+        if(CurrentSpot.getExits("D") == null)
+        {myButton2.setEnabled(false);}
+        else
+        {myButton2.addActionListener(e);}
+        
+        if(CurrentSpot.getExits("S") == null)
+        {myButton3.setEnabled(false);}
+        else
+        {myButton3.addActionListener(e);}
+        
+        if(CurrentSpot.getExits("Q") == null)
+        {myButton4.setEnabled(false);}
+        else
+        {myButton4.addActionListener(e);}
         
         JPanel myPanel = new JPanel();
         myPanel.setLayout(new GridLayout(2,2));
@@ -168,31 +186,42 @@ public class Scrolling extends JPanel
         }
     }
     
-    public void actionPerformed (ActionEvent e)
-    {
-        if(e.getSource() == myButton1)
-        {
-            CurrentSpot = CurrentSpot.getExits("North");
-            updateUI(CurrentSpot);
-        }
-        else if(e.getSource() == myButton2)
-        {
-            CurrentSpot = CurrentSpot.getExits("East");
-            updateUI(CurrentSpot);
-        }
-        else if(e.getSource() == myButton3)
-        {
-            CurrentSpot = CurrentSpot.getExits("South");
-            updateUI(CurrentSpot);
-        }
-        else if(e.getSource() == myButton4)
-        {
-            CurrentSpot = CurrentSpot.getExits("West");
-            updateUI(CurrentSpot);
-        }
-        else
-        {
-            System.out.println("Nothing append");
-        }
-    }
+    public JButton getButton1()
+    {return myButton1;}
+    
+    public JButton getButton2()
+    {return myButton2;}
+    
+    public JButton getButton3()
+    {return myButton3;}
+    
+    public JButton getButton4()
+    {return myButton4;}
+    // public void actionPerformed (ActionEvent e)
+    // {
+        // if(e.getSource() == myButton1)
+        // {
+            // CurrentSpot = CurrentSpot.getExits("North");
+            // updateUI(CurrentSpot);
+        // }
+        // else if(e.getSource() == myButton2)
+        // {
+            // CurrentSpot = CurrentSpot.getExits("East");
+            // updateUI(CurrentSpot);
+        // }
+        // else if(e.getSource() == myButton3)
+        // {
+            // CurrentSpot = CurrentSpot.getExits("South");
+            // updateUI(CurrentSpot);
+        // }
+        // else if(e.getSource() == myButton4)
+        // {
+            // CurrentSpot = CurrentSpot.getExits("West");
+            // updateUI(CurrentSpot);
+        // }
+        // else
+        // {
+            // System.out.println("Nothing append");
+        // }
+    // }
 }
