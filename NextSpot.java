@@ -32,7 +32,7 @@ public class NextSpot extends JPanel
         mySpot= gameSpot; 
         myMain= myMain1; 
         direction=newDirection; 
-        showNextSpot(mySpot, myMain); 
+        showNextSpot(mySpot, myMain,direction); 
     }
 
     /**
@@ -45,9 +45,9 @@ public class NextSpot extends JPanel
     /**
      * 
      */
-    public void showNextSpot(Spot gameSpot, AffichMainYohan myMain){
+    public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
         removeAll();
-
+        
         myPanel = new JPanel();
         myFightPanel = new JPanel();
         myFleePanel = new JPanel();

@@ -13,7 +13,7 @@ public class ItemDescription extends JPanel implements ActionListener
     JPanel myPanel2, bigPanel, myPanel; //All the panel for the class ItemDescription
     JButton myButton; //The button close for the item descriprtion
     JLabel myLabel,myLabel1, label; //all the label for the item description
-
+    private Item itemDes; 
 
     /**
      * Constructor for objects of class ItemDescription
@@ -21,7 +21,16 @@ public class ItemDescription extends JPanel implements ActionListener
      */
     public ItemDescription(Item item)
     {
+        itemDes=item; 
+        showItemDes(item); 
+    }
 
+    /**
+     * ShowItemDes
+     */
+    public void showItemDes(Item item)
+    {
+         removeAll();
         myPanel = new JPanel();
         myPanel2 = new JPanel();
         bigPanel = new JPanel();
@@ -61,12 +70,12 @@ public class ItemDescription extends JPanel implements ActionListener
             else if (item.getName()=="Wooden Shield"){
                 Icon icon= new ImageIcon("WoodenShield.png"); 
                 JLabel label= new JLabel(icon); 
-                 myPanel.add(label);
+                myPanel.add(label);
             }
             else if (item.getName()=="Health Potion"){
                 Icon icon= new ImageIcon("HealthPotion.png"); 
                 JLabel label= new JLabel(icon); 
-                 myPanel.add(label);
+                myPanel.add(label);
             }
             else if (item.getName()=="Ariadne's golden thread"){
                 Icon icon= new ImageIcon("GoldenThread.png"); 
@@ -91,12 +100,22 @@ public class ItemDescription extends JPanel implements ActionListener
             else if (item.getName()=="Hermes's sandals"){
                 Icon icon= new ImageIcon("HermesSandals.png"); 
                 JLabel label= new JLabel(icon); 
-                myPanel.add(label);
+                myPanel.add(label); 
+            }
+            else {
+                Icon icon= new ImageIcon("ItemNull.png"); 
+                JLabel label= new JLabel(icon); 
+                myPanel.add(label); 
             }
 
             myLabel= new JLabel(item.getName());
             myLabel1= new JLabel(item.getDescription()); 
         }
+        else{
+            Icon icon= new ImageIcon("ItemNull.png"); 
+                JLabel label= new JLabel(icon); 
+                myPanel.add(label); 
+            }
        
         bigPanel.setLayout(new GridLayout(1,2));
         myPanel2.setLayout(new GridLayout(3,0));
@@ -108,10 +127,10 @@ public class ItemDescription extends JPanel implements ActionListener
         bigPanel.add(myPanel2);
         add(bigPanel);
         setVisible(true);
-
+        revalidate();
+        repaint();
     }
 
- 
     /**
      * The actionPerformed for the class ItemDescription
      * @param ActionEvent the event of the button close
@@ -120,7 +139,8 @@ public class ItemDescription extends JPanel implements ActionListener
     {
         if(e.getSource() == myButton)
             {
-                this.setVisible(false);
+                //this.setVisible(false);
+                showItemDes(itemDes); 
             }
     }
 

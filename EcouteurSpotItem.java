@@ -40,15 +40,22 @@ public class EcouteurSpotItem implements ActionListener
                 {   
                     ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
                     affichMain.setDes(myDes);
+                    //getItemDescription().showItemDes(mySpotItem.getSpot().getOneItem((i/2)));
                 }
                 else
                 {
-                     
-                    affichMain.getGame().getPlayer().takeItem(mySpotItem.getSpot().getOneItem((i/2))); 
+                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    
+                    affichMain.getGame().getPlayer().takeItem(mySpotItem.getSpot().getOneItem((i/2)));
+                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    
                     affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem((i/2)));
-                    affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain);
+                    affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //met à jour l'inventaire
+                    
+                    System.out.println(affichMain.getInventory().getPlayer().getNumberItemPossess());
+                    
                     affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
-                    PlayerHead playerH = new PlayerHead(affichMain.getGame().getCurrentSpot().getPlayer());
+                    PlayerHead playerH = new PlayerHead(affichMain.getGame().getPlayer());
                     affichMain.setPlayerHead(playerH);
                     
                 }
