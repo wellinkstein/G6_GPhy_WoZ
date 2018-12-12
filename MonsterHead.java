@@ -41,12 +41,15 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MedusaHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
+            
+            myMainPanel.add(myStatsPanel);
             
         }
         else if (monster.getName()=="Chimera")
@@ -57,12 +60,15 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ChimeraHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
+            
+            myMainPanel.add(myStatsPanel);
         }
         else if (monster.getName()=="Cerberus")
         {
@@ -72,12 +78,15 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("CerberusHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
+            
+            myMainPanel.add(myStatsPanel);
         }
         else if (monster.getName()=="Arachne")
         {
@@ -87,12 +96,15 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("ArachneHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
             myMainPanel.add(label);
         
             myStatsPanel.add(myHealth);
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
+            
+            myMainPanel.add(myStatsPanel);
         }
         else if (monster.getName()=="Cyclops")
         {
@@ -102,6 +114,7 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("CyclopsHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
         
             myMainPanel.add(label);
         
@@ -109,6 +122,8 @@ public class MonsterHead extends JPanel
             myStatsPanel.add(myXP);
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
+            
+            myMainPanel.add(myStatsPanel);
         }
         else if (monster.getName()=="Minotaur")
         {
@@ -118,6 +133,7 @@ public class MonsterHead extends JPanel
             myProtection = new JLabel("Protection: "+String.valueOf(monster.getProtection()),JLabel.CENTER);
             Icon icon = new ImageIcon("MinotaurHead.png");
             JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
             
             myMainPanel.add(label);
         
@@ -126,7 +142,7 @@ public class MonsterHead extends JPanel
             myStatsPanel.add(myAttack);
             myStatsPanel.add(myProtection);
             
-            
+            myMainPanel.add(myStatsPanel);
         }
         
         //myMainPanel.setPreferredSize(new Dimension(150,100));

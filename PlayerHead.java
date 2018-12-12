@@ -34,7 +34,7 @@ public class PlayerHead extends JPanel
         myProtection = new JLabel("Protection: "+String.valueOf(player.getProtection()),JLabel.CENTER);
         Icon icon = new ImageIcon("Theseus head.png");
         JLabel label = new JLabel(icon);
-        
+        label.setPreferredSize(new Dimension(150,50));
         myMainPanel=new JPanel();
         myMainPanel.setLayout(new GridLayout(1,1));
         
