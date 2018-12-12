@@ -22,9 +22,9 @@ public class FightInterface extends JPanel implements ActionListener
     /**
      * Constructor of objects class fightInterface
      */
-    public FightInterface()
+    public FightInterface(AffichMainYohan affichMainYohan)
     {
-        
+        affichMain=affichMainYohan;
         
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
