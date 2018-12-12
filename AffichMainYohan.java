@@ -3,7 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Container;
-
 import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,9 +19,11 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelGauche, panelDroiteH, panelDroiteB, panelDroiteC, panelDesc, panelDroite, panelSpotItem, panelInventory, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
-    private SpotItem panelListItem;
+    private JPanel panelDesc, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
+    private SpotItem panelSpotItem;
+    private Inventory panelInventory;
     private Spot newSpot;
+    private Container pane;
     
     public AffichMainYohan()
     {
@@ -35,21 +36,21 @@ public class AffichMainYohan extends JFrame
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        
+        myGame.getPlayer().takeItem(new Common ("Iron Sword","",3,0,0));
         
         //Grille du frame et des panels
         
         JFrame myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(1000,700);
+        // myFrame.setSize(1366,768);
+        myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        myFrame.setUndecorated(true);
  
-        Container pane = myFrame.getContentPane();
+        pane= myFrame.getContentPane();
         pane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
-        panelGauche= new JPanel();
-        panelDroite= new JPanel();
         
         panelLab = new JPanel();
         panelLab.setBackground(Color.BLUE);
@@ -87,7 +88,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 0;
         pane.add(panelMonster, c);
         
-        panelInventory= new Inventory(myGame.getPlayer());
+        panelInventory= new Inventory(myGame.getPlayer(),this);
         // new JPanel();
         // panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;
@@ -99,9 +100,10 @@ public class AffichMainYohan extends JFrame
         c.gridy = 1;
         pane.add(panelInventory, c);
         
-        panelSpotItem=new JPanel();
+        panelSpotItem=new SpotItem(myGame.getListSpot().get(19),this);
+        //new JPanel();
         // panelSpotItem.setBackground(Color.CYAN);
-        //new SpotItem(myGame.getListSpot().get(19),this);
+        //
         c.weightx = 0.125;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -111,8 +113,9 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelSpotItem, c);
         
-        panelDesc=new JPanel();
-        panelDesc.setBackground(Color.PINK);
+        panelDesc= new ItemDescription(new Common("Wooden Shield", "item test",0,0,0));
+        //new JPanel();
+        //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -171,7 +174,7 @@ public class AffichMainYohan extends JFrame
         pane.add(panelDiag, c);
 
         
-        myFrame.pack();
+        // myFrame.pack();
         myFrame.setVisible(true);
     }
     
@@ -179,8 +182,8 @@ public class AffichMainYohan extends JFrame
     {
         panelDesc.removeAll();
         panelDesc.add(myDes);
-        panelDesc.revalidate();
-        panelDesc.repaint();
+        pane.revalidate();
+        pane.repaint();
         System.out.println("New Description");
     }
     
@@ -190,7 +193,12 @@ public class AffichMainYohan extends JFrame
     
     public SpotItem getSpotItem()
     {
-        return panelListItem;
+        return panelSpotItem;
+    }
+    
+    public Inventory getInventory()
+    {
+        return panelInventory;
     }
     // public static void main(String[] args) {
         // //Schedule a job for the event-dispatching thread:

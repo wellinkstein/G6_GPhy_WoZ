@@ -7,14 +7,14 @@ import javax.swing.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Ecouteur1 implements ActionListener
+public class EcouteurSpotItem implements ActionListener
 {
-    private AffichMain affichMain;
+    private AffichMainYohan affichMain;
     private SpotItem mySpotItem;
     private Item itemClicked;
     private ItemDescription iDescription;
     
-    public Ecouteur1(SpotItem newSpotItem, AffichMain myMain){
+    public EcouteurSpotItem(SpotItem newSpotItem, AffichMainYohan myMain){
        affichMain = myMain;
        mySpotItem = newSpotItem;
     }
@@ -40,15 +40,15 @@ public class Ecouteur1 implements ActionListener
                 {
                     System.out.println("Je prend un truc");
                     //System.out.println(mySpotItem.getSpot().getOneItem((i/2)));  
-                    System.out.println(affichMain.getGame().getCurrentSpot().getListItem().size());
+                    System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
                     affichMain.getGame().getCurrentSpot().getPlayer().takeItem(mySpotItem.getSpot().getOneItem((i/2))); 
-                    affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem((i/2)));
-                    affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain); 
+                    affichMain.getGame().getListSpot().get(19).removeItemSpot(mySpotItem.getSpot().getOneItem((i/2)));
+                    affichMain.getSpotItem().showListItem(affichMain.getGame().getListSpot().get(19),affichMain); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain.getGame().getCurrentSpot()); 
                     //affichMain.setList(); 
                     //affichMain.getSpotItem().updateSpotItem(affichMain);
                     //affichMain.setList(mySpotItem); 
-                    System.out.println(affichMain.getGame().getCurrentSpot().getListItem().size());
+                    System.out.println(affichMain.getGame().getListSpot().get(19).getListItem().size());
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
                 }
             }
