@@ -14,17 +14,17 @@ import java.util.Set;
  */
 public class SpotItem extends JPanel
 {
-    private JLabel myLabel; 
-    private JPanel myPanel, myPanel1, myBigPanel; 
-    private ArrayList<JButton> content = new ArrayList<JButton>();
-    private Item click; 
-    private ItemDescription iD;
-    private Spot mySpot;
-    private AffichMainYohan myMain;
-    //private AffichMain aM;
+    private JLabel myLabel; //The label for the explication of the panel
+    private JPanel myPanel, myPanel1, myBigPanel; //all the panel of the panl SpotItem 
+    private ArrayList<JButton> content = new ArrayList<JButton>(); //A list for the buttons
+    private Spot mySpot; //The current Spot 
+    private AffichMainYohan myMain; //The affich Main for the game
+    
 
     /**
-     * 
+     * The constructor of the SpotItem, create the interface of the SpotItem
+     * @param spot The currentSpot where the player is
+     * @param AffichMainYohan The affichmain of the game
      */
     public SpotItem(Spot spot, AffichMainYohan cont)
     {
@@ -33,15 +33,18 @@ public class SpotItem extends JPanel
         showListItem(mySpot,myMain);
     }
 
+    /**
+     * The fonction of the showListItem, all the create the spotItem.
+     * @param Spot the CurrentSpot of the player
+     * @param AffichMainYohan  the affichmain of the game
+     */
     public void showListItem(Spot spot, AffichMainYohan myMain)
     {
         removeAll();
         
         JPanel myPanel;
         JLabel myLabel; 
-        // myFrame = new JFrame("Inventory");
-        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.setLayout(new GridLayout(0,1));
+
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel();
@@ -51,7 +54,6 @@ public class SpotItem extends JPanel
         myPanel1.removeAll();
         content.clear();
 
-        //panelListItem=mySpot; 
 
         for(int i = 0; i <= (spot.getListItem().size()-1); i++)
         {   
@@ -84,36 +86,30 @@ public class SpotItem extends JPanel
         setVisible(true);
 
     }
+    
+    /**
+     * The getter of the spot of the player in the affichMain
+     * @return spot 
+     */
     public Spot getSpot()
     {
         return mySpot;
     }
 
-    public void updateSpotItem(AffichMainYohan myMain)
-    {
-        myBigPanel.removeAll();
-        //content.clear(); 
-        myBigPanel.setLayout(new GridLayout(2,1));
-        showListItem(myMain.getGame().getCurrentSpot(), myMain);
-        myBigPanel.revalidate();
-        myBigPanel.repaint();
-
-    }
-    // public void showDescriptionItem(Item myItem)
+    // public void updateSpotItem(AffichMainYohan myMain)
     // {
-    // System.out.println("Entrez dans la method DescriptionItem");
-    // ItemDescription myItemD = new ItemDescription(myItem);
-    // this.removeAll();
-    // this.add(myItemD);
-    // this.revalidate();
-    // this.repaint();
+        // myBigPanel.removeAll();
+
+        // myBigPanel.setLayout(new GridLayout(2,1));
+        // showListItem(myMain.getGame().getCurrentSpot(), myMain);
+        // myBigPanel.revalidate();
+        // myBigPanel.repaint();
+
     // }
-
-    public Item getItemClicked()
-    {
-        return click;
-    }
-
+    /**
+     * The getter for the list of the button 
+     * @return content the list of the button
+     */
     public ArrayList<JButton> getContent(){
         return content;
     }

@@ -2,33 +2,30 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Write a description of class ItemDescription here.
+ * The class ItemDescription is the interface of all the item in the inventer 
+ * or the SpotItem
  *
  * @author (Ludivine Harault)
- * @version (2018-12-05)
+ * @version (2018-12-12)
  */
 public class ItemDescription extends JPanel implements ActionListener
 {
-    JPanel myPanel;
-    JPanel myPanel2, bigPanel;
-    JButton myButton;
-    JFrame myFrame;
-    JLabel myLabel,myLabel1, label;
-    // private Common item; 
-    // private Spot spot; 
+    JPanel myPanel2, bigPanel, myPanel; //All the panel for the class ItemDescription
+    JButton myButton; //The button close for the item descriprtion
+    JLabel myLabel,myLabel1, label; //all the label for the item description
+
 
     /**
      * Constructor for objects of class ItemDescription
+     * @param Item the item for the description of the item
      */
     public ItemDescription(Item item)
     {
-        // Spot spot= new Spot(); 
-        // Common item= new Common("Iron Sword","khzie",3,0,0); 
-        // spot.addItemSpot(item); 
+
         myPanel = new JPanel();
         myPanel2 = new JPanel();
         bigPanel = new JPanel();
-        //JFrame myFrame;
+
         myButton = new JButton ("Close");
         myButton.addActionListener(this);
 
@@ -100,9 +97,7 @@ public class ItemDescription extends JPanel implements ActionListener
             myLabel= new JLabel(item.getName());
             myLabel1= new JLabel(item.getDescription()); 
         }
-        //myFrame = new JFrame("DESCRITPION");
-        
-        //myLabel 1 = Description myLabel = Nom Label = image myButton = Button
+       
         bigPanel.setLayout(new GridLayout(1,2));
         myPanel2.setLayout(new GridLayout(3,0));
         myPanel2.add(myLabel,BorderLayout.CENTER); 
@@ -113,25 +108,19 @@ public class ItemDescription extends JPanel implements ActionListener
         bigPanel.add(myPanel2);
         add(bigPanel);
         setVisible(true);
-        // myFrame = new JFrame();
-        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.add(bigPanel);
-        // myFrame.setSize(150, 150);
-        // myFrame.pack();
-        // myFrame.setVisible(true);
+
     }
 
  
     /**
-     * 
+     * The actionPerformed for the class ItemDescription
+     * @param ActionEvent the event of the button close
      */
      public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == myButton)
             {
-                //System.out.println("Effacage");
-                this.setVisible(false); 
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                this.setVisible(false);
             }
     }
 
