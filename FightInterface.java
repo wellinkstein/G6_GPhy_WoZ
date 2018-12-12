@@ -199,7 +199,7 @@ public class FightInterface extends JPanel implements ActionListener
     {
         if(myGame.getCurrentSpot().getMonster()!=null)
         {
-            fight();
+            fight(myGame);
         }
     }
 
@@ -210,7 +210,7 @@ public class FightInterface extends JPanel implements ActionListener
      * If the list begins by "-1", it means that Theseus began the fight.
      * 
      */
-    public void fight() 
+    public void fight(Game myGame) 
     { 
         int damFighter;
         myGame.whoBegins();
@@ -227,6 +227,15 @@ public class FightInterface extends JPanel implements ActionListener
             if (myGame.getFighter()==myGame.getPlayer()){
                 damFighter=damFighter+criticalHit();
             }
+            if (myGame.getFighter()==myGame.getPlayer())
+            {
+                updateCombatLogbook("Theseus inflicts" + damFighter + "damages to the monster."); 
+            }
+            else
+            {
+                updateCombatLogbook("The monster inflicts" + damFighter + "damages to Theseus.");
+            }
+            
             myGame.setFighter(myGame.getFighter());
         }
 
