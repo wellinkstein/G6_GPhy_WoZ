@@ -14,7 +14,6 @@ import java.util.Set;
  * @version 04/12/2018
  */
 public class Inventory extends JPanel
-implements ActionListener
 {
 
     private ArrayList<JButton> content = new ArrayList<JButton>();
@@ -76,27 +75,7 @@ implements ActionListener
         //myBigPanel.setVisible(false); 
 
     }
-
-    public void actionPerformed (ActionEvent e)
-    {
-        for(int i = 0; i <= (content.size()-1); i++)
-        {
-            if(e.getSource() == content.get(i))
-            {
-                System.out.println("Bouton "+i);
-                if((i%2)==0)
-                {
-                    System.out.println("Description of the item"+(i%2));
-                }
-                else
-                {
-                    System.out.println("Dropping");
-                    monJoueur.dropItemNb((i-1));
-                    myBigPanel.revalidate();
-                }
-            }
-        }
-    }
+    
     public Player getPlayer()
     {
         return monJoueur;
