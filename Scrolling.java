@@ -62,9 +62,8 @@ public class Scrolling extends JPanel
         
         updateUI(CurrentSpot);
         
+        System.out.println("SCrolling inside "+myMain);
         EcouteurScrolling e = new EcouteurScrolling(this,myMain);
-        
-        
         if(CurrentSpot.getExits("N") == null)
         {myButton1.setEnabled(false);}
         else

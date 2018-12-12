@@ -208,6 +208,11 @@ public class AffichMainYohan extends JFrame
         System.out.println("New Description");
     }
     
+    public void setScrolling()
+    {
+        
+    }
+    
     public Game getGame(){
         return myGame;
     }
