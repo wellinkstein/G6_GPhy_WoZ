@@ -43,10 +43,15 @@ public class Ecouteur1 implements ActionListener
                 }
                 else
                 {
-                    //System.out.println("Taking");  
+                    //System.out.println(mySpotItem.getSpot().getOneItem((i/2)));  
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
                     affichMain.getGame().getCurrentSpot().getPlayer().takeItem(mySpotItem.getSpot().getOneItem((i/2))); 
                     affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem((i/2)));
+                    //affichMain.getSpotItem().showListItem(); 
+                    //affichMain.getSpotItem().updateSpotItem(affichMain.getGame().getCurrentSpot()); 
+                    //affichMain.setList(); 
+                    affichMain.getSpotItem().updateSpotItem(affichMain);
+                    //affichMain.setList(mySpotItem); 
                     //System.out.println(affichMain.getGame().getCurrentSpot().getPlayer().getNumberItemPossess());
                 }
             }

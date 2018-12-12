@@ -24,7 +24,7 @@ implements ActionListener
     private JPanel myPanel, myPanel1, myBigPanel; 
     private Spot spot;
 
-    public void main(Player theseus)
+    public Inventory(Player theseus)
     {
         monJoueur= theseus;
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
@@ -42,7 +42,7 @@ implements ActionListener
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel(); 
         myLabel = new JLabel ("These are the items available",JLabel.CENTER);
-        myPanel.setLayout(new GridLayout(spot.getListItem().size(),1));
+        myPanel.setLayout(new GridLayout(1,monJoueur.getNumberItemPossess()));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
 
