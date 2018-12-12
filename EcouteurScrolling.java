@@ -27,6 +27,7 @@ public class EcouteurScrolling implements ActionListener
     {
         if(e.getSource() == myScrolling.getButton1())
         {
+            System.out.println("North");
             if(affichMain.getGame().getCurrentSpot().getExits("N").getListCharacter().size() == 0)
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("N"));
@@ -36,9 +37,12 @@ public class EcouteurScrolling implements ActionListener
         }
         if(e.getSource() == myScrolling.getButton2())
         {
+            System.out.println("East");
+            System.out.println(affichMain);
+            System.out.println(affichMain.getGame().getCurrentSpot().getExits("D"));
+            System.out.println("checking monsters");
             if(affichMain.getGame().getCurrentSpot().getExits("D").getListCharacter().size() == 0)
             {
-                System.out.println(affichMain.getGame().getCurrentSpot());
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("D"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
                 System.out.println(affichMain.getGame().getCurrentSpot());
@@ -48,6 +52,7 @@ public class EcouteurScrolling implements ActionListener
         }
         if(e.getSource() == myScrolling.getButton3())
         {
+            System.out.println("South");
             if(affichMain.getGame().getCurrentSpot().getExits("S").getListCharacter().size() == 0)
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("S"));
@@ -57,6 +62,7 @@ public class EcouteurScrolling implements ActionListener
         }
         if(e.getSource() == myScrolling.getButton4())
         {
+            System.out.println("West");
             if(affichMain.getGame().getCurrentSpot().getExits("Q").getListCharacter().size() == 0)
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Q"));
