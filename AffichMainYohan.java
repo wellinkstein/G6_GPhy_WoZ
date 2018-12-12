@@ -19,11 +19,12 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelLab, panelMonster;
+    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelMonster;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
     private PlayerHead panelPlayer;
+    private Scrolling panelLab;
     private Spot newSpot;
     private Container pane;
     
@@ -38,7 +39,6 @@ public class AffichMainYohan extends JFrame
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        myGame.getPlayer().takeItem(new Common ("Iron Sword","",3,0,0));
         
         //Grille du frame et des panels
         
@@ -54,8 +54,7 @@ public class AffichMainYohan extends JFrame
         GridBagConstraints c = new GridBagConstraints();
         
         
-        panelLab = new JPanel();
-        panelLab.setBackground(Color.BLUE);
+        panelLab = new Scrolling(myGame.getCurrentSpot(),this);
         c.weightx = 0.5;
         c.weighty = 0.6;
         //c.fill = GridBagConstraints.HORIZONTAL;
@@ -206,6 +205,11 @@ public class AffichMainYohan extends JFrame
         panelPlayer.revalidate();
         panelPlayer.repaint();
         System.out.println("New Description");
+    }
+    
+    public void setScrolling()
+    {
+        panelLab.updateUI(myGame.getCurrentSpot());
     }
     
     public Game getGame(){
