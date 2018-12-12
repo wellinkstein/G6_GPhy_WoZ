@@ -589,7 +589,7 @@ public class Game
      */
     public boolean getWin() 
     { 
-       return true;         
+       return win;         
     }
     
     /**
