@@ -122,8 +122,10 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelDesc, c);
         
-        panelCombat=new JPanel();
-        panelCombat.setBackground(Color.BLACK);
+        panelCombat= new JPanel();
+        //new FightInterface();
+        //
+        //panelCombat.setBackground(Color.BLACK);
         c.weightx = 0.25;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
