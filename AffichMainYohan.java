@@ -207,6 +207,11 @@ public class AffichMainYohan extends JFrame
         System.out.println("New Description");
     }
     
+    public void setScrolling()
+    {
+        panelLab.updateUI(myGame.getCurrentSpot());
+    }
+    
     public Game getGame(){
         return myGame;
     }

@@ -28,32 +28,39 @@ public class EcouteurScrolling implements ActionListener
         if(e.getSource() == myScrolling.getButton1())
         {
             if(affichMain.getGame().getCurrentSpot().getExits("N").getListCharacter().size() == 0)
-            {affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("N"));
-            myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
+            {
+                affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("N"));
+                myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
             else
             {}
         }
         if(e.getSource() == myScrolling.getButton2())
         {
             if(affichMain.getGame().getCurrentSpot().getExits("D").getListCharacter().size() == 0)
-            {affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("D"));
-            myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
+            {
+                System.out.println(affichMain.getGame().getCurrentSpot());
+                affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("D"));
+                myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
+                System.out.println(affichMain.getGame().getCurrentSpot());
+            }
             else
             {}
         }
         if(e.getSource() == myScrolling.getButton3())
         {
             if(affichMain.getGame().getCurrentSpot().getExits("S").getListCharacter().size() == 0)
-            {affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("S"));
-            myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
+            {
+                affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("S"));
+                myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
             else
             {}
         }
         if(e.getSource() == myScrolling.getButton4())
         {
             if(affichMain.getGame().getCurrentSpot().getExits("Q").getListCharacter().size() == 0)
-            {affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Q"));
-            myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
+            {
+                affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Q"));
+                myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
             else
             {}
         }
