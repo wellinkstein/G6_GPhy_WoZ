@@ -117,7 +117,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelSpotItem, c);
         
-        panelDesc= new ItemDescription(new Common("Wooden Shield", "item test",0,0,0));
+        panelDesc= new JPanel();
         //new JPanel();
         //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
