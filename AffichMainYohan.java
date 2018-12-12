@@ -19,10 +19,11 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
+    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelLab, panelMonster;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
+    private PlayerHead panelPlayer;
     private Spot newSpot;
     private Container pane;
     
@@ -150,7 +151,8 @@ public class AffichMainYohan extends JFrame
         c.gridy =3;
         pane.add(panelBouton, c);
         
-        panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this, "Z");
+        myGame.move(myGame.getListSpot().get(9)); 
+        panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this, "S");
         //new JPanel();
         // panelNextSpot.setBackground(Color.MAGENTA);
         //
@@ -194,6 +196,15 @@ public class AffichMainYohan extends JFrame
         panelDiag.add(myDialog);
         panelDiag.revalidate();
         panelDiag.repaint();
+        System.out.println("New Description");
+    }
+    
+    public void setPlayerHead(PlayerHead playerH)
+    {
+        panelPlayer.removeAll();
+        panelPlayer.add(playerH);
+        panelPlayer.revalidate();
+        panelPlayer.repaint();
         System.out.println("New Description");
     }
     

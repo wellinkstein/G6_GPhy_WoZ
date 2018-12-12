@@ -56,7 +56,7 @@ public class Inventory extends JPanel
 
         
         myLabel = new JLabel ("Your inventory",JLabel.CENTER);
-        myPanel.setLayout(new GridLayout(1,monJoueur.getNumberItemPossess()));
+        myPanel.setLayout(new GridLayout(2,monJoueur.getNumberItemPossess()));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
 

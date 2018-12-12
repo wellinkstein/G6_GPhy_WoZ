@@ -11,7 +11,6 @@ public class EcouteurNextSpotFight implements ActionListener
 {
     private AffichMainYohan affichMain1;
     private NextSpot myNextSpot;
-    
 
     /**
      * Constructor for objects of class EcouteurNextSpotFight
@@ -29,9 +28,13 @@ public class EcouteurNextSpotFight implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-       if(e.getSource()==myNextSpot.getMyFleeButton()) //cancels the choice of direction and doesn't engage a fight
+        if(e.getSource()==myNextSpot.getMyFleeButton()) //cancels the choice of direction and doesn't engage a fight
         {   
-            affichMain1.getNextSpot().showNextSpot(affichMain1.getNextSpot().getSpotNextSpot(), affichMain1);
+            affichMain1.getNextSpot().showNoMonster(affichMain1.getNextSpot().getSpotNextSpot(), affichMain1);
+        }
+        else if (e.getSource()==myNextSpot.getMyFightButton())
+        {
+            affichMain1.getGame().move(affichMain1.getGame().getCurrentSpot().getExits(affichMain1.getNextSpot().getDirection()));
         }
     }
 }
