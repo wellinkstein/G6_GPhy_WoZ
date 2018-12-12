@@ -218,6 +218,7 @@ public class NextSpot extends JPanel implements ActionListener
                      
                 }
             bigPanel.setVisible(true);
+            add(bigPanel);
                     // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     // myFrame.add(bigPanel);
                     // myFrame.setSize(150, 150);

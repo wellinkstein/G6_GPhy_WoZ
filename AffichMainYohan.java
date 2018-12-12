@@ -20,9 +20,15 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelGauche, panelDroiteH, panelDroiteB, panelDroiteC, bigPanel, panelDroite, panelSpotItem, panelDesc, panelInventory, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
+    private JPanel panelGauche, panelDroiteH, panelDroiteB, panelDroiteC, panelDesc, panelDroite, panelSpotItem, panelInventory, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
     private SpotItem panelListItem;
     private Spot newSpot;
+    
+    public AffichMainYohan()
+    {
+        main();
+    }
+    
     public void main()
     {
         
@@ -81,8 +87,9 @@ public class AffichMainYohan extends JFrame
         c.gridy = 0;
         pane.add(panelMonster, c);
         
-        panelInventory=new JPanel();
-        panelInventory.setBackground(Color.ORANGE);
+        panelInventory= new Inventory(myGame.getPlayer());
+        // new JPanel();
+        // panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
@@ -93,8 +100,8 @@ public class AffichMainYohan extends JFrame
         pane.add(panelInventory, c);
         
         panelSpotItem=new JPanel();
-        panelSpotItem.setBackground(Color.CYAN);
-        //new SpotItem(myGame.getListSpot().get(19));
+        // panelSpotItem.setBackground(Color.CYAN);
+        //new SpotItem(myGame.getListSpot().get(19),this);
         c.weightx = 0.125;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -161,68 +168,28 @@ public class AffichMainYohan extends JFrame
         c.gridy = 3;
         pane.add(panelDiag, c);
 
-        // // myFrame.setLayout(new GridLayout(1,2));
-        // // panelDroiteH=new JPanel();
-        // // panelDroiteC=new JPanel();
-        // // panelDroiteB=new JPanel();
-        
-        
-        // panelSpotItem =new JPanel();
-        // panelSpotItem =new SpotItem(myGame.getListSpot().get(19));
-        // panelCombat=new JPanel();
-        // panelCombat.setBackground(Color.ORANGE);
-        // panelDesc= new JPanel();
-        // panelInventory= new JPanel();
-        // panelInventory.setSize(5,5);
-        // panelInventory.setBackground(Color.GREEN);
-        // panelNextSpot=new JPanel();
-        // //panelNextSpot= new NextSpot();
-        // panelDiag = new JPanel();
-        // panelBouton= new JPanel();
-        // panelLab=new JPanel();
-        
-        // panelPlayer = new JPanel();
-        // panelPlayer = new PlayerHead(myGame.getPlayer());
-        // panelPlayer.setBackground(Color.BLUE);
-        
-        // panelMonster= new JPanel();
-        // panelMonster = new MonsterHead(myGame.getListSpot().get(6).getMonster());
-        
-        // panelGauche.setLayout(new GridLayout(2,1));
-        // panelDroite.setLayout(new GridLayout(4,1));
-        
-        // panelDroiteH.setLayout(new GridLayout(1,2));
-        // panelDroiteC.setLayout(new GridLayout(1,3));
-        // panelDroiteB.setLayout(new GridLayout(1,2));
-        
-        // //ajout
-        // panelDroiteH.add(panelPlayer);
-        // panelDroiteH.add(panelMonster);
-        
-        // panelDroiteC.add(panelSpotItem);
-        // panelDroiteC.add(panelDesc);
-        // panelDroiteC.add(panelCombat);
-        
-        // panelDroiteB.add(panelNextSpot);
-        // panelDroiteB.add(panelDiag);
-        
-        // panelGauche.add(panelLab);
-        // panelGauche.add(panelBouton);
-        
-        // panelDroite.add(panelDroiteH);
-        // panelDroite.add(panelInventory);
-        // panelDroite.add(panelDroiteC);
-        // panelDroite.add(panelDroiteB);
-
-      
-        // myFrame.add(panelGauche);
-        // myFrame.add(panelDroite);
         
         myFrame.pack();
         myFrame.setVisible(true);
     }
     
- 
+    public void setDes(ItemDescription myDes)
+    {
+        panelDesc.removeAll();
+        panelDesc.add(myDes);
+        panelDesc.revalidate();
+        panelDesc.repaint();
+        System.out.println("New Description");
+    }
+    
+    public Game getGame(){
+        return myGame;
+    }
+    
+    public SpotItem getSpotItem()
+    {
+        return panelListItem;
+    }
     // public static void main(String[] args) {
         // //Schedule a job for the event-dispatching thread:
         // //creating and showing this application's GUI.
