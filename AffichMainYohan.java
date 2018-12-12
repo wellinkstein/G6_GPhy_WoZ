@@ -75,7 +75,7 @@ public class AffichMainYohan extends JFrame
         pane.add(panelPlayer, c);
         
         
-        panelMonster = new MonsterHead(myGame.getListSpot().get(6).getMonster());
+        panelMonster = new MonsterHead(myGame.getListSpot().get(1).getMonster());
         //new JPanel();
         //        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
@@ -122,8 +122,10 @@ public class AffichMainYohan extends JFrame
         c.gridy = 2;
         pane.add(panelDesc, c);
         
-        panelCombat=new JPanel();
-        panelCombat.setBackground(Color.BLACK);
+        panelCombat= new JPanel();
+        //new FightInterface();
+        //
+        //panelCombat.setBackground(Color.BLACK);
         c.weightx = 0.25;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;

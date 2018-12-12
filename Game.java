@@ -425,6 +425,11 @@ public class Game
     }
   
     /**
+     * LE FIGHT SE DéROULE MAINTENANT DANS FIGHT INTERFACE
+     * RUN YOU FOOLS
+     */
+    
+    /**
      * If the player loses the fight
      * @return boolean true: the player loses the fight
      * 
