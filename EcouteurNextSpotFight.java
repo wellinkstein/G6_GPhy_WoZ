@@ -28,6 +28,6 @@ public class EcouteurNextSpotFight implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-       Game.move(Spot spot);
+       
     }
 }
