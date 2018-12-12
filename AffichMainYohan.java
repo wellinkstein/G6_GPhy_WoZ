@@ -75,7 +75,7 @@ public class AffichMainYohan extends JFrame
         pane.add(panelPlayer, c);
         
         
-        panelMonster = new MonsterHead(myGame.getListSpot().get(6).getMonster());
+        panelMonster = new MonsterHead(myGame.getListSpot().get(1).getMonster());
         //new JPanel();
         //        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;

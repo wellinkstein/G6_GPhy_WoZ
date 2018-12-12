@@ -33,7 +33,21 @@ public class MonsterHead extends JPanel
         myStatsPanel= new JPanel();
         myStatsPanel.setLayout(new GridLayout(4,1));
         if (monster==null){
+            myHealth = new JLabel("HP: null",JLabel.CENTER);
+            myXP = new JLabel("XP: null",JLabel.CENTER);
+            myAttack = new JLabel("Attack: null",JLabel.CENTER);
+            myProtection = new JLabel("Protection: null",JLabel.CENTER);
+            Icon icon = new ImageIcon("imagenulle.png");
+            JLabel label = new JLabel(icon);
+            label.setPreferredSize(new Dimension(150,50));
+            myMainPanel.add(label);
+        
+            myStatsPanel.add(myHealth);
+            myStatsPanel.add(myXP);
+            myStatsPanel.add(myAttack);
+            myStatsPanel.add(myProtection);
             
+            myMainPanel.add(myStatsPanel);
         }
         else{
             if (monster.getName()=="Medusa")
