@@ -106,13 +106,6 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                //myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
 
             }
 
@@ -129,13 +122,6 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
             }   
             else if(gameSpot.getMonster().getName() == "Cerberus") // Cerberus
             {
@@ -150,13 +136,6 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
             }   
             else if(gameSpot.getMonster().getName() == "Arachne") // Arachne
             {
@@ -171,13 +150,6 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
             }   
             else if(gameSpot.getMonster().getName() == "Cyclops") // Cyclops
             {
@@ -192,13 +164,6 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
             }   
             else if(gameSpot.getMonster().getName() == "Minotaur") // Minotaur
             {
@@ -212,26 +177,17 @@ public class NextSpot extends JPanel
                 bigPanel.add(myLabel2);
                 bigPanel.add(bigButtonPanel);
 
-                    
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // myFrame.add(bigPanel);
-                // // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
+
             }
 
         }
         else {
 
             JLabel label = new JLabel("No monster");
-            myLabel = new JLabel ("No monster");
-            myLabel2 = new JLabel("No monster");
+           
             myPanel.add(label);
-            myPanel.add(myLabel);
-            bigPanel.add(myLabel2);
             bigPanel.add(myPanel);
-            bigPanel.add(myLabel2);
+
 
         }
         bigPanel.setVisible(true);
@@ -244,16 +200,6 @@ public class NextSpot extends JPanel
         return mySpot; 
     }
 
-    public void showNoMonster(Spot gameSpot, AffichMainYohan myMain){
-        {
-            bigPanel.removeAll();
-            myLabel3 = new JLabel("No monster");
-            bigPanel.add(myLabel3);
-            revalidate();
-            repaint();
-        }
-    }
-
     public JButton getMyFightButton(){
         return myFightButton; 
     }
@@ -263,31 +209,3 @@ public class NextSpot extends JPanel
         return direction; 
     }
 }
-
-// /**
-// * An example of a method - replace this comment with your own
-// *
-// * @param  y  a sample parameter for a method
-// * @return    the sum of x and y
-// */
-// public void actionPerformed (ActionEvent e)
-// {
-// if(e.getSource()==myFleeButton) //cancels the choice of direction and doesn't engage a fight
-// {
-
-// bigPanel.removeAll();
-// myLabel3 = new JLabel("No monster");
-// bigPanel.add(myLabel3);
-
-// // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-// // myFrame.add(bigPanel);
-// // myFrame.setSize(150, 150);
-// // myFrame.pack();
-// // myFrame.setVisible(true);
-
-// bigPanel.revalidate();
-// bigPanel.repaint();       
-// }
-
-// }
-// }

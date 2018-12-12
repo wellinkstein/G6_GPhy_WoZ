@@ -30,11 +30,12 @@ public class EcouteurNextSpotFight implements ActionListener
     {
         if(e.getSource()==myNextSpot.getMyFleeButton()) //cancels the choice of direction and doesn't engage a fight
         {   
-            affichMain1.getNextSpot().showNoMonster(affichMain1.getNextSpot().getSpotNextSpot(), affichMain1);
+            affichMain1.getNextSpot().showNextSpot(affichMain1.getGame().getCurrentSpot(), affichMain1);
         }
         else if (e.getSource()==myNextSpot.getMyFightButton())
         {
             affichMain1.getGame().move(affichMain1.getGame().getCurrentSpot().getExits(affichMain1.getNextSpot().getDirection()));
+            affichMain1.getNextSpot().showNextSpot(affichMain1.getGame().getCurrentSpot(), affichMain1);
         }
     }
 }
