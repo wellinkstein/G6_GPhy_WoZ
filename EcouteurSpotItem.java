@@ -40,6 +40,7 @@ public class EcouteurSpotItem implements ActionListener
                 {   
                     ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
                     affichMain.setDes(myDes);
+                    //getItemDescription().showItemDes(mySpotItem.getSpot().getOneItem((i/2)));
                 }
                 else
                 {

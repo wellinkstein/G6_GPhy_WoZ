@@ -23,6 +23,7 @@ public class AffichMainYohan extends JFrame
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
+    private ItemDescription panelItemDescription; 
     private PlayerHead panelPlayer;
     private Scrolling panelLab;
     private Spot newSpot;
@@ -213,6 +214,10 @@ public class AffichMainYohan extends JFrame
         return panelSpotItem;
     }
     
+    public ItemDescription getItemDescription()
+    {
+        return panelItemDescription; 
+    }
     public Inventory getInventory()
     {
         return panelInventory;
