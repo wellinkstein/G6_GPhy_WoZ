@@ -16,7 +16,7 @@ public class FightInterface extends JPanel implements ActionListener
     private JLabel dialog, playerImg, monsterImg;
     private ImageIcon iconPlayer, iconMonster;
     private JButton buttonStartFight;
-    private Game myGame;
+    private AffichMainYohan affichMain;
     private Spot mySpot;
 
     /**
@@ -24,7 +24,8 @@ public class FightInterface extends JPanel implements ActionListener
      */
     public FightInterface()
     {
-
+        
+        
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
 
@@ -59,9 +60,9 @@ public class FightInterface extends JPanel implements ActionListener
         c.gridy=0;
         panelMain.add(playerImg,c);
 
-        if (myGame.getCurrentSpot().getMonster() != null)
+        if (affichMain.getGame().getCurrentSpot().getMonster() != null)
         {
-            if(myGame.getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
+            if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
             {
                 iconMonster = new ImageIcon("MedusaFinal.png");
                 monsterImg = new JLabel();
@@ -77,7 +78,7 @@ public class FightInterface extends JPanel implements ActionListener
             }
         }
 
-        else if(myGame.getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
         {
             iconMonster = new ImageIcon("chimera.jpg");
             monsterImg = new JLabel();
@@ -91,7 +92,7 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(myGame.getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
         {
             iconMonster = new ImageIcon("CerberusFinal.png");
             monsterImg = new JLabel();
@@ -105,7 +106,7 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(myGame.getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
         {
             iconMonster = new ImageIcon("ArachneFinal.png");
             monsterImg = new JLabel();
@@ -119,7 +120,7 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(myGame.getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
         {
             iconMonster = new ImageIcon("CyclopsFinal.png");
             monsterImg = new JLabel();
@@ -133,7 +134,7 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(myGame.getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
         {
             iconMonster = new ImageIcon("MinotaurFinal.png");
             monsterImg = new JLabel();
@@ -199,20 +200,20 @@ public class FightInterface extends JPanel implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        if(myGame.getCurrentSpot().getMonster()!=null)
+        if(affichMain.getGame().getCurrentSpot().getMonster()!=null)
         {
-            fight(myGame);
+            fight();
         }
     }
 
     /**
      * The fight starts. it ends when one of the characters dies
      */
-    public void fight(Game myGame) 
+    public void fight() 
     { 
         int damFighter;
-        myGame.whoBegins();
-        if(myGame.getFighter()==myGame.getPlayer()){
+        affichMain.getGame().whoBegins();
+        if(affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
         else
@@ -220,12 +221,12 @@ public class FightInterface extends JPanel implements ActionListener
             updateCombatLogbook("The monster begins the fight!");
         }
 
-        while (myGame.getFighter().HP!=0){
+        while (affichMain.getGame().getFighter().HP!=0){
             damFighter=inflictDamage();
-            if (myGame.getFighter()==myGame.getPlayer()){
+            if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
                 damFighter=damFighter+criticalHit();
             }
-            if (myGame.getFighter()==myGame.getPlayer())
+            if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {
                 updateCombatLogbook("Theseus inflicts" + damFighter + "damages to the monster."); 
             }
@@ -234,7 +235,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateCombatLogbook("The monster inflicts" + damFighter + "damages to Theseus.");
             }
 
-            myGame.setFighter(myGame.getFighter());
+            affichMain.getGame().setFighter(affichMain.getGame().getFighter());
             try
             {
                 Thread.sleep(1000);
@@ -245,10 +246,10 @@ public class FightInterface extends JPanel implements ActionListener
             }
         }
 
-        if (myGame.getFighter()==myGame.getPlayer()) { 
-            myGame.setWinTrue();
+        if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
+            affichMain.getGame().setWinTrue();
         }
-        else myGame.setWinFalse(); 
+        else affichMain.getGame().setWinFalse(); 
     }
 
     /**
@@ -258,11 +259,11 @@ public class FightInterface extends JPanel implements ActionListener
     public int inflictDamage() 
     { 
         int dam=0;
-        for (int i = 0; i < myGame.getCurrentSpot().getListCharacter().size(); i++)
+        for (int i = 0; i < affichMain.getGame().getCurrentSpot().getListCharacter().size(); i++)
         {
-            if (myGame.getCurrentSpot().getListCharacter().get(i) != myGame.getFighter()){
-                myGame.getCurrentSpot().getListCharacter().get(i).loseHp(myGame.getFighter().getDamage());
-                dam = myGame.getCurrentSpot().getListCharacter().get(i).valLoseHp(myGame.getFighter().getDamage());
+            if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
+                affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(affichMain.getGame().getFighter().getDamage());
+                dam = affichMain.getGame().getCurrentSpot().getListCharacter().get(i).valLoseHp(affichMain.getGame().getFighter().getDamage());
             }
         }
         return dam;
@@ -276,12 +277,12 @@ public class FightInterface extends JPanel implements ActionListener
     { 
         Random rand = new Random();
         int crit = rand.nextInt(100); 
-        if (myGame.getPlayer().getCritRate()<=crit){
-            int dam = (myGame.getFighter().getDamage())/2;
-            for (int i = 0; i < myGame.getCurrentSpot().getListCharacter().size(); i++)
+        if (affichMain.getGame().getPlayer().getCritRate()<=crit){
+            int dam = (affichMain.getGame().getFighter().getDamage())/2;
+            for (int i = 0; i < affichMain.getGame().getCurrentSpot().getListCharacter().size(); i++)
             {
-                if (myGame.getCurrentSpot().getListCharacter().get(i) != myGame.getFighter()){
-                    myGame.getCurrentSpot().getListCharacter().get(i).loseHp(dam);  
+                if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
+                    affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(dam);  
                 }
             }
             return dam;
@@ -308,9 +309,9 @@ public class FightInterface extends JPanel implements ActionListener
         c.gridy=0;
         panelMain.add(playerImg,c);
 
-        if (myGame.getCurrentSpot().getMonster() != null)
+        if (affichMain.getGame().getCurrentSpot().getMonster() != null)
         {
-            if(myGame.getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
+            if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
             {
                 iconMonster = new ImageIcon("MedusaFinal.png");
                 monsterImg = new JLabel();
@@ -325,7 +326,7 @@ public class FightInterface extends JPanel implements ActionListener
                 buttonStartFight.setEnabled(true);
             }
 
-            else if(myGame.getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
             {
                 iconMonster = new ImageIcon("chimera.jpg");
                 monsterImg = new JLabel();
@@ -339,7 +340,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
                 buttonStartFight.setEnabled(true);
             }
-            else if(myGame.getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
             {
                 iconMonster = new ImageIcon("CerberusFinal.png");
                 monsterImg = new JLabel();
@@ -353,7 +354,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
                 buttonStartFight.setEnabled(true);
             }
-            else if(myGame.getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
             {
                 iconMonster = new ImageIcon("ArachneFinal.png");
                 monsterImg = new JLabel();
@@ -367,7 +368,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
                 buttonStartFight.setEnabled(true);
             }
-            else if(myGame.getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
             {
                 iconMonster = new ImageIcon("CyclopsFinal.png");
                 monsterImg = new JLabel();
@@ -381,7 +382,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
                 buttonStartFight.setEnabled(true);
             }
-            else if(myGame.getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
             {
                 iconMonster = new ImageIcon("MinotaurFinal.png");
                 monsterImg = new JLabel();
