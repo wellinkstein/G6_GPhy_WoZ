@@ -21,18 +21,43 @@ public class NextSpot extends JPanel
     private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel;
     private JFrame myFrame,myFrame2;
     private JLabel myLabel,myLabel2,myLabel3;
+    private AffichMainYohan myMain; //The affich Main for the game
     /**
      * Constructor for objects of class NextSpot.
      */
-    public NextSpot(Spot gameSpot, AffichMainYohan myMain)
+    public NextSpot(Spot gameSpot, AffichMainYohan myMain1)
     // public NextSpot()
     {
+        mySpot= gameSpot; 
+        myMain= myMain1; 
+        showNextSpot(mySpot, myMain); 
+    }
+    
+    /**
+     * 
+     */
+    public JButton getMyFleeButton(){
+        return myFleeButton; 
+    }
+    
+    /**
+     * 
+     */
+    public void showNextSpot(Spot gameSpot, AffichMainYohan myMain){
+        removeAll();
+        
         myPanel = new JPanel();
         myFightPanel = new JPanel();
         myFleePanel = new JPanel();
-
         bigPanel = new JPanel();
         bigButtonPanel = new JPanel();
+        
+        bigPanel.removeAll();
+        myPanel.removeAll();
+        myFightPanel.removeAll();
+        myFleePanel.removeAll();
+        bigButtonPanel.removeAll(); 
+
         
         myFightButton = new JButton ("Fight");
         myFightButton.setFont(new Font("Arial", Font.PLAIN, 40));
@@ -61,12 +86,11 @@ public class NextSpot extends JPanel
 
         
         myPanel.setLayout(new GridLayout(1,2));
-       
-        // myFrame = new JFrame("MONSTER");
+
         EcouteurNextSpotFight e = new EcouteurNextSpotFight(this, myMain);
         myFightButton.addActionListener(e);
         myFleeButton.addActionListener(e);
-        // myGame = new Game();
+
         
             if (gameSpot.getMonster() != null) //Medusa
             {
@@ -219,33 +243,9 @@ public class NextSpot extends JPanel
                 }
             bigPanel.setVisible(true);
             add(bigPanel);
-                    // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    // myFrame.add(bigPanel);
-                    // myFrame.setSize(150, 150);
-                    // myFrame.pack();
-                    // myFrame.setVisible(true);
-                
-            // } 
-                // Icon icon = new ImageIcon("Medusa.jpg");
-                // JLabel label = new JLabel(icon);
-                // myLabel = new JLabel ("Medusa");
-                // myLabel2 = new JLabel("Snake Lady");
-                // myPanel.add(label);
-                // myPanel.add(myLabel);
-                // bigPanel.add(myLabel2);
-                // myFightPanel.setLayout(new GridLayout(1,2));
-                // myFightPanel.add (myFightButton);
-                // myFightPanel.add (myFleeButton);
-                // bigPanel.add(myPanel);
-                // bigPanel.add(myFightPanel);
-                // myFrame = new JFrame();
-                // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                // // myFrame.add(bigPanel);
-                // myFrame.setSize(150, 150);
-                // myFrame.pack();
-                // myFrame.setVisible(true);
-        
-    }
+            revalidate();
+            repaint();
+        }
 }
     
 

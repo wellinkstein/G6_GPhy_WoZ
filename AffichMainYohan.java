@@ -19,9 +19,10 @@ public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
-    private JPanel panelDesc, panelNextSpot, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
+    private JPanel panelDesc, panelCombat, panelDiag, panelBouton, panelLab, panelPlayer, panelMonster;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
+    private NextSpot panelNextSpot; 
     private Spot newSpot;
     private Container pane;
     
@@ -209,6 +210,12 @@ public class AffichMainYohan extends JFrame
     {
         return panelInventory;
     }
+    
+    public NextSpot getNextSpot()
+    {
+        return panelNextSpot; 
+    }
+        
     // public static void main(String[] args) {
         // //Schedule a job for the event-dispatching thread:
         // //creating and showing this application's GUI.
