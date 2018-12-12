@@ -69,6 +69,7 @@ public class SpotItem extends JPanel
 
     public void showListItem(Spot spot, AffichMain myMain)
     {
+        removeAll();
         
         JPanel myPanel;
         JLabel myLabel; 
@@ -78,6 +79,11 @@ public class SpotItem extends JPanel
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel();
+        
+        myBigPanel.removeAll();
+        myPanel.removeAll();
+        myPanel1.removeAll();
+        content.clear();
 
         //panelListItem=mySpot; 
 
@@ -107,6 +113,8 @@ public class SpotItem extends JPanel
        
         myBigPanel.setVisible(true); 
         add(myBigPanel);
+        revalidate();
+        repaint();
         setVisible(true);
 
     }

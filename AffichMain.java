@@ -44,6 +44,7 @@ public class AffichMain extends JFrame
         panelHaut= new JPanel();
         bigPanel = new JPanel();
         panelListItem = new SpotItem(myGame.getListSpot().get(19),this);
+        myGame.move(myGame.getListSpot().get(19));
         //System.out.println(panelListItem);
         panelVarious= panelListItem;
         //Grille du frame et des panels
