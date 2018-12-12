@@ -29,6 +29,21 @@ public class EcouteurNextSpotFight implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-       
+       if(e.getSource()==NextSpot.myFleeButton) //cancels the choice of direction and doesn't engage a fight
+        {
+            
+            bigPanel.removeAll();
+            myLabel3 = new JLabel("No monster");
+            bigPanel.add(myLabel3);
+            
+            // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // myFrame.add(bigPanel);
+                    // myFrame.setSize(150, 150);
+                    // myFrame.pack();
+                    // myFrame.setVisible(true);
+                    
+            bigPanel.revalidate();
+            bigPanel.repaint();       
+        }
     }
 }

@@ -13,7 +13,7 @@ import java.awt.GridBagLayout;
  * @author (Yohan Lefol)
  * @version (2018-12-04)
  */
-public class NextSpot extends JPanel implements ActionListener
+public class NextSpot extends JPanel 
 {
     private Game myGame;
     private Spot mySpot;
@@ -24,7 +24,7 @@ public class NextSpot extends JPanel implements ActionListener
     /**
      * Constructor for objects of class NextSpot.
      */
-    public NextSpot(Spot gameSpot)
+    public NextSpot(Spot gameSpot, AffichMainYohan myMain)
     // public NextSpot()
     {
         myPanel = new JPanel();
@@ -63,9 +63,9 @@ public class NextSpot extends JPanel implements ActionListener
         myPanel.setLayout(new GridLayout(1,2));
        
         // myFrame = new JFrame("MONSTER");
-        
-        myFightButton.addActionListener(this);
-        myFleeButton.addActionListener(this);
+        EcouteurNextSpotFight e = new EcouteurNextSpotFight(this, myMain);
+        myFightButton.addActionListener(e);
+        myFleeButton.addActionListener(e);
         // myGame = new Game();
         
             if (gameSpot.getMonster() != null) //Medusa
@@ -246,32 +246,33 @@ public class NextSpot extends JPanel implements ActionListener
                 // myFrame.setVisible(true);
         
     }
+}
     
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public void actionPerformed (ActionEvent e)
-    {
-        if(e.getSource()==myFleeButton) //cancels the choice of direction and doesn't engage a fight
-        {
+    // /**
+     // * An example of a method - replace this comment with your own
+     // *
+     // * @param  y  a sample parameter for a method
+     // * @return    the sum of x and y
+     // */
+    // public void actionPerformed (ActionEvent e)
+    // {
+        // if(e.getSource()==myFleeButton) //cancels the choice of direction and doesn't engage a fight
+        // {
             
-            bigPanel.removeAll();
-            myLabel3 = new JLabel("No monster");
-            bigPanel.add(myLabel3);
+            // bigPanel.removeAll();
+            // myLabel3 = new JLabel("No monster");
+            // bigPanel.add(myLabel3);
             
-            // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    // myFrame.add(bigPanel);
-                    // myFrame.setSize(150, 150);
-                    // myFrame.pack();
-                    // myFrame.setVisible(true);
+            // // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    // // myFrame.add(bigPanel);
+                    // // myFrame.setSize(150, 150);
+                    // // myFrame.pack();
+                    // // myFrame.setVisible(true);
                     
-            bigPanel.revalidate();
-            bigPanel.repaint();       
-        }
+            // bigPanel.revalidate();
+            // bigPanel.repaint();       
+        // }
         
-    }
-}
+    // }
+// }
