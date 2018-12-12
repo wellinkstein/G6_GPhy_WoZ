@@ -34,10 +34,8 @@ public class PlayerHead extends JPanel
         myProtection = new JLabel("Protection: "+String.valueOf(player.getProtection()),JLabel.CENTER);
         Icon icon = new ImageIcon("Theseus head.png");
         JLabel label = new JLabel(icon);
-        
+        label.setPreferredSize(new Dimension(150,50));
         myMainPanel=new JPanel();
-        myMainPanel.setOpaque(true);
-        myMainPanel.setBackground(Color.BLUE);
         myMainPanel.setLayout(new GridLayout(1,1));
         
         myStatsPanel= new JPanel();
@@ -52,7 +50,7 @@ public class PlayerHead extends JPanel
         
         myMainPanel.add(myStatsPanel);
         
-        myMainPanel.setPreferredSize(new Dimension(150,100));
+        // myMainPanel.setPreferredSize(new Dimension(150,100));
         myMainPanel.setVisible(true);
         add(myMainPanel);
         

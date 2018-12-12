@@ -16,7 +16,7 @@ import java.util.Set;
  * @author Corentin Journay 
  * @version 04/12/2018
  */
-public class AffichMain2 extends JFrame
+public class AffichMainYohan extends JFrame
 {
 
     private Game myGame; 
@@ -47,64 +47,70 @@ public class AffichMain2 extends JFrame
         
         panelLab = new JPanel();
         panelLab.setBackground(Color.BLUE);
-        c.weightx = 0.75;
+        c.weightx = 0.5;
         c.weighty = 0.6;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridheight=6;
-        c.gridwidth=1;
+        //c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
+        c.gridheight=3;
+        c.fill= GridBagConstraints.BOTH;
         pane.add(panelLab, c);
         
-        panelPlayer = new JPanel();
-        panelPlayer.setBackground(Color.GREEN);
-        //new PlayerHead(myGame.getPlayer());
+        panelPlayer = new PlayerHead(myGame.getPlayer());
+        //panelPlayer.setBackground(Color.GREEN);
+        //
         c.weightx = 0.25;
         c.weighty = 0.1;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.gridwidth=2; //prend deux colonnes
+        c.gridheight=1;
         c.gridx = 1;
         c.gridy = 0;
         pane.add(panelPlayer, c);
         
         
         panelMonster = new JPanel();
-        panelMonster.setBackground(Color.RED);
         //new MonsterHead(myGame.getListSpot().get(6).getMonster());
+        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
         c.weighty = 0.1;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth=2;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth=1;
+        c.gridheight=1;
         c.gridx = 3;
         c.gridy = 0;
         pane.add(panelMonster, c);
         
         panelInventory=new JPanel();
-        panelInventory.setBackground(Color.GREEN);
+        panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;
         c.weighty = 0.1;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.gridwidth=3;
+        c.gridheight=1;
         c.gridx = 1;
         c.gridy = 1;
         pane.add(panelInventory, c);
         
         panelSpotItem=new JPanel();
-        panelSpotItem.setBackground(Color.RED);
+        panelSpotItem.setBackground(Color.CYAN);
         //new SpotItem(myGame.getListSpot().get(19));
         c.weightx = 0.125;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridheight=1;
+        c.gridwidth=1;
         c.gridx = 1;
         c.gridy = 2;
-        c.gridheight=3;
         pane.add(panelSpotItem, c);
         
         panelDesc=new JPanel();
         panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth=1;
+        c.gridheight=1;
         c.gridx = 2;
         c.gridy = 2;
         pane.add(panelDesc, c);
@@ -113,7 +119,9 @@ public class AffichMain2 extends JFrame
         panelCombat.setBackground(Color.BLACK);
         c.weightx = 0.25;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth=1;
+        c.gridheight=1;
         c.gridx =3;
         c.gridy = 2;
         pane.add(panelCombat, c);
@@ -122,15 +130,21 @@ public class AffichMain2 extends JFrame
         panelBouton.setBackground(Color.GRAY);
         c.weightx = 0.5;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth=1;
+        c.gridheight=1;
         c.gridx =0;
         c.gridy =3;
         pane.add(panelBouton, c);
         
-        panelNextSpot = new NextSpot(myGame.getListSpot().get(6));
+        panelNextSpot = new JPanel();
+        panelNextSpot.setBackground(Color.MAGENTA);
+        //new NextSpot(myGame.getListSpot().get(6));
         c.weightx = 0.25;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth = 2;
+        c.gridheight=1;
         c.gridx =1;
         c.gridy = 3;
         pane.add(panelNextSpot, c);
@@ -139,7 +153,9 @@ public class AffichMain2 extends JFrame
         panelDiag.setBackground(Color.YELLOW);
         c.weightx = 0.25;
         c.weighty = 0.4;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
+        c.gridwidth=1;
+        c.gridheight=1;
         c.gridx =3;
         c.gridy = 3;
         pane.add(panelDiag, c);
