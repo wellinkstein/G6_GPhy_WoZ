@@ -86,7 +86,7 @@ public class AffichMainYohan extends JFrame
         c.gridy = 0;
         pane.add(panelMonster, c);
         
-        panelInventory= new Inventory(myGame.getPlayer());
+        panelInventory= new Inventory(myGame.getPlayer(),this);
         // new JPanel();
         // panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;

@@ -23,16 +23,19 @@ implements ActionListener
     private JLabel myLabel; 
     private JPanel myPanel, myPanel1, myBigPanel; 
     private Spot spot;
+    private AffichMainYohan myMain;
 
-    public Inventory(Player theseus)
+    public Inventory(Player theseus, AffichMainYohan cont)
     {
         monJoueur= theseus;
-        for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
-        {
-            content.add(new JButton(monJoueur.getItems(i).getName()));
-            content.add(new JButton("Drop Item"));
-        }
-
+        myMain = cont;
+        showPlayerItem(monJoueur,myMain);
+    }
+       
+    public void showPlayerItem(Player theseus, AffichMainYohan myMain)
+    {
+        removeAll();
+        
         JPanel myPanel;
         JLabel myLabel; 
         // myFrame = new JFrame("Inventory");
@@ -40,15 +43,29 @@ implements ActionListener
         // myFrame.setLayout(new GridLayout(0,1));
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
-        myBigPanel=new JPanel(); 
-        myLabel = new JLabel ("These are the items available",JLabel.CENTER);
+        myBigPanel=new JPanel();
+        
+        myBigPanel.removeAll();
+        myPanel.removeAll();
+        myPanel1.removeAll();
+        content.clear();
+        
+        for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
+        {
+            content.add(new JButton(monJoueur.getItems(i).getName()));
+            content.add(new JButton("Drop Item"));
+        }
+
+        
+        myLabel = new JLabel ("Your inventory",JLabel.CENTER);
         myPanel.setLayout(new GridLayout(1,monJoueur.getNumberItemPossess()));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
 
         for(int i = 0; i <= (content.size()-1); i++)
         {
-            content.get(i).addActionListener(this);
+            EcouteurInventory e = new EcouteurInventory(this, myMain);
+            content.get(i).addActionListener(e);
             myPanel.add(content.get(i));
         }
 
@@ -81,6 +98,13 @@ implements ActionListener
             }
         }
     }
-
+    public Player getPlayer()
+    {
+        return monJoueur;
+    }
+    
+    public ArrayList<JButton> getContent(){
+        return content;
+    }
    
 }
