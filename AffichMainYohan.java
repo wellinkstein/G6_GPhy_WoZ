@@ -187,6 +187,15 @@ public class AffichMainYohan extends JFrame
         System.out.println("New Description");
     }
     
+    public void setDialog(DialogScreenInterface myDialog)
+    {
+        panelDialog.removeAll();
+        panelDialog.add(myDialog);
+        panelDialog.revalidate();
+        panelDialog.repaint();
+        System.out.println("New Description");
+    }
+    
     public Game getGame(){
         return myGame;
     }

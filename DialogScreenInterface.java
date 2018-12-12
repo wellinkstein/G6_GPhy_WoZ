@@ -20,7 +20,7 @@ public class DialogScreenInterface extends JFrame implements ActionListener
     /**
      * Constructeur of DialogScreenInterface
      */
-    public DialogScreenInterface()
+    public DialogScreenInterface(String dialog)
     {
         JFrame myFrame;
         myFrame = new JFrame("Dialog Screen");
@@ -28,7 +28,7 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         buttonClose = new JButton("Close");
         buttonClose.addActionListener(this);
         
-        dialog = new JLabel("Test");
+        dialog = new JLabel(dialog);
         
         myPanel = new JPanel();
         
@@ -53,8 +53,4 @@ public class DialogScreenInterface extends JFrame implements ActionListener
         myFrame.dispose();
     }
     
-    public void displayDescription(String description)
-    {
-        dialog.setText(description);
-    }
 }

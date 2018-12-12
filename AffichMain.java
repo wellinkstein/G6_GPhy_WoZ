@@ -63,17 +63,7 @@ public class AffichMain extends JFrame
         myFrame.setVisible(true);
     }
     
-    public void setDes(ItemDescription myDes)
-    {
-        bigPanel.removeAll();
-        bigPanel.setLayout(new GridLayout(3,1));
-        bigPanel.add(myDes);
-        bigPanel.add(panelListItem);
-        bigPanel.add(panelBas);
-        bigPanel.revalidate();
-        bigPanel.repaint();
-        System.out.println("New Description");
-    }
+   
     
     public void setList()
     {
