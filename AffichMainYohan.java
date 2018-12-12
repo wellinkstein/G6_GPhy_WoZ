@@ -150,7 +150,7 @@ public class AffichMainYohan extends JFrame
         c.gridy =3;
         pane.add(panelBouton, c);
         
-        panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this);
+        panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this, "Z");
         //new JPanel();
         // panelNextSpot.setBackground(Color.MAGENTA);
         //

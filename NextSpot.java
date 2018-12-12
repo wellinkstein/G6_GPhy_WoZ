@@ -21,15 +21,17 @@ public class NextSpot extends JPanel
     private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel;
     private JFrame myFrame,myFrame2;
     private JLabel myLabel,myLabel2,myLabel3;
+    private String direction; 
     private AffichMainYohan myMain; //The affich Main for the game
     /**
      * Constructor for objects of class NextSpot.
      */
-    public NextSpot(Spot gameSpot, AffichMainYohan myMain1)
+    public NextSpot(Spot gameSpot, AffichMainYohan myMain1, String newDirection)
     // public NextSpot()
     {
         mySpot= gameSpot; 
         myMain= myMain1; 
+        direction=newDirection; 
         showNextSpot(mySpot, myMain); 
     }
     
@@ -245,6 +247,16 @@ public class NextSpot extends JPanel
             add(bigPanel);
             revalidate();
             repaint();
+        }
+        public Spot getSpotNextSpot(){
+            return mySpot; 
+        }
+      public void showNoMonster(Spot gameSpot, AffichMainYohan myMain){
+          {
+              bigPanel.removeAll();
+              myLabel3 = new JLabel("No monster");
+              bigPanel.add(myLabel3);
+          }
         }
 }
     
