@@ -190,10 +190,10 @@ public class AffichMainYohan extends JFrame
     
     public void setDialog(DialogScreenInterface myDialog)
     {
-        panelDialog.removeAll();
-        panelDialog.add(myDialog);
-        panelDialog.revalidate();
-        panelDialog.repaint();
+        panelDiag.removeAll();
+        panelDiag.add(myDialog);
+        panelDiag.revalidate();
+        panelDiag.repaint();
         System.out.println("New Description");
     }
     
