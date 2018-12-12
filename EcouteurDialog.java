@@ -1,4 +1,6 @@
-
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 /**
  * Write a description of class EcouteurDialog here.
  *
@@ -10,7 +12,6 @@ public class EcouteurDialog
     private AffichMainYohan affichMain;
     private DialogScreenInterface dialog;
     
-
     /**
      * Constructor for objects of class EcouteurInventory
      */
@@ -21,10 +22,9 @@ public class EcouteurDialog
     
      public void actionPerformed (ActionEvent e)
     {
-       
+        if(e.getSource() == dialog.getButtonStart())
         {
-            if(e.getSource() == myInventory.getContent().get(i))
-           
+             affichMain.getContentPane().setEnabled(true);
         }
     }
-    }
+}
