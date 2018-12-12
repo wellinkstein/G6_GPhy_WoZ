@@ -37,6 +37,7 @@ public class FightInterfaceTest
     private AffichMainYohan ibt;
     private Game myGame;
     private Spot mySpot;
+    private FightInterface my;
 
     /**
      * Constructeur de la classe-test FightInterfaceTest
@@ -72,17 +73,24 @@ public class FightInterfaceTest
     {
         ibt = new AffichMainYohan();
         mySpot = new Spot();
-        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
-        Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
-        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
-        Player theseus = new Player(20,"Theseus",1,1,0);
+        //Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
+        //Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        //LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
+        //Player theseus = new Player(20,"Theseus",1,1,0);
         
-        theseus.takeItem(hermesSandals);
-        mySpot.addCharacterSpot(medusa);
-        ibt.getGame().setCurrentSpot(mySpot);
-        ibt.getGame().addToCurrentSpot(theseus);
+        ibt.getGame().getPlayer().takeItem(ibt.getGame().getHermes());
+        assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
+        ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
+        //ibt.getGame().addToCurrentSpot(ibt.getGame().getPlayer());
+       // assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
+        //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().get
+        //mySpot.addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
+        //ibt.getGame().setCurrentSpot(mySpot);
         
-        ibt.getGame().fight();
-        assertFalse(ibt.getGame().getWin());
+        
+        System.out.println("test");
+        my = new FightInterface(ibt);
+        my.fight();
+        //assertFalse(ibt.getGame().getWin());
     }
 }

@@ -189,8 +189,8 @@ public class FightInterface extends JPanel implements ActionListener
     public void updateCombatLogbook(String texte)
     {
         dialog.setText(dialog.getText() + texte + "<br>");
-        panelBig.revalidate();
-        panelBig.repaint();  
+        //panelBig.revalidate();
+        //panelBig.repaint();  
     }
 
     /**
@@ -220,9 +220,12 @@ public class FightInterface extends JPanel implements ActionListener
         {
             updateCombatLogbook("The monster begins the fight!");
         }
+        
+        System.out.println("test1");
 
         while (affichMain.getGame().getFighter().HP!=0){
             damFighter=affichMain.getGame().inflictDamage();
+            System.out.println(damFighter);
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
                 damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }

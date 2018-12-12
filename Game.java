@@ -27,6 +27,7 @@ public class Game
     private Character fighter;
     private Player theseus;
     private boolean win;
+    private Legendary hermesSandals;
     /** 
      * Create the game and initialise its internal map.
      */
@@ -49,7 +50,7 @@ public class Game
         Legendary aresSword= new Legendary("Ares's sword","",6,0,0);
         Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
         Legendary aegisShield= new Legendary("Aegis shield","",0,5,0);
-        Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
         
         LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"",hermesSandals);
         LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",aresSword);
@@ -117,6 +118,14 @@ public class Game
         
         
         setFinishedFalse();
+    }
+    
+    /**
+     * Getter for hermessandals
+     */
+    public Legendary getHermes()
+    {
+        return hermesSandals;
     }
 
     /**
@@ -502,12 +511,18 @@ public class Game
     public int inflictDamage() 
     { 
           int dam=0;
+          System.out.println(currentSpot.getListCharacter().size());
           for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
           {
             if (currentSpot.getListCharacter().get(i) != fighter){
                 currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage());
                 dam = currentSpot.getListCharacter().get(i).valLoseHp(fighter.getDamage());
             }
+            else
+            {
+                System.out.println("la boucl");
+            }
+            
           }
           return dam;
     }
