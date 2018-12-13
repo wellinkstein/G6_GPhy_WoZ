@@ -248,7 +248,7 @@ public class FightInterface extends JPanel implements ActionListener
             //System.out.println("fighter1: "+ affichMain.getGame().getFighter());
             //System.out.println(damFighter);
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
-                damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
+                damFighter=damFighter+criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {

@@ -46,7 +46,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
         
-        myGame.move(myGame.getListSpot().get(19));
+        myGame.move(myGame.getListSpot().get(9));
         
         //Grille du frame et des panels
         
