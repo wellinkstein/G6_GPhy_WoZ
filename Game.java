@@ -512,30 +512,33 @@ public class Game
         return fighter;   
     }
     
-    /**
+     /**
      * The fighter inflicts damage to the other character in the spot
      * 
      */
     public int inflictDamage() 
     { 
-          int dam=0;
-          //System.out.println(currentSpot.getListCharacter().size());
-          for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
-          {
+        int dam=0;
+        for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+        {
             if (currentSpot.getListCharacter().get(i) != fighter){
                 currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage());
                 dam = currentSpot.getListCharacter().get(i).valLoseHp(fighter.getDamage());
+                //System.out.println("The not fighter of inflict damage: "+currentSpot.getListCharacter().get(i));
+                //System.out.println(dam);
+                //System.out.println("In the if");
+                //System.out.println("the hp  of the fighter after damage: "+currentSpot.getListCharacter().get(i).getHP());
             }
             else
             {
-                System.out.println("la boucl");
+                //System.out.println("In the else");
             }
-            
-          }
-          return dam;
+            System.out.println(dam);
+        }
+        return dam;
     }
   
-    /**
+     /**
      * 
      * @return int dam: return the damage with or without critical strike
      */
@@ -544,14 +547,16 @@ public class Game
         Random rand = new Random();
         int crit = rand.nextInt(100); 
         if (theseus.getCritRate()<=crit){
-        int dam = (fighter.getDamage())/2;
-        for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
-          {
-            if (currentSpot.getListCharacter().get(i) != fighter){
-               currentSpot.getListCharacter().get(i).loseHp(dam);  
+            int dam = (fighter.getDamage())/2;
+            
+            for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
+            {
+                if (currentSpot.getListCharacter().get(i) != fighter){
+                    currentSpot.getListCharacter().get(i).loseHp(dam);
+                    
+                }
             }
-          }
-         return dam;
+            return dam;
         }
         else return 0;
     }

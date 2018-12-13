@@ -243,12 +243,12 @@ public class FightInterface extends JPanel implements ActionListener
         while (affichMain.getGame().getFighter().HP!=0){
             //System.out.println("fighter befor inflict: "+affichMain.getGame().getFighter().getHP());
             //damFighter=affichMain.getGame().inflictDamage();
-            damFighter=inflictDamage();
+            damFighter=affichMain.getGame().inflictDamage();
             //System.out.println("fighter after inflict: "+affichMain.getGame().getFighter().getHP());
             //System.out.println("fighter1: "+ affichMain.getGame().getFighter());
             //System.out.println(damFighter);
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
-                damFighter=damFighter+criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
+                damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {
@@ -278,54 +278,7 @@ public class FightInterface extends JPanel implements ActionListener
         else {affichMain.getGame().setWinTrue(); }
     }
 
-    /**
-     * The fighter inflicts damage to the other character in the spot
-     * 
-     */
-    public int inflictDamage() 
-    { 
-        int dam=0;
-        for (int i = 0; i < affichMain.getGame().getCurrentSpot().getListCharacter().size(); i++)
-        {
-            if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
-                affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(affichMain.getGame().getFighter().getDamage());
-                dam = affichMain.getGame().getCurrentSpot().getListCharacter().get(i).valLoseHp(affichMain.getGame().getFighter().getDamage());
-                //System.out.println("The not fighter of inflict damage: "+affichMain.getGame().getCurrentSpot().getListCharacter().get(i));
-                //System.out.println(dam);
-                //System.out.println("In the if");
-                //System.out.println("the hp  of the fighter after damage: "+affichMain.getGame().getCurrentSpot().getListCharacter().get(i).getHP());
-            }
-            else
-            {
-                //System.out.println("In the else");
-            }
-            System.out.println(dam);
-        }
-        return dam;
-    }
-
-    /**
-     * 
-     * @return int dam: return the damage with or without critical strike
-     */
-    public int criticalHit() 
-    { 
-        Random rand = new Random();
-        int crit = rand.nextInt(100); 
-        if (affichMain.getGame().getPlayer().getCritRate()<=crit){
-            int dam = (affichMain.getGame().getFighter().getDamage())/2;
-            
-            for (int i = 0; i < affichMain.getGame().getCurrentSpot().getListCharacter().size(); i++)
-            {
-                if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
-                    affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(dam);
-                    
-                }
-            }
-            return dam;
-        }
-        else return 0;
-    }
+    
 
     /**
      * A method to update the panel. If there is a monster in the currentSpot, the 
