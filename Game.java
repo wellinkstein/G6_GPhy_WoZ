@@ -491,15 +491,22 @@ public class Game
     { 
         if (theseus.getHermesSandals()){
             fighter=theseus;
+           
         }
         else
         {
-            Random rand = new Random();
-            int beginner = rand.nextInt(1); 
             
+            Random rand = new Random();
+            int beginner = rand.nextInt(2); 
+             System.out.println("random = " + beginner);
             switch(beginner){
-             case 0: fighter = currentSpot.getMonster();
-             default: fighter = theseus;  
+                case 0: fighter = theseus; 
+                 System.out.println("case = 0");
+                break;
+             
+                default:  fighter = currentSpot.getMonster();
+                System.out.println("case = 0");
+                break;
             }
         }
         return fighter;   

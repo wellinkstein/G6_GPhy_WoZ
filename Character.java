@@ -131,7 +131,7 @@ public abstract class Character
      */
     public int valLoseHp(int damage)
     {
-        if(damage>0)
+        if(damage>0 && (damage-protection)>0)
         {
             return (damage-protection);
         }

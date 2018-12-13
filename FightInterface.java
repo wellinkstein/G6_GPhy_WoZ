@@ -227,8 +227,8 @@ public class FightInterface extends JPanel implements ActionListener
     public void fight() 
     { 
         int damFighter;
-        affichMain.getGame().whoBegins();
-        //System.out.println("starter:"+affichMain.getGame().whoBegins());
+        //affichMain.getGame().whoBegins();
+        System.out.println("starter:"+affichMain.getGame().whoBegins().getName());
         if(affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
@@ -299,6 +299,7 @@ public class FightInterface extends JPanel implements ActionListener
             {
                 //System.out.println("In the else");
             }
+            System.out.println(dam);
         }
         return dam;
     }
@@ -313,10 +314,12 @@ public class FightInterface extends JPanel implements ActionListener
         int crit = rand.nextInt(100); 
         if (affichMain.getGame().getPlayer().getCritRate()<=crit){
             int dam = (affichMain.getGame().getFighter().getDamage())/2;
+            
             for (int i = 0; i < affichMain.getGame().getCurrentSpot().getListCharacter().size(); i++)
             {
                 if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
-                    affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(dam);  
+                    affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(dam);
+                    
                 }
             }
             return dam;
