@@ -51,6 +51,11 @@ public class Inventory extends JPanel
         combo = new JComboBox(); 
         EcouteurInventory e = new EcouteurInventory(this, myMain);
         
+        if (monJoueur.getNumberItemPossess()==0)
+        {
+            myButton.setEnabled(false);
+        }
+        
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
         {
            // content.add(new JButton(monJoueur.getItems(i).getName()));

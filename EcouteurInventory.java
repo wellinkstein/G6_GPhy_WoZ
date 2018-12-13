@@ -72,7 +72,7 @@ public class EcouteurInventory implements ActionListener
         {
             if(e.getSource() == myInventory.getCombo())
             {  
-                    System.out.println(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()));
+                    //System.out.println(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()));
                     ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()));
                     affichMain.setDes(myDes);
 
