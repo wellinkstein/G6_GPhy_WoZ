@@ -73,18 +73,20 @@ public class FightInterfaceTest
     {
         ibt = new AffichMainYohan();
         mySpot = new Spot();
-        //Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
-        //Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
-        //LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
-        //Player theseus = new Player(20,"Theseus",1,1,0);
-        System.out.println("FORCE PRINT");
-        ibt.getGame().getPlayer().takeItem(ibt.getGame().getHermes());
-        //ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getPlayer());
+        // Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
+        // Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        // LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
+        // Player theseus = new Player(20,"Theseus",1,1,0);
+        //System.out.println("FORCE PRINT");
+        //ibt.getGame().getPlayer().takeItem(ibt.getGame().getHermes());
+        System.out.println(ibt.getGame().getPlayer().getDamage());
+        ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getPlayer());
         System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
+        System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getListSpot().get(6).getMonster()));
         //ibt.getGame().addToCurrentSpot(ibt.getGame().getPlayer());
-       // assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
+        //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().get
         //mySpot.addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
         //ibt.getGame().setCurrentSpot(mySpot);
@@ -93,6 +95,8 @@ public class FightInterfaceTest
         System.out.println("test");
         my = new FightInterface(ibt);
         my.fight();
+        
+        
         //assertFalse(ibt.getGame().getWin());
     }
 }
