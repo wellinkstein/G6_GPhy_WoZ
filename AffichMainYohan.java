@@ -236,15 +236,10 @@ public class AffichMainYohan extends JFrame implements ActionListener
     {
         return panelNextSpot; 
     }
-    
-    /**
-     * The actionPerformed for the menubar 
-     * @param ActionEvent the event when the user click on the "quit"
-     */
+        
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getSource()==item)
-        {
+        if (e.getSource()==item){
             System.exit(0);
         }
     }
