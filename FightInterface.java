@@ -53,8 +53,8 @@ public class FightInterface extends JPanel implements ActionListener
         iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
-        playerImg.setPreferredSize(new Dimension(150,150));
-        playerImg.setSize(150,150);
+        //playerImg.setPreferredSize(new Dimension(150,150));
+        //playerImg.setSize(150,150);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
@@ -69,8 +69,8 @@ public class FightInterface extends JPanel implements ActionListener
                 iconMonster = new ImageIcon("MedusaFinal.png");
                 monsterImg = new JLabel();
                 monsterImg.setIcon(iconMonster);
-                monsterImg.setPreferredSize(new Dimension(150,150));
-                monsterImg.setSize(150,150);
+               // monsterImg.setPreferredSize(new Dimension(150,150));
+                //monsterImg.setSize(150,150);
 
                 c.fill = GridBagConstraints.HORIZONTAL;
                 c.weightx = 0.5;
@@ -85,8 +85,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("chimera.jpg");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            monsterImg.setPreferredSize(new Dimension(150,150));
-            monsterImg.setSize(150,150);
+            //monsterImg.setPreferredSize(new Dimension(150,150));
+            //monsterImg.setSize(150,150);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
             c.gridx = 1;
@@ -100,8 +100,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("CerberusFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            monsterImg.setPreferredSize(new Dimension(150,150));
-            monsterImg.setSize(150,150);
+            //monsterImg.setPreferredSize(new Dimension(150,150));
+            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -116,8 +116,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("ArachneFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            monsterImg.setPreferredSize(new Dimension(150,150));
-            monsterImg.setSize(150,150);
+            //monsterImg.setPreferredSize(new Dimension(150,150));
+            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -132,8 +132,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("CyclopsFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            monsterImg.setPreferredSize(new Dimension(150,150));
-            monsterImg.setSize(150,150);
+            //monsterImg.setPreferredSize(new Dimension(150,150));
+            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -148,8 +148,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("MinotaurFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            monsterImg.setPreferredSize(new Dimension(150,150));
-            monsterImg.setSize(150,150);
+            //monsterImg.setPreferredSize(new Dimension(150,150));
+            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;

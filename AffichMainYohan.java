@@ -86,7 +86,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelPlayer, c);
         
         
-        panelMonster = new MonsterHead(myGame.getListSpot().get(1).getMonster());
+        panelMonster = new MonsterHead(myGame.getCurrentSpot().getMonster());
         //new JPanel();
         //        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
@@ -149,7 +149,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelCombat, c);
 
          
-        panelNextSpot = new NextSpot(myGame.getListSpot().get(9),this, "S");
+        panelNextSpot = new NextSpot(myGame.getCurrentSpot(),this, "S");
         //new JPanel();
         // panelNextSpot.setBackground(Color.MAGENTA);
         //
