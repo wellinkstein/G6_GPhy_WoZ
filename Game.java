@@ -558,15 +558,15 @@ public class Game
         Character myFighter ;
         if (fighter==theseus){
             myFighter=currentSpot.getMonster();
-            System.out.println("the who begins fighter in the if: "+myFighter);
+            //System.out.println("the who begins fighter in the if: "+myFighter);
             
         }
         else{
             myFighter=theseus;
-            System.out.println("the who beings fighter in the else: "+myFighter);
+            //System.out.println("the who beings fighter in the else: "+myFighter);
             
         }
-        System.out.println("before return : "+myFighter);
+        //System.out.println("before return : "+myFighter);
         this.fighter=myFighter;
         return myFighter;
     }

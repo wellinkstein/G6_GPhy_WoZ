@@ -19,7 +19,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
 {
 
     private Game myGame; 
-    private JPanel panelCombat, panelDiag, panelBouton, panelMonster;
+    private JPanel panelDiag, panelBouton, panelMonster;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
@@ -31,6 +31,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
     private JMenu menu; 
     private JMenuItem item; 
     private Container pane;
+    private FightInterface panelCombat;
     
     public AffichMainYohan()
     {
@@ -44,7 +45,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
         
-        myGame.move(myGame.getListSpot().get(19));
+        myGame.move(myGame.getListSpot().get(9));
         
         //Grille du frame et des panels
         
@@ -133,7 +134,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         c.gridy = 2;
         pane.add(panelDesc, c);
         
-        panelCombat= new JPanel();
+        panelCombat= new FightInterface(this);
         //new FightInterface();
         //
         //panelCombat.setBackground(Color.BLACK);
