@@ -69,6 +69,8 @@ public class FightInterface extends JPanel implements ActionListener
                 iconMonster = new ImageIcon("MedusaFinal.png");
                 monsterImg = new JLabel();
                 monsterImg.setIcon(iconMonster);
+                monsterImg.setPreferredSize(new Dimension(150,150));
+                monsterImg.setSize(150,150);
 
                 c.fill = GridBagConstraints.HORIZONTAL;
                 c.weightx = 0.5;
@@ -83,7 +85,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("chimera.jpg");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-
+            monsterImg.setPreferredSize(new Dimension(150,150));
+            monsterImg.setSize(150,150);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
             c.gridx = 1;
@@ -97,6 +100,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("CerberusFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
+            monsterImg.setPreferredSize(new Dimension(150,150));
+            monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -111,6 +116,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("ArachneFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
+            monsterImg.setPreferredSize(new Dimension(150,150));
+            monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -125,6 +132,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("CyclopsFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
+            monsterImg.setPreferredSize(new Dimension(150,150));
+            monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -139,7 +148,8 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("MinotaurFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            
+            monsterImg.setPreferredSize(new Dimension(150,150));
+            monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -151,82 +161,11 @@ public class FightInterface extends JPanel implements ActionListener
         }
         }
 
-        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
-        // {
-            // iconMonster = new ImageIcon("chimera.jpg");
-            // monsterImg = new JLabel();
-            // monsterImg.setIcon(iconMonster);
-
-            // c.fill = GridBagConstraints.HORIZONTAL;
-            // c.weightx = 0.5;
-            // c.gridx = 1;
-            // c.gridy=0;
-            // panelMain.add(monsterImg,c);
-            // updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
-            // buttonStartFight.setEnabled(true);
-        // }
-        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
-        // {
-            // iconMonster = new ImageIcon("CerberusFinal.png");
-            // monsterImg = new JLabel();
-            // monsterImg.setIcon(iconMonster);
-
-            // c.fill = GridBagConstraints.HORIZONTAL;
-            // c.weightx = 0.5;
-            // c.gridx = 1;
-            // c.gridy=0;
-            // panelMain.add(monsterImg,c);
-            // updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
-            // buttonStartFight.setEnabled(true);
-        // }
-        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
-        // {
-            // iconMonster = new ImageIcon("ArachneFinal.png");
-            // monsterImg = new JLabel();
-            // monsterImg.setIcon(iconMonster);
-
-            // c.fill = GridBagConstraints.HORIZONTAL;
-            // c.weightx = 0.5;
-            // c.gridx = 1;
-            // c.gridy=0;
-            // panelMain.add(monsterImg,c);
-            // updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
-            // buttonStartFight.setEnabled(true);
-        // }
-        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
-        // {
-            // iconMonster = new ImageIcon("CyclopsFinal.png");
-            // monsterImg = new JLabel();
-            // monsterImg.setIcon(iconMonster);
-
-            // c.fill = GridBagConstraints.HORIZONTAL;
-            // c.weightx = 0.5;
-            // c.gridx = 1;
-            // c.gridy=0;
-            // panelMain.add(monsterImg,c);
-            // updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
-            // buttonStartFight.setEnabled(true);
-        // }
-        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
-        // {
-            // iconMonster = new ImageIcon("MinotaurFinal.png");
-            // monsterImg = new JLabel();
-            // monsterImg.setIcon(iconMonster);
-
-            // c.fill = GridBagConstraints.HORIZONTAL;
-            // c.weightx = 0.5;
-            // c.gridx = 1;
-            // c.gridy=0;
-            // panelMain.add(monsterImg,c);
-            // updateNameMonster("The Minotaur! May the Gods be with you.<br><br>");
-            // buttonStartFight.setEnabled(true);
-        // }
         else
         {
             buttonStartFight.setEnabled(false);
         }
-        monsterImg.setPreferredSize(new Dimension(150,150));
-        monsterImg.setSize(150,150);
+        
         panelBig = new JPanel(new GridLayout(2,0));
         panelBig.add(panelMain);
         panelBig.add(panelBot);
@@ -277,6 +216,8 @@ public class FightInterface extends JPanel implements ActionListener
         if(affichMain.getGame().getCurrentSpot().getMonster()!=null)
         {
             fight();
+            affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); 
+            affichMain.getMonsterHead().showMonsterHead(affichMain.getGame().getCurrentSpot().getMonster()); 
         }
     }
 

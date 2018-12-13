@@ -25,6 +25,12 @@ public class MonsterHead extends JPanel
      */
     public MonsterHead(Monster monster)
     {
+        showMonsterHead(monster); 
+    }
+
+    public void showMonsterHead(Monster monster)
+    {
+        removeAll();
         JPanel myMainPanel, myStatsPanel;
         
         myMainPanel=new JPanel();
@@ -164,9 +170,10 @@ public class MonsterHead extends JPanel
         
         }
         
-        //myMainPanel.setPreferredSize(new Dimension(150,100));
+        
         myMainPanel.setVisible(true);
         add(myMainPanel);
+        revalidate();
+        repaint();
     }
-
 }

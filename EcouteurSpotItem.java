@@ -55,8 +55,9 @@ public class EcouteurSpotItem implements ActionListener
                     System.out.println(affichMain.getInventory().getPlayer().getNumberItemPossess());
                     
                     affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
-                    PlayerHead playerH = new PlayerHead(affichMain.getGame().getPlayer());
-                    affichMain.setPlayerHead(playerH);
+                    //PlayerHead playerH = new PlayerHead(affichMain.getGame().getPlayer());
+                    //affichMain.setPlayerHead(affichMain.getGame().getPlayer());
+                    affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); 
                     
                 }
             }

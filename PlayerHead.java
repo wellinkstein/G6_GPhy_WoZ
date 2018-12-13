@@ -25,8 +25,12 @@ public class PlayerHead extends JPanel
      */
     public PlayerHead(Player player)
     {
+        showPlayerHead(player); 
+    }
+    public void showPlayerHead(Player player)
+    {
+        removeAll();
         JPanel myMainPanel, myStatsPanel;
-        
         
         myHealth = new JLabel("HP: "+String.valueOf(player.getHP()),JLabel.CENTER);
         myXP = new JLabel("XP: "+String.valueOf(player.getXp()),JLabel.CENTER);
@@ -49,16 +53,11 @@ public class PlayerHead extends JPanel
         myStatsPanel.add(myProtection);
         
         myMainPanel.add(myStatsPanel);
-        
-        // myMainPanel.setPreferredSize(new Dimension(150,100));
+
         myMainPanel.setVisible(true);
         add(myMainPanel);
-        
-        // myFrame = new JFrame();
-        // myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.add(myMainPanel);
-        // myFrame.setSize(50,150);
-        // myFrame.pack();
-        // myFrame.setVisible(true);
+        revalidate();
+        repaint();
     }
+    
 }

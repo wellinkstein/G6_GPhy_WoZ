@@ -37,26 +37,27 @@ public class EcouteurInventory implements ActionListener
                 }
                 else
                 {
-                    System.out.println("Je lache un truc"); 
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
-                    System.out.println(myInventory.getPlayer().getItems((i/2)).getName());
+                    // System.out.println("Je lache un truc"); 
+                    // System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    // System.out.println(myInventory.getPlayer().getItems((i/2)).getName());
                     
                     affichMain.getGame().getListSpot().get(19).addItemSpot(myInventory.getPlayer().getItems((i/2)));
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    //System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                     
                     affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems((i/2)));
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    //System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                     
                     affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain);
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                   // System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                     
                     affichMain.getSpotItem().showListItem(affichMain.getGame().getListSpot().get(19),affichMain);
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    //System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                     
-                    PlayerHead playerH = new PlayerHead(myInventory.getPlayer());
-                    affichMain.setPlayerHead(playerH);
+                    //PlayerHead playerH = new PlayerHead(myInventory.getPlayer());
+                    //affichMain.setPlayerHead(playerH);
+                    affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); 
                     
-                    System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
+                    //System.out.println(affichMain.getGame().getPlayer().getNumberItemPossess());
                 }
             }
         }

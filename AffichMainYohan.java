@@ -19,12 +19,13 @@ public class AffichMainYohan extends JFrame implements ActionListener
 {
 
     private Game myGame; 
-    private JPanel panelDiag, panelBouton, panelMonster;
+    private JPanel panelDiag, panelBouton;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
     private ItemDescription panelDesc; 
     private PlayerHead panelPlayer;
+    private MonsterHead panelMonster; 
     private Scrolling panelLab;
     private Spot newSpot;
     private JMenuBar menuBar; 
@@ -45,7 +46,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
         
-        myGame.move(myGame.getListSpot().get(9));
+        myGame.move(myGame.getListSpot().get(19));
         
         //Grille du frame et des panels
         
@@ -201,17 +202,17 @@ public class AffichMainYohan extends JFrame implements ActionListener
         panelDiag.add(myDialog);
         panelDiag.revalidate();
         panelDiag.repaint();
-        System.out.println("New Description");
+        //System.out.println("New Description");
     }
     
-    public void setPlayerHead(PlayerHead playerH)
-    {
-        panelPlayer.removeAll();
-        panelPlayer.add(playerH);
-        panelPlayer.revalidate();
-        panelPlayer.repaint();
-        System.out.println("New Description");
-    }
+    // public void setPlayerHead(PlayerHead playerH)
+    // {
+        // panelPlayer.removeAll();
+        // panelPlayer.add(playerH);
+        // panelPlayer.revalidate();
+        // panelPlayer.repaint();
+        // //System.out.println("New Description");
+    // }
     
     public void setScrolling()
     {
@@ -227,7 +228,10 @@ public class AffichMainYohan extends JFrame implements ActionListener
         return panelSpotItem;
     }
     
-    
+    public PlayerHead getPlayerHead()
+    {
+        return panelPlayer;
+    }
     public Inventory getInventory()
     {
         return panelInventory;
@@ -237,7 +241,13 @@ public class AffichMainYohan extends JFrame implements ActionListener
     {
         return panelNextSpot; 
     }
-        
+       
+    public MonsterHead getMonsterHead()
+    {
+        return panelMonster; 
+    }
+    
+    
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource()==item){
