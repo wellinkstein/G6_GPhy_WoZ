@@ -416,9 +416,10 @@ public class Game
      */
     public void move(Spot spot) 
     { 
-        spot.addCharacterSpot(theseus); //move the player to the defined spot
+        
         spot.removeCharacterSpot(theseus);
         setCurrentSpot(spot);
+        spot.addCharacterSpot(theseus); //move the player to the defined spot
         
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
            if (listSpot.get(i).getLesserBoss()!=null && listSpot.get(i).getLesserBoss().getAggressive()) { //
