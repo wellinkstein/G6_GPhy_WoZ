@@ -80,9 +80,9 @@ public class FightInterfaceTest
         //System.out.println("FORCE PRINT");
         //ibt.getGame().getPlayer().takeItem(ibt.getGame().getHermes());
         //System.out.println(ibt.getGame().getPlayer().getDamage());
-        ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getPlayer());
+        //ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getPlayer());
         //System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
-        assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
+        //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
         //System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getListSpot().get(6).getMonster()));
         //ibt.getGame().addToCurrentSpot(ibt.getGame().getPlayer());
