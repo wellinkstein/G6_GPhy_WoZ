@@ -59,6 +59,7 @@ public class SpotItem extends JPanel
         {   
             content.add(new JButton(spot.getListItem().get(i).getName()));
             content.add(new JButton("Take"));
+
         }
 
      

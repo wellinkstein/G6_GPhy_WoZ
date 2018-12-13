@@ -48,6 +48,8 @@ public class Inventory extends JPanel
         content.clear();
         
         myButton = new JButton("Drop"); 
+        myButton.setBackground(Color.gray); 
+        myButton.setForeground(Color.white);
         combo = new JComboBox(); 
         EcouteurInventory e = new EcouteurInventory(this, myMain);
         
