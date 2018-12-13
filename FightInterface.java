@@ -253,7 +253,7 @@ public class FightInterface extends JPanel implements ActionListener
             //{
             //    Thread.currentThread().interrupt();
             //}
-            break;
+            //break;
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
