@@ -554,17 +554,21 @@ public class Game
      */
     public Character setFighter(Character fighter) 
     { 
+        
+        Character myFighter ;
         if (fighter==theseus){
-            fighter=currentSpot.getMonster();
-            System.out.println("the who begins fighter in the if: "+fighter);
+            myFighter=currentSpot.getMonster();
+            //System.out.println("the who begins fighter in the if: "+myFighter);
             
         }
         else{
-            fighter=theseus;
-            System.out.println("the who beings fighter in the else: "+fighter);
+            myFighter=theseus;
+            //System.out.println("the who beings fighter in the else: "+myFighter);
             
         }
-        return fighter;
+        //System.out.println("before return : "+myFighter);
+        this.fighter=myFighter;
+        return myFighter;
     }
     
     /**

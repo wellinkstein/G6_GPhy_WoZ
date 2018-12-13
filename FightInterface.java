@@ -53,6 +53,8 @@ public class FightInterface extends JPanel implements ActionListener
         iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
+        playerImg.setPreferredSize(new Dimension(150,150));
+        playerImg.setSize(150,150);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
@@ -76,9 +78,7 @@ public class FightInterface extends JPanel implements ActionListener
                 updateNameMonster("Medusa! Her sight might be more dangerous than the snakes on her head.<br><br>");
                 buttonStartFight.setEnabled(true);
             }
-        }
-
-        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
         {
             iconMonster = new ImageIcon("chimera.jpg");
             monsterImg = new JLabel();
@@ -139,6 +139,7 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("MinotaurFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
+            
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -148,11 +149,84 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("The Minotaur! May the Gods be with you.<br><br>");
             buttonStartFight.setEnabled(true);
         }
+        }
+
+        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+        // {
+            // iconMonster = new ImageIcon("chimera.jpg");
+            // monsterImg = new JLabel();
+            // monsterImg.setIcon(iconMonster);
+
+            // c.fill = GridBagConstraints.HORIZONTAL;
+            // c.weightx = 0.5;
+            // c.gridx = 1;
+            // c.gridy=0;
+            // panelMain.add(monsterImg,c);
+            // updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
+            // buttonStartFight.setEnabled(true);
+        // }
+        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+        // {
+            // iconMonster = new ImageIcon("CerberusFinal.png");
+            // monsterImg = new JLabel();
+            // monsterImg.setIcon(iconMonster);
+
+            // c.fill = GridBagConstraints.HORIZONTAL;
+            // c.weightx = 0.5;
+            // c.gridx = 1;
+            // c.gridy=0;
+            // panelMain.add(monsterImg,c);
+            // updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
+            // buttonStartFight.setEnabled(true);
+        // }
+        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+        // {
+            // iconMonster = new ImageIcon("ArachneFinal.png");
+            // monsterImg = new JLabel();
+            // monsterImg.setIcon(iconMonster);
+
+            // c.fill = GridBagConstraints.HORIZONTAL;
+            // c.weightx = 0.5;
+            // c.gridx = 1;
+            // c.gridy=0;
+            // panelMain.add(monsterImg,c);
+            // updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
+            // buttonStartFight.setEnabled(true);
+        // }
+        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
+        // {
+            // iconMonster = new ImageIcon("CyclopsFinal.png");
+            // monsterImg = new JLabel();
+            // monsterImg.setIcon(iconMonster);
+
+            // c.fill = GridBagConstraints.HORIZONTAL;
+            // c.weightx = 0.5;
+            // c.gridx = 1;
+            // c.gridy=0;
+            // panelMain.add(monsterImg,c);
+            // updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
+            // buttonStartFight.setEnabled(true);
+        // }
+        // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
+        // {
+            // iconMonster = new ImageIcon("MinotaurFinal.png");
+            // monsterImg = new JLabel();
+            // monsterImg.setIcon(iconMonster);
+
+            // c.fill = GridBagConstraints.HORIZONTAL;
+            // c.weightx = 0.5;
+            // c.gridx = 1;
+            // c.gridy=0;
+            // panelMain.add(monsterImg,c);
+            // updateNameMonster("The Minotaur! May the Gods be with you.<br><br>");
+            // buttonStartFight.setEnabled(true);
+        // }
         else
         {
             buttonStartFight.setEnabled(false);
         }
-
+        monsterImg.setPreferredSize(new Dimension(150,150));
+        monsterImg.setSize(150,150);
         panelBig = new JPanel(new GridLayout(2,0));
         panelBig.add(panelMain);
         panelBig.add(panelBot);
@@ -213,7 +287,7 @@ public class FightInterface extends JPanel implements ActionListener
     { 
         int damFighter;
         affichMain.getGame().whoBegins();
-        System.out.println("starter:"+affichMain.getGame().whoBegins());
+        //System.out.println("starter:"+affichMain.getGame().whoBegins());
         if(affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
@@ -227,9 +301,10 @@ public class FightInterface extends JPanel implements ActionListener
 
         while (affichMain.getGame().getFighter().HP!=0){
             //System.out.println("fighter befor inflict: "+affichMain.getGame().getFighter().getHP());
-            damFighter=affichMain.getGame().inflictDamage();
+            //damFighter=affichMain.getGame().inflictDamage();
+            damFighter=inflictDamage();
             //System.out.println("fighter after inflict: "+affichMain.getGame().getFighter().getHP());
-            System.out.println("fighter1: "+ affichMain.getGame().getFighter());
+            //System.out.println("fighter1: "+ affichMain.getGame().getFighter());
             //System.out.println(damFighter);
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
                 damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
@@ -244,7 +319,7 @@ public class FightInterface extends JPanel implements ActionListener
             }
 
             affichMain.getGame().setFighter(affichMain.getGame().getFighter()); // the fighter changes
-            System.out.println("fighter2: "+ affichMain.getGame().getFighter());
+            //System.out.println("fighter2: "+ affichMain.getGame().getFighter());
             //try
             //{
             //    Thread.sleep(1000);
@@ -253,7 +328,7 @@ public class FightInterface extends JPanel implements ActionListener
             //{
             //    Thread.currentThread().interrupt();
             //}
-            break;
+            //break;
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
@@ -274,6 +349,14 @@ public class FightInterface extends JPanel implements ActionListener
             if (affichMain.getGame().getCurrentSpot().getListCharacter().get(i) != affichMain.getGame().getFighter()){
                 affichMain.getGame().getCurrentSpot().getListCharacter().get(i).loseHp(affichMain.getGame().getFighter().getDamage());
                 dam = affichMain.getGame().getCurrentSpot().getListCharacter().get(i).valLoseHp(affichMain.getGame().getFighter().getDamage());
+                //System.out.println("The not fighter of inflict damage: "+affichMain.getGame().getCurrentSpot().getListCharacter().get(i));
+                //System.out.println(dam);
+                //System.out.println("In the if");
+                //System.out.println("the hp  of the fighter after damage: "+affichMain.getGame().getCurrentSpot().getListCharacter().get(i).getHP());
+            }
+            else
+            {
+                //System.out.println("In the else");
             }
         }
         return dam;

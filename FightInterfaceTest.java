@@ -92,11 +92,11 @@ public class FightInterfaceTest
         //ibt.getGame().setCurrentSpot(mySpot);
         
         
-        System.out.println("test");
+        //System.out.println("test");
         my = new FightInterface(ibt);
         my.fight();
         
         
-        //assertFalse(ibt.getGame().getWin());
+        assertFalse(ibt.getGame().getWin());
     }
 }
