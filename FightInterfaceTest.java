@@ -79,12 +79,12 @@ public class FightInterfaceTest
         // Player theseus = new Player(20,"Theseus",1,1,0);
         //System.out.println("FORCE PRINT");
         //ibt.getGame().getPlayer().takeItem(ibt.getGame().getHermes());
-        System.out.println(ibt.getGame().getPlayer().getDamage());
+        //System.out.println(ibt.getGame().getPlayer().getDamage());
         ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getPlayer());
-        System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
+        //System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         ibt.getGame().getCurrentSpot().addCharacterSpot(ibt.getGame().getListSpot().get(6).getMonster());
-        System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getListSpot().get(6).getMonster()));
+        //System.out.println(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getListSpot().get(6).getMonster()));
         //ibt.getGame().addToCurrentSpot(ibt.getGame().getPlayer());
         //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().getPlayer()));
         //assertTrue(ibt.getGame().getCurrentSpot().getIfCharacterInSpot(ibt.getGame().get

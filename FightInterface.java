@@ -226,11 +226,11 @@ public class FightInterface extends JPanel implements ActionListener
         //System.out.println("player: "+affichMain.getGame().getPlayer().getDamage());
 
         while (affichMain.getGame().getFighter().HP!=0){
-            System.out.println("fighter befor inflict: "+affichMain.getGame().getFighter().getHP());
+            //System.out.println("fighter befor inflict: "+affichMain.getGame().getFighter().getHP());
             damFighter=affichMain.getGame().inflictDamage();
-            System.out.println("fighter after inflict: "+affichMain.getGame().getFighter().getHP());
+            //System.out.println("fighter after inflict: "+affichMain.getGame().getFighter().getHP());
             System.out.println("fighter1: "+ affichMain.getGame().getFighter());
-            System.out.println(damFighter);
+            //System.out.println(damFighter);
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
                 damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }
@@ -259,7 +259,7 @@ public class FightInterface extends JPanel implements ActionListener
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
             affichMain.getGame().setWinFalse();
         }
-        else affichMain.getGame().setWinTrue(); 
+        else {affichMain.getGame().setWinTrue(); }
     }
 
     /**

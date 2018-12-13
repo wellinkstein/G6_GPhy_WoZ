@@ -511,7 +511,7 @@ public class Game
     public int inflictDamage() 
     { 
           int dam=0;
-          System.out.println(currentSpot.getListCharacter().size());
+          //System.out.println(currentSpot.getListCharacter().size());
           for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
           {
             if (currentSpot.getListCharacter().get(i) != fighter){
@@ -552,14 +552,19 @@ public class Game
      * Changes the fighter to a designed character
      * @param Character fighter: the character is set to be the fighter
      */
-    public void setFighter(Character fighter) 
+    public Character setFighter(Character fighter) 
     { 
         if (fighter==theseus){
             fighter=currentSpot.getMonster();
+            System.out.println("the who begins fighter in the if: "+fighter);
+            
         }
         else{
             fighter=theseus;
+            System.out.println("the who beings fighter in the else: "+fighter);
+            
         }
+        return fighter;
     }
     
     /**
