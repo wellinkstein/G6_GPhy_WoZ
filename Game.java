@@ -1,9 +1,14 @@
 import java.util.*;
 import java.util.Random;
 /**
- *  This is the main class of our Game, it handles the 
+ *  This is the main class of our Game, it handles the core of our game
+ *  This class handles many components such as the creation of our labyrinth, the fight sequences
+ *  and much more
+ *  
+ *  This class will also be called by an interface class (AffichMainYohan) to be used as the code that
+ *  will allow the game to function with a variety of panels.
  * 
- * @author  Yohan Lefol
+ * @author  Group6
  * @version 14/12/2018
  */
 
