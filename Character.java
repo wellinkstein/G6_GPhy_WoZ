@@ -128,6 +128,7 @@ public abstract class Character
     
     /** Method that returns the value of HP lost without changing the attributes.
      * Used in the FightInterface to create combat text 
+     * @param int damage: damage value inflicted to be recorded for the log (affichage)
      */
     public int valLoseHp(int damage)
     {
