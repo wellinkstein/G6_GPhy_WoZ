@@ -53,7 +53,7 @@ public class SpotItem extends JPanel
         //remove all the panel in the SpotItem
         myBigPanel.removeAll();
         myPanel.removeAll();
-        myPanel1.removeAll();
+        myPanel1.removeAll(); 
         content.clear();
 
         //Add all the button in the content list
@@ -64,8 +64,13 @@ public class SpotItem extends JPanel
 
         }
 
-        //Crate the label of the SpotItem
-        myLabel = new JLabel ("These are the items available",JLabel.CENTER);
+        //Create the label of the SpotItem
+        if (spot.getListItem().size()!=0){
+            myLabel = new JLabel ("These are the items available",JLabel.CENTER);
+        }
+        else {
+            myLabel = new JLabel ("These are no items in the spot",JLabel.CENTER);
+        }
         myPanel.setLayout(new GridLayout(spot.getListItem().size(),1));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 

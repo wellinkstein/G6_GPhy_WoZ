@@ -53,7 +53,7 @@ public class EcouteurSpotItem implements ActionListener
                     affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem((i/2))); //remove the item in the spot
                     affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //update Inventory
 
-                    affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);//Udate the ItemSpot
+                    affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);//Update the ItemSpot
 
                     affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); //Update the characteristic of the player
 
