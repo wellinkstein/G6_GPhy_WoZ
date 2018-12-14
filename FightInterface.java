@@ -287,122 +287,122 @@ public class FightInterface extends JPanel implements ActionListener
 
     
 
-    /**
-     * A method to update the panel. If there is a monster in the currentSpot, the 
-     * picture of the monster and his description will be added to the panel.
-     */
-    public void updatePanel()
-    {
+    // /**
+     // * A method to update the panel. If there is a monster in the currentSpot, the 
+     // * picture of the monster and his description will be added to the panel.
+     // */
+    // public void updatePanel()
+    // {
 
-        GridBagConstraints c = new GridBagConstraints();
+        // GridBagConstraints c = new GridBagConstraints();
 
-        iconPlayer = new ImageIcon("TheseusFinal.png"); 
-        playerImg = new JLabel();
-        playerImg.setIcon(iconPlayer);
+        // iconPlayer = new ImageIcon("TheseusFinal.png"); 
+        // playerImg = new JLabel();
+        // playerImg.setIcon(iconPlayer);
 
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 0;
-        c.gridy=0;
-        panelMain.add(playerImg,c);
+        // c.fill = GridBagConstraints.HORIZONTAL;
+        // c.weightx = 0.5;
+        // c.gridx = 0;
+        // c.gridy=0;
+        // panelMain.add(playerImg,c);
 
-        if (affichMain.getGame().getCurrentSpot().getMonster() != null)
-        {
-            if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
-            {
-                iconMonster = new ImageIcon("MedusaFinal.png");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+        // if (affichMain.getGame().getCurrentSpot().getMonster() != null)
+        // {
+            // if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
+            // {
+                // iconMonster = new ImageIcon("MedusaFinal.png");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("Medusa! Her sight might be more dangerous than the snakes on her head.<br><br>");
-                buttonStartFight.setEnabled(true);
-            }
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("Medusa! Her sight might be more dangerous than the snakes on her head.<br><br>");
+                // buttonStartFight.setEnabled(true);
+            // }
 
-            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
-            {
-                iconMonster = new ImageIcon("chimera.jpg");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+            // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
+            // {
+                // iconMonster = new ImageIcon("chimera.jpg");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
-                buttonStartFight.setEnabled(true);
-            }
-            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
-            {
-                iconMonster = new ImageIcon("CerberusFinal.png");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
+                // buttonStartFight.setEnabled(true);
+            // }
+            // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+            // {
+                // iconMonster = new ImageIcon("CerberusFinal.png");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
-                buttonStartFight.setEnabled(true);
-            }
-            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
-            {
-                iconMonster = new ImageIcon("ArachneFinal.png");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
+                // buttonStartFight.setEnabled(true);
+            // }
+            // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+            // {
+                // iconMonster = new ImageIcon("ArachneFinal.png");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
-                buttonStartFight.setEnabled(true);
-            }
-            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
-            {
-                iconMonster = new ImageIcon("CyclopsFinal.png");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("Arachne! Be careful of her pointy fangs.<br><br>");
+                // buttonStartFight.setEnabled(true);
+            // }
+            // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cyclops") // Cyclops
+            // {
+                // iconMonster = new ImageIcon("CyclopsFinal.png");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
-                buttonStartFight.setEnabled(true);
-            }
-            else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
-            {
-                iconMonster = new ImageIcon("MinotaurFinal.png");
-                monsterImg = new JLabel();
-                monsterImg.setIcon(iconMonster);
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("Cyclops! He's got an eye on you.<br><br>");
+                // buttonStartFight.setEnabled(true);
+            // }
+            // else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Minotaur") // Minotaur
+            // {
+                // iconMonster = new ImageIcon("MinotaurFinal.png");
+                // monsterImg = new JLabel();
+                // monsterImg.setIcon(iconMonster);
 
-                c.fill = GridBagConstraints.HORIZONTAL;
-                c.weightx = 0.5;
-                c.gridx = 1;
-                c.gridy=0;
-                panelMain.add(monsterImg,c);
-                updateNameMonster("The Minotaur! May the Gods be with you.<br><br>"); 
-                buttonStartFight.setEnabled(true);
-            }
-            else
-            {
-                buttonStartFight.setEnabled(false);
-            }
-        }
-        panelBig.add(panelMain);
-        panelBig.add(panelBot);
-        panelBig.setVisible(false);
-        panelBig.setVisible(true);
-        add(panelBig);
+                // c.fill = GridBagConstraints.HORIZONTAL;
+                // c.weightx = 0.5;
+                // c.gridx = 1;
+                // c.gridy=0;
+                // panelMain.add(monsterImg,c);
+                // updateNameMonster("The Minotaur! May the Gods be with you.<br><br>"); 
+                // buttonStartFight.setEnabled(true);
+            // }
+            // else
+            // {
+                // buttonStartFight.setEnabled(false);
+            // }
+        // }
+        // panelBig.add(panelMain);
+        // panelBig.add(panelBot);
+        // panelBig.setVisible(false);
+        // panelBig.setVisible(true);
+        // add(panelBig);
 
-    }
+    // }
 }
