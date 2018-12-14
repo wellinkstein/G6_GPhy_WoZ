@@ -18,8 +18,8 @@ public class FightInterface extends JPanel implements ActionListener
     private JButton buttonStartFight;
     private AffichMainYohan affichMain;
     private Spot mySpot;
-    private DialogScreenInterface gameOver,youWon;
-
+    private DialogScreenInterface youWon, gameOver;
+ 
     /**
      * Constructor of objects class fightInterface
      */
