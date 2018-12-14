@@ -64,6 +64,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         
         panelLab = new Scrolling(myGame.getCurrentSpot(),this);
+        panelLab.setBorder(BorderFactory.createLineBorder(Color.black));
         c.weightx = 0.5;
         c.weighty = 0.6;
         //c.fill = GridBagConstraints.HORIZONTAL;
@@ -75,6 +76,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelLab, c);
         
         panelPlayer = new PlayerHead(myGame.getPlayer());
+        panelPlayer.setBorder(BorderFactory.createLineBorder(Color.black));
         //panelPlayer.setBackground(Color.GREEN);
         //
         c.weightx = 0.25;
@@ -88,6 +90,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         
         panelMonster = new MonsterHead(myGame.getCurrentSpot().getMonster());
+        panelMonster.setBorder(BorderFactory.createLineBorder(Color.black));
         //new JPanel();
         //        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
@@ -100,6 +103,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelMonster, c);
         
         panelInventory= new Inventory(myGame.getPlayer(),this);
+        panelInventory.setBorder(BorderFactory.createLineBorder(Color.black));
         // new JPanel();
         // panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;
@@ -112,6 +116,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelInventory, c);
         
         panelSpotItem=new SpotItem(myGame.getCurrentSpot(),this);
+        panelSpotItem.setBorder(BorderFactory.createLineBorder(Color.black));
         //new JPanel();
         // panelSpotItem.setBackground(Color.CYAN);
         //
@@ -125,6 +130,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelSpotItem, c);
         
         panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
+        panelDesc.setBorder(BorderFactory.createLineBorder(Color.black));
         //new JPanel();
         //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
@@ -137,6 +143,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelDesc, c);
         
         panelCombat= new FightInterface(this);
+        panelCombat.setBorder(BorderFactory.createLineBorder(Color.black));
         //new FightInterface();
         //
         //panelCombat.setBackground(Color.BLACK);
@@ -151,6 +158,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
 
          
         panelNextSpot = new NextSpot(myGame.getCurrentSpot(),this, "S");
+        panelNextSpot.setBorder(BorderFactory.createLineBorder(Color.black));
         //new JPanel();
         // panelNextSpot.setBackground(Color.MAGENTA);
         //
@@ -164,6 +172,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         pane.add(panelNextSpot, c);
         
         panelDiag = new DialogScreenInterface(myGame.printWelcome());
+        panelDiag.setBorder(BorderFactory.createLineBorder(Color.black));
         // System.out.println(myGame.printWelcome());
         //panelDiag.setBackground(Color.YELLOW);
         c.weightx = 0.25;

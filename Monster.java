@@ -41,16 +41,7 @@ public abstract class Monster extends Character
     {
         description = myDes;
     }
-    
-    /**
-     * This method will allow monsters to follow the player
-     * The lesser monster Arachne will follow the player if the player
-     * has reached a set distance from it.
-     * Other lesser monsters will follow/hunt the player if the minotaur is 
-     * killed and the lesser monster is still alive.
-     */
-    public void follow()
-    {}
+
     
     /**
      * deletes the monster from the list
