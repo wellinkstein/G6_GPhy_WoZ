@@ -399,7 +399,7 @@ public class Game
     public void move(Spot spot) 
     { 
         
-        //spot.removeCharacterSpot(getPlayer());
+        spot.removeCharacterSpot(getPlayer());
         setCurrentSpot(spot);
         spot.addCharacterSpot(getPlayer()); //move the player to the defined spot
         
