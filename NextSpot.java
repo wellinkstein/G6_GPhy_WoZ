@@ -14,46 +14,54 @@ import java.awt.GridBagLayout;
  * @version (2018-12-04)
  */
 public class NextSpot extends JPanel 
-{
-    private Game myGame;
-    private Spot mySpot;
-    private JButton myFightButton,myFleeButton;
-    private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel;
-    private JFrame myFrame,myFrame2;
-    private JLabel myLabel,myLabel2,myLabel3;
-    private String direction; 
+{ 
+    private Spot mySpot; //The next spot
+    private JButton myFightButton,myFleeButton; //The button for the panel
+    private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel; //all the panel
+    private JLabel myLabel,myLabel2; //all the label
+    private String direction; //The direction of the next spot
     private AffichMainYohan myMain; //The affich Main for the game
     /**
      * Constructor for objects of class NextSpot.
+     * The NextSpot is the future spot where the player will go if he decides to click on fight
+     * When the player click on the button flee, the player does not fight the monster. He stays in the same spot
+     * @param Spot the next spot of the player 
+     * @param AffichMainYohan The interface of the game
+     * @param String the direction of the player wants to go
      */
     public NextSpot(Spot gameSpot, AffichMainYohan myMain1, String newDirection)
-    // public NextSpot()
     {
         mySpot= gameSpot; 
         myMain= myMain1; 
         direction=newDirection; 
-        showNextSpot(mySpot, myMain,direction); 
+        showNextSpot(mySpot, myMain,direction); //update the panel NextSpot
     }
 
     /**
-     * 
+     * The getter for the button myFlee
+     * @return myFleeButton
      */
     public JButton getMyFleeButton(){
         return myFleeButton; 
     }
 
     /**
-     * 
+     * The method showNextSpot allows us to create the panel NextSpot and to update this panel
+     * @param Spot the next spot of the player 
+     * @param AffichMainYohan The interface of the game
+     * @param String the direction of the player wants to go
      */
     public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
-        removeAll();
-        
+        removeAll(); //remove the panel
+
+        //create the panel and the button
         myPanel = new JPanel();
         myFightPanel = new JPanel();
         myFleePanel = new JPanel();
         bigPanel = new JPanel();
         bigButtonPanel = new JPanel();
 
+        //remove all the little panel
         bigPanel.removeAll();
         myPanel.removeAll();
         myFightPanel.removeAll();
@@ -73,7 +81,6 @@ public class NextSpot extends JPanel
         myFightPanel.add (myFightButton, c);
 
         myFleePanel.setLayout(new GridBagLayout());
-
         c.gridx = 1;
         c.gridy = 0;
 
@@ -84,28 +91,19 @@ public class NextSpot extends JPanel
         bigButtonPanel.add(myFightPanel);
         bigButtonPanel.add(myFleePanel);
 
-        
         myPanel.setLayout(new GridLayout(1,2));
-
         EcouteurNextSpotFight e = new EcouteurNextSpotFight(this, myMain);
         myFightButton.addActionListener(e);
         myFleeButton.addActionListener(e);
 
-        if (gameSpot.getMonster() != null) //Medusa
+        //Display the icon of the monster in the next spot
+        if (gameSpot.getMonster() != null) 
         {
             if(gameSpot.getMonster().getName() == "Medusa")
             {
                 Icon icon = new ImageIcon("MedusaHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
-
 
             }
 
@@ -113,97 +111,74 @@ public class NextSpot extends JPanel
             {
                 Icon icon = new ImageIcon("ChimeraHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
-
             }   
             else if(gameSpot.getMonster().getName() == "Cerberus") // Cerberus
             {
                 Icon icon = new ImageIcon("CerberusHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
 
             }   
             else if(gameSpot.getMonster().getName() == "Arachne") // Arachne
             {
                 Icon icon = new ImageIcon("ArachneHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
-
             }   
             else if(gameSpot.getMonster().getName() == "Cyclops") // Cyclops
             {
                 Icon icon = new ImageIcon("CyclopsHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
 
             }   
             else if(gameSpot.getMonster().getName() == "Minotaur") // Minotaur
             {
                 Icon icon = new ImageIcon("MinotaurHead.png");
                 JLabel label = new JLabel(icon);
-                myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
-                myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
                 myPanel.add(label);
-                myPanel.add(myLabel);
-                bigPanel.add(myPanel);
-                bigPanel.add(myLabel2);
-                bigPanel.add(bigButtonPanel);
-
-
             }
+            myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
+            myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
+            myPanel.add(myLabel);
+            bigPanel.add(myPanel);
+            bigPanel.add(myLabel2);
+            bigPanel.add(bigButtonPanel);
 
         }
         else {
-
+            // If there are no monster in the next spot
             JLabel label = new JLabel("No monster");
-           
             myPanel.add(label);
             bigPanel.add(myPanel);
-
-
         }
         bigPanel.setVisible(true);
         add(bigPanel);
-        revalidate();
+        revalidate(); //update the NextSot
         repaint();
     }
 
+    /**
+     * The getter for the next spot 
+     * @return mySpot the next spot
+     */
     public Spot getSpotNextSpot(){
         return mySpot; 
     }
 
+    /**
+     * The getter for the button myFightbutton
+     * @return myFightButton
+     */
     public JButton getMyFightButton(){
         return myFightButton; 
     }
-    
+
+    /**
+     * The getter for the direction that the player will take
+     * @return String direction the next direction that the player will take
+     */
     public String getDirection()
     {
         return direction; 

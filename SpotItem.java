@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.Set;
 /**
  * The class SpotItem allows us to have the interface of the Item in the spot.
+ * This class displays all the Item in the spot where the player is
  *
  * @author (Ludivine Harault)
  * @version (2018-12-04)
@@ -19,7 +20,6 @@ public class SpotItem extends JPanel
     private ArrayList<JButton> content = new ArrayList<JButton>(); //A list for the buttons
     private Spot mySpot; //The current Spot 
     private AffichMainYohan myMain; //The affich Main for the game
-    
 
     /**
      * The constructor of the SpotItem, create the interface of the SpotItem
@@ -34,27 +34,29 @@ public class SpotItem extends JPanel
     }
 
     /**
-     * The fonction of the showListItem, all the create the spotItem.
+     * The fonction of the showListItem allows us to create the spotItem.
      * @param Spot the CurrentSpot of the player
      * @param AffichMainYohan  the affichmain of the game
      */
     public void showListItem(Spot spot, AffichMainYohan myMain)
     {
-        removeAll();
-        
+        removeAll(); //remove the SpotItem
+
+        //Create all the panel
         JPanel myPanel;
         JLabel myLabel; 
 
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel();
-        
+
+        //remove all the panel in the SpotItem
         myBigPanel.removeAll();
         myPanel.removeAll();
         myPanel1.removeAll();
         content.clear();
 
-
+        //Add all the button in the content list
         for(int i = 0; i <= (spot.getListItem().size()-1); i++)
         {   
             content.add(new JButton(spot.getListItem().get(i).getName()));
@@ -62,12 +64,13 @@ public class SpotItem extends JPanel
 
         }
 
-     
+        //Crate the label of the SpotItem
         myLabel = new JLabel ("These are the items available",JLabel.CENTER);
         myPanel.setLayout(new GridLayout(spot.getListItem().size(),1));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
 
+        //Adding a actionListener of all the button of the SpotItem
         for(int i = 0; i <= (content.size()-1); i++)
         {
             EcouteurSpotItem e = new EcouteurSpotItem(this, myMain);
@@ -79,15 +82,15 @@ public class SpotItem extends JPanel
         myBigPanel.add(myPanel1); 
         myBigPanel.add(myPanel); 
 
-       
         myBigPanel.setVisible(true); 
         add(myBigPanel);
+        //upDate the panel
         revalidate();
         repaint();
         setVisible(true);
 
     }
-    
+
     /**
      * The getter of the spot of the player in the affichMain
      * @return spot 
