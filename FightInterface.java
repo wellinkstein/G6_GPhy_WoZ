@@ -33,6 +33,7 @@ public class FightInterface extends JPanel implements ActionListener
         dialog = new JLabel("<html><b>Combat logbook</b><br>--------------------------<br><br><br>");
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
+        
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.95;
@@ -54,8 +55,8 @@ public class FightInterface extends JPanel implements ActionListener
         iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
-        //playerImg.setPreferredSize(new Dimension(150,150));
-        //playerImg.setSize(150,150);
+        // playerImg.setPreferredSize(new Dimension(150,150));
+        // playerImg.setSize(150,150);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
@@ -168,6 +169,8 @@ public class FightInterface extends JPanel implements ActionListener
         }
         
         panelBig = new JPanel(new GridLayout(2,0));
+        // panelBot.setPreferredSize(new Dimension(400,400));
+        // panelBot.setSize(400,400);
         panelBig.add(panelMain);
         panelBig.add(panelBot);
         panelBig.setVisible(true);
