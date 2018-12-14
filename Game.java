@@ -498,14 +498,14 @@ public class Game
             
             Random rand = new Random();
             int beginner = rand.nextInt(2); 
-             System.out.println("random = " + beginner);
+             
             switch(beginner){
                 case 0: fighter = theseus; 
-                 System.out.println("case = 0");
+                 
                 break;
              
                 default:  fighter = currentSpot.getMonster();
-                System.out.println("case = 0");
+                
                 break;
             }
         }
@@ -533,7 +533,7 @@ public class Game
             {
                 //System.out.println("In the else");
             }
-            System.out.println(dam);
+            
         }
         return dam;
     }

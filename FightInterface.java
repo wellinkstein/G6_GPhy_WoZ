@@ -227,8 +227,8 @@ public class FightInterface extends JPanel implements ActionListener
     public void fight() 
     { 
         int damFighter;
-        //affichMain.getGame().whoBegins();
-        System.out.println("starter:"+affichMain.getGame().whoBegins().getName());
+        affichMain.getGame().whoBegins();
+        // System.out.println("starter:"+affichMain.getGame().whoBegins().getName());
         if(affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
