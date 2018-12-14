@@ -38,27 +38,27 @@ public class Game
         theseus = new Player(20,"Theseus",1,1,0);
         
         
-        Common ironSword= new Common ("Iron Sword","",3,0,0);
-        Common ironDagger= new Common ("Iron Dagger","",1,0,0);
-        Common standardBow= new Common ("Standard Bow","",2,0,0);
-        Common ironArmor= new Common ("Iron Armor","",0,0,3);
-        Common ironShield= new Common ("Iron Shield","",1,0,0);
-        Common woodenShield= new Common ("Wooden Shield","",2,0,0);
-        Common healthPotion= new Common ("Health Potion","",0,5,0);
+        Common ironSword= new Common ("Iron Sword","a rusty looking sword, it has been here for a while. Increases your damage by 3.",3,0,0);
+        Common ironDagger= new Common ("Iron Dagger","looks like a toothpick, might work well in combat. Increases your damage by 1.",1,0,0);
+        Common standardBow= new Common ("Standard Bow","is a common item that increases your damage by 2. You have to be highly skilled in the use of the bow to get long-distance shots.",2,0,0);
+        Common ironArmor= new Common ("Iron Armor","the armor of a fallen adventurer. It adds you 3 protections points.",0,3,0);
+        Common ironShield= new Common ("Iron Shield","I wonder who left this here… Adds 2 protection points.",0,2,0);
+        Common woodenShield= new Common ("Wooden Shield","even a piece of wood could help.  Adds 1 protection point.",0,1,0);
+        Common healthPotion= new Common ("Health Potion","is a healing item that restores a maximum of 5 health points. Healing Potions can be found naturally in the labyrinth.",0,0,5);
         
-        Legendary goldenThread = new Legendary("Ariadne's golden thread","",0,0,0);
-        Legendary aresSword= new Legendary("Ares's sword","",6,0,0);
-        Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
-        Legendary aegisShield= new Legendary("Aegis shield","",0,5,0);
-        hermesSandals= new Legendary("Hermes's sandals","",0,0,0);
+        Legendary goldenThread = new Legendary("Ariadne's golden thread","Ariadne’s golden thread, named after the legend of Ariadne, it allows immediate escape upon killing the Minotaur. It was obtained from the monster Arachne.",0,0,0);
+        Legendary aresSword= new Legendary("Ares's sword","Ares’s Sword is a weapon for melee combat that can deliver multiple hits to enemies in a single moment. Each attack of the Sword of Ares is an onslaught capable of slaying opponents in a swift and fierce fashion. Ares’s Sword increases your damage by 6. It was obtained from the monster Cerberus.",6,0,0);
+        Legendary artemisBow= new Legendary("Artemis's bow","The bow and the arrow are the symbol of Artemis, daughter of Zeus and Leto. She was one of the most widely venerated gods of the Ancient Greek deities. Artemis’s bow was obtained from the monster Medusa. It increases your damage by 4.",4,0,0);
+        Legendary aegisShield= new Legendary("Aegis shield","The Aegis shield was born by Athena in battle. It had been interpreted as an animal skin or a shield, bearing the head of a Gorgon. It was obtained from Cyclops and increases your protection by 5.",0,5,0);
+        hermesSandals= new Legendary("Hermes's sandals","Talaria are winged sandals, a symbol of the Greek messenger god Hermes. They can fly as fast as any other bird. Hermes’s sandals are obtained from the monster Chimera and allow you to always attacks first in combat.",0,0,0);
         
-        LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"",hermesSandals);
-        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"",aresSword);
-        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"",artemisBow);
-        LesserBoss cyclops= new LesserBoss(30,"Cyclops",5,5,5,"",aegisShield);
-        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"",goldenThread);
+        LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"The Chimera is a fire-breathing monster who is light on its feet, strong and has three heads, one is that of a grim-eyed lion, the one in the middle is that of a goat, and snakes head at its tail. It scares you ? It should!",hermesSandals);
+        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"Cerberus is a three-headed dog of hell. To fight and kill this creature, if may be wise to have a sharp sword at your disposal.",aresSword);
+        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"Medusa is a powerful creature. She is generally portrayed as the embodiment of all things feminine. Her hair is made of snakes, try to not look her in the eyes. To fight and kill medusa it is recommended to have a shiny shield.",artemisBow);
+        LesserBoss cyclops= new LesserBoss(30,"Cyclops",5,5,5,"Cyclops is a giant monster, which has a single eye in the center of his forehead. To fight and kill the cyclops you may require a ranged weapon.",aegisShield);
+        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"Arachne was once the most beautiful women to have ever walked the earth, but out of jealousy, the god Athena transformed her and condemned her to the Labyrinth. To fight and kill Arachne you will need to be fully equiped or very charming.",goldenThread);
         
-        Boss minotaur = new Boss(75,"Minotaur",5,15,7,"The great Minotaur");
+        Boss minotaur = new Boss(75,"Minotaur",5,15,7,"Congratulations, you have gone through all the steps! Here you are facing the scariest and deadliest of all monsters. The Minotaur!!! he is a monster with the head and the tail of a bull and the body of a man. He is not to be underestimated...");
         
         
         listSpot.get(9).addCharacterSpot(minotaur);
