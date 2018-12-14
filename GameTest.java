@@ -37,14 +37,14 @@ public class GameTest
     @Before
     public void setUp()
     {   
-        itemInSpot= new ArrayList <Item> ();
-        characterInSpot= new ArrayList <Character> ();
-        //spot= new Spot(characterInSpot, itemInSpot); 
-        player= new Player(20,"Jimmy",2,2,0);
-        theseus= new Player(20, "Theseus", 2,2,0); 
-        legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
-        HermesSandals= new Legendary("Hermes's sandals","",0,0,0); 
-        monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
+        // itemInSpot= new ArrayList <Item> ();
+        // characterInSpot= new ArrayList <Character> ();
+        // //spot= new Spot(characterInSpot, itemInSpot); 
+        // player= new Player(20,"Jimmy",2,2,0);
+        // theseus= new Player(20, "Theseus", 2,2,0); 
+        // legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
+        // HermesSandals= new Legendary("Hermes's sandals","",0,0,0); 
+        // monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
     
@@ -155,7 +155,7 @@ public class GameTest
     }
     
     /**
-     * Verify if there is one player in the maze. Only the first player is kept.
+     * Tests if there is no duplicate of the player in the maze after moving.
      */
     @Test
     public void testMoveOnePlayerInGame(){
@@ -169,8 +169,8 @@ public class GameTest
             // if(myGame.getListSpot().get(0).getPlayer()== null && myGame.getListSpot().get(1).getPlayer() != null)
                 // {test=true; }
         
-       assertEquals(null, myGame.getListSpot().get(0).getPlayer()); 
-       assertEquals(theseus, myGame.getListSpot().get(1).getPlayer());
+      assertFalse(myGame.getListSpot().get(0).getIfCharacterInSpot(myGame.getPlayer())); 
+      assertEquals(myGame.getPlayer(), myGame.getListSpot().get(1).getPlayer());
         }
        
     /**
@@ -228,8 +228,8 @@ public class GameTest
     @Test
     public void testPlaceItem(){
         boolean test=false;
-        for (int i=0; i<myGame.getListSpot().get(14).getListItem().size(); i++){
-            if (myGame.getListSpot().get(14).getListItem().get(i).getName() == "Iron Sword"){
+        for (int i=0; i<myGame.getListSpot().get(10).getListItem().size(); i++){
+            if (myGame.getListSpot().get(10).getListItem().get(i).getName() == "Iron Sword"){
                 test=true; 
             }
         }
@@ -243,7 +243,7 @@ public class GameTest
     @Test
     public void testExit(){
         boolean test=false; 
-        if (myGame.getListSpot().get(0).getExitSpot()==true){
+        if (myGame.getListSpot().get(6).getExitSpot()==true){
             test=true; 
         }
         assertTrue(test);
