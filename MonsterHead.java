@@ -8,10 +8,12 @@ import java.util.*;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 /**
- * Write a description of class MonsterHead here.
+ * This is the class that controls the visual aspect of the players icon and his stats
+ * The icon will always be present and the statistics will be updated whenever they change
+ * This includes combat, item pick-up and item drops.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Group6)
+ * @version (14/12/2018)
  */
 public class MonsterHead extends JPanel
 {
@@ -30,15 +32,15 @@ public class MonsterHead extends JPanel
 
     public void showMonsterHead(Monster monster)
     {
-        removeAll();
-        JPanel myMainPanel, myStatsPanel;
+        removeAll();//removes everything from the panels
+        JPanel myMainPanel, myStatsPanel; //creation of the two main panels
         
         myMainPanel=new JPanel();
         myMainPanel.setLayout(new GridLayout(1,1));
         
         myStatsPanel= new JPanel();
         myStatsPanel.setLayout(new GridLayout(4,1));
-        if (monster==null){
+        if (monster==null){ //checks if there is a monster in the "spot"
             myHealth = new JLabel("HP: null",JLabel.CENTER);
             myXP = new JLabel("XP: null",JLabel.CENTER);
             myAttack = new JLabel("Attack: null",JLabel.CENTER);

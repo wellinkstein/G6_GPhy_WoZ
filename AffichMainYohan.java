@@ -144,6 +144,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelCombat= new FightInterface(this);
         panelCombat.setBorder(BorderFactory.createLineBorder(Color.black));
+        panelCombat.setPreferredSize(new Dimension(400,400));
+        panelCombat.setSize(400,400);
         //new FightInterface();
         //
         //panelCombat.setBackground(Color.BLACK);
