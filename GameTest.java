@@ -42,9 +42,9 @@ public class GameTest
         // //spot= new Spot(characterInSpot, itemInSpot); 
         // player= new Player(20,"Jimmy",2,2,0);
         // theseus= new Player(20, "Theseus", 2,2,0); 
-        // legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
-        // HermesSandals= new Legendary("Hermes's sandals","",0,0,0); 
-        // monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
+       legendary = new Legendary("Ariadne’s golden thread", "description", 1, 3,1); 
+         HermesSandals= new Legendary("Hermes's Sandals","",0,0,0); 
+        monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
     
@@ -128,14 +128,16 @@ public class GameTest
      */
     @Test
     public void testWhoBegins(){
-        player.takeItem(HermesSandals); 
+        myGame.getPlayer().takeItem(HermesSandals); 
         myGame.getCurrentSpot().addCharacterSpot(monster); 
-        myGame.getCurrentSpot().addCharacterSpot(player); 
+        myGame.getCurrentSpot().addCharacterSpot(myGame.getPlayer()); 
+        // assertEquals(myGame.getPlayer(),myGame.getCurrentSpot().getPlayer());
         boolean test=false; 
-        if(myGame.whoBegins()==player){
+        if(myGame.whoBegins()==myGame.getPlayer()){
             test=true; 
-        }; 
-        assertTrue(test); 
+        } 
+        //assertTrue(myGame.getPlayer().getHermesSandals()); 
+         assertTrue(test); 
         
     }
     /**
