@@ -657,6 +657,7 @@ public class Game
     /**
      * Kills lesserBoss
      * This method removes a monster (Lesser Boss) from a spot once it has been killed
+     * It also adds teh held legendary item to the spot in which the monster was killed
      * 
      */
     public void monsterDead()
