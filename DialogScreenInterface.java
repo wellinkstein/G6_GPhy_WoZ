@@ -23,17 +23,10 @@ public class DialogScreenInterface extends JPanel
     {
         
         dialog = new JLabel(dialogText);
-        
+        System.out.println(dialogText);
         myPanel = new JPanel();
+        myPanel.add(dialog);
         
-        myPanel.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-        
-        c.anchor = GridBagConstraints.CENTER;
-        myPanel.add(dialog, c);
-        
-        c.weighty = 0.05;
-        c.anchor = GridBagConstraints.PAGE_END;
         
         
     }

@@ -19,7 +19,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
 {
 
     private Game myGame; 
-    private JPanel panelDiag, panelBouton;
+    private JPanel panelBouton;
+    private DialogScreenInterface panelDiag;
     private SpotItem panelSpotItem;
     private Inventory panelInventory;
     private NextSpot panelNextSpot; 
@@ -162,7 +163,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         c.gridy = 3;
         pane.add(panelNextSpot, c);
         
-        panelDiag = new JPanel();
+        panelDiag = new DialogScreenInterface(myGame.printWelcome());
+        // System.out.println(myGame.printWelcome());
         panelDiag.setBackground(Color.YELLOW);
         c.weightx = 0.25;
         c.weighty = 0.4;

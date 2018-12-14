@@ -283,9 +283,7 @@ public class Game
     {
         return "Hello Theseus! \n Your mission is to explore the labyrinth, find the Minotaur, kill it";
     }
-    
 
-        
     /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
      */
