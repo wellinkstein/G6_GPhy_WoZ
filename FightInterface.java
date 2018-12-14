@@ -18,6 +18,7 @@ public class FightInterface extends JPanel implements ActionListener
     private JButton buttonStartFight;
     private AffichMainYohan affichMain;
     private Spot mySpot;
+    private DialogScreenInterface gameOver;
 
     /**
      * Constructor of objects class fightInterface
@@ -274,6 +275,7 @@ public class FightInterface extends JPanel implements ActionListener
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
             affichMain.getGame().setWinFalse();
+            gameOver = new DialogScreenInterface(affichMain.getGame().gameOver());
             affichMain.setDialog(gameOver);
         }
         else {affichMain.getGame().setWinTrue(); }
