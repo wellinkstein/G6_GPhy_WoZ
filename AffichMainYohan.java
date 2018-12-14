@@ -165,7 +165,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelDiag = new DialogScreenInterface(myGame.printWelcome());
         // System.out.println(myGame.printWelcome());
-        panelDiag.setBackground(Color.YELLOW);
+        //panelDiag.setBackground(Color.YELLOW);
         c.weightx = 0.25;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;

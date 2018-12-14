@@ -13,22 +13,17 @@ public class DialogScreenInterface extends JPanel
 {
     private JPanel myPanel;
     private JLabel dialog;
-    
-    
-    
+
     /**
      * Constructeur of DialogScreenInterface
      */
     public DialogScreenInterface(String dialogText)
     {
-        
         dialog = new JLabel(dialogText);
         System.out.println(dialogText);
         myPanel = new JPanel();
         myPanel.add(dialog);
-        
-        
-        
+        add(myPanel);
     }
     
     

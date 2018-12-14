@@ -274,6 +274,7 @@ public class FightInterface extends JPanel implements ActionListener
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
             affichMain.getGame().setWinFalse();
+            affichMain.setDialog(gameOver);
         }
         else {affichMain.getGame().setWinTrue(); }
     }
