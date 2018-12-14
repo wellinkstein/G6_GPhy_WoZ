@@ -284,18 +284,7 @@ public class Game
         return "Hello Theseus! \n Your mission is to explore the labyrinth, find the Minotaur, kill it";
     }
     
-    /**
-     *  Main play routine.  Loops until end of play. linked to the interface
-     */
-    public void play() 
-    {            
-        printWelcome();
 
-        while (! finished) {
-            
-        }
-        System.out.println("Thank you for playing.  Good bye.");
-    }
         
     /**
      *  Defines the only exit and the only start of the labyrinth (two separate spots)
@@ -703,15 +692,7 @@ public class Game
         addItemToCurrentSpot(itemDrop);
     }
     
-    /**
-     * If the player killed the Minotaur, the game is finished. If the player goes to the exit without klling the Minotaur, he'll have to choose another direction
-     * 
-     */
-    public void endGame() 
-    { 
-                
-    }
-    
+   
 
     
 }
