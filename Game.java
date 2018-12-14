@@ -432,37 +432,37 @@ public class Game
          return true;         
     }
     
-    /**
-     * The fight starts. it ends when one of the characters dies
-     * @return List<Integer> listDamage: the list of all the damage
-     * that were inflicted during the fight.
-     * If the list begins by "-1", it means that Theseus began the fight.
-     * 
-     */
-    public List<Integer> fight() 
-    { 
-          int damFighter;
-          List<Integer> listDamage = new ArrayList<>();
-          whoBegins();
-          if(fighter==theseus)
-          {
-              listDamage.add(-1);
-          }
+    // /**
+     // * The fight starts. it ends when one of the characters dies
+     // * @return List<Integer> listDamage: the list of all the damage
+     // * that were inflicted during the fight.
+     // * If the list begins by "-1", it means that Theseus began the fight.
+     // * 
+     // */
+    // public List<Integer> fight() 
+    // { 
+          // int damFighter;
+          // List<Integer> listDamage = new ArrayList<>();
+          // whoBegins();
+          // if(fighter==theseus)
+          // {
+              // listDamage.add(-1);
+          // }
           
-          while (fighter.HP!=0){
-              damFighter=inflictDamage();
-              if (fighter==theseus){
-                  damFighter=damFighter+criticalHit();
-              }
-              setFighter(fighter);
-          }
+          // while (fighter.HP!=0){
+              // damFighter=inflictDamage();
+              // if (fighter==theseus){
+                  // damFighter=damFighter+criticalHit();
+              // }
+              // setFighter(fighter);
+          // }
           
-          if (fighter==theseus) { 
-              setWinTrue();
-          }
-          else setWinFalse(); 
-          return (listDamage);
-    }
+          // if (fighter==theseus) { 
+              // setWinTrue();
+          // }
+          // else setWinFalse(); 
+          // return (listDamage);
+    // }
     
     /**
      * Randomly chooses the first fighter to start
