@@ -186,6 +186,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         item.addActionListener(this);
         // myFrame.pack();
         myFrame.setVisible(true);
+        
+        
     }
     
     public void setDes(ItemDescription myDes)
