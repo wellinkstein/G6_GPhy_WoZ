@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * The test class GameTest.
  *
- * @author  (Groupe 7)
+ * @author  (Groupe 6)
  * @version (28-11-2018)
  */
 public class GameTest

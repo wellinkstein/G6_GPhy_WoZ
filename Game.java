@@ -1,20 +1,10 @@
 import java.util.*;
 import java.util.Random;
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
+ *  This is the main class of our Game, it handles the 
  * 
- *  To play this game, create an instance of this class and call the "play"
- *  method.
- * 
- *  This main class creates and initialises all the others: it creates all
- *  rooms, creates the parser and starts the game.  It also evaluates and
- *  executes the commands that the parser returns.
- * 
- * @author  Michael Kolling and David J. Barnes
- * @version 2006.03.30
+ * @author  Yohan Lefol
+ * @version 14/12/2018
  */
 
 public class Game 
@@ -24,10 +14,10 @@ public class Game
     private int line = 8; //number of lines in the matrix;
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
-    private Character fighter;
-    private Player theseus;
-    private boolean win;
-    private Legendary hermesSandals;
+    private Character fighter;//created the fighter attribute that will be used to handle combat
+    private Player theseus;//creates the attribute for our player
+    private boolean win;//an attribute used to handle win conditions
+    private Legendary hermesSandals;//this specific item is created as it is essential to combat
     /** 
      * Create the game and initialise its internal map.
      */
@@ -501,6 +491,12 @@ public class Game
     
      /**
      * The fighter inflicts damage to the other character in the spot
+     * This class function by finding who isn't the fighter and inflicts damage on the non-fighter
+     * outside of this function, within the setFighter() function, the fighter will change
+     * after each hit thus the player and the monster will take turn inflictin damage
+     * this will continue until one has 0HP
+     * 
+     * @Return int dam : Return the damage value inflicted to be used in the log presentation
      * 
      */
     public int inflictDamage() 
@@ -522,7 +518,7 @@ public class Game
             }
             
         }
-        return dam;
+        return dam;//returns the damage to be recorded in the log
     }
   
      /**
@@ -549,8 +545,9 @@ public class Game
     }
     
     /**
-     * Changes the fighter to a designed character
+     * Changes the fighter to a designated character
      * @param Character fighter: the character is set to be the fighter
+     * @Return Character myFighter: returns the new fighter
      */
     public Character setFighter(Character fighter) 
     { 
@@ -582,8 +579,8 @@ public class Game
     }
     
     /**
-     *  All monsters become aggressive and start chasing you.
-     * 
+     *  All remaining monsters become aggressive and start chasing you.
+     * This fucntion is called when the player has killed the minotaur
      */
     public void setAggressiveAll() 
     { 
@@ -609,7 +606,8 @@ public class Game
         win=false;         
     }
     /**
-     * 
+     * This function exists to check if the player has won
+     * @Return Boolean win : returns the win value depending on the outcome of a fight
      * 
      */
     public boolean getWin() 
@@ -653,6 +651,7 @@ public class Game
     
     /**
      * Kills lesserBoss
+     * This method removes a monster (Lesser Boss) from a spot once it has been killed
      * 
      */
     public void monsterDead()
@@ -662,7 +661,11 @@ public class Game
     }
     
     /**
-     * Kills lesserBoss
+     * Kills Boss Minotaur
+     * This method removes the Minotaur from the spot once it is killed
+     * This method also checks if the player has Ariadne's Golden Thread, if he does the win condition is set to true
+     * and the game ends
+     * if not, all remaining monsters are set to aggressive which means they will begin hunting the player
      * 
      */
     public void bossDead()
@@ -682,6 +685,9 @@ public class Game
     
     /**
      * player drops item
+     * This method allows the player to drop an item from his inventory
+     * the dropped item is added to the spot the player is currently in
+     * @Param Item itemDrop : The item that will be selected to drop
      * 
      */
     public void playerDropItem(Item itemDrop)

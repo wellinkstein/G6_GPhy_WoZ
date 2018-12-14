@@ -8,9 +8,9 @@ import java.util.*;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 /**
- * This is the class that controls the visual aspect of the players icon and his stats
- * The icon will always be present and the statistics will be updated whenever they change
- * This includes combat, item pick-up and item drops.
+ * This class handles the apparition of a monsters icon (only its head) when a fight is initiated
+ * along with the picture of the head, the monsters stats will appear and be updated during
+ * the fight.
  *
  * @author (Group6)
  * @version (14/12/2018)
@@ -58,7 +58,7 @@ public class MonsterHead extends JPanel
             myMainPanel.add(myStatsPanel);
         }
         else{
-            if (monster.getName()=="Medusa")
+            if (monster.getName()=="Medusa")//checks if medusa is in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -77,7 +77,7 @@ public class MonsterHead extends JPanel
                 myMainPanel.add(myStatsPanel);
             
             }
-            else if (monster.getName()=="Chimera")
+            else if (monster.getName()=="Chimera")//checks if chimera is in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -95,7 +95,7 @@ public class MonsterHead extends JPanel
                 
                 myMainPanel.add(myStatsPanel);
             }
-            else if (monster.getName()=="Cerberus")
+            else if (monster.getName()=="Cerberus")//checks if cerberus in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -113,7 +113,7 @@ public class MonsterHead extends JPanel
                 
                 myMainPanel.add(myStatsPanel);
             }   
-            else if (monster.getName()=="Arachne")
+            else if (monster.getName()=="Arachne")//checks if arachne is in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -131,7 +131,7 @@ public class MonsterHead extends JPanel
                 
                 myMainPanel.add(myStatsPanel);
             }   
-            else if (monster.getName()=="Cyclops")
+            else if (monster.getName()=="Cyclops")//checks if cyclops is in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -150,7 +150,7 @@ public class MonsterHead extends JPanel
             
                 myMainPanel.add(myStatsPanel);
             }
-            else if (monster.getName()=="Minotaur")
+            else if (monster.getName()=="Minotaur")//checks if minotaur is in the spot
             {
                 myHealth = new JLabel("HP: "+String.valueOf(monster.getHP()),JLabel.CENTER);
                 myXP = new JLabel("XP: "+String.valueOf(monster.getXp()),JLabel.CENTER);
@@ -174,7 +174,7 @@ public class MonsterHead extends JPanel
         
         
         myMainPanel.setVisible(true);
-        add(myMainPanel);
+        add(myMainPanel);//adds this class/panel to the main interface (AffichMainYohan)
         revalidate();
         repaint();
     }
