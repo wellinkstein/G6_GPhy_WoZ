@@ -238,6 +238,11 @@ public class AffichMainYohan extends JFrame implements ActionListener
         panelLab.updateUI(myGame.getCurrentSpot());
     }
     
+     public void setFightInterface()
+    {
+      //  panelCombat.updatePanel();
+    }
+    
     public Game getGame(){
         return myGame;
     }

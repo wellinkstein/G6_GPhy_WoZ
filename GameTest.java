@@ -142,16 +142,6 @@ public class GameTest
     }
     
     /**
-     * Test if chooseDirection() gives you the adjacent spot at a specific direction 
-     */
-    @Test
-    public void testchooseDirectionUp()
-    {
-         
-        
-    }
-    
-    /**
      * Test the method fight(), if the monster lost, 
      * the items must be free and add at the spot
      */

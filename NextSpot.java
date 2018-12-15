@@ -52,7 +52,7 @@ public class NextSpot extends JPanel
      * @param String the direction of the player wants to go
      */
     public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
-        System.out.println("Attention ennemi");
+        
         removeAll(); //remove the panel
 
         //create the panel and the button
