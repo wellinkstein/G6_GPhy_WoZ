@@ -140,6 +140,17 @@ public class GameTest
          assertTrue(test); 
         
     }
+    
+    /**
+     * Test if chooseDirection() gives you the adjacent spot at a specific direction 
+     */
+    @Test
+    public void testchooseDirectionUp()
+    {
+         
+        
+    }
+    
     /**
      * Test the method fight(), if the monster lost, 
      * the items must be free and add at the spot
@@ -148,11 +159,11 @@ public class GameTest
     public void testMonsterDead()
     {
         //myGame.getCurrentSpot().addCharacterSpot(player); 
-        myGame.move(myGame.getListSpot().get(6)); 
-       // myGame.getCurrentSpot().addCharacterSpot(monster);
-        //myGame.monsterDead(myGame.getListSpot().get(6));
-        assertEquals(null, myGame.getListSpot().get(6).getMonster());
-        assertEquals(true, myGame.getListSpot().get(6).getListItem().contains(legendary)); 
+        myGame.move(myGame.getListSpot().get(45)); 
+        myGame.getCurrentSpot().addCharacterSpot(monster);
+        myGame.monsterDead();
+        assertEquals(null, myGame.getListSpot().get(45).getMonster());
+        assertEquals(true, myGame.getListSpot().get(45).getListItem().contains(legendary)); 
         
     }
     
@@ -184,7 +195,7 @@ public class GameTest
         boolean test=false;  
         for (int i =0; i<myGame.getListSpot().size(); i++){
             if (myGame.getListSpot().get(i).getStartSpot() == true && 
-            myGame.getListSpot().get(i).getListCharacter().contains(theseus)== true){
+            myGame.getListSpot().get(i).getListCharacter().contains(myGame.getPlayer())== true){
                 test=true;  
             }
         }
@@ -239,6 +250,20 @@ public class GameTest
         assertTrue(test); 
         
     }
+     /**
+     * Check if adding an item to current spot is possible
+     * 
+     */   
+    @Test
+    public void testPlaceIteminCurrentSpot(){
+        myGame.addItemToCurrentSpot(legendary); 
+        boolean test=false;
+        if (myGame.getCurrentSpot().getListItem().contains(legendary)){
+            test=true; 
+        }
+        assertTrue(test); 
+        
+    }
     /**
      * Check if a Exit exists in the game
      */
@@ -256,7 +281,7 @@ public class GameTest
     @Test
     public void testStart(){
         boolean test=false; 
-        if (myGame.getListSpot().get(6).getStartSpot()==true){
+        if (myGame.getListSpot().get(0).getStartSpot()==true){
             test=true; 
         }
         assertTrue(test);
