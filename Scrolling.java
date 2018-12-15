@@ -18,14 +18,6 @@ public class Scrolling extends JPanel
 {
         
     Spot CurrentSpot = new Spot();
-    Spot myTestSpotN = new Spot();
-    Spot myTestSpotS = new Spot();
-    Spot myTestSpotE = new Spot();
-    Spot myTestSpotW = new Spot();
-    Spot myTestSpotNE = new Spot();
-    Spot myTestSpotNW = new Spot();
-    Spot myTestSpotSE = new Spot();
-    Spot myTestSpotSW = new Spot();
     
     private AffichMainYohan myMain;
     private JButton myButton1= new JButton("North");
@@ -68,7 +60,7 @@ public class Scrolling extends JPanel
         myButton3.addActionListener(e);
         myButton4.addActionListener(e);
         
-        if(CurrentSpot.getExits("N") == null)
+        if(CurrentSpot.getExits("Z") == null)
         {myButton1.setEnabled(false);}
         if(CurrentSpot.getExits("D") == null)
         {myButton2.setEnabled(false);}
@@ -139,18 +131,30 @@ public class Scrolling extends JPanel
     
     public void updateUI(Spot CurrentSpot)
     {
-        if(CurrentSpot.getExits("North") != null)
+        if(CurrentSpot.getExits("Z") == null)
+        {myButton1.setEnabled(false);}
+        else{myButton1.setEnabled(true);}
+        if(CurrentSpot.getExits("D") == null)
+        {myButton2.setEnabled(false);}
+        else{myButton2.setEnabled(true);}
+        if(CurrentSpot.getExits("S") == null)
+        {myButton3.setEnabled(false);}
+        else{myButton3.setEnabled(true);}
+        if(CurrentSpot.getExits("Q") == null)
+        {myButton4.setEnabled(false);}
+        else{myButton4.setEnabled(true);}
+        if(CurrentSpot.getExits("Z") != null)
         {
-            Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("North").getImageSpot()));
+            Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("Z").getImageSpot()));
         }
         else
         {
             Jlabel2.setIcon(new ImageIcon( "0.png"));
         }
         
-        if(CurrentSpot.getExits("West") != null)
+        if(CurrentSpot.getExits("Q") != null)
         {
-            Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("West").getImageSpot()));
+            Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("Q").getImageSpot()));
         }
         else
         {
@@ -159,18 +163,18 @@ public class Scrolling extends JPanel
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()));
         
-        if(CurrentSpot.getExits("East") != null)
+        if(CurrentSpot.getExits("D") != null)
         {
-            Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("East").getImageSpot()));
+            Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("D").getImageSpot()));
         }
         else
         {
             Jlabel6.setIcon(new ImageIcon( "0.png"));
         }
         
-        if(CurrentSpot.getExits("South") != null)
+        if(CurrentSpot.getExits("S") != null)
         {
-            Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("South").getImageSpot()));
+            Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("S").getImageSpot()));
         }
         else
         {
@@ -189,31 +193,5 @@ public class Scrolling extends JPanel
     
     public JButton getButton4()
     {return myButton4;}
-    // public void actionPerformed (ActionEvent e)
-    // {
-        // if(e.getSource() == myButton1)
-        // {
-            // CurrentSpot = CurrentSpot.getExits("North");
-            // updateUI(CurrentSpot);
-        // }
-        // else if(e.getSource() == myButton2)
-        // {
-            // CurrentSpot = CurrentSpot.getExits("East");
-            // updateUI(CurrentSpot);
-        // }
-        // else if(e.getSource() == myButton3)
-        // {
-            // CurrentSpot = CurrentSpot.getExits("South");
-            // updateUI(CurrentSpot);
-        // }
-        // else if(e.getSource() == myButton4)
-        // {
-            // CurrentSpot = CurrentSpot.getExits("West");
-            // updateUI(CurrentSpot);
-        // }
-        // else
-        // {
-            // System.out.println("Nothing append");
-        // }
-    // }
+    
 }
