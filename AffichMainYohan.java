@@ -46,7 +46,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        myGame.move(myGame.getListSpot().get(0));
+        myGame.move(myGame.getListSpot().get(10));
         //myGame.move(myGame.getListSpot().get(9)); //Used for testing purposes
         
         //Grille du frame et des panels
@@ -148,8 +148,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelCombat= new FightInterface(this);
         panelCombat.setBorder(BorderFactory.createLineBorder(Color.black));
-        panelCombat.setPreferredSize(new Dimension(400,400));
-        panelCombat.setSize(400,400);
+        //panelCombat.setPreferredSize(new Dimension(400,400));
+        //panelCombat.setSize(400,400);
         //new FightInterface();
         //
         //panelCombat.setBackground(Color.BLACK);
@@ -201,7 +201,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         this.item = new JMenuItem("Quit");
         menu.add(item);
         item.addActionListener(this);
-        myFrame.pack();
+        //myFrame.pack();
         myFrame.setVisible(true);
         
         

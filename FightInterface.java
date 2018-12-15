@@ -21,6 +21,7 @@ public class FightInterface extends JPanel implements ActionListener
     private AffichMainYohan affichMain;
     private Spot mySpot;
     private DialogScreenInterface youWon, gameOver;
+    private JScrollPane scroller;
  
     /**
      * Constructor of objects class fightInterface
@@ -31,8 +32,13 @@ public class FightInterface extends JPanel implements ActionListener
         
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
-
+        
+        
+        
         dialog = new JLabel("<html><b>Combat logbook</b><br>--------------------------<br><br><br>");
+        //scroller.add(dialog);
+        scroller = new JScrollPane(dialog);
+        scroller.setPreferredSize(new Dimension (400,200));
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
         
@@ -41,7 +47,7 @@ public class FightInterface extends JPanel implements ActionListener
         c.weightx = 0.95;
         c.gridx = 0;
         c.gridy=0;
-        panelBot.add(dialog, c);
+        panelBot.add(scroller, c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
@@ -49,8 +55,9 @@ public class FightInterface extends JPanel implements ActionListener
         c.weightx = 0.05;
         panelBot.add(buttonStartFight, c);
 
-        panelBot.add(dialog);
-
+        panelBot.add(scroller);
+        
+        
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
 
@@ -175,6 +182,7 @@ public class FightInterface extends JPanel implements ActionListener
         // panelBot.setSize(400,400);
         panelBig.add(panelMain);
         panelBig.add(panelBot);
+        //panelBig.add(Scroller);
         panelBig.setVisible(true);
         add(panelBig);
     }
