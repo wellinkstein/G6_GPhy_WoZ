@@ -5,6 +5,8 @@ import java.awt.event.*;
 
 /**
  * Class Fight interface
+ * This class handles the fight interface that will appear in the main interface
+ * 
  *
  * @author Jérémie Guilbaud
  * @version 1.0
@@ -179,6 +181,8 @@ public class FightInterface extends JPanel implements ActionListener
 
     /**
      * A method the print a text in the dialog box when the monster is dead
+     * @Param boolean ded: Takes in a boolean to check if the monster is dead
+     * 
      */
     public void printDeadMonster(boolean ded)
     {
@@ -228,6 +232,7 @@ public class FightInterface extends JPanel implements ActionListener
 
     /**
      * The fight starts. it ends when one of the characters dies
+     * 
      */
     public void fight() 
     { 
