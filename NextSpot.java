@@ -97,6 +97,8 @@ public class NextSpot extends JPanel
         myFightButton.addActionListener(e);
         myFleeButton.addActionListener(e);
         //Display the icon of the monster in the next spot
+        System.out.println(gameSpot.getMonster());
+        System.out.println(gameSpot);
         if (gameSpot.getMonster() != null) 
         {
             if(gameSpot.getMonster().getName() == "Medusa")
