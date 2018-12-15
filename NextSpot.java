@@ -54,7 +54,7 @@ public class NextSpot extends JPanel
     public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
         
         removeAll(); //remove the panel
-
+        direction=newDirection;
         //create the panel and the button
         myPanel = new JPanel();
         myFightPanel = new JPanel();

@@ -30,7 +30,7 @@ public class Game
     {
         createLabyrinth();
         
-        theseus = new Player(20,"Theseus",1,1,0);
+        theseus = new Player(20,"Theseus",1,100,0);
         
         
         Common ironSword= new Common ("Iron Sword","<html>a rusty looking sword, it has been here for a while. <br> Increases your damage by 3.</html>",3,0,0);
@@ -66,6 +66,10 @@ public class Game
         
         
         ArrayList<Integer> listIronSword = new ArrayList();
+        //test
+        listIronSword.add(10);
+        listIronSword.add(10);
+        //test
         listIronSword.add(18);
         listIronSword.add(62);
         listIronSword.add(17);
