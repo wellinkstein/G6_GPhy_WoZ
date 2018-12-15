@@ -72,5 +72,6 @@ public class EcouteurScrolling implements ActionListener
                 affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Q"),affichMain,"Q");
             }
         }
+        affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
     }
 }

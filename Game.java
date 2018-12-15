@@ -66,9 +66,13 @@ public class Game
         
         
         ArrayList<Integer> listIronSword = new ArrayList();
-        listIronSword.add(10);
-        listIronSword.add(11);
-        listIronSword.add(12);
+        listIronSword.add(0);
+        listIronSword.add(1);
+        listIronSword.add(9);
+        listIronSword.add(9);
+        listIronSword.add(1);
+        listIronSword.add(1);
+        listIronSword.add(1);
         placeItem(ironSword,listIronSword); 
         
         ArrayList<Integer> listIronDagger = new ArrayList();
@@ -147,7 +151,7 @@ public class Game
         listSpot.get(4).setExits("D",listSpot.get(5));
         listSpot.get(5).setExits("Q",listSpot.get(4));
         listSpot.get(5).setExits("S",listSpot.get(14));
-        listSpot.get(6).setExits("Z",null);
+        //listSpot.get(6).setExits("Z",null);
         listSpot.get(6).setExits("S",listSpot.get(15));
         listSpot.get(6).setExits("D",listSpot.get(7));
         listSpot.get(7).setExits("Q",listSpot.get(6));
@@ -172,11 +176,11 @@ public class Game
         listSpot.get(16).setExits("S",listSpot.get(25));
         listSpot.get(17).setExits("Q",listSpot.get(16));
         listSpot.get(18).setExits("Z",listSpot.get(9));
-        listSpot.get(18).setExits("D",listSpot.get(11));
+        listSpot.get(18).setExits("D",listSpot.get(19));
         listSpot.get(19).setExits("Q",listSpot.get(18));
         listSpot.get(19).setExits("Z",listSpot.get(10));
         listSpot.get(19).setExits("D",listSpot.get(20));
-        listSpot.get(20).setExits("Q",listSpot.get(11));
+        listSpot.get(20).setExits("Q",listSpot.get(19));
         listSpot.get(20).setExits("D",listSpot.get(21));
         listSpot.get(21).setExits("Q",listSpot.get(20));
         listSpot.get(21).setExits("Z",listSpot.get(12));
@@ -229,6 +233,25 @@ public class Game
         listSpot.get(43).setExits("D",listSpot.get(44));
         listSpot.get(44).setExits("Q",listSpot.get(43));
         listSpot.get(44).setExits("S",listSpot.get(53));
+        
+        listSpot.get(45).setExits("S",listSpot.get(54));
+        listSpot.get(46).setExits("Z",listSpot.get(37));
+        listSpot.get(46).setExits("S",listSpot.get(55));
+        listSpot.get(47).setExits("S",listSpot.get(56));
+        listSpot.get(47).setExits("D",listSpot.get(48));
+        listSpot.get(48).setExits("Q",listSpot.get(47));
+        listSpot.get(48).setExits("D",listSpot.get(49));
+        listSpot.get(49).setExits("Q",listSpot.get(48));
+        listSpot.get(49).setExits("Z",listSpot.get(40));
+        listSpot.get(49).setExits("S",listSpot.get(58));
+        listSpot.get(50).setExits("Z",listSpot.get(41));
+        listSpot.get(50).setExits("D",listSpot.get(51));
+        listSpot.get(51).setExits("Q",listSpot.get(50));
+        listSpot.get(51).setExits("S",listSpot.get(60));
+        listSpot.get(52).setExits("D",listSpot.get(53));
+        listSpot.get(53).setExits("Q",listSpot.get(52));
+        listSpot.get(53).setExits("Z",listSpot.get(44));
+        
         listSpot.get(54).setExits("Z",listSpot.get(45));
         listSpot.get(54).setExits("D",listSpot.get(55));
         listSpot.get(54).setExits("S",listSpot.get(63));
@@ -258,6 +281,7 @@ public class Game
         listSpot.get(65).setExits("Z",listSpot.get(56));
         listSpot.get(66).setExits("Z",listSpot.get(57));
         listSpot.get(67).setExits("D",listSpot.get(68));
+        listSpot.get(67).setExits("Q",listSpot.get(66));
         listSpot.get(68).setExits("Q",listSpot.get(67));
         listSpot.get(68).setExits("Z",listSpot.get(59));
         listSpot.get(68).setExits("D",listSpot.get(69));
