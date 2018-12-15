@@ -201,7 +201,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         this.item = new JMenuItem("Quit");
         menu.add(item);
         item.addActionListener(this);
-        // myFrame.pack();
+        myFrame.pack();
         myFrame.setVisible(true);
         
         
