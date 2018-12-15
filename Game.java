@@ -679,13 +679,13 @@ public class Game
            //the monster drops the item in the spot
            currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
            theseus.setTrueTimeToGo();
-           if (theseus.getThread()){
-             youWon();
-             setFinishedTrue();
-           }
-           else{
+           // if (theseus.getThread()){
+             // youWon();
+             // setFinishedTrue();
+           // }
+           //else{
              setAggressiveAll(); 
-           }
+           //}
             
     }
     
