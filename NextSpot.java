@@ -52,6 +52,7 @@ public class NextSpot extends JPanel
      * @param String the direction of the player wants to go
      */
     public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
+        System.out.println("Attention ennemi");
         removeAll(); //remove the panel
 
         //create the panel and the button
@@ -95,7 +96,6 @@ public class NextSpot extends JPanel
         EcouteurNextSpotFight e = new EcouteurNextSpotFight(this, myMain);
         myFightButton.addActionListener(e);
         myFleeButton.addActionListener(e);
-
         //Display the icon of the monster in the next spot
         if (gameSpot.getMonster() != null) 
         {
@@ -104,7 +104,6 @@ public class NextSpot extends JPanel
                 Icon icon = new ImageIcon("MedusaHead.png");
                 JLabel label = new JLabel(icon);
                 myPanel.add(label);
-
             }
 
             else if(gameSpot.getMonster().getName() == "Chimera") // Chimera

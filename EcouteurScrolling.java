@@ -25,12 +25,8 @@ public class EcouteurScrolling implements ActionListener
     
      public void actionPerformed (ActionEvent e)
     {
-        System.out.println(affichMain.getGame().getCurrentSpot());
-        System.out.println(affichMain.getGame().getCurrentSpot().getAllExit());
-        System.out.println("-----------------");
         if(e.getSource() == myScrolling.getButton1())
         {
-            System.out.println(affichMain.getGame().getCurrentSpot().getExits("Z"));
             if(affichMain.getGame().getCurrentSpot().getExits("Z").getListCharacter().size() == 0)
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Z"));
@@ -38,7 +34,7 @@ public class EcouteurScrolling implements ActionListener
             }
             else
             {
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot(),affichMain,"Z");
+                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Z"),affichMain,"Z");
             }
         }
         if(e.getSource() == myScrolling.getButton2())
@@ -50,18 +46,19 @@ public class EcouteurScrolling implements ActionListener
             }
             else
             {
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot(),affichMain,"D");
+                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("D"),affichMain,"D");
             }
         }
         if(e.getSource() == myScrolling.getButton3())
         {
+            
             if(affichMain.getGame().getCurrentSpot().getExits("S").getListCharacter().size() == 0)
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("S"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
             else
             {
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot(),affichMain,"S");
+                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("S"),affichMain,"S");
             }
         }
         if(e.getSource() == myScrolling.getButton4())
@@ -72,11 +69,8 @@ public class EcouteurScrolling implements ActionListener
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());}
             else
             {
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot(),affichMain,"Q");
+                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Q"),affichMain,"Q");
             }
         }
-        System.out.println(affichMain.getGame().getCurrentSpot());
-        System.out.println(affichMain.getGame().getCurrentSpot().getAllExit());
-        System.out.println("//////////////////////////////");
     }
 }

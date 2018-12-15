@@ -52,7 +52,7 @@ public class SpotTest
         objectInSpot= new ArrayList <Item> ();
         characterInSpot= new ArrayList <Character> ();
         player= new Player(20, "Theseus", 1, 2,2);
-        monster1= new LesserBoss(30,"Chimera", 0, 2,2, "io", it1);  
+        monster1= new LesserBoss(30,"Arachne", 0, 2,2, "io", it1);  
         monster2=new Boss(75, "Minautor", 0, 15,7, "oiu"); 
         spot = new Spot();
         neighbor = new Spot();
