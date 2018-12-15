@@ -153,7 +153,7 @@ public class FightInterface extends JPanel implements ActionListener
         }
         else
         {
-        
+            affichMain.getGame().monsterDead();
         }
     }
 
