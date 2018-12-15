@@ -56,59 +56,50 @@ public class Game
         Boss minotaur = new Boss(75,"Minotaur",5,15,7,"<html>Congratulations, you have gone through all the steps! Here you are facing the scariest <br> and deadliest of all monsters. The Minotaur!!! <br> he is a monster with the head and the tail of a bull and the body of a man. <br> He is not to be underestimated...</html>");
         
         
-        listSpot.get(9).addCharacterSpot(minotaur);
-        listSpot.get(5).addCharacterSpot(cerberus);
-        listSpot.get(6).addCharacterSpot(medusa);
-        listSpot.get(7).addCharacterSpot(cyclops);
-        listSpot.get(8).addCharacterSpot(chimera);
-        listSpot.get(10).addCharacterSpot(arachne);
+        listSpot.get(31).addCharacterSpot(minotaur);
+        listSpot.get(32).addCharacterSpot(cerberus);
+        listSpot.get(21).addCharacterSpot(medusa);
+         listSpot.get(49).addCharacterSpot(cyclops);
+        listSpot.get(45).addCharacterSpot(chimera);
+        listSpot.get(16).addCharacterSpot(arachne);
 
         
         
         ArrayList<Integer> listIronSword = new ArrayList();
-        listIronSword.add(0);
-        listIronSword.add(1);
-        listIronSword.add(9);
-        listIronSword.add(9);
-        listIronSword.add(1);
-        listIronSword.add(1);
-        listIronSword.add(1);
+        listIronSword.add(18);
+        listIronSword.add(62);
+        listIronSword.add(17);
         placeItem(ironSword,listIronSword); 
         
         ArrayList<Integer> listIronDagger = new ArrayList();
-        listIronDagger.add(13);
-        listIronDagger.add(14);
-        listIronDagger.add(15);
+        listIronDagger.add(67);
+        listIronDagger.add(5);
         placeItem(ironDagger,listIronDagger); 
         
         ArrayList<Integer> listStandardBow = new ArrayList();
-        listStandardBow.add(16);
-        listStandardBow.add(17);
-        listStandardBow.add(18);
+        listStandardBow.add(63);
         placeItem(standardBow,listStandardBow);
         
         ArrayList<Integer> listIronArmor = new ArrayList();
-        listIronArmor.add(19);
-        listIronArmor.add(20);
-        listIronArmor.add(21);
+        listIronArmor.add(11);
+        listIronArmor.add(17);
         placeItem(ironArmor,listIronArmor);
         
         ArrayList<Integer> listIronShield = new ArrayList();
-        listIronShield.add(19);
-        listIronShield.add(20);
-        listIronShield.add(21);
+        listIronShield.add(28);
+        listIronShield.add(17);
         placeItem(ironShield,listIronShield);
         
         ArrayList<Integer> listWoodenShield = new ArrayList();
-        listWoodenShield.add(19);
-        listWoodenShield.add(20);
-        listWoodenShield.add(21);
+        listWoodenShield.add(18);   
         placeItem(woodenShield,listWoodenShield);
         
         ArrayList<Integer> listHealthPotion = new ArrayList();
-        listHealthPotion.add(19);
-        listHealthPotion.add(20);
-        listHealthPotion.add(21);
+        listHealthPotion.add(38);
+        listHealthPotion.add(28);
+        listHealthPotion.add(63);
+        listHealthPotion.add(41);
+        listHealthPotion.add(17);
         placeItem(healthPotion,listHealthPotion);
         
         currentSpot = new Spot();
