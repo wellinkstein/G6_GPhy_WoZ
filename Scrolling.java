@@ -27,7 +27,7 @@ public class Scrolling extends JPanel
     private JFrame myFrame;
     private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9;
-    
+    private JLayeredPane myLayer;
     public Scrolling(Spot myNewSpot, AffichMainYohan newMain)
     {
         myMain = newMain;
@@ -50,7 +50,8 @@ public class Scrolling extends JPanel
         Jlabel7 = new JLabel (new ImageIcon("0.png"));
         Jlabel8 = new JLabel (new ImageIcon("0.png"));
         Jlabel9 = new JLabel (new ImageIcon("0.png"));
-        
+        myLayer = new JLayeredPane();
+        myLayer.add(Jlabel5, new Integer(2),1);
         updateUI(CurrentSpot);
         
         
@@ -96,7 +97,8 @@ public class Scrolling extends JPanel
             }
             else if(i == 5)
             {
-                bigPanel.add(Jlabel5);
+                //bigPanel.add(Jlabel5);
+                bigPanel.add(myLayer);
             }
             else if(i == 6)
             {
@@ -162,6 +164,13 @@ public class Scrolling extends JPanel
         }
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()));
+        Jlabel5.setBounds(0, 0, 200, 200);
+        myLayer = new JLayeredPane();
+        myLayer.add(Jlabel5);//, new Integer(1),1);
+        JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
+        myJlabel.setBounds(0, 0, 200, 200);
+        myLayer.add(myJlabel);//, new Integer(0),0);
+        myLayer.setVisible(true);
         
         if(CurrentSpot.getExits("D") != null)
         {
