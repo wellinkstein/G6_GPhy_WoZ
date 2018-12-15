@@ -43,7 +43,7 @@ public class ItemDescription extends JPanel implements ActionListener
         myButton.setForeground(Color.white); 
         myButton.addActionListener(this);
 
-        bigPanel.setLayout(new GridLayout(1,2));
+        bigPanel.setLayout(new GridLayout(2,1));
         myPanel.setLayout(new GridLayout(1,2));
         //Display the icon of the item
         if (item !=null){
@@ -58,7 +58,7 @@ public class ItemDescription extends JPanel implements ActionListener
             }
             else{
                 if (item.getName()=="Iron Sword"){
-                    Icon icon= new ImageIcon("IronSword.png"); 
+                    Icon icon= new ImageIcon("IronSword.png");
                     JLabel label= new JLabel(icon);
                     label.setPreferredSize(new Dimension(50,50));
                     myPanel.add(label);
@@ -119,6 +119,8 @@ public class ItemDescription extends JPanel implements ActionListener
                     myPanel.add(label); 
                 }
                 //Create the label for the name and the description of the item
+                //label.setPreferredSize(new Dimension(100,100));
+                //label.setSize(100,100);
                 myLabel= new JLabel(item.getName());
                 myLabel1= new JLabel(item.getDescription()); 
                 myPanel2.setLayout(new GridLayout(3,0));

@@ -117,6 +117,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelSpotItem=new SpotItem(myGame.getCurrentSpot(),this);
         panelSpotItem.setBorder(BorderFactory.createLineBorder(Color.black));
+        // panelSpotItem.setPreferredSize(new Dimension(400,400));
+        // panelSpotItem.setSize(400,400);
         //new JPanel();
         // panelSpotItem.setBackground(Color.CYAN);
         //
@@ -131,6 +133,8 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
         panelDesc.setBorder(BorderFactory.createLineBorder(Color.black));
+        // panelDesc.setPreferredSize(new Dimension(400,400));
+        // panelDesc.setSize(400,400);
         //new JPanel();
         //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.125;
