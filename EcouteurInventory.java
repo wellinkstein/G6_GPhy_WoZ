@@ -12,7 +12,7 @@ import javax.swing.event.ListSelectionListener;
  *  The EcouteurInventory is the listener for the class Inventory.
  *  The listener uses the panel ItemDescription to display the description of the item
  *
- * @author (Groupe 7)
+ * @author (Groupe 6)
  * @version (14/12/2018)
  */
 public class EcouteurInventory implements ActionListener

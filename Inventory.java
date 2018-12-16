@@ -11,7 +11,7 @@ import java.util.Set;
  * The class Inventory, is the interface for display the item of the player
  * We can added item in the inventory and drop item
  * 
- * @author Groupe 7  
+ * @author Groupe 6  
  * @version 04/12/2018
  */
 public class Inventory extends JPanel
