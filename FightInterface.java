@@ -146,14 +146,20 @@ public class FightInterface extends JPanel implements ActionListener
             affichMain.getGame().setWinTrue(); 
             youWon = new DialogScreenInterface(affichMain.getGame().youWon());
             affichMain.setDialog(youWon);
+            affichMain.getGame().getPlayer().gainXp(1);
+            affichMain.getGame().getPlayer().adjustCritRate();
         }
         else if (affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss())
         {
             affichMain.getGame().bossDead();
+            affichMain.getGame().getPlayer().gainXp(1);
+            affichMain.getGame().getPlayer().adjustCritRate();
         }
         else
         {
             affichMain.getGame().monsterDead();
+            affichMain.getGame().getPlayer().gainXp(1);
+            affichMain.getGame().getPlayer().adjustCritRate();
         }
     }
 

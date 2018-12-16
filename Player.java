@@ -205,7 +205,7 @@ public class Player extends Character
      * The player starts at level 1 and each level give 5% of crit chance
      * it cannot exceed 50%.
      */
-    public void adjustCritRate()
+    public int adjustCritRate()
     {
         if(xp<2)
         {
@@ -219,6 +219,7 @@ public class Player extends Character
                 critRate = 50;
             }
         }
+        return critRate;
     }
     
     /**

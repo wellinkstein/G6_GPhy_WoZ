@@ -149,12 +149,13 @@ public abstract class Character
      * Xp can only be gained if the xp that is supposed to be gained is above 0
      * @param int gainXP: XPgained
      */
-    public void gainXp(int gainXP)
+    public int gainXp(int gainXP)
     {
         if (gainXP>0)
         {
             xp+=gainXP;
         }
+        return xp;
     }
     
     /**
