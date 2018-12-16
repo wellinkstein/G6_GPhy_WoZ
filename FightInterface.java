@@ -231,7 +231,7 @@ public class FightInterface extends JPanel implements ActionListener
             }
             else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Chimera") // Chimera
         {
-            iconMonster = new ImageIcon("chimera.jpg");
+            iconMonster = new ImageIcon("ChimeraFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
             //monsterImg.setPreferredSize(new Dimension(150,150));

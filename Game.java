@@ -48,7 +48,7 @@ public class Game
         hermesSandals= new Legendary("Hermes's sandals","<html>Talaria are winged sandals, a symbol of the Greek messenger god Hermes. <br> They can fly as fast as any other bird. Hermes’s sandals are obtained <br> from the monster Chimera and allow you to always attacks first in combat.</html>",0,0,0);
         
         LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"<html>The Chimera is a fire-breathing monster who is light on its feet, <br> strong and has three heads, one is that of a grim-eyed lion, <br> the one in the middle is that of a goat, and snakes head at its tail. <br> It scares you ? It should!</html>",hermesSandals);
-        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"<html>Cerberus is a three-headed dog of hell. To fight and kill this creature, if may be wise to have a sharp sword at your disposal.",aresSword);
+        LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"<html>Cerberus is a three-headed dog of hell. To fight and kill this creature,<br> if may be wise to have a sharp sword at your disposal.",aresSword);
         LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"<html>Medusa is a powerful creature. She is generally portrayed as the embodiment <br> of all things feminine. Her hair is made of snakes, <br> try to not look her in the eyes. To fight and kill medusa it is <br> recommended to have a shiny shield.</html>",artemisBow);
         LesserBoss cyclops= new LesserBoss(25,"Cyclops",5,5,2,"<html>Cyclops is a giant monster, which has a single eye in the center of his <br> forehead. To fight and kill the cyclops you may require a ranged weapon.",aegisShield);
         LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"<html>Arachne was once the most beautiful women to have ever walked the earth, <br> but out of jealousy, the god Athena transformed her and <br> condemned her to the Labyrinth. To fight and kill Arachne you <br> will need to be fully equiped or very charming.</html>",goldenThread);
@@ -275,6 +275,7 @@ public class Game
         listSpot.get(65).setExits("Q",listSpot.get(64));
         listSpot.get(65).setExits("Z",listSpot.get(56));
         listSpot.get(66).setExits("Z",listSpot.get(57));
+        listSpot.get(66).setExits("D",listSpot.get(67));
         listSpot.get(67).setExits("D",listSpot.get(68));
         listSpot.get(67).setExits("Q",listSpot.get(66));
         listSpot.get(68).setExits("Q",listSpot.get(67));
