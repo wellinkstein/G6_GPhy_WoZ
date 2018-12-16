@@ -59,7 +59,7 @@ public class EcouteurSpotItem implements ActionListener
                     affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); //Update the characteristic of the player
 
                 }
-            }
+            } 
         }
     }
 }

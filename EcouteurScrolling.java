@@ -31,7 +31,7 @@ public class EcouteurScrolling implements ActionListener
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Z"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Z"),affichMain,"Z");
+                //affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Z"),affichMain,"Z");
             }
             else
             {
@@ -44,7 +44,7 @@ public class EcouteurScrolling implements ActionListener
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("D"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("D"),affichMain,"D");
+                //affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("D"),affichMain,"D");
             }
             else
             {
@@ -58,7 +58,7 @@ public class EcouteurScrolling implements ActionListener
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("S"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("S"),affichMain,"S");
+                //affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("S"),affichMain,"S");
             }
             else
             {
@@ -71,7 +71,7 @@ public class EcouteurScrolling implements ActionListener
             {
                 affichMain.getGame().move(affichMain.getGame().getCurrentSpot().getExits("Q"));
                 myScrolling.updateUI(affichMain.getGame().getCurrentSpot());
-                affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Q"),affichMain,"Q");
+                //affichMain.getNextSpot().showNextSpot(affichMain.getGame().getCurrentSpot().getExits("Q"),affichMain,"Q");
             }
             else
             {

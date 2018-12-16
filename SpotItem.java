@@ -40,8 +40,11 @@ public class SpotItem extends JPanel
      */
     public void showListItem(Spot spot, AffichMainYohan myMain)
     {
+      System.out.println("Show list item with : " + spot.getListItem().size());
+      
         removeAll(); //remove the SpotItem
-
+        mySpot = spot;
+        
         //Create all the panel
         JPanel myPanel;
         JLabel myLabel; 
@@ -51,9 +54,6 @@ public class SpotItem extends JPanel
         myBigPanel=new JPanel();
 
         //remove all the panel in the SpotItem
-        myBigPanel.removeAll();
-        myPanel.removeAll();
-        myPanel1.removeAll(); 
         content.clear();
 
         //Add all the button in the content list
