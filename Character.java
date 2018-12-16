@@ -119,14 +119,15 @@ public abstract class Character
             {
                 HP=0;
             }
-            else if ((HP>(HP-(damage-protection))))
+            else if (damage-protection<0)
             {
-                HP=HP+(damage-protection);
+                HP=HP;
             }
-            else
+            else 
             {
-                HP=HP-(damage-protection);
+                HP=HP-((damage-protection));
             }
+            
         }
     }
     

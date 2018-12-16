@@ -559,9 +559,9 @@ public class Game
             
             for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
             {
-                if (currentSpot.getListCharacter().get(i) != fighter){
-                    currentSpot.getListCharacter().get(i).loseHp(dam);
-                    
+                if (currentSpot.getListCharacter().get(i) != fighter)
+                {
+                    currentSpot.getListCharacter().get(i).loseHp(dam); 
                 }
             }
             return dam;
