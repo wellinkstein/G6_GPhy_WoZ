@@ -102,7 +102,7 @@ public class Game
         listHealthPotion.add(38);
         listHealthPotion.add(28);
         listHealthPotion.add(63);
-        listHealthPotion.add(41);
+        listHealthPotion.add(50);
         listHealthPotion.add(17);
         placeItem(healthPotion,listHealthPotion);
         
