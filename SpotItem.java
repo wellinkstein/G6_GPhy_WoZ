@@ -40,7 +40,7 @@ public class SpotItem extends JPanel
      */
     public void showListItem(Spot spot, AffichMainYohan myMain)
     {
-      System.out.println("Show list item with : " + spot.getListItem().size());
+      //System.out.println("Show list item with : " + spot.getListItem().size());
       
         removeAll(); //remove the SpotItem
         mySpot = spot;
