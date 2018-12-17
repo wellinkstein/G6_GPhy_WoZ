@@ -20,10 +20,10 @@ public class Scrolling extends JPanel
     Spot CurrentSpot = new Spot();
     
     private AffichMainYohan myMain;
-    private JButton myButton1= new JButton("North");
-    private JButton myButton2 = new JButton("East");
-    private JButton myButton3 = new JButton("South");
-    private JButton myButton4 = new JButton("West");
+    private JButton myButton1= new JButton("Up");
+    private JButton myButton2 = new JButton("Right");
+    private JButton myButton3 = new JButton("Down");
+    private JButton myButton4 = new JButton("Left");
     private JFrame myFrame;
     private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9,Jlabel10;
@@ -39,7 +39,7 @@ public class Scrolling extends JPanel
         CurrentSpot = myNewSpot;
         bigPanel = new JPanel();
         bigPanel.setLayout(new GridLayout(4,3));
-        
+        bigPanel.setBackground(new Color(208,185,178));
         
         Jlabel1 = new JLabel (new ImageIcon("0.png"));
         Jlabel2 = new JLabel (new ImageIcon("0.png"));
@@ -72,12 +72,19 @@ public class Scrolling extends JPanel
         {myButton4.setEnabled(false);}
         
         JPanel myPanel = new JPanel();
-        myPanel.setLayout(new GridLayout(2,2));
-        myPanel.add(myButton1);
-        myPanel.add(myButton2);
-        myPanel.add(myButton3);
-        myPanel.add(myButton4);
+        myPanel.setLayout(new GridLayout(2,1));
+        JPanel upPanel = new JPanel();
+        upPanel.setLayout(new GridLayout(0,1));
+        upPanel.add(myButton1);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(0,3));
+        buttonPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        buttonPanel.add(myButton2);
+        buttonPanel.add(myButton3);
+        buttonPanel.add(myButton4);
         
+        myPanel.add(upPanel);
+        myPanel.add(buttonPanel);
         for(int i=1; i<=12; i++)
         {
             if(i == 1)

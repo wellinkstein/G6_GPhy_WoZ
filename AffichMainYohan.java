@@ -69,6 +69,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelLab = new Scrolling(myGame.getCurrentSpot(),this);
         panelLab.setBorder(BorderFactory.createLineBorder(Color.black));
+        panelLab.setBackground(new Color(208,185,178));
         c.weightx = 0.5;
         c.weighty = 0.6;
         //c.fill = GridBagConstraints.HORIZONTAL;
