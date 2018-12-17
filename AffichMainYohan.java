@@ -46,19 +46,21 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        //myGame.move(myGame.getListSpot().get(10));
-        //myGame.move(myGame.getListSpot().get(9)); //Used for testing purposes
+        myGame.move(myGame.getListSpot().get(10));
+        myGame.move(myGame.getListSpot().get(9)); //Used for testing purposes
         
-        //Grille du frame et des panels
+        
         
         JFrame myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // myFrame.setSize(1366,768);
+         // myFrame.setSize(1366,768);
         myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         myFrame.setUndecorated(true);
- 
+        
+        
         pane= myFrame.getContentPane();
         pane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
