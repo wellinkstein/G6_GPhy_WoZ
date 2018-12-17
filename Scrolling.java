@@ -73,9 +73,11 @@ public class Scrolling extends JPanel
         
         JPanel myPanel = new JPanel();
         myPanel.setLayout(new GridLayout(2,1));
+        
         JPanel upPanel = new JPanel();
         upPanel.setLayout(new GridLayout(0,1));
         upPanel.add(myButton1);
+        
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(0,3));
         buttonPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
