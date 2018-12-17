@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.util.Set;
+import java.io.*;
+import java.net.URL;
+import javax.sound.sampled.*;
+import sun.audio.*;
 
 /**
  * This class is an example of GridLayout Manager
@@ -42,7 +46,17 @@ public class AffichMainYohan extends JFrame implements ActionListener
     
     public void main()
     {
-        
+        try {
+ 
+            Clip clip = AudioSystem.getClip();
+            File soundFile = new File("BOURREE.wav");
+            AudioInputStream inputStream = AudioSystem
+                    .getAudioInputStream(soundFile);
+            clip.open(inputStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
