@@ -46,17 +46,17 @@ public class AffichMainYohan extends JFrame implements ActionListener
     
     public void main()
     {
-        try {
+        // try {
  
-            Clip clip = AudioSystem.getClip();
-            File soundFile = new File("BOURREE.wav");
-            AudioInputStream inputStream = AudioSystem
-                    .getAudioInputStream(soundFile);
-            clip.open(inputStream);
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            // Clip clip = AudioSystem.getClip();
+            // File soundFile = new File("BOURREE.wav");
+            // AudioInputStream inputStream = AudioSystem
+                    // .getAudioInputStream(soundFile);
+            // clip.open(inputStream);
+            // clip.loop(Clip.LOOP_CONTINUOUSLY);
+        // } catch (Exception e) {
+            // e.printStackTrace();
+        // }
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
