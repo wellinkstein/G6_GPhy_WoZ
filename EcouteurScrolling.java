@@ -13,7 +13,7 @@ public class EcouteurScrolling implements ActionListener
     private Scrolling myScrolling;
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
-    private DialogScreenInterface youWon;
+    private DialogScreenInterface youWon,NotTimeToGo;
 
     /**
      * Constructeur d'objets de classe EcouteurScrolling
@@ -101,12 +101,18 @@ public class EcouteurScrolling implements ActionListener
         }
         affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
         if (affichMain.getGame().getCurrentSpot().getExitSpot()){
-            youWon = new DialogScreenInterface(affichMain.getGame().youWon());
-            affichMain.setDialog(youWon);
-            affichMain.getScrolling().getButton1().setEnabled(false);
-            affichMain.getScrolling().getButton2().setEnabled(false);
-            affichMain.getScrolling().getButton3().setEnabled(false);
-            affichMain.getScrolling().getButton4().setEnabled(false);
+            if (affichMain.getGame().getPlayer().getTimeToGo()){
+                youWon = new DialogScreenInterface(affichMain.getGame().youWon());
+                affichMain.setDialog(youWon);
+                affichMain.getScrolling().getButton1().setEnabled(false);
+                affichMain.getScrolling().getButton2().setEnabled(false);
+                affichMain.getScrolling().getButton3().setEnabled(false);
+                affichMain.getScrolling().getButton4().setEnabled(false);
+                }
+            else{
+                NotTimeToGo = new DialogScreenInterface(affichMain.getGame().NotTimeToGo());
+                affichMain.setDialog(NotTimeToGo);
+            }
         }
     }
 }

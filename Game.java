@@ -594,7 +594,7 @@ public class Game
       for (int i = 0; i < listSpot.size(); i++){
           nbMonsters-= listSpot.get(i).numberOfMonsterInSpot();
       }
-      endScreen+= " <html><br> Score: You killed "+nbMonsters+" of 6 monsters</html>";
+      endScreen+= " <html><br> Score: You killed "+nbMonsters+" of 6 monsters";
       return endScreen;
     }
     
@@ -613,7 +613,7 @@ public class Game
      */
     public String NotTimeToGo() 
     { 
-      return "You didn't kill the Minotaur";          
+      return "You have reached the exit of the labyrinth but you didn't kill the Minotaur";          
     }
     
     /**
