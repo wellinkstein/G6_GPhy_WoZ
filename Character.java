@@ -18,8 +18,7 @@ public abstract class Character
     protected int xp;//The XP of the character, XP can be gained, not lost
     private int damage;//This attribute represents the damage that a character inflicts in a single hit
     private int protection;//This attribute represent the damage reduction of the character
-    //protected ArrayList<Item> inventory = new ArrayList<Item>();//A list of items that the character possesses
-    
+     
     /**
      * The constructor for the character class
      * @param myHP: HP of character
@@ -90,26 +89,6 @@ public abstract class Character
     {
         return protection;
     }
-    
-    // /**
-     // * Get for the list of the inventory
-     // * 
-     // * @return Item: return the item found
-     // */
-    // public ArrayList<Item> getListInventory()
-    // {
-        // return(inventory);
-    // }
-    
-      // /**
-     // * Get for the inventory
-     // * @param int emplacement: item index in Inventory
-     // * @return Item: return the item found
-     // */
-    // public Item getInventory(int emplacement)
-    // {
-        // return(inventory.get(emplacement));
-    // }
     
     /**
      * Method that reduces the HP based on the damage attribute of another character.

@@ -54,11 +54,11 @@ public class Player extends Character
      * if there is one in his inventory. The potion is removed after use.
      * A Potion gives 5HP. If the player has less than 
      * 5HP the potion gets him to full health.
+     * @param int i: i is the index of item in the inventory
      */
     public void drinkPotion(int i)
     {
         boolean isPotion = false;
-
         if(HP<20)
         {
             if(HP>(hpMax-5))
@@ -68,19 +68,9 @@ public class Player extends Character
             else
             {
                HP=HP+5; 
-               }
-            
+            }
                     inventory.remove(i);
-
         }    
-    }
-
-    /**
-     * method that teleports the player to the exit if the minotaur is
-     * killed while Ariadne's Thread is in the inventory
-     */
-    public void teleportation()
-    {
     }
     
     /**
@@ -167,6 +157,7 @@ public class Player extends Character
     
     /**
      * a method that return the number of item possess
+     * @return int inventory.size(): returns the size of inventory
      */
     public int getNumberItemPossess()
     {
@@ -196,6 +187,7 @@ public class Player extends Character
      * A method that modifies the crit rate based on XP
      * The player starts at level 1 and each level give 5% of crit chance
      * it cannot exceed 50%.
+     * @return int critRate: returns the crit rate of the player
      */
     public int adjustCritRate()
     {
@@ -222,6 +214,7 @@ public class Player extends Character
     {
         return critRate;
     }
+   
 
 }
     
