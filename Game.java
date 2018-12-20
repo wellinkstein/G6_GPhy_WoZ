@@ -29,7 +29,7 @@ public class Game
     {
         createLabyrinth();
 
-        theseus = new Player(25,"Theseus",1,1,0);
+        theseus = new Player(20,"Theseus",1,1,0);
 
         Common ironSword= new Common ("Iron Sword","<html>a rusty looking sword, it has been here for a while. <br> Increases your damage by 3.</html>",3,0,0);
         Common ironDagger= new Common ("Iron Dagger","<html>looks like a toothpick, might work well in combat. <br> Increases your damage by 1.</html>",1,0,0);
@@ -47,7 +47,7 @@ public class Game
 
         LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"<html>The Chimera is a fire-breathing monster who is light on its feet, <br> strong and has three heads, one is that of a grim-eyed lion, <br> the one in the middle is that of a goat, and snakes head at its tail. <br> It scares you ? It should!</html>",hermesSandals);
         LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"<html>Cerberus is a three-headed dog of hell. To fight and kill this creature,<br> if may be wise to have a sharp sword at your disposal.",aresSword);
-        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"<html>Medusa is a powerful creature. She is generally portrayed as the embodiment <br> of all things feminine. Her hair is made of snakes, <br> try to not look her in the eyes. To fight and kill medusa it is <br> recommended to have a shiny shield.</html>",artemisBow);
+        LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,0,"<html>Medusa is a powerful creature. She is generally portrayed as the embodiment <br> of all things feminine. Her hair is made of snakes, <br> try to not look her in the eyes. To fight and kill medusa it is <br> recommended to have a shiny shield.</html>",artemisBow);
         LesserBoss cyclops= new LesserBoss(25,"Cyclops",5,5,2,"<html>Cyclops is a giant monster, which has a single eye in the center of his <br> forehead. To fight and kill the cyclops you may require a ranged weapon.",aegisShield);
         LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"<html>Arachne was once the most beautiful women to have ever walked the earth, <br> but out of jealousy, the god Athena transformed her and <br> condemned her to the Labyrinth. To fight and kill Arachne you <br> will need to be fully equiped or very charming.</html>",goldenThread);
 
