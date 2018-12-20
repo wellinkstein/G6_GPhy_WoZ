@@ -81,14 +81,15 @@ public class Inventory extends JPanel
 
         //If the player can drink the health potion, when he has the health potion in the inventory
         myButton1.setEnabled(false); 
-        for (int i =0; i <= (monJoueur.getNumberItemPossess()-1); i++)
-        {
-            if (monJoueur.getItems(i).getName() == "Health Potion")
-            {
-                myButton1.setEnabled(true);
-            }
-        myButton1.setEnabled(false);  
-        }
+        // System.out.println(monJoueur.getListInventory()); 
+        // for (int i =0; i <= (monJoueur.getNumberItemPossess()); i++)
+        // {
+            // if (monJoueur.getItems(i).getName() == "Health Potion")
+            // {
+                // myButton1.setEnabled(true);
+            // }
+        // myButton1.setEnabled(false);  
+        // }
          
         
         //Create the list with all the items
