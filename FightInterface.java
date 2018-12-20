@@ -79,6 +79,7 @@ public class FightInterface extends JPanel implements ActionListener
             fight();
             affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer()); 
             affichMain.getMonsterHead().showMonsterHead(affichMain.getGame().getCurrentSpot().getMonster()); 
+            affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
             buttonStartFight.setEnabled(false);
         }
     }
