@@ -16,7 +16,8 @@ public class Game
 {
     private Spot currentSpot; // position of player
     private int line = 8; //number of lines in the matrix;
-    private boolean limitReached = false; //True if the limit of the item is reached
+    private boolean limitReached = false; //True if the limit of the item is reached in inventory
+    private boolean limitItemSpot = false; //True if the limit of the item is reached in spot
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;//created the fighter attribute that will be used to handle combat
@@ -683,5 +684,21 @@ public class Game
         
     }
       
+    /**
+     * Getter for the limitItemInSpot
+     * @return boolean limitItemSpot
+     */
+    public boolean getLimitItemSpot()
+    {
+        return  limitItemSpot; 
+    }
     
+    /**
+     * set the boolean limitItemSpot
+     * @param boolean limit
+     */
+    public void setLimitItemSpot(boolean limit)
+    {
+         limitItemSpot= limit;
+      }
 }

@@ -49,7 +49,7 @@ public class EcouteurSpotItem implements ActionListener
                 {
                     if (affichMain.getGame().getPlayer().getNumberItemPossess() == affichMain.getGame().getPlayer().getLimitItem() && affichMain.getGame().getLimitReach()== true)
                       {
-                    notTake = new DialogScreenInterface(affichMain.getGame().notTake());
+                          notTake = new DialogScreenInterface(affichMain.getGame().notTake());
                        affichMain.setDialog(notTake);
                     }
  
