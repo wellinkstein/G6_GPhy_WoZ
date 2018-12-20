@@ -50,10 +50,10 @@ public class PlayerHead extends JPanel
         label.setPreferredSize(new Dimension(150,50));
         myMainPanel=new JPanel();
         myMainPanel.setLayout(new GridLayout(1,1));
-        
+        myMainPanel.setBackground(new Color(208,185,178));
         myStatsPanel= new JPanel();
         myStatsPanel.setLayout(new GridLayout(4,1));
-        
+        myStatsPanel.setBackground(new Color(208,185,178));
         myMainPanel.add(label);
         
         myStatsPanel.add(myHealth);

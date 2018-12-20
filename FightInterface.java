@@ -191,14 +191,17 @@ public class FightInterface extends JPanel implements ActionListener
         affichMain=affich;
         
         buttonStartFight = new JButton("Start Fight");
+        buttonStartFight.setBackground(Color.gray);
+        buttonStartFight.setForeground(Color.white);
         buttonStartFight.addActionListener(this);
         
         dialog = new JLabel("<html><b>Combat logbook</b><br> </br>");
         scroller = new JScrollPane(dialog);
+        scroller.getViewport().setBackground(Color.white);
         scroller.setPreferredSize(new Dimension (400,200));
         panelBot = new JPanel();
         panelBot.setLayout(new GridBagLayout());
-        
+        panelBot.setBackground(new Color(208,185,178));
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.95;
@@ -216,7 +219,7 @@ public class FightInterface extends JPanel implements ActionListener
 
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
-
+        panelMain.setBackground(new Color(208,185,178));
         iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
@@ -320,7 +323,7 @@ public class FightInterface extends JPanel implements ActionListener
         }
         
         panelBig = new JPanel(new GridLayout(2,0));
-
+        panelBig.setBackground(new Color(208,185,178));
         panelBig.add(panelMain);
         panelBig.add(panelBot);
 

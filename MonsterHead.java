@@ -41,9 +41,10 @@ public class MonsterHead extends JPanel
         
         myMainPanel=new JPanel();
         myMainPanel.setLayout(new GridLayout(1,1));
-        
+        myMainPanel.setBackground(new Color(208,185,178));
         myStatsPanel= new JPanel();
         myStatsPanel.setLayout(new GridLayout(4,1));
+        myStatsPanel.setBackground(new Color(208,185,178));
         if (monster==null){ //checks if there is a monster in the "spot"
             myHealth = new JLabel("HP: null",JLabel.CENTER);
             myXP = new JLabel("XP: null",JLabel.CENTER);

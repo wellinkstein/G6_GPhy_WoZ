@@ -25,10 +25,10 @@ public class Scrolling extends JPanel
     Spot CurrentSpot = new Spot();
     
     private AffichMain myMain; //the interface of the game
-    private JButton myButton1= new JButton("Up"); //button
-    private JButton myButton2 = new JButton("Right"); //button
-    private JButton myButton3 = new JButton("Down"); //button
-    private JButton myButton4 = new JButton("Left"); //button
+    private JButton myButton1= new JButton("UP"); //button
+    private JButton myButton2 = new JButton("RIGHT"); //button
+    private JButton myButton3 = new JButton("DOWN"); //button
+    private JButton myButton4 = new JButton("LEFT"); //button
     private JPanel bigPanel; //panel
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9,Jlabel10; //label
     private JLayeredPane myLayer;
@@ -69,6 +69,18 @@ public class Scrolling extends JPanel
         myLayer.add(Jlabel5, new Integer(2),1);
         updateUI(CurrentSpot);
         
+        myButton1.setBackground(Color.gray); 
+        myButton1.setForeground(Color.white);
+       
+        myButton2.setBackground(Color.gray); 
+        myButton2.setForeground(Color.white);
+        
+        myButton3.setBackground(Color.gray); 
+        myButton3.setForeground(Color.white);
+        
+        myButton4.setBackground(Color.gray); 
+        myButton4.setForeground(Color.white); 
+       
         
         EcouteurScrolling e = new EcouteurScrolling(this,myMain);
         myButton1.addActionListener(e);
@@ -86,21 +98,28 @@ public class Scrolling extends JPanel
         {myButton4.setEnabled(false);}
         
         JPanel myPanel = new JPanel();
-        myPanel.setLayout(new GridLayout(2,1));
+        myPanel.setLayout(new GridLayout(2,3));
         
-        JPanel upPanel = new JPanel();
-        upPanel.setLayout(new GridLayout(0,1));
-        upPanel.add(myButton1);
+        JButton vide1 = new JButton();
+        vide1.setEnabled(false);
         
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(0,3));
-        buttonPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        buttonPanel.add(myButton2);
-        buttonPanel.add(myButton3);
-        buttonPanel.add(myButton4);
+        vide1.setBorderPainted(false);
+        vide1.setBackground(new Color(208,185,178)); 
+        JButton vide2 = new JButton();
+        vide2.setEnabled(false);
+       
+        vide2.setBorderPainted(false);
+        vide2.setBackground(new Color(208,185,178));
+        myPanel.add(vide1);
+        myPanel.add(myButton1);
+        myPanel.add(vide2);
         
-        myPanel.add(upPanel);
-        myPanel.add(buttonPanel);
+         myPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        myPanel.add(myButton2);
+        myPanel.add(myButton3);
+        myPanel.add(myButton4);
+        
+        
         for(int i=1; i<=12; i++)
         {
             if(i == 1)

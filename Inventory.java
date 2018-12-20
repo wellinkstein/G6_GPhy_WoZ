@@ -51,7 +51,10 @@ public class Inventory extends JPanel
         myPanel = new JPanel();
         myPanel1= new JPanel(); 
         myBigPanel=new JPanel();
-
+        myPanel.setBackground(new Color(208,185,178));
+        myPanel1.setBackground(new Color(208,185,178));
+        myBigPanel.setBackground(new Color(208,185,178));
+        
         //remove all the panel
         myBigPanel.removeAll();
         myPanel.removeAll();
@@ -67,6 +70,7 @@ public class Inventory extends JPanel
         myButton1.setForeground(Color.white);
         //create the list 
         combo = new JComboBox(); 
+        combo.setBackground( new Color(208,185,178));
         EcouteurInventory e = new EcouteurInventory(this, myMain);
 
         //If the player does not have item, we cannot click on the button drop

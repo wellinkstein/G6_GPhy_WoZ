@@ -18,7 +18,7 @@ public class NextSpot extends JPanel
     private Spot mySpot; //The next spot
     private JButton myFightButton,myFleeButton; //The button for the panel
     private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel; //all the panel
-    private JLabel myLabel,myLabel2; //all the label
+    private JLabel myLabel,myLabel2, myLabel3; //all the label
     private String direction; //The direction of the next spot
     private AffichMain myMain; //The affich Main for the game
     /**
@@ -62,7 +62,12 @@ public class NextSpot extends JPanel
         myFleePanel = new JPanel();
         bigPanel = new JPanel();
         bigButtonPanel = new JPanel();
-
+        myPanel.setBackground(new Color(208,185,178));
+        myFightPanel.setBackground(new Color(208,185,178));
+        myFleePanel.setBackground(new Color(208,185,178));
+        bigPanel.setBackground(new Color(208,185,178));
+        myPanel.setBackground(new Color(208,185,178));
+        bigButtonPanel.setBackground(new Color(208,185,178));
         //remove all the little panel
         bigPanel.removeAll();
         myPanel.removeAll();
@@ -70,11 +75,14 @@ public class NextSpot extends JPanel
         myFleePanel.removeAll();
         bigButtonPanel.removeAll(); 
 
-        myFightButton = new JButton ("Fight");
+        myFightButton = new JButton ("FIGHT");
         myFightButton.setFont(new Font("Arial", Font.PLAIN, 40));
-        myFleeButton = new JButton ("Flee");
+        myFleeButton = new JButton ("FLEE");
         myFleeButton.setFont(new Font("Arial", Font.PLAIN, 40));
-
+        myFightButton.setBackground(Color.gray); 
+        myFightButton.setForeground(Color.red);
+        myFleeButton.setBackground(Color.gray); 
+        myFleeButton.setForeground(Color.white); 
         myFightPanel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -143,6 +151,10 @@ public class NextSpot extends JPanel
             }
             myLabel = new JLabel (gameSpot.getMonster().getName(),JLabel.CENTER);
             myLabel2 = new JLabel(gameSpot.getMonster().getDescription(),JLabel.CENTER);
+            myLabel3 = new JLabel("OH NO THERE IS A MONSTER:");
+            myLabel3.setFont(new Font("Arial", Font.BOLD, 15));
+            myPanel.add(myLabel3);
+            
             myPanel.add(myLabel);
             bigPanel.add(myPanel);
             bigPanel.add(myLabel2);
@@ -151,12 +163,19 @@ public class NextSpot extends JPanel
         }
         else {
             // If there are no monster in the next spot
-            JLabel label = new JLabel("No monster in the next spot");
+            Icon icon= new ImageIcon("ItemNull.png"); 
+            JLabel labelNull= new JLabel(icon);
+            JLabel label = new JLabel("<html> |                 No monster in the next spot                    | <br>              ");
+            
+            label.setFont(new Font("Arial", Font.BOLD, 25));
+            myPanel.setLayout( new GridLayout(2,1));
             myPanel.add(label);
+            myPanel.add(labelNull);
             bigPanel.add(myPanel);
         }
         bigPanel.setVisible(true);
         add(bigPanel);
+        
         revalidate(); //update the NextSot
         repaint();
     }

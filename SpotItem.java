@@ -60,20 +60,21 @@ public class SpotItem extends JPanel
         {   
             content.add(new JButton(spot.getListItem().get(i).getName()));
             content.add(new JButton("Take"));
-
+            
         }
-
+        
         //Create the label of the SpotItem
         if (spot.getListItem().size()!=0){
             myLabel = new JLabel ("The available items in the spot",JLabel.CENTER);
         }
         else {
-            myLabel = new JLabel ("These are no items in the spot",JLabel.CENTER);
+            myLabel = new JLabel ("There are no items in the spot",JLabel.CENTER);
         }
         myPanel.setLayout(new GridLayout(spot.getListItem().size(),1));
         myPanel1.setLayout(new GridLayout(1,1));
         myPanel1.add(myLabel); 
-
+        myPanel1.setBackground(new Color(208,185,178));
+        myPanel.setBackground(new Color(208,185,178));
         //Adding a actionListener of all the button of the SpotItem
         for(int i = 0; i <= (content.size()-1); i++)
         {
@@ -82,7 +83,8 @@ public class SpotItem extends JPanel
             myPanel.add(content.get(i));
         }
 
-        myBigPanel.setLayout(new GridLayout(2,1)); 
+        myBigPanel.setLayout(new GridLayout(2,1));
+        myBigPanel.setBackground(new Color(208,185,178));
         myBigPanel.add(myPanel1); 
         myBigPanel.add(myPanel); 
 

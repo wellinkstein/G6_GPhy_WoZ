@@ -22,6 +22,7 @@ public class DialogScreenInterface extends JPanel
     {
         dialog = new JLabel(dialogText);        
         myPanel = new JPanel();
+        myPanel.setBackground(new Color(208,185,178));
         myPanel.add(dialog);
         add(myPanel);
     }

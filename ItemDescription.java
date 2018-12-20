@@ -37,7 +37,9 @@ public class ItemDescription extends JPanel implements ActionListener
         myPanel = new JPanel();
         myPanel2 = new JPanel();
         bigPanel = new JPanel();
-
+        myPanel.setBackground(new Color(208,185,178));
+        myPanel2.setBackground(new Color(208,185,178));
+        bigPanel.setBackground(new Color(208,185,178));
         myButton = new JButton ("Close");
         myButton.setBackground(Color.gray); 
         myButton.setForeground(Color.white); 
@@ -51,8 +53,10 @@ public class ItemDescription extends JPanel implements ActionListener
             {
                 Icon icon= new ImageIcon("ItemNull.png"); 
                 JLabel label= new JLabel(icon); 
-
-                JLabel label2= new JLabel(icon); 
+                
+                JLabel label2= new JLabel(icon);
+                
+                
                 myPanel.add(label);
                 myPanel2.add(label2);
             }
