@@ -99,7 +99,8 @@ public class ItemDescription extends JPanel implements ActionListener
                     myPanel.add(label);
                 }
                 else if (item.getName()=="Ares's sword"){
-                    Icon icon= new ImageIcon("AresSword.png"); 
+                    Icon icon= new ImageIcon("AresSword.png");
+                    //label.setPreferredSize(new Dimension(50,50));
                     JLabel label= new JLabel(icon); 
                     myPanel.add(label);
                 }
