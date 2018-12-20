@@ -215,25 +215,5 @@ public class Player extends Character
         return critRate;
     }
 
-    /**
-     * Get for the list of the inventory
-     * 
-     * @return Item: return the item found
-     */
-    public ArrayList<Item> getListInventory()
-    {
-        return(inventory);
-    }
-
-    /**
-     * Get for the inventory
-     * @param int emplacement: item index in Inventory
-     * @return Item: return the item found
-     */
-    public Item getInventory(int emplacement)
-    {
-        return(inventory.get(emplacement));
-    }
-
 }
 

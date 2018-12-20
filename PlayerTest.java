@@ -113,27 +113,12 @@ public class PlayerTest
         Common sword = new Common("Iron Sword","A medium length blade",3,0,0);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(sword);
-        //myPlayer.drinkPotion();
+        myPlayer.drinkPotion(0);
         assertEquals(20, myPlayer.getHP());
         assertEquals(1, myPlayer.inventory.size());
     
 
     }
-
-
-
-    /**
-     * Tests that a player cannot drink a potion if he
-     * does not have a potion in his inventory
-     */
-    @Test
-    public void testDrinkNoPotion()
-    {
-        myPlayer = new Player(15,"Jimmy",2,2,0);
-        //myPlayer.drinkPotion();
-        assertEquals(15, myPlayer.getHP());     
-    }
-
 
     /**
      * Tests that the player cannot have his hp over his maxHP after
@@ -145,7 +130,7 @@ public class PlayerTest
         Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.setHp(19);
-        //myPlayer.drinkPotion();
+        myPlayer.drinkPotion(0);
         assertEquals(20, myPlayer.getHP()); 
     }
 
