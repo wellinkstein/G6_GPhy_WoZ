@@ -12,6 +12,7 @@ public class EcouteurSpotItem implements ActionListener
 {
     private AffichMainYohan affichMain;// the interface main of the game
     private SpotItem mySpotItem; //The Interface SpotItem
+    private DialogScreenInterface notTake;
 
     /**
      * The constructeur of the listener of the SpotItem
@@ -47,7 +48,9 @@ public class EcouteurSpotItem implements ActionListener
                 else
                 {
                     if (affichMain.getGame().getPlayer().getNumberItemPossess() == affichMain.getGame().getPlayer().getLimitItem() && affichMain.getGame().getLimitReach()== true)
-                        affichMain.getGame().notTake(); 
+                       notTake = new DialogScreenInterface(affichMain.getGame().notTake());
+                       affichMain.setDialog(notTake);
+ 
                         
                     affichMain.getGame().getPlayer().takeItem(mySpotItem.getSpot().getOneItem(((i-1)/2))); //Take the item 
                     
