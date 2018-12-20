@@ -61,22 +61,22 @@ public class Inventory extends JPanel
         myButton = new JButton("Drop"); 
         myButton.setBackground(Color.gray); 
         myButton.setForeground(Color.white);
-        //create the button take for the health potion
-        myButton1= new JButton("Drink");
-        myButton1.setBackground(Color.gray); 
-        myButton1.setForeground(Color.white);
+        // //create the button take for the health potion
+        // myButton1= new JButton("Drink");
+        // myButton1.setBackground(Color.gray); 
+        // myButton1.setForeground(Color.white);
         //create the list 
         combo = new JComboBox(); 
         EcouteurInventory e = new EcouteurInventory(this, myMain);
 
         //If the player does not have item, we cannot click on the button drop
-        if (monJoueur.getNumberItemPossess()==0)
-        {
-            myButton.setEnabled(false);
-        }
+        // if (monJoueur.getNumberItemPossess()==0)
+        // {
+            // myButton.setEnabled(false);
+        // }
 
-        //If the player can drink the health potion, when he has the health potion in the inventory
-        myButton1.setEnabled(false); 
+        // //If the player can drink the health potion, when he has the health potion in the inventory
+        // myButton1.setEnabled(false); 
 
         
         //Create the list with all the items
@@ -88,12 +88,12 @@ public class Inventory extends JPanel
         }
 
         myButton.addActionListener(e); 
-        myButton1.addActionListener(e); 
+        //myButton1.addActionListener(e); 
         myLabel = new JLabel ("Your inventory",JLabel.CENTER);
         myPanel.setLayout(new GridLayout(1,3));
         myPanel1.setLayout(new GridLayout(1,0));
         myPanel1.add(myLabel);
-        myPanel.add(myButton1); 
+       // myPanel.add(myButton1); 
         myPanel.add(combo); 
         myPanel.add(myButton); 
 

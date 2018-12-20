@@ -11,28 +11,31 @@ import javax.swing.*;
 public class ItemDescription extends JPanel implements ActionListener
 {
     JPanel myPanel2, bigPanel, myPanel; //All the panel for the class ItemDescription
-    JButton myButton; //The button close for the item descriprtion
+    JButton myButton, myButton1; //The button close for the item descriprtion
     JLabel myLabel,myLabel1, label; //all the label for the item description
     private Item itemDes;  //The item displays
+    private AffichMainYohan affichMain1; 
 
     /**
      * Constructor for objects of class ItemDescription
      * @param Item the item for the description of the item
      */
-    public ItemDescription(Item item)
+    public ItemDescription(Item item, AffichMainYohan affichMain)
     {
         itemDes=item; 
-        showItemDes(item); //Display the panel item
+        affichMain1=affichMain; 
+        showItemDes(item, affichMain); //Display the panel item
     }
 
     /**
      * The method showItemDes allows us to display the item
      * @param Item the item that we display
      */
-    public void showItemDes(Item item)
+    public void showItemDes(Item item, AffichMainYohan affichMain)
     {
         removeAll(); //remove all the panel
 
+         affichMain1=affichMain; 
         //Create panel and button
         myPanel = new JPanel();
         myPanel2 = new JPanel();
@@ -92,6 +95,14 @@ public class ItemDescription extends JPanel implements ActionListener
                     Icon icon= new ImageIcon("HealthPotion.png"); 
                     JLabel label= new JLabel(icon); 
                     myPanel.add(label);
+
+                    //create the button take for the health potion
+                    myButton1= new JButton("Drink");
+                    myButton1.setBackground(Color.gray); 
+                    myButton1.setForeground(Color.white);
+                    
+                    myButton1.addActionListener(this);
+                    myPanel2.add(myButton1);
                 }
                 else if (item.getName()=="Ariadne's golden thread"){
                     Icon icon= new ImageIcon("GoldenThread.png"); 
@@ -152,10 +163,18 @@ public class ItemDescription extends JPanel implements ActionListener
         if(e.getSource() == myButton)
         {
             //this.setVisible(false);
-            showItemDes(new Common("null", "", 0, 0, 0)); 
+            showItemDes(new Common("null", "", 0, 0, 0), affichMain1); 
+        }
+        else if (e.getSource() == myButton1)
+        {
+            affichMain1.getGame().getPlayer().drinkPotion();
+                 
+            affichMain1.getInventory().showPlayerItem(affichMain1.getGame().getPlayer(),affichMain1); //Update the item of the player
+
+            affichMain1.getSpotItem().showListItem(affichMain1.getGame().getCurrentSpot(),affichMain1); //Update the Item of the Spot
+
+            affichMain1.getPlayerHead().showPlayerHead(affichMain1.getGame().getPlayer());   //Update the characteristic of the player 
         }
     }
 
-    
 }
-

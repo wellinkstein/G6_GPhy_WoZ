@@ -46,7 +46,7 @@ public class EcouteurInventory implements ActionListener
         {
             if(e.getSource() == myInventory.getCombo())
             {  
-                ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Display the Item of the list
+                ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()), affichMain); //Display the Item of the list
                 affichMain.setDes(myDes); //Update The ItemDescription
                 
                 if (myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()).getName()== "Health Potion")
@@ -69,17 +69,17 @@ public class EcouteurInventory implements ActionListener
 
                 affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer());   //Update the characteristic of the player          
             }
-            else if (e.getSource()== myInventory.getMyButton1())
-             {
-                affichMain.getGame().getPlayer().drinkPotion();
+            // else if (e.getSource()== myInventory.getMyButton1())
+             // {
+                // affichMain.getGame().getPlayer().drinkPotion();
                  
-                affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //Update the item of the player
+                // affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //Update the item of the player
 
-                affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain); //Update the Item of the Spot
+                // affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain); //Update the Item of the Spot
 
-                affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer());   //Update the characteristic of the player  
+                // affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer());   //Update the characteristic of the player  
                  
-             }
+             // }
             
                 
         }

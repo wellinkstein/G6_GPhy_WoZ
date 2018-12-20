@@ -42,7 +42,7 @@ public class EcouteurSpotItem implements ActionListener
 
                 if((i%2)==0)
                 {   
-                    ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
+                    ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)), affichMain);
                     affichMain.setDes(myDes); //Update of the panel ItemDescription
                 }
                 else
