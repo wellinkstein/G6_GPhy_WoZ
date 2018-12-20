@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * The Player class is the player of the game
  * This class extends the character class and has attributes specific to the player
@@ -13,6 +13,8 @@ public class Player extends Character
     private boolean timeToGo = false;//Boolean stating if the player can exit the labyrinth
     private boolean ariadnesThread = false; //Boolean that checks if the player has Ariadne's thread
     private boolean hermesSandals = false; //Boolean that checks if the player has hermes's sandals
+    protected ArrayList<Item> inventory = new ArrayList<Item>();//A list of items that the character possesses
+    
     /**
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
@@ -66,8 +68,8 @@ public class Player extends Character
             else
             {
                HP=HP+5; 
-            }
-
+               }
+            
                     inventory.remove(i);
 
         }    

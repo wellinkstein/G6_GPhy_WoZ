@@ -1,5 +1,5 @@
 /**
- * The common class is a specific item to fight the lesser boss. Common items are found in pre-set areas.
+ * The common class codes for a specific item to fight the lesser boss. Common items are found in pre-set areas.
  *
  * @author (group 6)
  * @version (2018-11-14)

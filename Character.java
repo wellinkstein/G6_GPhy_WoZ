@@ -1,28 +1,24 @@
-import java.util.*;
+
 
 /**
  * This class is the base class (super class) for all of the characters of the game.
  * These characters are the player and monsters, which are split into two sub classes.
  *
+ * HP is an attribute which reflects health points.
+ * HP cannot be below 0, if HP is 0 the character dies.
+ * 
  * @author (Group 6)
  * @version (2018-11-27)
  */
 public abstract class Character
 {
     
-    protected int HP;
-    //HP is an attribute which reflects health points.
-    //HP cannot be below 0, if HP is 0 the character dies.
-    private String name;
-    // The name of the character
-    protected int xp;
-    //The XP of the character, XP can be gained, not lost
-    private int damage;
-    //This attribute represents the damage that a character inflicts in a single hit
-    private int protection;
-    //This attribute represent the damage reduction of the character
-    protected ArrayList<Item> inventory = new ArrayList<Item>();
-    //A list of items that the character possesses
+    protected int HP; // HP is an attribute which reflects health points.
+    private String name;// The name of the character
+    protected int xp;//The XP of the character, XP can be gained, not lost
+    private int damage;//This attribute represents the damage that a character inflicts in a single hit
+    private int protection;//This attribute represent the damage reduction of the character
+    //protected ArrayList<Item> inventory = new ArrayList<Item>();//A list of items that the character possesses
     
     /**
      * The constructor for the character class
@@ -95,25 +91,25 @@ public abstract class Character
         return protection;
     }
     
-    /**
-     * Get for the list of the inventory
-     * 
-     * @return Item: return the item found
-     */
-    public ArrayList<Item> getListInventory()
-    {
-        return(inventory);
-    }
+    // /**
+     // * Get for the list of the inventory
+     // * 
+     // * @return Item: return the item found
+     // */
+    // public ArrayList<Item> getListInventory()
+    // {
+        // return(inventory);
+    // }
     
-      /**
-     * Get for the inventory
-     * @param int emplacement: item index in Inventory
-     * @return Item: return the item found
-     */
-    public Item getInventory(int emplacement)
-    {
-        return(inventory.get(emplacement));
-    }
+      // /**
+     // * Get for the inventory
+     // * @param int emplacement: item index in Inventory
+     // * @return Item: return the item found
+     // */
+    // public Item getInventory(int emplacement)
+    // {
+        // return(inventory.get(emplacement));
+    // }
     
     /**
      * Method that reduces the HP based on the damage attribute of another character.
