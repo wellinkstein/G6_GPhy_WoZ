@@ -24,15 +24,20 @@ public class Scrolling extends JPanel
         
     Spot CurrentSpot = new Spot();
     
-    private AffichMain myMain;
-    private JButton myButton1= new JButton("Up");
-    private JButton myButton2 = new JButton("Right");
-    private JButton myButton3 = new JButton("Down");
-    private JButton myButton4 = new JButton("Left");
-    private JFrame myFrame;
-    private JPanel bigPanel;
-    private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9,Jlabel10;
+    private AffichMain myMain; //the interface of the game
+    private JButton myButton1= new JButton("Up"); //button
+    private JButton myButton2 = new JButton("Right"); //button
+    private JButton myButton3 = new JButton("Down"); //button
+    private JButton myButton4 = new JButton("Left"); //button
+    private JPanel bigPanel; //panel
+    private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9,Jlabel10; //label
     private JLayeredPane myLayer;
+    
+    /**
+     * The constructor of the scrolling
+     * @param Spot myNewSpot
+     * @param AffichMain new Main the main of the game
+     */
     public Scrolling(Spot myNewSpot, AffichMain newMain)
     {
         myMain = newMain;
@@ -41,6 +46,7 @@ public class Scrolling extends JPanel
     
     /**
      * This function creates the interface that will appear for the scrolling
+     * @param Spot myNewSpot
      */
     
     public void main (Spot myNewSpot)
@@ -152,6 +158,7 @@ public class Scrolling extends JPanel
      * This method is called to check what exits are available,
      * this checking which buttons should be avaialble to be clicked.
      * It also updated the interface accrodingly.
+     * @param Spot CurrentSpot
      */
     public void updateUI(Spot CurrentSpot)
     {
