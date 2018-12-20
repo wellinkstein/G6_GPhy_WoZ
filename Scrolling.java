@@ -157,7 +157,7 @@ public class Scrolling extends JPanel
         else{myButton4.setEnabled(true);}
         if(CurrentSpot.getExits("Z") != null)
         {
-            Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("Z").getImageSpot()));
+            Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("Z").getImageSpot()+".png"));
         }
         else
         {
@@ -166,14 +166,14 @@ public class Scrolling extends JPanel
         
         if(CurrentSpot.getExits("Q") != null)
         {
-            Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("Q").getImageSpot()));
+            Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("Q").getImageSpot()+".png"));
         }
         else
         {
             Jlabel4.setIcon(new ImageIcon( "0.png"));
         }
         
-        Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()));
+        Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()+"Link.png"));
         //System.out.println(CurrentSpot.getImageSpot());
         Jlabel5.setBounds(0, 2, 185, 185);
         //myLayer = new JLayeredPane();
@@ -190,7 +190,7 @@ public class Scrolling extends JPanel
         
         if(CurrentSpot.getExits("D") != null)
         {
-            Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("D").getImageSpot()));
+            Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("D").getImageSpot()+".png"));
         }
         else
         {
@@ -199,7 +199,7 @@ public class Scrolling extends JPanel
         
         if(CurrentSpot.getExits("S") != null)
         {
-            Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("S").getImageSpot()));
+            Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("S").getImageSpot()+".png"));
         }
         else
         {
