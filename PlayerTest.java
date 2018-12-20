@@ -94,7 +94,7 @@ public class PlayerTest
         Common potion2 = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(potion2);
-        myPlayer.drinkPotion();
+        //myPlayer.drinkPotion();
         assertEquals(20, myPlayer.getHP());
         assertEquals(1, myPlayer.inventory.size());
 
@@ -113,7 +113,7 @@ public class PlayerTest
         Common sword = new Common("Iron Sword","A medium length blade",3,0,0);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(sword);
-        myPlayer.drinkPotion();
+        //myPlayer.drinkPotion();
         assertEquals(20, myPlayer.getHP());
         assertEquals(1, myPlayer.inventory.size());
 
@@ -129,7 +129,7 @@ public class PlayerTest
     public void testDrinkNoPotion()
     {
         myPlayer = new Player(15,"Jimmy",2,2,0);
-        myPlayer.drinkPotion();
+        //myPlayer.drinkPotion();
         assertEquals(15, myPlayer.getHP());     
     }
 
@@ -144,7 +144,7 @@ public class PlayerTest
         Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.setHp(19);
-        myPlayer.drinkPotion();
+        //myPlayer.drinkPotion();
         assertEquals(20, myPlayer.getHP()); 
     }
 

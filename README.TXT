@@ -1,27 +1,29 @@
-Name of the project: World of Zuul
+Welcome to Daedalus
 
-This project's goal is to create a game called World of Zuul.
-In this game, a player will go through a labyrinth, kill enemies and 
-kill the boss to achieve his quest.
+Daedalus is a project created by Master 1 students studying in physiological, biotechnological, and computer science enginnering
+Please read the following text to understand how to play our game.
 
-Authors: Yohann, Hatim, Ludivine, Natasha, Delphine, Yousra, Correntin, Jérémie
+In this game you are Theseus, you were selected as a sacrifice to the mighty Minotaur, you of course have no intention of dying here.
+Your mission is to exit the labyrinth, but before hand, you must slay the Minotaur to prevent the loss of other innocent souls.
 
-There is only one player, he begins with a set of defined attributes (health points,
-damage, protection, ...).
-The labyrinth is viewed from above and the player sees only the spot next to the one he is in.
-When he progresses in the labyrinth, spot after spot, he will meet monsters and fight
-them in order to obtain legendary items.
-With these items, he will be able to defeat the boss and exit the labyrinth.
-He will also find more common items, like shields, armors, swords in different spots
-to help him fight the easiest monsters.
+On this quest you may encounter the vicious monsters inhabitting this labyrinth.
+Slaying monsters on your own is impossible, you will require items to do so. Items can be found throughout the labyrinth.
+If you are successfull in killing a monster, you will be rewarded with legendary loot which will further help you on your quest.
 
-Combat:
-When the player enters a room with a monster in it, he will have the choice to attack
-or run away and go back to the previous room.
-If he chooses to fight, the combat starts. The character has a 50/50 chance to attack first,
-or 100/100 when he has "Herme's shoes".
-Each character attacks one after the other until when of them dies, ie their health points
-reaches 0.
+Theseus is capable of carrying up to 10 items, items can be picked up when found and dropped at any time on the condition of not being in a fight
+Dropped items will remain in the area in which they were dropped. Among these items there are health potions.
+However keep in mind that theseus has a maximum of 20 hp, thus health potions cannot be used to go above that value.
 
-If the player dies, it's over.
-If the monster dies, he will drop a legendary item that the player can get.
+This game works in a scrolling fashion to properly represent the feeling of being in a labyrinth, as the player you will only be able to see
+what is in your vacinity, not beyond.
+Furthermore, there is no map to the labyrinth, it will be your job to remember which passages are correct and which are dead ends.
+
+The game will assist you by warning you when you are about to encounter a monster, at which point you may decided to fight it or run away and return
+at a later time.
+
+As previously stated, throughout the labyrinth you will encounter monsters, there are six monsters in total (including the minotaur). Each monster is different
+and may thus be easier or harder to kill.
+
+Good luck on your quest
+
+Yours truly, Group 6 of COO-POO
