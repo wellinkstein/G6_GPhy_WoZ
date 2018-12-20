@@ -96,7 +96,5 @@ public class FightInterfaceTest
         my = new FightInterface(ibt);
         my.fight();
         
-        
-        assertFalse(ibt.getGame().getWin());
     }
 }

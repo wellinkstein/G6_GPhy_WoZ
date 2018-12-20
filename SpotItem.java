@@ -40,7 +40,6 @@ public class SpotItem extends JPanel
      */
     public void showListItem(Spot spot, AffichMainYohan myMain)
     {
-      //System.out.println("Show list item with : " + spot.getListItem().size());
       
         removeAll(); //remove the SpotItem
         mySpot = spot;
@@ -66,7 +65,7 @@ public class SpotItem extends JPanel
 
         //Create the label of the SpotItem
         if (spot.getListItem().size()!=0){
-            myLabel = new JLabel ("These are the items available",JLabel.CENTER);
+            myLabel = new JLabel ("The available items in the spot",JLabel.CENTER);
         }
         else {
             myLabel = new JLabel ("These are no items in the spot",JLabel.CENTER);

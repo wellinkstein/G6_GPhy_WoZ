@@ -16,12 +16,9 @@ import java.util.Set;
  */
 public class Inventory extends JPanel
 {
-
-    // private ArrayList<JButton> content = new ArrayList<JButton>();
     private Player monJoueur; //The player of the game
     private JLabel myLabel; //the label of the inventory
     private JPanel myPanel, myPanel1, myBigPanel;  //all the panel of the inventory
-    //private Spot spot;
     private JComboBox combo; //The list of the Inventory
     private AffichMainYohan myMain; //the interface in the game
     private JButton myButton, myButton1; //The button for the drop
@@ -59,7 +56,6 @@ public class Inventory extends JPanel
         myBigPanel.removeAll();
         myPanel.removeAll();
         myPanel1.removeAll();
-        // content.clear();
 
         //create the button drop
         myButton = new JButton("Drop"); 
@@ -86,8 +82,6 @@ public class Inventory extends JPanel
         //Create the list with all the items
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
         {
-            // content.add(new JButton(monJoueur.getItems(i).getName()));
-            // content.add(new JButton("Drop Item"));
             combo.addItem(monJoueur.getItems(i).getName());
             combo.addActionListener(e); 
 
@@ -96,27 +90,12 @@ public class Inventory extends JPanel
         myButton.addActionListener(e); 
         myButton1.addActionListener(e); 
         myLabel = new JLabel ("Your inventory",JLabel.CENTER);
-        //myPanel.setLayout(new GridLayout(2,monJoueur.getNumberItemPossess()));
         myPanel.setLayout(new GridLayout(1,3));
         myPanel1.setLayout(new GridLayout(1,0));
         myPanel1.add(myLabel);
         myPanel.add(myButton1); 
         myPanel.add(combo); 
         myPanel.add(myButton); 
-
-        // for(int i = 0; i <= (content.size()-1); i+=2)
-        // {
-        // EcouteurInventory e = new EcouteurInventory(this, myMain);
-        // content.get(i).addActionListener(e);
-        // myPanel.add(content.get(i));
-        // }
-
-        // for(int i = 1; i <= (content.size()-1); i+=2)
-        // {
-        // EcouteurInventory e = new EcouteurInventory(this, myMain);
-        // content.get(i).addActionListener(e);
-        // myPanel.add(content.get(i));
-        // }
 
         myBigPanel.setLayout(new GridLayout(2,1)); 
         myBigPanel.add(myPanel1); 
@@ -139,10 +118,6 @@ public class Inventory extends JPanel
     {
         return monJoueur;
     }
-
-    // public ArrayList<JButton> getContent(){
-    // return content;
-    // }
 
     /**
      * The getter to use the button "Drop"

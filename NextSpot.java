@@ -151,7 +151,7 @@ public class NextSpot extends JPanel
         }
         else {
             // If there are no monster in the next spot
-            JLabel label = new JLabel("No monster");
+            JLabel label = new JLabel("No monster in the next spot");
             myPanel.add(label);
             bigPanel.add(myPanel);
         }

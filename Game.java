@@ -15,14 +15,12 @@ import java.util.Random;
 public class Game 
 {
     private Spot currentSpot; // position of player
-    private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
     private int line = 8; //number of lines in the matrix;
     private boolean limitReached = false; //True if the limit of the item is reached
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;//created the fighter attribute that will be used to handle combat
     private Player theseus;//creates the attribute for our player
-    private boolean win;//an attribute used to handle win conditions
     private Legendary hermesSandals;//this specific item is created as it is essential to combat
     /** 
      * Create the game and initialise its internal map.
@@ -111,8 +109,6 @@ public class Game
         exitAndStart();//initialize start spot (also current spot) and exit spot 
         addToCurrentSpot(theseus);
         
-        
-        setFinishedFalse();
     }
     
     /**
@@ -350,31 +346,6 @@ public class Game
     }
      
     /**
-     *  Get the value of finished
-     *  @return boolean finishde: return a boolean true if finished
-     */
-    public boolean getFinished() 
-    { 
-        return finished;
-    }
-    
-    /**
-     *  Set the value of finished to true
-     */
-    public void setFinishedTrue() 
-    { 
-        finished= true;
-    }
-    
-    /**
-     *  Set the value of finished to false
-     */
-    public void setFinishedFalse() 
-    { 
-        finished= false;
-    }
-    
-    /**
      *  Get the room where the player is 
      *  @return Spot currentSpot: return the current spot
      */
@@ -438,10 +409,6 @@ public class Game
          
     }
   
-    /**
-     * LE FIGHT SE DéROULE MAINTENANT DANS FIGHT INTERFACE
-     * RUN YOU FOOLS
-     */
     
     /**
      * If the player loses the fight
@@ -452,38 +419,6 @@ public class Game
     { 
          return true;         
     }
-    
-    // /**
-     // * The fight starts. it ends when one of the characters dies
-     // * @return List<Integer> listDamage: the list of all the damage
-     // * that were inflicted during the fight.
-     // * If the list begins by "-1", it means that Theseus began the fight.
-     // * 
-     // */
-    // public List<Integer> fight() 
-    // { 
-          // int damFighter;
-          // List<Integer> listDamage = new ArrayList<>();
-          // whoBegins();
-          // if(fighter==theseus)
-          // {
-              // listDamage.add(-1);
-          // }
-          
-          // while (fighter.HP!=0){
-              // damFighter=inflictDamage();
-              // if (fighter==theseus){
-                  // damFighter=damFighter+criticalHit();
-              // }
-              // setFighter(fighter);
-          // }
-          
-          // if (fighter==theseus) { 
-              // setWinTrue();
-          // }
-          // else setWinFalse(); 
-          // return (listDamage);
-    // }
     
     /**
      * Randomly chooses the first fighter to start
@@ -613,32 +548,6 @@ public class Game
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe 
             listSpot.get(i).getLesserBoss().setAggressiveTrue();
         }
-    }
-    
-    /**
-     * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
-     * 
-     */
-    public void setWinTrue() 
-    { 
-        win=true;        
-    }
-    /**
-     * if the player wins by giving the last blow, he wins. Otherwise he doesn't.
-     * 
-     */
-    public void setWinFalse()  
-    { 
-        win=false;         
-    }
-    /**
-     * This function exists to check if the player has won
-     * @Return Boolean win : returns the win value depending on the outcome of a fight
-     * 
-     */
-    public boolean getWin() 
-    { 
-       return win;         
     }
     
     /**

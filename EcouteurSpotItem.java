@@ -43,14 +43,10 @@ public class EcouteurSpotItem implements ActionListener
                 {   
                     ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
                     affichMain.setDes(myDes); //Update of the panel ItemDescription
-
-                    //getItemDescription().showItemDes(mySpotItem.getSpot().getOneItem((i/2)));
                 }
                 else
                 {
-                    //System.out.println(affichMain.getGame().getCurrentSpot().getNumberOfItemInSpot());
                     affichMain.getGame().getPlayer().takeItem(mySpotItem.getSpot().getOneItem(((i-1)/2))); //Take the item 
-                    //affichMain.getGame().getPlayer().takeItem(affichMain.getGame().getCurrentSpot().getOneItem(((i-1)/2)));
                     
                     if (affichMain.getGame().getPlayer().getNumberItemPossess() < affichMain.getGame().getPlayer().getLimitItem())
                     {

@@ -47,15 +47,7 @@ public class GameTest
         monster= new LesserBoss(30,"Chimera", 0, 2,2, "io", legendary); 
         myGame = new Game();
     }
-    
-    /**
-     * test value of finished at the beginning of game
-     */
-    @Test
-    public void testFinishedBeginningGame()
-    {
-        assertEquals(false, myGame.getFinished());
-    }
+
     
     /**
      * test if the exit exists
