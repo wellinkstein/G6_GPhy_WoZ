@@ -46,17 +46,17 @@ public class AffichMain extends JFrame implements ActionListener
     
     public void main()
     {
-        // try {
+        try {
  
-            // Clip clip = AudioSystem.getClip();
-            // File soundFile = new File("BOURREE.wav");
-            // AudioInputStream inputStream = AudioSystem
-                    // .getAudioInputStream(soundFile);
-            // clip.open(inputStream);
-            // clip.loop(Clip.LOOP_CONTINUOUSLY);
-        // } catch (Exception e) {
-            // e.printStackTrace();
-        // }
+            Clip clip = AudioSystem.getClip();
+            File soundFile = new File("rpg.wav");
+            AudioInputStream inputStream = AudioSystem
+                    .getAudioInputStream(soundFile);
+            clip.open(inputStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
@@ -218,10 +218,10 @@ public class AffichMain extends JFrame implements ActionListener
         pane.repaint();
     }
     
-    public void setDialog(DialogScreenInterface myDialog)
+    public void setDialog(String myDialog)
     {
         panelDiag.removeAll();
-        panelDiag.add(myDialog);
+        panelDiag.add(new DialogScreenInterface(myDialog));
         panelDiag.revalidate();
         panelDiag.repaint();
         //System.out.println("New Description");

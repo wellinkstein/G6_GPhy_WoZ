@@ -34,7 +34,7 @@ public class FightInterfaceTest
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-    private AffichMainYohan ibt;
+    private AffichMain ibt;
     private Game myGame;
     private Spot mySpot;
     private FightInterface my;
@@ -71,7 +71,7 @@ public class FightInterfaceTest
     @Test
     public void testFight()
     {
-        ibt = new AffichMainYohan();
+        ibt = new AffichMain();
         mySpot = new Spot();
         // Legendary artemisBow= new Legendary("Artemis's bow","",4,0,0);
         // Legendary hermesSandals= new Legendary("Hermes's sandals","",0,0,0);

@@ -20,7 +20,7 @@ public class FightInterface extends JPanel implements ActionListener
     private JButton buttonStartFight;
     private AffichMain affichMain;
     private Spot mySpot;
-    private DialogScreenInterface youWon, gameOver, getOut, youWonFight;
+   
     private JScrollPane scroller;
  
     /**
@@ -139,9 +139,7 @@ public class FightInterface extends JPanel implements ActionListener
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
-
-            gameOver = new DialogScreenInterface(affichMain.getGame().gameOver());
-            affichMain.setDialog(gameOver); 
+            affichMain.setDialog(affichMain.getGame().gameOver()); 
             
            
             affichMain.getContentPane().removeAll();
@@ -151,15 +149,15 @@ public class FightInterface extends JPanel implements ActionListener
         else if(affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss()&& affichMain.getGame().getPlayer().getThread()==true)
         {
             //Checks if minotaur dead and player has the golden thread 
-            youWon = new DialogScreenInterface(affichMain.getGame().youWon());
-            affichMain.setDialog(youWon);
+   
+            affichMain.setDialog(affichMain.getGame().youWon());
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
         }
         else if (affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss())
         {
-            getOut = new DialogScreenInterface(affichMain.getGame().getOut());
-            affichMain.setDialog(getOut);
+            
+            affichMain.setDialog(affichMain.getGame().getOut());
             affichMain.getGame().bossDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
@@ -178,8 +176,8 @@ public class FightInterface extends JPanel implements ActionListener
         }
         else
         {
-            youWonFight = new DialogScreenInterface(affichMain.getGame().youWonFight());
-            affichMain.setDialog(youWonFight);
+            
+            affichMain.setDialog(affichMain.getGame().youWonFight());
             affichMain.getGame().monsterDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();

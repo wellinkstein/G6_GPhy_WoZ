@@ -16,7 +16,7 @@ public class EcouteurScrolling implements ActionListener
     private DialogScreenInterface youWon,NotTimeToGo;
 
     /**
-     * Constructeur d'objets de classe EcouteurScrolling
+     * The constructor for Ecouteur scrolling
      */
     public EcouteurScrolling(Scrolling newScrolling, AffichMain myMain)
     {
@@ -24,7 +24,11 @@ public class EcouteurScrolling implements ActionListener
        myScrolling = newScrolling;
     }
     
-     public void actionPerformed (ActionEvent e)
+    /**
+     * This is the action method which handles the 4 directional buttons
+     * of scrolling.
+     */ 
+    public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == myScrolling.getButton1())
         {

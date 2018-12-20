@@ -19,14 +19,11 @@ public class DialogScreenInterface extends JPanel
      */
     public DialogScreenInterface(String dialogText)
     {
-        dialog = new JLabel(dialogText);
-        
+        dialog = new JLabel(dialogText);        
         myPanel = new JPanel();
         myPanel.add(dialog);
         add(myPanel);
     }
     
-    
-   
-    
+
 }
