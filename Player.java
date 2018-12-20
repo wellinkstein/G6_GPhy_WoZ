@@ -14,7 +14,7 @@ public class Player extends Character
     private boolean ariadnesThread = false; //Boolean that checks if the player has Ariadne's thread
     private boolean hermesSandals = false; //Boolean that checks if the player has hermes's sandals
     protected ArrayList<Item> inventory = new ArrayList<Item>();//A list of items that the character possesses
-    
+
     /**
      * Constructor of the player class
      * Requires Hp, name, damage, posX, and posY
@@ -28,7 +28,7 @@ public class Player extends Character
     {
         super(myHP,myName,myXp,myDamage,myProtection);
     }
-    
+
     /**
      * Getter for the attribute ariadnesThread
      * @return boolean ariadnesThread: returns true if the player has the item.
@@ -38,7 +38,7 @@ public class Player extends Character
     {
         return ariadnesThread;
     }
-    
+
     /**
      * Getter for the attribute hermesSandals
      * @return boolean hermesSandals: returns true if the player has the item.
@@ -48,7 +48,7 @@ public class Player extends Character
     {
         return hermesSandals;
     }
-    
+
     /**
      * This method will allow the player to consume a health potion
      * if there is one in his inventory. The potion is removed after use.
@@ -67,12 +67,12 @@ public class Player extends Character
             }
             else
             {
-               HP=HP+5; 
+                HP=HP+5; 
             }
-                    inventory.remove(i);
+            inventory.remove(i);
         }    
     }
-    
+
     /**
      * Allows the player to drop an item
      * A player may drop an item at any time except while in a fight
@@ -84,7 +84,7 @@ public class Player extends Character
         decreaseProtection(itemDrop.getProtection());
         inventory.remove(itemDrop);
     }
-    
+
     /**
      * Allows the player to drop an item using the index of the item
      * A player may drop an item at any time except while in a fight
@@ -96,7 +96,7 @@ public class Player extends Character
         decreaseProtection(getItems(itemDrop).getProtection());
         inventory.remove(itemDrop);
     }
-    
+
     /**
      * Allows the player to pick up an item
      * if the item is the Ariadne's golden thread the boolean
@@ -120,7 +120,7 @@ public class Player extends Character
         increaseDamage(myItem.getDamage());
         increaseProtection(myItem.getProtection());
     }   
-    
+
     /**
      * getter for TimeToGo
      * @return boolean timeToGo: return true if the player can exit the labyrinth
@@ -129,7 +129,7 @@ public class Player extends Character
     {
         return timeToGo;
     }
-    
+
     /**
      * A method that set TimeToGo to true
      */
@@ -137,7 +137,7 @@ public class Player extends Character
     {
         timeToGo = true;
     }
-    
+
     /**
      * A method that set TimeToGo to false
      */
@@ -145,7 +145,7 @@ public class Player extends Character
     {
         timeToGo = false;
     }
-    
+
     /**
      * A method that returns the item limit
      * @return int limitItem: returns the item limit for the player
@@ -154,7 +154,7 @@ public class Player extends Character
     {
         return limitItem;
     }
-    
+
     /**
      * a method that return the number of item possess
      * @return int inventory.size(): returns the size of inventory
@@ -163,7 +163,7 @@ public class Player extends Character
     {
         return inventory.size();
     }
-    
+
     /**
      * A method that gets the items in the inventory at the given index
      * @return Item inventory.get(numItem): returns the item
@@ -173,7 +173,7 @@ public class Player extends Character
     {
         return inventory.get(numItem);
     }
-    
+
     /**
      * A method that returns the max Hp
      * @return int hpMax: returns the max Hp of the player
@@ -182,7 +182,7 @@ public class Player extends Character
     {
         return hpMax;
     }
-    
+
     /**
      * A method that modifies the crit rate based on XP
      * The player starts at level 1 and each level give 5% of crit chance
@@ -205,7 +205,7 @@ public class Player extends Character
         }
         return critRate;
     }
-    
+
     /**
      * A method that returns the crit rate
      * @return int critRate: returns the critical rate of the player
@@ -214,8 +214,26 @@ public class Player extends Character
     {
         return critRate;
     }
-   
+
+    /**
+     * Get for the list of the inventory
+     * 
+     * @return Item: return the item found
+     */
+    public ArrayList<Item> getListInventory()
+    {
+        return(inventory);
+    }
+
+    /**
+     * Get for the inventory
+     * @param int emplacement: item index in Inventory
+     * @return Item: return the item found
+     */
+    public Item getInventory(int emplacement)
+    {
+        return(inventory.get(emplacement));
+    }
 
 }
-    
 

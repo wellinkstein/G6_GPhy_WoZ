@@ -204,7 +204,7 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
-        assertEquals("4.png", spot.getImageSpot());
+        assertEquals("4", spot.getImageSpot());
     }
     
     /**
@@ -231,7 +231,7 @@ public class SpotTest
             }
         }
         assertTrue(test);
-        assertEquals("2.png", spot.getImageSpot());
+        assertEquals("2", spot.getImageSpot());
     }
     
     /**
