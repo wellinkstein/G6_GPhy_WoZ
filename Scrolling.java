@@ -107,8 +107,8 @@ public class Scrolling extends JPanel
             }
             else if(i == 5)
             {
-                //bigPanel.add(Jlabel5);
-                bigPanel.add(myLayer);
+                bigPanel.add(Jlabel5);
+                //bigPanel.add(myLayer);
             }
             else if(i == 6)
             {
@@ -176,14 +176,14 @@ public class Scrolling extends JPanel
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()));
         //System.out.println(CurrentSpot.getImageSpot());
         Jlabel5.setBounds(0, 2, 185, 185);
-        myLayer = new JLayeredPane();
-        myLayer.add(Jlabel5);//new Integer(-1),1);
+        //myLayer = new JLayeredPane();
+        //myLayer.add(Jlabel5);//new Integer(-1),1);
         //myLayer.add(Jlabel5);//, new Integer(2),1);
         JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
         myJlabel.setBounds(0, 0, 200, 200);
-        myLayer.add(myJlabel);//, new Integer(0),0);
-        myLayer.add(Jlabel5);
-        myLayer.setVisible(true);
+        //myLayer.add(myJlabel);//, new Integer(0),0);
+        //myLayer.add(Jlabel5);
+        //myLayer.setVisible(true);
         
         
         
