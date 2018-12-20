@@ -85,7 +85,11 @@ public class EcouteurInventory implements ActionListener
             {  
                 ItemDescription myDes = new ItemDescription(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Display the Item of the list
                 affichMain.setDes(myDes); //Update The ItemDescription
-
+                
+                if (myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()).getName()== "Health Potion")
+                {
+                    myInventory.getMyButton1().setEnabled(true);
+                }
             }
             else if (e.getSource()== myInventory.getMyButton())
             {
