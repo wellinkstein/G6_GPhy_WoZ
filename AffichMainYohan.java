@@ -290,6 +290,10 @@ public class AffichMainYohan extends JFrame implements ActionListener
         return panelMonster; 
     }
     
+    public Scrolling getScrolling()
+    {
+        return panelLab;
+    }
     
     public void actionPerformed(ActionEvent e)
     {
