@@ -136,14 +136,13 @@ public class FightInterface extends JPanel implements ActionListener
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
-            
+
             gameOver = new DialogScreenInterface(affichMain.getGame().gameOver());
-            affichMain.setDialog(gameOver);// ici
+            affichMain.setDialog(gameOver); // ici bloquer le scrolling
         }
         else if(affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss()&& affichMain.getGame().getPlayer().getThread()==true)
         {
-            //Checks if minotaur dead and player has the golden thread
-            affichMain.getGame().setWinTrue(); 
+            //Checks if minotaur dead and player has the golden thread 
             youWon = new DialogScreenInterface(affichMain.getGame().youWon());
             affichMain.setDialog(youWon);
             affichMain.getGame().getPlayer().gainXp(1);
@@ -151,6 +150,8 @@ public class FightInterface extends JPanel implements ActionListener
         }
         else if (affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss())
         {
+            youWon = new DialogScreenInterface(affichMain.getGame().youWon());
+            affichMain.setDialog(youWon);
             affichMain.getGame().bossDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
