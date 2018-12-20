@@ -408,7 +408,6 @@ public class Game
         
          
     }
-  
     
     /**
      * If the player loses the fight
@@ -589,12 +588,11 @@ public class Game
      */
     public String youWon() 
     { 
-      String endScreen = "Theseus, you have successfully killed the Minotaur and left the labyrinth!";  
       int nbMonsters = 6;
       for (int i = 0; i < listSpot.size(); i++){
           nbMonsters-= listSpot.get(i).numberOfMonsterInSpot();
       }
-      endScreen+= " <html><br> Score: You killed "+nbMonsters+" of 6 monsters";
+      String endScreen = "<html> Theseus, you have successfully killed the Minotaur and left the labyrinth! <br> Score: You killed "+nbMonsters+" of 6 monsters";
       return endScreen;
     }
     

@@ -48,7 +48,6 @@ public class GameTest
         myGame = new Game();
     }
 
-    
     /**
      * test if the exit exists
      */
