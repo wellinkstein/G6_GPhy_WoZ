@@ -546,7 +546,9 @@ public class Game
     public void setAggressiveAll() 
     { 
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe 
-            listSpot.get(i).getLesserBoss().setAggressiveTrue();
+            if (listSpot.get(i).numberOfMonsterInSpot() != 0){
+                listSpot.get(i).getLesserBoss().setAggressiveTrue();
+            }
         }
     }
     
