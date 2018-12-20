@@ -86,6 +86,7 @@ public class PlayerTest
      // * Tests that a player can drink a potion and receives the correct amount of hp
      // */
 
+<<<<<<< HEAD
     // @Test
     // public void testDrinkPotion()
     // {
@@ -97,6 +98,19 @@ public class PlayerTest
         // myPlayer.drinkPotion();
         // assertEquals(20, myPlayer.getHP());
         // assertEquals(1, myPlayer.inventory.size());
+=======
+    @Test
+    public void testDrinkPotion()
+    {
+        myPlayer = new Player(15,"Jimmy",2,2,0);
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        Common potion2 = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(potion2);
+        //myPlayer.drinkPotion();
+        assertEquals(20, myPlayer.getHP());
+        assertEquals(1, myPlayer.inventory.size());
+>>>>>>> bf73cb6ed90aa15f7971392522b8422ed240edd0
 
     // }
     
@@ -105,6 +119,7 @@ public class PlayerTest
      // * He only "loses" the health potion used.
      // */
 
+<<<<<<< HEAD
     // @Test
     // public void testDrinkPotionWithSword()
     // {
@@ -116,6 +131,19 @@ public class PlayerTest
         // myPlayer.drinkPotion();
         // assertEquals(20, myPlayer.getHP());
         // assertEquals(1, myPlayer.inventory.size());
+=======
+    @Test
+    public void testDrinkPotionWithSword()
+    {
+        myPlayer = new Player(15,"Jimmy",2,2,0);
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        Common sword = new Common("Iron Sword","A medium length blade",3,0,0);
+        myPlayer.takeItem(potion);
+        myPlayer.takeItem(sword);
+        //myPlayer.drinkPotion();
+        assertEquals(20, myPlayer.getHP());
+        assertEquals(1, myPlayer.inventory.size());
+>>>>>>> bf73cb6ed90aa15f7971392522b8422ed240edd0
 
     // }
     
@@ -125,6 +153,7 @@ public class PlayerTest
      // * does not have a potion in his inventory
      // */
 
+<<<<<<< HEAD
     // @Test
     // public void testDrinkNoPotion()
     // {
@@ -132,12 +161,22 @@ public class PlayerTest
         // myPlayer.drinkPotion();
         // assertEquals(15, myPlayer.getHP());     
     // }
+=======
+    @Test
+    public void testDrinkNoPotion()
+    {
+        myPlayer = new Player(15,"Jimmy",2,2,0);
+        //myPlayer.drinkPotion();
+        assertEquals(15, myPlayer.getHP());     
+    }
+>>>>>>> bf73cb6ed90aa15f7971392522b8422ed240edd0
 
     // /**
      // * Tests that the player cannot have his hp over his maxHP after
      // * taking a potion
      // */
 
+<<<<<<< HEAD
     // @Test
     // public void testDrinkPotionOverHp()
     // {
@@ -147,6 +186,17 @@ public class PlayerTest
         // myPlayer.drinkPotion();
         // assertEquals(20, myPlayer.getHP()); 
     // }
+=======
+    @Test
+    public void testDrinkPotionOverHp()
+    {
+        Common potion = new Common("Health Potion","Heals for 5 hp",0,0,5);
+        myPlayer.takeItem(potion);
+        myPlayer.setHp(19);
+        //myPlayer.drinkPotion();
+        assertEquals(20, myPlayer.getHP()); 
+    }
+>>>>>>> bf73cb6ed90aa15f7971392522b8422ed240edd0
 
     /**
      * Tests that the player can drop a Common Item that he has in his inventory

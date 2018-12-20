@@ -1,7 +1,7 @@
 /**
- * The Legendary class is a specific item obtained by killing the monsters.
+ * The Legendary class codes for a specific item obtained by killing the monsters.
 
- * @author (Yousra & Delphine)
+ * @author Groupe 6
  * @version (2018-11-14)
  */
 public class Legendary extends Item
@@ -18,7 +18,5 @@ public class Legendary extends Item
     public Legendary(String itemName, String des, int dam, int HG, int prot )
     {
         super (itemName, des, dam, HG,prot );
-       
-
     }
 }

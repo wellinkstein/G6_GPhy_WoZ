@@ -3,6 +3,13 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * This class listens the interface class Scrolling
+ * This is the listener that will allow movement.
+ * If functions by allowing a certain set of directions depending on the hashmap
+ * located in the Game Class, if an exit in a certain direction is available,
+ * the option to go in that direction will be given to the player.
+ * Once a player has selected the direction, the listener record the direction
+ * and follows through with a movement if no monsters are present in the selected direction.
+ * If a monster is present, the NextSpot class is called.
  *
  * @author Groupe 6
  * @version 20/12/2018

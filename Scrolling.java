@@ -10,6 +10,11 @@ import java.util.Set;
 
 /**
  * This class is an interface of the maze and the buttons which allow Theseus to move
+ * This class builds the scrolling interface by calling the imagespot attribute 
+ * from the spot class.
+ * This allows the scrolling class to show the appropriate block for the location
+ * of the player as depending on the number of exits available in each spot
+ * the image will change accordingly to represent the exits.
  * 
  * @author Groupe 6
  * @version 20/12/2018
@@ -33,6 +38,10 @@ public class Scrolling extends JPanel
         myMain = newMain;
         main(myNewSpot);
     }
+    
+    /**
+     * This function creates the interface that will appear for the scrolling
+     */
     
     public void main (Spot myNewSpot)
     {
@@ -139,6 +148,11 @@ public class Scrolling extends JPanel
     }
     
     
+    /**
+     * This method is called to check what exits are available,
+     * this checking which buttons should be avaialble to be clicked.
+     * It also updated the interface accrodingly.
+     */
     public void updateUI(Spot CurrentSpot)
     {
         if(CurrentSpot.getExits("Z") == null)
@@ -156,51 +170,45 @@ public class Scrolling extends JPanel
         if(CurrentSpot.getExits("Z") != null)
         {
             Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("Z").getImageSpot()+".png"));
-            Jlabel2.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel2.setIcon(new ImageIcon( "0.png"));
-            Jlabel2.setBounds(100, 100, 200, 200);
         }
         
         if(CurrentSpot.getExits("Q") != null)
         {
             Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("Q").getImageSpot()+".png"));
-            Jlabel4.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel4.setIcon(new ImageIcon( "0.png"));
-            Jlabel4.setBounds(100, 100, 200, 200);
         }
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()+"Link.png"));
-        Jlabel5.setBounds(100, 100, 200, 200);
         
         if(CurrentSpot.getExits("D") != null)
         {
             Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("D").getImageSpot()+".png"));
-            Jlabel6.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel6.setIcon(new ImageIcon( "0.png"));
-            Jlabel6.setBounds(100, 100, 200, 200);
         }
         
         if(CurrentSpot.getExits("S") != null)
         {
             Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("S").getImageSpot()+".png"));
-            Jlabel8.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel8.setIcon(new ImageIcon( "0.png"));
-            Jlabel8.setBounds(100, 100, 200, 200);
         }
     }
     
+    /**
+     * A method that allows the return 
+     */
     public JButton getButton1()
     {return myButton1;}
     
