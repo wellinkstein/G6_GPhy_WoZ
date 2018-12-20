@@ -2,14 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Write a description of class Ecouteur1 here.
+ * This class listens the interface class Scrolling
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Groupe 6
+ * @version 20/12/2018
  */
 public class EcouteurScrolling implements ActionListener
 {
-    private AffichMainYohan affichMain;
+    private AffichMain affichMain;
     private Scrolling myScrolling;
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
@@ -18,7 +18,7 @@ public class EcouteurScrolling implements ActionListener
     /**
      * Constructeur d'objets de classe EcouteurScrolling
      */
-    public EcouteurScrolling(Scrolling newScrolling, AffichMainYohan myMain)
+    public EcouteurScrolling(Scrolling newScrolling, AffichMain myMain)
     {
        affichMain = myMain;
        myScrolling = newScrolling;
