@@ -648,7 +648,29 @@ public class Game
     { 
       return "Game over";          
     }
-
+    
+    /**
+     *  returns the winning message for a fight
+     * @return String
+     */
+    public String youWonFight() 
+    { 
+      String endScreen = "Theseus, you have successfully killed this monster!";  
+      
+      return endScreen;
+    }
+    
+    /**
+     *  returns the winning message for a fight
+     * @return String
+     */
+    public String getOut() 
+    { 
+      String endScreen = "<html> Theseus, you have successfully killed the Minotaur, it's time to get out of this labyrinth <br>...Beware! The other monsters will start chasing you!";  
+      
+      return endScreen;
+    }
+    
     /**
      *  returns the winning message
      * @return String
