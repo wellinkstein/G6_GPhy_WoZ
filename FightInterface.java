@@ -14,13 +14,11 @@ import java.awt.event.*;
 public class FightInterface extends JPanel implements ActionListener
 {
 
-    private JPanel panelMain, panelBot, panelBig;
-    private JLabel dialog, playerImg, monsterImg;
-    private ImageIcon iconPlayer, iconMonster;
-    private JButton buttonStartFight;
-    private AffichMain affichMain;
-    private Spot mySpot;
-   
+    private JPanel panelMain, panelBot, panelBig; //The panel of the panel FightInterface
+    private JLabel dialog, playerImg, monsterImg; //The label
+    private ImageIcon iconPlayer, iconMonster; //The icon for the interface
+    private JButton buttonStartFight; //the button start fight
+    private AffichMain affichMain; //the interface of the game
     private JScrollPane scroller;
  
     /**
@@ -86,6 +84,7 @@ public class FightInterface extends JPanel implements ActionListener
         }
     }
 
+    
     /**
      * The fight starts. it ends when one of the characters dies
      * 
@@ -94,7 +93,6 @@ public class FightInterface extends JPanel implements ActionListener
     { 
         int damFighter;
         affichMain.getGame().whoBegins();
-        // System.out.println("starter:"+affichMain.getGame().whoBegins().getName());
         if(affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
             updateCombatLogbook("Theseus begins the fight!");
         }
@@ -103,16 +101,11 @@ public class FightInterface extends JPanel implements ActionListener
             updateCombatLogbook("The monster begins the fight!");
         }
         
-        //System.out.println("fighter: "+affichMain.getGame().getFighter().getDamage());
-        //System.out.println("player: "+affichMain.getGame().getPlayer().getDamage());
 
         while (affichMain.getGame().getFighter().HP!=0){
-            //System.out.println("fighter befor inflict: "+affichMain.getGame().getFighter().getHP());
-            //damFighter=affichMain.getGame().inflictDamage();
+
             damFighter=affichMain.getGame().inflictDamage();
-            //System.out.println("fighter after inflict: "+affichMain.getGame().getFighter().getHP());
-            //System.out.println("fighter1: "+ affichMain.getGame().getFighter());
-            //System.out.println(damFighter);
+
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()){
                 damFighter=damFighter+affichMain.getGame().criticalHit(); // add critical hit damage A MODIFIER pour ne pas prendre en compte armure quand crit
             }
@@ -126,16 +119,7 @@ public class FightInterface extends JPanel implements ActionListener
             }
 
             affichMain.getGame().setFighter(affichMain.getGame().getFighter()); // the fighter changes
-            //System.out.println("fighter2: "+ affichMain.getGame().getFighter());
-            //try
-            //{
-            //    Thread.sleep(1000);
-            //}
-            //catch(InterruptedException ex)
-            //{
-            //    Thread.currentThread().interrupt();
-            //}
-            //break;
+
         }
 
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
@@ -161,6 +145,7 @@ public class FightInterface extends JPanel implements ActionListener
             affichMain.getScrolling().getButton2().setEnabled(true);
             affichMain.getScrolling().getButton3().setEnabled(true);
             affichMain.getScrolling().getButton4().setEnabled(true);
+            
             if(affichMain.getGame().getCurrentSpot().getExits("Z") == null)
             {affichMain.getScrolling().getButton1().setEnabled(false);}
             if(affichMain.getGame().getCurrentSpot().getExits("D") == null)
@@ -181,6 +166,7 @@ public class FightInterface extends JPanel implements ActionListener
             affichMain.getScrolling().getButton2().setEnabled(true);
             affichMain.getScrolling().getButton3().setEnabled(true);
             affichMain.getScrolling().getButton4().setEnabled(true);
+            
             if(affichMain.getGame().getCurrentSpot().getExits("Z") == null)
             {affichMain.getScrolling().getButton1().setEnabled(false);}
             if(affichMain.getGame().getCurrentSpot().getExits("D") == null)
@@ -262,8 +248,6 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("ChimeraFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            //monsterImg.setPreferredSize(new Dimension(150,150));
-            //monsterImg.setSize(150,150);
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
             c.gridx = 1;
@@ -305,8 +289,6 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("CyclopsFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            //monsterImg.setPreferredSize(new Dimension(150,150));
-            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -321,8 +303,6 @@ public class FightInterface extends JPanel implements ActionListener
             iconMonster = new ImageIcon("MinotaurFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            //monsterImg.setPreferredSize(new Dimension(150,150));
-            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -340,11 +320,10 @@ public class FightInterface extends JPanel implements ActionListener
         }
         
         panelBig = new JPanel(new GridLayout(2,0));
-        // panelBot.setPreferredSize(new Dimension(400,400));
-        // panelBot.setSize(400,400);
+
         panelBig.add(panelMain);
         panelBig.add(panelBot);
-        //panelBig.add(Scroller);
+
         panelBig.setVisible(true);
         add(panelBig);
         revalidate();
