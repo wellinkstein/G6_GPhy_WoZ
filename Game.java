@@ -29,7 +29,7 @@ public class Game
     {
         createLabyrinth();
 
-        theseus = new Player(20,"Theseus",1,1,0);
+        theseus = new Player(30,"Theseus",1,1,0);
 
         Common ironSword= new Common ("Iron Sword","<html>a rusty looking sword, it has been here for a while. <br> Increases your damage by 3.</html>",3,0,0);
         Common ironDagger= new Common ("Iron Dagger","<html>looks like a toothpick, might work well in combat. <br> Increases your damage by 1.</html>",1,0,0);

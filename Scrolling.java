@@ -207,17 +207,34 @@ public class Scrolling extends JPanel
     }
     
     /**
-     * A method that allows the return 
+     * A method that allows the return of the Button 1 (up)
+     * necessary for the action listener
+     * @Return: Jbutton
      */
     public JButton getButton1()
     {return myButton1;}
     
+    /**
+     * A method that allows the return of Button 2 (right)
+     * necessary for the action listener
+     * @Return: JButton
+     */
     public JButton getButton2()
     {return myButton2;}
     
+    /**
+     * A method that allows the return of Button 3 (down)
+     * necessary for the action listener
+     * @Return: JButton
+     */
     public JButton getButton3()
     {return myButton3;}
     
+    /**
+     * A method that allows the return of Button 4 (left)
+     * necessary for the action listener
+     * @Return: J Button
+     */
     public JButton getButton4()
     {return myButton4;}
     

@@ -100,7 +100,6 @@ public class ItemDescription extends JPanel implements ActionListener
                 }
                 else if (item.getName()=="Ares's sword"){
                     Icon icon= new ImageIcon("AresSword.png");
-                    //label.setPreferredSize(new Dimension(50,50));
                     JLabel label= new JLabel(icon); 
                     myPanel.add(label);
                 }
@@ -119,9 +118,7 @@ public class ItemDescription extends JPanel implements ActionListener
                     JLabel label= new JLabel(icon); 
                     myPanel.add(label); 
                 }
-                //Create the label for the name and the description of the item
-                //label.setPreferredSize(new Dimension(100,100));
-                //label.setSize(100,100);
+                
                 myLabel= new JLabel(item.getName());
                 myLabel1= new JLabel(item.getDescription()); 
                 myPanel2.setLayout(new GridLayout(3,0));
