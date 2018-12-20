@@ -19,14 +19,14 @@ public class SpotItem extends JPanel
     private JPanel myPanel, myPanel1, myBigPanel; //all the panel of the panl SpotItem 
     private ArrayList<JButton> content = new ArrayList<JButton>(); //A list for the buttons
     private Spot mySpot; //The current Spot 
-    private AffichMainYohan myMain; //The affich Main for the game
+    private AffichMain myMain; //The affich Main for the game
 
     /**
      * The constructor of the SpotItem, create the interface of the SpotItem
      * @param spot The currentSpot where the player is
      * @param AffichMainYohan The affichmain of the game
      */
-    public SpotItem(Spot spot, AffichMainYohan cont)
+    public SpotItem(Spot spot, AffichMain cont)
     {
         mySpot = spot;
         myMain = cont;
@@ -38,7 +38,7 @@ public class SpotItem extends JPanel
      * @param Spot the CurrentSpot of the player
      * @param AffichMainYohan  the affichmain of the game
      */
-    public void showListItem(Spot spot, AffichMainYohan myMain)
+    public void showListItem(Spot spot, AffichMain myMain)
     {
       
         removeAll(); //remove the SpotItem

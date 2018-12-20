@@ -20,7 +20,7 @@ public class NextSpot extends JPanel
     private JPanel myPanel,myFightPanel,myFleePanel,bigPanel,bigButtonPanel; //all the panel
     private JLabel myLabel,myLabel2; //all the label
     private String direction; //The direction of the next spot
-    private AffichMainYohan myMain; //The affich Main for the game
+    private AffichMain myMain; //The affich Main for the game
     /**
      * Constructor for objects of class NextSpot.
      * The NextSpot is the future spot where the player will go if he decides to click on fight
@@ -30,7 +30,7 @@ public class NextSpot extends JPanel
      * @param AffichMainYohan The interface of the game
      * @param String the direction of the player wants to go
      */
-    public NextSpot(Spot gameSpot, AffichMainYohan myMain1, String newDirection)
+    public NextSpot(Spot gameSpot, AffichMain myMain1, String newDirection)
     {
         mySpot= gameSpot; 
         myMain= myMain1; 
@@ -52,7 +52,7 @@ public class NextSpot extends JPanel
      * @param AffichMainYohan The interface of the game
      * @param String the direction of the player wants to go
      */
-    public void showNextSpot(Spot gameSpot, AffichMainYohan myMain, String newDirection){
+    public void showNextSpot(Spot gameSpot, AffichMain myMain, String newDirection){
         
         removeAll(); //remove the panel
         direction=newDirection;

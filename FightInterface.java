@@ -8,8 +8,8 @@ import java.awt.event.*;
  * This class handles the fight interface that will appear in the main interface
  * 
  *
- * @author Jérémie Guilbaud
- * @version 1.0
+ * @author Groupe 6
+ * @version 20/12/2018
  */
 public class FightInterface extends JPanel implements ActionListener
 {
@@ -18,7 +18,7 @@ public class FightInterface extends JPanel implements ActionListener
     private JLabel dialog, playerImg, monsterImg;
     private ImageIcon iconPlayer, iconMonster;
     private JButton buttonStartFight;
-    private AffichMainYohan affichMain;
+    private AffichMain affichMain;
     private Spot mySpot;
     private DialogScreenInterface youWon, gameOver, getOut, youWonFight;
     private JScrollPane scroller;
@@ -26,10 +26,10 @@ public class FightInterface extends JPanel implements ActionListener
     /**
      * Constructor of objects class fightInterface
      */
-    public FightInterface(AffichMainYohan affichMainYohan)
+    public FightInterface(AffichMain affich)
     {
-        affichMain=affichMainYohan;
-        updatePanel(affichMain);
+        affichMain=affich;
+        updatePanel(affich);
     }
 
     /**
@@ -200,18 +200,15 @@ public class FightInterface extends JPanel implements ActionListener
      * A method to update the panel. If there is a monster in the currentSpot, the 
      * picture of the monster and his description will be added to the panel.
      */
-    public void updatePanel(AffichMainYohan affichMainYohan)
+    public void updatePanel(AffichMain affich)
     {
         removeAll();
-        affichMain=affichMainYohan;
+        affichMain=affich;
         
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
         
-        
-        
         dialog = new JLabel("<html><b>Combat logbook</b><br>--------------------------<br><br><br>");
-        //scroller.add(dialog);
         scroller = new JScrollPane(dialog);
         scroller.setPreferredSize(new Dimension (400,200));
         panelBot = new JPanel();
@@ -231,16 +228,13 @@ public class FightInterface extends JPanel implements ActionListener
         panelBot.add(buttonStartFight, c);
 
         panelBot.add(scroller);
-        
-        
+
         panelMain = new JPanel();
         panelMain.setLayout(new GridBagLayout());
 
         iconPlayer = new ImageIcon("TheseusFinal.png"); 
         playerImg = new JLabel();
         playerImg.setIcon(iconPlayer);
-        // playerImg.setPreferredSize(new Dimension(150,150));
-        // playerImg.setSize(150,150);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
@@ -250,13 +244,11 @@ public class FightInterface extends JPanel implements ActionListener
 
         if (affichMain.getGame().getCurrentSpot().getMonster() != null)
         {
-            if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") // Medusa
+            if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Medusa") 
             {
                 iconMonster = new ImageIcon("MedusaFinal.png");
                 monsterImg = new JLabel();
                 monsterImg.setIcon(iconMonster);
-               // monsterImg.setPreferredSize(new Dimension(150,150));
-                //monsterImg.setSize(150,150);
 
                 c.fill = GridBagConstraints.HORIZONTAL;
                 c.weightx = 0.5;
@@ -281,13 +273,11 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Chimera! Lion head, goat body and snake tail... Definitely a failed genetic experiment.<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus") // Cerberus
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Cerberus")
         {
             iconMonster = new ImageIcon("CerberusFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            //monsterImg.setPreferredSize(new Dimension(150,150));
-            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;
@@ -297,13 +287,11 @@ public class FightInterface extends JPanel implements ActionListener
             updateNameMonster("Cerberus! Don't worry, he won't bite. Or will he...<br><br>");
             buttonStartFight.setEnabled(true);
         }
-        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") // Arachne
+        else if(affichMain.getGame().getCurrentSpot().getMonster().getName() == "Arachne") 
         {
             iconMonster = new ImageIcon("ArachneFinal.png");
             monsterImg = new JLabel();
             monsterImg.setIcon(iconMonster);
-            //monsterImg.setPreferredSize(new Dimension(150,150));
-            //monsterImg.setSize(150,150);
 
             c.fill = GridBagConstraints.HORIZONTAL;
             c.weightx = 0.5;

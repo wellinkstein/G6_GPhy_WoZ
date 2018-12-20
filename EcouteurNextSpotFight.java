@@ -10,13 +10,13 @@ import javax.swing.*;
  */
 public class EcouteurNextSpotFight implements ActionListener
 {
-    private AffichMainYohan affichMain1;
+    private AffichMain affichMain1;
     private NextSpot myNextSpot;
 
     /**
      * Constructor for objects of class EcouteurNextSpotFight
      */
-    public EcouteurNextSpotFight(NextSpot newNextSpot, AffichMainYohan myMain)
+    public EcouteurNextSpotFight(NextSpot newNextSpot, AffichMain myMain)
     {
         affichMain1 = myMain;
         myNextSpot = newNextSpot;

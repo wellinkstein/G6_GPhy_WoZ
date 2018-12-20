@@ -10,7 +10,7 @@ import javax.swing.*;
  */
 public class EcouteurSpotItem implements ActionListener
 {
-    private AffichMainYohan affichMain;// the interface main of the game
+    private AffichMain affichMain;// the interface main of the game
     private SpotItem mySpotItem; //The Interface SpotItem
     private DialogScreenInterface notTake;
 
@@ -19,7 +19,7 @@ public class EcouteurSpotItem implements ActionListener
      * @SpotItem The panel of the interface SpotItem
      * @AffichMain The interface affichMain of the game
      */
-    public EcouteurSpotItem(SpotItem newSpotItem, AffichMainYohan myMain){
+    public EcouteurSpotItem(SpotItem newSpotItem, AffichMain myMain){
         affichMain = myMain;
         mySpotItem = newSpotItem;
     }

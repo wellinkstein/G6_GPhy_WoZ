@@ -17,7 +17,7 @@ import javax.swing.event.ListSelectionListener;
  */
 public class EcouteurInventory implements ActionListener
 {
-    private AffichMainYohan affichMain; //The interface of the game
+    private AffichMain affichMain; //The interface of the game
     private Inventory myInventory; //The panel Inventory
     private ItemDescription iDescription; //The panel ItemDescription
 
@@ -26,7 +26,7 @@ public class EcouteurInventory implements ActionListener
      * @param Inventory //The panel Inventory
      * @param AffichMainYohan //The interface of the game
      */
-    public EcouteurInventory(Inventory newInventory, AffichMainYohan myMain){
+    public EcouteurInventory(Inventory newInventory, AffichMain myMain){
         affichMain = myMain;
         myInventory = newInventory;
     }

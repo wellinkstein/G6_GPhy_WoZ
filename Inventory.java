@@ -20,7 +20,7 @@ public class Inventory extends JPanel
     private JLabel myLabel; //the label of the inventory
     private JPanel myPanel, myPanel1, myBigPanel;  //all the panel of the inventory
     private JComboBox combo; //The list of the Inventory
-    private AffichMainYohan myMain; //the interface in the game
+    private AffichMain myMain; //the interface in the game
     private JButton myButton, myButton1; //The button for the drop
 
     /**
@@ -28,7 +28,7 @@ public class Inventory extends JPanel
      * @param Player theseus allows to use the player of the game
      * @param AffichMainYohan The interface of the game
      */
-    public Inventory(Player theseus, AffichMainYohan cont)
+    public Inventory(Player theseus, AffichMain cont)
     {
         monJoueur= theseus;
         myMain = cont;
@@ -41,7 +41,7 @@ public class Inventory extends JPanel
      * @param Player theseus allows to use the player of the game
      * @param AffichMainYohan The interface of the game
      */
-    public void showPlayerItem(Player theseus, AffichMainYohan myMain)
+    public void showPlayerItem(Player theseus, AffichMain myMain)
     {
         removeAll(); //Remove the panel Inventory
 
