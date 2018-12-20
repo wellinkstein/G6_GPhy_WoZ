@@ -165,49 +165,49 @@ public class Spot
 
         switch(valueExits)
         {
-            case "": setImageSpot("0.png");
+            case "": setImageSpot("0");
             break;
 
-            case "Z": setImageSpot("1.png");
+            case "Z": setImageSpot("1");
             break;
 
-            case "D": setImageSpot("2.png");
+            case "D": setImageSpot("2");
             break;
 
-            case "S": setImageSpot("3.png");
+            case "S": setImageSpot("3");
             break;
 
-            case "Q": setImageSpot("4.png");
+            case "Q": setImageSpot("4");
             break;
 
             case "ZD":
             case "DZ": 
-            setImageSpot("12.png");
+            setImageSpot("12");
             break;
 
             case "ZS":
             case "SZ":
-            setImageSpot("13.png");
+            setImageSpot("13");
             break;
 
             case "ZQ":
             case "QZ":
-            setImageSpot("14.png");
+            setImageSpot("14");
             break;
 
             case "DS":
             case "SD":
-            setImageSpot("23.png");
+            setImageSpot("23");
             break;
 
             case "DQ":
             case "QD":
-            setImageSpot("24.png");
+            setImageSpot("24");
             break;
 
             case "SQ":
             case "QS":
-            setImageSpot("34.png");
+            setImageSpot("34");
             break;
 
             case "ZDS":
@@ -216,7 +216,7 @@ public class Spot
             case "DSZ":
             case "SDZ":
             case "SZD":
-            setImageSpot("123.png");
+            setImageSpot("123");
             break;
 
             case "ZDQ":
@@ -225,7 +225,7 @@ public class Spot
             case "DZQ":
             case "QZD":
             case "QDZ":
-            setImageSpot("124.png");
+            setImageSpot("124");
             break;
 
             case "ZSQ":
@@ -234,7 +234,7 @@ public class Spot
             case "SZQ":
             case "QZS":
             case "QSZ":
-            setImageSpot("134.png");
+            setImageSpot("134");
             break;
 
             case "DSQ":
@@ -243,11 +243,11 @@ public class Spot
             case "SDQ":
             case "QSD":
             case "QDS":
-            setImageSpot("234.png");
+            setImageSpot("234");
             break;
 
             default:
-            setImageSpot("1234.png");
+            setImageSpot("1234");
             break;
 
         }
