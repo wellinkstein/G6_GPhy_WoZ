@@ -9,17 +9,17 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * This class is an example of GridLayout Manager
+ * This class is an interface of the maze and the buttons which allow Theseus to move
  * 
- * @author Corentin Journay 
- * @version 04/12/2018
+ * @author Groupe 6
+ * @version 20/12/2018
  */
 public class Scrolling extends JPanel
 {
         
     Spot CurrentSpot = new Spot();
     
-    private AffichMainYohan myMain;
+    private AffichMain myMain;
     private JButton myButton1= new JButton("Up");
     private JButton myButton2 = new JButton("Right");
     private JButton myButton3 = new JButton("Down");
@@ -28,7 +28,7 @@ public class Scrolling extends JPanel
     private JPanel bigPanel;
     private JLabel Jlabel1,Jlabel2,Jlabel3,Jlabel4,Jlabel5,Jlabel6,Jlabel7,Jlabel8,Jlabel9,Jlabel10;
     private JLayeredPane myLayer;
-    public Scrolling(Spot myNewSpot, AffichMainYohan newMain)
+    public Scrolling(Spot myNewSpot, AffichMain newMain)
     {
         myMain = newMain;
         main(myNewSpot);
@@ -50,7 +50,6 @@ public class Scrolling extends JPanel
         Jlabel7 = new JLabel (new ImageIcon("0.png"));
         Jlabel8 = new JLabel (new ImageIcon("0.png"));
         Jlabel9 = new JLabel (new ImageIcon("0.png"));
-        //Jlabel10 = new JLabel (new ImageIcon("Link.png"));
         myLayer = new JLayeredPane();
         myLayer.add(Jlabel5, new Integer(2),1);
         updateUI(CurrentSpot);
@@ -108,7 +107,6 @@ public class Scrolling extends JPanel
             else if(i == 5)
             {
                 bigPanel.add(Jlabel5);
-                //bigPanel.add(myLayer);
             }
             else if(i == 6)
             {
@@ -178,19 +176,7 @@ public class Scrolling extends JPanel
         }
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()+"Link.png"));
-        //System.out.println(CurrentSpot.getImageSpot());
         Jlabel5.setBounds(100, 100, 200, 200);
-        //myLayer = new JLayeredPane();
-        //myLayer.add(Jlabel5);//new Integer(-1),1);
-        //myLayer.add(Jlabel5);//, new Integer(2),1);
-        //JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
-        //myJlabel.setBounds(100,100, 200, 200);
-        
-        //myLayer.add(myJlabel);//, new Integer(0),0);
-        //myLayer.add(Jlabel5);
-        //myLayer.setVisible(true);
-        
-        
         
         if(CurrentSpot.getExits("D") != null)
         {
