@@ -56,6 +56,12 @@ public class EcouteurSpotItem implements ActionListener
                     {
                     affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem(((i-1)/2))); //remove the item in the spot
                      }
+                     else if (affichMain.getGame().getPlayer().getNumberItemPossess() == affichMain.getGame().getPlayer().getLimitItem() && affichMain.getGame().getLimitReach()== false)
+                     {
+                         
+                         affichMain.getGame().getCurrentSpot().removeItemSpot(mySpotItem.getSpot().getOneItem(((i-1)/2))); //remove the item in the spot
+                         affichMain.getGame().setLimitReach(true); 
+                     }
                     
                     affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //update Inventory
 

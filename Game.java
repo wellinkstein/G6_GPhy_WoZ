@@ -17,6 +17,7 @@ public class Game
     private Spot currentSpot; // position of player
     private boolean finished; // At the beginning of the game it's false (false: the player must kill the Minotaur; true: the Minotaur was killed and the player must get out)
     private int line = 8; //number of lines in the matrix;
+    private boolean limitReached = false; //True if the limit of the item is reached
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;//created the fighter attribute that will be used to handle combat
@@ -744,7 +745,25 @@ public class Game
         addItemToCurrentSpot(itemDrop);
     }
     
+    /**
+     * Getter for the limitReach
+     * @return boolean limitReach
+     */
+    public boolean getLimitReach()
+    {
+        return (limitReached);
    
-
+    }
+    
+    /**
+     * Set the boolean limit Reach
+     * @param boolean limit
+     */
+    public void setLimitReach(boolean limit){
+        
+        limitReached = limit; 
+        
+        }
+        
     
 }
