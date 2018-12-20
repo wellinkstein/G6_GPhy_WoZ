@@ -115,6 +115,9 @@ public class EcouteurInventory implements ActionListener
                 affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain); //Update the Item of the Spot
 
                 affichMain.getPlayerHead().showPlayerHead(affichMain.getGame().getPlayer());   //Update the characteristic of the player  
+               
+                affichMain.getGame().setLimitReach(false); 
+                
                  
              }
             
