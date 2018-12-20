@@ -1,11 +1,10 @@
 /**
  * This class creates the different items.
  * An Item represents an object that can be picked up and used by the player.
-
- * @author Delphine et Yousra
-
- * @version 2018
+ * @author Groupe 6
+ * @version 04/12/2018
  */
+
 public abstract class Item
 {
     private int damage; //dictates the damage attributed to an item
@@ -13,9 +12,7 @@ public abstract class Item
     private int healthGain; //determines the health an item will give to the player when the item is used
     protected String name; //name of the item
     private String description; //description of an item
-    private static int count = 0;//the auto incrementation of id item
-    private int itemID; // Unique ID of the item, each item will have it's id incremented by 1.
-
+    
     /**
      * Constructor for objects of class Item
      * @param itemName: the name of the object
@@ -28,7 +25,6 @@ public abstract class Item
     { 
         name = itemName;
         description = des;
-        itemID = ++count;
         damage = dam;
         protection = prot;
         healthGain = HG;
@@ -136,15 +132,4 @@ public abstract class Item
     {
         return healthGain;
     }
-    
-    /**
-     * A method which returns the ID of the item
-     * @return int itemID: returns the item of the item
-     */
-    public int getItemID()
-    {
-         return itemID; 
-    }
-    
-    
 }

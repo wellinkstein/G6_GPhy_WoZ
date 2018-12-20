@@ -75,27 +75,7 @@ public class BossTest
     {
         assertEquals ("Snake Lady",myBoss.getDescription());
     }
-    
-    /**
-     * Tests if the Boss is really dead (HP=0)
-     */
-    @Test
-    public void CheckBossDeathTrue()
-    {
-        myBoss.loseHp(15);
-        assertEquals (true,myBoss.isDead());
-    }
-    
-    /**
-     * Checks if the Boss is still alive (HP > 0)
-     */
-    @Test
-    public void CheckBossDeathFalse()
-    {
-        myBoss.loseHp(9);
-        assertEquals (false,myBoss.isDead());
-    }
-    
+
         /**
      * tests the getters of all the attributes
      */

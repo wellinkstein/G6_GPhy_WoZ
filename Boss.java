@@ -9,8 +9,7 @@ import java.util.*;
  */
 public class Boss extends Monster
 {
-    private ArrayList<Legendary> itemToKillMe; //A list of items needed to kill the boss
-
+    private ArrayList<Legendary> itemToKillMe; //A list of items needed to kill the 
     /**
      * Constructor for the Boss class
      * @param int myHP: number of hp of the boss
@@ -22,8 +21,6 @@ public class Boss extends Monster
      */
     public Boss(int myHP, String myName, int myXp, int myDamage,int myProtection, String myDes)
     {
-        // initialisation des variables d'instance
         super(myHP,myName,myXp,myDamage,myProtection,myDes);
-
     }
 }

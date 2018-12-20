@@ -8,7 +8,6 @@
  */
 public abstract class Monster extends Character
 {
-    private boolean isDead = false;//A boolean used to indicate to the game is a monsters hp has reached zero
     private String description; //A description of the monster
      /**
      * The constructor for the monster class
@@ -40,26 +39,6 @@ public abstract class Monster extends Character
     public void setDescription(String myDes)
     {
         description = myDes;
-    }
-
-    
-    /**
-     * deletes the monster from the list
-     * This will be used to remove dead monsters from the game
-     * @return boolean isDead: returns the boolean true or false if the monster is dead or not
-     */
-    public boolean isDead()
-    {
-        if(HP==0)
-        {
-            isDead=true;
-            return true;
-        }
-        else
-        {
-            isDead=false;
-            return false;
-        }
     }
 
 }
