@@ -96,6 +96,16 @@ public abstract class Character
     }
     
     /**
+     * Get for the list of the inventory
+     * 
+     * @return Item: return the item found
+     */
+    public ArrayList<Item> getListInventory()
+    {
+        return(inventory);
+    }
+    
+      /**
      * Get for the inventory
      * @param int emplacement: item index in Inventory
      * @return Item: return the item found

@@ -24,7 +24,7 @@ public class Inventory extends JPanel
     //private Spot spot;
     private JComboBox combo; //The list of the Inventory
     private AffichMainYohan myMain; //the interface in the game
-    private JButton myButton; //The button for the drop
+    private JButton myButton, myButton1; //The button for the drop
 
     /**
      * This is the constructor of the inventory interface
@@ -65,6 +65,10 @@ public class Inventory extends JPanel
         myButton = new JButton("Drop"); 
         myButton.setBackground(Color.gray); 
         myButton.setForeground(Color.white);
+        //create the button take for the health potion
+        myButton1= new JButton("Drink");
+
+        //create the list 
         combo = new JComboBox(); 
         EcouteurInventory e = new EcouteurInventory(this, myMain);
 
@@ -74,6 +78,17 @@ public class Inventory extends JPanel
             myButton.setEnabled(false);
         }
 
+        //If the player can drink the health potion, when he has the health potion in the inventory
+        for (int i =0; i <= (monJoueur.getNumberItemPossess()-1); i++)
+        {
+            if (monJoueur.getItems(i).getName() == "Health Potion")
+            {
+                myButton1.setEnabled(true);
+            }
+        myButton1.setEnabled(false);  
+        }
+
+        
         //Create the list with all the items
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
         {
@@ -85,11 +100,13 @@ public class Inventory extends JPanel
         }
 
         myButton.addActionListener(e); 
+        myButton1.addActionListener(e); 
         myLabel = new JLabel ("Your inventory",JLabel.CENTER);
         //myPanel.setLayout(new GridLayout(2,monJoueur.getNumberItemPossess()));
-        myPanel.setLayout(new GridLayout(1,2));
+        myPanel.setLayout(new GridLayout(1,3));
         myPanel1.setLayout(new GridLayout(1,0));
-        myPanel1.add(myLabel); 
+        myPanel1.add(myLabel);
+        myPanel.add(myButton1); 
         myPanel.add(combo); 
         myPanel.add(myButton); 
 
@@ -140,6 +157,15 @@ public class Inventory extends JPanel
     public JButton getMyButton()
     {
         return myButton; 
+    }
+
+    /**
+     * The getter to use the button "Drink"
+     * @return JButton myButton the button drink for the health potion
+     */
+    public JButton getMyButton1()
+    {
+        return myButton1; 
     }
 
     /**
