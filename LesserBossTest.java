@@ -103,26 +103,6 @@ public class LesserBossTest
         assertEquals ("Snake Lady",myLesserBoss.getDescription());
     }
     
-    // /**
-     // * Tests if the monster is really dead (HP=0)
-     // */
-    // @Test
-    // public void CheckMonsterDeathTrue()
-    // {
-        // myLesserBoss.loseHp(15);
-        // assertEquals (true,myLesserBoss.isDead());
-    // }
-    
-    // /**
-     // * Checks if the monster is still alive (HP > 0)
-     // */
-    // @Test
-    // public void CheckMonsterDeathFalse()
-    // {
-        // myLesserBoss.loseHp(9);
-        // assertEquals (false,myLesserBoss.isDead());
-    // }
-    
         /**
      * tests the getters of all the attributes
      */
