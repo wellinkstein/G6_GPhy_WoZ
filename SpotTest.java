@@ -107,7 +107,7 @@ public class SpotTest
     {
         spot.setExits("Q", neighbor);
         spot.setExits("Z", neighbor1);
-        assertEquals("14.png", spot.getImageSpot());
+        assertEquals("14", spot.getImageSpot());
     }
     
     /**
@@ -125,7 +125,7 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
-        assertEquals("4.png", spot.getImageSpot());
+        assertEquals("4", spot.getImageSpot());
     }
 
     
@@ -164,7 +164,7 @@ public class SpotTest
         }
         assertFalse(test); 
         assertEquals(4, spot.getNumberExits());
-        assertEquals("1234.png", spot.getImageSpot());
+        assertEquals("1234", spot.getImageSpot());
     }
     
     /**
@@ -184,7 +184,7 @@ public class SpotTest
         }
         assertTrue(test); 
         assertEquals(1, spot.getNumberExits());
-        assertEquals("4.png", spot.getImageSpot());
+        assertEquals("4", spot.getImageSpot());
     }
     
     /**
