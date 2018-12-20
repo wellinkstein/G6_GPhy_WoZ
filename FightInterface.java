@@ -163,6 +163,18 @@ public class FightInterface extends JPanel implements ActionListener
             affichMain.getGame().monsterDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
+            affichMain.getScrolling().getButton1().setEnabled(true);
+            affichMain.getScrolling().getButton2().setEnabled(true);
+            affichMain.getScrolling().getButton3().setEnabled(true);
+            affichMain.getScrolling().getButton4().setEnabled(true);
+            if(affichMain.getGame().getCurrentSpot().getExits("Z") == null)
+            {affichMain.getScrolling().getButton1().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("D") == null)
+            {affichMain.getScrolling().getButton2().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("S") == null)
+            {affichMain.getScrolling().getButton3().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("Q") == null)
+            {affichMain.getScrolling().getButton4().setEnabled(false);}
           
         }
     }
