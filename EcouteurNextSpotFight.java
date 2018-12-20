@@ -42,6 +42,11 @@ public class EcouteurNextSpotFight implements ActionListener
             affichMain1.getNextSpot().showNextSpot(affichMain1.getGame().getCurrentSpot(), affichMain1,affichMain1.getNextSpot().getDirection());
             affichMain1.setScrolling();
             affichMain1.setFightInterface();
+            affichMain1.getScrolling().getButton1().setEnabled(false);
+            affichMain1.getScrolling().getButton2().setEnabled(false);
+            affichMain1.getScrolling().getButton3().setEnabled(false);
+            affichMain1.getScrolling().getButton4().setEnabled(false);
+            
             //affichMain1.getNextSpot().showNextSpot(affichMain1.getGame().getCurrentSpot(), affichMain1,affichMain1.getNextSpot().getDirection());
         }
     }

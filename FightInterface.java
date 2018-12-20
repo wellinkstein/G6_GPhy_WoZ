@@ -20,7 +20,7 @@ public class FightInterface extends JPanel implements ActionListener
     private JButton buttonStartFight;
     private AffichMainYohan affichMain;
     private Spot mySpot;
-    private DialogScreenInterface youWon, gameOver;
+    private DialogScreenInterface youWon, gameOver, getOut, youWonFight;
     private JScrollPane scroller;
  
     /**
@@ -150,17 +150,20 @@ public class FightInterface extends JPanel implements ActionListener
         }
         else if (affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss())
         {
-            youWon = new DialogScreenInterface(affichMain.getGame().youWon());
-            affichMain.setDialog(youWon);
+            getOut = new DialogScreenInterface(affichMain.getGame().getOut());
+            affichMain.setDialog(getOut);
             affichMain.getGame().bossDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
         }
         else
         {
+            youWonFight = new DialogScreenInterface(affichMain.getGame().youWonFight());
+            affichMain.setDialog(youWonFight);
             affichMain.getGame().monsterDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
+          
         }
     }
 
