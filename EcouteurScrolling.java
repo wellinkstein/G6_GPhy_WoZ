@@ -111,18 +111,19 @@ public class EcouteurScrolling implements ActionListener
             }
         }
         affichMain.getSpotItem().showListItem(affichMain.getGame().getCurrentSpot(),affichMain);
+        
+        
         if (affichMain.getGame().getCurrentSpot().getExitSpot()){
             if (affichMain.getGame().getPlayer().getTimeToGo()){
-                youWon = new DialogScreenInterface(affichMain.getGame().youWon());
-                affichMain.setDialog(youWon);
+                
+                affichMain.setDialog(affichMain.getGame().youWon());
                 affichMain.getScrolling().getButton1().setEnabled(false);
                 affichMain.getScrolling().getButton2().setEnabled(false);
                 affichMain.getScrolling().getButton3().setEnabled(false);
                 affichMain.getScrolling().getButton4().setEnabled(false);
                 }
             else{
-                NotTimeToGo = new DialogScreenInterface(affichMain.getGame().NotTimeToGo());
-                affichMain.setDialog(NotTimeToGo);
+                affichMain.setDialog(affichMain.getGame().NotTimeToGo());
             }
         }
     }

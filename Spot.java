@@ -5,30 +5,24 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Class Spot - a spot in an adventure game.
- *
- * This class is part of the "Daedalus" application. 
- * "Daedalus" is a very simple, text based adventure game.  
+ * Class Spot  
  *
  * A "Spot" represents one location in the scenery of the game.  It is 
- * connected to other spots via exits.  The exits are labelled north, 
- * east, south, west.  For each direction, the room stores a reference
+ * connected to other spots via exits. There cannot be more than 4 exits for one spot.
+ * The exits are labelled north, east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
+ * There cannot have more than 2 characters in a spot and not more than 1 monster.
+ * A Spot contains at most 5 items
  * 
  * @author  Groupe 6
  * @version 14/11/2018
  */
 public class Spot
 {
-    private int numberMaxItem; //A spot contains at most 5 items
-    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits. 
-    // There cannot be more than 4 exits for one spot.
-    private ArrayList<Character> characterInSpot; //all the character in a spot. There cannot
-    // more than 2 characters in a spot and not more than 1 monster.
-    private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than
-    //number max item.
-    private boolean isVisible; //True if the spot is visible
-    //private boolean fighting; //boolean if a monster and a player are in the same spot
+    private int numberMaxItem;
+    private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits.
+    private ArrayList<Character> characterInSpot; //all the character in a spot. 
+    private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than number max item.
     private boolean spotCorrect; //boolean if the spot is well created
     private boolean exitSpot; // boolean if the spot is an exit of the game
     private boolean startSpot; // boolean if the spot is the start of the game
@@ -43,11 +37,8 @@ public class Spot
      * @param objectSpot : all the objects (Items) in the spot
      */
     public Spot() 
-    //ArrayList<Character> characterSpot, ArrayList<Item>objectSpot
     {
         exits = new HashMap<String, Spot>();
-        isVisible = false;
-        //fighting = false;
         spotCorrect = false;
         exitSpot = false;
         startSpot = false;
@@ -356,23 +347,6 @@ public class Spot
     public int getNumberOfItemInSpot()
     {
         return (objectInSpot.size());
-    }
-
-    /**
-     * setter of isVisible
-     */
-    public void setVisible()
-    {
-        isVisible=true;
-    }
-
-    /**
-     * getter of isVisible
-     * @return boolean : True if the spot is visible
-     */
-    public boolean getVisible()
-    {
-        return(isVisible);
     }
 
     /**
