@@ -58,8 +58,8 @@ public class EcouteurInventory implements ActionListener
 
                 if (affichMain.getGame().getCurrentSpot().getListItem().size() < affichMain.getGame().getCurrentSpot().getNumberMaxItem())
                 {
-                    affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Remove the item of the player
-                    affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Add the item of the spot
+                    affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()-1)); //Remove the item of the player
+                    affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex()-1)); //Add the item of the spot
                     affichMain.getGame().setLimitReach(false); 
                 }
                 else if (affichMain.getGame().getCurrentSpot().getListItem().size() ==  affichMain.getGame().getCurrentSpot().getNumberMaxItem())
