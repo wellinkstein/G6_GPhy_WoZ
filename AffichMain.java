@@ -80,8 +80,8 @@ public class AffichMain extends JFrame implements ActionListener
         panelLab = new Scrolling(myGame.getCurrentSpot(),this);
         panelLab.setBorder(BorderFactory.createLineBorder(Color.black));
         panelLab.setBackground(new Color(208,185,178));
-        c.weightx = 0.2;
-        c.weighty = 0.6;
+        c.weightx = 0.4;
+        c.weighty = 0.9;
         c.gridx = 0;
         c.gridy = 0;
         c.gridheight=5;
@@ -136,10 +136,6 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
         panelDesc.setBorder(BorderFactory.createLineBorder(Color.black));
-        // panelDesc.setPreferredSize(new Dimension(400,400));
-        // panelDesc.setSize(400,400);
-        //new JPanel();
-        //panelDesc.setBackground(Color.PINK);
         c.weightx = 0.15;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -151,11 +147,6 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelCombat= new FightInterface(this);
         panelCombat.setBorder(BorderFactory.createLineBorder(Color.black));
-        //panelCombat.setPreferredSize(new Dimension(400,400));
-        //panelCombat.setSize(400,400);
-        //new FightInterface();
-        //
-        //panelCombat.setBackground(Color.BLACK);
         c.weightx = 0.3;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -168,9 +159,6 @@ public class AffichMain extends JFrame implements ActionListener
          
         panelNextSpot = new NextSpot(myGame.getCurrentSpot(),this, "S");
         panelNextSpot.setBorder(BorderFactory.createLineBorder(Color.black));
-        //new JPanel();
-        // panelNextSpot.setBackground(Color.MAGENTA);
-        //
         c.weightx = 0.3;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
@@ -182,8 +170,6 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelDiag = new DialogScreenInterface(myGame.printWelcome());
         panelDiag.setBorder(BorderFactory.createLineBorder(Color.black));
-        // System.out.println(myGame.printWelcome());
-        //panelDiag.setBackground(Color.YELLOW);
         c.weightx = 0.3;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
