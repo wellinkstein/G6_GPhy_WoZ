@@ -23,7 +23,6 @@ public class Spot
     private HashMap<String, Spot> exits = new HashMap<String, Spot>(); //list of the exits.
     private ArrayList<Character> characterInSpot; //all the character in a spot. 
     private ArrayList<Item> objectInSpot; //all the item in a spot, cannot be greater than number max item.
-    private boolean spotCorrect; //boolean if the spot is well created
     private boolean exitSpot; // boolean if the spot is an exit of the game
     private boolean startSpot; // boolean if the spot is the start of the game
     private String imageSpot; // name of the image representing a spot
@@ -39,7 +38,6 @@ public class Spot
     public Spot() 
     {
         exits = new HashMap<String, Spot>();
-        spotCorrect = false;
         exitSpot = false;
         startSpot = false;
         numberMaxItem = 5;
@@ -70,41 +68,8 @@ public class Spot
         if (exist ==false)
         {
             exits.put(direction, neighbor);
-            spotCorrect = true;
         }
         setImageSpotExistDirections(); //set the picture of the spot
-    }
-
-    /** Method removeExit. Remove an exit from this spot.
-     * If the spot is not found, nothing is done
-     * @param String direction: the direction of the exit to remove
-     * @param Spot neighbor: the neighbor spot to remove
-     */
-    public void removeExits(String direction, Spot neighbor)
-    {
-        for (Map.Entry mapentry: this.getAllExit().entrySet())
-        {
-            if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
-            {
-                exits.remove(direction, neighbor); 
-            }
-            if(this.getNumberExits()==0)
-            {
-                spotCorrect = false;
-            }
-        }
-        setImageSpotExistDirections(); //set the picture of the spot
-    }
-
-    /**
-     * Get the boolean for the attribute getCorrect. "True" if the spot is correct (meaning
-     * that it has between 1 et 4 exits)
-     * @return : spot True if the spot is corrected, False if the spot 
-     * not corrected
-     */
-    public boolean getCorrect()
-    {
-        return(this.spotCorrect);
     }
 
     /**

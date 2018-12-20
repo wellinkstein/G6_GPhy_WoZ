@@ -83,22 +83,10 @@ public class SpotTest
         assertEquals(0, spot.getNumberOfItemInSpot());
         assertEquals(0, spot.getListCharacter().size()); // getListCharacter returns an array
         assertEquals(0, spot.getListItem().size());
-        //assertFalse(spot.getVisible());
-        assertFalse(spot.getCorrect());
         assertFalse(spot.getExitSpot());   
         assertFalse(spot.getStartSpot());
         assertEquals(5, spot.getNumberMaxItem());
         assertEquals(0,spot.getNumberExits());
-    }
-    
-    /** 
-     * Test verify if spot is corrected
-     */
-    @Test
-    public void testSpotCorrect()
-
-    {   spot.setExits("Q", neighbor);
-        assertTrue(spot.getCorrect());    
     }
     
      /**
@@ -139,33 +127,7 @@ public class SpotTest
         assertEquals(1, spot.getNumberExits());
         assertEquals("4.png", spot.getImageSpot());
     }
-    
-    /**
-     * Test remove exit to a spot
-     */
-    @Test
-    public void testRemoveExits()
-    {
-        spot.setExits("Q", neighbor);
-        boolean test=false; 
-        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
-            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
-                test= true; 
-            }
-        }
-        assertTrue(test); 
-        assertEquals("4.png", spot.getImageSpot());
-        spot.removeExits("Q", neighbor);
-        test=false;
-        for (Map.Entry mapentry: spot.getAllExit().entrySet()){
-            if (mapentry.getKey()=="Q" && mapentry.getValue()==neighbor){
-                test= true; 
-            }
-        }
-        assertFalse(test);
-        assertEquals("0.png", spot.getImageSpot());
-        assertFalse(spot.getCorrect());
-    }
+
     
     /**
      * Test getSpotExitable

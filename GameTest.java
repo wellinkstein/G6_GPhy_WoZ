@@ -185,36 +185,18 @@ public class GameTest
     }
     
     /**
-     * Check if all the spots are corrected.
-     */
-    @Test
-    public void testSpotsCorrect(){
-        boolean test=true;  
-        Spot room; 
-        ArrayList<Spot> listS = myGame.getListSpot();
-        for (int i =0; i<listS.size(); i++){
-                if (listS.get(i).getCorrect()==false){
-                test=false;  
-            }
-        }
-        assertFalse(test);
-    }
-    
-    /**
      * Check if the player move in the good spot
      */
     @Test
     public void testPlayerMoveSpot(){
-        //myGame.getCurrentSpot().addCharacterSpot(theseus); 
         myGame.move(myGame.getListSpot().get(1)); 
         boolean test=false; 
-        //for (int i =0; i<myGame.getListSpot().size(); i++){
-            if (myGame.getListSpot().get(1).getPlayer() != null){
-                test=true; 
-            }
-        //}
+        if (myGame.getListSpot().get(1).getPlayer() != null){
+            test=true; 
+        }
         assertTrue(test);
         }
+        
     /**
      * Check if the Item is in the good place.
      * Check if the Item ironSword is well in the spot 14.
@@ -227,9 +209,7 @@ public class GameTest
                 test=true; 
             }
         }
-        
-        assertTrue(test); 
-        
+        assertTrue(test);
     }
      /**
      * Check if adding an item to current spot is possible
@@ -267,23 +247,5 @@ public class GameTest
         }
         assertTrue(test);
     }
-    
-    // /**
-     // * Test if the fighter is the player, le fighter return the monster
-     // * 
-     // */
-    // @Test
-    // public void testsetFighter(){
-        
-        // }
-    // /**
-     // * Test if the dammage is added to the player
-     // */
-    // @Test
-    // public void testInflictDamage(){
-        
-        // }
-        
-        
     
 }
