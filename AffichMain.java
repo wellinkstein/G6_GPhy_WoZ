@@ -240,6 +240,10 @@ public class AffichMain extends JFrame implements ActionListener
         GameOver over = new GameOver();
     }
     
+    public void youWonFrame(){
+        YouWon over = new YouWon(myGame.youWon());
+    }
+    
     public void setScrolling()
     {
         panelLab.updateUI(myGame.getCurrentSpot());
