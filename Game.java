@@ -554,7 +554,7 @@ public class Game
     { 
         Random rand = new Random();
         int crit = rand.nextInt(100); 
-        if (theseus.getCritRate()<=crit){
+        if (theseus.getCritRate()>=crit){
             int dam = (fighter.getDamage())/2;
             
             for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
