@@ -83,7 +83,7 @@ public class SpotTest
         assertEquals(0, spot.getNumberOfItemInSpot());
         assertEquals(0, spot.getListCharacter().size()); // getListCharacter returns an array
         assertEquals(0, spot.getListItem().size());
-        assertFalse(spot.getVisible());
+        //assertFalse(spot.getVisible());
         assertFalse(spot.getCorrect());
         assertFalse(spot.getExitSpot());   
         assertFalse(spot.getStartSpot());
@@ -372,16 +372,6 @@ public class SpotTest
     {
         spot.setExitSpot();
         assertTrue(spot.getExitSpot());
-    }
-    
-     /**
-     * Test that a spot may be set to be a visible
-     */
-    @Test
-    public void testIsVisible()
-    {
-        spot.setVisible();
-        assertTrue(spot.getVisible());
     }
     
     /**
