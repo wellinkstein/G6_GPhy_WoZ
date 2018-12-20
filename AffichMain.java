@@ -14,12 +14,12 @@ import javax.sound.sampled.*;
 import sun.audio.*;
 
 /**
- * This class is an example of GridLayout Manager
+ * This class manages the display of the game
  * 
- * @author Corentin Journay 
- * @version 04/12/2018
+ * @author Groupe 6 
+ * @version 20/12/2018
  */
-public class AffichMainYohan extends JFrame implements ActionListener
+public class AffichMain extends JFrame implements ActionListener
 {
 
     private Game myGame; 
@@ -39,7 +39,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
     private Container pane;
     private FightInterface panelCombat;
     
-    public AffichMainYohan()
+    public AffichMain()
     {
         main();
     }
@@ -60,15 +60,11 @@ public class AffichMainYohan extends JFrame implements ActionListener
         newSpot = new Spot();
         newSpot.setImageSpot("1234.png");
         myGame = new Game();
-        //myGame.move(myGame.getListSpot().get(10));
-        //myGame.move(myGame.getListSpot().get(9)); //Used for testing purposes
-        
         
         
         JFrame myFrame = new JFrame("Daedalus");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        //myFrame.setSize(1366,768);
         myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         myFrame.setUndecorated(true);
        
@@ -86,7 +82,6 @@ public class AffichMainYohan extends JFrame implements ActionListener
         panelLab.setBackground(new Color(208,185,178));
         c.weightx = 0.5;
         c.weighty = 0.6;
-        //c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         c.gridheight=5;
@@ -96,8 +91,6 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelPlayer = new PlayerHead(myGame.getPlayer());
         panelPlayer.setBorder(BorderFactory.createLineBorder(Color.black));
-        //panelPlayer.setBackground(Color.GREEN);
-        //
         c.weightx = 0.25;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
@@ -110,8 +103,6 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelMonster = new MonsterHead(myGame.getCurrentSpot().getMonster());
         panelMonster.setBorder(BorderFactory.createLineBorder(Color.black));
-        //new JPanel();
-        //        panelMonster.setBackground(Color.RED);
         c.weightx = 0.25;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
@@ -123,8 +114,6 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelInventory= new Inventory(myGame.getPlayer(),this);
         panelInventory.setBorder(BorderFactory.createLineBorder(Color.black));
-        // new JPanel();
-        // panelInventory.setBackground(Color.ORANGE);
         c.weightx = 0.5;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
@@ -136,11 +125,6 @@ public class AffichMainYohan extends JFrame implements ActionListener
         
         panelSpotItem=new SpotItem(myGame.getCurrentSpot(),this);
         panelSpotItem.setBorder(BorderFactory.createLineBorder(Color.black));
-        // panelSpotItem.setPreferredSize(new Dimension(400,400));
-        // panelSpotItem.setSize(400,400);
-        //new JPanel();
-        // panelSpotItem.setBackground(Color.CYAN);
-        //
         c.weightx = 0.125;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
