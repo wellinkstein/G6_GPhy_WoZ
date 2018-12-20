@@ -94,7 +94,7 @@ public class PlayerTest
         Common potion2 = new Common("Health Potion","Heals for 5 hp",0,0,5);
         myPlayer.takeItem(potion);
         myPlayer.takeItem(potion2);
-        //myPlayer.drinkPotion();
+        myPlayer.drinkPotion(0);
         assertEquals(20, myPlayer.getHP());
         assertEquals(1, myPlayer.inventory.size());
     }

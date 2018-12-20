@@ -41,7 +41,7 @@ public class EcouteurInventory implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-        for(int i = 0; i <= (affichMain.getGame().getPlayer().getNumberItemPossess()); i++)
+        for(int i = 0; i <= (affichMain.getGame().getPlayer().getNumberItemPossess()-1); i++)
         {
             if(e.getSource() == myInventory.getCombo())
             {  
