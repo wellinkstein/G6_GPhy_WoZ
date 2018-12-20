@@ -158,29 +158,33 @@ public class Scrolling extends JPanel
         if(CurrentSpot.getExits("Z") != null)
         {
             Jlabel2.setIcon(new ImageIcon(CurrentSpot.getExits("Z").getImageSpot()+".png"));
+            Jlabel2.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel2.setIcon(new ImageIcon( "0.png"));
+            Jlabel2.setBounds(100, 100, 200, 200);
         }
         
         if(CurrentSpot.getExits("Q") != null)
         {
             Jlabel4.setIcon(new ImageIcon(CurrentSpot.getExits("Q").getImageSpot()+".png"));
+            Jlabel4.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel4.setIcon(new ImageIcon( "0.png"));
+            Jlabel4.setBounds(100, 100, 200, 200);
         }
         
         Jlabel5.setIcon(new ImageIcon(CurrentSpot.getImageSpot()+"Link.png"));
         //System.out.println(CurrentSpot.getImageSpot());
-        Jlabel5.setBounds(0, 2, 185, 185);
+        Jlabel5.setBounds(100, 100, 200, 200);
         //myLayer = new JLayeredPane();
         //myLayer.add(Jlabel5);//new Integer(-1),1);
         //myLayer.add(Jlabel5);//, new Integer(2),1);
-        JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
-        myJlabel.setBounds(0, 0, 200, 200);
+        //JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
+        //myJlabel.setBounds(100,100, 200, 200);
         
         //myLayer.add(myJlabel);//, new Integer(0),0);
         //myLayer.add(Jlabel5);
@@ -191,19 +195,23 @@ public class Scrolling extends JPanel
         if(CurrentSpot.getExits("D") != null)
         {
             Jlabel6.setIcon(new ImageIcon(CurrentSpot.getExits("D").getImageSpot()+".png"));
+            Jlabel6.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel6.setIcon(new ImageIcon( "0.png"));
+            Jlabel6.setBounds(100, 100, 200, 200);
         }
         
         if(CurrentSpot.getExits("S") != null)
         {
             Jlabel8.setIcon(new ImageIcon(CurrentSpot.getExits("S").getImageSpot()+".png"));
+            Jlabel8.setBounds(100, 100, 200, 200);
         }
         else
         {
             Jlabel8.setIcon(new ImageIcon( "0.png"));
+            Jlabel8.setBounds(100, 100, 200, 200);
         }
     }
     
