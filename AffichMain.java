@@ -14,7 +14,8 @@ import javax.sound.sampled.*;
 import sun.audio.*;
 
 /**
- * This class manages the display of the game
+ * This class manages the main display of the game, it will recruit various interface classes and combine them in a grid bag layout.
+ * 
  * 
  * @author Groupe 6 
  * @version 20/12/2018
@@ -23,27 +24,33 @@ public class AffichMain extends JFrame implements ActionListener
 {
 
     private Game myGame; 
-    private JPanel panelBouton;
-    private DialogScreenInterface panelDiag;
-    private SpotItem panelSpotItem;
-    private Inventory panelInventory;
-    private NextSpot panelNextSpot; 
-    private ItemDescription panelDesc; 
-    private PlayerHead panelPlayer;
-    private MonsterHead panelMonster; 
-    private Scrolling panelLab;
+    private JPanel panelBouton;//The buttons within the main panel
+    private DialogScreenInterface panelDiag;//The dialog section of the interface
+    private SpotItem panelSpotItem;//The spotItem section of the interface
+    private Inventory panelInventory;//The inventory section of the interface
+    private NextSpot panelNextSpot; //The NextSpot section of the interface
+    private ItemDescription panelDesc; //The item description section of the interface
+    private PlayerHead panelPlayer;//The Player Head section of the interface
+    private MonsterHead panelMonster; //The Monster Head section of the interface
+    private Scrolling panelLab;//The Scrolling aspect of the interface
     private Spot newSpot;
-    private JMenuBar menuBar; 
+    private JMenuBar menuBar; //The menu bar allowing a user to exit at any time
     private JMenu menu; 
     private JMenuItem item; 
     private Container pane;
-    private FightInterface panelCombat;
+    private FightInterface panelCombat;//The fighting aspect of the interface
     
+    /**
+     * The constructor of the class calls the main function, this causes the game to be launched when an AffichMain is instantiated
+     */
     public AffichMain()
     {
         main();
     }
     
+    /**
+     * The main function of AffichMain, this takes in all the components of the interface and puts them accrodingly in the gridbaglayout;
+     */
     public void main()
     {
         try {
@@ -196,6 +203,9 @@ public class AffichMain extends JFrame implements ActionListener
         
     }
     
+    /**
+     * A method that sets new descriptions, and removing the old ones
+     */
     public void setDes(ItemDescription myDes)
     {
         panelDesc.removeAll();
@@ -204,6 +214,9 @@ public class AffichMain extends JFrame implements ActionListener
         pane.repaint();
     }
     
+    /**
+     * A method that removes old dialog and sets the new dialog
+     */
     public void setDialog(String myDialog)
     {
         panelDiag.removeAll();
@@ -213,79 +226,99 @@ public class AffichMain extends JFrame implements ActionListener
         //System.out.println("New Description");
     }
     
-    // public void setPlayerHead(PlayerHead playerH)
-    // {
-        // panelPlayer.removeAll();
-        // panelPlayer.add(playerH);
-        // panelPlayer.revalidate();
-        // panelPlayer.repaint();
-        // //System.out.println("New Description");
-    // }
-    
+    /**
+     * A method that created the GameOver interface
+     */
     public void gameOverFrame(){
         GameOver over = new GameOver();
     }
     
+    /**
+     * A method that sets the youWon frame
+     */
     public void youWonFrame(){
         YouWon over = new YouWon(myGame.youWon());
     }
     
+    /**
+     * A method that sets the Scrolling
+     */
     public void setScrolling()
     {
         panelLab.updateUI(myGame.getCurrentSpot());
     }
     
-     public void setFightInterface()
+    /**
+     * A method that sets the Fight interface
+     */
+    public void setFightInterface()
     {
       panelCombat.updatePanel(this);
     }
     
+    /**
+     * get for Game
+     */
     public Game getGame(){
         return myGame;
     }
     
+    /**
+     * get for SpotItem
+     */
     public SpotItem getSpotItem()
     {
         return panelSpotItem;
     }
     
+    /**
+     * A getter for PlayerHead
+     */
     public PlayerHead getPlayerHead()
     {
         return panelPlayer;
     }
+    
+    /**
+     * A getter for the inventory interface
+     */
     public Inventory getInventory()
     {
         return panelInventory;
     }
     
+    /**
+     * A getter for Next Spot
+     */
     public NextSpot getNextSpot()
     {
         return panelNextSpot; 
     }
        
+    /**
+     * A getter for Monster Head
+     */
     public MonsterHead getMonsterHead()
     {
         return panelMonster; 
     }
     
+    /**
+     * A getter for scrolling
+     */
     public Scrolling getScrolling()
     {
         return panelLab;
     }
     
+    /**
+     * The action event for the close function of the menu
+     */
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource()==item){
             System.exit(0);
         }
     }
-    // public static void main(String[] args) {
-        // //Schedule a job for the event-dispatching thread:
-        // //creating and showing this application's GUI.
-        // javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            // public void run() {
-                // createAndShowGUI();
-            // }
-        // });
-    // }
+
 }
