@@ -13,32 +13,50 @@ import java.awt.GridBagLayout;
  * @author (Yohan Lefol)
  * @version (11/12/2018)
  */
-public class GameOver extends JPanel
+public class GameOver extends JFrame implements ActionListener
 {
-    
+    private JFrame myFrame;
     private JPanel myPanel;
     private JLabel dialog;
-    private JFrame myFrame;
+    private JButton exitButton;
 
     /**
      * Constructor for objects of class GameOver
      */
     public GameOver()
     {
-        myFrame = new JFrame();
-        dialog = new JLabel("GAME OVER");
-        dialog.setFont(new Font("Arial", Font.PLAIN, 300));
-
-        myPanel = new JPanel();
-        myPanel.add(dialog);
+        JFrame myFrame = new JFrame();
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        myFrame.setUndecorated(true);
+        dialog = new JLabel("GAME OVER", SwingConstants.CENTER);
+        dialog.setOpaque(true);
+        dialog.setBackground(Color.red);
+        dialog.setFont(new Font("Arial", Font.PLAIN, 200));
+        exitButton = new JButton("CLOSE, LOSER!");
+        exitButton.setBackground(Color.gray); 
+        exitButton.setForeground(Color.red);
         
-
-        myPanel.setSize(1000,1000);
+        exitButton.setFont(new Font("Arial", Font.PLAIN, 200));
+        exitButton.addActionListener(this);
+        myPanel = new JPanel();
+        myPanel.setLayout(new GridLayout(2,1));
+        myPanel.add(dialog);
+        myPanel.add(exitButton);
+       
         myPanel.setVisible(true);
-        // myFrame.add(myPanel);
-        // myFrame.setSize(1000,1000);
-        // myFrame.setVisible(true);
-        // myFrame.pack();
-        add(myPanel);
+        myFrame.add(myPanel);
+        
+        myFrame.setVisible(true);
+        
+        
+    }
+    
+    public void actionPerformed (ActionEvent e)
+    {
+        if(e.getSource() == exitButton)
+        {
+            System.exit(0);
+        }
     }
 }

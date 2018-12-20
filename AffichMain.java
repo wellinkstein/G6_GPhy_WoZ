@@ -236,6 +236,10 @@ public class AffichMain extends JFrame implements ActionListener
         // //System.out.println("New Description");
     // }
     
+    public void gameOverFrame(){
+        GameOver over = new GameOver();
+    }
+    
     public void setScrolling()
     {
         panelLab.updateUI(myGame.getCurrentSpot());
