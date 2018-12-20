@@ -8,10 +8,10 @@ import java.util.*;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 /**
- * Write a description of class YouWon here.
+ * This is a class for the message that appears when a player wins the game
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Hatim)
+ * @version (20/12/2018)
  */
 public class YouWon extends JFrame implements ActionListener
 {
@@ -52,6 +52,9 @@ public class YouWon extends JFrame implements ActionListener
         
     }
     
+    /**
+     * This is the method coding for the button of this class, it is a button that closes.
+     */
     public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == exitButton)
