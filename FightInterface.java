@@ -118,11 +118,11 @@ public class FightInterface extends JPanel implements ActionListener
             }
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {
-                updateCombatLogbook("Theseus inflicts" + damFighter + "damages to the monster."); 
+                updateCombatLogbook("Theseus inflicts " + damFighter + " damages to the monster."); 
             }
             else
             {
-                updateCombatLogbook("The monster inflicts" + damFighter + "damages to Theseus.");
+                updateCombatLogbook("The monster inflicts " + damFighter + " damages to Theseus.");
             }
 
             affichMain.getGame().setFighter(affichMain.getGame().getFighter()); // the fighter changes
