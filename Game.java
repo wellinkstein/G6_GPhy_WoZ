@@ -60,12 +60,7 @@ public class Game
         listSpot.get(45).addCharacterSpot(chimera);
         listSpot.get(16).addCharacterSpot(arachne);
 
-        
         ArrayList<Integer> listIronSword = new ArrayList();
-        //test
-        //listIronSword.add(10);
-        //listIronSword.add(10);
-        //test
         listIronSword.add(18);
         listIronSword.add(62);
         listIronSword.add(17);
@@ -123,7 +118,6 @@ public class Game
     {
         // Create spots
         for (int i = 0; i < line*column; i++) { 
-            //listSpot.add(new Spot(null,null));
             listSpot.add(new Spot());
         }
 
@@ -139,7 +133,7 @@ public class Game
         listSpot.get(4).setExits("D",listSpot.get(5));
         listSpot.get(5).setExits("Q",listSpot.get(4));
         listSpot.get(5).setExits("S",listSpot.get(14));
-        //listSpot.get(6).setExits("Z",null);
+        
         listSpot.get(6).setExits("S",listSpot.get(15));
         listSpot.get(6).setExits("D",listSpot.get(7));
         listSpot.get(7).setExits("Q",listSpot.get(6));
@@ -281,6 +275,7 @@ public class Game
         listSpot.get(71).setExits("Z",listSpot.get(62));
 
     }
+    
     /**
      * Print out the opening message for the player.
      * @return String: return a message for the player
@@ -401,6 +396,7 @@ public class Game
         }
 
     }
+    
     /**
      * If the player loses the fight
      * @return boolean true: the player loses the fight
@@ -420,11 +416,9 @@ public class Game
     { 
         if (theseus.getHermesSandals()){
             fighter=theseus;
-
         }
         else
         {
-
             Random rand = new Random();
             int beginner = rand.nextInt(2); 
 
@@ -459,14 +453,6 @@ public class Game
             if (currentSpot.getListCharacter().get(i) != fighter){
                 currentSpot.getListCharacter().get(i).loseHp(fighter.getDamage());
                 dam = currentSpot.getListCharacter().get(i).valLoseHp(fighter.getDamage());
-                //System.out.println("The not fighter of inflict damage: "+currentSpot.getListCharacter().get(i));
-                //System.out.println(dam);
-                //System.out.println("In the if");
-                //System.out.println("the hp  of the fighter after damage: "+currentSpot.getListCharacter().get(i).getHP());
-            }
-            else
-            {
-                //System.out.println("In the else");
             }
 
         }
@@ -474,7 +460,8 @@ public class Game
     }
 
     /**
-     * 
+     * criticalHit calculates if yes or not the player inflicts citical damage in more than damage
+     * and calculates the critical damage as damage divides by 2
      * @return int dam: return the damage with or without critical strike
      */
     public int criticalHit() 
@@ -507,15 +494,10 @@ public class Game
         Character myFighter ;
         if (fighter==theseus){
             myFighter=currentSpot.getMonster();
-            //System.out.println("the who begins fighter in the if: "+myFighter);
-
         }
         else{
             myFighter=theseus;
-            //System.out.println("the who beings fighter in the else: "+myFighter);
-
         }
-        //System.out.println("before return : "+myFighter);
         this.fighter=myFighter;
         return myFighter;
     }
@@ -541,15 +523,6 @@ public class Game
                 listSpot.get(i).getLesserBoss().setAggressiveTrue();
             }
         }
-    }
-
-    /**
-     * returns the game over message
-     * @return String "Game over": returns this string when game over
-     */
-    public String gameOver() 
-    { 
-        return "Game over";          
     }
 
     /**
