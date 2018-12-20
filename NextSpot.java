@@ -25,6 +25,7 @@ public class NextSpot extends JPanel
      * Constructor for objects of class NextSpot.
      * The NextSpot is the future spot where the player will go if he decides to click on fight
      * When the player click on the button flee, the player does not fight the monster. He stays in the same spot
+     * This interface only appears to warn a player of an upcomong monster, otherwise it will be empty.
      * @param Spot the next spot of the player 
      * @param AffichMainYohan The interface of the game
      * @param String the direction of the player wants to go
