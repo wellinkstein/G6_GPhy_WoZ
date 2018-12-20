@@ -67,7 +67,8 @@ public class Inventory extends JPanel
         myButton.setForeground(Color.white);
         //create the button take for the health potion
         myButton1= new JButton("Drink");
-
+        myButton1.setBackground(Color.gray); 
+        myButton1.setForeground(Color.white);
         //create the list 
         combo = new JComboBox(); 
         EcouteurInventory e = new EcouteurInventory(this, myMain);
@@ -79,6 +80,7 @@ public class Inventory extends JPanel
         }
 
         //If the player can drink the health potion, when he has the health potion in the inventory
+        myButton1.setEnabled(false); 
         for (int i =0; i <= (monJoueur.getNumberItemPossess()-1); i++)
         {
             if (monJoueur.getItems(i).getName() == "Health Potion")
@@ -87,7 +89,7 @@ public class Inventory extends JPanel
             }
         myButton1.setEnabled(false);  
         }
-
+         
         
         //Create the list with all the items
         for(int i = 0; i <= (monJoueur.getNumberItemPossess()-1); i++)
