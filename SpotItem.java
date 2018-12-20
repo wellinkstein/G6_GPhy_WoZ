@@ -65,7 +65,7 @@ public class SpotItem extends JPanel
 
         //Create the label of the SpotItem
         if (spot.getListItem().size()!=0){
-            myLabel = new JLabel ("These are the items available",JLabel.CENTER);
+            myLabel = new JLabel ("The available items in the spot",JLabel.CENTER);
         }
         else {
             myLabel = new JLabel ("These are no items in the spot",JLabel.CENTER);
