@@ -34,6 +34,18 @@ public class EcouteurNextSpotFight implements ActionListener
         if(e.getSource()==myNextSpot.getMyFleeButton()) //cancels the choice of direction and doesn't engage a fight
         {   
             affichMain1.getNextSpot().showNextSpot(affichMain1.getGame().getCurrentSpot(), affichMain1,affichMain1.getNextSpot().getDirection());
+            affichMain1.getScrolling().getButton1().setEnabled(true);
+            affichMain1.getScrolling().getButton2().setEnabled(true);
+            affichMain1.getScrolling().getButton3().setEnabled(true);
+            affichMain1.getScrolling().getButton4().setEnabled(true);
+            if(affichMain1.getGame().getCurrentSpot().getExits("Z") == null)
+            {affichMain1.getScrolling().getButton1().setEnabled(false);}
+            if(affichMain1.getGame().getCurrentSpot().getExits("D") == null)
+            {affichMain1.getScrolling().getButton2().setEnabled(false);}
+            if(affichMain1.getGame().getCurrentSpot().getExits("S") == null)
+            {affichMain1.getScrolling().getButton3().setEnabled(false);}
+            if(affichMain1.getGame().getCurrentSpot().getExits("Q") == null)
+            {affichMain1.getScrolling().getButton4().setEnabled(false);}
             affichMain1.setScrolling();
         }
         else if (e.getSource()==myNextSpot.getMyFightButton())
