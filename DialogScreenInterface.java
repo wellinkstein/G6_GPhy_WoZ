@@ -11,11 +11,12 @@ import java.awt.event.*;
  */
 public class DialogScreenInterface extends JPanel
 {
-    private JPanel myPanel;
+    private JPanel myPanel; //panel
     private JLabel dialog;
 
     /**
      * Constructeur of DialogScreenInterface
+     * @param String dialogText
      */
     public DialogScreenInterface(String dialogText)
     {

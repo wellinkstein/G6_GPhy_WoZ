@@ -55,6 +55,7 @@ public class GameOver extends JFrame implements ActionListener
     
     /**
      * The event listener for the close button of this class.
+     * @param ActionEvent e
      */
     public void actionPerformed (ActionEvent e)
     {

@@ -17,19 +17,23 @@ import java.awt.GridBagLayout;
  */
 public class MonsterHead extends JPanel
 {
-    //private Game myGame;
     private JPanel myMainPanel, myStatsPanel;
     private JLabel myHealth, myXP, myAttack, myProtection;
     private JFrame myFrame;
 
     /**
      * Constructor for objects of class MonsterHead
+     * @param Monster monster
      */
     public MonsterHead(Monster monster)
     {
         showMonsterHead(monster); 
     }
 
+    /**
+     * The method showMonsterHead, to create the panel monster in the game
+     * @param Monster monster
+     */
     public void showMonsterHead(Monster monster)
     {
         removeAll();//removes everything from the panels

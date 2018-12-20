@@ -18,18 +18,24 @@ import java.awt.GridBagLayout;
  */
 public class PlayerHead extends JPanel
 {
-    private Game myGame;
+    private Game myGame;  
     private JPanel myMainPanel, myStatsPanel;
     private JLabel myHealth, myXP, myAttack, myProtection;
     private JFrame myFrame;
     
     /**
      * Constructor for objects of class PlayerHead
+     * @param Player player
      */
     public PlayerHead(Player player)
     {
         showPlayerHead(player); 
     }
+    
+    /**
+     * The fonction showPlayerHead, create the panel of PlayerHead
+     * @param Player player
+     */
     public void showPlayerHead(Player player)
     {
         removeAll();
