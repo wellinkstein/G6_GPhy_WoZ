@@ -42,13 +42,13 @@ public class EcouteurSpotItem implements ActionListener
 
                 if((i%2)==0)
                 {   
-                    ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)), affichMain);
+                    ItemDescription myDes = new ItemDescription(mySpotItem.getSpot().getOneItem((i/2)));
                     affichMain.setDes(myDes); //Update of the panel ItemDescription
                 }
                 else
                 {
                     if (affichMain.getGame().getPlayer().getNumberItemPossess() == affichMain.getGame().getPlayer().getLimitItem() && affichMain.getGame().getLimitReach()== true)
-                     { 
+                      {
                     notTake = new DialogScreenInterface(affichMain.getGame().notTake());
                        affichMain.setDialog(notTake);
                     }

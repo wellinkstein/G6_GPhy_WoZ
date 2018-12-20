@@ -53,17 +53,17 @@ public class Player extends Character
      * A Potion gives 5HP. If the player has less than 
      * 5HP the potion gets him to full health.
      */
-    public void drinkPotion()
+    public void drinkPotion(int i)
     {
         boolean isPotion = false;
-        for(int i=0; i<inventory.size();i++)
-            {
-                if(inventory.get(i).getName()=="Health Potion")
-                {
-                    isPotion = true;
-                }
-            }
-        if(isPotion ==true && HP<20)
+        // for(int i=0; i<inventory.size();i++)
+            // {
+                // if(inventory.get(i).getName()=="Health Potion")
+                // {
+                    // isPotion = true;
+                // }
+            // }
+        if(HP<20)
         {
             if(HP>(hpMax-5))
             {
@@ -73,13 +73,13 @@ public class Player extends Character
             {
                HP=HP+5; 
             }
-            for(int i=0; i<inventory.size();i++)
-            {
-                if(inventory.get(i).getName()=="Health Potion")
-                {
+            //for(int i=0; i<inventory.size();i++)
+            //{
+                //if(inventory.get(i).getName()=="Health Potion")
+                //{
                     inventory.remove(i);
-                }
-            }
+               // }
+            //}
         }    
     }
 

@@ -150,7 +150,7 @@ public class AffichMainYohan extends JFrame implements ActionListener
         c.gridy = 2;
         pane.add(panelSpotItem, c);
         
-        panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0), this);
+        panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
         panelDesc.setBorder(BorderFactory.createLineBorder(Color.black));
         // panelDesc.setPreferredSize(new Dimension(400,400));
         // panelDesc.setSize(400,400);
