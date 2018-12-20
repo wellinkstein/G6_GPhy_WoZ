@@ -141,7 +141,12 @@ public class FightInterface extends JPanel implements ActionListener
         if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer()) { 
 
             gameOver = new DialogScreenInterface(affichMain.getGame().gameOver());
-            affichMain.setDialog(gameOver); // ici bloquer le scrolling
+            affichMain.setDialog(gameOver); 
+            
+           
+            affichMain.getContentPane().removeAll();
+            affichMain.add(new JLabel("coucou"));
+            affichMain.revalidate();
         }
         else if(affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss()&& affichMain.getGame().getPlayer().getThread()==true)
         {
