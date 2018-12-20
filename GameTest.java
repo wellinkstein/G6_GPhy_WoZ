@@ -140,11 +140,11 @@ public class GameTest
     public void testMonsterDead()
     {
         //myGame.getCurrentSpot().addCharacterSpot(player); 
-        myGame.move(myGame.getListSpot().get(45)); 
+        myGame.move(myGame.getListSpot().get(44)); 
         myGame.getCurrentSpot().addCharacterSpot(monster);
         myGame.monsterDead();
-        assertEquals(null, myGame.getListSpot().get(45).getMonster());
-        assertEquals(true, myGame.getListSpot().get(45).getListItem().contains(legendary)); 
+        assertEquals(null, myGame.getListSpot().get(44).getMonster());
+        assertEquals(true, myGame.getListSpot().get(44).getListItem().contains(legendary)); 
         
     }
     
@@ -199,13 +199,13 @@ public class GameTest
         
     /**
      * Check if the Item is in the good place.
-     * Check if the Item ironSword is well in the spot 14.
+     * Check if the Item ironSword is well in the spot 18.
      */   
     @Test
     public void testPlaceItem(){
         boolean test=false;
-        for (int i=0; i<myGame.getListSpot().get(10).getListItem().size(); i++){
-            if (myGame.getListSpot().get(10).getListItem().get(i).getName() == "Iron Sword"){
+        for (int i=0; i<myGame.getListSpot().get(18).getListItem().size(); i++){
+            if (myGame.getListSpot().get(18).getListItem().get(i).getName() == "Iron Sword"){
                 test=true; 
             }
         }
