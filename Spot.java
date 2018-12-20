@@ -48,32 +48,32 @@ public class Spot
         setImageSpotExistDirections(); //set the picture of the spot
     }
 
-    /**
-     * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
-     * a 5th one is not created and the 4 previously created stay the same.
-     * @param direction : the direction of the exit
-     * @param neighbor : the neighbor spot
-     */
-    public void setExits(String direction, Spot neighbor)
-    {
-        boolean exist=false; 
-        if (this.getNumberExits()<4)
-        {
-            for (Map.Entry mapentry: this.getAllExit().entrySet())
-            {
-                if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
-                {
-                    exist=true; 
-                }
-            }
-        }
-        if (exist ==false)
-        {
-            exits.put(direction, neighbor);
-            spotCorrect = true;
-        }
-        setImageSpotExistDirections(); //set the picture of the spot
-    }
+    // /**
+     // * Method setExit: defines an exit from this spot. If the spot already has 4 exits,
+     // * a 5th one is not created and the 4 previously created stay the same.
+     // * @param direction : the direction of the exit
+     // * @param neighbor : the neighbor spot
+     // */
+    // public void setExits(String direction, Spot neighbor)
+    // {
+        // boolean exist=false; 
+        // if (this.getNumberExits()<4)
+        // {
+            // for (Map.Entry mapentry: this.getAllExit().entrySet())
+            // {
+                // if (mapentry.getKey()==direction || mapentry.getValue()==neighbor)
+                // {
+                    // exist=true; 
+                // }
+            // }
+        // }
+        // if (exist ==false)
+        // {
+            // exits.put(direction, neighbor);
+            // spotCorrect = true;
+        // }
+        // setImageSpotExistDirections(); //set the picture of the spot
+    // }
 
     /** Method removeExit. Remove an exit from this spot.
      * If the spot is not found, nothing is done
