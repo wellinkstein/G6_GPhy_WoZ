@@ -55,12 +55,31 @@ public class EcouteurInventory implements ActionListener
             }
             else if (e.getSource()== myInventory.getMyButton())
             {
-                     
-                affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Add the item of the spot
-            
-                affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Remove the item of the player
-                
-                affichMain.getGame().setLimitReach(false); 
+                // if (affichMain.getGame().getCurrentSpot().getListItem().size() ==  affichMain.getGame().getCurrentSpot().getNumberMaxItem() && affichMain.getGame().getLimitItemSpot())
+                // {
+                    // affichMain.setDialog(affichMain.getGame().notDrop());
+                // }
+                 
+                    if (affichMain.getGame().getCurrentSpot().getListItem().size() < affichMain.getGame().getCurrentSpot().getNumberMaxItem())
+                    {
+                         affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Remove the item of the player
+                           affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Add the item of the spot
+                              affichMain.getGame().setLimitReach(false); 
+                        }
+                     else if (affichMain.getGame().getCurrentSpot().getListItem().size() ==  affichMain.getGame().getCurrentSpot().getNumberMaxItem())
+                     {
+                         affichMain.setDialog(affichMain.getGame().notDrop());
+                        }
+                     // else if (affichMain.getGame().getCurrentSpot().getListItem().size() == affichMain.getGame().getCurrentSpot().getNumberMaxItem() && affichMain.getGame().getLimitItemSpot()== false)
+                     // {
+                        
+                          // affichMain.getGame().getPlayer().dropItem(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Remove the item of the player
+                           // affichMain.getGame().getCurrentSpot().addItemSpot(myInventory.getPlayer().getItems(myInventory.getCombo().getSelectedIndex())); //Add the item of the spot
+
+                          // affichMain.getGame().setLimitItemSpot(true); 
+                     // }
+                  
+
                 
                 affichMain.getInventory().showPlayerItem(affichMain.getGame().getPlayer(),affichMain); //Update the item of the player
 

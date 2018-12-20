@@ -605,6 +605,14 @@ public class Game
         return "You have reached the limit of your inventory. If you want to free some space, you need to drop items";
     }
     
+     /**
+     * Returns the message if the player cannot drop another items
+     */
+    public String notDrop()
+    {
+        return "You cannot drop anymore items, the floor is riddled with them!";
+    }
+    
     /**
      * 
      * Returns the message saying that it's not time to exit the labyrinth yet
