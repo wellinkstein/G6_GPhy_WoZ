@@ -8,7 +8,7 @@ import java.util.*;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 /**
- * Write a description of class GameOver here.
+ * This is a simple class coding for a pop up of a gameover message if the player has died. It ends the game.
  *
  * @author (Yohan Lefol)
  * @version (11/12/2018)
@@ -52,6 +52,10 @@ public class GameOver extends JFrame implements ActionListener
         
     }
     
+    
+    /**
+     * The event listener for the close button of this class.
+     */
     public void actionPerformed (ActionEvent e)
     {
         if(e.getSource() == exitButton)
