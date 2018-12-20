@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * This is the external listener for the fight button of the next spot class.
+ * It handles a button that will involve "fleeing" the monster and another button whih allows the player to fight the monster.
  *
  * @author (Yohan Lefol)
  * @version (12/12/2018)
@@ -22,6 +23,8 @@ public class EcouteurNextSpotFight implements ActionListener
     }
 
     /**
+     *This action handles both buttons, the flee button cancels the move() called by the player, allowing the player to select another position and avoid the spot which contains the monster
+     *The other button is fight, it causes the player to move forward into the spot containing a monster, this initiates a fight.
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
