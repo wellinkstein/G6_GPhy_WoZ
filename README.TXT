@@ -1,3 +1,5 @@
+To launch this game, create a AffichMain Class
+
 Welcome to Daedalus
 
 Daedalus is a project created by Master 1 students studying in physiological, biotechnological, and computer science enginnering
