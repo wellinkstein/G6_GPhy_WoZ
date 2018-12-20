@@ -181,6 +181,7 @@ public class Scrolling extends JPanel
         //myLayer.add(Jlabel5);//, new Integer(2),1);
         JLabel myJlabel = new JLabel(new ImageIcon("Link.png"));
         myJlabel.setBounds(0, 0, 200, 200);
+        
         //myLayer.add(myJlabel);//, new Integer(0),0);
         //myLayer.add(Jlabel5);
         //myLayer.setVisible(true);
