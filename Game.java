@@ -609,17 +609,9 @@ public class Game
      */
     public void bossDead()
     {
-        //the monster drops the item in the spot
         currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
         theseus.setTrueTimeToGo();
-        // if (theseus.getThread()){
-        // youWon();
-        // setFinishedTrue();
-        // }
-        //else{
         setAggressiveAll(); 
-        //}
-
     }
 
     /**
@@ -642,7 +634,6 @@ public class Game
     public boolean getLimitReach()
     {
         return (limitReached);
-
     }
 
     /**
@@ -651,9 +642,7 @@ public class Game
      */
     public void setLimitReach(boolean limit)
     {
-
         limitReached = limit; 
-
     }
 
 }
