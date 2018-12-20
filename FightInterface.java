@@ -207,7 +207,7 @@ public class FightInterface extends JPanel implements ActionListener
         buttonStartFight = new JButton("Start Fight");
         buttonStartFight.addActionListener(this);
         
-        dialog = new JLabel("<html><b>Combat logbook</b><br>--------------------------<br><br><br>");
+        dialog = new JLabel("<html><b>Combat logbook</b><br> </br>");
         scroller = new JScrollPane(dialog);
         scroller.setPreferredSize(new Dimension (400,200));
         panelBot = new JPanel();
