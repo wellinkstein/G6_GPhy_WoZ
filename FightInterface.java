@@ -118,11 +118,11 @@ public class FightInterface extends JPanel implements ActionListener
             }
             if (affichMain.getGame().getFighter()==affichMain.getGame().getPlayer())
             {
-                updateCombatLogbook("Theseus inflicts " + damFighter + " damages to the monster."); 
+                updateCombatLogbook("Theseus inflicts " + damFighter + " damage points to the monster."); 
             }
             else
             {
-                updateCombatLogbook("The monster inflicts " + damFighter + " damages to Theseus.");
+                updateCombatLogbook("The monster inflicts " + damFighter + " damage points to Theseus.");
             }
 
             affichMain.getGame().setFighter(affichMain.getGame().getFighter()); // the fighter changes
@@ -158,6 +158,18 @@ public class FightInterface extends JPanel implements ActionListener
             affichMain.getGame().bossDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
+            affichMain.getScrolling().getButton1().setEnabled(true);
+            affichMain.getScrolling().getButton2().setEnabled(true);
+            affichMain.getScrolling().getButton3().setEnabled(true);
+            affichMain.getScrolling().getButton4().setEnabled(true);
+            if(affichMain.getGame().getCurrentSpot().getExits("Z") == null)
+            {affichMain.getScrolling().getButton1().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("D") == null)
+            {affichMain.getScrolling().getButton2().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("S") == null)
+            {affichMain.getScrolling().getButton3().setEnabled(false);}
+            if(affichMain.getGame().getCurrentSpot().getExits("Q") == null)
+            {affichMain.getScrolling().getButton4().setEnabled(false);}
         }
         else
         {
