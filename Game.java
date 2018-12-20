@@ -17,7 +17,6 @@ public class Game
     private Spot currentSpot; // position of player
     private int line = 8; //number of lines in the matrix;
     private boolean limitReached = false; //True if the limit of the item is reached in inventory
-    private boolean limitItemSpot = false; //True if the limit of the item is reached in spot
     private int column = 9; //number of columns in the matrix;
     private ArrayList<Spot> listSpot = new ArrayList(); // list of spots in the labyrinth 
     private Character fighter;//created the fighter attribute that will be used to handle combat
@@ -29,10 +28,9 @@ public class Game
     public Game() 
     {
         createLabyrinth();
-        
+
         theseus = new Player(25,"Theseus",1,1,0);
-        
-        
+
         Common ironSword= new Common ("Iron Sword","<html>a rusty looking sword, it has been here for a while. <br> Increases your damage by 3.</html>",3,0,0);
         Common ironDagger= new Common ("Iron Dagger","<html>looks like a toothpick, might work well in combat. <br> Increases your damage by 1.</html>",1,0,0);
         Common standardBow= new Common ("Standard Bow","<html>is a common item that increases your damage by 2. <br> You have to be highly skilled in the use of <br>the bow to get long-distance shots.</html>",2,0,0);
@@ -40,30 +38,28 @@ public class Game
         Common ironShield= new Common ("Iron Shield","<html>I wonder who left this here… <br> Adds 2 protection points.</html>",0,2,0);
         Common woodenShield= new Common ("Wooden Shield","<html>even a piece of wood could help.  <br> Adds 1 protection point.</html>",0,1,0);
         Common healthPotion= new Common ("Health Potion","<html>is a healing item that restores a <br> maximum of 5 health points. Healing Potions <br> can be found naturally in the labyrinth.</html>",0,0,5);
-        
+
         Legendary goldenThread = new Legendary("Ariadne's golden thread","<html>Ariadne’s golden thread, named after the legend of Ariadne, <br> it allows immediate escape upon killing the Minotaur. <br> It was obtained from the monster Arachne.</html>",0,0,0);
         Legendary aresSword= new Legendary("Ares's sword","<html>Ares’s Sword is a weapon for melee combat that can deliver <br> large amounts of damage. <br> The sword was obtained from Cerberus</html>",6,0,0);
         Legendary artemisBow= new Legendary("Artemis's bow","<html>The bow and the arrow are the symbol of Artemis, <br> daughter of Zeus and Leto. She was one of the most widely venerated gods of the <br> Ancient Greek deities. Artemis’s bow was obtained from <br> the monster Medusa. It increases your damage by 4.</html>",4,0,0);
         Legendary aegisShield= new Legendary("Aegis shield","<html>The Aegis shield was born by Athena in battle. <br> It had been interpreted as an animal skin or a shield, <br>bearing the head of a Gorgon. <br> It was obtained from Cyclops and increases your protection by 5.</html>",0,5,0);
         hermesSandals= new Legendary("Hermes's sandals","<html>Talaria are winged sandals, <br> a symbol of the Greek messenger god Hermes. <br> They can fly as fast as any other bird. <br>Hermes’s sandals are obtained from the monster Chimera, <br>they allow you to always attacks first in combat.</html>",0,0,0);
-        
+
         LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"<html>The Chimera is a fire-breathing monster who is light on its feet, <br> strong and has three heads, one is that of a grim-eyed lion, <br> the one in the middle is that of a goat, and snakes head at its tail. <br> It scares you ? It should!</html>",hermesSandals);
         LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"<html>Cerberus is a three-headed dog of hell. To fight and kill this creature,<br> if may be wise to have a sharp sword at your disposal.",aresSword);
         LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,1,"<html>Medusa is a powerful creature. She is generally portrayed as the embodiment <br> of all things feminine. Her hair is made of snakes, <br> try to not look her in the eyes. To fight and kill medusa it is <br> recommended to have a shiny shield.</html>",artemisBow);
         LesserBoss cyclops= new LesserBoss(25,"Cyclops",5,5,2,"<html>Cyclops is a giant monster, which has a single eye in the center of his <br> forehead. To fight and kill the cyclops you may require a ranged weapon.",aegisShield);
         LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"<html>Arachne was once the most beautiful women to have ever walked the earth, <br> but out of jealousy, the god Athena transformed her and <br> condemned her to the Labyrinth. To fight and kill Arachne you <br> will need to be fully equiped or very charming.</html>",goldenThread);
-        
+
         Boss minotaur = new Boss(75,"Minotaur",5,15,7,"<html>Congratulations, you have gone through all the steps! Here you are facing the scariest <br> and deadliest of all monsters. The Minotaur!!! <br> he is a monster with the head and the tail of a bull and the body of a man. <br> He is not to be underestimated...</html>");
-        
-        
+
         listSpot.get(31).addCharacterSpot(minotaur);
         listSpot.get(32).addCharacterSpot(cerberus);
         listSpot.get(21).addCharacterSpot(medusa);
-         listSpot.get(49).addCharacterSpot(cyclops);
+        listSpot.get(49).addCharacterSpot(cyclops);
         listSpot.get(45).addCharacterSpot(chimera);
         listSpot.get(16).addCharacterSpot(arachne);
 
-        
         
         ArrayList<Integer> listIronSword = new ArrayList();
         //test
@@ -74,30 +70,30 @@ public class Game
         listIronSword.add(62);
         listIronSword.add(17);
         placeItem(ironSword,listIronSword); 
-        
+
         ArrayList<Integer> listIronDagger = new ArrayList();
         listIronDagger.add(67);
         listIronDagger.add(5);
         placeItem(ironDagger,listIronDagger); 
-        
+
         ArrayList<Integer> listStandardBow = new ArrayList();
         listStandardBow.add(63);
         placeItem(standardBow,listStandardBow);
-        
+
         ArrayList<Integer> listIronArmor = new ArrayList();
         listIronArmor.add(11);
         listIronArmor.add(17);
         placeItem(ironArmor,listIronArmor);
-        
+
         ArrayList<Integer> listIronShield = new ArrayList();
         listIronShield.add(28);
         listIronShield.add(17);
         placeItem(ironShield,listIronShield);
-        
+
         ArrayList<Integer> listWoodenShield = new ArrayList();
         listWoodenShield.add(18);   
         placeItem(woodenShield,listWoodenShield);
-        
+
         ArrayList<Integer> listHealthPotion = new ArrayList();
         listHealthPotion.add(38);
         listHealthPotion.add(28);
@@ -105,13 +101,13 @@ public class Game
         listHealthPotion.add(50);
         listHealthPotion.add(17);
         placeItem(healthPotion,listHealthPotion);
-        
+
         currentSpot = new Spot();
         exitAndStart();//initialize start spot (also current spot) and exit spot 
         addToCurrentSpot(theseus);
-        
+
     }
-    
+
     /**
      * Getter for hermessandals
      */
@@ -126,12 +122,11 @@ public class Game
     private void createLabyrinth()
     {
         // Create spots
-         for (int i = 0; i < line*column; i++) { 
-              //listSpot.add(new Spot(null,null));
-              listSpot.add(new Spot());
-          }
-        
-        
+        for (int i = 0; i < line*column; i++) { 
+            //listSpot.add(new Spot(null,null));
+            listSpot.add(new Spot());
+        }
+
         // initialise spot exits
         listSpot.get(0).setExits("D",listSpot.get(1));
         listSpot.get(1).setExits("Q",listSpot.get(0));
@@ -226,7 +221,7 @@ public class Game
         listSpot.get(43).setExits("D",listSpot.get(44));
         listSpot.get(44).setExits("Q",listSpot.get(43));
         listSpot.get(44).setExits("S",listSpot.get(53));
-        
+
         listSpot.get(45).setExits("S",listSpot.get(54));
         listSpot.get(46).setExits("Z",listSpot.get(37));
         listSpot.get(46).setExits("S",listSpot.get(55));
@@ -244,7 +239,7 @@ public class Game
         listSpot.get(52).setExits("D",listSpot.get(53));
         listSpot.get(53).setExits("Q",listSpot.get(52));
         listSpot.get(53).setExits("Z",listSpot.get(44));
-        
+
         listSpot.get(54).setExits("Z",listSpot.get(45));
         listSpot.get(54).setExits("D",listSpot.get(55));
         listSpot.get(54).setExits("S",listSpot.get(63));
@@ -284,10 +279,8 @@ public class Game
         listSpot.get(70).setExits("Q",listSpot.get(69));
         listSpot.get(70).setExits("Z",listSpot.get(61));
         listSpot.get(71).setExits("Z",listSpot.get(62));
-        
-         
+
     }
-    
     /**
      * Print out the opening message for the player.
      * @return String: return a message for the player
@@ -306,7 +299,7 @@ public class Game
         setCurrentSpot(listSpot.get(0));
         listSpot.get(6).setExitSpot();
     }
-    
+
     /**
      *  Get the Player
      *  @return Player thesus: returns the player
@@ -324,7 +317,7 @@ public class Game
     { 
         currentSpot.addCharacterSpot(theseus); //player is placed at current spot, which is the start position
     }
-    
+
     /**
      *  add item to current spot
      *  @param Item item: add item to the current spot
@@ -333,7 +326,7 @@ public class Game
     { 
         currentSpot.addItemSpot(item);
     }
-    
+
     /**
      * Places one type of commmon item in a definite number of spots. 
      * @param Item item: item to add
@@ -341,11 +334,11 @@ public class Game
      */
     public void placeItem(Item item, ArrayList<Integer> spotIndexList)
     {
-         for (int i = 0; i < spotIndexList.size(); i++) { 
-              listSpot.get(spotIndexList.get(i)).addItemSpot(item);
-          }
+        for (int i = 0; i < spotIndexList.size(); i++) { 
+            listSpot.get(spotIndexList.get(i)).addItemSpot(item);
+        }
     }
-     
+
     /**
      *  Get the room where the player is 
      *  @return Spot currentSpot: return the current spot
@@ -354,7 +347,7 @@ public class Game
     { 
         return currentSpot;         
     }
-    
+
     /**
      *  Set the room where the player is 
      *  @param Spot currentS: returns the current spot
@@ -363,7 +356,7 @@ public class Game
     { 
         currentSpot = currentS;         
     }
-    
+
     /**
      *  Get the list of spots of the labyrinth 
      *  @return ArrayList<Spot> listSpot: return a list of spots
@@ -372,7 +365,7 @@ public class Game
     { 
         return listSpot;         
     }
-   
+
     /**
      * Gets the adjacent spot at a specific direction 
      * @return Spot direction: get the direction of adjacent spot
@@ -382,7 +375,7 @@ public class Game
     { 
         return currentSpot.getExits(direction);
     }
-    
+
     /**
      * Changes the current spot to the spot according to the direction given. 
      * The aggressive monsters will randomly go to a nearby spot. If they end up in the player's spot 
@@ -391,25 +384,23 @@ public class Game
      */
     public void move(Spot spot) 
     { 
-        
+
         currentSpot.removeCharacterSpot(theseus);
         setCurrentSpot(spot);
         currentSpot.addCharacterSpot(getPlayer()); //move the player to the defined spot
-        
+
         for (int i = 0; i < listSpot.size(); i++) { // parcours des spots du labyrinthe
-           if (listSpot.get(i).getLesserBoss()!=null && listSpot.get(i).getLesserBoss().getAggressive()) { //
+            if (listSpot.get(i).getLesserBoss()!=null && listSpot.get(i).getLesserBoss().getAggressive()) { //
                 Random rand = new Random();
                 ArrayList<String> listExits = listSpot.get(i).getSpotExitable();
                 int dirIndex = rand.nextInt(listExits.size()-1); 
                 listSpot.get(i).removeCharacterSpot(listSpot.get(i).getMonster());
                 listSpot.get(i).getExits(listExits.get(dirIndex)).addCharacterSpot(listSpot.get(i).getMonster());
-                
-           }
+
+            }
         }
-        
-         
+
     }
-    
     /**
      * If the player loses the fight
      * @return boolean true: the player loses the fight
@@ -417,9 +408,9 @@ public class Game
      */
     public boolean loseGame() 
     { 
-         return true;         
+        return true;         
     }
-    
+
     /**
      * Randomly chooses the first fighter to start
      * @return Character fighter: returns the character that starts the fight
@@ -429,28 +420,28 @@ public class Game
     { 
         if (theseus.getHermesSandals()){
             fighter=theseus;
-           
+
         }
         else
         {
-            
+
             Random rand = new Random();
             int beginner = rand.nextInt(2); 
-             
+
             switch(beginner){
                 case 0: fighter = theseus; 
-                 
+
                 break;
-             
+
                 default:  fighter = currentSpot.getMonster();
-                
+
                 break;
             }
         }
         return fighter;   
     }
-    
-     /**
+
+    /**
      * The fighter inflicts damage to the other character in the spot
      * This class function by finding who isn't the fighter and inflicts damage on the non-fighter
      * outside of this function, within the setFighter() function, the fighter will change
@@ -477,12 +468,12 @@ public class Game
             {
                 //System.out.println("In the else");
             }
-            
+
         }
         return dam;//returns the damage to be recorded in the log
     }
-  
-     /**
+
+    /**
      * 
      * @return int dam: return the damage with or without critical strike
      */
@@ -492,7 +483,7 @@ public class Game
         int crit = rand.nextInt(100); 
         if (theseus.getCritRate()>=crit){
             int dam = (fighter.getDamage())/2;
-            
+
             for (int i = 0; i < currentSpot.getListCharacter().size(); i++)
             {
                 if (currentSpot.getListCharacter().get(i) != fighter)
@@ -504,7 +495,7 @@ public class Game
         }
         else return 0;
     }
-    
+
     /**
      * Changes the fighter to a designated character
      * @param Character fighter: the character is set to be the fighter
@@ -512,23 +503,23 @@ public class Game
      */
     public Character setFighter(Character fighter) 
     { 
-        
+
         Character myFighter ;
         if (fighter==theseus){
             myFighter=currentSpot.getMonster();
             //System.out.println("the who begins fighter in the if: "+myFighter);
-            
+
         }
         else{
             myFighter=theseus;
             //System.out.println("the who beings fighter in the else: "+myFighter);
-            
+
         }
         //System.out.println("before return : "+myFighter);
         this.fighter=myFighter;
         return myFighter;
     }
-    
+
     /**
      * Gets the currently designed fighter 
      * @return Character fighter: returns the current fighter
@@ -536,9 +527,9 @@ public class Game
      */
     public Character getFighter() 
     { 
-          return fighter;
+        return fighter;
     }
-    
+
     /**
      *  All remaining monsters become aggressive and start chasing you.
      * This fucntion is called when the player has killed the minotaur
@@ -551,52 +542,52 @@ public class Game
             }
         }
     }
-    
+
     /**
      * returns the game over message
      * @return String "Game over": returns this string when game over
      */
     public String gameOver() 
     { 
-      return "Game over";          
+        return "Game over";          
     }
-    
+
     /**
      *  returns the winning message for a fight
      * @return String
      */
     public String youWonFight() 
     { 
-      String endScreen = "Theseus, you have successfully killed this monster!";  
-      
-      return endScreen;
+        String endScreen = "Theseus, you have successfully killed this monster!";  
+
+        return endScreen;
     }
-    
+
     /**
      *  returns the winning message for a fight
      * @return String
      */
     public String getOut() 
     { 
-      String endScreen = "<html> Theseus, you have successfully killed the Minotaur, it's time to get out of this labyrinth <br>...Beware! The other monsters will start chasing you!";  
-      
-      return endScreen;
+        String endScreen = "<html> Theseus, you have successfully killed the Minotaur, it's time to get out of this labyrinth <br>...Beware! The other monsters will start chasing you!";  
+
+        return endScreen;
     }
-    
+
     /**
      *  returns the winning message
      * @return String
      */
     public String youWon() 
     { 
-      int nbMonsters = 6;
-      for (int i = 0; i < listSpot.size(); i++){
-          nbMonsters-= listSpot.get(i).numberOfMonsterInSpot();
-      }
-      String endScreen = "<html> Theseus, you have successfully killed the Minotaur and left the labyrinth! <br> Score: You killed "+nbMonsters+" of 6 monsters";
-      return endScreen;
+        int nbMonsters = 6;
+        for (int i = 0; i < listSpot.size(); i++){
+            nbMonsters-= listSpot.get(i).numberOfMonsterInSpot();
+        }
+        String endScreen = "<html> Theseus, you have successfully killed the Minotaur and left the labyrinth! <br> Score: You killed "+nbMonsters+" of 6 monsters";
+        return endScreen;
     }
-    
+
     /**
      * Returns the message if the player cannot take another items
      */
@@ -604,15 +595,15 @@ public class Game
     {
         return "You have reached the limit of your inventory. If you want to free some space, you need to drop items";
     }
-    
-     /**
+
+    /**
      * Returns the message if the player cannot drop another items
      */
     public String notDrop()
     {
         return "You cannot drop anymore items, the floor is riddled with them!";
     }
-    
+
     /**
      * 
      * Returns the message saying that it's not time to exit the labyrinth yet
@@ -620,9 +611,9 @@ public class Game
      */
     public String NotTimeToGo() 
     { 
-      return "You have reached the exit of the labyrinth but you didn't kill the Minotaur";          
+        return "You have reached the exit of the labyrinth but you didn't kill the Minotaur";          
     }
-    
+
     /**
      * Kills lesserBoss
      * This method removes a monster (Lesser Boss) from a spot once it has been killed
@@ -631,10 +622,10 @@ public class Game
      */
     public void monsterDead()
     {
-           currentSpot.addItemSpot(currentSpot.getLesserBoss().getPossessedLegendary()); //the monster drops the item in the spot
-           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+        currentSpot.addItemSpot(currentSpot.getLesserBoss().getPossessedLegendary()); //the monster drops the item in the spot
+        currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
     }
-    
+
     /**
      * Kills Boss Minotaur
      * This method removes the Minotaur from the spot once it is killed
@@ -645,19 +636,19 @@ public class Game
      */
     public void bossDead()
     {
-           //the monster drops the item in the spot
-           currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
-           theseus.setTrueTimeToGo();
-           // if (theseus.getThread()){
-             // youWon();
-             // setFinishedTrue();
-           // }
-           //else{
-             setAggressiveAll(); 
-           //}
-            
+        //the monster drops the item in the spot
+        currentSpot.removeCharacterSpot(currentSpot.getMonster()); //the monster dies and disappears from the spot
+        theseus.setTrueTimeToGo();
+        // if (theseus.getThread()){
+        // youWon();
+        // setFinishedTrue();
+        // }
+        //else{
+        setAggressiveAll(); 
+        //}
+
     }
-    
+
     /**
      * player drops item
      * This method allows the player to drop an item from his inventory
@@ -670,7 +661,7 @@ public class Game
         theseus.dropItem(itemDrop);
         addItemToCurrentSpot(itemDrop);
     }
-    
+
     /**
      * Getter for the limitReach
      * @return boolean limitReach
@@ -678,35 +669,18 @@ public class Game
     public boolean getLimitReach()
     {
         return (limitReached);
-   
+
     }
-    
+
     /**
      * Set the boolean limit Reach
      * @param boolean limit
      */
     public void setLimitReach(boolean limit)
     {
-        
+
         limitReached = limit; 
-        
+
     }
-      
-    /**
-     * Getter for the limitItemInSpot
-     * @return boolean limitItemSpot
-     */
-    public boolean getLimitItemSpot()
-    {
-        return  limitItemSpot; 
-    }
-    
-    /**
-     * set the boolean limitItemSpot
-     * @param boolean limit
-     */
-    public void setLimitItemSpot(boolean limit)
-    {
-         limitItemSpot= limit;
-      }
+
 }
