@@ -144,10 +144,11 @@ public class FightInterface extends JPanel implements ActionListener
         else if(affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss()&& affichMain.getGame().getPlayer().getThread()==true)
         {
             //Checks if minotaur dead and player has the golden thread 
-            affichMain.youWonFrame();
             
+            affichMain.getGame().bossDead();
             affichMain.getGame().getPlayer().gainXp(1);
             affichMain.getGame().getPlayer().adjustCritRate();
+            affichMain.youWonFrame();
         }
         else if (affichMain.getGame().getFighter()==affichMain.getGame().getCurrentSpot().getBoss())
         {

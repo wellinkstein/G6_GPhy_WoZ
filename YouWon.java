@@ -31,11 +31,11 @@ public class YouWon extends JFrame implements ActionListener
         myFrame.setUndecorated(true);
         dialog = new JLabel(message, SwingConstants.CENTER);
         dialog.setOpaque(true);
-        dialog.setBackground(Color.blue);
+        dialog.setBackground(new Color(196,218,255));
         dialog.setFont(new Font("Arial", Font.PLAIN, 100));
         exitButton = new JButton("Close to be free!");
-        exitButton.setBackground(Color.gray); 
-        exitButton.setForeground(Color.blue);
+        exitButton.setBackground(Color.white); 
+        exitButton.setForeground(new Color(196,218,255));
         
         exitButton.setFont(new Font("Arial", Font.PLAIN, 100));
         exitButton.addActionListener(this);

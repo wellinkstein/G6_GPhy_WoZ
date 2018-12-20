@@ -116,7 +116,7 @@ public class EcouteurScrolling implements ActionListener
         if (affichMain.getGame().getCurrentSpot().getExitSpot()){
             if (affichMain.getGame().getPlayer().getTimeToGo()){
                 
-                affichMain.setDialog(affichMain.getGame().youWon());
+                affichMain.youWonFrame();
                 affichMain.getScrolling().getButton1().setEnabled(false);
                 affichMain.getScrolling().getButton2().setEnabled(false);
                 affichMain.getScrolling().getButton3().setEnabled(false);
