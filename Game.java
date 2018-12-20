@@ -597,6 +597,14 @@ public class Game
     }
     
     /**
+     * Returns the message if the player cannot take another items
+     */
+    public String notTake()
+    {
+        return "You have reached the limit of your inventory. If you want to free some space, you need to drop items";
+    }
+    
+    /**
      * 
      * Returns the message saying that it's not time to exit the labyrinth yet
      * @return String
@@ -668,11 +676,12 @@ public class Game
      * Set the boolean limit Reach
      * @param boolean limit
      */
-    public void setLimitReach(boolean limit){
+    public void setLimitReach(boolean limit)
+    {
         
         limitReached = limit; 
         
-        }
-        
+    }
+      
     
 }
