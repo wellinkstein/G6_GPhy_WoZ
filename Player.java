@@ -56,13 +56,7 @@ public class Player extends Character
     public void drinkPotion(int i)
     {
         boolean isPotion = false;
-        // for(int i=0; i<inventory.size();i++)
-            // {
-                // if(inventory.get(i).getName()=="Health Potion")
-                // {
-                    // isPotion = true;
-                // }
-            // }
+
         if(HP<20)
         {
             if(HP>(hpMax-5))
@@ -73,13 +67,9 @@ public class Player extends Character
             {
                HP=HP+5; 
             }
-            //for(int i=0; i<inventory.size();i++)
-            //{
-                //if(inventory.get(i).getName()=="Health Potion")
-                //{
+
                     inventory.remove(i);
-               // }
-            //}
+
         }    
     }
 
