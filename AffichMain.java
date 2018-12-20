@@ -80,7 +80,7 @@ public class AffichMain extends JFrame implements ActionListener
         panelLab = new Scrolling(myGame.getCurrentSpot(),this);
         panelLab.setBorder(BorderFactory.createLineBorder(Color.black));
         panelLab.setBackground(new Color(208,185,178));
-        c.weightx = 0.4;
+        c.weightx = 0.2;
         c.weighty = 0.9;
         c.gridx = 0;
         c.gridy = 0;
@@ -91,7 +91,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelPlayer = new PlayerHead(myGame.getPlayer());
         panelPlayer.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.3;
+        c.weightx = 0.4;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=2; //prend deux colonnes
@@ -103,7 +103,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelMonster = new MonsterHead(myGame.getCurrentSpot().getMonster());
         panelMonster.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.3;
+        c.weightx = 0.4;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=1;
@@ -114,7 +114,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelInventory= new Inventory(myGame.getPlayer(),this);
         panelInventory.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.6;
+        c.weightx = 0.8;
         c.weighty = 0.1;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=3;
@@ -125,7 +125,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelSpotItem=new SpotItem(myGame.getCurrentSpot(),this);
         panelSpotItem.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.15;
+        c.weightx = 0.2;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
         c.gridheight=1;
@@ -136,7 +136,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelDesc= new ItemDescription(new Common("null", "", 0, 0, 0));
         panelDesc.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.15;
+        c.weightx = 0.2;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=1;
@@ -147,7 +147,7 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelCombat= new FightInterface(this);
         panelCombat.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.3;
+        c.weightx = 0.4;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=1;
@@ -159,7 +159,7 @@ public class AffichMain extends JFrame implements ActionListener
          
         panelNextSpot = new NextSpot(myGame.getCurrentSpot(),this, "S");
         panelNextSpot.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.3;
+        c.weightx = 0.4;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth = 2;
@@ -170,7 +170,9 @@ public class AffichMain extends JFrame implements ActionListener
         
         panelDiag = new DialogScreenInterface(myGame.printWelcome());
         panelDiag.setBorder(BorderFactory.createLineBorder(Color.black));
-        c.weightx = 0.3;
+        // System.out.println(myGame.printWelcome());
+        //panelDiag.setBackground(Color.YELLOW);
+        c.weightx = 0.4;
         c.weighty = 0.4;
         c.fill = GridBagConstraints.BOTH;
         c.gridwidth=1;
