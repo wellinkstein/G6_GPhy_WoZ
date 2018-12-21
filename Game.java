@@ -29,7 +29,7 @@ public class Game
     {
         createLabyrinth();
 
-        theseus = new Player(30,"Theseus",1,1,0);
+        theseus = new Player(20,"Theseus",1,1,0);
 
         Common ironSword= new Common ("Iron Sword","<html>a rusty looking sword, it has been here for a while. <br> Increases your damage by 3.</html>",3,0,0);
         Common ironDagger= new Common ("Iron Dagger","<html>looks like a toothpick, might work well in combat. <br> Increases your damage by 1.</html>",1,0,0);
@@ -39,17 +39,17 @@ public class Game
         Common woodenShield= new Common ("Wooden Shield","<html>even a piece of wood could help.  <br> Adds 1 protection point.</html>",0,1,0);
         Common healthPotion= new Common ("Health Potion","<html>is a healing item that restores a <br> maximum of 5 health points. Healing Potions <br> can be found naturally in the labyrinth.</html>",0,0,5);
 
-        Legendary goldenThread = new Legendary("Ariadne's golden thread","<html>Ariadne’s golden thread, named after the legend of Ariadne, <br> it allows immediate escape upon killing the Minotaur. <br> It was obtained from the monster Arachne.</html>",0,0,0);
+        Legendary goldenThread = new Legendary("Ariadne's golden thread","<html>Named after the legend of Ariadne, <br> this thread allows immediate escape upon killing the Minotaur. <br> It was obtained from the monster Arachne.</html>",0,0,0);
         Legendary aresSword= new Legendary("Ares's sword","<html>Ares’s Sword is a weapon for melee combat that can deliver <br> large amounts of damage. <br> The sword was obtained from Cerberus</html>",6,0,0);
         Legendary artemisBow= new Legendary("Artemis's bow","<html>The bow and the arrow are the symbol of Artemis, <br> daughter of Zeus and Leto. She was one of the most widely venerated gods of the <br> Ancient Greek deities. Artemis’s bow was obtained from <br> the monster Medusa. It increases your damage by 4.</html>",4,0,0);
         Legendary aegisShield= new Legendary("Aegis shield","<html>The Aegis shield was born by Athena in battle. <br> It had been interpreted as an animal skin or a shield, <br>bearing the head of a Gorgon. <br> It was obtained from Cyclops and increases your protection by 5.</html>",0,5,0);
-        hermesSandals= new Legendary("Hermes's sandals","<html>Talaria are winged sandals, <br> a symbol of the Greek messenger god Hermes. <br> They can fly as fast as any other bird. <br>Hermes’s sandals are obtained from the monster Chimera, <br>they allow you to always attacks first in combat.</html>",0,0,0);
+        hermesSandals= new Legendary("Hermes's sandals","<html>Talaria are winged sandals, <br> a symbol of the Greek messenger god Hermes. <br>Hermes’s sandals are obtained from the monster Chimera, <br>they allow you to always attacks first in combat.</html>",0,0,0);
 
         LesserBoss chimera= new LesserBoss(30,"Chimera",5,2,2,"<html>The Chimera is a fire-breathing monster who is light on its feet, <br> strong and has three heads, one is that of a grim-eyed lion, <br> the one in the middle is that of a goat, and snakes head at its tail. <br> It scares you ? It should!</html>",hermesSandals);
         LesserBoss cerberus= new LesserBoss(40,"Cerberus",5,6,2,"<html>Cerberus is a three-headed dog of hell. To fight and kill this creature,<br> if may be wise to have a sharp sword at your disposal.",aresSword);
         LesserBoss medusa= new LesserBoss(20,"Medusa",5,4,0,"<html>Medusa is a powerful creature. She is generally portrayed as the embodiment <br> of all things feminine. Her hair is made of snakes, <br> try to not look her in the eyes. To fight and kill medusa it is <br> recommended to have a shiny shield.</html>",artemisBow);
         LesserBoss cyclops= new LesserBoss(25,"Cyclops",5,5,2,"<html>Cyclops is a giant monster, which has a single eye in the center of his <br> forehead. To fight and kill the cyclops you may require a ranged weapon.",aegisShield);
-        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"<html>Arachne was once the most beautiful women to have ever walked the earth, <br> but out of jealousy, the god Athena transformed her and <br> condemned her to the Labyrinth. To fight and kill Arachne you <br> will need to be fully equiped or very charming.</html>",goldenThread);
+        LesserBoss arachne= new LesserBoss(40,"Arachne",5,4,4,"<html>Arachne was once a beautiful women, but out of jealousy, <br> the god Athena transformed her and <br> condemned her to the Labyrinth. To fight and kill Arachne you <br> will need to be fully equiped or very charming.</html>",goldenThread);
 
         Boss minotaur = new Boss(75,"Minotaur",5,15,7,"<html>Congratulations, you have gone through all the steps! Here you are facing the scariest <br> and deadliest of all monsters. The Minotaur!!! <br> he is a monster with the head and the tail of a bull and the body of a man. <br> He is not to be underestimated...</html>");
 
